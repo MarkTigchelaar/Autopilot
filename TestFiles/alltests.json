@@ -1,0 +1,80 @@
+[
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test1.txt",
+        "expected": ["a", "b", "c"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test2.txt",
+        "expected": [">=", "2"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test3.txt",
+        "expected": ["1", ">=", "2", ">", "3", ">", "4"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test4.txt",
+        "expected": ["a", ">=", "3", 
+                     "<", "4", "==", 
+                     "5", ">", "fg12", 
+                     "+", "e"
+                    ]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test5.txt",
+        "expected": ["thisfunis", "not", "a", "function"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test6.txt",
+        "expected": ["this", ".", "method", "(", ")", "..", "somenum"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test7.txt",
+        "expected": ["=", ">=", "<=", 
+                     "*=", "*", "+", 
+                     "[", "]", "[", 
+                     "]", "?", "!"
+                    ]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test8.txt",
+        "expected": ["123.3456", ".", "78"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test9.txt",
+        "expected": ["abc", "def"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test10.txt",
+        "expected": ["abc", "def"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test11.txt",
+        "expected": ["abc", "\"astring\"", "def"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test12.txt",
+        "expected": ["a", "\"string with \\n newline\"", "b"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test13.txt",
+        "expected": ["a", "\"this is a \\\"string\\\"\"", "b"]
+    },
+    {
+        "component" : "scanner",
+        "file": "../Testfiles/scannerTests/test14.txt",
+        "expected": ["a", "\"this string can't be broken\"", "b"]
+    }
+]
