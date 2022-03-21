@@ -1,0 +1,286 @@
+[
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test1.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test1.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test2.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test3.txt",
+                "tokenLiteral" : "enum",
+                "lineNumber" : "1",
+                "message" : "Unexpected token enum."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test4.txt",
+                "tokenLiteral" : "test",
+                "lineNumber" : "1",
+                "message" : "Unexpected token test."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test5.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test6.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test6.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test7.txt",
+                "tokenLiteral" : ")",
+                "lineNumber" : "1",
+                "message" : "Unexpected token )."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test8.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test8.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test9.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test9.txt",
+                "tokenLiteral" : "(",
+                "lineNumber" : "1",
+                "message" : "Unexpected token (."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test10.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test10.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test11.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "1",
+                "message" : "Unexpected token int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test12.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test12.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test13.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test13.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "1",
+                "message" : "Invalid name for item int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test14.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test14.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test15.txt",
+        "astString" : "(name : test, type : thingy, items : [(name : fred, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test16.txt",
+        "astString" : "(name : test, type : null, items : [(name : fred, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test17.txt",
+        "astString" : "(name : test, type : null, items : [(name : fred, default_value : null), (name : Wilma, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test18.txt",
+        "astString" : "(name : test, type : null, items : [(name : fred, default_value : null), (name : Wilma, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test18.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "7",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test19.txt",
+        "astString" : "(name : test, type : null, items : [(name : fred, type : null, default_value : null), (name : Wilma, type : null, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test19.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "11",
+                "message" : "Unexpected token end."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test20.txt",
+        "astString" : "(name : test, type : null, items : [(name : fred, type : null, default_value : null), (name : Wilma, type : null, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test20.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "15",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test21.txt",
+        "astString" : "(name : test, type : null, items : [(name : fred, default_value : null), (name : Wilma, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test21.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "15",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test22.txt",
+        "astString" : "(name : test, type : null, items : [(name : fred, type : null, default_value : null), (name : Wilma, type : null, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test22.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "15",
+                "message" : "Unexpected token end."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test23.txt",
+        "astString" : "(name : test, type : null, items : [(name : fred, default_value : null), (name : Wilma, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/EnumTests/test23.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "15",
+                "message" : "Unexpected token end."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test24.txt",
+        "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : null
+    }
+]

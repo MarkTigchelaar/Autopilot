@@ -1,0 +1,46 @@
+[
+    {
+        "file" : "../Testfiles/ParserTests/ModuleParsingTests/test1.txt",
+        "astString" : "a",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ModuleParsingTests/test2.txt",
+        "astString" : "_a",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ModuleParsingTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ModuleParsingTests/test3.txt",
+                "tokenLiteral" : "9",
+                "lineNumber" : "1",
+                "message" : "Module names cannot start with numbers, or have non alphanumeric characters."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ModuleParsingTests/test4.txt",
+        "astString" : "a9",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ModuleParsingTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ModuleParsingTests/test5.txt",
+                "tokenLiteral" : "module#9",
+                "lineNumber" : "1",
+                "message" : "Module names cannot start with numbers, or have non alphanumeric characters."
+            }
+        ]
+    }
+]

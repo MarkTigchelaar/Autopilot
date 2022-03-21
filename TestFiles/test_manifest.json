@@ -1,0 +1,38 @@
+[
+    {
+        "general_component" : "scanner",
+        "test_manifest_file" : "../TestFiles/ScannerTests/scanner_manualtests.json"
+    },
+    {
+        "general_component" : "scanner",
+        "test_manifest_file" : "../TestFiles/ScannerTests/scanner_auto_made_tests.json"
+    },
+    {
+        "general_component" : "expparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/expparser_manual_tests.json"
+    },
+    {
+        "general_component" : "expparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/expparser_auto_tests.json"
+    },
+    {
+        "general_component" : "expparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/experror_tests.json"
+    },
+    {
+        "general_component" : "moduleparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/modparser_manual_tests.json"
+    },
+    {
+        "general_component" : "importparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/importparser_manual_tests.json"
+    },
+    {
+        "general_component" : "defineparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/defineparser_manual_tests.json"
+    },
+    {
+        "general_component" : "enumparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/enumparser_manual_tests.json"
+    }
+]

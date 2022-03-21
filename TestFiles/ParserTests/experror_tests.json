@@ -1,0 +1,67 @@
+[
+    {
+        "file" : "../Testfiles/ParserTests/ErrorTests/test1.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ErrorTests/test1.txt",
+                "tokenLiteral" : "+",
+                "lineNumber" : "1",
+                "message" : "Invalid constant or variable."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ErrorTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ErrorTests/test2.txt",
+                "tokenLiteral" : "-",
+                "lineNumber" : "1",
+                "message" : "Operator is missing constant, variable or expression."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ErrorTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ErrorTests/test3.txt",
+                "tokenLiteral" : "-",
+                "lineNumber" : "1",
+                "message" : "Operator is missing constant, variable or expression."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ErrorTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ErrorTests/test4.txt",
+                "tokenLiteral" : "-",
+                "lineNumber" : "1",
+                "message" : "Operator is missing constant, variable or expression."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ErrorTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ErrorTests/test5.txt",
+                "tokenLiteral" : "+",
+                "lineNumber" : "1",
+                "message" : "Invalid constant or variable."
+            }
+        ]
+    }
+]

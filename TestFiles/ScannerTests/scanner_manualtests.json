@@ -1,0 +1,214 @@
+[
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test1.txt",
+        "expected_literal" : ["a", "b", "c"],
+        "line_numbers" : ["1", "1", "1"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test1a.txt",
+        "expected_literal" : ["a", "b", "c"],
+        "line_numbers" : ["1", "1", "1"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test1b.txt",
+        "expected_literal" : ["1"],
+        "line_numbers" : ["1"],
+        "token_types" : ["INT"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test2.txt",
+        "expected_literal" : [">=", "2"],
+        "line_numbers" : ["1", "1"],
+        "token_types" : ["GREATER_EQUAL", "INT"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test2a.txt",
+        "expected_literal" : [">=", "2"],
+        "line_numbers" : ["1", "2"],
+        "token_types" : ["GREATER_EQUAL", "INT"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test3.txt",
+        "expected_literal" : ["1", ">=", "2", ">", "3", ">", "4"],
+        "line_numbers" : ["1", "1", "1", "1", "1", "1", "1"],
+        "token_types" : [
+            "INT", "GREATER_EQUAL", 
+            "INT", "GREATER", "INT", 
+            "GREATER", "INT"
+        ]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test3a.txt",
+        "expected_literal" : ["1", ">=", "2", ">", "3", ">", "4"],
+        "line_numbers" : ["1", "2", "3", "4", "5", "6", "7"],
+        "token_types" : [
+            "INT", "GREATER_EQUAL", 
+            "INT", "GREATER", "INT", 
+            "GREATER", "INT"
+        ]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test4.txt",
+        "expected_literal" : [
+            "a", ">=", "3", 
+            "<", "4", "==", 
+            "5", ">", "fg12", 
+            "+", "e"
+        ],
+        "line_numbers" : [
+            "1", "1", "1", "1", "1", "1",
+            "1", "1", "1", "1", "1"
+        ],
+        "token_types" : [
+            "IDENTIFIER", "GREATER_EQUAL", "INT",
+            "LESS", "INT", "EQUAL_EQUAL",
+            "INT", "GREATER", "IDENTIFIER",
+            "PLUS", "IDENTIFIER"
+        ]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test5.txt",
+        "expected_literal" : ["thisfunis", "not", "a", "function"],
+        "line_numbers" : ["1", "1", "1", "1"],
+        "token_types" : ["IDENTIFIER", "NOT", "IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test6.txt",
+        "expected_literal" : ["this", ".", "method", "(", ")", "..", "somenum"],
+        "line_numbers" : ["1", "1", "1", "1", "1", "1", "1"],
+        "token_types" : [
+            "IDENTIFIER", "DOT", "IDENTIFIER",
+            "LEFT_PAREN", "RIGHT_PAREN", "RANGE", "IDENTIFIER"
+        ]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test7.txt",
+        "expected_literal" : [
+            "=", ">=", "<=", 
+            "*=", "*", "+", 
+            "[", "]", "[", 
+            "]", "?", "!"
+        ],
+        "line_numbers" : [
+            "1", "1", "1", "1", "1", "1",
+            "1", "1", "1", "1", "1", "1"
+        ],
+        "token_types" : [
+            "EQUAL", "GREATER_EQUAL", "LESS_EQUAL",
+            "STAR_EQUAL", "STAR", "PLUS",
+            "LEFT_BRACKET", "RIGHT_BRACKET", "LEFT_BRACKET", 
+            "RIGHT_BRACKET", "QUESTION", "BANG"
+        ]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test8.txt",
+        "expected_literal" : ["123.3456", ".", "78"],
+        "line_numbers" : ["1", "1", "1"],
+        "token_types" : ["FLOAT", "DOT", "INT"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test9.txt",
+        "expected_literal" : ["abc", "def"],
+        "line_numbers" : ["1", "2"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test10.txt",
+        "expected_literal" : ["abc", "def"],
+        "line_numbers" : ["1", "1"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test10a.txt",
+        "expected_literal" : ["abc", "def"],
+        "line_numbers" : ["1", "2"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test10b.txt",
+        "expected_literal" : ["abc", "def"],
+        "line_numbers" : ["1", "3"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test10c.txt",
+        "expected_literal" : ["abc", "def"],
+        "line_numbers" : ["1", "3"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test10d.txt",
+        "expected_literal" : ["abc", "def"],
+        "line_numbers" : ["1", "4"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test10e.txt",
+        "expected_literal" : ["abc", "def"],
+        "line_numbers" : ["1", "4"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test10f.txt",
+        "expected_literal" : ["abc", "def"],
+        "line_numbers" : ["1", "4"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test11.txt",
+        "expected_literal" : ["abc", "\"astring\"", "def"],
+        "line_numbers" : ["1", "1", "1"],
+        "token_types" : ["IDENTIFIER", "STRING", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test12.txt",
+        "expected_literal" : ["a", "\"string with \\n newline\"", "b"],
+        "line_numbers" : ["1", "1", "1"],
+        "token_types" : ["IDENTIFIER", "STRING", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test13.txt",
+        "expected_literal" : ["a", "\"this is a \\\"string\\\"\"", "b"],
+        "line_numbers" : ["1", "1", "1"],
+        "token_types" : ["IDENTIFIER", "STRING", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test14.txt",
+        "expected_literal" : ["a", "\"this string can't be broken\"", "b"],
+        "line_numbers" : ["1", "1", "1"],
+        "token_types" : ["IDENTIFIER", "STRING", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test15.txt",
+        "expected_literal" : ["a", "b"],
+        "line_numbers" : ["1", "1"],
+        "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    }
+]

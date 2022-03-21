@@ -14,7 +14,7 @@ COLON = "COLON"
 SLASH = "SLASH"
 STAR = "STAR"
 CARROT = "CARROT"
-MOD = "MOD"
+MOD = "MOD" # %
 
 # One or two character tokens.
 BANG = "BANG"
@@ -33,15 +33,20 @@ SLASH_EQUAL = "SLASH_EQUAL"
 CARROT_EQUAL = "CARROT_EQUAL"
 MOD_EQUAL = "MOD_EQUAL"
 
-HASH = "HASH"
+#HASH = "HASH"
 
 # Literals.
 IDENTIFIER = "IDENTIFIER"
 
 
 # Keywords.
+LIBRARY = "library".upcase
 MODULE = "module".upcase
-
+IMPORT = "import".upcase
+#USE = "use".upcase
+FROM = "from".upcase
+#ALIAS = "alias".upcase
+DEFINE = "define".upcase
 FOR = "for".upcase
 LOOP = "loop".upcase
 WHILE = "while".upcase
@@ -52,7 +57,7 @@ BREAK = "break".upcase
 IF = "if".upcase
 ELSE = "else".upcase
 CASE = "case".upcase
-WHEN = "when".upcase
+MATCH = "match".upcase
 
 RETURN = "return".upcase
 
@@ -63,26 +68,29 @@ PUB = "pub".upcase
 SELF = "self".upcase
 
 FUN = "fun".upcase
-PRC = "prc".upcase
+#PRC = "prc".upcase
 LAMBDA  = "lambda".upcase
-CLASS = "class".upcase
-SUPER = "super".upcase
-INTERFACE = "interface".upcase
-ABSTRACT = "abstract".upcase
-EXTENDS = "extends".upcase
-IMPL = "impl".upcase
+#CLASS = "class".upcase
+#SUPER = "super".upcase
+#INTERFACE = "interface".upcase
+TRAIT = "trait".upcase
+#ABSTRACT = "abstract".upcase
+#EXTENDS = "extends".upcase
+#IMPL = "impl".upcase
 ENUM = "enum".upcase
-#STRUCT = "struct"
-#UNION = "union"
+STRUCT = "struct".upcase
+#UNION = "union".upcase
 
 ASSERT = "assert".upcase
 DEBUG = "debug".upcase
+UNITTEST = "unittest".upcase
 DEFER = "defer".upcase
 
 ACYCLIC = "acyclic".upcase
 UNIQUE = "unique".upcase
 
 AS = "as".upcase
+IS = "is".upcase
 IN = "in".upcase
 
 AND = "and".upcase
@@ -104,8 +112,8 @@ BOOL = "bool".upcase
 TRUE = "true".upcase
 FALSE = "false".upcase
 
-RANGE = ".."
-DOT = "."
+RANGE = "RANGE" # ..
+DOT = "DOT" # .
 
 YIELD = "yield".upcase
 SLEEP = "sleep".upcase

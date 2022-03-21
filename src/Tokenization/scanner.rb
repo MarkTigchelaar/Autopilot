@@ -2,35 +2,78 @@ require_relative '../keywords.rb'
 require_relative '../tokentype.rb'
 require_relative './token.rb'
 
+
 class Scanner 
-    def initialize()
-        @source = nil#_source
+    def initialize(charArrayScanner=nil) #char scanner for string interpolation
         @tokens = Array.new()
-        @start = 0
-        @current = 0
         @line = 1
-        @filename = "testing"
+        @filename = nil
         @keywords = getkeywords()
+        @specialIdChars = ["@", "$", "_" , "~", "#", "&", ";"]
+        if(charArrayScanner != nil)
+            @charScanner = charArrayScanner
+        else
+            @charScanner = FileScanner.new()
+        end
+        @peekToken = nil
     end
 
-    def loadSource(_source)
-        @source = _source
+    def loadSource(filename)
+        @charScanner.loadSource(filename)
+        @filename = filename
+        @line = 1
+    end
+
+    def closeSource
+        @charScanner.closeSource()
+    end
+
+    def hasTokens
+        return !isAtEnd()
+    end
+
+    def peekToken
+        if(@peekToken != nil)
+            return @peekToken
+        end
+        @peekToken = nextToken()
+        return @peekToken
+    end
+
+    def nextToken
+        if(@peekToken != nil)
+            temp = @peekToken
+            @peekToken = nil
+            return temp
+        end
+        if(!isAtEnd())
+            toklength = @tokens.length
+            while(!isAtEnd() && toklength == @tokens.length)
+                scanforToken()
+            end
+        else
+            eof = Token.new(EOF, "", nil, @line, @filename)
+            @tokens.append(eof)
+        end
+        temp = @tokens.pop()
+        if temp == nil
+            temp = Token.new(EOF, "", nil, @line, @filename)
+        end
+        return temp
     end
 
     def scanTokens
         while(!isAtEnd()) do
-            @start = @current
-            #puts "start and current are #{@start}"
-            scanToken()
+            scanforToken()
         end
         @tokens.append(Token.new(EOF, "", nil, @line, @filename))
         return @tokens
     end
 
-    def scanToken
-        char = advance()
-        #puts "Scanning character: \"#{char}\""
-        
+    def scanforToken
+        char = @charScanner.currentChar()
+        @charScanner.setSliceStart()
+        #puts "current idx: #{@charScanner.getCurrent()}"
         case char
         when "("
             addToken(LEFT_PAREN)
@@ -48,6 +91,8 @@ class Scanner
             addToken(RIGHT_BRACE)
         when "?"
             addToken(QUESTION)
+        when ":"
+            addToken(COLON)
         when "."
             if(match("."))
                 addToken(RANGE)
@@ -80,9 +125,12 @@ class Scanner
             end
         when "/"
             if(match("/"))
-                while( peek() != "\n" and not isAtEnd())
-                    advance()
+                while( @charScanner.currentChar() != "\n" and !isAtEnd())
+                    @charScanner.shiftRight()
                 end
+                @charScanner.incCurrentIndex()
+                @charScanner.shiftRight()
+                @line += 1
             elsif(match("*"))
                 multilineComment()
             elsif(match("="))
@@ -116,7 +164,6 @@ class Scanner
             end
         when ">"
             if(match("="))
-                #puts "Matched >="
                 addToken(GREATER_EQUAL)
             else
                 addToken(GREATER)
@@ -127,37 +174,34 @@ class Scanner
             else
                 addToken(MOD)
             end
-        when " ", "\r", "\t"
-            nothing = ""
-            #puts "found whitespace, skipping"
+        when " ", "\t"
+            @charScanner.shiftRight()
         when "\""
             string()
-        when "\n"
+        when "\r", "\n"
+            @charScanner.incCurrentIndex()
+            @charScanner.shiftRight()
             @line += 1
         else
             if(isDigit(char))
-                ##puts "#{char} is a digit"
                 number()
-            elsif(isAlpha(char))
-                #puts "#{char} is alphabetical"
+            elsif(isAlpha(char) or @specialIdChars.include?(char))
                 identifier()
             else
                 scanner_error("Unexpected character: #{char}")
             end
         end
-        #puts "\n\n\n"
+        while(@charScanner.currentChar() in [" ", '\t', '\n', '\r'] and !isAtEnd())
+            @charScanner.shiftRight()
+        end
     end
 
     def identifier()
-        #puts "In identifier method"
-        while(isAlphaNumeric(peek()))
-            #puts "peeked character: #{peek()}"
-            advance()
+        while(isAlphaNumeric(peek()) or @specialIdChars.include?(peek()))
+            @charScanner.shiftRight()
         end
-        text = @source[@start .. @current - 1]
-        #puts "(in identifier) text: \"#{text}\""
-        type = @keywords[text]
-        #puts "type: #{type}"
+
+        type = @keywords[@charScanner.getSlice()]
         if(type == nil)
             type = IDENTIFIER
         end
@@ -165,17 +209,27 @@ class Scanner
     end
 
     def number
+        #puts "found a number: #{@charScanner.currentChar()} ----------------"
         while(isDigit(peek()))
-            advance()
+            #puts "in first while loop"
+            @charScanner.shiftRight()
         end
+        #puts "current is now #{@charScanner.currentChar()} ----------------"
         isfloat = false
         if(peek() == "." and isDigit(peekNext()))
+            #puts "in if statement"
             isfloat = true
-            advance()
+            @charScanner.shiftRight()
+            #puts "current is now #{@charScanner.currentChar()} ----------------"
             while(isDigit(peek()))
-                advance()
+                #puts "in second while loop"
+                @charScanner.shiftRight()
             end
+            #puts "current is now #{@charScanner.currentChar()} ----------------"
         end
+        #puts "current is now #{@charScanner.currentChar()} ----------------"
+        #puts "current slice: #{@charScanner.getSlice()}"
+
         if(isfloat)
             addToken(FLOAT)
         else
@@ -194,7 +248,6 @@ class Scanner
     end
 
     def isAlphaNumeric(char)
-        #puts "Checking \"#{char}\" in isAlphnumeric"
         return (isAlpha(char) or isDigit(char))
     end
 
@@ -203,86 +256,84 @@ class Scanner
     end
 
     def addToken(tok_type, literal = nil)
-        #puts "adding Token"
-        s = @start
-        f = @current
-
-        ##puts "start: #{s}, current: #{f}"
-        ##puts "all: #{@source[0, f]}"
-        ##puts "from start: #{@source[s, @source.length]}"
-
-        text = @source[s .. f - 1]
-        #puts "text: \"#{text}\""
-        ##puts "start: #{s}, current: #{f}\n\n"
-
+        text = @charScanner.getSlice()
         @tokens.append(Token.new(tok_type, text, literal, @line, @filename))
-    end
-
-    def advance
-        @current += 1
-        return @source[@current - 1]
+        @charScanner.shiftRight()
+        #if(["\n", "\r"].include?(@charScanner.currentChar()))
+        #    puts "found a newline -----------------------"
+        #    @charScanner.shiftRight()
+        #end
     end
 
     def isAtEnd
-        return @current >= @source.length
+        return @charScanner.complete()
     end
 
     def match(expected)
         if(isAtEnd())
-            #puts "In match, reached end"
             return false
         end
-        if(@source[@current] != expected)
-            #puts "In match expected #{expected}, got #{@source[@current]}"
+        if(peek() != expected)
             return false
         end
-        #puts "In match expected #{expected}, did match"
-        @current += 1
+        
+        @charScanner.shiftRight()
         return true
     end
 
     def peek
-        if(isAtEnd())
-            return "\0"
-        end
-        return @source[@current]
+        temp = @charScanner.peekChar()
+        return temp
     end
 
     def peekNext
-        if(@current + 1 >= @source.length)
-            return "\0"
-        end
-        return @source[@current + 1]
+        temp = @charScanner.peekNextChar()
+        return temp
     end
 
     def multilineComment
         comment_sections = 1
+        @charScanner.shiftRight()
 
-        while(not isAtEnd())
-            current = peek()
+        while(!isAtEnd())
+            while(@charScanner.currentChar() == " " and !isAtEnd())
+                @charScanner.shiftRight()
+            end
 
-            if(current == "/" and peekNext() == "*")
+            current = @charScanner.currentChar()
+            peek = @charScanner.peekChar()
+
+            #puts "In multi line comment, current #{current}, peek #{peek}"
+
+            if(current == "/" and peek() == "*")
                 comment_sections += 1
+                @charScanner.shiftRight()
+                @charScanner.shiftRight()
+                current = @charScanner.currentChar()
             end
 
-            if(current == "*" and peekNext() == "/")
+            if(current == "*" and peek() == "/")
                 comment_sections -= 1
+                @charScanner.shiftRight()
+                
+
+                _current = @charScanner.currentChar()
             end
 
-            if(current == "\n")
+            if(current == "\n" || current == "\r")
+                @charScanner.incCurrentIndex()
                 @line += 1
             end
 
-            advance()
+            @charScanner.shiftRight()
 
             if(comment_sections == 0)
-                advance()
                 break
             end
         end
 
         if(comment_sections > 0)
-            print "line #{(line).to_s} Unterminated block comment."
+            print "line #{(@line).to_s} Unterminated block comment. #{comment_sections}"
         end
     end
 
@@ -293,21 +344,165 @@ class Scanner
             end
             if(peek() == "\\")
                 if(peekNext() == "\"")
-                    advance()
+                    @charScanner.shiftRight()
                 end
             end
 
-            advance()
+            @charScanner.shiftRight()
         end
 
         if(isAtEnd())
             scanner_error("Unterminated string.")
         end
 
-        advance()
+        @charScanner.shiftRight()
 
-        value = @source[@start + 1, @current - 1]
+        value = @charScanner.getSlice()
         addToken(STRING, value)
     end
 
+end
+
+
+
+
+
+class FileScanner
+
+    def initialize
+        @source = nil
+        @current = 1
+        @filesize = nil
+        @SliceIdx = 1
+    end
+
+    def getFilesize
+        return @filesize
+    end
+
+    def getCurrent
+        return @current
+    end
+
+    def loadSource(filename)
+        @source = File.open(filename)
+        @filesize = @source.size() 
+    end
+
+    def printSource
+        while !@source.eof?()
+            puts @source.sysread(1)
+        end
+    end
+
+    def closeSource
+        @source.close()
+    end
+
+    def readChar
+        if(complete())
+            return '\0'
+        end
+        char = @source.sysread(1)
+        @current += 1
+        return char
+    end
+
+    def peekChar
+        if(@current + 1 > @filesize)
+            return '\0'
+        end
+        #puts " in peek, current is  <#{currentChar()}> ----------------"
+        char = readChar()
+        @current -= 1
+        char = readChar()
+        if(char == "\r" or char == "\n")
+            #puts "char is a newline"
+            @source.seek(-1, IO::SEEK_CUR)
+        end
+        @current -= 1
+        @source.seek(-2, IO::SEEK_CUR)
+        #puts "still in peek, current is <#{currentChar()}> ----------------"
+        return char
+    end
+
+    def peekNextChar
+        if(@current + 2 > @filesize)
+            return '\0'
+        end
+        char = readChar()
+        if(char == "\r" or char == "\n")
+            # "char is a newline"
+            @source.seek(-1, IO::SEEK_CUR)
+        end
+        @current -= 1
+        char = readChar()
+        if(char == "\r" or char == "\n")
+            #puts "char is a newline"
+            @source.seek(-1, IO::SEEK_CUR)
+        end
+        @current -= 1
+        char = readChar()
+        @current -= 1
+        @source.seek(-3, IO::SEEK_CUR)
+        return char
+    end
+
+    def currentChar
+        if(complete())
+            return '\0'
+        end
+        current = readChar()
+        @current -= 1
+        @source.seek(-1, IO::SEEK_CUR)
+        #puts "#{current} is the current char"
+        return current
+    end
+
+    def incCurrentIndex
+        @current += 1
+    end
+
+    def shiftRight
+        readChar()
+    end
+
+    def setSliceStart
+        @SliceIdx = @current
+    end
+
+    def getSlice
+        tempcurrent = @current
+        slice_size = (@current - @SliceIdx) + 1 # includes chr at current
+        @current -= (slice_size - 1)
+        if(slice_size == 1)
+            #puts "slice size is 1 at #{@current} and #{@SliceIdx}"
+            
+            slice = readChar()
+            if(!complete())
+                @source.seek(-1, IO::SEEK_CUR)
+                @current -= 1
+            end
+            #puts "current #{@current}, slice is #{slice}"
+            return slice
+        end
+
+        @source.seek(-(slice_size - 1), IO::SEEK_CUR)
+        token = ""
+        for i in 1 .. slice_size do
+            if(complete())
+                break
+            end
+            token += readChar()
+            @current -= 1
+        end
+        @source.seek(-1, IO::SEEK_CUR)
+        @current = tempcurrent
+        
+        return token
+    end
+
+    def complete
+        return ((@current > @filesize) or @source.eof?) 
+    end
 end

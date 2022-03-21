@@ -1,0 +1,125 @@
+[
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test1.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test1.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test2.txt",
+                "tokenLiteral" : "module",
+                "lineNumber" : "1",
+                "message" : "Invalid name for item module."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test3.txt",
+                "tokenLiteral" : ",",
+                "lineNumber" : "1",
+                "message" : "Invalid name for item ,."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test4.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test5.txt",
+                "tokenLiteral" : "b",
+                "lineNumber" : "1",
+                "message" : "Unexpected token b."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test6.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test6.txt",
+                "tokenLiteral" : "6",
+                "lineNumber" : "1",
+                "message" : "Invalid name for item 6."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test7.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test8.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test8.txt",
+                "tokenLiteral" : ",",
+                "lineNumber" : "1",
+                "message" : "Invalid name for item ,."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test9.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test9.txt",
+                "tokenLiteral" : "do",
+                "lineNumber" : "1",
+                "message" : "Invalid name for item do."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test10.txt",
+        "astString" : "old name: old new name: new",
+        "tokenTypeString" : "",
+        "errors" : null
+    }
+]

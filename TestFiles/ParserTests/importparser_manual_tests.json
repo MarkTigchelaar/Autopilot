@@ -1,0 +1,300 @@
+[
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test1.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test1.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test2.txt",
+                "tokenLiteral" : "9",
+                "lineNumber" : "1",
+                "message" : "Invalid name for imported item 9."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test3.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test4.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test5.txt",
+        "astString" : "name:test type:lib items:[none]",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test6.txt",
+        "astString" : "name:test2 type:mod items:[none]",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test7.txt",
+                "tokenLiteral" : "1",
+                "lineNumber" : "1",
+                "message" : "Invalid module or library name 1."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test8.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test8.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test9.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test9.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test10.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test10.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test11.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test12.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test12.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test13.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test13.txt",
+                "tokenLiteral" : "import",
+                "lineNumber" : "1",
+                "message" : "Invalid name for imported item import."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test14.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test14.txt",
+                "tokenLiteral" : "import",
+                "lineNumber" : "1",
+                "message" : "Invalid name for imported item import."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test15.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test15.txt",
+                "tokenLiteral" : "struct",
+                "lineNumber" : "1",
+                "message" : "Invalid name for imported item struct."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test16.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test16.txt",
+                "tokenLiteral" : "from",
+                "lineNumber" : "1",
+                "message" : "Unexpected token from."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test17.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test17.txt",
+                "tokenLiteral" : ",",
+                "lineNumber" : "1",
+                "message" : "Unexpected token ,."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test18.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test18.txt",
+                "tokenLiteral" : "89",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 89."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test19.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test19.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test20.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test20.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test21.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test21.txt",
+                "tokenLiteral" : ",",
+                "lineNumber" : "1",
+                "message" : "Invalid module or library name ,."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test22.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test22.txt",
+                "tokenLiteral" : "library",
+                "lineNumber" : "1",
+                "message" : "Invalid module or library name library."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test23.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test23.txt",
+                "tokenLiteral" : "module",
+                "lineNumber" : "1",
+                "message" : "Invalid module or library name module."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test24.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test24.txt",
+                "tokenLiteral" : ",",
+                "lineNumber" : "1",
+                "message" : "Invalid module or library name ,."
+            }
+        ]
+    }
+]
