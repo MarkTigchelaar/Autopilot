@@ -282,5 +282,23 @@
         "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : null)])",
         "tokenTypeString" : "",
         "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test25.txt",
+        "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : 4)])",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test26.txt",
+        "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : 4), (name : stuff, default_value : 1)])",
+        "tokenTypeString" : "",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/EnumTests/test27.txt",
+        "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : 4), (name : stuff, default_value : 1), (name : wheat, default_value : null), (name : gems, default_value : null)])",
+        "tokenTypeString" : "",
+        "errors" : null
     }
 ]
