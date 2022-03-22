@@ -34,5 +34,9 @@
     {
         "general_component" : "enumparser",
         "test_manifest_file" : "../TestFiles/ParserTests/enumparser_manual_tests.json"
+    },
+    {
+        "general_component" : "errorparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/errorparser_manual_tests.json"
     }
 ]

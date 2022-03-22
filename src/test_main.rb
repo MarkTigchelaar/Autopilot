@@ -6,6 +6,7 @@ require './Parsing/modparser.rb'
 require './Parsing/importparser.rb'
 require './Parsing/defineparser.rb'
 require './Parsing/enumparser.rb'
+require './Parsing/errorparser.rb'
 #require_relative './keywords.rb'
 
 
@@ -55,11 +56,13 @@ def main
                 call_defineparser_tests(test_case, failurelog, tracker)
             end
         when "enumparser"
+            next
             tests.each do |test_case|
-                #if(test_case["file"] != "../Testfiles/ParserTests/EnumTests/test21.txt")
-                #    next
-                #end
                 call_enumparser_tests(test_case, failurelog, tracker)
+            end
+        when "errorparser"
+            tests.each do |test_case|
+                call_errorparser_tests(test_case, failurelog, tracker)
             end
         else
             puts "component #{general_component} not recognized"
@@ -156,6 +159,14 @@ def call_enumparser_tests(test_case, failurelog, tracker)
     dummy.parse(test_case["file"])
     generic_parser_tests(dummy, test_case, failurelog, tracker)
     puts "Done test for enum parser"
+end
+
+def call_errorparser_tests(test_case, failurelog, tracker)
+    dummy = DummyParser.new(ErrorParser.new)
+    puts "\nTesting error parser, file #{test_case["file"]} ... "
+    dummy.parse(test_case["file"])
+    generic_parser_tests(dummy, test_case, failurelog, tracker)
+    puts "Done test for error parser"
 end
 
 main

@@ -52,6 +52,7 @@ LOOP = "loop".upcase
 WHILE = "while".upcase
 CONTINUE = "continue".upcase
 BREAK = "break".upcase
+ERROR = "error".upcase
 
 
 IF = "if".upcase
@@ -79,7 +80,7 @@ TRAIT = "trait".upcase
 #IMPL = "impl".upcase
 ENUM = "enum".upcase
 STRUCT = "struct".upcase
-#UNION = "union".upcase
+UNION = "union".upcase
 
 ASSERT = "assert".upcase
 DEBUG = "debug".upcase
