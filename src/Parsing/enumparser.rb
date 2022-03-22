@@ -150,7 +150,7 @@ class EnumParser
            #puts "In equal step, found identifier"
             itemListLiteralStep(parser)
         elsif(isNumeric(peekTok))
-           #puts "In equal step, found number"
+           puts "In equal step, found number: #{peekTok.getText()}"
             # tokenizer splits text on '.'
             # floats will be 3 tokens total
             itemListLiteralStep(parser)
@@ -166,17 +166,18 @@ class EnumParser
         #puts "current item literal token: #{@currentItemLiteralToken.getText()}"
         #parser.discard()
         peekTok = parser.peek()
-        #puts "next peek Token: #{peekTok.getText()}, #{peekTok.getType()}"
+        puts "next peek Token: #{peekTok.getText()}, #{peekTok.getType()}"
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == COMMA)
            #puts "found comma"
             addToItemList()
             commaStep(parser)
-        elsif(peekTok.getText() == ENDSCOPE)
+        elsif(peekTok.getType() == ENDSCOPE)
             addToItemList()
             endStep(parser)
         else
+            puts "Skipped end token"
             unexpectedToken(parser)
         end
     end
