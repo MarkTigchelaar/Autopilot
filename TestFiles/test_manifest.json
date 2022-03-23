@@ -38,5 +38,9 @@
     {
         "general_component" : "errorparser",
         "test_manifest_file" : "../TestFiles/ParserTests/errorparser_manual_tests.json"
+    },
+    {
+        "general_component" : "unionparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/unionparser_manual_tests.json"
     }
 ]
