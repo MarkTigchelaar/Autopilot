@@ -14,7 +14,7 @@ class UnittestParser
     def parse(parser)
         reset()
         token = parser.nextToken()
-        enforceUnion(token)
+        enforceUnittest(token)
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)

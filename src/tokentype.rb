@@ -58,7 +58,7 @@ ERROR = "error".upcase
 IF = "if".upcase
 ELSE = "else".upcase
 CASE = "case".upcase
-MATCH = "match".upcase
+SWITCH = "switch".upcase
 
 RETURN = "return".upcase
 

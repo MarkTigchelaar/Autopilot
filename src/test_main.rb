@@ -9,12 +9,14 @@ require './Parsing/enumparser.rb'
 require './Parsing/errorparser.rb'
 require './Parsing/unionparser.rb'
 require './Parsing/unittestparser.rb'
+require './Parsing/functionparser.rb'
 #require_relative './keywords.rb'
 
 
 
 require './TestingComponents/testingutilities.rb'
 require './TestingComponents/DummyParser.rb'
+require './TestingComponents/DummyStatementParser.rb'
 require './TestingComponents/scannertests.rb'
 
 #require './TestingComponents/generic_parser_tests.rb'
@@ -74,6 +76,10 @@ def main
         when "unittestparser"
             tests.each do |test_case|
                 call_unittestparser_tests(test_case, failurelog, tracker)
+            end
+        when "functionparser"
+            tests.each do |test_case|
+                call_functionparser_tests(test_case, failurelog, tracker)
             end
         else
             puts "component #{general_component} not recognized"
@@ -195,4 +201,13 @@ def call_unittestparser_tests(test_case, failurelog, tracker)
     generic_parser_tests(dummy, test_case, failurelog, tracker)
     puts "Done test for unit test parser"
 end
+
+def call_functionparser_tests(test_case, failurelog, tracker)
+    dummy = DummyParser.new(FunctionParser.new(DummyStatementParser.new()))
+    puts "\nTesting function parser, file #{test_case["file"]} ... "
+    dummy.parse(test_case["file"])
+    generic_parser_tests(dummy, test_case, failurelog, tracker)
+    puts "Done test for function parser"
+end
+
 main

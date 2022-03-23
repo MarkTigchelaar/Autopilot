@@ -1,6 +1,6 @@
 require './tokentype.rb'
 
-
+# Change to a case statement, and return bool
 def getkeywords
     keywords = {
         "library" => LIBRARY,
@@ -17,7 +17,7 @@ def getkeywords
         "if" => IF,
         "else" => ELSE,
         "case" => CASE,
-        "match" => MATCH,
+        "switch" => SWITCH,
         "return" => RETURN,
         "do" => DO,
         "end" => ENDSCOPE,
@@ -72,3 +72,34 @@ def getkeywords
     }
     return keywords
 end
+
+
+def is_statement_keyword(token)
+    return case token.getType()
+    when IF
+        true
+    when ELSE
+        true
+    when LOOP
+        true
+    when FOR
+        true
+    when WHILE
+        true
+    when LET
+        true
+    when VAR
+        true
+    when BREAK
+        true
+    when CONTINUE
+        true
+    when RETURN
+        true
+    when SWITCH
+        true
+    else
+        false
+    end
+end
+

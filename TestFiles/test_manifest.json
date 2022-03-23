@@ -46,5 +46,9 @@
     {
         "general_component" : "unittestparser",
         "test_manifest_file" : "../TestFiles/ParserTests/unittestparser_manual_tests.json"
+    },
+    {
+        "general_component" : "functionparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/functionparser_manual_tests.json"
     }
 ]
