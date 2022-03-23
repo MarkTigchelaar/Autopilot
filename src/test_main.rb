@@ -8,6 +8,7 @@ require './Parsing/defineparser.rb'
 require './Parsing/enumparser.rb'
 require './Parsing/errorparser.rb'
 require './Parsing/unionparser.rb'
+require './Parsing/unittestparser.rb'
 #require_relative './keywords.rb'
 
 
@@ -68,6 +69,11 @@ def main
         when "unionparser"
             tests.each do |test_case|
                 call_unionparser_tests(test_case, failurelog, tracker)
+            end
+
+        when "unittestparser"
+            tests.each do |test_case|
+                call_unittestparser_tests(test_case, failurelog, tracker)
             end
         else
             puts "component #{general_component} not recognized"
@@ -182,4 +188,11 @@ def call_unionparser_tests(test_case, failurelog, tracker)
     puts "Done test for union parser"
 end
 
+def call_unittestparser_tests(test_case, failurelog, tracker)
+    dummy = DummyParser.new(UnittestParser.new)
+    puts "\nTesting unit test parser, file #{test_case["file"]} ... "
+    dummy.parse(test_case["file"])
+    generic_parser_tests(dummy, test_case, failurelog, tracker)
+    puts "Done test for unit test parser"
+end
 main

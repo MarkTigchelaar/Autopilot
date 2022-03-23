@@ -156,10 +156,6 @@ class UnionParser
         addError(parser, msg)
     end
 
-    def isEOF(token)
-        return token.getType() == EOF
-    end
-
     def isValidIdentifier(token)
         if(isKeyword(token))
             return false
