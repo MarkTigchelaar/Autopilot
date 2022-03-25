@@ -71,6 +71,7 @@ SELF = "self".upcase
 FUN = "fun".upcase
 #PRC = "prc".upcase
 LAMBDA  = "lambda".upcase
+INLINE = "inline".upcase
 #CLASS = "class".upcase
 #SUPER = "super".upcase
 INTERFACE = "interface".upcase

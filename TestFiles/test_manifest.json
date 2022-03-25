@@ -54,5 +54,9 @@
     {
         "general_component" : "interfaceparser",
         "test_manifest_file" : "../TestFiles/ParserTests/interfaceparser_manual_tests.json"
+    },
+    {
+        "general_component" : "structparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/structparser_manual_tests.json"
     }
 ]

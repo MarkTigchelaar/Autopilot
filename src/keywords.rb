@@ -27,6 +27,7 @@ def getkeywords
        # "prc" => PRC,
         "lambda" => LAMBDA,
         #"class" => CLASS,
+        "inline" => INLINE,
         "struct" => STRUCT,
         "interface" => INTERFACE,
         #"super" => SUPER,
