@@ -34,7 +34,9 @@ class FunctionParser
         else
             unexpectedToken(parser)
         end
+        f = FunctionStatement.new(@function_name, @arguments, @return_type, @statements)
         reset()
+        return f
     end
 
     def functionNameStep(parser)
@@ -94,7 +96,7 @@ class FunctionParser
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == COMMA)
-            @arguments.append(FunctonArgument.new(argname, argtype))
+            @arguments.append(FunctionArgument.new(argname, argtype))
             commaStep(parser)
         elsif(peekTok.getType() == EQUAL_EQUAL)
             assignStep(parser, argname, argtype)
@@ -107,7 +109,7 @@ class FunctionParser
 
     def assignStep(parser, argname, argtype)
         default_value = parser.nextToken()
-        @arguments.append(FunctonArgument.new(argname, argtype, default_value))
+        @arguments.append(FunctionArgument.new(argname, argtype, default_value))
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -250,10 +252,29 @@ class FunctionParser
     end
 end
 
-class FunctonArgument
+class FunctionArgument
     def initialize(var_name, var_type, default_value = nil)
         @var_name = var_name
         @var_type = var_type
         @default_value = default_value
+    end
+end
+
+class FunctionStatement
+    def initialize(function_name, arguments, return_type, statements)
+        @function_name = function_name
+        @arguments = arguments
+        @return_type = return_type
+        @statements = statements
+        @is_acyclic = false
+        @is_public = false
+    end
+
+    def setAsAcyclic()
+        @is_acyclic = true
+    end
+
+    def setAsPublic()
+        @is_public = true
     end
 end

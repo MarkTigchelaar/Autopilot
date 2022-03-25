@@ -27,7 +27,9 @@ class ImportParser
         else
             invalidItemName(parser)
         end
-        return importStatement()
+        result = ImportStatement.new(@moduleName, @itemList, @isLibrary)
+        reset()
+        return result
     end
 
     def enforceImport(peekTok)
@@ -171,12 +173,6 @@ class ImportParser
         @moduleName = ""
         @itemList = Array.new
         @isLibrary = false
-    end
-
-    def importStatement()
-        result = ImportStatement.new(@moduleName, @itemList, @isLibrary)
-        reset()
-        return result
     end
 end
 

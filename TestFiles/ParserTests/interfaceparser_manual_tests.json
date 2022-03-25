@@ -1,0 +1,15 @@
+[
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test1.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test1.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    }
+]

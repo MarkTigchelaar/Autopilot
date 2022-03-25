@@ -10,6 +10,7 @@ require './Parsing/errorparser.rb'
 require './Parsing/unionparser.rb'
 require './Parsing/unittestparser.rb'
 require './Parsing/functionparser.rb'
+require './Parsing/interfaceparser.rb'
 #require_relative './keywords.rb'
 
 
@@ -80,6 +81,10 @@ def main
         when "functionparser"
             tests.each do |test_case|
                 call_functionparser_tests(test_case, failurelog, tracker)
+            end
+        when "interfaceparser"
+            tests.each do |test_case|
+                call_interfaceparser_tests(test_case, failurelog, tracker)
             end
         else
             puts "component #{general_component} not recognized"
@@ -195,7 +200,7 @@ def call_unionparser_tests(test_case, failurelog, tracker)
 end
 
 def call_unittestparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(UnittestParser.new)
+    dummy = DummyParser.new(UnittestParser.new(DummyStatementParser.new()))
     puts "\nTesting unit test parser, file #{test_case["file"]} ... "
     dummy.parse(test_case["file"])
     generic_parser_tests(dummy, test_case, failurelog, tracker)
@@ -210,4 +215,11 @@ def call_functionparser_tests(test_case, failurelog, tracker)
     puts "Done test for function parser"
 end
 
+def call_interfaceparser_tests(test_case, failurelog, tracker)
+    dummy = DummyParser.new(InterfaceParser.new(FunctionParser.new(DummyStatementParser.new())))
+    puts "\nTesting interface parser, file #{test_case["file"]} ... "
+    dummy.parse(test_case["file"])
+    generic_parser_tests(dummy, test_case, failurelog, tracker)
+    puts "Done test for interface parser"
+end
 main

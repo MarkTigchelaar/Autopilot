@@ -3,61 +3,80 @@ require_relative '../tokentype.rb'
 require_relative '../keywords.rb'
 require_relative '../Tokenization/token.rb'
 
-class UnittestParser
-    def initialize(statement_parser)
-        @statement_parser = statement_parser
-        @statements = Array.new()
-        @test_name = nil
+class InterfaceParser
+
+    def initialize(function_parser)
+        @function_parser = function_parser
+        @functions = Array.new()
+        @interface_name = nil
         @keywords = getkeywords()
     end
 
     def parse(parser)
         reset()
         token = parser.nextToken()
-        enforceUnittest(token)
+        enforceInterface(token)
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
-            testNameStep(parser)
+            interfaceNameStep(parser)
         else
             unexpectedToken(parser)
         end
-        u = UnittestStatement.new(@test_name, @statements)
+
+        i = InterfaceStatement.new(@interface_name, @functions)
         reset()
-        return u
+        return i
     end
 
-    def testNameStep(parser)
+    def interfaceNameStep(parser)
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(peekTok.getType() == DO)
-            doStep(parser)
+        elsif(peekTok.getType() == IS)
+            isStep(parser)
         else
             unexpectedToken(parser)
         end
     end
 
-    def doStep(parser)
+    def isStep(parser)
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isKeyword(peekTok) and peekTok.getType() != ENDSCOPE)
-            parseStatements(parser)
+        elsif(peekTok.getType() == FUN or peekTok.getType() == ACYCLIC)
+            parseFunctions(parser)
         else
             unexpectedToken(parser)
         end
     end
 
-    def parseStatements(parser)
+    def parseFunctions(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and peekTok.getType() != ENDSCOPE)
-            @statements.append(@statement_parser.parse(parser))
+        while(!isEOF(peekTok) and (peekTok.getType() == FUN or peekTok.getType() == ACYCLIC))
+            is_acyclic = false
+            if(peekTok.getType() == ACYCLIC)
+                parser.discard()
+                peekTok = parser.peek()
+                if(peekTok.getType() != FUN)
+                    unexpectedToken(parser)
+                    break
+                end
+                is_acyclic = true
+            end
+            fn = @function_parser.parse(parser)
+            if(is_acyclic)
+                fn.setAsAcyclic()
+            end
+            # functions in interfaces are always public
+            fn.setAsPublic()
+            @functions.append(fn)
+            peekTok = parser.peek()
         end
-        peekTok = parser.peek()
+        #peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
@@ -71,9 +90,9 @@ class UnittestParser
         parser.discard()
     end
 
-    def enforceUnittest(token)
-        if(token.getText().upcase != UNITTEST)
-            throw Exception.new("Did not enounter \"unittest\" keyword in file " + token.getFilename())
+    def enforceInterface(token)
+        if(token.getText().upcase != INTERFACE)
+            throw Exception.new("Did not enounter \"interface\" keyword in file " + token.getFilename())
         end
     end
 
@@ -112,14 +131,17 @@ class UnittestParser
     end
 
     def reset()
-        @statements = Array.new()
-        @test_name = nil
+        @functions = Array.new()
+        @function_name = nil
+        @arguments = Array.new()
+        @return_type = nil
     end
 end
 
-class UnittestStatement
-    def initialize(name, statements)
-        @test_name = name
-        @statements = statements
+
+class InterfaceStatement
+    def initialize(name, functions)
+        @name = name
+        @functions = functions
     end
 end
