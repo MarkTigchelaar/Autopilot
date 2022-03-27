@@ -33,64 +33,89 @@ def main
     json = JSON.parse(jsonfile.read())
     jsonfile.close()
     tracker = ProgressTracker.new()
+    tokenizer = Scanner.new()
 
     for test in json
+        tokenizer.reset()
         tests = get_tests_from_file(test["test_manifest_file"])
         case test['general_component']
         when "scanner"
             next
             tests.each do |test_case|
                 call_scanner_tests(test_case, failurelog, tracker)
+                
             end
         when "expparser"
             next
+            name = "expression"
+            expparser = ExpressionParser.new()
+            expparser.loadTokenizer(Scanner.new())
             tests.each do |test_case|
-                call_expparser_tests(test_case, failurelog, tracker)
+                expparser.loadFile(test_case["file"])
+                expparser.parseFile()
+                #call_expparser_tests(test_case, failurelog, tracker)
+                call_parser_component_tests(test_case, failurelog, tracker, expparser, name)
             end
         when "moduleparser"
-            next
+            m = ModuleParser.new
             tests.each do |test_case|
-                call_moduleparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(m, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "module")
             end
         when "importparser"
-            next
+            i = ImportParser.new
             tests.each do |test_case|
-                call_importparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(i, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "import")
             end
         when "defineparser"
-            next
+            de = DefineParser.new
             tests.each do |test_case|
-                call_defineparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(de, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "define")
             end
         when "enumparser"
-            next
+            e = EnumParser.new
             tests.each do |test_case|
-                call_enumparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(e, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "enum")
             end
         when "errorparser"
+            e = ErrorParser.new
             tests.each do |test_case|
-                call_errorparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(e, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "error")
             end
         when "unionparser"
+            u = UnionParser.new
             tests.each do |test_case|
-                call_unionparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(u, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "union")
             end
 
         when "unittestparser"
+            u = UnittestParser.new(DummyStatementParser.new())
             tests.each do |test_case|
-                call_unittestparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(u, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "unit test")
             end
         when "functionparser"
+            f = FunctionParser.new(DummyStatementParser.new())
             tests.each do |test_case|
-                call_functionparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(f, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "function")
             end
         when "interfaceparser"
+            i = InterfaceParser.new(FunctionParser.new(DummyStatementParser.new()))
             tests.each do |test_case|
-                call_interfaceparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(i, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "interface")
             end
         when "structparser"
+            s = StructParser.new(FunctionParser.new(DummyStatementParser.new()))
             tests.each do |test_case|
-                call_structparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(s, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "struct")
             end
         when "returnparser"
             tests.each do |test_case|
@@ -158,88 +183,6 @@ def call_expparser_tests(test_case, failurelog, tracker)
     puts "Done test for expression parser\n"
 end
 
-
-def call_moduleparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(ModuleParser.new)
-    puts "\nTesting module parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for module parser"
-end
-
-
-def call_importparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(ImportParser.new)
-    puts "\nTesting import parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for import parser"
-end
-
-def call_defineparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(DefineParser.new)
-    puts "\nTesting define parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for define parser"
-end
-
-def call_enumparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(EnumParser.new)
-    puts "\nTesting enum parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for enum parser"
-end
-
-def call_errorparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(ErrorParser.new)
-    puts "\nTesting error parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for error parser"
-end
-
-def call_unionparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(UnionParser.new)
-    puts "\nTesting union parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for union parser"
-end
-
-def call_unittestparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(UnittestParser.new(DummyStatementParser.new()))
-    puts "\nTesting unit test parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for unit test parser"
-end
-
-def call_functionparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(FunctionParser.new(DummyStatementParser.new()))
-    puts "\nTesting function parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for function parser"
-end
-
-def call_interfaceparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(InterfaceParser.new(FunctionParser.new(DummyStatementParser.new())))
-    puts "\nTesting interface parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for interface parser"
-end
-
-def call_structparser_tests(test_case, failurelog, tracker)
-    dummy = DummyParser.new(StructParser.new(FunctionParser.new(DummyStatementParser.new())))
-    puts "\nTesting struct parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for struct parser"
-end
-
 def call_returnparser_tests(test_case, failurelog, tracker)
     tokenizer = Scanner.new()
     expParser = ExpressionParser.new()
@@ -247,11 +190,18 @@ def call_returnparser_tests(test_case, failurelog, tracker)
     dummy = DummyParser.new(ReturnParser.new(expParser))
 
 
-    
-    puts "\nTesting struct parser, file #{test_case["file"]} ... "
+
+    puts "\nTesting return parser, file #{test_case["file"]} ... "
     dummy.parse(test_case["file"])
     generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for struct parser"
+    puts "Done test for return parser"
+end
+
+def call_parser_component_tests(test_case, failurelog, tracker, parser, name)
+    puts "\nTesting #{name} parser, file #{test_case["file"]} ... "
+    parser.parse(test_case["file"])
+    generic_parser_tests(parser, test_case, failurelog, tracker)
+    puts "Done test for #{name} parser"
 end
 
 main

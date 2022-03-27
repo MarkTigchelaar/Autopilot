@@ -18,6 +18,14 @@ class Scanner
         @peekToken = nil
     end
 
+    def reset()
+        @tokens = Array.new()
+        @peekToken = nil
+        @filename = nil
+        @line = 1
+        @charScanner.reset()
+    end
+
     def loadSource(filename)
         @charScanner.loadSource(filename)
         @filename = filename
@@ -376,6 +384,13 @@ class FileScanner
         @SliceIdx = 1
     end
 
+    def reset()
+        @source = nil
+        @current = 1
+        @filesize = nil
+        @SliceIdx = 1
+    end
+
     def getFilesize
         return @filesize
     end
@@ -397,6 +412,7 @@ class FileScanner
 
     def closeSource
         @source.close()
+        reset()
     end
 
     def readChar

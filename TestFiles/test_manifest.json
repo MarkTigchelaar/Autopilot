@@ -58,5 +58,9 @@
     {
         "general_component" : "structparser",
         "test_manifest_file" : "../TestFiles/ParserTests/structparser_manual_tests.json"
+    },
+    {
+        "general_component" : "returnparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/returnparser_manual_tests.json"
     }
 ]

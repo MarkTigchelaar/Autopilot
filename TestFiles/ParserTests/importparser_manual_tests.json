@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/ImportTests/test2.txt",
                 "tokenLiteral" : "9",
                 "lineNumber" : "1",
-                "message" : "Invalid name for imported item 9."
+                "message" : "Invalid name for item 9."
             }
         ]
     },
@@ -150,7 +150,7 @@
                 "file" : "../Testfiles/ParserTests/ImportTests/test13.txt",
                 "tokenLiteral" : "import",
                 "lineNumber" : "1",
-                "message" : "Invalid name for imported item import."
+                "message" : "Invalid name for item import."
             }
         ]
     },
@@ -163,7 +163,7 @@
                 "file" : "../Testfiles/ParserTests/ImportTests/test14.txt",
                 "tokenLiteral" : "import",
                 "lineNumber" : "1",
-                "message" : "Invalid name for imported item import."
+                "message" : "Invalid name for item import."
             }
         ]
     },
@@ -176,7 +176,7 @@
                 "file" : "../Testfiles/ParserTests/ImportTests/test15.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Invalid name for imported item struct."
+                "message" : "Invalid name for item struct."
             }
         ]
     },
