@@ -7,7 +7,6 @@ def getkeywords
         "module" => MODULE,
         "import" => IMPORT,
         "from" => FROM,
-        #"use" => USE,
         "define" => DEFINE,
         "for" => FOR,
         "loop" => LOOP,

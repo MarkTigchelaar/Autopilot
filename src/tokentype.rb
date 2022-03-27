@@ -33,7 +33,6 @@ SLASH_EQUAL = "SLASH_EQUAL"
 CARROT_EQUAL = "CARROT_EQUAL"
 MOD_EQUAL = "MOD_EQUAL"
 
-#HASH = "HASH"
 
 # Literals.
 IDENTIFIER = "IDENTIFIER"
@@ -43,9 +42,7 @@ IDENTIFIER = "IDENTIFIER"
 LIBRARY = "library".upcase
 MODULE = "module".upcase
 IMPORT = "import".upcase
-#USE = "use".upcase
 FROM = "from".upcase
-#ALIAS = "alias".upcase
 DEFINE = "define".upcase
 FOR = "for".upcase
 LOOP = "loop".upcase
@@ -72,14 +69,10 @@ FUN = "fun".upcase
 #PRC = "prc".upcase
 LAMBDA  = "lambda".upcase
 INLINE = "inline".upcase
-#CLASS = "class".upcase
-#SUPER = "super".upcase
+
 INTERFACE = "interface".upcase
 USES = "uses".upcase
-#TRAIT = "trait".upcase
-#ABSTRACT = "abstract".upcase
-#EXTENDS = "extends".upcase
-#IMPL = "impl".upcase
+
 ENUM = "enum".upcase
 STRUCT = "struct".upcase
 UNION = "union".upcase
