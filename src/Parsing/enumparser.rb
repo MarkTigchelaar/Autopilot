@@ -24,6 +24,7 @@ class EnumParser
             enumNameStep(parser)
         else
             unexpectedToken(parser)
+            reset()
         end
         e = enumStatement()
         reset()
@@ -44,6 +45,7 @@ class EnumParser
             openParenForEnumStep(parser)
         else
             unexpectedToken(parser)
+            reset()
         end
     end
 
@@ -57,6 +59,7 @@ class EnumParser
             itemListStep(parser)
         else
             invalidItemName(parser)
+            reset()
         end
     end
 
@@ -71,8 +74,10 @@ class EnumParser
             enumTypeStep(parser)
         elsif(peekTok.getType() == RIGHT_PAREN)
             unexpectedToken(parser)
+            reset()
         else
             invalidItemName(parser)
+            reset()
         end
     end
 
@@ -88,6 +93,7 @@ class EnumParser
             closeParenForEnumStep(parser)
         else
             unexpectedToken(parser)
+            reset()
         end
     end
 
@@ -100,6 +106,7 @@ class EnumParser
             isStep(parser)
         else
             unexpectedToken(parser)
+            reset()
         end
     end
 
@@ -124,6 +131,7 @@ class EnumParser
             endStep(parser)
         else
             invalidItemName(parser)
+            reset()
         end
     end
 
@@ -137,6 +145,7 @@ class EnumParser
             itemListStep(parser)
         else
             unexpectedToken(parser)
+            reset()
         end
     end
 
@@ -157,6 +166,7 @@ class EnumParser
         else
             #puts "unexpected token: #{peekTok.getText()}"
             unexpectedToken(parser)
+            reset()
         end
     end
 
@@ -179,6 +189,7 @@ class EnumParser
         else
             puts "Skipped end token"
             unexpectedToken(parser)
+            reset()
         end
     end
 
@@ -208,6 +219,7 @@ class EnumParser
             else
                #puts "in nested else"
                 unexpectedToken(parser)
+                reset()
             end
             parser.discard()
             return Token.new(current.getType(), txt, txt, current.getLine(), current.getFilename())
@@ -216,10 +228,6 @@ class EnumParser
 
     def endStep(parser)
         parser.discard()
-        #peekTok = parser.peek()
-        #if(isEOF(peekTok))
-        #    eofReached(parser)
-        #end
     end
 
     def addToItemList()
@@ -229,20 +237,6 @@ class EnumParser
                 @currentItemLiteralToken
             )
         )
-
-=begin
-       #puts "Item information:"
-        if @currentItemName != nil
-           #puts "  name: #{@currentItemName.getText()}"
-        else
-           #puts "  name is nil"
-        end
-        if @currentItemLiteralToken != nil
-           #puts "  literal: #{@currentItemLiteralToken.getText()}"
-        else
-           #puts "  literal is nil"
-        end
-=end
         resetCurrentItems()
     end
 
@@ -256,46 +250,6 @@ class EnumParser
         @generaltype = nil
         @itemList = Array.new
         resetCurrentItems()
-    end
-
-    def invalidItemName(parser)
-        msg = "Invalid name for item #{parser.peek().getText()}."
-        addError(parser, msg)
-    end
-
-    def unexpectedToken(parser)
-        msg = "Unexpected token #{parser.peek().getText()}."
-        addError(parser, msg)
-    end
-
-    def isEOF(token)
-        return token.getType() == EOF
-    end
-
-    def isValidIdentifier(token)
-        if(isKeyword(token))
-            return false
-        end
-        return isIdentifier(token)
-    end
-
-    def isKeyword(token)
-        if(@keywords.has_key?(token.getText()))
-            return true
-        end
-        return false
-    end
-
-    def addError(parser, message)
-       #puts "ADDING ERROR"
-        parser.addError(parser.nextToken(), message)
-        parser.setToSync()
-        reset()
-    end
-
-    def eofReached(parser)
-        msg = "End of file reached."
-        addError(parser, msg)
     end
 
     def enumStatement()

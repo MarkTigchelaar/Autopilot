@@ -93,44 +93,6 @@ class ErrorParser
             throw Exception.new("Did not enounter \"error\" keyword in file " + token.getFilename())
         end
     end
-
-    def isEOF(token)
-        return token.getType() == EOF
-    end
-
-    def addError(parser, message)
-        #puts "ADDING ERROR"
-         parser.addError(parser.nextToken(), message)
-         parser.setToSync()
-     end
- 
-     def eofReached(parser)
-         msg = "End of file reached."
-         addError(parser, msg)
-     end
-
-     def unexpectedToken(parser)
-        msg = "Unexpected token #{parser.peek().getText()}."
-        addError(parser, msg)
-    end
-
-    def isEOF(token)
-        return token.getType() == EOF
-    end
-
-    def isValidIdentifier(token)
-        if(isKeyword(token))
-            return false
-        end
-        return isIdentifier(token)
-    end
-
-    def isKeyword(token)
-        if(@keywords.has_key?(token.getText()))
-            return true
-        end
-        return false
-    end
 end
 
 class ErrorStatement

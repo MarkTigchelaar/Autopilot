@@ -12,6 +12,7 @@ require './Parsing/unittestparser.rb'
 require './Parsing/functionparser.rb'
 require './Parsing/interfaceparser.rb'
 require './Parsing/structparser.rb'
+require './Parsing/StatementParsers/returnparser.rb'
 #require_relative './keywords.rb'
 
 
@@ -90,6 +91,10 @@ def main
         when "structparser"
             tests.each do |test_case|
                 call_structparser_tests(test_case, failurelog, tracker)
+            end
+        when "returnparser"
+            tests.each do |test_case|
+                call_returnparser_tests(test_case, failurelog, tracker)
             end
         else
             puts "component #{general_component} not recognized"
@@ -229,6 +234,20 @@ end
 
 def call_structparser_tests(test_case, failurelog, tracker)
     dummy = DummyParser.new(StructParser.new(FunctionParser.new(DummyStatementParser.new())))
+    puts "\nTesting struct parser, file #{test_case["file"]} ... "
+    dummy.parse(test_case["file"])
+    generic_parser_tests(dummy, test_case, failurelog, tracker)
+    puts "Done test for struct parser"
+end
+
+def call_returnparser_tests(test_case, failurelog, tracker)
+    tokenizer = Scanner.new()
+    expParser = ExpressionParser.new()
+    expParser.loadTokenizer(tokenizer)
+    dummy = DummyParser.new(ReturnParser.new(expParser))
+
+
+    
     puts "\nTesting struct parser, file #{test_case["file"]} ... "
     dummy.parse(test_case["file"])
     generic_parser_tests(dummy, test_case, failurelog, tracker)

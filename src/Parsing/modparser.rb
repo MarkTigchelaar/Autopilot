@@ -12,8 +12,7 @@ class ModuleParser
         parser.discard()
         msg = "Module names cannot start with numbers, or have non alphanumeric characters."
         if(!isAlphaNumericWord(parser.peek()))
-            parser.addError(parser.nextToken(), msg)
-            parser.setToSync()
+            addError(parser, msg)
             puts "ADDING ERROR"
             return nil
         end

@@ -135,40 +135,6 @@ class ImportParser
         addError(parser, msg)
     end
 
-    def invalidItemName(parser)
-        msg = "Invalid name for imported item #{parser.peek().getText()}."
-        addError(parser, msg)
-    end
-
-    def unexpectedToken(parser)
-        msg = "Unexpected token #{parser.peek().getText()}."
-        addError(parser, msg)
-    end
-
-    def isEOF(token)
-        return token.getType() == EOF
-    end
-
-    def isValidIdentifier(token)
-        if(isKeyword(token))
-            return false
-        end
-        return isIdentifier(token)
-    end
-
-    def isKeyword(token)
-        if(@keywords.has_key?(token.getText()))
-            return true
-        end
-        return false
-    end
-
-    def addError(parser, message)
-        parser.addError(parser.nextToken(), message)
-        parser.setToSync()
-        reset()
-    end
-
     def reset()
         @moduleName = ""
         @itemList = Array.new
