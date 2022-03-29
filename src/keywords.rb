@@ -15,6 +15,7 @@ def getkeywords
         "break" => BREAK,
         "if" => IF,
         "else" => ELSE,
+        "unless" => UNLESS,
         "case" => CASE,
         "switch" => SWITCH,
         "return" => RETURN,
@@ -53,6 +54,9 @@ def getkeywords
         "xor" => XOR,
         "nor" => NOR,
         "not" => NOT,
+
+        "var" => VAR,
+        "let" => LET,
         "int" => INT,
         "long" => LONG,
         "float" => FLOAT,
@@ -74,34 +78,3 @@ def getkeywords
     }
     return keywords
 end
-
-
-def is_statement_keyword(token)
-    return case token.getType()
-    when IF
-        true
-    when ELSE
-        true
-    when LOOP
-        true
-    when FOR
-        true
-    when WHILE
-        true
-    when LET
-        true
-    when VAR
-        true
-    when BREAK
-        true
-    when CONTINUE
-        true
-    when RETURN
-        true
-    when SWITCH
-        true
-    else
-        false
-    end
-end
-

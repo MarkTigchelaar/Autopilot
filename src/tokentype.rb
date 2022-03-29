@@ -54,6 +54,7 @@ ERROR = "error".upcase
 
 IF = "if".upcase
 ELSE = "else".upcase
+UNLESS = "unless".upcase
 CASE = "case".upcase
 SWITCH = "switch".upcase
 
@@ -96,6 +97,8 @@ XOR = "xor".upcase
 NOR = "nor".upcase
 NOT = "not".upcase
 
+LET = "let".upcase
+VAR = "var".upcase
 INT = "int".upcase
 LONG = "long".upcase
 FLOAT = "float".upcase

@@ -13,6 +13,14 @@ require './Parsing/functionparser.rb'
 require './Parsing/interfaceparser.rb'
 require './Parsing/structparser.rb'
 require './Parsing/StatementParsers/returnparser.rb'
+require './Parsing/StatementParsers/continueparser.rb'
+require './Parsing/StatementParsers/breakparser.rb'
+require './Parsing/StatementParsers/loopparser.rb'
+require './Parsing/StatementParsers/switchparser.rb'
+require './Parsing/StatementParsers/ifparser.rb'
+require './Parsing/StatementParsers/elseparser.rb'
+require './Parsing/StatementParsers/unlessparser.rb'
+require './Parsing/StatementParsers/assignparser.rb'
 #require_relative './keywords.rb'
 
 
@@ -118,8 +126,63 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "struct")
             end
         when "returnparser"
+            expParser = ExpressionParser.new()
+            expParser.loadTokenizer(tokenizer)
+            r = ReturnParser.new(expParser)
             tests.each do |test_case|
-                call_returnparser_tests(test_case, failurelog, tracker)
+                d = DummyParser.new(r, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "return")
+            end
+        when "continueparser"
+            c = ContinueParser.new
+            tests.each do |test_case|
+                d = DummyParser.new(c, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "continue")
+            end
+        when "breakparser"
+            b = BreakParser.new
+            tests.each do |test_case|
+                d = DummyParser.new(b, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "break")
+            end
+        when "loopparser"
+            l = LoopParser.new(DummyStatementParser.new)
+            tests.each do |test_case|
+                d = DummyParser.new(l, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "loop")
+            end
+        when "switchparser"
+            s = SwitchParser.new(DummyStatementParser.new)
+            tests.each do |test_case|
+                d = DummyParser.new(s, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "switch")
+            end
+        when "ifparser"
+            i = IfParser.new(ExpressionParser.new, DummyStatementParser.new)
+            tests.each do |test_case|
+                d = DummyParser.new(i, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "if")
+            end
+        when "elseparser"
+            ep = ExpressionParser.new
+            sp = DummyStatementParser.new
+            ip = IfParser.new(ep, sp)
+            i = ElseParser.new(ep, sp, ip)
+            tests.each do |test_case|
+                d = DummyParser.new(i, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "else")
+            end
+        when "unlessparser"
+            u = UnlessParser.new(ExpressionParser.new, DummyStatementParser.new)
+            tests.each do |test_case|
+                d = DummyParser.new(u, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "unless")
+            end
+        when "assignparser"
+            a = AssignParser.new(ExpressionParser.new)
+            tests.each do |test_case|
+                d = DummyParser.new(a, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "assign")
             end
         else
             puts "component #{general_component} not recognized"
@@ -158,13 +221,12 @@ class ProgressTracker
     def noFailures
         return @failed == 0
     end
-
 end
 
 
 def call_scanner_tests(test, failurelog, tracker)
     scanner = Scanner.new()
-    puts "Testing Scanner, file #{test_case["file"]} ..."
+    puts "Testing Scanner, file #{test["file"]} ..."
     scanner_tests(scanner, test, failurelog, tracker)
     puts "Done test for Scanner\n"
 end
@@ -181,20 +243,6 @@ def call_expparser_tests(test_case, failurelog, tracker)
 
     generic_parser_tests(expParser, test_case, failurelog, tracker)
     puts "Done test for expression parser\n"
-end
-
-def call_returnparser_tests(test_case, failurelog, tracker)
-    tokenizer = Scanner.new()
-    expParser = ExpressionParser.new()
-    expParser.loadTokenizer(tokenizer)
-    dummy = DummyParser.new(ReturnParser.new(expParser))
-
-
-
-    puts "\nTesting return parser, file #{test_case["file"]} ... "
-    dummy.parse(test_case["file"])
-    generic_parser_tests(dummy, test_case, failurelog, tracker)
-    puts "Done test for return parser"
 end
 
 def call_parser_component_tests(test_case, failurelog, tracker, parser, name)

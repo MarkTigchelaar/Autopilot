@@ -210,5 +210,12 @@
         "expected_literal" : ["a", "b"],
         "line_numbers" : ["1", "1"],
         "token_types" : ["IDENTIFIER", "IDENTIFIER"]
+    },
+    {
+        "component" : "scanner",
+        "file" : "../Testfiles/ScannerTests/test16.txt",
+        "expected_literal" : ["'a'"],
+        "line_numbers" : ["1"],
+        "token_types" : ["CHAR"]
     }
 ]

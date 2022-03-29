@@ -10,15 +10,22 @@ class ReturnParser
 
     def parse(parser)
         reset()
+        @expression_parser.loadTokenizer(parser)
         token = parser.nextToken()
         enforceReturn(token)
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
+        else
+            parseExpression(parser)
         end
         r = ReturnStatement.new(@return_expression)
         reset()
         return r
+    end
+
+    def parseExpression(parser)
+        @return_expression = @expression_parser.parse_expression()
     end
 
     def enforceReturn(token)

@@ -111,6 +111,54 @@ def isPrimitiveType(token)
     end
 end
 
+def is_interal_statement_keyword(token)
+    return case token.getType()
+    when IF
+        true
+    when ELSE
+        true
+    when LOOP
+        true
+    when FOR
+        true
+    when WHILE
+        true
+    when LET
+        true
+    when VAR
+        true
+    when BREAK
+        true
+    when CONTINUE
+        true
+    when RETURN
+        true
+    when SWITCH
+        true
+    else
+        false
+    end
+end
+
+def isOtherValidType(peekTok)
+    case peekTok.getType()
+    when INT
+        true
+    when LONG
+        true
+    when FLOAT
+        true
+    when DOUBLE
+        true
+    when CHAR
+        true
+    when STRING
+        true
+    else
+        false
+    end
+end
+
 def synchronize(parser)
     while(!parser.isAtEnd())
         literal = parser.peek().getType()

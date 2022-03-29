@@ -9,7 +9,7 @@ class Scanner
         @line = 1
         @filename = nil
         @keywords = getkeywords()
-        @specialIdChars = ["@", "$", "_" , "~", "#", "&", ";"]
+        @specialIdChars = ["@", "$", "_" , "~", "#", "&", ";", "?", "!"]
         if(charArrayScanner != nil)
             @charScanner = charArrayScanner
         else
@@ -184,6 +184,8 @@ class Scanner
             end
         when " ", "\t"
             @charScanner.shiftRight()
+        when "\'"
+            char()
         when "\""
             string()
         when "\r", "\n"
@@ -343,6 +345,20 @@ class Scanner
         if(comment_sections > 0)
             print "line #{(@line).to_s} Unterminated block comment. #{comment_sections}"
         end
+    end
+
+    def char
+        if(peek() == "\'")
+            scanner_error("Empty character.")
+        end
+        @charScanner.shiftRight()
+        if(peek() != "\'")
+            scanner_error("Unterminated character.")
+        end
+        @charScanner.shiftRight()
+
+        ch = @charScanner.getSlice()
+        addToken(CHAR, ch)
     end
 
     def string

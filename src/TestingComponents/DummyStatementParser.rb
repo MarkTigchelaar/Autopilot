@@ -1,11 +1,11 @@
-require_relative '../keywords.rb'
+require_relative '../Parsing/parserutilities.rb'
 
 class DummyStatementParser
     def parse(parser)
         current = parser.nextToken()
         if(isEOF(current))
             eofReached(parser)
-        elsif(is_statement_keyword(current))
+        elsif(is_interal_statement_keyword(current))
             # actual parser will be able to handle print(), thing.method() etc.
             return DummyStatement.new(current)
         else

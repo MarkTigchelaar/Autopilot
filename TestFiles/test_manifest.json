@@ -62,5 +62,37 @@
     {
         "general_component" : "returnparser",
         "test_manifest_file" : "../TestFiles/ParserTests/returnparser_manual_tests.json"
+    },
+    {
+        "general_component" : "continueparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/continueparser_manual_tests.json"
+    },
+    {
+        "general_component" : "breakparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/breakparser_manual_tests.json"
+    },
+    {
+        "general_component" : "loopparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/loopparser_manual_tests.json"
+    },
+    {
+        "general_component" : "switchparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/switchparser_manual_tests.json"
+    },
+    {
+        "general_component" : "ifparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/ifparser_manual_tests.json"
+    },
+    {
+        "general_component" : "elseparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/elseparser_manual_tests.json"
+    },
+    {
+        "general_component" : "unlessparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/unlessparser_manual_tests.json"
+    },
+    {
+        "general_component" : "assignparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/assignparser_manual_tests.json"
     }
 ]
