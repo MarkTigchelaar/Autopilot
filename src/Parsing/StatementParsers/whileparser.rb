@@ -12,7 +12,6 @@ class WhileParser
         @statements = Array.new
     end
 
-
     def parse(parser)
         reset()
         token = parser.nextToken()
@@ -20,8 +19,10 @@ class WhileParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        else
+        elsif(isValidIdentifier(peekTok))
             parseExpression(parser)
+        else
+            unexpectedToken(parser)
         end
         w = WhileStatement.new(@expression_ast, @collection_ast, @statements)
         reset()

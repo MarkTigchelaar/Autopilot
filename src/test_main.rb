@@ -22,7 +22,7 @@ require './Parsing/StatementParsers/elseparser.rb'
 require './Parsing/StatementParsers/unlessparser.rb'
 require './Parsing/StatementParsers/assignparser.rb'
 require './Parsing/StatementParsers/whileparser.rb'
-#require_relative './keywords.rb'
+require './Parsing/StatementParsers/forparser.rb'
 
 
 
@@ -189,7 +189,13 @@ def main
             w = WhileParser.new(ExpressionParser.new, DummyStatementParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(w, tokenizer)
-                call_parser_component_tests(test_case, failurelog, tracker, d, "assign")
+                call_parser_component_tests(test_case, failurelog, tracker, d, "while")
+            end
+        when "forparser"
+            f = ForParser.new(ExpressionParser.new, DummyStatementParser.new)
+            tests.each do |test_case|
+                d = DummyParser.new(f, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "while")
             end
         else
             puts "component #{general_component} not recognized"

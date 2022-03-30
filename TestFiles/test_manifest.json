@@ -98,5 +98,9 @@
     {
         "general_component" : "whileparser",
         "test_manifest_file" : "../TestFiles/ParserTests/whileparser_manual_tests.json"
+    },
+    {
+        "general_component" : "forparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/forparser_manual_tests.json"
     }
 ]
