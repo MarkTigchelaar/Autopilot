@@ -119,6 +119,8 @@ def is_interal_statement_keyword(token)
         true
     when ELSE
         true
+    when UNLESS
+        true
     when LOOP
         true
     when FOR
@@ -139,6 +141,40 @@ def is_interal_statement_keyword(token)
         true
     else
         false
+    end
+end
+
+# Send statement parser into here to make it easier to maintain
+# in one spot, instead of similar function here, and method in a different file.
+def parse_internal_statement(statement_parser, main_parser)
+    token = main_parser.peek()
+    return case token.getType()
+    when IF
+        statement_parser.parseIf(main_parser)
+    when ELSE
+        statement_parser.parseElse(main_parser)
+    when UNLESS
+        statement_parser.parseUnless(main_parser)
+    when LOOP
+        statement_parser.parseLoop(main_parser)
+    when FOR
+        statement_parser.parseFor(main_parser)
+    when WHILE
+        statement_parser.parseWhile(main_parser)
+    when LET
+        statement_parser.parseLet(main_parser)
+    when VAR
+        statement_parser.parseVar(main_parser)
+    when BREAK
+        statement_parser.parseBreak(main_parser)
+    when CONTINUE
+        statement_parser.parseContinue(main_parser)
+    when RETURN
+        statement_parser.parseReturn(main_parser)
+    when SWITCH
+        statement_parser.parseSwitch(main_parser)
+    else
+        nil
     end
 end
 

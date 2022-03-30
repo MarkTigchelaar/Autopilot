@@ -77,5 +77,15 @@ class AssignmentStatement
     def initialize(name, expression_ast)
         @name = name
         @expression_ast = expression_ast
+        @let = false
+        @var = false
+    end
+
+    def usesLet
+        @let = true
+    end
+
+    def usesVar
+        @var = true
     end
 end
