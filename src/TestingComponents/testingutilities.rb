@@ -48,7 +48,7 @@ def error_test(test_case, parser, failurelog, tracker)
         printErrors(reportedErrors)
         return
     else
-        puts "NUMBER OF ERRORS MATCHES EXPECED NUMBER OF ERRORS #{numActualErrors}, #{numExpErrors}"
+        puts "NUMBER OF ERRORS MATCHES EXPECTED NUMBER OF ERRORS #{numActualErrors}, #{numExpErrors}"
     end
     for i in 0 .. numActualErrors-1 do
         testErr = test_case["errors"][i]

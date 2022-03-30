@@ -102,5 +102,9 @@
     {
         "general_component" : "forparser",
         "test_manifest_file" : "../TestFiles/ParserTests/forparser_manual_tests.json"
+    },
+    {
+        "general_component" : "reassignorcallparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/reassignorcallparser_manual_tests.json"
     }
 ]

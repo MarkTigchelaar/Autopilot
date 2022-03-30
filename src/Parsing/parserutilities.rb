@@ -1,3 +1,4 @@
+require_relative '../keywords.rb'
 
 def isIdentifier(token)
     specialIdChars = ["@", "$", "_" , "~", "#", "&", ";"]
@@ -74,7 +75,8 @@ def isValidIdentifier(token)
 end
 
 def isKeyword(token)
-    if(@keywords.has_key?(token.getText()))
+    keywords = getkeywords()
+    if(keywords.has_key?(token.getText()))
         return true
     end
     return false

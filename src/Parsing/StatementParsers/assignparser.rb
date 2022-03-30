@@ -54,15 +54,9 @@ class AssignParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(peekTok.getType() == ENDSCOPE)
-            endStep(parser)
-        else
+        elsif(!is_interal_statement_keyword(peekTok) and !isValidIdentifier(peekTok))
             unexpectedToken(parser)
         end
-    end
-
-    def endStep(parser)
-        parser.discard()
     end
 
     def enforceLetOrVar(token)

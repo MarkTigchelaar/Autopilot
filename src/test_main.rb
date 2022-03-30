@@ -23,8 +23,8 @@ require './Parsing/StatementParsers/unlessparser.rb'
 require './Parsing/StatementParsers/assignparser.rb'
 require './Parsing/StatementParsers/whileparser.rb'
 require './Parsing/StatementParsers/forparser.rb'
-
-
+require './Parsing/StatementParsers/forparser.rb'
+require './Parsing/StatementParsers/reassignorcallparser.rb'
 
 require './TestingComponents/testingutilities.rb'
 require './TestingComponents/DummyParser.rb'
@@ -195,7 +195,13 @@ def main
             f = ForParser.new(ExpressionParser.new, DummyStatementParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(f, tokenizer)
-                call_parser_component_tests(test_case, failurelog, tracker, d, "while")
+                call_parser_component_tests(test_case, failurelog, tracker, d, "for")
+            end
+        when "reassignorcallparser"
+            r = ReassignOrCallParser.new(ExpressionParser.new)
+            tests.each do |test_case|
+                d = DummyParser.new(r, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "reassign or call")
             end
         else
             puts "component #{general_component} not recognized"
