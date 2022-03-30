@@ -94,5 +94,9 @@
     {
         "general_component" : "assignparser",
         "test_manifest_file" : "../TestFiles/ParserTests/assignparser_manual_tests.json"
+    },
+    {
+        "general_component" : "whileparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/whileparser_manual_tests.json"
     }
 ]

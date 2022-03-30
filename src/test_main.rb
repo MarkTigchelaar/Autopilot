@@ -21,6 +21,7 @@ require './Parsing/StatementParsers/ifparser.rb'
 require './Parsing/StatementParsers/elseparser.rb'
 require './Parsing/StatementParsers/unlessparser.rb'
 require './Parsing/StatementParsers/assignparser.rb'
+require './Parsing/StatementParsers/whileparser.rb'
 #require_relative './keywords.rb'
 
 
@@ -182,6 +183,12 @@ def main
             a = AssignParser.new(ExpressionParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(a, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "assign")
+            end
+        when "whileparser"
+            w = WhileParser.new(ExpressionParser.new, DummyStatementParser.new)
+            tests.each do |test_case|
+                d = DummyParser.new(w, tokenizer)
                 call_parser_component_tests(test_case, failurelog, tracker, d, "assign")
             end
         else
