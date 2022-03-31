@@ -109,5 +109,15 @@ class InterfaceStatement
     def initialize(name, functions)
         @name = name
         @functions = functions
+        @is_acyclic = false
+        @is_public = false
+    end
+
+    def setAsAcyclic()
+        @is_acyclic = true
+    end
+
+    def setAsPublic()
+        @is_public = true
     end
 end

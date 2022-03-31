@@ -222,37 +222,15 @@ def synchronize(parser)
             return
         elsif(literal == FUN)
             return
-        elsif(literal == PRC)
-            return
-        elsif(literal == LAMBDA)
-            return
-        elsif(literal == CLASS)
-            return
+        #elsif(literal == PRC)
+            #return
         elsif(literal == INTERFACE)
             return
-        elsif(literal == ABSTRACT)
-            return
         elsif(literal == ENUM)
-            return
-        elsif(literal == ASSERT)
             return
         elsif(literal == DEBUG)
             return
         elsif(literal == ACYCLIC)
-            return
-        elsif(literal == INT)
-            return
-        elsif(literal == LONG)
-            return
-        elsif(literal == FLOAT)
-            return
-        elsif(literal == DOUBLE)
-            return
-        elsif(literal == CHAR)
-            return
-        elsif(literal == STRING)
-            return
-        elsif(literal == BOOL)
             return
         end
         parser.discard()

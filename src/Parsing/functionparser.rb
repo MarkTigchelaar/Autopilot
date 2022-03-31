@@ -234,6 +234,7 @@ class FunctionStatement
         @statements = statements
         @is_acyclic = false
         @is_public = false
+        @is_inline = false
     end
 
     def setAsAcyclic()
@@ -242,5 +243,9 @@ class FunctionStatement
 
     def setAsPublic()
         @is_public = true
+    end
+
+    def setAsInline()
+        @is_inline = true
     end
 end
