@@ -2,7 +2,7 @@
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/ContinueTests/test1.txt",
         "astString" : "continue",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "CONTINUE",
         "errors" : null
     }
 ]

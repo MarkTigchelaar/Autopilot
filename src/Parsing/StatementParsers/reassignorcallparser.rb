@@ -28,9 +28,11 @@ class ReassignOrCallParser
             @var_name = name
             dotStep(parser)
         else
+            #puts "Unexpected token #1"
             unexpectedToken(parser)
         end
-        r = ReassignmentOrCallStatement.new(@name, @expression_ast, @functions)
+        #puts "after call Func step"
+        r = ReassignmentOrCallStatement.new(@var_name, @expression_ast, @functions)
         reset()
         return r
     end
@@ -39,19 +41,22 @@ class ReassignOrCallParser
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
+            #puts "                       END OF FILE HERE!!!!"
             eofReached(parser)
         else
-            parseExpression(parser)
+            parseAssignExpression(parser)
         end
     end
 
-    def parseExpression(parser)
+    def parseAssignExpression(parser)
         @expression_parser.loadTokenizer(parser)
         @expression_ast = @expression_parser.parse_expression()
         peekTok = parser.peek()
         if(isEOF(peekTok))
+            #puts "     HERE"
             eofReached(parser)
         elsif(!is_interal_statement_keyword(peekTok) and !isValidIdentifier(peekTok))
+            #puts "Unexpected token #2"
             unexpectedToken(parser)
         end
     end
@@ -59,15 +64,20 @@ class ReassignOrCallParser
     def callFuncStep(parser, name)
         parser.discard()
         peekTok = parser.peek()
+        #puts "token: #{peekTok.getText()}"
         if(isEOF(peekTok))
+            #puts "Here?"
             eofReached(parser)
-        elsif(!isValidIdentifier(peekTok))
+        elsif(peekTok.getType() != RIGHT_PAREN and !isValidIdentifier(peekTok))
+            #puts "Unexpected token #3"
             unexpectedToken(parser)
+            return
         end
         args = Array.new
         @expression_parser.loadTokenizer(parser)
-        while(!isEOF(peekTok))
-            args.append(@expression_parser.parse_expression())
+        while(!isEOF(peekTok) and peekTok.getType() != RIGHT_PAREN)
+            ast = @expression_parser.parse_expression()
+            args.append(ast)
             peekTok = parser.peek()
             if(isEOF(peekTok))
                 eofReached(parser)
@@ -77,15 +87,19 @@ class ReassignOrCallParser
             elsif(peekTok.getType() == RIGHT_PAREN)
                 break
             else
+                #puts "Unexpected token #4"
                 unexpectedToken(parser)
+                return
             end
         end
         @functions.append(FuncCall.new(name, args))
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == RIGHT_PAREN)
+            #puts "token before call end step: #{peekTok.getText()}"
             callEndStep(parser)
         else
+            #puts "Unexpected token #5"
             unexpectedToken(parser)
         end
     end
@@ -96,15 +110,32 @@ class ReassignOrCallParser
         if(peekTok.getType() == DOT)
             dotStep(parser)
         end
+        #puts "token in call End Step: #{peekTok.getText()}"
     end
 
     def dotStep(parser)
         parser.discard()
         peekTok = parser.peek()
+        # name for "method call"
         if(isEOF(peekTok))
             eofReached(parser)
+        elsif(isValidIdentifier(peekTok))
+            funcNameStep(parser, peekTok)
         else
-            parseExpression(parser)
+            unexpectedToken(parser)
+        end
+    end
+
+    def funcNameStep(parser, name)
+        parser.discard()
+        peekTok = parser.peek()
+        # name for "method call"
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(peekTok.getType() == LEFT_PAREN)
+            callFuncStep(parser, name)
+        else
+            unexpectedToken(parser)
         end
     end
 
@@ -112,11 +143,12 @@ class ReassignOrCallParser
         @var_name = nil
         @expression_ast = nil
         @functions = Array.new
+        @expression_parser.reset()
     end
 
     def enforceIdentifier(token)
         if(!isValidIdentifier(token))
-            throw Exception.new("Did not enounter \"valid identifier\" in file " + token.getFilename())
+            throw Exception.new("Did not enounter \"valid identifier\" in file " + token.getFilename() + ", got #{token.getText()}")
         end
     end
 end
@@ -126,6 +158,27 @@ class FuncCall
         @name = name
         @args = args
     end
+
+    def _printLiteral(l)
+        #l = Array.new
+        l.append("fn:" + @name.getText())
+        for arg in @args
+            arg._printLiteral(l)
+        end
+        #"fn:#{@name}|args:#{l.each{|x| x}}"
+    end
+
+    def _printTokType(type_list)
+        type_list.append(@name.getType())
+        type_list.append(' ')
+        for arg in @args
+            type_list.append('|')
+            arg._printTokType(type_list)
+            
+            type_list.append(' ')
+        end
+
+    end
 end
 
 class ReassignmentOrCallStatement
@@ -133,5 +186,52 @@ class ReassignmentOrCallStatement
         @var_name = var_name
         @expression_ast = expression_ast
         @functions = functions
+    end
+
+    def _printTokType(type_list)
+        if(@var_name != nil)
+            type_list.append(@var_name.getType())
+        else
+            type_list.append("NONE")
+        end
+        
+        if(@expression_ast != nil)
+            type_list.append("|")
+            @expression_ast._printTokType(type_list)
+        end
+        #puts "length of loop: #{@functions.length()}"
+        for func in @functions
+            #puts "in loop"
+            type_list.append("|")
+            func._printTokType(type_list)
+        end
+    end
+
+    def _printLiteral()
+        puts "PRINT LITERAL"
+        if(@functions.length() > 0 and @expression_ast != nil)
+            raise Exception.new("can be reassign and call tpye statement.")
+        end
+        f = Array.new
+        str = Array.new
+        for func in @functions
+            f = Array.new
+            func._printLiteral(f)
+            for s in f
+                str.append(s + "|")
+            end
+        end
+        str = str.join("")
+
+        l = Array.new
+        str2 = ""
+        if(@expression_ast != nil)
+            @expression_ast._printLiteral(l)
+        end
+        for s in l
+            str2 += s + "|"
+        end
+        var_name = if @var_name then @var_name.getText() else "NONAME" end
+        return "|name:#{var_name}|#{str}#{str2}"
     end
 end

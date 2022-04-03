@@ -44,4 +44,14 @@ class ReturnStatement
     def initialize(return_expression)
         @return_expression = return_expression
     end
+
+    def _printLiteral()
+        a = Array.new
+        @return_expression._printLiteral(a)
+        return a.join("")
+    end
+
+    def _printTokType(type_list)
+        @return_expression._printTokType(type_list)
+    end
 end

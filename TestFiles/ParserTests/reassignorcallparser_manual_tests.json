@@ -11,5 +11,210 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test2.txt",
+                "tokenLiteral" : "blowsup",
+                "lineNumber" : "1",
+                "message" : "Unexpected token blowsup."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test3.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test4.txt",
+        "astString" : "|name:somevar|a|",
+        "tokenTypeString" : "IDENTIFIER | IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test5.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "3",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test6.txt",
+        "astString" : "|name:NONAME|fn:a|",
+        "tokenTypeString" : "NONE | IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test7.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "5",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test8.txt",
+        "astString" : "|name:NONAME|fn:test1|g|",
+        "tokenTypeString" : "NONE | IDENTIFIER | IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test9.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test9.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "8",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test10.txt",
+        "astString" : "|name:NONAME|fn:a|b|c|",
+        "tokenTypeString" : "NONE | IDENTIFIER | IDENTIFIER | IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test11.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "9",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test12.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test12.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test13.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test13.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "1",
+                "message" : "Unexpected token int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test14.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test14.txt",
+                "tokenLiteral" : ".",
+                "lineNumber" : "1",
+                "message" : "Unexpected token .."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test15.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test15.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test16.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test16.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test17.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test17.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "1",
+                "message" : "Unexpected token int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test18.txt",
+        "astString" : "|name:NONAME|fn:a|fn:b|c|d|fn:e|",
+        "tokenTypeString" : "NONE | IDENTIFIER | IDENTIFIER | IDENTIFIER | IDENTIFIER | IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test19.txt",
+        "astString" : "|name:test|fn:a|fn:b|c|d|fn:e|",
+        "tokenTypeString" : "IDENTIFIER | IDENTIFIER | IDENTIFIER | IDENTIFIER | IDENTIFIER | IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test20.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test20.txt",
+                "tokenLiteral" : "c",
+                "lineNumber" : "6",
+                "message" : "Unexpected token c."
+            }
+        ]
     }
 ]

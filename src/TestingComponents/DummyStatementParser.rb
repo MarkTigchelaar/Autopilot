@@ -16,7 +16,7 @@ end
 
 
 class DummyStatement
-    def initialize(name, left_stmt, right_stmt)
+    def initialize(name, left_stmt = nil, right_stmt = nil)
         @name = name
         @left_stmt = left_stmt
         @right_stmt = right_stmt
@@ -24,5 +24,13 @@ class DummyStatement
 
     def getType()
         return @name.getType()
+    end
+
+    def _printLiteral
+        return @name.getText()
+    end
+
+    def _printTokType(type_list)
+        type_list.append(@name.getType())
     end
 end

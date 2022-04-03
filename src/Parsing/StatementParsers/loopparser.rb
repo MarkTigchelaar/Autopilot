@@ -18,7 +18,7 @@ class LoopParser
         else
             statementStep(parser)
         end
-        l = LoopStatement.new(@return_expression)
+        l = LoopStatement.new(@statements)
         reset()
         return l
     end
@@ -36,7 +36,11 @@ class LoopParser
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
-            endStep(parser)
+            if(@statements.length() == 0)
+                emptyStatement(parser)
+            else
+                endStep(parser)
+            end
         else
             unexpectedToken(parser)
         end
@@ -61,5 +65,19 @@ end
 class LoopStatement
     def initialize(sub_statements)
         @sub_statements = sub_statements
+    end
+
+    def _printLiteral
+        l = Array.new
+        for stmt in @sub_statements
+            l.append(stmt._printLiteral())
+        end
+        return l.join("")
+    end
+
+    def _printTokType(type_list)
+        for stmt in @sub_statements
+            stmt._printTokType(type_list)
+        end
     end
 end

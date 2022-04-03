@@ -51,9 +51,13 @@ class Parser
     def _parse()
         ast = Array.new
         while(@tokenizer.hasTokens())
-            ast.append(type_declarations())
+            type = type_declarations()
+            if(type != nil)
+                ast.append(type)
+            end
             if(@shouldSync)
                 synchronize(self)
+                syncOff()
             end
         end
         return ast
@@ -67,15 +71,15 @@ class Parser
         elsif(match(IMPORT))
             parse_import()
         elsif(match(ACYCLIC))
-            return parse_acyclic_type()
+            parse_acyclic_type()
         elsif(match(INLINE))
-            return parse_inline_type()
+            parse_inline_type()
         elsif(match(PUB))
-            return parse_public_type()
+            parse_public_type()
         elsif(match(UNITTEST))
             parse_unittest()
         else
-            return other_type()
+            other_type()
         end
     end
 

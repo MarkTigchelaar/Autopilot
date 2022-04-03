@@ -24,7 +24,7 @@ def get_tests_from_file(testfilename)
 end
 
 def getMsg(expect, actual)
-    return " expected: #{expect}, got #{actual}"
+    return " expected: \"#{expect}\", got \"#{actual}\""
 end
 
 def printErrors(reportedErrors)
@@ -34,7 +34,6 @@ def printErrors(reportedErrors)
         puts "message: #{err["message"]}"
     end
 end
-
 
 def error_test(test_case, parser, failurelog, tracker)
     #puts "<" + expParser.astString() + ">"

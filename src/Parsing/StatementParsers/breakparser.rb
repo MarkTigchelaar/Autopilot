@@ -24,4 +24,8 @@ class BreakStatement
     def _printLiteral
         return @information.getText()
     end
+
+    def _printTokType(type_list)
+        type_list.append(@information.getType())
+    end
 end

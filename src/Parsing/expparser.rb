@@ -28,8 +28,15 @@ class ExpressionParser
         @keyWords = getkeywords()
         register()
     end
+
+    def reset()
+        @name = nil
+        @tokenizer = nil
+        @root = nil
+    end
     
     def loadTokenizer(toks)
+        reset()
         @tokenizer = toks
     end
 

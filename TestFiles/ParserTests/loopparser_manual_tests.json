@@ -11,5 +11,50 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test2.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "1",
+                "message" : "Empty Statement."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test3.txt",
+        "astString" : "if",
+        "tokenTypeString" : "IF",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test4.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test5.txt",
+                "tokenLiteral" : "thing",
+                "lineNumber" : "1",
+                "message" : "Unexpected token thing."
+            }
+        ]
     }
 ]

@@ -92,6 +92,11 @@ def eofReached(parser)
     addError(parser, msg)
 end
 
+def emptyStatement(parser)
+    msg = "Empty Statement."
+    addError(parser, msg)
+end
+
 def isPrimitiveType(token)
     case token.getType()
         when INT
@@ -202,24 +207,24 @@ def synchronize(parser)
         literal = parser.peek().getType()
         if(literal == MODULE)
             return
-        elsif(literal == FOR)
+        elsif(literal == IMPORT)
             return
-        elsif(literal == LOOP)
+        elsif(literal == DEFINE)
             return
-        elsif(literal == WHILE)
+        elsif(literal == UNITTEST)
             return
-        elsif(literal == CONTINUE)
-            return
-        elsif(literal == BREAK)
-            return
-        elsif(literal == IF)
-            return
-        elsif(literal == CASE)
-            return
-        elsif(literal == RETURN)
-            return
-        elsif(literal == PUB)
-            return
+        #elsif(literal == CONTINUE)
+        #    return
+        #elsif(literal == BREAK)
+        #    return
+        #elsif(literal == IF)
+        #    return
+        #elsif(literal == CASE)
+        #    return
+        #elsif(literal == RETURN)
+        #    return
+        #elsif(literal == PUB) # avoid pub fields in structs
+        #    return
         elsif(literal == FUN)
             return
         #elsif(literal == PRC)
@@ -228,9 +233,15 @@ def synchronize(parser)
             return
         elsif(literal == ENUM)
             return
-        elsif(literal == DEBUG)
-            return
+        #elsif(literal == DEBUG)
+            #return
         elsif(literal == ACYCLIC)
+            return
+        elsif(literal == INLINE)
+            return
+        elsif(literal == UNION)
+            return
+        elsif(literal == ERROR)
             return
         end
         parser.discard()

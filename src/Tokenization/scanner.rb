@@ -34,6 +34,7 @@ class Scanner
 
     def closeSource
         @charScanner.closeSource()
+        reset()
     end
 
     def hasTokens

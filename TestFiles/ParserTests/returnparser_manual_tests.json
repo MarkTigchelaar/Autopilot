@@ -11,5 +11,11 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ReturnTests/test2.txt",
+        "astString" : "20",
+        "tokenTypeString" : "INT",
+        "errors" : null
     }
 ]
