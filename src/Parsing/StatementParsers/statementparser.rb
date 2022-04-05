@@ -11,8 +11,9 @@ class StatementParser
         @reassignorcallparser = ReassignOrCallParser.new(expression_parser)
 
         @ifparser = IfParser.new(expression_parser, self)
+        @elifparser = ElifParser.new(@ifparser)
         @unlessparser = UnlessParser.new(expression_parser, self)
-        @elseparser = ElseParser.new(expression_parser, self, @ifparser)
+        @elseparser = ElseParser.new(self)
         @switchparser = SwitchParser.new(self)
         
         @forparser = ForParser.new(expression_parser, self)
@@ -58,6 +59,10 @@ class StatementParser
 
     def parseIf(parser)
         @ifparser.parse(parser)
+    end
+
+    def parseElif(parser)
+        @ElifParser.parse(parser)
     end
 
     def parseElse(parser)

@@ -1,79 +1,21 @@
 require_relative '../parserutilities.rb'
 require_relative '../../tokentype.rb'
 require_relative '../../keywords.rb'
-
+require_relative './ifparser.rb'
 
 class UnlessParser
-    def initialize(expression_parser, statement_parser)
-        @expression_parser = expression_parser
-        @statement_parser = statement_parser
-        @expression_ast = nil
-        @statements = Array.new
+    def initialize(if_parser)
+        @if_parser = if_parser
     end
 
     def parse(parser)
-        reset()
-        token = parser.nextToken()
+        token = parser.peek()#nextToken()
         enforceUnless(token)
-        peekTok = parser.peek()
-        if(isEOF(peekTok))
-            eofReached(parser)
-        else
-            parseExpression(parser)
-        end
-        i = UnlessStatement.new(@expression_ast, @statements)
-        reset()
-        return i  
-    end
-    
-    def parseExpression(parser)
-        @expression_parser.loadTokenizer(parser)
-        @expression_ast = @expression_parser.parse_expression()
-        if(isEOF(peekTok))
-            eofReached(parser)
-        elsif(peekTok.getType() == DO)
-            doStep(parser)
-        else
-            unexpectedToken(parser)
-        end
-    end
+        token.set(IF, "if", "if", token.getLine(), token.getFilename())
 
-    def doStep(parser)
-        parser.discard()
-        peekTok = parser.peek()
-        if(isEOF(peekTok))
-            eofReached(parser)
-        else
-            parseStatements(parser)
-        end
-    end
-
-    def parseStatements(parser)
-        peekTok = parser.peek()
-        while(!isEOF(peekTok) and is_interal_statement_keyword(peekTok))
-            stmt = @statement_parser.parse(parser)
-            @statements.append(stmt)
-            peekTok = parser.peek()
-            if(parser.hasErrors())
-                return
-            end
-        end
-        if(isEOF(peekTok))
-            eofReached(parser)
-        elsif(peekTok.getType() == ENDSCOPE)
-            endStep(parser)
-        else
-            unexpectedToken(parser)
-        end
-    end
-
-    def endStep(parser)
-        parser.discard()
-    end
-
-    def reset()
-        @expression_ast = nil
-        @statements = Array.new
+        @if_parser.is_unless()
+        if_stmt = @if_parser.parse(parser)
+        return UnlessStatement.new(if_stmt)
     end
 
     def enforceUnless(token)
@@ -85,8 +27,35 @@ end
 
 
 class UnlessStatement
-    def initialize(expression_ast, statements)
-        @expression_ast = expression_ast
-        @statements = statements
+    def initialize(if_statement)
+        if(if_statement == nil)
+            @ast = nil
+            @statements = nil
+            return
+        end
+        ast = if_statement.get_ast()
+        stmts = if_statement.get_statements()
+        @ast = nil
+        if(ast != nil)
+            @ast = ast
+        end
+        @statements = nil
+        if(ast != nil)
+            @statements = stmts
+        end
+    end
+
+    def _printLiteral
+        l = Array.new
+        if(@ast != nil)
+            @ast._printLiteral(l)
+        end
+        return l.join("")
+    end
+
+    def _printTokType(type_list)
+        if(@ast != nil)
+            @ast._printTokType(type_list)
+        end
     end
 end

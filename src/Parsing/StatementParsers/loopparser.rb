@@ -25,7 +25,7 @@ class LoopParser
 
     def statementStep(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and is_interal_statement_keyword(peekTok))
+        while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
             stmt = @statement_parser.parse(parser)
             @statements.append(stmt)
             peekTok = parser.peek()

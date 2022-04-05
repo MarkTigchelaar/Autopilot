@@ -15,6 +15,7 @@ def getkeywords
         "break" => BREAK,
         "if" => IF,
         "else" => ELSE,
+        "elif" => ELIF,
         "unless" => UNLESS,
         "case" => CASE,
         "switch" => SWITCH,

@@ -122,6 +122,8 @@ def is_interal_statement_keyword(token)
     return case token.getType()
     when IF
         true
+    when ELIF
+        true
     when ELSE
         true
     when UNLESS
@@ -156,6 +158,8 @@ def parse_internal_statement(statement_parser, main_parser)
     return case token.getType()
     when IF
         statement_parser.parseIf(main_parser)
+    when ELIF
+        statement_parser.parseElif(main_parser)
     when ELSE
         statement_parser.parseElse(main_parser)
     when UNLESS

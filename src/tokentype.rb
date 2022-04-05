@@ -54,6 +54,7 @@ ERROR = "error".upcase
 
 IF = "if".upcase
 ELSE = "else".upcase
+ELIF = "elif".upcase
 UNLESS = "unless".upcase
 CASE = "case".upcase
 SWITCH = "switch".upcase

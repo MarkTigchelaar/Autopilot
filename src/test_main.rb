@@ -19,10 +19,10 @@ require './Parsing/StatementParsers/loopparser.rb'
 require './Parsing/StatementParsers/switchparser.rb'
 require './Parsing/StatementParsers/ifparser.rb'
 require './Parsing/StatementParsers/elseparser.rb'
+require './Parsing/StatementParsers/elifparser.rb'
 require './Parsing/StatementParsers/unlessparser.rb'
 require './Parsing/StatementParsers/assignparser.rb'
 require './Parsing/StatementParsers/whileparser.rb'
-require './Parsing/StatementParsers/forparser.rb'
 require './Parsing/StatementParsers/forparser.rb'
 require './Parsing/StatementParsers/reassignorcallparser.rb'
 
@@ -137,6 +137,7 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "struct")
             end
         when "returnparser"
+            next
             expParser = ExpressionParser.new()
             expParser.loadTokenizer(tokenizer)
             r = ReturnParser.new(expParser)
@@ -145,18 +146,21 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "return")
             end
         when "continueparser"
+            next
             c = ContinueParser.new
             tests.each do |test_case|
                 d = DummyParser.new(c, tokenizer)
                 call_parser_component_tests(test_case, failurelog, tracker, d, "continue")
             end
         when "breakparser"
+            next
             b = BreakParser.new
             tests.each do |test_case|
                 d = DummyParser.new(b, tokenizer)
                 call_parser_component_tests(test_case, failurelog, tracker, d, "break")
             end
         when "loopparser"
+            next
             l = LoopParser.new(DummyStatementParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(l, tokenizer)
@@ -181,17 +185,30 @@ def main
             ep = ExpressionParser.new
             sp = DummyStatementParser.new
             ip = IfParser.new(ep, sp)
-            i = ElseParser.new(ep, sp, ip)
+            i = ElseParser.new(sp)
             tests.each do |test_case|
                 d = DummyParser.new(i, tokenizer)
                 call_parser_component_tests(test_case, failurelog, tracker, d, "else")
             end
         when "unlessparser"
             next
-            u = UnlessParser.new(ExpressionParser.new, DummyStatementParser.new)
+            ep = ExpressionParser.new
+            sp = DummyStatementParser.new
+            ip = IfParser.new(ep, sp)
+            u = UnlessParser.new(ip)
             tests.each do |test_case|
                 d = DummyParser.new(u, tokenizer)
                 call_parser_component_tests(test_case, failurelog, tracker, d, "unless")
+            end
+        when "elifparser"
+            #next
+            ep = ExpressionParser.new
+            sp = DummyStatementParser.new
+            ip = IfParser.new(ep, sp)
+            e = ElifParser.new(ip)
+            tests.each do |test_case|
+                d = DummyParser.new(e, tokenizer)
+                call_parser_component_tests(test_case, failurelog, tracker, d, "elif")
             end
         when "assignparser"
             next
@@ -215,6 +232,7 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "for")
             end
         when "reassignorcallparser"
+            next
             r = ReassignOrCallParser.new(ExpressionParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(r, tokenizer)

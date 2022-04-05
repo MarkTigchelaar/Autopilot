@@ -9,6 +9,14 @@ class Token
         @filename = filename
     end
 
+    def set(tok_type, text, literal, line, filename)
+        @tok_type = tok_type
+        @text = text
+        @literal = text 
+        @line = line.to_i()
+        @filename = filename
+    end
+
     def print
         return "\n filename: #{@filename}\n line: #{(@line).to_s}\n token type: #{@tok_type}\n literal: #{@literal}\n\n\n"
     end
