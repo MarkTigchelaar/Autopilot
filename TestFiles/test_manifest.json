@@ -92,6 +92,10 @@
         "test_manifest_file" : "../TestFiles/ParserTests/unlessparser_manual_tests.json"
     },
     {
+        "general_component" : "elifparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/elifparser_manual_tests.json"
+    },
+    {
         "general_component" : "assignparser",
         "test_manifest_file" : "../TestFiles/ParserTests/assignparser_manual_tests.json"
     },

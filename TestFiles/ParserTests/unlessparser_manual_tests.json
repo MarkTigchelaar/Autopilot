@@ -11,5 +11,37 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/UnlessTests/test2.txt",
+        "astString" : "a",
+        "tokenTypeString" : "IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/UnlessTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/UnlessTests/test3.txt",
+                "tokenLiteral" : "let",
+                "lineNumber" : "1",
+                "message" : "Unexpected token let."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/UnlessTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/UnlessTests/test4.txt",
+                "tokenLiteral" : "var",
+                "lineNumber" : "1",
+                "message" : "Unexpected token var."
+            }
+        ]
     }
 ]
