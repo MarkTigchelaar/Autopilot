@@ -6,13 +6,13 @@ class AssignParser
     def initialize(expression_parser)
         @expression_parser = expression_parser
         @name = nil
+        @type = nil
         @expression_ast = nil
     end
 
     def parse(parser)
         reset()
-        token = parser.nextToken()
-        enforceLetOrVar(token)
+        # let or var handled by statement parser already.
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -21,13 +21,41 @@ class AssignParser
         else
             unexpectedToken(parser)
         end
-        r = AssignmentStatement.new(@name, @expression_ast)
+        r = AssignmentStatement.new(@name, @type, @expression_ast)
         reset()
         return r
     end
 
     def variableStep(parser)
+        @name = parser.nextToken()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(peekTok.getType() == AS)
+            asStep(parser)
+        elsif(peekTok.getType() == EQUAL)
+            equalStep(parser)
+        else
+            unexpectedToken(parser)
+        end
+    end
+
+    def asStep(parser)
         parser.discard()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(isPrimitiveType(peekTok, true))
+            typeStep(parser)
+        elsif(isValidIdentifier(peekTok))
+            typeStep(parser)
+        else
+            unexpectedToken(parser)
+        end
+    end
+
+    def typeStep(parser)
+        @type = parser.nextToken()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -59,14 +87,9 @@ class AssignParser
         end
     end
 
-    def enforceLetOrVar(token)
-        if(token.getText().upcase != LET and token.getText().upcase != VAR)
-            throw Exception.new("Did not enounter \"let\" or \"var\" keywords in file " + token.getFilename())
-        end
-    end
-
     def reset()
         @name = nil
+        @type = nil
         @expression_ast = nil
     end
 end
@@ -74,8 +97,9 @@ end
 
 
 class AssignmentStatement
-    def initialize(name, expression_ast)
+    def initialize(name, type, expression_ast)
         @name = name
+        @type = type
         @expression_ast = expression_ast
         @let = false
         @var = false
@@ -87,5 +111,38 @@ class AssignmentStatement
 
     def usesVar
         @var = true
+    end
+
+    def _printLiteral
+        ownership_type = ''
+        if(@var)
+            ownership_type = "var"
+        elsif(@let)
+            ownership_type = "let"
+        end
+        if(@expression_ast != nil)
+            l = Array.new
+            @expression_ast._printLiteral(l)
+            if(@type != nil)
+                t = @type.getText()
+            else
+                t = ""
+            end
+            return "name: #{@name.getText()}, type: #{t}, ownership type: #{ownership_type}, exp: " + l.join("")
+        else
+            raise Exception.new("Expression not found.")
+        end
+    end
+
+    def _printTokType(type_list)
+        type_list.append(@name.getType())
+        if(@type != nil)
+            type_list.append(@type.getType())
+        end
+        if(@expression_ast != nil)
+            @expression_ast._printTokType(type_list)
+        else
+            raise Exception.new("Expression not found.")
+        end
     end
 end

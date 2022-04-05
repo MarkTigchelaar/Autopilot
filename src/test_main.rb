@@ -201,7 +201,7 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "unless")
             end
         when "elifparser"
-            #next
+            next
             ep = ExpressionParser.new
             sp = DummyStatementParser.new
             ip = IfParser.new(ep, sp)
@@ -218,7 +218,7 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "assign")
             end
         when "whileparser"
-            next
+            #next
             w = WhileParser.new(ExpressionParser.new, DummyStatementParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(w, tokenizer)

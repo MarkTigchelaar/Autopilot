@@ -97,8 +97,12 @@ def emptyStatement(parser)
     addError(parser, msg)
 end
 
-def isPrimitiveType(token)
-    case token.getType()
+def isPrimitiveType(token, check_literal = false)
+    compare = token.getType()
+    if(check_literal)
+        compare = token.getText().upcase
+    end
+    case compare
         when INT
             return true
         when LONG

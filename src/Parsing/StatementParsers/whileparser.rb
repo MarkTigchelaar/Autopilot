@@ -8,7 +8,6 @@ class WhileParser
         @expression_parser = expression_parser
         @statement_parser = statement_parser
         @expression_ast = nil
-        @collection_ast = nil
         @statements = Array.new
     end
 
@@ -24,7 +23,7 @@ class WhileParser
         else
             unexpectedToken(parser)
         end
-        w = WhileStatement.new(@expression_ast, @collection_ast, @statements)
+        w = WhileStatement.new(@expression_ast, @statements)
         reset()
         return w
     end
@@ -32,33 +31,6 @@ class WhileParser
     def parseExpression(parser)
         @expression_parser.loadTokenizer(parser)
         @expression_ast = @expression_parser.parse_expression()
-        peekTok = parser.peek()
-        if(isEOF(peekTok))
-            eofReached(parser)
-        elsif(peekTok.getType() == IN)
-            inStep(parser)
-        elsif(peekTok.getType() == DO)
-            doStep(parser)
-        else
-            unexpectedToken(parser)
-        end
-    end
-
-    def inStep(parser)
-        parser.discard()
-        peekTok = parser.peek()
-        if(isEOF(peekTok))
-            eofReached(parser)
-        elsif(isValidIdentifier(peekTok))
-            parseCollectionExpression(parser)
-        else
-            unexpectedToken(parser)
-        end
-    end
-
-    def parseCollectionExpression(parser)
-        @expression_parser.loadTokenizer(parser)
-        @collection_ast = @expression_parser.parse_expression()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -74,16 +46,14 @@ class WhileParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(is_interal_statement_keyword(peekTok))
-            parseStatements(parser)
         else
-            unexpectedToken(parser)
+            parseStatements(parser)
         end
     end
 
     def parseStatements(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and is_interal_statement_keyword(peekTok))
+        while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
             stmt = @statement_parser.parse(parser)
             @statements.append(stmt)
             peekTok = parser.peek()
@@ -106,7 +76,6 @@ class WhileParser
     
     def reset()
         @expression_ast = nil
-        @collection_ast = nil
         @statements = Array.new
     end
 
@@ -118,9 +87,29 @@ class WhileParser
 end
 
 class WhileStatement
-    def initialize(expression_ast, collection_ast, statements)
+    def initialize(expression_ast, statements)
         @expression_ast = expression_ast
-        @collection_ast = collection_ast
         @statements = statements
+    end
+
+    def _printTokType(type_list)
+        if(@expression_ast != nil)
+            @expression_ast._printTokType(type_list)
+        end
+        for stmt in @statements
+            stmt._printTokType(type_list)
+        end
+
+    end
+
+    def _printLiteral()
+        l = Array.new
+        @expression_ast._printLiteral(l)
+        msg = "exp: " + l.join("")
+        #msg += ", statements: "
+        #for stmt in @statements
+        #    msg += stmt._printLiteral() + ' '
+        #end
+        return msg
     end
 end
