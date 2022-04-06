@@ -6,7 +6,7 @@ class ForParser
     def initialize(expression_parser, statement_parser)
         @expression_parser = expression_parser
         @statement_parser = statement_parser
-        @expression_ast = nil
+        @loop_name = nil
         @start_collection_ast = nil
         @stop_collection_ast = nil
         @let = false
@@ -34,12 +34,12 @@ class ForParser
             unexpectedToken(parser)
         end
         f = ForStatement.new(
+            @loop_name,
             @let, 
             @var,
             @var_one,
             @var_two,
             @opt_variable, 
-            @expression_ast, 
             @start_collection_ast, 
             @stop_collection_ast, 
             @statements
@@ -80,7 +80,7 @@ class ForParser
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == IN)
-            inStep(parser, values, true)
+            inStep(parser, true)
         else
             unexpectedToken(parser)
         end
@@ -92,7 +92,7 @@ class ForParser
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == IN)
-            inStep(parser, true)
+            inStep(parser, false)
         elsif(peekTok.getType() == COMMA)
             commaStep(parser)
         else
@@ -100,25 +100,25 @@ class ForParser
         end
     end
 
-    def commaStep(parser, values)
+    def commaStep(parser)
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
-            varTwoStep(parser, values)
+            varTwoStep(parser)
         else
             unexpectedToken(parser)
         end
     end
 
-    def varTwoStep(parser, values)
+    def varTwoStep(parser)
         @var_two = parser.nextToken()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == IN)
-            inStep(parser, true)
+            inStep(parser, false)
         else
             unexpectedToken(parser)
         end
@@ -148,6 +148,10 @@ class ForParser
             eofReached(parser)
         elsif(peekTok.getType() == RANGE)
             rangeStep(parser)
+        elsif(peekTok.getType() == AS)
+            asStep(parser)
+        elsif(peekTok.getType() == DO)
+            doStep(parser)
         else
             unexpectedToken(parser)
         end
@@ -171,11 +175,37 @@ class ForParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
+        elsif(peekTok.getType() == AS)
+            asStep(parser)
         elsif(peekTok.getType() == DO)
             doStep(parser)
         else
             unexpectedToken(parser)
         end
+    end
+
+    def asStep(parser)
+        parser.discard()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(isValidIdentifier(peekTok))
+            loopNameStep(parser)
+        else
+            unexpectedToken(parser)
+        end 
+    end
+
+    def loopNameStep(parser)
+        @loop_name = parser.nextToken()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(peekTok.getType() == DO)
+            doStep(parser)
+        else
+            unexpectedToken(parser)
+        end 
     end
 
     def doStep(parser)
@@ -212,7 +242,7 @@ class ForParser
     end
     
     def reset()
-        @expression_ast = nil
+        @loop_name = nil
         @start_collection_ast = nil
         @stop_collection_ast = nil
         @let = false
@@ -231,8 +261,8 @@ class ForParser
 end
 
 class ForStatement
-    def initialize(let, var, var_one, var_two, opt_variable, expression_ast, start_collection_ast, stop_collection_ast, statements)
-        @expression_ast = expression_ast
+    def initialize(loop_name, let, var, var_one, var_two, opt_variable, start_collection_ast, stop_collection_ast, statements)
+        @loop_name = loop_name
         @start_collection_ast = start_collection_ast
         @stop_collection_ast = stop_collection_ast
         @statements = statements
@@ -241,5 +271,20 @@ class ForStatement
         @var_one = var_one
         @var_two = var_two
         @opt_variable = opt_variable
+    end
+
+    def _printLiteral()
+        lit = ""
+        if(@loop_name != nil)
+            lit += @loop_name.getText()
+        end
+
+        return lit
+    end
+
+    def _printTokType(type_list)
+        if(@loop_name != nil)
+            type_list.append(@loop_name.getType())
+        end
     end
 end

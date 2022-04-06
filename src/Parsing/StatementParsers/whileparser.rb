@@ -8,6 +8,7 @@ class WhileParser
         @expression_parser = expression_parser
         @statement_parser = statement_parser
         @expression_ast = nil
+        @loop_name = nil
         @statements = Array.new
     end
 
@@ -23,7 +24,7 @@ class WhileParser
         else
             unexpectedToken(parser)
         end
-        w = WhileStatement.new(@expression_ast, @statements)
+        w = WhileStatement.new(@loop_name, @expression_ast, @statements)
         reset()
         return w
     end
@@ -34,11 +35,37 @@ class WhileParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
+        elsif(peekTok.getType() == AS)
+            asStep(parser)
         elsif(peekTok.getType() == DO)
             doStep(parser)
         else
             unexpectedToken(parser)
         end
+    end
+
+    def asStep(parser)
+        parser.discard()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(isValidIdentifier(peekTok))
+            loopNameStep(parser)
+        else
+            unexpectedToken(parser)
+        end 
+    end
+
+    def loopNameStep(parser)
+        @loop_name = parser.nextToken()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(peekTok.getType() == DO)
+            doStep(parser)
+        else
+            unexpectedToken(parser)
+        end 
     end
 
     def doStep(parser)
@@ -75,6 +102,7 @@ class WhileParser
     end
     
     def reset()
+        @loop_name = nil
         @expression_ast = nil
         @statements = Array.new
     end
@@ -87,12 +115,16 @@ class WhileParser
 end
 
 class WhileStatement
-    def initialize(expression_ast, statements)
+    def initialize(loop_name, expression_ast, statements)
+        @loop_name = loop_name
         @expression_ast = expression_ast
         @statements = statements
     end
 
     def _printTokType(type_list)
+        if(@loop_name != nil)
+            type_list.append(@loop_name.getType())
+        end
         if(@expression_ast != nil)
             @expression_ast._printTokType(type_list)
         end
@@ -110,6 +142,10 @@ class WhileStatement
         #for stmt in @statements
         #    msg += stmt._printLiteral() + ' '
         #end
-        return msg
+        name = ""
+        if(@loop_name != nil)
+            name = "name: " + @loop_name.getText() + ", "
+        end
+        return name + msg
     end
 end

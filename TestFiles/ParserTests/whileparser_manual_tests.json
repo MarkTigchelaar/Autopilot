@@ -95,5 +95,50 @@
         "astString" : "exp: a",
         "tokenTypeString" : "IDENTIFIER IF",
         "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test9.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test9.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test10.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test10.txt",
+                "tokenLiteral" : "9",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 9."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test11.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test12.txt",
+        "astString" : "name: test, exp: a",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER IF",
+        "errors" : null
     }
 ]

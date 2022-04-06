@@ -4,5 +4,50 @@
         "astString" : "break",
         "tokenTypeString" : "BREAK",
         "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test2.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test3.txt",
+                "tokenLiteral" : "5",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 5."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test4.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test5.txt",
+        "astString" : "test, break",
+        "tokenTypeString" : "IDENTIFIER BREAK",
+        "errors" : null
     }
 ]

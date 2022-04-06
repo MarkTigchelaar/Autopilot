@@ -6,6 +6,7 @@ class LoopParser
     def initialize(statement_parser)
         @statement_parser = statement_parser
         @statements = Array.new
+        @loop_name = nil
     end
 
     def parse(parser)
@@ -15,12 +16,48 @@ class LoopParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
+        elsif(peekTok.getType() == AS)
+            asStep(parser)
         else
             statementStep(parser)
         end
-        l = LoopStatement.new(@statements)
+        l = LoopStatement.new(@loop_name, @statements)
         reset()
         return l
+    end
+
+    def asStep(parser)
+        parser.discard()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(isValidIdentifier(peekTok))
+            loopNameStep(parser)
+        else
+            unexpectedToken(parser)
+        end 
+    end
+
+    def loopNameStep(parser)
+        @loop_name = parser.nextToken()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(peekTok.getType() == DO)
+            doStep(parser)
+        else
+            unexpectedToken(parser)
+        end 
+    end
+
+    def doStep(parser)
+        parser.discard()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        else
+            statementStep(parser)
+        end
     end
 
     def statementStep(parser)
@@ -57,18 +94,23 @@ class LoopParser
     end
 
     def reset()
+        @loop_name = nil
         @statements = Array.new
     end
 end
 
 
 class LoopStatement
-    def initialize(sub_statements)
+    def initialize(name, sub_statements)
+        @name = name
         @sub_statements = sub_statements
     end
 
     def _printLiteral
         l = Array.new
+        if(@name != nil)
+            l.append(@name)
+        end
         for stmt in @sub_statements
             l.append(stmt._printLiteral())
         end
@@ -76,6 +118,9 @@ class LoopStatement
     end
 
     def _printTokType(type_list)
+        if(@name != nil)
+            type_list.append(@name)
+        end
         for stmt in @sub_statements
             stmt._printTokType(type_list)
         end

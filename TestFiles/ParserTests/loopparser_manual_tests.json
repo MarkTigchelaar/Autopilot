@@ -43,5 +43,44 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test5.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test6.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test6.txt",
+                "tokenLiteral" : "9",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 9."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test7.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
     }
 ]

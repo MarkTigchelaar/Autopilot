@@ -218,14 +218,14 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "assign")
             end
         when "whileparser"
-            #next
+            next
             w = WhileParser.new(ExpressionParser.new, DummyStatementParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(w, tokenizer)
                 call_parser_component_tests(test_case, failurelog, tracker, d, "while")
             end
         when "forparser"
-            next
+            #next
             f = ForParser.new(ExpressionParser.new, DummyStatementParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(f, tokenizer)
