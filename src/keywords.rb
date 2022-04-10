@@ -18,6 +18,7 @@ def getkeywords
         "elif" => ELIF,
         "unless" => UNLESS,
         "case" => CASE,
+        "default" => DEFAULT,
         "switch" => SWITCH,
         "return" => RETURN,
         "do" => DO,

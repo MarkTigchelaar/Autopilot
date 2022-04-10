@@ -11,5 +11,439 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test2.txt",
+                "tokenLiteral" : "10",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 10."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test3.txt",
+                "tokenLiteral" : "do",
+                "lineNumber" : "1",
+                "message" : "Unexpected token do."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test4.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test5.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test5.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test6.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test6.txt",
+                "tokenLiteral" : "\"name\"",
+                "lineNumber" : "1",
+                "message" : "Unexpected token \"name\"."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test7.txt",
+                "tokenLiteral" : "'a'",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 'a'."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test8.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test8.txt",
+                "tokenLiteral" : ",",
+                "lineNumber" : "1",
+                "message" : "Unexpected token ,."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test9.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test9.txt",
+                "tokenLiteral" : "10",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 10."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test10.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test10.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test11.txt",
+                "tokenLiteral" : "if",
+                "lineNumber" : "3",
+                "message" : "Unexpected token if."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test12.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test12.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "3",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test13.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test13.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "2",
+                "message" : "Unexpected token int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test14.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test14.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test15.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test15.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test16.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test16.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "2",
+                "message" : "Unexpected token int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test17.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test17.txt",
+                "tokenLiteral" : "if",
+                "lineNumber" : "2",
+                "message" : "Unexpected token if."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test18.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test18.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test19.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test19.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "3",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test20.txt",
+        "astString" : "name 's' if",
+        "tokenTypeString" : "IDENTIFIER CHAR IF",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test21.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test21.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "5",
+                "message" : "Unexpected token end."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test24.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test24.txt",
+                "tokenLiteral" : "10",
+                "lineNumber" : "4",
+                "message" : "Unexpected token 10."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test25.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test25.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "5",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test26.txt",
+        "astString" : "name 'b' if if",
+        "tokenTypeString" : "IDENTIFIER CHAR IF IF",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test27.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test27.txt",
+                "tokenLiteral" : "eh",
+                "lineNumber" : "5",
+                "message" : "Unexpected token eh."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test28.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test28.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "4",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test29.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test29.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test30.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test30.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "4",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test31.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test31.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "4",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test32.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test32.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "5",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test33.txt",
+        "astString" : "a 10 if 15 if",
+        "tokenTypeString" : "IDENTIFIER INT IF INT IF",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test34.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test34.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "7",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test35.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test35.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "3",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test36.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test36.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "4",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test37.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test37.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "5",
+                "message" : "End of file reached."
+            }
+        ]
     }
 ]

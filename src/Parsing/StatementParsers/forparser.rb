@@ -275,16 +275,73 @@ class ForStatement
 
     def _printLiteral()
         lit = ""
-        if(@loop_name != nil)
-            lit += @loop_name.getText()
+        if @let
+            lit += "let "
+        elsif @var
+            lit += "var "
         end
-
-        return lit
+        if @var_one
+            lit += @var_one.getText() + ' '
+        end
+        if @var_two
+            lit += @var_two.getText() + ' '
+        end
+        if @opt_variable
+            lit += @opt_variable.getText() + ' '
+        end
+        if @start_collection_ast != nil
+            l = Array.new
+            ast = @start_collection_ast
+            ast._printLiteral(l)
+            lit += l.join(" ") + ' '
+        end
+        if @stop_collection_ast != nil
+            l = Array.new
+            ast = @stop_collection_ast
+            ast._printLiteral(l)
+            lit += l.join(" ") + ' '
+        end
+        if(@loop_name != nil)
+            lit += @loop_name.getText() + ' '
+        end
+        if @statements != nil
+            for stmt in @statements
+                lit += stmt._printLiteral() + ' '
+            end
+        end
+        return lit.strip()
     end
 
     def _printTokType(type_list)
+        if @let
+            type_list.append("let")
+        elsif @var
+            type_list.append("var")
+        end
+        if @var_one
+            type_list.append(@var_one.getType())
+        end
+        if @var_two
+            type_list.append(@var_two.getType())
+        end
+        if @opt_variable
+            type_list.append(@opt_variable.getType())
+        end
         if(@loop_name != nil)
             type_list.append(@loop_name.getType())
+        end
+        if @start_collection_ast != nil
+            ast = @start_collection_ast
+            ast._printTokType(type_list)
+        end
+        if @stop_collection_ast != nil
+            ast = @stop_collection_ast
+            ast._printTokType(type_list)
+        end
+        if @statements != nil
+            for stmt in @statements
+                stmt._printTokType(type_list)
+            end
         end
     end
 end

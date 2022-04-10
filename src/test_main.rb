@@ -167,7 +167,7 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "loop")
             end
         when "switchparser"
-            next
+            #next
             s = SwitchParser.new(DummyStatementParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(s, tokenizer)
@@ -225,7 +225,7 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "while")
             end
         when "forparser"
-            #next
+            next
             f = ForParser.new(ExpressionParser.new, DummyStatementParser.new)
             tests.each do |test_case|
                 d = DummyParser.new(f, tokenizer)

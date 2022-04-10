@@ -505,5 +505,23 @@
                 "message" : "Unexpected token struct."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ForTests/test40.txt",
+        "astString" : "a b if",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER IF",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ForTests/test41.txt",
+        "astString" : "a b test if",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER IDENTIFIER IF",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ForTests/test42.txt",
+        "astString" : "a b c if",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER IDENTIFIER IF",
+        "errors" : null
     }
 ]

@@ -57,6 +57,7 @@ ELSE = "else".upcase
 ELIF = "elif".upcase
 UNLESS = "unless".upcase
 CASE = "case".upcase
+DEFAULT = "default".upcase
 SWITCH = "switch".upcase
 
 RETURN = "return".upcase
