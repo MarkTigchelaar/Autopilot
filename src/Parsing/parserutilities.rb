@@ -122,6 +122,27 @@ def isPrimitiveType(token, check_literal = false)
     end
 end
 
+def isOtherValidType(peekTok)
+    case peekTok.getType()
+    when INT
+        true
+    when LONG
+        true
+    when FLOAT
+        true
+    when DOUBLE
+        true
+    when CHAR
+        true
+    when STRING
+        true
+    when BOOL
+        true
+    else
+        false
+    end
+end
+
 def is_interal_statement_keyword(token)
     return case token.getType()
     when IF
@@ -188,25 +209,6 @@ def parse_internal_statement(statement_parser, main_parser)
         statement_parser.parseSwitch(main_parser)
     else
         nil
-    end
-end
-
-def isOtherValidType(peekTok)
-    case peekTok.getType()
-    when INT
-        true
-    when LONG
-        true
-    when FLOAT
-        true
-    when DOUBLE
-        true
-    when CHAR
-        true
-    when STRING
-        true
-    else
-        false
     end
 end
 

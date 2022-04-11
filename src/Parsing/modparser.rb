@@ -28,4 +28,8 @@ class ModuleStatement
     def _printLiteral
         return @moduleinfo.getText()
     end
+
+    def _printTokType(item_list)
+        item_list.append(@moduleinfo.getType())
+    end
 end

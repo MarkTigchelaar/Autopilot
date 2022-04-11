@@ -94,10 +94,11 @@ class SwitchParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(is_interal_statement_keyword(peekTok))
-            parseStatements(parser, values)
+        #elsif(is_interal_statement_keyword(peekTok))
         else
-            unexpectedToken(parser)
+          parseStatements(parser, values)
+        #else
+        #    unexpectedToken(parser)
         end  
     end
 
@@ -131,12 +132,24 @@ class SwitchParser
             eofReached(parser)
         elsif(peekTok.getType() == CASE and not from_default)
             puts "In parse statements, found case statement, not from default"
-            caseStep(parser)
+            if(statements.length() == 0)
+                emptyStatement(parser)
+            else
+                caseStep(parser)
+            end
         elsif(peekTok.getType() == DEFAULT and not from_default)
             puts "found default"
-            elseStep(parser)
+            if(statements.length() == 0)
+                emptyStatement(parser)
+            else
+                elseStep(parser)
+            end
         elsif(peekTok.getType() == ENDSCOPE)
-            endStep(parser)
+            if(statements.length() == 0)
+                emptyStatement(parser)
+            else
+                endStep(parser)
+            end
         else
             unexpectedToken(parser)
         end

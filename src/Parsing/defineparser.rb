@@ -94,4 +94,9 @@ class DefineStatement
     def _printLiteral
         return "old name: #{@oldNameToken.getText()} new name: #{@newNameToken.getText()}"
     end
+
+    def _printTokType(item_list)
+        item_list.append(@oldNameToken.getType())
+        item_list.append(@newNameToken.getType())
+    end
 end

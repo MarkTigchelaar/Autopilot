@@ -109,7 +109,7 @@ class LoopStatement
     def _printLiteral
         l = Array.new
         if(@name != nil)
-            l.append(@name)
+            l.append(@name.getText())
         end
         for stmt in @sub_statements
             l.append(stmt._printLiteral())
@@ -119,7 +119,7 @@ class LoopStatement
 
     def _printTokType(type_list)
         if(@name != nil)
-            type_list.append(@name)
+            type_list.append(@name.getType())
         end
         for stmt in @sub_statements
             stmt._printTokType(type_list)

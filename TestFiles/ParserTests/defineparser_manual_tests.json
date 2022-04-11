@@ -119,7 +119,7 @@
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test10.txt",
         "astString" : "old name: old new name: new",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER",
         "errors" : null
     }
 ]

@@ -166,4 +166,10 @@ class ImportStatement
         end
         return "name:#{@modulename} type:#{libormod} items:[#{items}]"
     end
+
+    def _printTokType(item_list)
+        for item in @itemList
+            item_list.append(item.getType())
+        end
+    end
 end

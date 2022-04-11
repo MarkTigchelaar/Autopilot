@@ -279,8 +279,8 @@ class EnumListItem
 
     def getType()
         # type of enum, not the type of the token
-        if @type != nil
-            return @type.getText()
+        if @name != nil
+            return @name.getType()
         else
             return "null"
         end
@@ -291,6 +291,14 @@ class EnumListItem
             return @default_value_token.getText()
         else
             return "null"
+        end
+    end
+
+    def getDefaultValueType()
+        if @default_value_token != nil
+            return @default_value_token.getType()
+        else
+            return "NULL"
         end
     end
 end
@@ -330,5 +338,16 @@ class EnumStatement
         itemString += "default_value" + " : " + item.getDefaultValue()
         itemString += ")"
         return itemString
+    end
+
+    def _printTokType(item_list)
+        item_list.append(@name.getType())
+        if(@enumtype != nil)
+            item_list.append(@enumtype.getType())
+          end
+        for item in @items do
+            item_list.append(item.getType().upcase)
+            item_list.append(item.getDefaultValueType())
+        end
     end
 end

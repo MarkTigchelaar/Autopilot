@@ -29,7 +29,7 @@ class ErrorParser
     end
 
     def errorNameStep(parser)
-        parser.discard()
+        @name = parser.nextToken()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -103,11 +103,20 @@ class ErrorStatement
 
     def _printLiteral()
         astString = ""
-        astString += "(name: " + @name.getText() + ", items: ["
+        astString += @name.getText() + " "
         for item in @items do
-            astString += item.getText() + ", "
+            astString += item.getText() + " "
         end
-        astString = astString[0...-2] + "])"
-        return astString
+        
+        return astString.rstrip()
+    end
+
+    def _printTokType(type_list)
+        if(@name != nil)
+            type_list.append(@name.getType())
+        end
+        for item in @items
+            type_list.append(item.getType())
+        end
     end
 end

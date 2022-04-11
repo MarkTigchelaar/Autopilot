@@ -29,7 +29,7 @@ class UnittestParser
     end
 
     def testNameStep(parser)
-        parser.discard()
+        @test_name = parser.nextToken()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -45,23 +45,29 @@ class UnittestParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isKeyword(peekTok) and peekTok.getType() != ENDSCOPE)
-            parseStatements(parser)
         else
-            unexpectedToken(parser)
+          parseStatements(parser)
         end
     end
 
     def parseStatements(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and peekTok.getType() != ENDSCOPE)
+        while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
             @statements.append(@statement_parser.parse(parser))
+            peekTok = parser.peek()
+            if(parser.hasErrors())
+                return
+            end
         end
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
-            endStep(parser)
+            if(@statements.length() == 0)
+                emptyStatement(parser)
+            else
+                endStep(parser)
+            end
         else
             unexpectedToken(parser)
         end
@@ -87,5 +93,25 @@ class UnittestStatement
     def initialize(name, statements)
         @test_name = name
         @statements = statements
+    end
+
+    def _printLiteral
+        l = Array.new
+        if(@test_name != nil)
+            l.append(@test_name.getText() + ' ')
+        end
+        for stmt in @statements
+            l.append(stmt._printLiteral())
+        end
+        return l.join("").rstrip()
+    end
+
+    def _printTokType(type_list)
+        if(@test_name != nil)
+            type_list.append(@test_name.getType())
+        end
+        for stmt in @statements
+            stmt._printTokType(type_list)
+        end
     end
 end

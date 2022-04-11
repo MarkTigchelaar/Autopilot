@@ -16,6 +16,7 @@ class UnionParser
     def parse(parser)
         reset()
         token = parser.nextToken()
+        puts "token: #{token.getText()}"
         enforceUnion(token)
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -25,13 +26,19 @@ class UnionParser
         else
             unexpectedToken(parser)
         end
+        if(@union_name != nil)
+          puts "union name in parse: #{@union_name.getText()}"
+        else
+          puts "union name is nil"
+        end
         u = UnionStatement.new(@union_name, @itemList)
         reset()
         return u
     end
 
     def unionNameStep(parser)
-        parser.discard()
+        @union_name = parser.nextToken()
+        puts "union name: #{@union_name.getText()}"
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -78,6 +85,8 @@ class UnionParser
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
             unionListItemTypeStep(parser)
+        elsif(isPrimitiveType(peekTok, true))
+            unionListItemTypeStep(parser)
         else
             unexpectedToken(parser)
         end 
@@ -120,7 +129,7 @@ class UnionParser
 
     def addItemToList()
         @itemList.append(UnionItemListType.new(@item_name, @item_type))
-        reset()
+        #reset()
     end
 
     def reset()
@@ -131,7 +140,7 @@ class UnionParser
     end
 
     def enforceUnion(token)
-        if(token.getText().upcase != UNION)
+        if(token.getType() != UNION)
             throw Exception.new("Did not enounter \"union\" keyword in file " + token.getFilename())
         end
     end
@@ -144,12 +153,16 @@ class UnionItemListType
         @item_type = item_type
     end
 
-    def getName()
-        return @item_name.getText()
+    def getText()
+        return @item_name.getText() + ' ' + @item_type.getText() + ' '
     end
 
     def getType()
-        return @item_type.getText()
+        return @item_type.getType()
+    end
+
+    def getNamesType()
+        return @item_name.getType()
     end
 end
 
@@ -161,11 +174,18 @@ class UnionStatement
 
     def _printLiteral()
         astString = ""
-        astString += "(name: " + @union_name.getText() + ", items: ["
+        astString += @union_name.getText() + " "
         for item in @items do
-            astString += item.getText() + ", "
+            astString += item.getText() + " "
         end
-        astString = astString[0...-2] + "])"
-        return astString
+        return astString.squeeze(' ').rstrip()
+    end
+
+    def _printTokType(type_list)
+        type_list.append(@union_name.getType())
+        for item in @items
+            type_list.append(item.getNamesType())
+            type_list.append(item.getType())
+        end
     end
 end

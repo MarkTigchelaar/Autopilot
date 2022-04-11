@@ -11,5 +11,167 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test2.txt",
+                "tokenLiteral" : "10",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 10."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test3.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "1",
+                "message" : "Unexpected token int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test4.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test5.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "1",
+                "message" : "Unexpected token int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test6.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test6.txt",
+                "tokenLiteral" : "test",
+                "lineNumber" : "1",
+                "message" : "Unexpected token test."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test7.txt",
+                "tokenLiteral" : "\"name\"",
+                "lineNumber" : "1",
+                "message" : "Unexpected token \"name\"."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test8.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test8.txt",
+                "tokenLiteral" : "10",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 10."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test9.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test9.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test10.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test10.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test11.txt",
+                "tokenLiteral" : "int",
+                "lineNumber" : "2",
+                "message" : "Unexpected token int."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test12.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test12.txt",
+                "tokenLiteral" : "10",
+                "lineNumber" : "2",
+                "message" : "Unexpected token 10."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test13.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/UnittestTests/test13.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "2",
+                "message" : "Empty Statement."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/UnittestTests/test14.txt",
+        "astString" : "test if",
+        "tokenTypeString" : "IDENTIFIER IF",
+        "errors" : null
     }
 ]

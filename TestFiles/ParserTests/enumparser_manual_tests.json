@@ -184,19 +184,19 @@
     {
         "file" : "../Testfiles/ParserTests/EnumTests/test15.txt",
         "astString" : "(name : test, type : thingy, items : [(name : fred, default_value : null)])",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER IDENTIFIER NULL",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/EnumTests/test16.txt",
         "astString" : "(name : test, type : null, items : [(name : fred, default_value : null)])",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER NULL",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/EnumTests/test17.txt",
         "astString" : "(name : test, type : null, items : [(name : fred, default_value : null), (name : Wilma, default_value : null)])",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER NULL IDENTIFIER NULL",
         "errors" : null
     },
     {
@@ -280,25 +280,25 @@
     {
         "file" : "../Testfiles/ParserTests/EnumTests/test24.txt",
         "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : null)])",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "IDENTIFIER INT IDENTIFIER INT IDENTIFIER NULL",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/EnumTests/test25.txt",
         "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : 4)])",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "IDENTIFIER INT IDENTIFIER INT IDENTIFIER INT",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/EnumTests/test26.txt",
         "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : 4), (name : stuff, default_value : 1)])",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "IDENTIFIER INT IDENTIFIER INT IDENTIFIER INT IDENTIFIER INT",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/EnumTests/test27.txt",
         "astString" : "(name : tester, type : int, items : [(name : fred, default_value : 5), (name : wilma, default_value : 4), (name : stuff, default_value : 1), (name : wheat, default_value : null), (name : gems, default_value : null)])",
-        "tokenTypeString" : "",
+        "tokenTypeString" : "IDENTIFIER INT IDENTIFIER INT IDENTIFIER INT IDENTIFIER INT IDENTIFIER NULL IDENTIFIER NULL",
         "errors" : null
     }
 ]

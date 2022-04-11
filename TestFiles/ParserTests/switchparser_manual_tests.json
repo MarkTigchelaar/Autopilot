@@ -445,5 +445,18 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test38.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test38.txt",
+                "tokenLiteral" : "case",
+                "lineNumber" : "3",
+                "message" : "Empty Statement."
+            }
+        ]
     }
 ]

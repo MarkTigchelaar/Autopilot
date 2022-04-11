@@ -82,5 +82,18 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test8.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test8.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "2",
+                "message" : "Empty Statement."
+            }
+        ]
     }
 ]
