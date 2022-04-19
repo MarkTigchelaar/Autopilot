@@ -25,6 +25,7 @@ require './Parsing/StatementParsers/assignparser.rb'
 require './Parsing/StatementParsers/whileparser.rb'
 require './Parsing/StatementParsers/forparser.rb'
 require './Parsing/StatementParsers/reassignorcallparser.rb'
+require './Parsing/StatementParsers/statementparser.rb'
 
 require './TestingComponents/testingutilities.rb'
 require './TestingComponents/DummyParser.rb'
@@ -238,6 +239,20 @@ def main
                 d = DummyParser.new(r, tokenizer)
                 call_parser_component_tests(test_case, failurelog, tracker, d, "reassign or call")
             end
+        when "statementparserwdummy"
+            #next
+            s = StatementParser.new(ExpressionParser.new(), DummyStatementParser.new())
+            tests.each do |test_file|
+                d = DummyParser.new(s, tokenizer)
+                call_statement_component_tests(test_file, failurelog, tracker, d, "statement with dummy")
+            end
+        when "statementcombinations"
+            #next
+            s = StatementParser.new(ExpressionParser.new())
+            tests.each do |test_file|
+                d = DummyParser.new(s, tokenizer)
+                call_parser_component_tests(test_file, failurelog, tracker, d, "statements with combinations")
+            end
         else
             puts "component #{general_component} not recognized"
             return
@@ -303,6 +318,21 @@ def call_parser_component_tests(test_case, failurelog, tracker, parser, name)
     puts "\nTesting #{name} parser, file #{test_case["file"]} ... "
     parser.parse(test_case["file"])
     generic_parser_tests(parser, test_case, failurelog, tracker)
+    puts "Done test for #{name} parser"
+end
+
+def call_statement_component_tests(test_file, failurelog, tracker, parser, name)
+    #for filename in test_file_list
+        jsonfile = File.open(test_file)
+        tests = JSON.parse(jsonfile.read())
+        jsonfile.close()
+        for test_case in tests
+            puts "\nTesting #{name} parser, file #{test_case["file"]} ... "
+            parser.parse(test_case["file"], true)
+            generic_parser_tests(parser, test_case, failurelog, tracker)
+            parser.reset()
+        end
+    #end
     puts "Done test for #{name} parser"
 end
 

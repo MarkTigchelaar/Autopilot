@@ -105,13 +105,13 @@
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test9.txt",
-        "astString" : "name: name, type: type, ownership type: , exp: 9",
+        "astString" : "name: name, type: type, ownership type: var, exp: 9",
         "tokenTypeString" : "IDENTIFIER IDENTIFIER INT",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test10.txt",
-        "astString" : "name: name, type: , ownership type: , exp: 9",
+        "astString" : "name: name, type: , ownership type: var, exp: 9",
         "tokenTypeString" : "IDENTIFIER INT",
         "errors" : null
     }

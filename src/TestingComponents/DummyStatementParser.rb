@@ -7,7 +7,10 @@ class DummyStatementParser
             eofReached(parser)
         elsif(is_interal_statement_keyword(current))
             # actual parser will be able to handle print(), thing.method() etc.
-            return DummyStatement.new(current)
+            d = DummyStatement.new(current)
+            a = Array.new
+            a.append(d)
+            return a
         else
             raise Exception.new("Failed to return dummy Statement")
         end

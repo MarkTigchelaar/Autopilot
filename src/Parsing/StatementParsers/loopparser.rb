@@ -34,6 +34,7 @@ class LoopParser
         elsif(isValidIdentifier(peekTok))
             loopNameStep(parser)
         else
+            puts "HERE"
             unexpectedToken(parser)
         end 
     end
@@ -62,9 +63,9 @@ class LoopParser
 
     def statementStep(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
+        if(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
             stmt = @statement_parser.parse(parser)
-            @statements.append(stmt)
+            @statements = stmt
             peekTok = parser.peek()
             if(parser.hasErrors())
                 return

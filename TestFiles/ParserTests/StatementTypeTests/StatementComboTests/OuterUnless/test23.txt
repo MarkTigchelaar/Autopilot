@@ -1,0 +1,4 @@
+unless a do
+  switch b
+    case 'a' do
+end

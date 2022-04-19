@@ -52,8 +52,8 @@ class UnittestParser
 
     def parseStatements(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
-            @statements.append(@statement_parser.parse(parser))
+        if(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
+            @statements = @statement_parser.parse(parser)
             peekTok = parser.peek()
             if(parser.hasErrors())
                 return

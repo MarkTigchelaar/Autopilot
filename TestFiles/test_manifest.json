@@ -110,5 +110,13 @@
     {
         "general_component" : "reassignorcallparser",
         "test_manifest_file" : "../TestFiles/ParserTests/reassignorcallparser_manual_tests.json"
+    },
+    {
+        "general_component" : "statementparserwdummy",
+        "test_manifest_file" : "../TestFiles/ParserTests/statement_with_dummy_parser_manual_tests.json"
+    },
+    {
+        "general_component" : "statementcombinations",
+        "test_manifest_file" : "../TestFiles/ParserTests/statement_combination_tests.json"
     }
 ]

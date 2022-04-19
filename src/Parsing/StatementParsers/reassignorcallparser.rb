@@ -15,9 +15,9 @@ class ReassignOrCallParser
         reset()
         name = parser.nextToken()
         enforceIdentifier(name)
-
         peekTok = parser.peek()
         if(isEOF(peekTok))
+            #puts "here"
             eofReached(parser)
         elsif(peekTok.getType() == EQUAL)
             @var_name = name
@@ -34,6 +34,7 @@ class ReassignOrCallParser
         #puts "after call Func step"
         r = ReassignmentOrCallStatement.new(@var_name, @expression_ast, @functions)
         reset()
+        #puts "parser has errors at end of parse: #{parser.hasErrors()}"
         return r
     end
 
@@ -41,6 +42,7 @@ class ReassignOrCallParser
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
+            #puts "EOF line 45"
             #puts "                       END OF FILE HERE!!!!"
             eofReached(parser)
         else
@@ -51,14 +53,6 @@ class ReassignOrCallParser
     def parseAssignExpression(parser)
         @expression_parser.loadTokenizer(parser)
         @expression_ast = @expression_parser.parse_expression()
-        peekTok = parser.peek()
-        if(isEOF(peekTok))
-            #puts "     HERE"
-            eofReached(parser)
-        elsif(!is_interal_statement_keyword(peekTok) and !isValidIdentifier(peekTok))
-            #puts "Unexpected token #2"
-            unexpectedToken(parser)
-        end
     end
 
     def callFuncStep(parser, name)
@@ -66,8 +60,10 @@ class ReassignOrCallParser
         peekTok = parser.peek()
         #puts "token: #{peekTok.getText()}"
         if(isEOF(peekTok))
+            #puts "EOF line 63"
             #puts "Here?"
             eofReached(parser)
+            return
         elsif(peekTok.getType() != RIGHT_PAREN and !isValidIdentifier(peekTok))
             #puts "Unexpected token #3"
             unexpectedToken(parser)
@@ -80,7 +76,9 @@ class ReassignOrCallParser
             args.append(ast)
             peekTok = parser.peek()
             if(isEOF(peekTok))
+                #puts "EOF on line 78"
                 eofReached(parser)
+                return
             elsif(peekTok.getType() == COMMA)
                 parser.discard()
                 peekTok = parser.peek()
@@ -94,6 +92,7 @@ class ReassignOrCallParser
         end
         @functions.append(FuncCall.new(name, args))
         if(isEOF(peekTok))
+            #puts "EOF on line 94"
             eofReached(parser)
         elsif(peekTok.getType() == RIGHT_PAREN)
             #puts "token before call end step: #{peekTok.getText()}"
@@ -118,6 +117,7 @@ class ReassignOrCallParser
         peekTok = parser.peek()
         # name for "method call"
         if(isEOF(peekTok))
+            #puts "EOF on line 118"
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
             funcNameStep(parser, peekTok)
@@ -131,6 +131,7 @@ class ReassignOrCallParser
         peekTok = parser.peek()
         # name for "method call"
         if(isEOF(peekTok))
+            #puts "EOF on line 133"
             eofReached(parser)
         elsif(peekTok.getType() == LEFT_PAREN)
             callFuncStep(parser, name)
@@ -208,7 +209,7 @@ class ReassignmentOrCallStatement
     end
 
     def _printLiteral()
-        puts "PRINT LITERAL"
+        #puts "PRINT LITERAL"
         if(@functions.length() > 0 and @expression_ast != nil)
             raise Exception.new("can be reassign and call tpye statement.")
         end

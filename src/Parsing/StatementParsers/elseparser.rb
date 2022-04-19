@@ -34,9 +34,9 @@ class ElseParser
 
     def parseStatements(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
-            stmt = @statement_parser.parse(parser)
-            @statements.append(stmt)
+        if(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
+            stmts = @statement_parser.parse(parser)
+            @statements = stmts
             peekTok = parser.peek()
             if(parser.hasErrors())
                 return

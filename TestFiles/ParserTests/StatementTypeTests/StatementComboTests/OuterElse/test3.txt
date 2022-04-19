@@ -1,0 +1,7 @@
+else
+  if b do
+    let a = 5
+  end
+  if b do
+  end
+end

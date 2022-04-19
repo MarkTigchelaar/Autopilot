@@ -7,12 +7,15 @@ class AssignParser
         @expression_parser = expression_parser
         @name = nil
         @type = nil
+        @let_or_var = nil
         @expression_ast = nil
     end
 
     def parse(parser)
         reset()
         # let or var handled by statement parser already.
+        @let_or_var = parser.nextToken()
+
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -21,8 +24,9 @@ class AssignParser
         else
             unexpectedToken(parser)
         end
-        r = AssignmentStatement.new(@name, @type, @expression_ast)
+        r = AssignmentStatement.new(@let_or_var, @name, @type, @expression_ast)
         reset()
+        #puts "RETURNING FROM PARSE ASSIGN STATEMENT----------------"
         return r
     end
 
@@ -77,32 +81,28 @@ class AssignParser
     end
 
     def parseExpression(parser)
+        #puts "Parsing expression ------------------------------------- has errors? #{parser.hasErrors()}"
         @expression_parser.loadTokenizer(parser)
         @expression_ast = @expression_parser.parse_expression()
-        peekTok = parser.peek()
-        if(isEOF(peekTok))
-            eofReached(parser)
-        elsif(!is_interal_statement_keyword(peekTok) and !isValidIdentifier(peekTok))
-            unexpectedToken(parser)
-        end
+        #puts "parsed expression has errors? #{parser.hasErrors()}"
     end
 
     def reset()
         @name = nil
         @type = nil
         @expression_ast = nil
+        @let_or_var = nil
     end
 end
 
 
 
 class AssignmentStatement
-    def initialize(name, type, expression_ast)
+    def initialize(let_or_var, name, type, expression_ast)
         @name = name
         @type = type
         @expression_ast = expression_ast
-        @let = false
-        @var = false
+        @let_or_var = let_or_var
     end
 
     def usesLet
@@ -114,12 +114,12 @@ class AssignmentStatement
     end
 
     def _printLiteral
-        ownership_type = ''
-        if(@var)
-            ownership_type = "var"
-        elsif(@let)
-            ownership_type = "let"
-        end
+        ownership_type = @let_or_var.getText()
+        #if(@var)
+        #    ownership_type = "var"
+        #elsif(@let)
+        #    ownership_type = "let"
+        #end
         if(@expression_ast != nil)
             l = Array.new
             @expression_ast._printLiteral(l)

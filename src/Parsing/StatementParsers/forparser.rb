@@ -220,9 +220,9 @@ class ForParser
 
     def parseStatements(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and is_interal_statement_keyword(peekTok))
-            stmt = @statement_parser.parse(parser)
-            @statements.append(stmt)
+        if(!isEOF(peekTok) and is_interal_statement_keyword(peekTok))
+            stmts = @statement_parser.parse(parser)
+            @statements = stmts
             peekTok = parser.peek()
             if(parser.hasErrors())
                 return
@@ -231,7 +231,11 @@ class ForParser
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
-            endStep(parser)
+            if(@statements.length() == 0)
+                emptyStatement(parser)
+            else
+                endStep(parser)
+            end
         else
             unexpectedToken(parser)
         end

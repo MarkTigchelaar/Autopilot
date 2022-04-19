@@ -104,16 +104,16 @@ class SwitchParser
 
     def parseStatements(parser, values, from_default = false)
         peekTok = parser.peek()
-        puts "statement name: #{peekTok.getText()}, from fdefault: #{from_default}"
+        puts "statement name: #{peekTok.getText()}, from default: #{from_default}"
         if(peekTok.getType() == DEFAULT and @default_case != nil)
             msg = "Invalid statement, switch statement allows exactly one default case."
             addError(parser, msg)
             return
         end
         statements = Array.new
-        while(!isEOF(peekTok) and is_interal_statement_keyword(peekTok))
-            stmt = @statement_parser.parse(parser)
-            statements.append(stmt)
+        if(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
+            stmts = @statement_parser.parse(parser)
+            statements = stmts
             peekTok = parser.peek()
             if(parser.hasErrors())
                 puts "HAS errors!!"
@@ -148,9 +148,11 @@ class SwitchParser
             if(statements.length() == 0)
                 emptyStatement(parser)
             else
+                puts "FOUND END TOKEN"
                 endStep(parser)
             end
         else
+            puts "HERE"
             unexpectedToken(parser)
         end
     end

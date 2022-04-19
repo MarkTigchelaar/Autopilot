@@ -1,36 +1,67 @@
 require_relative '../Tokenization/scanner.rb'
-
+require 'set.rb'
 class DummyParser
     def initialize(testComponent, tokenizer = nil)
         @scanner = tokenizer || Scanner.new()
-        @err = nil
+        @err = Array.new
         @component = testComponent
         @ast = nil
     end
 
     def addError(token, msg)
-        @err = Hash.new
-        @err["file"] = token.getFilename()
-        @err["tokenLiteral"] = token.getText()
-        @err["lineNumber"] = token.getLine()
-        @err["message"] = msg
+        err = Hash.new
+        err["file"] = token.getFilename()
+        err["tokenLiteral"] = token.getText()
+        err["lineNumber"] = token.getLine()
+        err["message"] = msg
+        @err.append(err)
     end
 
     def hasErrors
-        return @err != nil
+        return (@err != nil and @err.length > 0)
     end
 
     def getErrorList
-        errors = Array.new()
-        if @err != nil
-            errors.append(@err)
+
+        dup_indicies = Set.new
+        for i in (@err.length - 1).downto(0) do
+            for j in (i - 1).downto(0) do
+                if(i == j)
+                    next
+                end
+                b = @err[j]
+                same_file = @err[i]["file"] == b["file"]
+                same_lit = @err[i]["tokenLiteral"] == b["tokenLiteral"]
+                same_line = @err[i]["lineNumber"] == b["lineNumber"]
+                same_msg = @err[i]["message"] == b["message"]
+                is_eof = b["message"] == "End of file reached."
+                if(same_file and same_lit and same_line and same_msg and is_eof)
+                    dup_indicies.add(i)
+                end
+            end
         end
-        return errors
+        for i in (@err.length - 1).downto(0) do
+            if dup_indicies.include?(i)
+                @err.delete_at(i)
+            end
+        end
+
+        return @err#errors
     end
 
-    def parse(filename)
+    def reset()
+        @ast = nil
+        @err = Array.new
+    end
+
+    def parse(filename, component_test = false)
+        reset()
         @scanner.loadSource(filename)
-        @ast = @component.parse(self)
+        if(component_test)
+            @ast = @component.parse(self, true)
+        else
+            @ast = @component.parse(self)
+        end
         @scanner.closeSource()
     end
 

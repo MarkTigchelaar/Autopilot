@@ -6,7 +6,7 @@ FAILURE = "TEST CASE FAILURE,"
 def component_test(test_case, failurelog, tracker, msg, expected, result)
     if(result != expected)
         tracker.incFail()
-        msg = FAILURE + msg
+        msg = FAILURE + "In #{test_case["file"]}: " + msg
         puts msg
         failurelog.write("In #{test_case["file"]}" + "\n")
         failurelog.write(msg + "\n\n")
@@ -29,6 +29,7 @@ end
 
 def printErrors(reportedErrors)
     for err in reportedErrors do
+        puts "file name: #{err["file"]}"
         puts "token literal: #{err["tokenLiteral"]}"
         puts "line number: #{err["lineNumber"]}"
         puts "message: #{err["message"]}"
@@ -42,10 +43,10 @@ def error_test(test_case, parser, failurelog, tracker)
     numActualErrors = reportedErrors.length
     if(numExpErrors != numActualErrors)
         raise Exception.new(
-            "mismatch of errors in #{test_case["file"]}, expected: #{numExpErrors}, got #{numActualErrors}"
+           "mismatch of errors in #{test_case["file"]}, expected: #{numExpErrors}, got #{numActualErrors}"
         )
-        printErrors(reportedErrors)
-        return
+        #printErrors(reportedErrors)
+        #return
     else
         puts "NUMBER OF ERRORS MATCHES EXPECTED NUMBER OF ERRORS #{numActualErrors}, #{numExpErrors}"
     end
