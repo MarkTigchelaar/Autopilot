@@ -12,9 +12,11 @@ class AssignParser
     end
 
     def parse(parser)
+        errCount = parser.errorCount()
         reset()
         # let or var handled by statement parser already.
         @let_or_var = parser.nextToken()
+        #puts "token: #{@let_or_var.getText()}"
 
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -27,6 +29,9 @@ class AssignParser
         r = AssignmentStatement.new(@let_or_var, @name, @type, @expression_ast)
         reset()
         #puts "RETURNING FROM PARSE ASSIGN STATEMENT----------------"
+        if(errCount < parser.errorCount())
+            internalSynchronize(parser)
+        end
         return r
     end
 

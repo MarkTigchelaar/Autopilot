@@ -11,6 +11,7 @@ class SwitchParser
     end
 
     def parse(parser)
+        errCount = parser.errorCount()
         reset()
         token = parser.nextToken()
         enforceSwitch(token)
@@ -26,6 +27,9 @@ class SwitchParser
         end
         r = SwitchStatement.new(@test_case, @cases, @default_case)
         reset()
+        if(errCount < parser.errorCount())
+            internalSynchronize(parser)
+        end
         return r
     end
 
@@ -104,7 +108,7 @@ class SwitchParser
 
     def parseStatements(parser, values, from_default = false)
         peekTok = parser.peek()
-        puts "statement name: #{peekTok.getText()}, from default: #{from_default}"
+        #puts "statement name: #{peekTok.getText()}, from default: #{from_default}"
         if(peekTok.getType() == DEFAULT and @default_case != nil)
             msg = "Invalid statement, switch statement allows exactly one default case."
             addError(parser, msg)
@@ -115,30 +119,30 @@ class SwitchParser
             stmts = @statement_parser.parse(parser)
             statements = stmts
             peekTok = parser.peek()
-            if(parser.hasErrors())
-                puts "HAS errors!!"
-                return
-            end
+            #if(parser.hasErrors())
+                #puts "HAS errors!!"
+                #return
+            #end
         end
         new_case = CaseStatement.new(values, statements)
         if(from_default)
-            puts "default"
+            #puts "default"
             @default_case = new_case
         else
-            puts "regular case"
+            #puts "regular case"
             @cases.append(new_case)
         end
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == CASE and not from_default)
-            puts "In parse statements, found case statement, not from default"
+            #puts "In parse statements, found case statement, not from default"
             if(statements.length() == 0)
                 emptyStatement(parser)
-            else
+            elsif(not parser.hasErrors())
                 caseStep(parser)
             end
         elsif(peekTok.getType() == DEFAULT and not from_default)
-            puts "found default"
+            #puts "found default"
             if(statements.length() == 0)
                 emptyStatement(parser)
             else
@@ -148,11 +152,11 @@ class SwitchParser
             if(statements.length() == 0)
                 emptyStatement(parser)
             else
-                puts "FOUND END TOKEN"
+                #puts "FOUND END TOKEN"
                 endStep(parser)
             end
         else
-            puts "HERE"
+            #puts "HERE"
             unexpectedToken(parser)
         end
     end

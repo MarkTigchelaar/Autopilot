@@ -34,48 +34,25 @@ class StatementParser
     end
 
     def parse(parser, component_test = false)
+        stmts = Array.new
         reset()
         peekTok = parser.peek()
         while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
-            #puts "parser sees: #{peekTok.getText()}"
             stmt = nil
+            errCount = parser.errorCount()
             if(isValidIdentifier(peekTok))
                 stmt = parseReassignOrCall(parser)
             else
                 stmt = parse_internal_statement(self, parser)
             end
-            #if(stmt != nil)
-            @statements.append(stmt)
+            stmts.append(stmt)
             peekTok = parser.peek()
-            #else
-            #    break
-            #end
-            #puts "Does parser have errors: #{parser.hasErrors()}"
             if(component_test and parser.hasErrors())
-                #puts "breaking from loop in statement parser"
                 break
             end
-            #if(parser.hasErrors())
-                #while(!isEOF(peekTok) and is_interal_statement_keyword(peekTok))
-                    #parser.discard()
-                #end
-            #end
         end
-        if(!component_test)
-            if(isEOF(peekTok))
-                #puts "End of file!"
-                eofReached(parser)
-            #elsif(peekTok.getType() == ENDSCOPE)
-                #endStep(parser)
-            #else
-            #    #puts "UNEXPECTED TOKEN IN STATEMENT PARSER: #{peekTok.getText()}"
-            #    unexpectedToken(parser)
-            end
-        end
-        s = StatementList.new(@statements)
+        s = StatementList.new(stmts)
         reset()
-        #puts "Does parser have errors at end of statement parse?: #{parser.hasErrors()}"
-        #puts "returning statement from statement parser"
         return s
     end
 
@@ -108,13 +85,14 @@ class StatementParser
     end
 
     def parseLet(parser)
-        #puts "PARSing assignment statement-------------------------------"
+        puts "Parsing let assignment statement-------------------------------"
         a = @assignparser.parse(parser)
         #a.usesLet()
         return a
     end
 
     def parseVar(parser)
+        puts "parsing var assign statement"
         a = @assignparser.parse(parser)
         #a.usesVar()
         return a

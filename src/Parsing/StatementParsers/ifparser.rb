@@ -29,6 +29,7 @@ class IfParser
     end
 
     def parse(parser)
+        errCount = parser.errorCount()
         reset()
         @ifstatement = IfStatement.new()
         token = parser.nextToken()
@@ -55,6 +56,9 @@ class IfParser
         i = @ifstatement #IfStatement.new(@let, @var, @unwrapped_var, @opt_variable, @expression_ast, @statements)
         reset()
         isnt_unless()
+        if(errCount < parser.errorCount())
+            internalSynchronize(parser)
+        end
         return i  
     end
     
@@ -148,7 +152,7 @@ class IfParser
         elsif(peekTok.getType() == DO)
             doStep(parser)
         else
-            #puts "Found unexpected token"
+            puts "Found unexpected token"
             unexpectedToken(parser)
         end
     end
@@ -168,11 +172,11 @@ class IfParser
             peekTok = parser.peek()
             if(parser.hasErrors())
                 #puts "parser has errors:"
-                for e in parser.getErrorList()
+                #for e in parser.getErrorList()
                     #puts "Error: #{e["tokenLiteral"]}"
                     #puts "message: #{e["message"]}"
-                end
-                return
+                #end
+                #return
             end
         end
         @ifstatement = i
@@ -185,7 +189,7 @@ class IfParser
             if(@statements.length() == 0)
                 #puts "statements length is 0"
                 emptyStatement(parser)
-            else
+            else#if(not parser.hasErrors())
                 #puts "end step"
                 endStep(parser)
             end

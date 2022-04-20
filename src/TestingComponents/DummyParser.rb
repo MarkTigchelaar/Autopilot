@@ -21,6 +21,10 @@ class DummyParser
         return (@err != nil and @err.length > 0)
     end
 
+    def errorCount()
+        return @err.length()
+    end
+
     def getErrorList
 
         dup_indicies = Set.new

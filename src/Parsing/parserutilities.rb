@@ -212,7 +212,16 @@ def parse_internal_statement(statement_parser, main_parser)
     end
 end
 
-def synchronize(parser)
+
+def internalSynchronize(parser)
+    peekTok = parser.peek()
+    while(!isEOF(peekTok) and (peekTok.getType() != ENDSCOPE) and (not is_interal_statement_keyword(peekTok)))
+        parser.discard()
+        peekTok = parser.peek()
+    end
+end
+
+def externalSynchronize(parser)
     while(!parser.isAtEnd())
         literal = parser.peek().getType()
         if(literal == MODULE)
@@ -223,28 +232,12 @@ def synchronize(parser)
             return
         elsif(literal == UNITTEST)
             return
-        #elsif(literal == CONTINUE)
-        #    return
-        #elsif(literal == BREAK)
-        #    return
-        #elsif(literal == IF)
-        #    return
-        #elsif(literal == CASE)
-        #    return
-        #elsif(literal == RETURN)
-        #    return
-        #elsif(literal == PUB) # avoid pub fields in structs
-        #    return
         elsif(literal == FUN)
             return
-        #elsif(literal == PRC)
-            #return
         elsif(literal == INTERFACE)
             return
         elsif(literal == ENUM)
             return
-        #elsif(literal == DEBUG)
-            #return
         elsif(literal == ACYCLIC)
             return
         elsif(literal == INLINE)

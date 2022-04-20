@@ -118,5 +118,9 @@
     {
         "general_component" : "statementcombinations",
         "test_manifest_file" : "../TestFiles/ParserTests/statement_combination_tests.json"
+    },
+    {
+        "general_component" : "statementsequences",
+        "test_manifest_file" : "../TestFiles/ParserTests/statement_sequence_tests.json"
     }
-]
+] 

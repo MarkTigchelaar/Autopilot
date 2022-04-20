@@ -18,6 +18,7 @@ class ForParser
     end
 
     def parse(parser)
+        errCount = parser.errorCount()
         reset()
         token = parser.nextToken()
         enforceFor(token)
@@ -45,6 +46,9 @@ class ForParser
             @statements
         )
         reset()
+        if(errCount < parser.errorCount())
+            internalSynchronize(parser)
+        end
         return f
     end
 
@@ -224,16 +228,16 @@ class ForParser
             stmts = @statement_parser.parse(parser)
             @statements = stmts
             peekTok = parser.peek()
-            if(parser.hasErrors())
-                return
-            end
+            #if(parser.hasErrors())
+            #    return
+            #end
         end
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
             if(@statements.length() == 0)
                 emptyStatement(parser)
-            else
+            else#if(not parser.hasErrors())
                 endStep(parser)
             end
         else

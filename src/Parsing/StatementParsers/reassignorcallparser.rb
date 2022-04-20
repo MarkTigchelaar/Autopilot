@@ -12,6 +12,7 @@ class ReassignOrCallParser
     end
 
     def parse(parser)
+        errCount = parser.errorCount()
         reset()
         name = parser.nextToken()
         enforceIdentifier(name)
@@ -35,6 +36,9 @@ class ReassignOrCallParser
         r = ReassignmentOrCallStatement.new(@var_name, @expression_ast, @functions)
         reset()
         #puts "parser has errors at end of parse: #{parser.hasErrors()}"
+        if(errCount < parser.errorCount())
+            internalSynchronize(parser)
+        end
         return r
     end
 

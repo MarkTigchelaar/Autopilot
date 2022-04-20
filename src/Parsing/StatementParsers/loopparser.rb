@@ -10,6 +10,7 @@ class LoopParser
     end
 
     def parse(parser)
+        errCount = parser.errorCount()
         reset()
         token = parser.nextToken()
         enforceLoop(token)
@@ -23,6 +24,9 @@ class LoopParser
         end
         l = LoopStatement.new(@loop_name, @statements)
         reset()
+        if(errCount < parser.errorCount())
+            internalSynchronize(parser)
+        end
         return l
     end
 
@@ -67,16 +71,16 @@ class LoopParser
             stmt = @statement_parser.parse(parser)
             @statements = stmt
             peekTok = parser.peek()
-            if(parser.hasErrors())
-                return
-            end
+            #if(parser.hasErrors())
+            #    return
+            #end
         end
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
             if(@statements.length() == 0)
                 emptyStatement(parser)
-            else
+            else#if(not parser.hasErrors())
                 endStep(parser)
             end
         else

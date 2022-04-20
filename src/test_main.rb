@@ -251,7 +251,14 @@ def main
             s = StatementParser.new(ExpressionParser.new())
             tests.each do |test_file|
                 d = DummyParser.new(s, tokenizer)
-                call_parser_component_tests(test_file, failurelog, tracker, d, "statements with combinations")
+                call_parser_component_tests(test_file, failurelog, tracker, d, "statement")
+            end
+        when "statementsequences"
+            #next
+            s = StatementParser.new(ExpressionParser.new())
+            tests.each do |test_file|
+                d = DummyParser.new(s, tokenizer)
+                call_parser_component_tests(test_file, failurelog, tracker, d, "statement")
             end
         else
             puts "component #{general_component} not recognized"

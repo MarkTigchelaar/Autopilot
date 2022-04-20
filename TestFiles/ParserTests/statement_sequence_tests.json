@@ -1,0 +1,34 @@
+[
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test1.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test1.txt",
+                "tokenLiteral" : "struct",
+                "lineNumber" : "1",
+                "message" : "Unexpected token struct."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test2.txt",
+                "tokenLiteral" : "dee",
+                "lineNumber" : "2",
+                "message" : "Unexpected token dee."
+            },
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test2.txt",
+                "tokenLiteral" : "eh",
+                "lineNumber" : "5",
+                "message" : "Unexpected token eh."
+            }
+        ]
+    }
+]
