@@ -44,13 +44,6 @@
             }
         ]
     },
-
-
-
-
-
-
-
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementComboTests/OuterIf/test4.txt",
         "astString" : "",
@@ -366,21 +359,6 @@
             }
         ]
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementComboTests/OuterElif/test1.txt",
         "astString" : "",

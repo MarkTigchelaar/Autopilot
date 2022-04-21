@@ -14,9 +14,8 @@ class AssignParser
     def parse(parser)
         errCount = parser.errorCount()
         reset()
-        # let or var handled by statement parser already.
         @let_or_var = parser.nextToken()
-        #puts "token: #{@let_or_var.getText()}"
+        enforceAssign()
 
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -28,7 +27,6 @@ class AssignParser
         end
         r = AssignmentStatement.new(@let_or_var, @name, @type, @expression_ast)
         reset()
-        #puts "RETURNING FROM PARSE ASSIGN STATEMENT----------------"
         if(errCount < parser.errorCount())
             internalSynchronize(parser)
         end
@@ -86,10 +84,8 @@ class AssignParser
     end
 
     def parseExpression(parser)
-        #puts "Parsing expression ------------------------------------- has errors? #{parser.hasErrors()}"
         @expression_parser.loadTokenizer(parser)
         @expression_ast = @expression_parser.parse_expression()
-        #puts "parsed expression has errors? #{parser.hasErrors()}"
     end
 
     def reset()
@@ -97,6 +93,12 @@ class AssignParser
         @type = nil
         @expression_ast = nil
         @let_or_var = nil
+    end
+
+    def enforceAssign()
+        if(@let_or_var.getType() != LET and @let_or_var.getType() != VAR)
+            raise Exception.new("Did not enounter \"let\" or \"var\" keywords in file " + @let_or_var.getFilename())
+        end
     end
 end
 
@@ -120,11 +122,6 @@ class AssignmentStatement
 
     def _printLiteral
         ownership_type = @let_or_var.getText()
-        #if(@var)
-        #    ownership_type = "var"
-        #elsif(@let)
-        #    ownership_type = "let"
-        #end
         if(@expression_ast != nil)
             l = Array.new
             @expression_ast._printLiteral(l)

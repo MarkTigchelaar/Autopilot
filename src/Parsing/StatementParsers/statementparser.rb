@@ -2,7 +2,6 @@ require_relative '../parserutilities.rb'
 require_relative '../../tokentype.rb'
 require_relative '../../keywords.rb'
 
-
 class StatementParser
     def initialize(expression_parser, dummy = nil)
         if(dummy != nil)
@@ -35,7 +34,6 @@ class StatementParser
 
     def parse(parser, component_test = false)
         stmts = Array.new
-        reset()
         peekTok = parser.peek()
         while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
             stmt = nil
@@ -52,7 +50,6 @@ class StatementParser
             end
         end
         s = StatementList.new(stmts)
-        reset()
         return s
     end
 
@@ -85,16 +82,12 @@ class StatementParser
     end
 
     def parseLet(parser)
-        puts "Parsing let assignment statement-------------------------------"
         a = @assignparser.parse(parser)
-        #a.usesLet()
         return a
     end
 
     def parseVar(parser)
-        puts "parsing var assign statement"
         a = @assignparser.parse(parser)
-        #a.usesVar()
         return a
     end
 
@@ -117,15 +110,13 @@ class StatementParser
     def parseReassignOrCall(parser)
         @reassignorcallparser.parse(parser)
     end
-
-    def endStep(parser)
-        parser.discard()
-    end
-
-    def reset()
-        @statements = Array.new
-    end
 end
+
+
+
+
+
+
 
 class StatementList
     def initialize(statements)
