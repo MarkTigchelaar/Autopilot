@@ -215,38 +215,44 @@ end
 
 def internalSynchronize(parser)
     peekTok = parser.peek()
-    while(!isEOF(peekTok) and (peekTok.getType() != ENDSCOPE) and (not is_interal_statement_keyword(peekTok)))
+    while(!isEOF(peekTok) and (peekTok.getType() != ENDSCOPE) and !is_interal_statement_keyword(peekTok))
         parser.discard()
         peekTok = parser.peek()
     end
 end
 
+
+def isExternalKeyword(token)
+    return case token.getType()
+    when MODULE
+        true
+    when IMPORT
+        true
+    when DEFINE
+        true
+    when UNITTEST
+        true
+    when FUN
+        true
+    when INTERFACE
+        true
+    when ENUM
+        true
+    when ACYCLIC
+        true
+    when UNION
+        true
+    when ERROR
+        true
+    else
+        false
+    end
+end
+
 def externalSynchronize(parser)
-    while(!parser.isAtEnd())
-        literal = parser.peek().getType()
-        if(literal == MODULE)
-            return
-        elsif(literal == IMPORT)
-            return
-        elsif(literal == DEFINE)
-            return
-        elsif(literal == UNITTEST)
-            return
-        elsif(literal == FUN)
-            return
-        elsif(literal == INTERFACE)
-            return
-        elsif(literal == ENUM)
-            return
-        elsif(literal == ACYCLIC)
-            return
-        elsif(literal == INLINE)
-            return
-        elsif(literal == UNION)
-            return
-        elsif(literal == ERROR)
-            return
-        end
+    token = parser.peek()
+    while(!parser.isAtEnd() and !isExternalKeyword(token))
         parser.discard()
+        token = parser.peek()
     end
 end

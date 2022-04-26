@@ -37,6 +37,10 @@ class Scanner
         reset()
     end
 
+    def bytesFromEnd()
+        return @charScanner.bytesFromEnd()
+    end
+
     def hasTokens
         return !isAtEnd()
     end
@@ -410,6 +414,10 @@ class FileScanner
 
     def getFilesize
         return @filesize
+    end
+
+    def bytesFromEnd()
+        return @filesize - @current
     end
 
     def getCurrent

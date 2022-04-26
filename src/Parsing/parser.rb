@@ -56,7 +56,7 @@ class Parser
                 ast.append(type)
             end
             if(@shouldSync)
-                synchronize(self)
+                externalSynchronize(self)
                 syncOff()
             end
         end

@@ -117,7 +117,7 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "unit test")
             end
         when "functionparser"
-            next
+            #next
             f = FunctionParser.new(DummyStatementParser.new())
             tests.each do |test_case|
                 d = DummyParser.new(f, tokenizer)
@@ -254,7 +254,7 @@ def main
                 call_parser_component_tests(test_file, failurelog, tracker, d, "statement")
             end
         when "statementsequences"
-            #
+            next 
             s = StatementParser.new(ExpressionParser.new())
             tests.each do |test_file|
                 d = DummyParser.new(s, tokenizer)

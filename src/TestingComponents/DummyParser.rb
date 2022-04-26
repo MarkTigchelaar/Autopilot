@@ -101,6 +101,10 @@ class DummyParser
         return
     end
 
+    def canDiscardEndTok()
+        return @scanner.bytesFromEnd() > 3
+    end
+
     def discard
         nextToken()
     end

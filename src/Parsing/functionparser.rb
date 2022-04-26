@@ -83,7 +83,7 @@ class FunctionParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isValidIdentifier(peekTok))
+        elsif(isValidIdentifier(peekTok) or isPrimitiveType(peekTok, true))
             argTypeStep(parser, argname)
         else
             unexpectedToken(parser)
@@ -98,9 +98,10 @@ class FunctionParser
         elsif(peekTok.getType() == COMMA)
             @arguments.append(FunctionArgument.new(argname, argtype))
             commaStep(parser)
-        elsif(peekTok.getType() == EQUAL_EQUAL)
+        elsif(peekTok.getType() == EQUAL)
             assignStep(parser, argname, argtype)
         elsif(peekTok.getType() == RIGHT_PAREN)
+            @arguments.append(FunctionArgument.new(argname, argtype))
             rightParenStep(parser)
         else
             unexpectedToken(parser)
@@ -108,6 +109,19 @@ class FunctionParser
     end
 
     def assignStep(parser, argname, argtype)
+        parser.discard()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        #elsif(peekTok.getType() == STRING or peekTok.getType() == CHAR or peekTok.getType() == FLOAT or peekTok.getType() == INT)
+        elsif([STRING, CHAR, FLOAT, INT].include?(peekTok.getType()))
+            addDefaultStep(parser, argname, argtype)
+        else
+            unexpectedToken(parser)
+        end
+    end
+
+    def addDefaultStep(parser, argname, argtype)
         default_value = parser.nextToken()
         @arguments.append(FunctionArgument.new(argname, argtype, default_value))
         peekTok = parser.peek()
@@ -128,7 +142,7 @@ class FunctionParser
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
-            argTypeStep(parser, argname)
+            argNameStep(parser)
         else
             unexpectedToken(parser)
         end
@@ -148,7 +162,11 @@ class FunctionParser
         elsif(peekTok.getType() == DO)
             doStep(parser)
         elsif(isIdentifier(peekTok))
-            returnTypeStep(parser)
+            if(!isExternalKeyword(peekTok))
+                returnTypeStep(parser)
+            else
+                unexpectedToken(parser)
+            end
         else
             unexpectedToken(parser)
         end
@@ -159,7 +177,7 @@ class FunctionParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isKeyword(peekTok) and peekTok.getType() != ENDSCOPE)
+        elsif(is_interal_statement_keyword(peekTok) and peekTok.getType() != ENDSCOPE)
             parseStatements(parser)
         else
             unexpectedToken(parser)
@@ -187,8 +205,9 @@ class FunctionParser
 
     def parseStatements(parser)
         peekTok = parser.peek()
-        while(!isEOF(peekTok) and peekTok.getType() != ENDSCOPE)
-            @statements.append(@statement_parser.parse(parser))
+        stmts = Array.new()
+        if(!isEOF(peekTok) and peekTok.getType() != ENDSCOPE)
+            @statements = @statement_parser.parse(parser)
         end
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -224,6 +243,22 @@ class FunctionArgument
         @var_type = var_type
         @default_value = default_value
     end
+
+    def _printLiteral()
+        str =  @var_name.getText() + " " + @var_type.getText()
+        if(@default_value != nil)
+            return str + " " + @default_value.getText()
+        end
+        return str
+    end
+
+    def _printTokType(type_list)
+        type_list.append(@var_name.getType())
+        type_list.append(@var_type.getType())
+        if(@default_value != nil)
+            type_list.append(@default_value.getType())
+        end
+    end
 end
 
 class FunctionStatement
@@ -247,5 +282,53 @@ class FunctionStatement
 
     def setAsInline()
         @is_inline = true
+    end
+
+    def _printTokType(type_list)
+        if(@is_acyclic)
+            type_list.append(ACYCLIC)
+        end
+        if(@is_inline)
+            type_list.append(INLINE)
+        end
+        if(@is_public)
+            type_list.append(PUB)
+        end
+        type_list.append(@function_name.getType())
+        for arg in @arguments
+            arg._printTokType(type_list)
+        end
+        if(@return_type != nil)
+            type_list.append(@return_type.getType())
+        end
+        for stmt in @statements
+            stmt._printTokType(type_list)
+        end
+    end
+
+    def _printLiteral()
+        astString = ""
+        if(@is_acyclic)
+            astString += "acyclic "
+        end
+        if(@is_inline)
+            astString += "inline "
+        end
+        if(@is_public)
+            astString += "public "
+        end
+        astString += @function_name.getText() + " "
+        for arg in @arguments
+            astString += arg._printLiteral() + " "
+        end
+        if(@return_type != nil)
+            astString += " " + @return_type.getText()
+        end
+        for stmt in @statements
+            astString += " " + stmt._printLiteral()
+        end
+        astString = astString.strip()
+        astString = astString.squeeze(" ")
+        return astString
     end
 end
