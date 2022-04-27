@@ -315,7 +315,7 @@ class FunctionStatement
             astString += "inline "
         end
         if(@is_public)
-            astString += "public "
+            astString += "pub "
         end
         astString += @function_name.getText() + " "
         for arg in @arguments

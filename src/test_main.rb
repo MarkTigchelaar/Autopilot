@@ -117,14 +117,14 @@ def main
                 call_parser_component_tests(test_case, failurelog, tracker, d, "unit test")
             end
         when "functionparser"
-            #next
+            next
             f = FunctionParser.new(DummyStatementParser.new())
             tests.each do |test_case|
                 d = DummyParser.new(f, tokenizer)
                 call_parser_component_tests(test_case, failurelog, tracker, d, "function")
             end
         when "interfaceparser"
-            next
+            #next
             i = InterfaceParser.new(FunctionParser.new(DummyStatementParser.new()))
             tests.each do |test_case|
                 d = DummyParser.new(i, tokenizer)

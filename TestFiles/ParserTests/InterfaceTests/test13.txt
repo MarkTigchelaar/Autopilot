@@ -1,0 +1,4 @@
+interface test is
+  fun test() end
+  acyclic fun test2() end
+  acyclic fun test3() int end

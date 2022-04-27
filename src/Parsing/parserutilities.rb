@@ -97,6 +97,11 @@ def emptyStatement(parser)
     addError(parser, msg)
 end
 
+def noFunctions(parser)
+    msg = "No functions defined."
+    addError(parser, msg)
+end
+
 def isPrimitiveType(token, check_literal = false)
     compare = token.getType()
     if(check_literal)

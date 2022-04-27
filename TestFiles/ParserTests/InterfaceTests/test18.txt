@@ -1,0 +1,4 @@
+interface test is
+  fun testFunc() end
+  acyclic fun test2(a as int = 0) float end
+end

@@ -31,7 +31,7 @@ class InterfaceParser
     end
 
     def interfaceNameStep(parser)
-        parser.discard()
+        @interface_name = parser.nextToken()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -67,7 +67,9 @@ class InterfaceParser
                 end
                 is_acyclic = true
             end
+            @function_parser.inInterface()
             fn = @function_parser.parse(parser)
+            @function_parser.outInterface()
             if(is_acyclic)
                 fn.setAsAcyclic()
             end
@@ -76,11 +78,14 @@ class InterfaceParser
             @functions.append(fn)
             peekTok = parser.peek()
         end
-        #peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
-            endStep(parser)
+            if(@functions.length() == 0)
+                noFunctions(parser)
+            else
+                endStep(parser)
+            end
         else
             unexpectedToken(parser)
         end
@@ -119,5 +124,35 @@ class InterfaceStatement
 
     def setAsPublic()
         @is_public = true
+    end
+
+    def _printTokType(type_list)
+        if(@is_acyclic)
+            type_list.append(ACYCLIC)
+        end
+        if(@is_public)
+            type_list.append(PUB)
+        end
+        type_list.append(@name.getType())
+        for func in @functions
+            func._printTokType(type_list)
+        end
+    end
+
+    def _printLiteral()
+        astString = ""
+        if(@is_acyclic)
+            astString += "acyclic "
+        end
+        if(@is_public)
+            astString += "pub "
+        end
+        astString += @name.getText() + " "
+        for func in @functions
+            astString += func._printLiteral() + " "
+        end
+        astString = astString.strip()
+        astString = astString.squeeze(" ")
+        return astString
     end
 end

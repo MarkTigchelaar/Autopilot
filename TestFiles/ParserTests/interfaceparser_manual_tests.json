@@ -11,5 +11,217 @@
                 "message" : "End of file reached."
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test2.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test2.txt",
+                "tokenLiteral" : "2",
+                "lineNumber" : "1",
+                "message" : "Unexpected token 2."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test3.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test3.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test4.txt",
+                "tokenLiteral" : "fun",
+                "lineNumber" : "1",
+                "message" : "Unexpected token fun."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test5.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test6.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test6.txt",
+                "tokenLiteral" : "struct",
+                "lineNumber" : "1",
+                "message" : "Unexpected token struct."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test7.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test8.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test8.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "Unexpected token ."
+            },
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test8.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test9.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test9.txt",
+                "tokenLiteral" : "inline",
+                "lineNumber" : "2",
+                "message" : "Unexpected token inline."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test10.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test9.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "1",
+                "message" : "Unexpected token end."
+            },
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test10.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "No functions defined."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test11.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "2",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test12.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test12.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "3",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test13.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test13.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "4",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test14.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test14.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "5",
+                "message" : "End of file reached."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test15.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test15.txt",
+                "tokenLiteral" : "bend",
+                "lineNumber" : "6",
+                "message" : "Unexpected token bend."
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test16.txt",
+        "astString" : "test pub testFunc",
+        "tokenTypeString" : "IDENTIFIER PUB IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test17.txt",
+        "astString" : "test pub testFunc acyclic pub test2 a int float",
+        "tokenTypeString" : "IDENTIFIER PUB IDENTIFIER ACYCLIC PUB IDENTIFIER IDENTIFIER INT FLOAT",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/InterfaceTests/test18.txt",
+        "astString" : "test pub testFunc acyclic pub test2 a int 0 float",
+        "tokenTypeString" : "IDENTIFIER PUB IDENTIFIER ACYCLIC PUB IDENTIFIER IDENTIFIER INT INT FLOAT",
+        "errors" : null
     }
 ]
