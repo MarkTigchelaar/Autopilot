@@ -203,13 +203,10 @@ class CaseStatement
         #    l.append(@test_case)
         #end
         for val in @values
-            puts "in case, printing literal: #{val.getText()}"
+            #puts "in case, printing literal: #{val.getText()}"
             l.append(val.getText() + ' ')
         end
-        for stmt in @statements
-            puts "in statements, printing literal: #{stmt._printLiteral()}"
-            l.append(stmt._printLiteral() + ' ')
-        end
+        l.append(@statements._printLiteral() + ' ')
         return l.join("")
     end
 
@@ -217,22 +214,20 @@ class CaseStatement
         for val in @values
             type_list.append(val.getType())
         end
-        for stmt in @statements
-            stmt._printTokType(type_list)
-        end
+        @statements._printTokType(type_list)
     end
 end
 
 class SwitchStatement
     def initialize(test_case, case_statements, default_case)
         #if(test_case != nil)
-        #  puts "Test case: #{test_case.getText()}, type: #{test_case.getType()}"
+        #  #puts "Test case: #{test_case.getText()}, type: #{test_case.getType()}"
         #end
         #for c in case_statements
-        #    puts "case value: #{c.getText()}, type: #{c.getType()}"
+        #    #puts "case value: #{c.getText()}, type: #{c.getType()}"
         #end
         if(default_case != nil)
-            puts "Test case: #{default_case._printLiteral()}"
+            #puts "Test case: #{default_case._printLiteral()}"
         end
         @test_case = test_case
         @case_statements = case_statements
@@ -246,15 +241,15 @@ class SwitchStatement
             l.append(@test_case.getText() + ' ')
         end
         for stmt in @case_statements
-            puts "------------------from statement"
+            #puts "------------------from statement"
             l.append(stmt._printLiteral())
         end
         if(@default_case != nil)
-            puts "----------------from default"
+            #puts "----------------from default"
             l.append(@default_case._printLiteral())
         end
         str = l.join("").rstrip()
-        puts "result string: #{str}"
+        #puts "result string: #{str}"
         return str
     end
 

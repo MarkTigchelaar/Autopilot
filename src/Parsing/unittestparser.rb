@@ -100,9 +100,7 @@ class UnittestStatement
         if(@test_name != nil)
             l.append(@test_name.getText() + ' ')
         end
-        for stmt in @statements
-            l.append(stmt._printLiteral())
-        end
+        l.append(@statements._printLiteral())
         return l.join("").rstrip()
     end
 
@@ -110,8 +108,6 @@ class UnittestStatement
         if(@test_name != nil)
             type_list.append(@test_name.getType())
         end
-        for stmt in @statements
-            stmt._printTokType(type_list)
-        end
+        @statements._printTokType(type_list)
     end
 end

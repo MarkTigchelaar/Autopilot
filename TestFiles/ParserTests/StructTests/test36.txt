@@ -1,0 +1,20 @@
+struct name uses some_interface,test is 
+  pub nameOne as int,
+  nameTwo as double,
+  pub thingy as thing,
+  pub avariable as string
+
+  fun testFunc() do
+    let i as string = 0
+  end
+  pub fun testFunc2() something do
+    let i as string = 0
+  end
+  acyclic fun testFunc3() something do
+    let i as string = 0
+  end
+  acyclic pub fun testFunc2() something do
+    let i as string = 0
+  end
+
+  tree

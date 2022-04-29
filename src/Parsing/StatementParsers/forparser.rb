@@ -313,9 +313,7 @@ class ForStatement
             lit += @loop_name.getText() + ' '
         end
         if @statements != nil
-            for stmt in @statements
-                lit += stmt._printLiteral() + ' '
-            end
+            lit += @statements._printLiteral() + ' '
         end
         return lit.strip()
     end
@@ -347,9 +345,7 @@ class ForStatement
             ast._printTokType(type_list)
         end
         if @statements != nil
-            for stmt in @statements
-                stmt._printTokType(type_list)
-            end
+            @statements._printTokType(type_list)
         end
     end
 end

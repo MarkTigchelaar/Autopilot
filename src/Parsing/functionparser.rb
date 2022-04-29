@@ -6,7 +6,7 @@ require_relative '../Tokenization/token.rb'
 class FunctionParser
     def initialize(statement_parser)
         @statement_parser = statement_parser
-        @statements = Array.new()
+        @statements = nil
         @function_name = nil
         @arguments = Array.new()
         @return_type = nil
@@ -230,7 +230,7 @@ class FunctionParser
     end
 
     def reset()
-        @statements = Array.new()
+        @statements = nil
         @function_name = nil
         @arguments = Array.new()
         @return_type = nil
@@ -301,8 +301,8 @@ class FunctionStatement
         if(@return_type != nil)
             type_list.append(@return_type.getType())
         end
-        for stmt in @statements
-            stmt._printTokType(type_list)
+        if(@statements != nil)
+            @statements._printTokType(type_list)
         end
     end
 
@@ -322,10 +322,10 @@ class FunctionStatement
             astString += arg._printLiteral() + " "
         end
         if(@return_type != nil)
-            astString += " " + @return_type.getText()
+            astString += " " + @return_type.getText() + " "
         end
-        for stmt in @statements
-            astString += " " + stmt._printLiteral()
+        if(@statements != nil)
+            astString += @statements._printLiteral() + " "
         end
         astString = astString.strip()
         astString = astString.squeeze(" ")

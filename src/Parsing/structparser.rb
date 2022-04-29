@@ -84,6 +84,11 @@ class StructParser
         end
     end
 
+    def fieldCommaStep(parser)
+        # reuse is Step, is doing the same thing
+        isStep(parser)
+    end
+
     def isStep(parser)
         parser.discard()
         peekTok = parser.peek()
@@ -127,7 +132,7 @@ class StructParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isValidIdentifier(peekTok))
+        elsif(isValidIdentifier(peekTok) or isPrimitiveType(peekTok, true))
             fieldTypeStep(parser, is_public, nameToken)
         else
             unexpectedToken(parser)
@@ -142,7 +147,7 @@ class StructParser
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == COMMA)
-            commaStep(parser)
+            fieldCommaStep(parser)
         elsif(peekTok.getType() == ENDSCOPE)
             endStep(parser)
         elsif(peekTok.getType() == ACYCLIC)
@@ -163,6 +168,8 @@ class StructParser
             eofReached(parser)
         elsif(peekTok.getType() == PUB)
             pubFunctionStep(parser, true)
+        elsif(peekTok.getType() == FUN)
+            funStep(parser, true)
         else
             unexpectedToken(parser)
         end
@@ -209,6 +216,7 @@ class StructParser
         @name = nil
         @fields = Array.new
         @functions = Array.new
+        @interfaces = Array.new
     end
 
     def endStep(parser)
@@ -228,6 +236,24 @@ class StructField
         @name = name
         @type = type
         @is_public = is_public
+    end
+
+    def _printTokType(type_list)
+        if(@is_public)
+            type_list.append(PUB)
+        end
+        type_list.append(@name.getType())
+        type_list.append(@type.getType())
+    end
+
+    def _printLiteral()
+        str = ""
+        if(@is_public)
+            str += "pub "
+        end
+        str += @name.getText() + " "
+        str += @type.getText() + " "
+        return str
     end
 end
 
@@ -252,5 +278,53 @@ class StructStatement
 
     def setAsInline
         @is_inline = true
+    end
+
+    def _printTokType(type_list)
+        if(@is_acyclic)
+            type_list.append(ACYCLIC)
+        end
+        if(@is_inline)
+            type_list.append(INLINE)
+        end
+        if(@is_public)
+            type_list.append(PUB)
+        end
+        type_list.append(@name.getType())
+        for i in @interfaces
+            type_list.append(i.getType())
+        end
+        for field in @fields
+            field._printTokType(type_list)
+        end
+        for fun in @functions
+            fun._printTokType(type_list)
+        end
+    end
+
+    def _printLiteral()
+        astString = ""
+        if(@is_acyclic)
+            astString += "acyclic "
+        end
+        if(@is_inline)
+            astString += "inline "
+        end
+        if(@is_public)
+            astString += "pub "
+        end
+        astString += @name.getText() + " "
+        for i in @interfaces
+            astString += i.getText() + " "
+        end
+        for field in @fields
+            astString += field._printLiteral()
+        end
+        for fun in @functions
+            astString += " " + fun._printLiteral()
+        end
+        astString = astString.strip()
+        astString = astString.squeeze(" ")
+        return astString
     end
 end

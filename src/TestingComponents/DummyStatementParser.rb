@@ -7,10 +7,7 @@ class DummyStatementParser
             eofReached(parser)
         elsif(is_interal_statement_keyword(current))
             # actual parser will be able to handle print(), thing.method() etc.
-            d = DummyStatement.new(current)
-            a = Array.new
-            a.append(d)
-            return a
+            return DummyStatement.new(current)
         else
             raise Exception.new("Failed to return dummy Statement")
         end
@@ -23,6 +20,14 @@ class DummyStatement
         @name = name
         @left_stmt = left_stmt
         @right_stmt = right_stmt
+    end
+
+    def length()
+        if(@name != nil)
+            return 1
+        else
+            return 0
+        end
     end
 
     def getType()

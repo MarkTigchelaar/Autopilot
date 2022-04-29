@@ -116,9 +116,7 @@ class LoopStatement
         if(@name != nil)
             l.append(@name.getText())
         end
-        for stmt in @sub_statements
-            l.append(stmt._printLiteral())
-        end
+        l.append(@sub_statements._printLiteral())
         return l.join("")
     end
 
@@ -126,8 +124,6 @@ class LoopStatement
         if(@name != nil)
             type_list.append(@name.getType())
         end
-        for stmt in @sub_statements
-            stmt._printTokType(type_list)
-        end
+        @sub_statements._printTokType(type_list)
     end
 end

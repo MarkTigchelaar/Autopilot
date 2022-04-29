@@ -136,10 +136,7 @@ class WhileStatement
         if(@expression_ast != nil)
             @expression_ast._printTokType(type_list)
         end
-        for stmt in @statements
-            stmt._printTokType(type_list)
-        end
-
+        @statements._printTokType(type_list)
     end
 
     def _printLiteral()
