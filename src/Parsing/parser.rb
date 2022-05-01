@@ -14,6 +14,7 @@ require_relative './interfaceparser.rb'
 require_relative './structparser.rb'
 require_relative './unionparser.rb'
 require_relative './unittestparser.rb'
+require_relative './StatementParsers/statementparser.rb'
 
 class Parser
     def initialize
@@ -30,7 +31,7 @@ class Parser
         @import_parser = ImportParser.new
         @define_parser = DefineParser.new
 
-        @statement_parser = StatmentParser.new(@expression_parser)
+        @statement_parser = StatementParser.new(@expression_parser)
 
         @function_parser = FunctionParser.new(@statement_parser)
         @struct_parser = StructParser.new(@function_parser)
@@ -49,13 +50,15 @@ class Parser
     end
 
     def _parse()
+        reset()
         ast = Array.new
-        while(@tokenizer.hasTokens())
-            type = type_declarations()
+        while(!match(EOF))
+            type  = type_declarations()
             if(type != nil)
                 ast.append(type)
             end
             if(@shouldSync)
+                return
                 externalSynchronize(self)
                 syncOff()
             end
@@ -88,6 +91,7 @@ class Parser
             mod_not_allowed_error()
             return nil
         end
+        @seen_module = true
         return @module_parser.parse(self)
     end
 
@@ -203,6 +207,7 @@ class Parser
             return @error_parser.parse(self)
         else
             unexpectedToken(self)
+            raise Exception.new("HERE!")
             return nil
         end
     end
@@ -215,8 +220,34 @@ class Parser
         return @errorList.length > 0
     end
 
+    def errorCount()
+        return @errorList.length()
+    end
+
     def getErrorList()
-        return errorList
+        dup_indicies = Set.new
+        for i in (@errorList.length - 1).downto(0) do
+            for j in (i - 1).downto(0) do
+                if(i == j)
+                    next
+                end
+                b = @errorList[j]
+                same_file = @errorList[i]["file"] == b["file"]
+                same_lit = @errorList[i]["tokenLiteral"] == b["tokenLiteral"]
+                same_line = @errorList[i]["lineNumber"] == b["lineNumber"]
+                same_msg = @errorList[i]["message"] == b["message"]
+                is_eof = b["message"] == "End of file reached."
+                if(same_file and same_lit and same_line and same_msg and is_eof)
+                    dup_indicies.add(i)
+                end
+            end
+        end
+        for i in (@errorList.length - 1).downto(0) do
+            if dup_indicies.include?(i)
+                @errorList.delete_at(i)
+            end
+        end
+        return @errorList
     end
 
     def setToSync()
@@ -228,7 +259,11 @@ class Parser
     end
 
     def peek()
-        return @tokenizer.peek()
+        return @tokenizer.peekToken()
+    end
+
+    def peekToken()
+        return peek()
     end
 
     def nextToken()
@@ -236,10 +271,8 @@ class Parser
     end
 
     def match(tokenType)
-        if(isAtEnd())
-            return false
-        end
-        if(peek().getType() == tokenType)
+        tok = peek()
+        if(tok.getType() == tokenType)
             return true
         end
         return false
@@ -286,5 +319,25 @@ class Parser
 
     def define_or_import_err_msg(name)
         return name + " cannot be declared after struct, function, interface, enum, union, error, or unittest statement types"
+    end
+
+
+    def astString()
+        astStr = ""
+        for stmt in @ast
+            astStr += stmt._printLiteral()
+        end
+        return astStr
+    end
+
+    def tokenTypeString()
+        type_list = Array.new()
+        for stmt in @ast
+            stmt._printTokType(type_list)
+        end
+        str = type_list.join(" ")
+        str = str.strip()
+        str = str.squeeze(" ")
+        return str
     end
 end

@@ -122,5 +122,9 @@
     {
         "general_component" : "statementsequences",
         "test_manifest_file" : "../TestFiles/ParserTests/statement_sequence_tests.json"
+    },
+    {
+        "general_component" : "mainparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/main_parser_statement_tests.json"
     }
 ] 
