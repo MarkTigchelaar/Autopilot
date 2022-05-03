@@ -105,77 +105,168 @@ class ExpressionParser
         token = _peek()
         if(token == nil)
             return nil
-        elsif(tokIskeyword(token))
-            #puts "token is a keyword, returning with nil"
-            return nil
         end
-        #puts "token literal: #{token.getText()}  #{token.getType()}"
-        prefix = get_prefix_exp_parslet(token)
-        #puts "prefix class: #{prefix.class}"
-        if(hasErrors())
-            return nil
-        elsif(prefix == nil)
-            #raise Exception.new("Could not parse prefix " + token.getText())
-            addError(token, "Invalid constant or variable.")
-            return nil
-        end
-        token = _next()
-        #puts "token2 literal: #{token.getText()}  #{token.getType()}"
-        left_exp = prefix.parse(self, token)
-        #puts "                     :::: #{left_exp.class}"
+        left_exp = parse_prefix_expression()
+        return parse_sub_tree(precedence, left_exp)
+    end
 
+    def parse_prefix_expression()
+        token = _next()
+        return case token.getType()
+        when MINUS
+            parse_minus_prefix(token)
+        when LEFT_PAREN
+            parse_parenthesis()
+        when LEFT_BRACKET
+            parse_brackets()
+        when LEFT_BRACE
+            parse_curly_braces()
+        else
+            parse_name(token)
+        end
+    end
+
+    def parse_minus_prefix(token)
+        rhs = _parse(PREFIX)
+        return PreFixExpression.new(token, get_token_type(token), rhs)
+    end
+
+    def parse_parenthesis()
+        exp = parse_expression()
+        discard(')')
+        return exp
+    end
+
+    def parse_brackets()
+        return parse_collection('[', ']')
+    end
+
+    def parse_curly_braces()
+        return parse_collection('{', '}')
+    end
+
+    def parse_collection(start_char, end_char)
+        array_elements = Array.new
+        if(_peek().getText() != end_char)
+            while(true)
+                exp = parse_expression()
+                array_elements.append(exp)
+                if(_peek().getType() != COMMA)
+                    break
+                else
+                    discard(',')
+                end
+            end
+            #if(_peek().getText() != end_char)
+            #    addError()
+            #end
+        end
+        discard(end_char)
+        return CollectionExpression.new(start_char, array_elements, end_char)
+    end
+
+    def parse_name(token)
+        # check if it's any type of keyword, including ) ] } .. etc.
+        return NameExpression.new(token)
+    end
+
+    def parse_sub_tree(precedence, left_exp)
         while(precedence < _get_precedence())
             token = _next()
-            #puts "got next token: #{token.getText()}, #{token.getType()}"
             if(token == nil)
                 break
             end
-            infix = get_infix_exp_parslet(token)
+
+            left_exp = parse_infix_expression(token, left_exp)
+
+            #infix = get_infix_exp_parslet(token)
             if(hasErrors())
                 return nil
-            elsif(infix == nil)
+            elsif(left_exp == nil)
                raise Exception.new("Could not parse infix " + token.getText())
             end
-            left_exp = infix.parse(self, left_exp, token)
-            if(hasErrors())
-                return nil
-            end
+
+            #left_exp = infix.parse(self, left_exp, token)
+            #if(hasErrors())
+            #    return nil
+            #end
         end
         return left_exp
     end
 
-    def is_prefix(token)
-        return @prefixes.has_key?(token.getText())
-    end
-
-    def get_prefix_exp_parslet(token)
-        #puts "Token in get_prefix_exp_parslet: #{token.getText()} <#{token.getType()}>"
-        keypresent = @prefixes.has_key?(token.getText())
-        #puts "Key present? #{keypresent} "
-        if(keypresent)
-            key = @prefixes[token.getText()]
-            if(@prefix_parslets.has_key?(key))
-                return @prefix_parslets[key]
-            else
-                raise Exception.new("key " + key + " not found in prefix parslets")
-            end
-        elsif(isInt(token.getText()))
-            return @prefix_parslets[INT]
-        elsif(isFloat(token.getText()))
-            return @prefix_parslets[FLOAT]
-        elsif(@infixes.has_key?(token.getText()))
-            #addError(token, "Operator not preceded by identifier")
-            return nil
+    def parse_infix_expression(token, left_exp)
+        return case token.getType()
+        when PLUS
+            parse_binary_operator(SUM, left_exp, token)
+        when MINUS
+            parse_binary_operator(SUM, left_exp, token)
+        when STAR
+            parse_binary_operator(PRODUCT, left_exp, token)
+        when SLASH
+            parse_binary_operator(PRODUCT, left_exp, token)
+        when MOD
+            parse_binary_operator(PRODUCT, left_exp, token)
+        when CARROT
+            parse_binary_operator(EXPONENT, left_exp, token, true)
+        when COLON
+            parse_binary_operator(HASHLITERAL, left_exp, token)
+        when LESS
+            parse_binary_operator(CONDITIONAL, left_exp, token)
+        when LESS_EQUAL
+            parse_binary_operator(CONDITIONAL, left_exp, token)
+        when GREATER
+            parse_binary_operator(CONDITIONAL, left_exp, token)
+        when GREATER_EQUAL
+            parse_binary_operator(CONDITIONAL, left_exp, token)
+        when EQUAL_EQUAL
+            parse_binary_operator(CONDITIONAL, left_exp, token)
+        when BANG_EQUAL
+            parse_binary_operator(CONDITIONAL, left_exp, token)
+        when AND
+            parse_binary_operator(LOGICAL, left_exp, token)
+        when NAND
+            parse_binary_operator(LOGICAL, left_exp, token)
+        when OR
+            parse_binary_operator(LOGICAL, left_exp, token)
+        when NOR
+            parse_binary_operator(LOGICAL, left_exp, token)
+        when XOR
+            parse_binary_operator(LOGICAL, left_exp, token)
+        when NOT
+            parse_binary_operator(LOGICAL, left_exp, token)
+        when LEFT_PAREN
+            parse_function_call(left_exp, token)
         else
-            #puts "Token: #{token.getText()} #{token.getType()} is a ID"
-            return @prefix_parslets[IDENTIFIER] 
+            addError()
+            nil
         end
-        return nil
     end
 
-    # Does not determine if it is a "proper" identifier
-    # checking if it is formed correctly (start with char of certain type) etc. is semantics
+    def parse_binary_operator(precedence, lhs_exp, token, right_associative = false)
+        if(right_associative)
+            precedence -= 1
+        end
+        rhs_exp = _parse(precedence)
+        tok_type = get_token_type(token)
+        return OperatorExpresison.new(token, lhs_exp, tok_type, rhs_exp)
+    end
 
+    def parse_function_call(left_exp, token)
+        func_args = Array.new()
+        if(_peek().getType() != RIGHT_PAREN)
+            while(true)
+                exp = parse_expression()
+                func_args.append(exp)
+                if(_peek().getType() != COMMA)
+                    break
+                else
+                    discard(',')
+                end
+            end
+        end
+        discard(')')
+        return CallExpression.new(token, left_exp, func_args)
+    end
 
     def isInt(tokliteral)
         for i in 0 .. tokliteral.length-1 do
@@ -218,10 +309,8 @@ class ExpressionParser
 
     def get_infix_exp_parslet(token)
         if(@infixes.has_key?(token.getText()))
-            #puts "Token #{token.getText()} found in get_infix_exp_parslet"
             key = @infixes[token.getText()]
             if(@infix_parslets.has_key?(key))
-                #puts " key found in infix parslets for #{token.getText()}, key: #{key}"
                 return @infix_parslets[key]
             else
                 raise Exception.new("key " + key + " not found in infix parslets")
@@ -234,12 +323,10 @@ class ExpressionParser
         if(_peek() == nil)
             return 0
         end
-        #puts "calling get_infix_exp_parslet on peek, while inside _get_precedence for <#{_peek().getText()}>"
         infix = get_infix_exp_parslet(_peek())
         if(infix != nil)
             return infix.get_precedence()
         end
-        #puts "infix is nil"
         return 0
     end
 
@@ -254,7 +341,8 @@ class ExpressionParser
     end
 
     def tokIskeyword(token)
-        return (@keyWords.has_key?(token.getText()) or @keyWords.has_key?(token.getType()))
+        return isGeneralKeyWord(token.getText())
+        #return (@keyWords.has_key?(token.getText()) or @keyWords.has_key?(token.getType()))
     end
 
     def discard(expected_literal)
@@ -264,6 +352,41 @@ class ExpressionParser
         end
         token = _next()
     end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def register()
 
@@ -368,6 +491,83 @@ end
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class PrefixOperatorParselet
     def initialize(precedence)
         @precedence = precedence
@@ -378,28 +578,8 @@ class PrefixOperatorParselet
         if(parser.hasErrors())
             return nil
         end
-        #puts "parsing prefix with token: #{token.getText()}"
         peek = parser._peek()
-        #if(peek.getType() == "EOF")
-        #    parser.addError(token, err)
-        #    return
-        #end
-        #puts "calling parse from Prefix parser on next token: #{peek.getText()}"
-        if(parser.is_prefix(peek))
-            parser.addError(token, err)
-            return nil
-        end 
         rhs = parser._parse(@precedence)
-        #puts "RIGHT HAND SIDE CLASS: #{rhs.class}"
-        #puts "done parsing prefix"
-        #if(rhs == nil)
-        #    parser.addError(token, err)
-        #end
-        #rhs.checkForErrors(parser)
-        #puts "#{rhs.class}  #{rhs.get_name()}"
-        #if(parser.hasErrors())
-        #    return nil
-        #end
         prefix = PreFixExpression.new(token, parser.get_token_type(token), rhs)
         prefix.checkForErrors(parser)
         return prefix
@@ -435,9 +615,8 @@ class PreFixExpression
     def checkForErrors(parser)
         if(@checked)
             return false
-        elsif(@rhs_exp == nil ) # or @rhs_exp.getType() == "EOF"
+        elsif(@rhs_exp == nil )
             parser.addError(@token, MISSING_EXP_CONST_VAR)
-            #puts "HERE ADDING A ERROR FOR RHS"
             return true
         elsif(@rhs_exp.checkForErrors(parser))
             return true
@@ -453,7 +632,6 @@ class NameParslet
         if(parser.hasErrors())
             return nil
         end
-        #puts"------ parsing name expresison"
         nameExp = NameExpression.new(token)
         nameExp.checkForErrors(parser)
         return nameExp
@@ -463,7 +641,6 @@ end
 
 class NameExpression
     def initialize(token)
-        #puts "initilizing name expression for #{token.getText()} #{token.getType()}"
         @token = token
         @checked = false
     end
@@ -515,13 +692,11 @@ class GroupParselet
         if(token.getText() != @open_char)
             raise Exception.new("Expected " + @open_char + " for group expression, found " + token.getText())
         end
-        #puts "parsing group expression, parsing inner exp"
         expression = parser.parse_expression()
         if(parser.hasErrors())
             return nil
         end
         parser.discard(@close_char)
-        #puts "done parsing group expression, parsed inner exp"
         expression.checkForErrors(parser)
         return expression
     end
@@ -541,15 +716,12 @@ class BinaryOperatorParselet
         if(@right_assoc)
             modifier += 1
         end
-        #puts "parsing BinaryOperator #{token.getText()}"
         plevel = @precedence - modifier
         rhs_exp = parser._parse(plevel)
         if(parser.hasErrors())
             return nil
         end
-        #puts "parsed the right hand expression"
         token_type = parser.get_token_type(token)
-        #puts "token type: #{token_type} #{token.getText()}"
         opExp = OperatorExpresison.new(token, lhs_exp, token_type, rhs_exp)
         opExp.checkForErrors(parser)
         return opExp
@@ -600,7 +772,6 @@ class OperatorExpresison
             return true
         end
         @checked = true
-        #puts "HERE AT END"
         return false
     end
 end
@@ -616,12 +787,10 @@ class CollectionParslet
         if(parser.hasErrors())
             return nil
         end
-        #puts "parsing collection, first token = #{token.getText()} #{token.getType()}" 
         elements = Array.new()
         if(parser._peek().getText() != @right_bracket)
             
             while(true)
-                #puts "          next token #{parser._peek().getText()}"
                 elements.append(parser.parse_expression())
                 if(parser.hasErrors())
                     return nil
@@ -637,9 +806,8 @@ class CollectionParslet
             end
             
         end
-        #puts "discarding #{@right_bracket}"
         parser.discard(@right_bracket)
-        colExp =  CollectionExpresison.new(@left_bracket, elements, @right_bracket)
+        colExp =  CollectionExpression.new(@left_bracket, elements, @right_bracket)
         colExp.checkForErrors(parser)
         return colExp
     end
@@ -649,7 +817,7 @@ class CollectionParslet
     end
 end
 
-class CollectionExpresison
+class CollectionExpression
     def initialize(left_bracket, elements, right_bracket)
         @left_bracket = left_bracket
         @elements = elements
@@ -700,11 +868,8 @@ class CallParselet
             return nil
         end
         arguments = Array.new()
-        #puts "parsing call expression"
         if(parser._peek().getText() != ')')
-            #puts "not a empty function call: #{parser._peek().getText()}"
             while(true)
-                #puts "parsing arg ..."
                 arguments.append(parser.parse_expression())
                 if(parser.hasErrors())
                     return nil
@@ -712,17 +877,13 @@ class CallParselet
                 if(parser._peek().getText() != ',')
                     break
                 else
-                    #puts "found , discarding"
                     parser.discard(',')
                 end
             end
             if(parser._peek().getText() != ')')
                 raise Exception.new("Unkown token " + parser._peek().getText() + ". Expected )")
             end
-        else
-            #puts "no args in function call" 
         end
-        #puts "discarding )"
         parser.discard(')')
         callExp = CallExpression.new(token, lhs_exp, arguments)
         callExp.checkForErrors(parser)
@@ -736,7 +897,6 @@ end
 
 class CallExpression
     def initialize(token, expression, arguments)
-        #puts "initializing call expression with #{expression.get_name()}"
         @function = expression
         @args = arguments
         @token = token

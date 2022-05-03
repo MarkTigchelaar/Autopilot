@@ -261,3 +261,136 @@ def externalSynchronize(parser)
         token = parser.peek()
     end
 end
+
+def isGeneralKeyWord(tok_literal)
+    case tok_literal.upcase
+    when LIBRARY
+        true
+    when MODULE
+        true
+    when IMPORT
+        true
+    when FROM
+        true
+    when DEFINE
+        true
+    when FOR
+        true
+    when LOOP
+        true
+    when WHILE
+        true
+    when CONTINUE
+        true
+    when BREAK
+        true
+    when IF
+        true
+    when ELSE
+        true
+    when ELIF
+        true
+    when UNLESS
+        true
+    when CASE
+        true
+    when DEFAULT
+        true
+    when SWITCH
+        true
+    when RETURN
+        true
+    when DO
+        true
+    when ENDSCOPE
+        true
+    when PUB
+        true
+    when SELF
+        true
+    when FUN
+        true
+    when LAMBDA
+        true
+    when INLINE
+        true
+    when STRUCT
+        true
+    when INTERFACE
+        true
+    when USES
+        true
+    when ERROR
+        true
+    when UNION
+        true
+    when ENUM
+        true
+    when ASSERT
+        true
+    when DEBUG
+        true
+    when UNITTEST
+        true
+    when DEFER
+        true
+    when ACYCLIC
+        true
+    when UNIQUE
+        true
+    when AS
+        true
+    when IS
+        true
+    when IN
+        true
+    when AND
+        true
+    when NAND
+        true
+    when OR
+        true
+    when XOR
+        true
+    when NOR
+        true
+    when NOT
+        true
+    when VAR
+        true
+    when LET
+        true
+    when INT
+        true
+    when LONG
+        true
+    when FLOAT
+        true
+    when DOUBLE
+        true
+    when CHAR
+        true
+    when STRING
+        true
+    when BOOL
+        true
+    when TRUE
+        true
+    when FALSE
+        true
+    when DOT
+        true
+    when RANGE
+        true
+    when LEFT_PAREN
+        true
+    when RIGHT_PAREN
+        true
+    when COMMA
+        true
+    when EOF
+        true
+    else
+        false
+    end
+end

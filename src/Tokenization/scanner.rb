@@ -1,6 +1,7 @@
 require_relative '../keywords.rb'
 require_relative '../tokentype.rb'
 require_relative './token.rb'
+require_relative '../Parsing/parserutilities.rb'
 
 
 class Scanner 
@@ -216,11 +217,16 @@ class Scanner
             @charScanner.shiftRight()
         end
 
-        type = @keywords[@charScanner.getSlice()]
-        if(type == nil)
-            type = IDENTIFIER
+        #type = @keywords[@charScanner.getSlice()]
+        if(isGeneralKeyWord(@charScanner.getSlice()))
+            addToken(@charScanner.getSlice().upcase)
+        else
+            addToken(IDENTIFIER)
         end
-        addToken(type)
+        #if(type == nil)
+        #    type = IDENTIFIER
+        #end
+        #addToken(type)
     end
 
     def number

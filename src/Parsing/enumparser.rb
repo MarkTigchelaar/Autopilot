@@ -1,11 +1,9 @@
 require_relative './parserutilities.rb'
 require_relative '../tokentype.rb'
-require_relative '../keywords.rb'
 require_relative '../Tokenization/token.rb'
 
 class EnumParser
     def initialize()
-        @keywords = getkeywords()
         @name = nil
         @generaltype = nil
         @itemList = Array.new

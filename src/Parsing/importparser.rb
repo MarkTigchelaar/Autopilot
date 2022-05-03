@@ -1,11 +1,9 @@
 require_relative './parserutilities.rb'
 require_relative '../tokentype.rb'
-require_relative '../keywords.rb'
 
 class ImportParser
 
     def initialize()
-        @keywords = getkeywords()
         @itemList = Array.new
         @isLibrary = false
         @moduleName = ""

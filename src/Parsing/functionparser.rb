@@ -1,6 +1,5 @@
 require_relative './parserutilities.rb'
 require_relative '../tokentype.rb'
-require_relative '../keywords.rb'
 require_relative '../Tokenization/token.rb'
 
 class FunctionParser
@@ -10,7 +9,6 @@ class FunctionParser
         @function_name = nil
         @arguments = Array.new()
         @return_type = nil
-        @keywords = getkeywords()
         @func_definition = false
     end
 

@@ -1,6 +1,5 @@
 require_relative './parserutilities.rb'
 require_relative '../tokentype.rb'
-require_relative '../keywords.rb'
 require_relative '../Tokenization/token.rb'
 
 class InterfaceParser
@@ -9,7 +8,6 @@ class InterfaceParser
         @function_parser = function_parser
         @functions = Array.new()
         @interface_name = nil
-        @keywords = getkeywords()
     end
 
     def parse(parser)

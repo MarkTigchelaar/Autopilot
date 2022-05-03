@@ -1,12 +1,10 @@
 require_relative './parserutilities.rb'
 require_relative '../tokentype.rb'
-require_relative '../keywords.rb'
 
 
 class DefineParser
 
     def initialize()
-        @keywords = getkeywords()
         @oldNameToken = nil
         @newNameToken = nil
     end

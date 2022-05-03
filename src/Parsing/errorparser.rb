@@ -1,12 +1,10 @@
 require_relative './parserutilities.rb'
 require_relative '../tokentype.rb'
-require_relative '../keywords.rb'
 require_relative '../Tokenization/token.rb'
 
 
 class ErrorParser
     def initialize()
-        @keywords = getkeywords()
         @name = nil
         @itemList = Array.new()
     end

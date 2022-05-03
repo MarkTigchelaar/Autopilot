@@ -1,6 +1,5 @@
 require_relative './parserutilities.rb'
 require_relative '../tokentype.rb'
-require_relative '../keywords.rb'
 require_relative '../Tokenization/token.rb'
 
 class UnittestParser
@@ -8,7 +7,6 @@ class UnittestParser
         @statement_parser = statement_parser
         @statements = Array.new()
         @test_name = nil
-        @keywords = getkeywords()
     end
 
     def parse(parser)

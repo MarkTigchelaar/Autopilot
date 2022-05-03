@@ -16,10 +16,6 @@
         "test_manifest_file" : "../TestFiles/ParserTests/expparser_auto_tests.json"
     },
     {
-        "general_component" : "expparser",
-        "test_manifest_file" : "../TestFiles/ParserTests/experror_tests.json"
-    },
-    {
         "general_component" : "moduleparser",
         "test_manifest_file" : "../TestFiles/ParserTests/modparser_manual_tests.json"
     },
