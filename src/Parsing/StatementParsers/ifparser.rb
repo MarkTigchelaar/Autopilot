@@ -182,7 +182,6 @@ class IfParser
         @ifstatement = i
         #puts "RETURNED !!"
         if(isEOF(peekTok))
-            #puts "EOF line 158"
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
             #puts "Found end scope"

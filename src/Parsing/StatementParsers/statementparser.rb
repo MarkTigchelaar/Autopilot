@@ -36,6 +36,7 @@ class StatementParser
         stmts = Array.new
         peekTok = parser.peek()
         while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
+            # add function here for when inside if/elif statement check for elif / else, break if found
             stmt = nil
             errCount = parser.errorCount()
             if(isValidIdentifier(peekTok))

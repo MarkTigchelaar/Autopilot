@@ -38,6 +38,31 @@ def isNumeric(token)
     return true
 end
 
+def isInt(tokliteral)
+    for i in 0 .. tokliteral.length-1 do
+        if(!isDigit(tokliteral[i]))
+            return false
+        end
+    end
+    return true
+end
+
+def isFloat(tokliteral)
+    decimal = 0
+    for i in 0 .. tokliteral.length-1 do
+        if(!isDigit(tokliteral[i]) and tokliteral[i] != '.')
+            return false
+        end
+        if(tokliteral[i] == '.')
+            decimal += 1
+        end
+    end
+    if(decimal > 1)
+        return false
+    end
+    return true
+end
+
 # Utility functions
 def isDigit(char)
     return ((char >= "0") and (char <= "9"))
@@ -248,6 +273,8 @@ def isExternalKeyword(token)
     when UNION
         true
     when ERROR
+        true
+    when STRUCT
         true
     else
         false
