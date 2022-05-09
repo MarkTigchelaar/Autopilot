@@ -28,4 +28,11 @@ class ContinueStatement
     def _printTokType(type_list)
         type_list.append(@information.getType())
     end
+
+    def toJSON()
+        return {
+            "type" => "continue",
+            "line_number" => @information.getLine()
+        }
+    end
 end

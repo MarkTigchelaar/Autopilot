@@ -158,42 +158,33 @@ class IfParser
     end
 
     def parseStatements(parser)
-        #puts "PARSING STATEMENTS!!!!!!!!!!!!!!!!"
         peekTok = parser.peek()
-        #puts "peekToken in if parser, parse statements: #{peekTok.getText()}"
         i = @ifstatement
         if(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
-            
-            #puts "PARSING IF STATEMENTS SUB STATEMENTS!!!"
-            stmts = @statement_parser.parse(parser)
+            treat_elif_and_else_as_not_nested = true
+            if(@is_unless)
+                # "unless" not allowed to be in branching statement chains
+                treat_elif_and_else_as_not_nested = false
+            end
+            stmts = @statement_parser.parse(parser, false, treat_elif_and_else_as_not_nested)
             @statements = stmts
-            #puts "DONE PARSING IF STATEMENTS SUB STATEMENTS!!!"
             
             peekTok = parser.peek()
-            if(parser.hasErrors())
-                #puts "parser has errors:"
-                #for e in parser.getErrorList()
-                    #puts "Error: #{e["tokenLiteral"]}"
-                    #puts "message: #{e["message"]}"
-                #end
-                #return
-            end
         end
         @ifstatement = i
-        #puts "RETURNED !!"
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
-            #puts "Found end scope"
             if(@statements.length() == 0)
-                #puts "statements length is 0"
                 emptyStatement(parser)
-            else#if(not parser.hasErrors())
-                #puts "end step"
+            else
                 endStep(parser)
             end
+        elsif(peekTok.getType() == ELIF)
+            return
+        elsif(peekTok.getType() == ELSE)
+            return
         else
-            #puts "unexpected token at line 177, if parser"
             unexpectedToken(parser)
         end
     end
@@ -221,8 +212,6 @@ end
 
 
 class IfStatement
-     
-    #def initialize(let, var, unwrapped_var, option, expression_ast, statements)
     def initialize()
         @let = false#let
         @var = false
@@ -279,8 +268,6 @@ class IfStatement
 
     end
 
-    
-
     def _printLiteral()
         if(@expression_ast != nil)
             l = Array.new
@@ -298,5 +285,40 @@ class IfStatement
             msg = " #{@unwrapped_var.getText()}: #{@option.getText()}"
         end
         return type + msg
+    end
+
+    def toJSON()
+        stmtsJSON = Array.new()
+        for stmt in @statements
+            stmtsJSON.append(stmt.toJSON())
+        end
+        assign_type = "var"
+        if(@let)
+            assign_type = "let"
+        end
+        uvar = nil
+        if(@unwrapped_var != nil)
+            uvar = {
+                "literal" => @unwrapped_var.getText(),
+                "type" => @unwrapped_var.getType(),
+                "line_number" => @unwrapped_option.getLine()
+            }
+        end
+        option = nil
+        if(@option != nil)
+            option = {
+                "literal" => @option.getText(),
+                "type" => @option.getType(),
+                "line_number" => @option.getLine()
+            }
+        end
+        return {
+            "type" => "if",
+            "assignment_type" => assign_type,
+            "unwrapped_option" => uvar,
+            "option" => option,
+            "expression" => @expression_ast.toJSON(),
+            "statememts" => stmtsJSON
+        }
     end
 end

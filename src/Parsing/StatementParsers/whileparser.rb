@@ -13,6 +13,7 @@ class WhileParser
     end
 
     def parse(parser)
+        puts "---------------------------------------HERE---------------------------------"
         errCount = parser.errorCount()
         reset()
         token = parser.nextToken()
@@ -124,6 +125,18 @@ class WhileStatement
         @loop_name = loop_name
         @expression_ast = expression_ast
         @statements = statements
+    end
+
+    def toJSON()
+        return {
+            "name" => {
+                "literal" => @loop_name.getText(),
+                "type" => @loop_name.getType(),
+                "line_number" => @loop_name.getLine()
+            },
+            "expression" => @expression_ast.toJSON(),
+            "statements" => @statements.toJSON()
+        }
     end
 
     def _printTokType(type_list)

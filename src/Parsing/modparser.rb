@@ -25,6 +25,17 @@ class ModuleStatement
         @moduleinfo = moduleinfo
     end
 
+    def toJSON()
+        return {
+            "type" => "module",
+            "name" => {
+                "literal" => @moduleinfo.getText(),
+                "type" => @moduleinfo.getType(),
+                "line_number" => @moduleinfo.getLine()
+            }
+        }
+    end
+
     def _printLiteral
         return @moduleinfo.getText()
     end

@@ -238,6 +238,22 @@ class StructField
         @is_public = is_public
     end
 
+    def toJSON()
+        return {
+            "name" => {
+                "literal" => @name.getText(),
+                "type" => @name.getType(),
+                "line_number" => @name.getLine()
+            },
+            "type" => {
+                "literal" => @type.getText(),
+                "type" => @type.getType(),
+                "line_number" => @type.getLine()
+            },
+            "public" => @is_public
+        }
+    end
+
     def _printTokType(type_list)
         if(@is_public)
             type_list.append(PUB)
@@ -266,6 +282,48 @@ class StructStatement
         @is_acyclic = false
         @is_public = false
         @is_inline = false
+    end
+
+    def toJSON()
+        return {
+            "type" => "struct",
+            "attributes" => {
+                "acyclic" => @is_acyclic,
+                "public" => @is_public,
+                "inline" => @is_inline
+            },
+            "interfaces" => getInterfacesJSON(),
+            "fields" => getFieldsJSON(),
+            "functions" => getFunctionsJSON()
+        }
+    end
+
+    def getInterfacesJSON()
+        interfaces = Array.new()
+        for i in @interfaces
+            interfaces.append({
+                "literal" => i.getText(),
+                "type" => i.getType(),
+                "line_number" => i.getLine()
+            })
+        end
+        return interfaces
+    end
+
+    def getFieldsJSON()
+        fields = Array.new()
+        for f in @fields
+            fields.append(f.toJSON())
+        end
+        return fields
+    end
+
+    def getFunctionsJSON()
+        fns = Array.new()
+        for f in @functions
+            fns.append(f.toJSON())
+        end
+        return fns
     end
 
     def setAsAcyclic

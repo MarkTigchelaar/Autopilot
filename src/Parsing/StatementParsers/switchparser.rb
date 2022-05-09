@@ -197,6 +197,25 @@ class CaseStatement
         @statements = statements
     end
 
+    def toJSON()
+        vals = Array.new()
+        for v in @values
+            vals.append({
+                "literal" => v.getText(),
+                "type" => v.getType(),
+                "line_number" => v.getLine()
+            })
+        end
+        stmts = Array.new()
+        for s in @statements
+            stmts.append(s.toJSON())
+        end
+        return {
+            "values" => vals,
+            "statements" => stmts
+        }
+    end
+
     def _printLiteral
         l = Array.new
         #if(@test_case != nil)
@@ -220,18 +239,30 @@ end
 
 class SwitchStatement
     def initialize(test_case, case_statements, default_case)
-        #if(test_case != nil)
-        #  #puts "Test case: #{test_case.getText()}, type: #{test_case.getType()}"
-        #end
-        #for c in case_statements
-        #    #puts "case value: #{c.getText()}, type: #{c.getType()}"
-        #end
-        if(default_case != nil)
-            #puts "Test case: #{default_case._printLiteral()}"
-        end
         @test_case = test_case
         @case_statements = case_statements
         @default_case = default_case
+    end
+
+    def toJSON()
+        return {
+            "type" => "switch",
+            "test_case" => {
+                "literal" => @test_case.getText(),
+                "type" => @test_case.getType(),
+                "line_number" => @test_case.getLine()
+            }
+            "cases" => getCasesJSON()
+        }
+    end
+
+    def getCasesJSON()
+        cases = Array.new()
+        for _case in @case_statements
+            cases.append(_case.toJSON())
+        end
+        cases.append(@default_case.toJSON())
+        return cases
     end
 
     def _printLiteral

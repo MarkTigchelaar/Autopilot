@@ -93,6 +93,26 @@ class UnittestStatement
         @statements = statements
     end
 
+    def toJSON()
+        return {
+            "type" => "unittest",
+            "name" => {
+                "literal" => @test_name.getText(),
+                "type" => @test_name.getType(),
+                "line_number" => @test_name.getLine()
+            },
+            "statements" => getStatements()
+        }
+    end
+
+    def getStatements()
+        stmts = Array.new()
+        for s in @statements
+            stmts.append(s.toJSON())
+        end
+        return stmts
+    end
+
     def _printLiteral
         l = Array.new
         if(@test_name != nil)

@@ -75,4 +75,15 @@ class BreakStatement
         end
         type_list.append(@information.getType())
     end
+
+    def toJSON()
+        return {
+            "type" => "break",
+            "loop_label" => {
+                "literal" => @information.getText(),
+                "type" => @information.getType(),
+                "line_number" => @information.getLine()
+            }
+        }
+    end
 end

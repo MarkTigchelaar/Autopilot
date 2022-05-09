@@ -147,6 +147,31 @@ class ImportStatement
         @isLibrary = isLibrary
     end
 
+    def toJSON()
+        return {
+            "type" => "module",
+            "name" => {
+                "literal" => @modulename.getText(),
+                "type" => @modulename.getType(),
+                "line_number" => @modulename.getLine()
+            },
+            "import_list" => getImportListJSON(),
+            "is_library" => @isLibrary
+        }
+    end
+
+    def getImportListJSON()
+        items = Array.new()
+        for item in @itemList
+            items.append({
+                "literal" => item.getText(),
+                "type" => item.getType(),
+                "line_number" => item.getLine()
+            })
+        end
+        return items
+    end
+
     def _printLiteral
         libormod = "mod"
         if(@isLibrary)

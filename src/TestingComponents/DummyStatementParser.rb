@@ -1,7 +1,7 @@
 require_relative '../Parsing/parserutilities.rb'
 
 class DummyStatementParser
-    def parse(parser)
+    def parse(parser, component = false, always_false = false)
         current = parser.nextToken()
         if(isEOF(current))
             eofReached(parser)

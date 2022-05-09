@@ -1,36 +1,33 @@
-require './Tokenization/scanner.rb'
-require './keywords.rb'
+require_relative './Parsing/parser.rb'
+require 'json'
+
 
 def main
     if ARGV.length < 1
         useage()
         return
     end
-    scanner = Scanner.new()
-    tokens = Array.new()
-    filetokens = Array.new()
+    parser = Parser.new()
+
+    astList = Array.new()
     for arg in ARGV
-        puts arg
-        
+        #puts arg
         if arg.end_with?("ap")
-            file = File.open(arg)
-            contents = file.read()
-            scanner.loadSource(contents)
-            filetokens = scanner.scanTokens()
-            for tok in filetokens
-                tokens.append(tok)
-            end
+            parser.parse(arg)
+            astList.append(parser.toJSON())
         end
     end
-    
-    
-    for tok in tokens
-        puts tok.print() + "\n"
+
+    astStrings = Array.new()
+    for ast in astList
+        jsonString = JSON.dump(ast)
+        astStrings.append(jsonString)
+        puts jsonString
     end
 end
 
 def useage()
-    "put useage stuff here"
+    puts "put useage stuff here"
 end
 
 

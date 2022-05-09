@@ -111,6 +111,14 @@ class LoopStatement
         @sub_statements = sub_statements
     end
 
+    def toJSON()
+        return {
+            "type" => "loop",
+            "label" =>  @name != nil ? { "literal" => @name.getText(), "type" => @name.getType(), "line_number" => @name.getLine() } : nil,
+            "statements" => @sub_statements.toJSON()
+        }
+    end
+
     def _printLiteral
         l = Array.new
         if(@name != nil)

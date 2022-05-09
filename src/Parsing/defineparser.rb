@@ -89,6 +89,22 @@ class DefineStatement
         @newNameToken = newName
     end
 
+    def toJSON()
+        return {
+            "type" => "define",
+            "old_name" => {
+                "literal" => @oldNameToken.getText(),
+                "type" => @oldNameToken.getType(),
+                "line_number" => @oldNameToken.getLine()
+            },
+            "new_name" => {
+                "literal" => @newNameToken.getText(),
+                "type" => @newNameToken.getType(),
+                "line_number" => @newNameToken.getLine()
+            }
+        }
+    end
+
     def _printLiteral
         return "old name: #{@oldNameToken.getText()} new name: #{@newNameToken.getText()}"
     end

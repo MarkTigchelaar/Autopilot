@@ -242,6 +242,29 @@ class FunctionArgument
         @default_value = default_value
     end
 
+    def toJSON()
+        default = nil
+        if(@default_value != nil)
+            default = {
+                "literal" => @default_value.getText(),
+                "type" => @default_value.getType()
+            }
+        end
+        return {
+            "name" => {
+                "literal" => @var_name.getText(),
+                "type" => @var_name.getType(),
+                "line_number" => @var_name.getLine()
+            },
+            "type" => {
+                "literal" => @var_type.getText(),
+                "type" => @var_type.getType(),
+                "line_number" => @var_type.getLine()
+            },
+            "default_value" => default
+        }
+    end
+
     def _printLiteral()
         str =  @var_name.getText() + " " + @var_type.getText()
         if(@default_value != nil)
@@ -268,6 +291,45 @@ class FunctionStatement
         @is_acyclic = false
         @is_public = false
         @is_inline = false
+    end
+
+    def toJSON()
+        ret = nil
+        if(@return_type != nil)
+            ret = {
+                "literal" => @return_type.getText(),
+                "type" => @return_type.getType(),
+                "line_number" => @return_type.getLine()
+            }
+        end
+        return {
+            "type" => "function",
+            "name" => {
+                "literal" => @function_name.getText(),
+                "type" => @function_name.getType(),
+                "line_number" => @function_name.getLine()
+            },
+            "arguments" => getArgumentsJSON(),
+            "return_type" => ret,
+            "attributes" => {
+                "acyclic" => @is_acyclic,
+                "public" => @is_public,
+                "inline" => @is_inline
+            },
+            "statements" => getStatementsJSON()
+        }
+    end
+
+    def getArgumentsJSON()
+        argsJSON = Array.new()
+        for arg in @arguments
+            argsJSON.append(arg.toJSON())
+        end
+        return argsJSON
+    end
+
+    def getStatementsJSON()
+        return @statements.toJSON()
     end
 
     def setAsAcyclic()

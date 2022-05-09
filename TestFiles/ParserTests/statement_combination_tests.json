@@ -67,12 +67,6 @@
                 "tokenLiteral" : "end",
                 "lineNumber" : "3",
                 "message" : "Empty Statement."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementComboTests/OuterIf/test5.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "3",
-                "message" : "End of file reached."
             }
         ]
     },
@@ -157,12 +151,6 @@
                 "tokenLiteral" : "end",
                 "lineNumber" : "3",
                 "message" : "Empty Statement."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementComboTests/OuterIf/test11.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "3",
-                "message" : "End of file reached."
             }
         ]
     },
@@ -427,12 +415,6 @@
                 "tokenLiteral" : "end",
                 "lineNumber" : "3",
                 "message" : "Empty Statement."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementComboTests/OuterElif/test5.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "3",
-                "message" : "End of file reached."
             }
         ]
     },
@@ -517,12 +499,6 @@
                 "tokenLiteral" : "end",
                 "lineNumber" : "3",
                 "message" : "Empty Statement."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementComboTests/OuterElif/test11.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "3",
-                "message" : "End of file reached."
             }
         ]
     },

@@ -42,6 +42,16 @@ class Parser
         @unittest_parser = UnittestParser.new(@statement_parser)
     end
 
+    def toJSON()
+        astJSON = Array.new()
+        if( @ast != nil)
+            for node in @ast
+                astJSON.append(node.toJSON())
+            end
+        end
+        return astJSON
+    end
+
     def parse(filename)
         @tokenizer.loadSource(filename)
         @ast = _parse()

@@ -116,6 +116,30 @@ class InterfaceStatement
         @is_public = false
     end
 
+    def toJSON()
+        return {
+            "type" => "interface",
+            "name" => {
+                "literal" => @name.getText(),
+                "type" => @name.getType(),
+                "line_number" => @name.getLine()
+            },
+            "functions" => getFunctionsJSON(),
+            "attributes" => {
+                "acyclic" => @is_acyclic,
+                "public" => @is_public
+            }
+        }
+    end
+
+    def getFunctionsJSON()
+        funcs = Array.new()
+        for fn in @functions
+            funcs.append(fn.toJSON())
+        end
+        return funcs
+    end
+
     def setAsAcyclic()
         @is_acyclic = true
     end

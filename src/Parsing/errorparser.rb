@@ -99,6 +99,30 @@ class ErrorStatement
         @items = itemList
     end
 
+    def toJSON()
+        return {
+            "type" => "error",
+            "name" => {
+                "literal" => @name.getText(),
+                "type" => @name.getType(),
+                "line_number" => @name.getLine()
+            },
+            "error_list" => getErrorsList()
+        }
+    end
+
+    def getErrorsList
+        errs = Array.new()
+        for err in @items
+            errs.append({
+                "literal" => err.getText(),
+                "type" => err.getType(),
+                "line_number" => err.getLine()
+            })
+        end
+        return errs
+    end
+
     def _printLiteral()
         astString = ""
         astString += @name.getText() + " "

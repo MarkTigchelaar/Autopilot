@@ -193,6 +193,25 @@ class ReassignmentOrCallStatement
         @functions = functions
     end
 
+    def toJSON()
+        funcs = Array.new()
+        if(@functions != nil)
+            for func in @functions
+                funcs.append(func.toJSON())
+            end
+        end
+        return {
+            "type" => "reassign_or_call",
+            "token" => {
+                "literal" => @var_name.getText(),
+                "type" => @var_name.getType(),
+                "line_number" => @var_name.getLine()
+            },
+            "functions" => funcs,
+            "rvalue" => @expression_ast != nil ? @expression_ast.toJSON() : nil
+        }
+    end
+
     def _printTokType(type_list)
         if(@var_name != nil)
             type_list.append(@var_name.getType())

@@ -112,6 +112,24 @@ class AssignmentStatement
         @let_or_var = let_or_var
     end
 
+    def toJSON()
+        return {
+            "type" => "assignment",
+            "token" => {
+                "literal" => @name.getText(),
+                "type" => @name.getType(),
+                "line_number" => @name.getLine()
+            },
+            "variable_type" => {
+                "literal" => @type.getText(),
+                "type" => @type.getType(),
+                "line_number" => @type.getLine()
+            },
+            "assignment_type" => @let_or_var.getType(),
+            "rvalue" => @expression_ast.toJSON()
+        }
+    end
+
     def usesLet
         @let = true
     end

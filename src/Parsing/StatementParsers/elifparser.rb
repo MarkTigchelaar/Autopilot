@@ -31,6 +31,12 @@ class ElifStatement
         @if_statement = if_statement
     end
 
+    def toJSON()
+        json = @if_statement.toJSON()
+        json["type"] = "elif"
+        return json
+    end
+
     def _printLiteral
         if(@if_statement != nil)
             return @if_statement._printLiteral()

@@ -43,6 +43,13 @@ class UnlessStatement
         if(ast != nil)
             @statements = stmts
         end
+        @if = if_statement
+    end
+
+    def toJSON()
+        json = @if.toJSON()
+        json["type"] = "unless"
+        return json
     end
 
     def _printLiteral

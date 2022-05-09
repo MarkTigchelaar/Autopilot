@@ -116,12 +116,6 @@
                 "tokenLiteral" : "struct",
                 "lineNumber" : "9",
                 "message" : "Unexpected token struct."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test6.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "10",
-                "message" : "End of file reached."
             }
         ]
     }

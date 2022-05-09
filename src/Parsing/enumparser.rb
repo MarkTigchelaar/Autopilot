@@ -271,6 +271,19 @@ class EnumListItem
         @default_value_token = default_value_token
     end
 
+    def toJSON()
+        return {
+            "name" => {
+                "literal" => @name.getText(),
+                "type" => @name.getType()
+            },
+            "default_value" => {
+                "literal" => @default_value_token.getText(),
+                "type" => @default_value_token.getType()
+            }
+        }
+    end
+
     def getName()
         return @name.getText()
     end
@@ -307,6 +320,31 @@ class EnumStatement
         #puts @name.getText() + "--===="
         @items = itemList
         @enumtype = generaltype
+    end
+
+    def toJSON()
+        return {
+            "type" => "enum",
+            "name" => {
+                "literal" => @name.getText(),
+                "type" => @name.getType(),
+                "line_number" => @name.getLine()
+            },
+            "fields" => getItemsJSON(),
+            "enumtype" => {
+                "literal" => @enumtype.getText(),
+                "type" => @enumtype.getType(),
+                "line_number" => @enumtype.getLine()
+            }
+        }
+    end
+
+    def getItemsJSON()
+        itemList = Array.new()
+        for item in @items
+            itemList.append(item.toJSON())
+        end
+        return itemList
     end
 
     def _printLiteral()

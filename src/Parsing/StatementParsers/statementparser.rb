@@ -2,6 +2,21 @@ require_relative '../parserutilities.rb'
 require_relative '../../tokentype.rb'
 require_relative '../../keywords.rb'
 
+
+require './Parsing/StatementParsers/returnparser.rb'
+require './Parsing/StatementParsers/continueparser.rb'
+require './Parsing/StatementParsers/breakparser.rb'
+require './Parsing/StatementParsers/loopparser.rb'
+require './Parsing/StatementParsers/switchparser.rb'
+require './Parsing/StatementParsers/ifparser.rb'
+require './Parsing/StatementParsers/elseparser.rb'
+require './Parsing/StatementParsers/elifparser.rb'
+require './Parsing/StatementParsers/unlessparser.rb'
+require './Parsing/StatementParsers/assignparser.rb'
+require './Parsing/StatementParsers/whileparser.rb'
+require './Parsing/StatementParsers/forparser.rb'
+require './Parsing/StatementParsers/reassignorcallparser.rb'
+
 class StatementParser
     def initialize(expression_parser, dummy = nil)
         if(dummy != nil)
@@ -32,17 +47,53 @@ class StatementParser
         @statements = Array.new
     end
 
-    def parse(parser, component_test = false)
+    def parse(parser, component_test = false, in_if = false)
         stmts = Array.new
         peekTok = parser.peek()
         while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
             # add function here for when inside if/elif statement check for elif / else, break if found
             stmt = nil
-            errCount = parser.errorCount()
+            #puts "peek Token test (in statement parser): #{peekTok.getText()}"
             if(isValidIdentifier(peekTok))
                 stmt = parseReassignOrCall(parser)
             else
-                stmt = parse_internal_statement(self, parser)
+                
+                stmt = case peekTok.getType()
+                when IF
+                    parseIf(parser)
+                when ELIF
+                    if(in_if and prev_not_elif_or_if(stmts))
+                        break
+                    end
+                    parseElif(parser)
+                when ELSE
+                    if(in_if and prev_not_elif_or_if(stmts))
+                        break
+                    end
+                    parseElse(parser)
+                when UNLESS
+                    parseUnless(parser)
+                when LOOP
+                    parseLoop(parser)
+                when FOR
+                    parseFor(parser)
+                when WHILE
+                    parseWhile(parser)
+                when LET
+                    parseLet(parser)
+                when VAR
+                    parseVar(parser)
+                when BREAK
+                    parseBreak(parser)
+                when CONTINUE
+                    parseContinue(parser)
+                when RETURN
+                    parseReturn(parser)
+                when SWITCH
+                    parseSwitch(parser)
+                else
+                    nil
+                end
             end
             stmts.append(stmt)
             peekTok = parser.peek()
@@ -52,6 +103,10 @@ class StatementParser
         end
         s = StatementList.new(stmts)
         return s
+    end
+
+    def prev_not_elif_or_if(stmts)
+        return !["IfStatement", "ElifStatement"].include?(stmts[-1].class.name.split('::').last)
     end
 
     def parseIf(parser)
@@ -126,6 +181,14 @@ class StatementList
 
     def length()
         return @statements.length()
+    end
+
+    def toJSON()
+        stmts = Array.new()
+        for s in @statements
+            stmts.append(s.toJSON())
+        end
+        return stmts
     end
 
     def _printLiteral

@@ -281,6 +281,54 @@ class ForStatement
         @opt_variable = opt_variable
     end
 
+    def toJSON()
+        json = Hash.new()
+        json["type"] = "forloop"
+        if(@let)
+            json["assignment_type"] = "let"
+        elsif(@var)
+            json["assignment_type"] = "var"
+        end
+        if @var_one
+            json["variable_one"] = {
+                "literal" => @oldNameToken.getText(),
+                "type" => @oldNameToken.getType(),
+                "line_number" => @oldNameToken.getLine()
+            }
+        end
+        if @var_two
+            json["variable_two"] = {
+                "literal" => @var_two.getText(),
+                "type" => @var_two.getType(),
+                "line_number" => @var_two.getLine()
+            }
+        end
+        if @opt_variable
+            json["unwrapped_option"] = {
+                "literal" => @opt_variable.getText(),
+                "type" => @opt_variable.getType(),
+                "line_number" => @opt_variable.getLine()
+            }
+        end
+        if @start_collection_ast != nil
+            json["start_expression"] = @start_collection_ast.toJSON()
+        end
+        if @stop_collection_ast != nil
+            json["stop_expression"] = @stop_collection_ast.toJSON()
+        end
+        if(@loop_name != nil)
+            json["label"] = {
+                "literal" => @loop_name.getText(),
+                "type" => @loop_name.getType(),
+                "line_number" => @loop_name.getLine()
+            }
+        end
+        if @statements != nil
+            json["statements"] = @statements.toJSON()
+        end
+        return json
+    end
+
     def _printLiteral()
         lit = ""
         if @let

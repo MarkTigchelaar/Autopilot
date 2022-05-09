@@ -89,4 +89,15 @@ class ElseStatement
     def _printTokType(type_list)
         type_list.append("ELSE")
     end
+
+    def toJSON()
+        stmtsJSON = Array.new()
+        for stmt in @sub_statements
+            stmtsJSON.append(stmt.toJSON())
+        end
+        return {
+            "type" => "else",
+            "statememts" => stmtsJSON
+        }
+    end
 end

@@ -45,6 +45,13 @@ class ReturnStatement
         @return_expression = return_expression
     end
 
+    def toJSON()
+        return {
+            "type" => "return",
+            "rvalue" => @return_expression != nil ? @return_expression.toJSON() : nil,
+        }
+    end
+
     def _printLiteral()
         a = Array.new
         @return_expression._printLiteral(a)

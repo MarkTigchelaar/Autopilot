@@ -52,41 +52,6 @@ class ExpressionParser
         @tokenizer.closeSource()
     end
 
-    def loadFile(filename)
-        @name = filename
-        @tokenizer.loadSource(filename)
-    end
-
-    def getFilename
-        return @name
-    end
-
-    def astString
-        expr_list = Array.new()
-        #expr_list.append("(")
-        expr_list = @root._printLiteral(expr_list)
-        #expr_list.append(")")
-        concact_all_strings = ""
-        return expr_list.join(concact_all_strings)
-    end
-
-    def tokenTypeString
-        type_list = Array.new()
-        #type_list.append("(")
-        type_list = @root._printTokType(type_list)
-        #type_list.append(")")
-        concact_all_strings = ""
-        return type_list.join(concact_all_strings)
-    end
-
-    def getErrorList
-        return @errorList
-    end
-
-    def hasErrors
-        return @errorList.length > 0
-    end
-
     def _next
         tok = @tokenizer.nextToken()
         return tok
@@ -276,6 +241,37 @@ class ExpressionParser
         @errorList.append(err)
         @hasErrors = true
     end
+
+    def loadFile(filename)
+        @name = filename
+        @tokenizer.loadSource(filename)
+    end
+
+    def getFilename
+        return @name
+    end
+
+    def astString
+        expr_list = Array.new()
+        expr_list = @root._printLiteral(expr_list)
+        concact_all_strings = ""
+        return expr_list.join(concact_all_strings)
+    end
+
+    def tokenTypeString
+        type_list = Array.new()
+        type_list = @root._printTokType(type_list)
+        concact_all_strings = ""
+        return type_list.join(concact_all_strings)
+    end
+
+    def getErrorList
+        return @errorList
+    end
+
+    def hasErrors
+        return @errorList.length > 0
+    end
 end
 
 
@@ -288,7 +284,6 @@ class PreFixExpression
         @operator = operator
         @rhs_exp = right_exp
         @token = token
-        @checked = false
     end
 
     def _printLiteral(repr_list)
@@ -301,6 +296,18 @@ class PreFixExpression
         type_list.append("(")
         @rhs_exp._printLiteral(type_list)
         type_list.append(")")
+    end
+
+    def toJSON()
+        return {
+            "type" => "prefix",
+            "token" => {
+                "literal" => @token.getText(),
+                "type" => @token.getType(),
+                "line_number" => @token.getLine()
+            },
+            "rhs_exp" => @rhs_exp.toJSON()
+        }
     end
 end
 
@@ -327,6 +334,17 @@ class NameExpression
 
     def _printTokType(type_list)
         type_list.append(@token.getType())
+    end
+
+    def toJSON()
+        return {
+            "type" => "identifier_or_literal",
+            "token" => {
+                "literal" => @token.getText(),
+                "type" => @token.getType(),
+                "line_number" => @token.getLine()
+            }
+        }
     end
 end
 
@@ -356,6 +374,19 @@ class OperatorExpresison
         type_list.append(' ' + @type.to_s + ' ')
         @rhs._printTokType(type_list)
         type_list.append(')')
+    end
+
+    def toJSON()
+        return {
+            "type" => "binary",
+            "token" => {
+                "literal" => @token.getText(),
+                "type" => @token.getType(),
+                "line_number" => @token.getLine()
+            },
+            "lhs_exp" => @lhs.toJSON(),
+            "rhs_exp" => @rhs.toJSON()
+        }
     end
 end
 
@@ -398,6 +429,19 @@ class CollectionExpression
         end
         type_list.append(@right_bracket)
     end
+
+    def toJSON()
+        elems = Array.new()
+        for exp in @elements
+            elems.append(exp.toJSON())
+        end
+        return {
+            "type" => "collection",
+            "left_delimiter" => @left_bracket,
+            "right_delimiter" => @right_bracket,
+            "elements" => elems
+        }
+    end
 end
 
 
@@ -411,6 +455,23 @@ class CallExpression
         @args = arguments
         @token = token
         @checked = false
+    end
+
+    def toJSON()
+        jsonArgs = Array.new()
+        for arg in @args
+            jsonArgs.append(arg.toJSON())
+        end
+        return {
+            "type" => "function_call",
+            "name" => {
+                "literal" => @token.getText(),
+                "type" => @token.getType()
+                "line_number" => @token.getLine()
+            }
+            "lhs_exp" => @function.toJSON(),
+            "arguments" => jsonArgs
+        }
     end
 
     def _printLiteral(repr_list)
