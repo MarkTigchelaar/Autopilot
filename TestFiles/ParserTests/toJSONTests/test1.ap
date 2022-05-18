@@ -1,9 +1,38 @@
+module one
+
+// define fun(int, int) float as FloatFn
+// also use it for renaming?
+// define FloatFn as myFunkyFunc
+
+// ...
+
+    // What if the function is in a different file?
+    // better to see what arg types it takes, and its return type
+    // treat the function as a type, complex types must be delared outside functions
+    // like structs, enums, unions, etc.
+    // then the fn pointer below works just like: let st as myStruct = thingy,
+    // where thingy is type:
+    //  struct myStruct is 
+    //      i as long 
+    //  end
+    // so...
+    // let fn as FloatFn = func_three
+
+// ...
+
 
 acyclic pub struct main 
-    uses a, b, c, dee 
-is
+  uses a, b, c, dee is
     i as long
     pub fun main(a as int = 0, b as float) atype do
         let a as int = 0 + 4
     end
+end
+
+acyclic fun funcTwo() int do
+    if 1 <= 2 do
+        let i as float = 4.6
+    elif 3 < 4 do
+        var kai = 6
+    end 
 end

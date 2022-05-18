@@ -251,7 +251,7 @@ class SwitchStatement
                 "literal" => @test_case.getText(),
                 "type" => @test_case.getType(),
                 "line_number" => @test_case.getLine()
-            }
+            },
             "cases" => getCasesJSON()
         }
     end

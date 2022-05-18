@@ -171,6 +171,7 @@ class IfParser
             
             peekTok = parser.peek()
         end
+        i.set_statements(@statements)
         @ifstatement = i
         if(isEOF(peekTok))
             eofReached(parser)
@@ -288,10 +289,10 @@ class IfStatement
     end
 
     def toJSON()
-        stmtsJSON = Array.new()
-        for stmt in @statements
-            stmtsJSON.append(stmt.toJSON())
-        end
+        #stmtsJSON = Array.new()
+        #for stmt in @statements
+        #    stmtsJSON.append(stmt.toJSON())
+        #end
         assign_type = "var"
         if(@let)
             assign_type = "let"
@@ -318,7 +319,7 @@ class IfStatement
             "unwrapped_option" => uvar,
             "option" => option,
             "expression" => @expression_ast.toJSON(),
-            "statememts" => stmtsJSON
+            "statememts" => @statements.toJSON()
         }
     end
 end

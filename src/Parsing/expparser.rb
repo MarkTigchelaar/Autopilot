@@ -466,9 +466,9 @@ class CallExpression
             "type" => "function_call",
             "name" => {
                 "literal" => @token.getText(),
-                "type" => @token.getType()
+                "type" => @token.getType(),
                 "line_number" => @token.getLine()
-            }
+            },
             "lhs_exp" => @function.toJSON(),
             "arguments" => jsonArgs
         }

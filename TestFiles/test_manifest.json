@@ -9,6 +9,10 @@
     },
     {
         "general_component" : "expparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/expparser_error_tests.json"
+    },
+    {
+        "general_component" : "expparser",
         "test_manifest_file" : "../TestFiles/ParserTests/expparser_manual_tests.json"
     },
     {
