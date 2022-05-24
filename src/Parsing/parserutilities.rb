@@ -78,6 +78,62 @@ def isAlphaNumeric(char)
     return (isAlpha(char) or isDigit(char))
 end
 
+def isForbiddenInExpressions(token)
+    if(isEOF(token))
+        return true
+    elsif(isScopeKeyword(token))
+        return true
+    elsif(isGeneralKeyWord(token.getText()))
+        return true
+    end
+    return false
+end
+    
+def isOperator(token)
+    case token.getType()
+        when PLUS
+            true
+        when MINUS
+            true
+        when COLON
+            true
+        when SLASH
+            true
+        when STAR
+            true
+        when CARROT
+            true
+        when MOD
+            true
+        when BANG_EQUAL
+            true
+        when EQUAL_EQUAL
+            true
+        when GREATER
+            true
+        when GREATER_EQUAL
+            true
+        when LESS
+            true
+        when LESS_EQUAL
+            true
+        when AND
+            true
+        when NAND
+            true
+        when OR
+            true
+        when XOR
+            true
+        when NOR
+            true
+        when NOT
+            true
+        else
+            false
+        end
+end
+
 def invalidItemName(parser)
     msg = "Invalid name for item #{parser.peek().getText()}."
     addError(parser, msg)
@@ -107,14 +163,20 @@ def isKeyword(token)
     return false
 end
 
-def addError(parser, message)
-    parser.addError(parser.nextToken(), message)
+module ERRORS
+def self.addError(parser, message)
+    puts("In add Error")
+    tok = parser.nextToken()
+    puts("in addError, next token is #{tok.getType()}")
+    parser.addError(tok, message)
     parser.setToSync()
+end
 end
 
 def eofReached(parser)
     msg = "End of file reached."
-    addError(parser, msg)
+    puts("in end of file reached function, message is: #{msg}")
+    ERRORS::addError(parser, msg)
 end
 
 def emptyStatement(parser)
@@ -171,6 +233,11 @@ def isOtherValidType(peekTok)
     else
         false
     end
+end
+
+
+def isScopeKeyword(token)
+    token.getType() == DO
 end
 
 def is_interal_statement_keyword(token)

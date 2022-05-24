@@ -5,6 +5,7 @@ LEFT_BRACKET = "LEFT_BRACKET"
 RIGHT_BRACKET = "RIGHT_BRACKET"
 LEFT_BRACE = "LEFT_BRACE"
 RIGHT_BRACE = "RIGHT_BRACE"
+
 QUESTION = "QUESTION"
 COMMA = "COMMA"
 MINUS = "MINUS"
@@ -26,6 +27,15 @@ GREATER_EQUAL = "GREATER_EQUAL"
 LESS = "LESS"
 LESS_EQUAL = "LESS_EQUAL"
 
+AND = "and".upcase
+NAND = "nand".upcase
+OR  = "or".upcase
+XOR = "xor".upcase
+NOR = "nor".upcase
+NOT = "not".upcase
+
+
+# combined assignment
 PLUS_EQUAL = "PLUS_EQUAL"
 MINUS_EQUAL = "MINUS_EQUAL"
 STAR_EQUAL = "STAR_EQUAL"
@@ -92,12 +102,7 @@ AS = "as".upcase
 IS = "is".upcase
 IN = "in".upcase
 
-AND = "and".upcase
-NAND = "nand".upcase
-OR  = "or".upcase
-XOR = "xor".upcase
-NOR = "nor".upcase
-NOT = "not".upcase
+
 
 LET = "let".upcase
 VAR = "var".upcase
@@ -119,6 +124,9 @@ DOT = "DOT" # .
 YIELD = "yield".upcase
 SLEEP = "sleep".upcase
 TASKID = "tid".upcase
+
+
+
     
         # All 3 are concurrency related, but it just affects
         # current thread

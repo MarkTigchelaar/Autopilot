@@ -41,6 +41,7 @@ class ExpressionParser
     end
 
     def parse_expression
+        @errorList = Array.new()
         ast = _parse(0)
         if hasErrors()
             return nil
@@ -57,16 +58,35 @@ class ExpressionParser
         return tok
     end
 
+    def nextToken()
+        _next()
+    end
+
+    def discard()
+        _next()
+    end
+
     def _peek
         return @tokenizer.peekToken()
+    end
+
+    def peek()
+        _peek()
+    end
+
+    def setToSync()
+        internalSynchronize(self)
     end
 
     def _parse(precedence)
         token = _peek()
         if(token == nil)
-            return nil
+            raise Exception.new("INCORRECT!")
         end
         left_exp = parse_prefix_expression()
+        if(left_exp == nil)
+            return nil
+        end
         return parse_infix_sub_tree(precedence, left_exp)
     end
 
@@ -87,6 +107,14 @@ class ExpressionParser
     end
 
     def parse_minus_prefix(token)
+        if(isEOF(_peek()))
+            eofReached(self)
+            return nil
+        elsif(!isIdentifier(_peek()))
+            msg = "Unexpected token #{token.getText()}."
+            addError(token, msg)
+            return nil
+        end
         rhs = _parse(PREFIX)
         return PreFixExpression.new(token, MINUS, rhs)
     end
@@ -127,6 +155,17 @@ class ExpressionParser
         if(isExternalKeyword(token) || is_interal_statement_keyword(token))
             msg = "Unexpected token #{token.getText()}."
             addError(token, msg)
+        elsif(isScopeKeyword(token))
+            msg = "Unexpected token #{token.getText()}."
+            addError(token, msg)
+        elsif(isOperator(token))
+            msg = "Invalid constant or variable."
+            addError(token, msg)
+        elsif(isPrimitiveType(token, true))
+            msg = "Unexpected token #{token.getText()}."
+            addError(token, msg)
+        elsif(isEOF(token))
+            eofReached(self)
         end
         return NameExpression.new(token)
     end
@@ -163,7 +202,7 @@ class ExpressionParser
             parse_function_call(left_exp, token)
         else
             msg = "Can't find infix"
-            addError(token, msg)
+            self.addError(token, msg)
             nil
         end
     end
@@ -231,8 +270,10 @@ class ExpressionParser
         token = _next()
     end
 
-    def addError(token, message)
-        @tokenizer.addError(token, message)
+    public def addError(token, message)
+        if(@tokenizer.class == "Parser")
+            @tokenizer.addError(token, message)
+        end
         err = Hash.new()
         err["file"] = token.getFilename()
         err["tokenLiteral"] = token.getText()
@@ -266,6 +307,29 @@ class ExpressionParser
     end
 
     def getErrorList
+        dup_indicies = Set.new
+        for i in (@errorList.length - 1).downto(0) do
+            for j in (i - 1).downto(0) do
+                if(i == j)
+                    next
+                end
+                b = @errorList[j]
+                same_file = @errorList[i]["file"] == b["file"]
+                same_lit = @errorList[i]["tokenLiteral"] == b["tokenLiteral"]
+                same_line = @errorList[i]["lineNumber"] == b["lineNumber"]
+                same_msg = @errorList[i]["message"] == b["message"]
+                is_eof = b["message"] == "End of file reached."
+                if(same_file and same_lit and same_line and same_msg and is_eof)
+                    dup_indicies.add(i)
+                end
+            end
+        end
+        for i in (@errorList.length - 1).downto(0) do
+            if dup_indicies.include?(i)
+                @errorList.delete_at(i)
+            end
+        end
+
         return @errorList
     end
 
