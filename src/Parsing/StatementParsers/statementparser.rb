@@ -53,7 +53,6 @@ class StatementParser
         while(!isEOF(peekTok) and (is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
             # add function here for when inside if/elif statement check for elif / else, break if found
             stmt = nil
-            #puts "peek Token test (in statement parser): #{peekTok.getText()}"
             if(isValidIdentifier(peekTok))
                 stmt = parseReassignOrCall(parser)
             else

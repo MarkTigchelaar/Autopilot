@@ -32,7 +32,6 @@ class EnumParser
     def enumNameStep(parser)
         peekTok = parser.peek()
         @name = peekTok
-        #puts @name.getText() + "--------------------------"
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -50,7 +49,6 @@ class EnumParser
     def isStep(parser)
         parser.discard()
         peekTok = parser.peek()
-        #puts "In isStep -----------------------------------"
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
@@ -82,7 +80,6 @@ class EnumParser
     def enumTypeStep(parser)
         peekTok = parser.peek()
         @generaltype = peekTok
-        #puts "                         Current item: #{peekTok.getText()}"
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -109,11 +106,8 @@ class EnumParser
     end
 
     def itemListStep(parser)
-
-        #puts "                              In itemListStep"
         peekTok = parser.peek()
         @currentItemName = peekTok
-        #puts "current item name: #{@currentItemName.getText()}"
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -124,7 +118,6 @@ class EnumParser
         elsif(peekTok.getType() == EQUAL)
             equalStep(parser)
         elsif(peekTok.getType() == ENDSCOPE)
-            #puts "Found end scope, adding list item"
             addToItemList()
             endStep(parser)
         else
@@ -134,7 +127,6 @@ class EnumParser
     end
 
     def commaStep(parser)
-       #puts "in comma step"
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -148,54 +140,42 @@ class EnumParser
     end
 
     def equalStep(parser)
-      # puts "                                    In equal Step"
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
-           #puts "In equal step, found identifier"
             itemListLiteralStep(parser)
         elsif(isNumeric(peekTok))
-           puts "In equal step, found number: #{peekTok.getText()}"
             # tokenizer splits text on '.'
             # floats will be 3 tokens total
             itemListLiteralStep(parser)
         else
-            #puts "unexpected token: #{peekTok.getText()}"
             unexpectedToken(parser)
             reset()
         end
     end
 
     def itemListLiteralStep(parser)
-       #puts "itemListLiteralStep"
         @currentItemLiteralToken = getNumberOrToken(parser)
-        #puts "current item literal token: #{@currentItemLiteralToken.getText()}"
-        #parser.discard()
         peekTok = parser.peek()
-        puts "next peek Token: #{peekTok.getText()}, #{peekTok.getType()}"
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == COMMA)
-           #puts "found comma"
             addToItemList()
             commaStep(parser)
         elsif(peekTok.getType() == ENDSCOPE)
             addToItemList()
             endStep(parser)
         else
-            puts "Skipped end token"
             unexpectedToken(parser)
             reset()
         end
     end
 
     def getNumberOrToken(parser)
-       #puts "getNumberOrToken"
         current = parser.peek()
         if(!isNumeric(current))
-            #puts "not numeric, returning current"
             return parser.nextToken()
         end
         parser.discard()
@@ -203,7 +183,6 @@ class EnumParser
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getText() != '.')
-           #puts "returning current"
             return current
         else
             middle = peekTok
@@ -215,7 +194,6 @@ class EnumParser
             elsif(isNumeric(peekTok))
                 txt = current.getText() + middle.getText() + peekTok.getText()
             else
-               #puts "in nested else"
                 unexpectedToken(parser)
                 reset()
             end
@@ -251,7 +229,6 @@ class EnumParser
     end
 
     def enumStatement()
-        #puts @name.getText() + "]]]]]"
         enum = EnumStatement.new(@name, @itemList, @generaltype)
         reset()
         return enum
@@ -317,7 +294,6 @@ end
 class EnumStatement
     def initialize(name, itemList, generaltype)
         @name = name
-        #puts @name.getText() + "--===="
         @items = itemList
         @enumtype = generaltype
     end

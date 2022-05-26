@@ -6,14 +6,12 @@ class ModuleParser
     def parse(parser)
         peekTok = parser.peek()
         if(peekTok.getText().upcase != MODULE)
-            puts "#{MODULE}  #{peekTok.getText()}"
             throw Exception.new("Module parser did not enounter \"module\" keyword in file " + peekTok.getFilename())
         end
         parser.discard()
         msg = "Module names cannot start with numbers, or have non alphanumeric characters."
         if(!isAlphaNumericWord(parser.peek()))
-            addError(parser, msg)
-            puts "ADDING ERROR"
+            ERRORS::addError(parser, msg)
             return nil
         end
         return ModuleStatement.new(parser.nextToken())

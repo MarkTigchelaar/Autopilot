@@ -14,7 +14,6 @@ class UnionParser
     def parse(parser)
         reset()
         token = parser.nextToken()
-        puts "token: #{token.getText()}"
         enforceUnion(token)
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -24,11 +23,7 @@ class UnionParser
         else
             unexpectedToken(parser)
         end
-        if(@union_name != nil)
-          puts "union name in parse: #{@union_name.getText()}"
-        else
-          puts "union name is nil"
-        end
+
         u = UnionStatement.new(@union_name, @itemList)
         reset()
         return u
@@ -36,7 +31,6 @@ class UnionParser
 
     def unionNameStep(parser)
         @union_name = parser.nextToken()
-        puts "union name: #{@union_name.getText()}"
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -65,10 +59,6 @@ class UnionParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        #elsif(peekTok.getType() == COMMA)
-        #    commaStep(parser)
-        #elsif(peekTok.getType() == ENDSCOPE)
-         #   endStep(parser)
         elsif(peekTok.getType() == AS)
             asStep(parser)
         else
@@ -127,7 +117,6 @@ class UnionParser
 
     def addItemToList()
         @itemList.append(UnionItemListType.new(@item_name, @item_type))
-        #reset()
     end
 
     def reset()

@@ -111,7 +111,6 @@ class FunctionParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        #elsif(peekTok.getType() == STRING or peekTok.getType() == CHAR or peekTok.getType() == FLOAT or peekTok.getType() == INT)
         elsif([STRING, CHAR, FLOAT, INT].include?(peekTok.getType()))
             addDefaultStep(parser, argname, argtype)
         else

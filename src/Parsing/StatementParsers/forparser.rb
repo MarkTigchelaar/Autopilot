@@ -228,16 +228,13 @@ class ForParser
             stmts = @statement_parser.parse(parser)
             @statements = stmts
             peekTok = parser.peek()
-            #if(parser.hasErrors())
-            #    return
-            #end
         end
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
             if(@statements.length() == 0)
                 emptyStatement(parser)
-            else#if(not parser.hasErrors())
+            else
                 endStep(parser)
             end
         else

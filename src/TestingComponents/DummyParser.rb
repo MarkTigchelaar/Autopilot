@@ -50,7 +50,7 @@ class DummyParser
             end
         end
 
-        return @err#errors
+        return @err
     end
 
     def reset()
@@ -75,9 +75,7 @@ class DummyParser
 
     def tokenTypeString
         type_list = Array.new()
-        #type_list.append("(")
         @ast._printTokType(type_list)
-        #type_list.append(")")
         concact_all_strings = " "
         str = type_list.join(concact_all_strings)
         str = str.strip()

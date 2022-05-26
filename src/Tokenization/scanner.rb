@@ -87,7 +87,6 @@ class Scanner
     def scanforToken
         char = @charScanner.currentChar()
         @charScanner.setSliceStart()
-        #puts "current idx: #{@charScanner.getCurrent()}"
         case char
         when "("
             addToken(LEFT_PAREN)
@@ -217,39 +216,25 @@ class Scanner
             @charScanner.shiftRight()
         end
 
-        #type = @keywords[@charScanner.getSlice()]
         if(isGeneralKeyWord(@charScanner.getSlice()))
             addToken(@charScanner.getSlice().upcase)
         else
             addToken(IDENTIFIER)
         end
-        #if(type == nil)
-        #    type = IDENTIFIER
-        #end
-        #addToken(type)
     end
 
     def number
-        #puts "found a number: #{@charScanner.currentChar()} ----------------"
         while(isDigit(peek()))
-            #puts "in first while loop"
             @charScanner.shiftRight()
         end
-        #puts "current is now #{@charScanner.currentChar()} ----------------"
         isfloat = false
         if(peek() == "." and isDigit(peekNext()))
-            #puts "in if statement"
             isfloat = true
             @charScanner.shiftRight()
-            #puts "current is now #{@charScanner.currentChar()} ----------------"
             while(isDigit(peek()))
-                #puts "in second while loop"
                 @charScanner.shiftRight()
             end
-            #puts "current is now #{@charScanner.currentChar()} ----------------"
         end
-        #puts "current is now #{@charScanner.currentChar()} ----------------"
-        #puts "current slice: #{@charScanner.getSlice()}"
 
         if(isfloat)
             addToken(FLOAT)
@@ -280,10 +265,6 @@ class Scanner
         text = @charScanner.getSlice()
         @tokens.append(Token.new(tok_type, text, literal, @line, @filename))
         @charScanner.shiftRight()
-        #if(["\n", "\r"].include?(@charScanner.currentChar()))
-        #    puts "found a newline -----------------------"
-        #    @charScanner.shiftRight()
-        #end
     end
 
     def isAtEnd
@@ -323,8 +304,6 @@ class Scanner
 
             current = @charScanner.currentChar()
             peek = @charScanner.peekChar()
-
-            #puts "In multi line comment, current #{current}, peek #{peek}"
 
             if(current == "/" and peek() == "*")
                 comment_sections += 1
@@ -459,17 +438,14 @@ class FileScanner
         if(@current + 1 > @filesize)
             return '\0'
         end
-        #puts " in peek, current is  <#{currentChar()}> ----------------"
         char = readChar()
         @current -= 1
         char = readChar()
         if(char == "\r" or char == "\n")
-            #puts "char is a newline"
             @source.seek(-1, IO::SEEK_CUR)
         end
         @current -= 1
         @source.seek(-2, IO::SEEK_CUR)
-        #puts "still in peek, current is <#{currentChar()}> ----------------"
         return char
     end
 
@@ -485,7 +461,6 @@ class FileScanner
         @current -= 1
         char = readChar()
         if(char == "\r" or char == "\n")
-            #puts "char is a newline"
             @source.seek(-1, IO::SEEK_CUR)
         end
         @current -= 1
@@ -502,7 +477,6 @@ class FileScanner
         current = readChar()
         @current -= 1
         @source.seek(-1, IO::SEEK_CUR)
-        #puts "#{current} is the current char"
         return current
     end
 
@@ -523,14 +497,11 @@ class FileScanner
         slice_size = (@current - @SliceIdx) + 1 # includes chr at current
         @current -= (slice_size - 1)
         if(slice_size == 1)
-            #puts "slice size is 1 at #{@current} and #{@SliceIdx}"
-            
             slice = readChar()
             if(!complete())
                 @source.seek(-1, IO::SEEK_CUR)
                 @current -= 1
             end
-            #puts "current #{@current}, slice is #{slice}"
             return slice
         end
 

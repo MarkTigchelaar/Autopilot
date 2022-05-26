@@ -39,7 +39,7 @@ class ImportParser
 
     def eofReached(parser)
         msg = "End of file reached."
-        addError(parser, msg)
+        ERRORS::addError(parser, msg)
     end
 
     def moduleStep(parser)
@@ -130,7 +130,7 @@ class ImportParser
 
     def invalidModuleName(parser)
         msg = "Invalid module or library name #{parser.peek().getText()}."
-        addError(parser, msg)
+        ERRORS::addError(parser, msg)
     end
 
     def reset()

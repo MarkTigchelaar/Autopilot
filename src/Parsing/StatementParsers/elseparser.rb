@@ -1,14 +1,11 @@
 require_relative '../parserutilities.rb'
 require_relative '../../tokentype.rb'
 require_relative '../../keywords.rb'
-#require_relative './ifparser.rb'
 
 class ElseParser
-    def initialize(statement_parser)#, ifparser)
-        #@ifparser = ifparser
+    def initialize(statement_parser)
         @statement_parser = statement_parser
         @statements = Array.new
-        #@if_statement = nil
     end
 
     def parse(parser)
@@ -19,14 +16,10 @@ class ElseParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        #elsif(peekTok.getType() == IF)
-            #@if_statement = @ifparser.parse(parser)
-        else #if(is_interal_statement_keyword(peekTok))
+        else
             parseStatements(parser)
-        #else
-            #unexpectedToken(parser)
         end
-        e = ElseStatement.new(#@if_statement, 
+        e = ElseStatement.new(
             @statements
         )
         reset()
@@ -42,16 +35,13 @@ class ElseParser
             stmts = @statement_parser.parse(parser)
             @statements = stmts
             peekTok = parser.peek()
-            #if(parser.hasErrors())
-                #return
-            #end
         end
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == ENDSCOPE)
             if(@statements.length() == 0)
                 emptyStatement(parser)
-            else#if(not parser.hasErrors())
+            else
                 endStep(parser)
             end
         else
@@ -78,7 +68,6 @@ end
 
 class ElseStatement
     def initialize(sub_statements)
-        #@if_statement = if_statement
         @sub_statements = sub_statements
     end
 

@@ -1,5 +1,4 @@
 require './tokentype.rb'
-#require_relative '../keywords.rb'
 require_relative '../Tokenization/scanner.rb'
 require_relative './parserutilities.rb'
 
@@ -83,8 +82,14 @@ class ExpressionParser
         if(token == nil)
             raise Exception.new("INCORRECT!")
         end
+        if(hasErrors())
+            return nil
+        end
         left_exp = parse_prefix_expression()
         if(left_exp == nil)
+            return nil
+        end
+        if(hasErrors())
             return nil
         end
         return parse_infix_sub_tree(precedence, left_exp)
@@ -120,8 +125,25 @@ class ExpressionParser
     end
 
     def parse_parenthesis()
+        if(_peek().getType == RIGHT_PAREN)
+            msg = "Empty Expression."
+            self.addError(_peek(), msg)
+            return nil
+        elsif(isEOF(_peek()))
+            eofReached(self)
+            return nil
+        end
+
         exp = parse_expression()
-        discard(')')
+
+        if(isEOF(_peek()))
+            eofReached(self)
+            return nil
+        elsif(_peek().getType != RIGHT_PAREN)
+            unexpectedToken(self)
+            return nil
+        end
+        discardToken(')')
         return exp
     end
 
@@ -135,18 +157,33 @@ class ExpressionParser
 
     def parse_collection(start_char, end_char)
         array_elements = Array.new
+        if(isEOF(_peek()))
+            eofReached(self)
+            return nil
+        end
         if(_peek().getText() != end_char)
             while(true)
+                if([COMMA, RIGHT_PAREN, RIGHT_BRACKET, RIGHT_BRACE].include?(_peek().getType()))
+                    unexpectedToken(self)
+                    return nil
+                end
                 exp = parse_expression()
                 array_elements.append(exp)
                 if(_peek().getType() != COMMA)
                     break
                 else
-                    discard(',')
+                    discardToken(',')
                 end
             end
         end
-        discard(end_char)
+        if(isEOF(_peek()))
+            eofReached(self)
+            return nil
+        elsif(_peek().getText() != end_char)
+            unexpectedToken(self)
+            return nil
+        end
+        discardToken(end_char)
         return CollectionExpression.new(start_char, array_elements, end_char)
     end
 
@@ -154,16 +191,16 @@ class ExpressionParser
         # check if it's any type of keyword, including ) ] } .. etc.
         if(isExternalKeyword(token) || is_interal_statement_keyword(token))
             msg = "Unexpected token #{token.getText()}."
-            addError(token, msg)
+            self.addError(token, msg)
         elsif(isScopeKeyword(token))
             msg = "Unexpected token #{token.getText()}."
-            addError(token, msg)
+            self.addError(token, msg)
         elsif(isOperator(token))
             msg = "Invalid constant or variable."
-            addError(token, msg)
+            self.addError(token, msg)
         elsif(isPrimitiveType(token, true))
             msg = "Unexpected token #{token.getText()}."
-            addError(token, msg)
+            self.addError(token, msg)
         elsif(isEOF(token))
             eofReached(self)
         end
@@ -171,12 +208,18 @@ class ExpressionParser
     end
 
     def parse_infix_sub_tree(precedence, left_exp)
+        if(hasErrors())
+            return nil
+        end
         while(precedence < _get_infix_precedence())
             token = _next()
             if(token == nil)
                 break
             end
             left_exp = parse_infix_expression(token, left_exp)
+            if(hasErrors())
+                return nil
+            end
             if(left_exp == nil)
                raise Exception.new("Could not parse infix " + token.getText())
             end
@@ -219,18 +262,62 @@ class ExpressionParser
         func_args = Array.new()
         if(_peek().getType() != RIGHT_PAREN)
             while(true)
+                if(_peek().getType() == COMMA)
+                    unexpectedToken(self)
+                    return nil
+                end
                 exp = parse_expression()
+                if(hasErrors())
+                    return nil
+                end
                 func_args.append(exp)
                 if(_peek().getType() != COMMA)
                     break
                 else
-                    discard(',')
+                    discardToken(',')
                 end
             end
         end
-        discard(')')
+        if(isEOF(_peek()))
+            eofReached(self)
+            return nil
+        end
+        discardToken(')')
         return CallExpression.new(token, left_exp, func_args)
     end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -262,7 +349,7 @@ class ExpressionParser
         return isGeneralKeyWord(token.getText())
     end
 
-    def discard(expected_literal)
+    def discardToken(expected_literal)
         token = _peek()
         if(token.getText() != expected_literal)
             raise Exception.new("Expected token " + expected_literal + ", got " + token.getText())
@@ -271,7 +358,13 @@ class ExpressionParser
     end
 
     public def addError(token, message)
-        if(@tokenizer.class == "Parser")
+        # Sign of refactoring needed, or sign that
+        # code is designed to be tested?
+        # Both? I must have Covid, 
+        # since I can't tell if this is a code smell.
+        regular_parser = @tokenizer.class.name == "Parser"
+        test_parser = @tokenizer.class.name == "DummyParser"
+        if(regular_parser || test_parser)
             @tokenizer.addError(token, message)
         end
         err = Hash.new()
@@ -280,7 +373,6 @@ class ExpressionParser
         err["lineNumber"] = token.getLine()
         err["message"] = message
         @errorList.append(err)
-        @hasErrors = true
     end
 
     def loadFile(filename)
@@ -337,6 +429,41 @@ class ExpressionParser
         return @errorList.length > 0
     end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -559,7 +686,6 @@ class CallExpression
         i = 0
         l = @args.length
         for arg in @args do
-        #for i in 0 .. l do
             arg._printTokType(type_list)
             if(i < l - 1)
                 type_list.append(',')

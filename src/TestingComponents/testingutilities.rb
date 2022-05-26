@@ -37,7 +37,6 @@ def printErrors(reportedErrors)
 end
 
 def error_test(test_case, parser, failurelog, tracker)
-    #puts "<" + expParser.astString() + ">"
     reportedErrors = parser.getErrorList()
     numExpErrors = test_case["errors"].length
     numActualErrors = reportedErrors.length
@@ -45,8 +44,6 @@ def error_test(test_case, parser, failurelog, tracker)
         raise Exception.new(
            "mismatch of errors in #{test_case["file"]}, expected: #{numExpErrors}, got #{numActualErrors}"
         )
-        #printErrors(reportedErrors)
-        #return
     else
         puts "NUMBER OF ERRORS MATCHES EXPECTED NUMBER OF ERRORS #{numActualErrors}, #{numExpErrors}"
     end

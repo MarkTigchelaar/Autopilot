@@ -5,8 +5,6 @@ def scanner_tests(scanner, test, failurelog, tracker)
     
     filename = test["file"]
 
-    
-    #tokens = Array.new()
     scanner.loadSource(filename)
 
     # Assumption is made that each "test" 

@@ -9,11 +9,9 @@ class ElifParser
     end
 
     def parse(parser)
-        token = parser.peek()#nextToken()
+        token = parser.peek()
         enforceElif(token)
         token.set(IF, "if", "if", token.getLine(), token.getFilename())
-
-        #@if_parser.is_unless()
         if_stmt = @if_parser.parse(parser) 
         return ElifStatement.new(if_stmt)
     end

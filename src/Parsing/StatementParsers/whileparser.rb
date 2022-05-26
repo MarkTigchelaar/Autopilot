@@ -13,7 +13,6 @@ class WhileParser
     end
 
     def parse(parser)
-        puts "---------------------------------------HERE---------------------------------"
         errCount = parser.errorCount()
         reset()
         token = parser.nextToken()
@@ -153,10 +152,6 @@ class WhileStatement
         l = Array.new
         @expression_ast._printLiteral(l)
         msg = "exp: " + l.join("")
-        #msg += ", statements: "
-        #for stmt in @statements
-        #    msg += stmt._printLiteral() + ' '
-        #end
         name = ""
         if(@loop_name != nil)
             name = "name: " + @loop_name.getText() + ", "

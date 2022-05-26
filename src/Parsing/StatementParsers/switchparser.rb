@@ -20,8 +20,6 @@ class SwitchParser
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
             testExpStep(parser)
-        #elsif(isOtherValidType(peekTok))
-            #testExpStep(parser)
         else
             unexpectedToken(parser)
         end
@@ -70,9 +68,7 @@ class SwitchParser
             eofReached(parser)
         elsif(peekTok.getType() == COMMA)
             commaStep(parser, values)
-        #elsif(is_interal_statement_keyword(peekTok))
         elsif(peekTok.getType() == DO)
-            #parseStatements(parser, values)
             doStep(parser, values)
         else
             unexpectedToken(parser)
@@ -98,17 +94,13 @@ class SwitchParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        #elsif(is_interal_statement_keyword(peekTok))
         else
           parseStatements(parser, values)
-        #else
-        #    unexpectedToken(parser)
         end  
     end
 
     def parseStatements(parser, values, from_default = false)
         peekTok = parser.peek()
-        #puts "statement name: #{peekTok.getText()}, from default: #{from_default}"
         if(peekTok.getType() == DEFAULT and @default_case != nil)
             msg = "Invalid statement, switch statement allows exactly one default case."
             addError(parser, msg)
@@ -119,30 +111,22 @@ class SwitchParser
             stmts = @statement_parser.parse(parser)
             statements = stmts
             peekTok = parser.peek()
-            #if(parser.hasErrors())
-                #puts "HAS errors!!"
-                #return
-            #end
         end
         new_case = CaseStatement.new(values, statements)
         if(from_default)
-            #puts "default"
             @default_case = new_case
         else
-            #puts "regular case"
             @cases.append(new_case)
         end
         if(isEOF(peekTok))
             eofReached(parser)
         elsif(peekTok.getType() == CASE and not from_default)
-            #puts "In parse statements, found case statement, not from default"
             if(statements.length() == 0)
                 emptyStatement(parser)
             elsif(not parser.hasErrors())
                 caseStep(parser)
             end
         elsif(peekTok.getType() == DEFAULT and not from_default)
-            #puts "found default"
             if(statements.length() == 0)
                 emptyStatement(parser)
             else
@@ -152,11 +136,9 @@ class SwitchParser
             if(statements.length() == 0)
                 emptyStatement(parser)
             else
-                #puts "FOUND END TOKEN"
                 endStep(parser)
             end
         else
-            #puts "HERE"
             unexpectedToken(parser)
         end
     end
@@ -166,7 +148,7 @@ class SwitchParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(!is_interal_statement_keyword(peekTok))#.getType() == ENDSCOPE)
+        elsif(!is_interal_statement_keyword(peekTok))
             unexpectedToken(parser)
         else
             parseStatements(parser, Array.new, true)
@@ -218,11 +200,7 @@ class CaseStatement
 
     def _printLiteral
         l = Array.new
-        #if(@test_case != nil)
-        #    l.append(@test_case)
-        #end
         for val in @values
-            #puts "in case, printing literal: #{val.getText()}"
             l.append(val.getText() + ' ')
         end
         l.append(@statements._printLiteral() + ' ')
@@ -266,21 +244,17 @@ class SwitchStatement
     end
 
     def _printLiteral
-        #puts "print literal for switch------"
         l = Array.new
         if(@test_case != nil)
             l.append(@test_case.getText() + ' ')
         end
         for stmt in @case_statements
-            #puts "------------------from statement"
             l.append(stmt._printLiteral())
         end
         if(@default_case != nil)
-            #puts "----------------from default"
             l.append(@default_case._printLiteral())
         end
         str = l.join("").rstrip()
-        #puts "result string: #{str}"
         return str
     end
 

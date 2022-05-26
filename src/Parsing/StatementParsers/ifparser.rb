@@ -36,7 +36,6 @@ class IfParser
         enforceIf(token)
         peekTok = parser.peek()
         if(isEOF(peekTok))
-            #puts "EOF line 33"
             eofReached(parser)
         elsif(peekTok.getType() == LET)
             if(@is_unless)
@@ -53,7 +52,7 @@ class IfParser
         else
             parseExpression(parser)
         end
-        i = @ifstatement #IfStatement.new(@let, @var, @unwrapped_var, @opt_variable, @expression_ast, @statements)
+        i = @ifstatement
         reset()
         isnt_unless()
         if(errCount < parser.errorCount())
@@ -63,13 +62,11 @@ class IfParser
     end
     
     def letStep(parser)
-        #@let = true
         @ifstatement.is_let()
         preOptStep(parser)
     end
 
     def varStep(parser)
-        #@var = true
         @ifstatement.is_var()
         preOptStep(parser)
     end
@@ -78,7 +75,6 @@ class IfParser
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
-            #puts "EOF line 70"
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
             optionUnwrappedVarStep(parser)
@@ -89,11 +85,9 @@ class IfParser
 
     def optionUnwrappedVarStep(parser)
         token = parser.nextToken()
-        #@unwrapped_var = token
         @ifstatement.set_unwrapped_var(token)
         peekTok = parser.peek()
         if(isEOF(peekTok))
-            #puts "EOF line 84"
             eofReached(parser)
         elsif(peekTok.getType() == EQUAL)
             equalStep(parser)
@@ -106,7 +100,6 @@ class IfParser
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
-            #puts "EOF line 97"
             eofReached(parser)
         elsif(isValidIdentifier(peekTok))
             optionNameStep(parser)
@@ -116,11 +109,9 @@ class IfParser
     end
 
     def optionNameStep(parser)
-        #@opt_variable = parser.nextToken()
         @ifstatement.set_option(parser.nextToken())
         peekTok = parser.peek()
         if(isEOF(peekTok))
-            #puts "EOF line 110"
             eofReached(parser)
         elsif(peekTok.getType() == DO)
             doStep(parser)
@@ -133,7 +124,6 @@ class IfParser
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
-            #puts "EOF line 123"
             eofReached(parser)
         else
             parseStatements(parser)
@@ -141,18 +131,14 @@ class IfParser
     end
 
     def parseExpression(parser)
-        #puts "parsing expression"
         @expression_parser.loadTokenizer(parser)
-        #@expression_ast = 
         @ifstatement.set_ast(@expression_parser.parse_expression())
         peekTok = parser.peek()
         if(isEOF(peekTok))
-            #puts "EOF line 136"
             eofReached(parser)
         elsif(peekTok.getType() == DO)
             doStep(parser)
         else
-            puts "Found unexpected token"
             unexpectedToken(parser)
         end
     end
@@ -214,12 +200,12 @@ end
 
 class IfStatement
     def initialize()
-        @let = false#let
+        @let = false
         @var = false
-        @unwrapped_var = nil#unwrapped_var
-        @option = nil#option
-        @expression_ast = nil#expression_ast
-        @statements = nil#statements
+        @unwrapped_var = nil
+        @option = nil
+        @expression_ast = nil
+        @statements = nil
     end
 
     def set_unwrapped_var(opt)
@@ -289,10 +275,6 @@ class IfStatement
     end
 
     def toJSON()
-        #stmtsJSON = Array.new()
-        #for stmt in @statements
-        #    stmtsJSON.append(stmt.toJSON())
-        #end
         assign_type = "var"
         if(@let)
             assign_type = "let"

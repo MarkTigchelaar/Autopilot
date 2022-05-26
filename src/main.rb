@@ -11,7 +11,6 @@ def main
 
     astList = Array.new()
     for arg in ARGV
-        #puts arg
         if arg.end_with?("ap")
             parser.parse(arg)
             astList.append(parser.toJSON())

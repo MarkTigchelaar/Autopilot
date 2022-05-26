@@ -128,8 +128,8 @@ TASKID = "tid".upcase
 
 
     
-        # All 3 are concurrency related, but it just affects
-        # current thread
+# All 3 are concurrency related, but it just affects
+# current thread
 / implment threads and processes as classes instead. (for now)
 SELECT = "select"
 SEND = "send"

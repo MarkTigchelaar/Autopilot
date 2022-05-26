@@ -136,12 +136,12 @@ end
 
 def invalidItemName(parser)
     msg = "Invalid name for item #{parser.peek().getText()}."
-    addError(parser, msg)
+    ERRORS::addError(parser, msg)
 end
 
 def unexpectedToken(parser)
     msg = "Unexpected token #{parser.peek().getText()}."
-    addError(parser, msg)
+    ERRORS::addError(parser, msg)
 end
 
 def isEOF(token)
@@ -163,11 +163,17 @@ def isKeyword(token)
     return false
 end
 
+# rant
+    # Yes, this mini module is a hack:
+    # Used to get around a name collision bug, where the expression parser
+    # method of the same name gets called from eofReached (below) ... because Ruby.
+    # I don't care if there is a explaination as to why, it's either a bug in the language,
+    # Or some code ninja is on Rubys design team.
+    # Thank the software gods for the idea of automated integration (regression) tests.
+# end
 module ERRORS
 def self.addError(parser, message)
-    puts("In add Error")
     tok = parser.nextToken()
-    puts("in addError, next token is #{tok.getType()}")
     parser.addError(tok, message)
     parser.setToSync()
 end
@@ -175,18 +181,17 @@ end
 
 def eofReached(parser)
     msg = "End of file reached."
-    puts("in end of file reached function, message is: #{msg}")
     ERRORS::addError(parser, msg)
 end
 
 def emptyStatement(parser)
     msg = "Empty Statement."
-    addError(parser, msg)
+    ERRORS::addError(parser, msg)
 end
 
 def noFunctions(parser)
     msg = "No functions defined."
-    addError(parser, msg)
+    ERRORS::addError(parser, msg)
 end
 
 def isPrimitiveType(token, check_literal = false)
