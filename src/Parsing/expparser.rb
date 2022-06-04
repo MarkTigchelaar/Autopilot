@@ -8,8 +8,9 @@ CONDITIONAL = 3
 SUM         = 4
 PRODUCT     = 5
 EXPONENT    = 6
-PREFIX      = 7
-POSTFIX     = 8
+STRUCTFIELD = 7
+PREFIX      = 8
+POSTFIX     = 9
 CALL        = 10
 
 MISSING_EXP_CONST_VAR = "Operator is missing constant, variable or expression."
@@ -243,6 +244,8 @@ class ExpressionParser
             parse_binary_operator(LOGICAL, left_exp, token)
         when LEFT_PAREN
             parse_function_call(left_exp, token)
+        when DOT
+            parse_method_call(left_exp, token)
         else
             msg = "Can't find infix"
             self.addError(token, msg)
@@ -256,6 +259,16 @@ class ExpressionParser
         end
         rhs_exp = _parse(precedence)
         return OperatorExpresison.new(token, lhs_exp, token.getType(), rhs_exp)
+    end
+
+    def parse_method_call(left_exp, token)
+        method_list = Array.new()
+        while(token.getType() == DOT)
+            method = _parse(0)
+            method_list.append(method)
+            token = _next()
+        end
+        return MethodCallExpression.new(left_exp, method_list)
     end
 
     def parse_function_call(left_exp, token)
@@ -338,6 +351,8 @@ class ExpressionParser
             CONDITIONAL
         when AND, NAND, OR, NOR, XOR, NOT
             LOGICAL
+        when DOT
+            STRUCTFIELD
         when LEFT_PAREN
             CALL
         else
@@ -638,7 +653,54 @@ end
 
 
 
+class MethodCallExpression
+    def initialize(struct_name_token, methods)
+        @struct_name = struct_name_token
+        @methods = methods
+    end
 
+    def toJSON()
+        jsonArgs = Array.new()
+        for arg in @args
+            jsonArgs.append(arg.toJSON())
+        end
+        return {
+            "type" => "method_call",
+            "struct" => @struct_name.toJSON(),
+            "methods" => jsonArgs
+        }
+    end
+
+    def _printLiteral(repr_list)
+        @struct_name._printLiteral(repr_list)
+        repr_list.append('(')
+        i = 0
+        l = @methods.length
+        for meth in @methods do
+            meth._printLiteral(repr_list)
+            if(i < l - 1)
+                repr_list.append(',')
+            end
+            i += 1
+        end
+        repr_list.append(')')
+    end
+
+    def _printTokType(type_list)
+        @struct_name._printTokType(type_list)
+        type_list.append('(')
+        i = 0
+        l = @methods.length
+        for meth in @methods do
+            meth._printTokType(type_list)
+            if(i < l - 1)
+                type_list.append(',')
+            end
+            i += 1
+        end
+        type_list.append(')')
+    end
+end
 
 class CallExpression
     def initialize(token, expression, arguments)

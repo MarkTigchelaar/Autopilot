@@ -335,5 +335,11 @@
         "astString" : "{(a : b),(c : d)}",
         "tokenTypeString" : "{(IDENTIFIER COLON IDENTIFIER),(IDENTIFIER COLON IDENTIFIER)}",
         "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test28.txt",
+        "astString" : "aStruct(method(a)(methodb(b)))",
+        "tokenTypeString" : "IDENTIFIER(IDENTIFIER(IDENTIFIER)(IDENTIFIER(IDENTIFIER)))",
+        "errors" : null
     }
 ]
