@@ -76,7 +76,7 @@ class ImportParser
         if(!isValidIdentifier(name))
             invalidModuleName(parser)
         else
-            @moduleName = name.getText()
+            @moduleName = name
         end
     end
 
@@ -187,7 +187,7 @@ class ImportStatement
         if(items == "")
             items = "none"
         end
-        return "name:#{@modulename} type:#{libormod} items:[#{items}]"
+        return "name:#{@modulename.getText()} type:#{libormod} items:[#{items}]"
     end
 
     def _printTokType(item_list)

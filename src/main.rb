@@ -1,4 +1,5 @@
 require_relative './Parsing/parser.rb'
+require './TestingComponents/testingutilities.rb'
 require 'json'
 
 
@@ -13,8 +14,15 @@ def main
     for arg in ARGV
         if arg.end_with?("ap")
             parser.parse(arg)
+            if(parser.hasErrors())
+                break
+            end
             astList.append(parser.toJSON())
         end
+    end
+    if(parser.hasErrors())
+        puts("Errors found!")
+        printErrors(parser.getErrorList())
     end
 
     astStrings = Array.new()

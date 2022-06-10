@@ -49,8 +49,10 @@ class IfParser
                 return
             end
             varStep(parser)
-        else
+        elsif(isValidIdentifier(peekTok) or is_valid_r_value_keyword(peekTok))
             parseExpression(parser)
+        else
+            unexpectedToken(parser)
         end
         i = @ifstatement
         reset()

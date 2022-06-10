@@ -106,11 +106,7 @@ class UnittestStatement
     end
 
     def getStatements()
-        stmts = Array.new()
-        for s in @statements
-            stmts.append(s.toJSON())
-        end
-        return stmts
+        @statements.toJSON()
     end
 
     def _printLiteral

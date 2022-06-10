@@ -1,0 +1,12 @@
+fun test() do
+    a = 0
+    b = 'a' + 'f'
+    c = "string"  + "string"
+
+    d += 4
+    a -= 4
+    a *= 4
+    a %= 4
+    a ^= 4.863
+    a /= 5.86
+end

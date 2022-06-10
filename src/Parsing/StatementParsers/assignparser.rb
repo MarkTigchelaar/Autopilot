@@ -78,8 +78,14 @@ class AssignParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        else
+        elsif(isValidIdentifier(peekTok) or is_valid_r_value_keyword(peekTok) or isNumeric(peekTok))
             parseExpression(parser)
+        elsif(isInt(peekTok) or isFloat(peekTok))
+            parseExpression(parser)
+        elsif(is_string_or_char(peekTok))
+            parseExpression(parser)
+        else
+            unexpectedToken(parser)
         end
     end
 

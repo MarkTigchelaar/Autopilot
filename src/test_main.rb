@@ -263,9 +263,7 @@ def main
             end
         when "mainparserJSON"
             parser = Parser.new()
-            tests.each do |test_file|
-                call_toJSONTests(test_file, failurelog, tracker, parser, "main")
-            end
+            call_toJSONTests(test, failurelog, tracker, parser, "main")
         else
             puts "component #{general_component} not recognized"
             return
@@ -336,9 +334,7 @@ def call_parser_component_tests(test_case, failurelog, tracker, parser, name)
 end
 
 def call_statement_component_tests(test_file, failurelog, tracker, parser, name, main_parser=false)
-    jsonfile = File.open(test_file)
-    tests = JSON.parse(jsonfile.read())
-    jsonfile.close()
+    tests = get_tests_from_file(test_file)
     for test_case in tests
         puts "\nTesting #{name} parser, file #{test_case["file"]} ... "
         if(!main_parser)
@@ -355,16 +351,26 @@ def call_statement_component_tests(test_file, failurelog, tracker, parser, name,
     puts "Done test for #{name} parser"
 end
 
-def call_toJSONTests(test_file, failurelog, tracker, parser, name)
-    jsonfile = File.open(test_file)
-    tests = JSON.parse(jsonfile.read())
-    jsonfile.close()
+def call_toJSONTests(test, failurelog, tracker, parser, name)
+    tests = get_tests_from_file(test["test_manifest_file"])
+    blow_up = false
     for test_case in tests
-        
-
-
+        puts "\nTesting #{name} parser, JSON file #{test_case["file"]} ... "
+        parser.parse(test_case["file"])
+        if(parser.hasErrors())
+            puts("Errors found!")
+            printErrors(parser.getErrorList())
+            blow_up = true
+            break
+        end
+        produced_ast = parser.toJSON()
+        compare_asts(produced_ast, test_case["ast"], test_case, failurelog, tracker)
         parser.reset()
     end
+    if(blow_up)
+        raise Exception.new("Cannot continue, JSON tests are happy path tests, but errors detected.")
+    end
+    puts "Done test for #{name} parser"
 end
 
 main()

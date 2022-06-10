@@ -176,6 +176,8 @@ class FunctionParser
             eofReached(parser)
         elsif(is_interal_statement_keyword(peekTok) and peekTok.getType() != ENDSCOPE)
             parseStatements(parser)
+        elsif(isAlphaNumericWord(peekTok))
+            parseStatements(parser)
         else
             unexpectedToken(parser)
         end
@@ -202,7 +204,6 @@ class FunctionParser
 
     def parseStatements(parser)
         peekTok = parser.peek()
-        stmts = Array.new()
         if(!isEOF(peekTok) and peekTok.getType() != ENDSCOPE)
             @statements = @statement_parser.parse(parser)
         end
@@ -328,7 +329,9 @@ class FunctionStatement
     end
 
     def getStatementsJSON()
-        return @statements.toJSON()
+        stmts = ""
+        stmts = @statements.toJSON() if @statements
+        return stmts
     end
 
     def setAsAcyclic()

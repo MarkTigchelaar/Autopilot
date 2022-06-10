@@ -1,0 +1,23 @@
+inline fun test() long do
+    for i in 1 .. 10 do
+        let i = 5
+    end
+    for j in a + b .. 100 + 60 do
+        let k = 5
+    end
+    for m in b do
+        let f = 1
+    end
+    for n in z as forloop do
+        let a = 2
+    end
+    for let a in thingy - test as name do
+        let a = 2
+        continue
+    end
+    for key, val in dictionary do
+        var t = 3
+        break(test)
+    end
+    return a + b
+end

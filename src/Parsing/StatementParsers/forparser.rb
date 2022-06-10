@@ -29,7 +29,7 @@ class ForParser
             letStep(parser)
         elsif(peekTok.getType() == VAR)
             varStep(parser)    
-        elsif(isValidIdentifier(peekTok))
+        elsif(isValidIdentifier(peekTok) or isInt(peekTok))
             varOneStep(parser)
         else
             unexpectedToken(parser)
@@ -133,7 +133,7 @@ class ForParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isValidIdentifier(peekTok))
+        elsif(isValidIdentifier(peekTok) or isInt(peekTok))
             if(option_or_var_path)
                 stopCollectionStep(parser)
             else
@@ -166,7 +166,7 @@ class ForParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isValidIdentifier(peekTok))
+        elsif(isValidIdentifier(peekTok) or isInt(peekTok))
             stopCollectionStep(parser)
         else
             unexpectedToken(parser)
@@ -288,9 +288,9 @@ class ForStatement
         end
         if @var_one
             json["variable_one"] = {
-                "literal" => @oldNameToken.getText(),
-                "type" => @oldNameToken.getType(),
-                "line_number" => @oldNameToken.getLine()
+                "literal" => @var_one.getText(),
+                "type" => @var_one.getType(),
+                "line_number" => @var_one.getLine()
             }
         end
         if @var_two

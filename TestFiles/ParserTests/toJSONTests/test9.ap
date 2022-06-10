@@ -1,0 +1,3 @@
+interface test is
+  fun testFunc() end
+end

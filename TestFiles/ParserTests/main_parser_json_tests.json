@@ -1,0 +1,192 @@
+[
+    {
+      "file": "../Testfiles/ParserTests/toJSONTests/test1.ap",
+      "ast": [
+        {
+          "type": "module",
+          "name": {
+            "literal": "one",
+            "type": "IDENTIFIER",
+            "line_number": "1"
+          }
+        }
+      ]
+    },
+    {
+      "file": "../Testfiles/ParserTests/toJSONTests/test2.ap",
+      "ast": [
+        {
+          "type": "enum",
+          "name": {
+            "literal": "test",
+            "type": "IDENTIFIER",
+            "line_number": "1"
+          },
+          "fields": [
+            {
+              "name": {
+                "literal": "fred",
+                "type": "IDENTIFIER"
+              },
+              "default_value": {
+                "literal": "5",
+                "type": "INT"
+              }
+            },
+            {
+              "name": {
+                "literal": "wilma",
+                "type": "IDENTIFIER"
+              },
+              "default_value": {
+                "literal": "",
+                "type": ""
+              }
+            }
+          ],
+          "enumtype": {
+            "literal": "int",
+            "type": "INT",
+            "line_number": "1"
+          }
+        }
+      ]
+    },
+    {
+      "file": "../Testfiles/ParserTests/toJSONTests/test3.ap",
+      "ast": [
+        {
+          "type": "enum",
+          "name": {
+            "literal": "test2",
+            "type": "IDENTIFIER",
+            "line_number": "1"
+          },
+          "fields": [
+            {
+              "name": {
+                "literal": "fred",
+                "type": "IDENTIFIER"
+              },
+              "default_value": {
+                "literal": "",
+                "type": ""
+              }
+            },
+            {
+              "name": {
+                "literal": "wilma",
+                "type": "IDENTIFIER"
+              },
+              "default_value": {
+                "literal": "",
+                "type": ""
+              }
+            }
+          ],
+          "enumtype": {
+            "literal": "",
+            "type": "",
+            "line_number": ""
+          }
+        }
+      ]
+    },
+    {
+      "file": "../Testfiles/ParserTests/toJSONTests/test4.ap",
+      "ast": [
+        {
+          "type": "unittest",
+          "name": {
+            "literal": "doesitfloat",
+            "type": "IDENTIFIER",
+            "line_number": "1"
+          },
+          "statements": [
+            {
+              "type": "assignment",
+              "token": {
+                "literal": "a",
+                "type": "IDENTIFIER",
+                "line_number": "2"
+              },
+              "variable_type": {
+                "literal": "int",
+                "type": "INT",
+                "line_number": "2"
+              },
+              "assignment_type": "LET",
+              "rvalue": {
+                "type": "identifier_or_literal",
+                "token": {
+                  "literal": "0",
+                  "type": "INT",
+                  "line_number": "2"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+        "file": "../Testfiles/ParserTests/toJSONTests/test5.ap",
+        "ast" : [{"type":"error","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"error_list":[{"literal":"field","type":"IDENTIFIER","line_number":"2"},{"literal":"field2","type":"IDENTIFIER","line_number":"3"}]}]
+    },
+    {
+        "file": "../Testfiles/ParserTests/toJSONTests/test6.ap",
+        "ast" : [{"type":"union","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"itmes":[{"name":{"literal":"field","type":"IDENTIFIER"},"item_type":{"literal":"int","type":"INT"}},{"name":{"literal":"field2","type":"IDENTIFIER"},"item_type":{"literal":"float","type":"FLOAT"}}]}]
+    },
+    {
+        "file": "../Testfiles/ParserTests/toJSONTests/test7.ap",
+        "ast" : [{"type":"define","old_name":{"literal":"old","type":"IDENTIFIER","line_number":"1"},"new_name":{"literal":"new","type":"IDENTIFIER","line_number":"1"}}]
+    },
+    {
+        "file": "../Testfiles/ParserTests/toJSONTests/test8.ap",
+        "ast" : [{"type":"module","name":{"literal":"testlib","type":"IDENTIFIER","line_number":"1"},"import_list":[{"literal":"a","type":"IDENTIFIER","line_number":"1"},{"literal":"b","type":"IDENTIFIER","line_number":"1"},{"literal":"c","type":"IDENTIFIER","line_number":"1"}],"is_library":true}]
+    },
+    {
+        "file": "../Testfiles/ParserTests/toJSONTests/test9.ap",
+        "ast" : [{"type":"interface","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"functions":[{"type":"function","name":{"literal":"testFunc","type":"IDENTIFIER","line_number":"2"},"arguments":[],"return_type":null,"attributes":{"acyclic":false,"public":true,"inline":false},"statements":""}],"attributes":{"acyclic":false,"public":false}}]
+    },
+    {
+        "file": "../Testfiles/ParserTests/toJSONTests/test10.ap",
+        "ast" : [{"type":"function","name":{"literal":"main","type":"IDENTIFIER","line_number":"3"},"arguments":[],"return_type":null,"attributes":{"acyclic":false,"public":true,"inline":false},"statements":[{"type":"assignment","token":{"literal":"a","type":"IDENTIFIER","line_number":"4"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"4"},"lhs_exp":{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"4"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"1","type":"INT","line_number":"4"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"2","type":"INT","line_number":"4"}}},"rhs_exp":{"type":"binary","token":{"literal":"%","type":"MOD","line_number":"4"},"lhs_exp":{"type":"binary","token":{"literal":"^","type":"CARROT","line_number":"4"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"3","type":"INT","line_number":"4"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"4","type":"INT","line_number":"4"}}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"5","type":"INT","line_number":"4"}}}}}]}]
+    },
+    {
+      "file": "../Testfiles/ParserTests/toJSONTests/test11.ap",
+      "ast" : [{"type":"function","name":{"literal":"second","type":"IDENTIFIER","line_number":"1"},"arguments":[{"name":{"literal":"a","type":"IDENTIFIER","line_number":"1"},"type":{"literal":"int","type":"INT","line_number":"1"},"default_value":{"literal":"0","type":"INT"}}],"return_type":{"literal":"someType","type":"IDENTIFIER","line_number":"1"},"attributes":{"acyclic":true,"public":true,"inline":false},"statements":[{"type":"assignment","token":{"literal":"b","type":"IDENTIFIER","line_number":"2"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"2"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"1","type":"INT","line_number":"2"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"2","type":"INT","line_number":"2"}}}},{"type":"if","assignment_type":"var","unwrapped_option":null,"option":null,"expression":{"type":"binary","token":{"literal":">","type":"GREATER","line_number":"3"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"b","type":"IDENTIFIER","line_number":"3"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"a","type":"IDENTIFIER","line_number":"3"}}},"statememts":[{"type":"return","rvalue":{"type":"function_call","name":{"literal":"(","type":"LEFT_PAREN","line_number":"4"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"SomeType","type":"IDENTIFIER","line_number":"4"}},"arguments":[{"type":"identifier_or_literal","token":{"literal":"a","type":"IDENTIFIER","line_number":"4"}},{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"4"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"1","type":"INT","line_number":"4"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"1","type":"INT","line_number":"4"}}}]}}]},{"type":"elif","assignment_type":"var","unwrapped_option":null,"option":null,"expression":{"type":"binary","token":{"literal":">","type":"GREATER","line_number":"5"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"a","type":"IDENTIFIER","line_number":"5"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"b","type":"IDENTIFIER","line_number":"5"}}},"statememts":[{"type":"return","rvalue":{"type":"function_call","name":{"literal":"(","type":"LEFT_PAREN","line_number":"6"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"SomeType","type":"IDENTIFIER","line_number":"6"}},"arguments":[{"type":"identifier_or_literal","token":{"literal":"b","type":"IDENTIFIER","line_number":"6"}},{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"6"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"1","type":"INT","line_number":"6"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"1","type":"INT","line_number":"6"}}}]}}]},{"type":"else","statememts":[{"type":"reassign_or_call","token":{"literal":"","type":"","line_number":""},"assignment_type_token":{"literal":"","type":"","line_number":""},"functions":[{"name":"print","args":[{"type":"identifier_or_literal","token":{"literal":"\"test\"","type":"STRING","line_number":"8"}}]}],"rvalue":null}]}]}]
+    },
+    {
+      "file" : "../Testfiles/ParserTests/toJSONTests/test12.ap",
+      "ast" : [{"type":"function","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"arguments":[],"return_type":{"literal":"long","type":"LONG","line_number":"1"},"attributes":{"acyclic":false,"public":false,"inline":true},"statements":[{"type":"assignment","token":{"literal":"a","type":"IDENTIFIER","line_number":"2"},"variable_type":{"literal":"bool","type":"BOOL","line_number":"2"},"assignment_type":"VAR","rvalue":{"type":"identifier_or_literal","token":{"literal":"true","type":"TRUE","line_number":"2"}}}]}]
+    },
+    {
+      "file" : "../Testfiles/ParserTests/toJSONTests/test13.ap",
+      "ast" : [{"type":"function","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"arguments":[],"return_type":{"literal":"long","type":"LONG","line_number":"1"},"attributes":{"acyclic":false,"public":false,"inline":true},"statements":[{"type":"assignment","token":{"literal":"a","type":"IDENTIFIER","line_number":"2"},"variable_type":{"literal":"bool","type":"BOOL","line_number":"2"},"assignment_type":"VAR","rvalue":{"type":"binary","token":{"literal":"or","type":"OR","line_number":"2"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"true","type":"TRUE","line_number":"2"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"false","type":"FALSE","line_number":"2"}}}}]}]
+    },
+    {
+      "file" : "../Testfiles/ParserTests/toJSONTests/test14.ap",
+      "ast" : [{"type":"function","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"arguments":[],"return_type":{"literal":"long","type":"LONG","line_number":"1"},"attributes":{"acyclic":false,"public":false,"inline":true},"statements":[{"type":"assignment","token":{"literal":"a","type":"IDENTIFIER","line_number":"2"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"0","type":"INT","line_number":"2"}}},{"type":"switch","test_case":{"literal":"variable","type":"IDENTIFIER","line_number":"3"},"cases":[{"values":[{"literal":"'a'","type":"CHAR","line_number":"4"},{"literal":"'c'","type":"CHAR","line_number":"4"}],"statements":[{"type":"assignment","token":{"literal":"b","type":"IDENTIFIER","line_number":"5"},"variable_type":null,"assignment_type":"VAR","rvalue":{"type":"identifier_or_literal","token":{"literal":"0","type":"INT","line_number":"5"}}}]},{"values":[{"literal":"'b'","type":"CHAR","line_number":"6"}],"statements":[{"type":"assignment","token":{"literal":"f","type":"IDENTIFIER","line_number":"7"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"\"test\"","type":"STRING","line_number":"7"}}}]},{"values":[],"statements":[{"type":"reassign_or_call","token":{"literal":"b","type":"IDENTIFIER","line_number":"9"},"assignment_type_token":{"literal":"=","type":"EQUAL","line_number":"9"},"functions":[],"rvalue":{"type":"identifier_or_literal","token":{"literal":"0","type":"INT","line_number":"9"}}}]}]}]}]
+    },
+    {
+      "file" : "../Testfiles/ParserTests/toJSONTests/test15.ap",
+      "ast" : [{"type":"function","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"arguments":[],"return_type":{"literal":"long","type":"LONG","line_number":"1"},"attributes":{"acyclic":false,"public":false,"inline":true},"statements":[{"type":"loop","label":{"literal":"myLoop","type":"IDENTIFIER","line_number":"2"},"statements":[{"type":"assignment","token":{"literal":"i","type":"IDENTIFIER","line_number":"3"},"variable_type":{"literal":"thingy","type":"IDENTIFIER","line_number":"3"},"assignment_type":"VAR","rvalue":{"type":"identifier_or_literal","token":{"literal":"10","type":"INT","line_number":"3"}}}]},{"type":"loop","label":null,"statements":[{"type":"assignment","token":{"literal":"b","type":"IDENTIFIER","line_number":"6"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"0","type":"INT","line_number":"6"}}}]},{"name":{"literal":"myLoop2","type":"IDENTIFIER","line_number":"8"},"expression":{"type":"identifier_or_literal","token":{"literal":"true","type":"TRUE","line_number":"8"}},"statements":[{"type":"assignment","token":{"literal":"b","type":"IDENTIFIER","line_number":"9"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"0","type":"INT","line_number":"9"}}}]},{"name":{"literal":"","type":"","line_number":""},"expression":{"type":"binary","token":{"literal":"<","type":"LESS","line_number":"11"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"a","type":"IDENTIFIER","line_number":"11"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"b","type":"IDENTIFIER","line_number":"11"}}},"statements":[{"type":"assignment","token":{"literal":"b","type":"IDENTIFIER","line_number":"12"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"0","type":"INT","line_number":"12"}}}]}]}]
+    },
+    {
+      "file" : "../Testfiles/ParserTests/toJSONTests/test16.ap",
+      "ast" : [{"type":"function","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"arguments":[],"return_type":{"literal":"long","type":"LONG","line_number":"1"},"attributes":{"acyclic":false,"public":false,"inline":true},"statements":[{"type":"forloop","variable_one":{"literal":"i","type":"IDENTIFIER","line_number":"2"},"start_expression":{"type":"identifier_or_literal","token":{"literal":"1","type":"INT","line_number":"2"}},"stop_expression":{"type":"identifier_or_literal","token":{"literal":"10","type":"INT","line_number":"2"}},"statements":[{"type":"assignment","token":{"literal":"i","type":"IDENTIFIER","line_number":"3"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"5","type":"INT","line_number":"3"}}}]},{"type":"forloop","variable_one":{"literal":"j","type":"IDENTIFIER","line_number":"5"},"start_expression":{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"5"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"a","type":"IDENTIFIER","line_number":"5"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"b","type":"IDENTIFIER","line_number":"5"}}},"stop_expression":{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"5"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"100","type":"INT","line_number":"5"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"60","type":"INT","line_number":"5"}}},"statements":[{"type":"assignment","token":{"literal":"k","type":"IDENTIFIER","line_number":"6"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"5","type":"INT","line_number":"6"}}}]},{"type":"forloop","variable_one":{"literal":"m","type":"IDENTIFIER","line_number":"8"},"start_expression":{"type":"identifier_or_literal","token":{"literal":"b","type":"IDENTIFIER","line_number":"8"}},"statements":[{"type":"assignment","token":{"literal":"f","type":"IDENTIFIER","line_number":"9"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"1","type":"INT","line_number":"9"}}}]},{"type":"forloop","variable_one":{"literal":"n","type":"IDENTIFIER","line_number":"11"},"start_expression":{"type":"identifier_or_literal","token":{"literal":"z","type":"IDENTIFIER","line_number":"11"}},"label":{"literal":"forloop","type":"IDENTIFIER","line_number":"11"},"statements":[{"type":"assignment","token":{"literal":"a","type":"IDENTIFIER","line_number":"12"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"2","type":"INT","line_number":"12"}}}]},{"type":"forloop","assignment_type":"let","unwrapped_option":{"literal":"a","type":"IDENTIFIER","line_number":"14"},"stop_expression":{"type":"binary","token":{"literal":"-","type":"MINUS","line_number":"14"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"thingy","type":"IDENTIFIER","line_number":"14"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"test","type":"IDENTIFIER","line_number":"14"}}},"label":{"literal":"name","type":"IDENTIFIER","line_number":"14"},"statements":[{"type":"assignment","token":{"literal":"a","type":"IDENTIFIER","line_number":"15"},"variable_type":null,"assignment_type":"LET","rvalue":{"type":"identifier_or_literal","token":{"literal":"2","type":"INT","line_number":"15"}}},{"type":"continue","line_number":"16"}]},{"type":"forloop","variable_one":{"literal":"key","type":"IDENTIFIER","line_number":"18"},"variable_two":{"literal":"val","type":"IDENTIFIER","line_number":"18"},"start_expression":{"type":"identifier_or_literal","token":{"literal":"dictionary","type":"IDENTIFIER","line_number":"18"}},"statements":[{"type":"assignment","token":{"literal":"t","type":"IDENTIFIER","line_number":"19"},"variable_type":null,"assignment_type":"VAR","rvalue":{"type":"identifier_or_literal","token":{"literal":"3","type":"INT","line_number":"19"}}},{"type":"break","loop_label":{"literal":"break","type":"BREAK","line_number":"20"}}]},{"type":"return","rvalue":{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"22"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"a","type":"IDENTIFIER","line_number":"22"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"b","type":"IDENTIFIER","line_number":"22"}}}}]}]
+    },
+    {
+      "file" : "../Testfiles/ParserTests/toJSONTests/test17.ap",
+      "ast" : [{"type":"function","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"arguments":[],"return_type":null,"attributes":{"acyclic":false,"public":false,"inline":false},"statements":[{"type":"reassign_or_call","token":{"literal":"a","type":"IDENTIFIER","line_number":"2"},"assignment_type_token":{"literal":"=","type":"EQUAL","line_number":"2"},"functions":[],"rvalue":{"type":"identifier_or_literal","token":{"literal":"0","type":"INT","line_number":"2"}}},{"type":"reassign_or_call","token":{"literal":"b","type":"IDENTIFIER","line_number":"3"},"assignment_type_token":{"literal":"=","type":"EQUAL","line_number":"3"},"functions":[],"rvalue":{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"3"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"'a'","type":"CHAR","line_number":"3"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"'f'","type":"CHAR","line_number":"3"}}}},{"type":"reassign_or_call","token":{"literal":"c","type":"IDENTIFIER","line_number":"4"},"assignment_type_token":{"literal":"=","type":"EQUAL","line_number":"4"},"functions":[],"rvalue":{"type":"binary","token":{"literal":"+","type":"PLUS","line_number":"4"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"\"string\"","type":"STRING","line_number":"4"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"\"string\"","type":"STRING","line_number":"4"}}}},{"type":"reassign_or_call","token":{"literal":"d","type":"IDENTIFIER","line_number":"6"},"assignment_type_token":{"literal":"+=","type":"PLUS_EQUAL","line_number":"6"},"functions":[],"rvalue":{"type":"identifier_or_literal","token":{"literal":"4","type":"INT","line_number":"6"}}},{"type":"reassign_or_call","token":{"literal":"a","type":"IDENTIFIER","line_number":"7"},"assignment_type_token":{"literal":"-=","type":"MINUS_EQUAL","line_number":"7"},"functions":[],"rvalue":{"type":"identifier_or_literal","token":{"literal":"4","type":"INT","line_number":"7"}}},{"type":"reassign_or_call","token":{"literal":"a","type":"IDENTIFIER","line_number":"8"},"assignment_type_token":{"literal":"*=","type":"STAR_EQUAL","line_number":"8"},"functions":[],"rvalue":{"type":"identifier_or_literal","token":{"literal":"4","type":"INT","line_number":"8"}}},{"type":"reassign_or_call","token":{"literal":"a","type":"IDENTIFIER","line_number":"9"},"assignment_type_token":{"literal":"%=","type":"MOD_EQUAL","line_number":"9"},"functions":[],"rvalue":{"type":"identifier_or_literal","token":{"literal":"4","type":"INT","line_number":"9"}}},{"type":"reassign_or_call","token":{"literal":"a","type":"IDENTIFIER","line_number":"10"},"assignment_type_token":{"literal":"^=","type":"CARROT_EQUAL","line_number":"10"},"functions":[],"rvalue":{"type":"identifier_or_literal","token":{"literal":"4.863","type":"FLOAT","line_number":"10"}}},{"type":"reassign_or_call","token":{"literal":"a","type":"IDENTIFIER","line_number":"11"},"assignment_type_token":{"literal":"/=","type":"SLASH_EQUAL","line_number":"11"},"functions":[],"rvalue":{"type":"identifier_or_literal","token":{"literal":"5.86","type":"FLOAT","line_number":"11"}}}]}]
+    },
+    {
+      "file" : "../Testfiles/ParserTests/toJSONTests/test18.ap",
+      "ast" : [{"type":"struct","name":{"literal":"test","type":"IDENTIFIER","line_number":"1"},"attributes":{"acyclic":false,"public":false,"inline":true},"interfaces":[],"fields":[{"name":{"literal":"myInt","type":"IDENTIFIER","line_number":"2"},"type":{"literal":"int","type":"INT","line_number":"2"},"public":true},{"name":{"literal":"thingy","type":"IDENTIFIER","line_number":"3"},"type":{"literal":"thingy","type":"IDENTIFIER","line_number":"3"},"public":false}],"functions":[]}]
+    },
+    {
+      "file" : "../Testfiles/ParserTests/toJSONTests/test19.ap",
+      "ast" : [{"type":"struct","name":{"literal":"hellYeah","type":"IDENTIFIER","line_number":"1"},"attributes":{"acyclic":true,"public":true,"inline":false},"interfaces":[{"literal":"nitro","type":"IDENTIFIER","line_number":"1"},{"literal":"mullets","type":"IDENTIFIER","line_number":"1"},{"literal":"turburskies","type":"IDENTIFIER","line_number":"1"}],"fields":[{"name":{"literal":"myInt","type":"IDENTIFIER","line_number":"3"},"type":{"literal":"int","type":"INT","line_number":"3"},"public":true}],"functions":[{"type":"function","name":{"literal":"funcky","type":"IDENTIFIER","line_number":"5"},"arguments":[{"name":{"literal":"a","type":"IDENTIFIER","line_number":"5"},"type":{"literal":"int","type":"INT","line_number":"5"},"default_value":null}],"return_type":{"literal":"int","type":"INT","line_number":"5"},"attributes":{"acyclic":false,"public":true,"inline":false},"statements":[{"type":"return","rvalue":{"type":"binary","token":{"literal":"*","type":"STAR","line_number":"6"},"lhs_exp":{"type":"identifier_or_literal","token":{"literal":"2","type":"INT","line_number":"6"}},"rhs_exp":{"type":"identifier_or_literal","token":{"literal":"a","type":"IDENTIFIER","line_number":"6"}}}}]}]}]
+    }
+]

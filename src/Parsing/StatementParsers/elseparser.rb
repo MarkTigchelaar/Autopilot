@@ -80,13 +80,14 @@ class ElseStatement
     end
 
     def toJSON()
-        stmtsJSON = Array.new()
-        for stmt in @sub_statements
-            stmtsJSON.append(stmt.toJSON())
-        end
+        #stmtsJSON = Array.new()
+        #for stmt in @sub_statements
+        #    stmtsJSON.append(stmt.toJSON())
+        #end
+
         return {
             "type" => "else",
-            "statememts" => stmtsJSON
+            "statememts" => @sub_statements.toJSON()
         }
     end
 end

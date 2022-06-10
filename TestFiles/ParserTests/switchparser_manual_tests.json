@@ -317,9 +317,9 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/SwitchTests/test27.txt",
-                "tokenLiteral" : "eh",
+                "tokenLiteral" : "fun",
                 "lineNumber" : "5",
-                "message" : "Unexpected token eh."
+                "message" : "Unexpected token fun."
             }
         ]
     },

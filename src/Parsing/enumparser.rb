@@ -249,14 +249,19 @@ class EnumListItem
     end
 
     def toJSON()
+        default_literal = ""
+        default_literal = @default_value_token.getText() if @default_value_token != nil
+        default_value = ""
+        default_value = @default_value_token.getType() if @default_value_token != nil
+
         return {
             "name" => {
                 "literal" => @name.getText(),
                 "type" => @name.getType()
             },
             "default_value" => {
-                "literal" => @default_value_token.getText(),
-                "type" => @default_value_token.getType()
+                "literal" => default_literal,
+                "type" => default_value
             }
         }
     end
@@ -299,6 +304,12 @@ class EnumStatement
     end
 
     def toJSON()
+        type_lit = ""
+        type_lit = @enumtype.getText() if @enumtype
+        type_type = ""
+        type_type = @enumtype.getType() if @enumtype
+        line = ""
+        line = @enumtype.getLine() if @enumtype
         return {
             "type" => "enum",
             "name" => {
@@ -308,9 +319,9 @@ class EnumStatement
             },
             "fields" => getItemsJSON(),
             "enumtype" => {
-                "literal" => @enumtype.getText(),
-                "type" => @enumtype.getType(),
-                "line_number" => @enumtype.getLine()
+                "literal" => type_lit,
+                "type" => type_type,
+                "line_number" => line
             }
         }
     end

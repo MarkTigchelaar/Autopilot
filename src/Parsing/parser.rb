@@ -1,3 +1,4 @@
+require 'set.rb'
 require './tokentype.rb'
 require_relative './parserutilities.rb'
 require_relative '../Tokenization/scanner.rb'
@@ -216,7 +217,6 @@ class Parser
             return @error_parser.parse(self)
         else
             unexpectedToken(self)
-            raise Exception.new("HERE!")
             return nil
         end
     end

@@ -20,9 +20,10 @@ class WhileParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isValidIdentifier(peekTok))
+        elsif(isValidIdentifier(peekTok) or is_valid_r_value_keyword(peekTok))
             parseExpression(parser)
         else
+            puts "HERE!!!!!!!"
             unexpectedToken(parser)
         end
         w = WhileStatement.new(@loop_name, @expression_ast, @statements)
@@ -127,14 +128,25 @@ class WhileStatement
     end
 
     def toJSON()
+        puts "IN HERE!"
         return {
-            "name" => {
-                "literal" => @loop_name.getText(),
-                "type" => @loop_name.getType(),
-                "line_number" => @loop_name.getLine()
-            },
+            "name" => get_name(),
             "expression" => @expression_ast.toJSON(),
             "statements" => @statements.toJSON()
+        }
+    end
+
+    def get_name()
+        lit = ""
+        lit = @loop_name.getText() if @loop_name
+        type = ""
+        type = @loop_name.getType() if @loop_name
+        line = ""
+        line = @loop_name.getLine() if @loop_name
+        {
+            "literal" => lit,
+            "type" => type,
+            "line_number" => line
         }
     end
 

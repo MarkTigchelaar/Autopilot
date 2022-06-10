@@ -17,10 +17,18 @@ class ReassignOrCallParser
         name = parser.nextToken()
         enforceIdentifier(name)
         peekTok = parser.peek()
+        assignment_type_token = nil
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(peekTok.getType() == EQUAL)
+        elsif(
+            [
+                EQUAL, PLUS_EQUAL, 
+                MINUS_EQUAL, STAR_EQUAL, 
+                SLASH_EQUAL, CARROT_EQUAL, MOD_EQUAL
+            ].include?(peekTok.getType())
+            )
             @var_name = name
+            assignment_type_token = peekTok
             equalStep(parser)
         elsif(peekTok.getType() == LEFT_PAREN)
             callFuncStep(parser, name)
@@ -30,7 +38,7 @@ class ReassignOrCallParser
         else
             unexpectedToken(parser)
         end
-        r = ReassignmentOrCallStatement.new(@var_name, @expression_ast, @functions)
+        r = ReassignmentOrCallStatement.new(@var_name, assignment_type_token, @expression_ast, @functions)
         reset()
         if(errCount < parser.errorCount())
             internalSynchronize(parser)
@@ -43,12 +51,18 @@ class ReassignOrCallParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
+        elsif(isValidIdentifier(peekTok) or is_valid_r_value_keyword(peekTok))
+            parseExpression(parser)
+        elsif(isInt(peekTok) or isFloat(peekTok))
+            parseExpression(parser)
+        elsif(is_string_or_char(peekTok))
+            parseExpression(parser)
         else
-            parseAssignExpression(parser)
+            unexpectedToken(parser)
         end
     end
 
-    def parseAssignExpression(parser)
+    def parseExpression(parser)
         @expression_parser.loadTokenizer(parser)
         @expression_ast = @expression_parser.parse_expression()
     end
@@ -59,7 +73,7 @@ class ReassignOrCallParser
         if(isEOF(peekTok))
             eofReached(parser)
             return
-        elsif(peekTok.getType() != RIGHT_PAREN and !isValidIdentifier(peekTok))
+        elsif(peekTok.getType() != RIGHT_PAREN and !isValidIdentifier(peekTok) and peekTok.getType() != STRING and peekTok.getType() != CHAR)
             unexpectedToken(parser)
             return
         end
@@ -146,6 +160,21 @@ class FuncCall
         @args = args
     end
 
+    def toJSON()
+        return {
+            "name" => @name.getText(),
+            "args" => getArgsJSON()
+        }
+    end
+
+    def getArgsJSON()
+        argsJSON = Array.new()
+        for arg in @args
+            argsJSON.append(arg.toJSON())
+        end
+        return argsJSON
+    end
+
     def _printLiteral(l)
         l.append("fn:" + @name.getText())
         for arg in @args
@@ -167,10 +196,11 @@ class FuncCall
 end
 
 class ReassignmentOrCallStatement
-    def initialize(var_name, expression_ast, functions)
+    def initialize(var_name, assignment_type_token, expression_ast, functions)
         @var_name = var_name
         @expression_ast = expression_ast
         @functions = functions
+        @assignment_type_token = assignment_type_token
     end
 
     def toJSON()
@@ -183,13 +213,56 @@ class ReassignmentOrCallStatement
         return {
             "type" => "reassign_or_call",
             "token" => {
-                "literal" => @var_name.getText(),
-                "type" => @var_name.getType(),
-                "line_number" => @var_name.getLine()
+                "literal" => getVarNameText(),
+                "type" => getVarNameType(),
+                "line_number" => getVarNameLine()
+            },
+            "assignment_type_token" => {
+                "literal" => getAssignTypeText(),
+                "type" => getAssignType(),
+                "line_number" => getLineNumber()
             },
             "functions" => funcs,
             "rvalue" => @expression_ast != nil ? @expression_ast.toJSON() : nil
         }
+    end
+
+    
+
+    def getVarNameText()
+        name = ""
+        name = @var_name.getText() if @var_name
+        return name
+    end
+
+    def getVarNameType()
+        type = ""
+        type = @var_name.getType() if @var_name
+        return type
+    end
+
+    def getVarNameLine()
+        line = ""
+        line = @var_name.getLine() if @var_name
+        return line
+    end
+
+    def getAssignTypeText()
+        text = ""
+        text = @assignment_type_token.getText() if @assignment_type_token
+        return text
+    end
+
+    def getAssignType()
+        type = ""
+        type = @assignment_type_token.getType() if @assignment_type_token
+        return type
+    end
+
+    def getLineNumber()
+        line = ""
+        line = @assignment_type_token.getLine() if @assignment_type_token
+        return line
     end
 
     def _printTokType(type_list)

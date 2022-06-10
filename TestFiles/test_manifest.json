@@ -126,5 +126,9 @@
     {
         "general_component" : "mainparser",
         "test_manifest_file" : "../TestFiles/ParserTests/main_parser_statement_tests.json"
+    },
+    {
+        "general_component" : "mainparserJSON",
+        "test_manifest_file" : "../TestFiles/ParserTests/main_parser_json_tests.json"
     }
 ] 

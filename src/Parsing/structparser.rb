@@ -287,6 +287,11 @@ class StructStatement
     def toJSON()
         return {
             "type" => "struct",
+            "name" => {
+                "literal" => @name.getText(),
+                "type" => @name.getType(),
+                "line_number" => @name.getLine()
+            },
             "attributes" => {
                 "acyclic" => @is_acyclic,
                 "public" => @is_public,

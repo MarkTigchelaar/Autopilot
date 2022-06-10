@@ -38,7 +38,8 @@ def isNumeric(token)
     return true
 end
 
-def isInt(tokliteral)
+def isInt(token)
+    tokliteral = token.getText()
     for i in 0 .. tokliteral.length-1 do
         if(!isDigit(tokliteral[i]))
             return false
@@ -47,7 +48,8 @@ def isInt(tokliteral)
     return true
 end
 
-def isFloat(tokliteral)
+def isFloat(token)
+    tokliteral = token.getText()
     decimal = 0
     for i in 0 .. tokliteral.length-1 do
         if(!isDigit(tokliteral[i]) and tokliteral[i] != '.')
@@ -61,6 +63,12 @@ def isFloat(tokliteral)
         return false
     end
     return true
+end
+
+def is_string_or_char(token)
+    return true if token.getType() == STRING
+    return true if token.getType() == CHAR
+    return false
 end
 
 # Utility functions
@@ -89,6 +97,15 @@ def isForbiddenInExpressions(token)
     return false
 end
     
+def is_valid_r_value_keyword(token)
+    case token.getType()
+    when TRUE
+        true
+    when FALSE
+        false
+    end
+end
+
 def isOperator(token)
     case token.getType()
         when PLUS

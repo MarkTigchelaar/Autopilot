@@ -148,7 +148,7 @@ class SwitchParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(!is_interal_statement_keyword(peekTok))
+        elsif(!(is_interal_statement_keyword(peekTok) or isValidIdentifier(peekTok)))
             unexpectedToken(parser)
         else
             parseStatements(parser, Array.new, true)
@@ -188,10 +188,7 @@ class CaseStatement
                 "line_number" => v.getLine()
             })
         end
-        stmts = Array.new()
-        for s in @statements
-            stmts.append(s.toJSON())
-        end
+        stmts = @statements.toJSON()
         return {
             "values" => vals,
             "statements" => stmts
@@ -239,7 +236,9 @@ class SwitchStatement
         for _case in @case_statements
             cases.append(_case.toJSON())
         end
-        cases.append(@default_case.toJSON())
+        if(@default_case)
+            cases.append(@default_case.toJSON())
+        end
         return cases
     end
 
