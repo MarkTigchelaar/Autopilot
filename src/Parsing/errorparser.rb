@@ -100,7 +100,7 @@ class ErrorStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("ErrorStatement")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

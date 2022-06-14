@@ -21,6 +21,10 @@ class ContinueStatement
         @information = token
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def _printLiteral
         return @information.getText()
     end

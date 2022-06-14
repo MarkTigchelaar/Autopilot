@@ -127,6 +127,10 @@ class WhileStatement
         @statements = statements
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def toJSON()
         puts "IN HERE!"
         return {

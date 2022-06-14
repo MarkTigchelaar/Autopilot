@@ -16,6 +16,8 @@ require_relative './unionparser.rb'
 require_relative './unittestparser.rb'
 require_relative './StatementParsers/statementparser.rb'
 
+require_relative '../SemanticAnalysis/semantic_analyzer_phase_one.rb'
+
 class Parser
     def initialize
         @expression_parser = ExpressionParser.new
@@ -26,6 +28,7 @@ class Parser
         @shouldSync = false
         @seen_module = false
         @import_and_define_not_allowed = false
+        @analyze_semantics = false
 
         @module_parser = ModuleParser.new
         @import_parser = ImportParser.new
@@ -41,7 +44,7 @@ class Parser
         @union_parser = UnionParser.new
         @error_parser = ErrorParser.new
         @unittest_parser = UnittestParser.new(@statement_parser)
-        #@semantic_analyzer = SemanticAnalyzerPhaseOne.new()
+        @semantic_analyzer = SemanticAnalyzerPhaseOne.new()
     end
 
     def toJSON()
@@ -60,13 +63,19 @@ class Parser
         @tokenizer.closeSource()
     end
 
+    def enable_semantics()
+        @analyze_semantics = true
+    end
+
     def _parse()
         reset()
         ast = Array.new
         while(!match(EOF))
             type  = type_declarations()
             if(type != nil)
-                #type.visit(@semantic_analyzer)
+                if @analyze_semantics
+                    type.visit(@semantic_analyzer)
+                end
                 ast.append(type)
             end
             if(@shouldSync)
@@ -257,6 +266,9 @@ class Parser
             if dup_indicies.include?(i)
                 @errorList.delete_at(i)
             end
+        end
+        if @enable_semantics
+            semantic_analyzer.extend_error_list(@errorList)
         end
         return @errorList
     end

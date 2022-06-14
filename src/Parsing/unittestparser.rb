@@ -94,7 +94,7 @@ class UnittestStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("UnittestStatement")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

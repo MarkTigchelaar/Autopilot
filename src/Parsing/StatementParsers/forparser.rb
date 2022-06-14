@@ -278,6 +278,10 @@ class ForStatement
         @opt_variable = opt_variable
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def toJSON()
         json = Hash.new()
         json["type"] = "forloop"

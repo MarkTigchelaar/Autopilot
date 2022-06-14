@@ -179,6 +179,10 @@ class CaseStatement
         @statements = statements
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def toJSON()
         vals = Array.new()
         for v in @values
@@ -217,6 +221,10 @@ class SwitchStatement
         @test_case = test_case
         @case_statements = case_statements
         @default_case = default_case
+    end
+
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

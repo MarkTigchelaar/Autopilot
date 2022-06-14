@@ -203,6 +203,10 @@ class ReassignmentOrCallStatement
         @assignment_type_token = assignment_type_token
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def toJSON()
         funcs = Array.new()
         if(@functions != nil)

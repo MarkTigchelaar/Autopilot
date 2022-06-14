@@ -5,7 +5,7 @@ class DummyStatementParser
         current = parser.nextToken()
         if(isEOF(current))
             eofReached(parser)
-        elsif(is_interal_statement_keyword(current))
+        elsif(is_interal_statement_keyword(current) or isExternalKeyword(current))
             # actual parser will be able to handle print(), thing.method() etc.
             return DummyStatement.new(current)
         else

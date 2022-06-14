@@ -62,6 +62,10 @@ class BreakStatement
         @information = token
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def _printLiteral
         if(@loop_label != nil)
             return @loop_label.getText() + ", " + @information.getText()

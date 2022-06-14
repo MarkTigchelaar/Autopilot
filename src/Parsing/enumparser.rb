@@ -304,7 +304,7 @@ class EnumStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("EnumStatement")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

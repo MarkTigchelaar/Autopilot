@@ -141,7 +141,7 @@ class UnionItemListType
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("UnionItemListType")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()
@@ -177,7 +177,7 @@ class UnionStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("UnionStatement")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

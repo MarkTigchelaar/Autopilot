@@ -418,7 +418,7 @@ class PreFixExpression
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("PreFixExpression")
+        semantic_analyzer.analyze_node(self)
     end
 
     def _printLiteral(repr_list)
@@ -456,7 +456,7 @@ class NameExpression
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("NameExpression")
+        semantic_analyzer.analyze_node(self)
     end
 
     def get_name
@@ -500,7 +500,7 @@ class OperatorExpresison
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("OperatorExpresison")
+        semantic_analyzer.analyze_node(self)
     end
 
     def _printLiteral(repr_list)
@@ -546,7 +546,7 @@ class CollectionExpression
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("CollectionExpression")
+        semantic_analyzer.analyze_node(self)
     end
 
     def _printLiteral(repr_list)
@@ -601,7 +601,7 @@ class MethodCallExpression
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("MethodCallExpression")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()
@@ -656,7 +656,7 @@ class CallExpression
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("CallExpression")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

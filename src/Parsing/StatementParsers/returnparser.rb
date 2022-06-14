@@ -45,6 +45,10 @@ class ReturnStatement
         @return_expression = return_expression
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def toJSON()
         return {
             "type" => "return",

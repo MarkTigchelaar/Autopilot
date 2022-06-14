@@ -46,6 +46,10 @@ class UnlessStatement
         @if = if_statement
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def toJSON()
         json = @if.toJSON()
         json["type"] = "unless"

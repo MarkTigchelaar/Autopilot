@@ -210,6 +210,10 @@ class IfStatement
         @statements = nil
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def set_unwrapped_var(opt)
         @unwrapped_var
     end

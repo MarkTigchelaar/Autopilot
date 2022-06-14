@@ -239,7 +239,7 @@ class StructField
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("StructField")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()
@@ -289,7 +289,7 @@ class StructStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("StructStatement")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

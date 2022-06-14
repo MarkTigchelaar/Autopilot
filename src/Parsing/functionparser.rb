@@ -176,7 +176,7 @@ class FunctionParser
             eofReached(parser)
         elsif(is_interal_statement_keyword(peekTok) and peekTok.getType() != ENDSCOPE)
             parseStatements(parser)
-        elsif(isAlphaNumericWord(peekTok))
+        elsif(isAlphaNumericWord(peekTok) and !isExternalKeyword(peekTok))
             parseStatements(parser)
         else
             unexpectedToken(parser)
@@ -243,7 +243,7 @@ class FunctionArgument
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("FunctionArgument")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()
@@ -298,7 +298,7 @@ class FunctionStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("FunctionStatement")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

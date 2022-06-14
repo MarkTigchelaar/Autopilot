@@ -71,6 +71,10 @@ class ElseStatement
         @sub_statements = sub_statements
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def _printLiteral
         return "else"
     end

@@ -9,12 +9,6 @@
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
                 "message" : "Unexpected token struct."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test1.txt",
-                "tokenLiteral" : "eh",
-                "lineNumber" : "5",
-                "message" : "Unexpected token eh."
             }
         ]
     },

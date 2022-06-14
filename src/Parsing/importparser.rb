@@ -148,7 +148,7 @@ class ImportStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node("ImportStatement")
+        semantic_analyzer.analyze_node(self)
     end
 
     def toJSON()

@@ -29,6 +29,10 @@ class ElifStatement
         @if_statement = if_statement
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def toJSON()
         json = @if_statement.toJSON()
         json["type"] = "elif"

@@ -118,6 +118,10 @@ class AssignmentStatement
         @let_or_var = let_or_var
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node(self)
+    end
+
     def toJSON()
         return {
             "type" => "assignment",
