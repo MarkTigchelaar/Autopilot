@@ -303,6 +303,10 @@ class EnumStatement
         @enumtype = generaltype
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("EnumStatement")
+    end
+
     def toJSON()
         type_lit = ""
         type_lit = @enumtype.getText() if @enumtype

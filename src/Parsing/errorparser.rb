@@ -99,6 +99,10 @@ class ErrorStatement
         @items = itemList
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("ErrorStatement")
+    end
+
     def toJSON()
         return {
             "type" => "error",

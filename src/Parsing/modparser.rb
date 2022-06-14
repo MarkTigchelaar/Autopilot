@@ -23,6 +23,10 @@ class ModuleStatement
         @moduleinfo = moduleinfo
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("ModuleStatement")
+    end
+
     def toJSON()
         return {
             "type" => "module",

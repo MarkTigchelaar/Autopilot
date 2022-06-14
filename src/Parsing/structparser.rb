@@ -238,6 +238,10 @@ class StructField
         @is_public = is_public
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("StructField")
+    end
+
     def toJSON()
         return {
             "name" => {
@@ -282,6 +286,10 @@ class StructStatement
         @is_acyclic = false
         @is_public = false
         @is_inline = false
+    end
+
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("StructStatement")
     end
 
     def toJSON()

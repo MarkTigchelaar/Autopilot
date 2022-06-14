@@ -93,6 +93,10 @@ class UnittestStatement
         @statements = statements
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("UnittestStatement")
+    end
+
     def toJSON()
         return {
             "type" => "unittest",

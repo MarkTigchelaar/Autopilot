@@ -41,6 +41,7 @@ class Parser
         @union_parser = UnionParser.new
         @error_parser = ErrorParser.new
         @unittest_parser = UnittestParser.new(@statement_parser)
+        #@semantic_analyzer = SemanticAnalyzerPhaseOne.new()
     end
 
     def toJSON()
@@ -65,6 +66,7 @@ class Parser
         while(!match(EOF))
             type  = type_declarations()
             if(type != nil)
+                #type.visit(@semantic_analyzer)
                 ast.append(type)
             end
             if(@shouldSync)

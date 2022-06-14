@@ -89,6 +89,10 @@ class DefineStatement
         @newNameToken = newName
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("DefineStatement")
+    end
+
     def toJSON()
         return {
             "type" => "define",

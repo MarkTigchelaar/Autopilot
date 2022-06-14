@@ -299,41 +299,6 @@ class ExpressionParser
         return CallExpression.new(token, left_exp, func_args)
     end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     def _get_infix_precedence
         if(_peek() == nil)
             return 0
@@ -445,51 +410,15 @@ class ExpressionParser
     end
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class PreFixExpression
     def initialize(token, operator, right_exp)
         @operator = operator
         @rhs_exp = right_exp
         @token = token
+    end
+
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("PreFixExpression")
     end
 
     def _printLiteral(repr_list)
@@ -524,6 +453,10 @@ class NameExpression
     def initialize(token)
         @token = token
         @checked = false
+    end
+
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("NameExpression")
     end
 
     def get_name
@@ -566,6 +499,10 @@ class OperatorExpresison
         @checked = false
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("OperatorExpresison")
+    end
+
     def _printLiteral(repr_list)
         repr_list.append('(')
         @lhs._printLiteral(repr_list)
@@ -606,6 +543,10 @@ class CollectionExpression
         @elements = elements
         @right_bracket = right_bracket
         @checked = false
+    end
+
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("CollectionExpression")
     end
 
     def _printLiteral(repr_list)
@@ -659,6 +600,10 @@ class MethodCallExpression
         @methods = methods
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("MethodCallExpression")
+    end
+
     def toJSON()
         jsonArgs = Array.new()
         for arg in @args
@@ -708,6 +653,10 @@ class CallExpression
         @args = arguments
         @token = token
         @checked = false
+    end
+
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("CallExpression")
     end
 
     def toJSON()

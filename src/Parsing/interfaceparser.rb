@@ -116,6 +116,10 @@ class InterfaceStatement
         @is_public = false
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("InterfaceStatement")
+    end
+
     def toJSON()
         return {
             "type" => "interface",

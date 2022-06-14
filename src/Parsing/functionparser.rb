@@ -242,6 +242,10 @@ class FunctionArgument
         @default_value = default_value
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("FunctionArgument")
+    end
+
     def toJSON()
         default = nil
         if(@default_value != nil)
@@ -291,6 +295,10 @@ class FunctionStatement
         @is_acyclic = false
         @is_public = false
         @is_inline = false
+    end
+
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("FunctionStatement")
     end
 
     def toJSON()

@@ -140,6 +140,10 @@ class UnionItemListType
         @item_type = item_type
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("UnionItemListType")
+    end
+
     def toJSON()
         return {
             "name" => {
@@ -170,6 +174,10 @@ class UnionStatement
     def initialize(name, itemList)
         @union_name = name
         @items = itemList
+    end
+
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("UnionStatement")
     end
 
     def toJSON()

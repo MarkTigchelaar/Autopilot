@@ -147,6 +147,10 @@ class ImportStatement
         @isLibrary = isLibrary
     end
 
+    def visit(semantic_analyzer)
+        semantic_analyzer.analyze_node("ImportStatement")
+    end
+
     def toJSON()
         return {
             "type" => "module",
