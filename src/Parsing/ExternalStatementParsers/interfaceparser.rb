@@ -1,9 +1,9 @@
 require_relative '../parserutilities.rb'
 require_relative '../../tokentype.rb'
 require_relative '../../Tokenization/token.rb'
+require_relative '../../ASTComponents/ExternalStatementComponents/interface_statement.rb'
 
 class InterfaceParser
-
     def initialize(function_parser)
         @function_parser = function_parser
         @functions = Array.new()
@@ -104,81 +104,5 @@ class InterfaceParser
         @function_name = nil
         @arguments = Array.new()
         @return_type = nil
-    end
-end
-
-
-class InterfaceStatement
-    def initialize(name, functions)
-        @name = name
-        @functions = functions
-        @is_acyclic = false
-        @is_public = false
-    end
-
-    def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node(self)
-    end
-
-    def toJSON()
-        return {
-            "type" => "interface",
-            "name" => {
-                "literal" => @name.getText(),
-                "type" => @name.getType(),
-                "line_number" => @name.getLine()
-            },
-            "functions" => getFunctionsJSON(),
-            "attributes" => {
-                "acyclic" => @is_acyclic,
-                "public" => @is_public
-            }
-        }
-    end
-
-    def getFunctionsJSON()
-        funcs = Array.new()
-        for fn in @functions
-            funcs.append(fn.toJSON())
-        end
-        return funcs
-    end
-
-    def setAsAcyclic()
-        @is_acyclic = true
-    end
-
-    def setAsPublic()
-        @is_public = true
-    end
-
-    def _printTokType(type_list)
-        if(@is_acyclic)
-            type_list.append(ACYCLIC)
-        end
-        if(@is_public)
-            type_list.append(PUB)
-        end
-        type_list.append(@name.getType())
-        for func in @functions
-            func._printTokType(type_list)
-        end
-    end
-
-    def _printLiteral()
-        astString = ""
-        if(@is_acyclic)
-            astString += "acyclic "
-        end
-        if(@is_public)
-            astString += "pub "
-        end
-        astString += @name.getText() + " "
-        for func in @functions
-            astString += func._printLiteral() + " "
-        end
-        astString = astString.strip()
-        astString = astString.squeeze(" ")
-        return astString
     end
 end
