@@ -1,6 +1,6 @@
 require 'json'
 require './Tokenization/scanner.rb'
-require './Parsing/InternalStatementParsers/expression_parser.rb'
+require './Parsing/expression_parser.rb'
 
 require './Parsing/ExternalStatementParsers/modparser.rb'
 require './Parsing/ExternalStatementParsers/importparser.rb'

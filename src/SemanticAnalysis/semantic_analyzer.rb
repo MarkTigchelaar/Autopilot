@@ -1,18 +1,52 @@
+require_relative './call_graph_analyzer.rb'
+require_relative './reference_graph_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/struct_analyzer.rb'
+
+require_relative './ExternalStatementAnalyzers/struct_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/function_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/define_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/enum_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/error_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/import_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/module_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/union_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/unittest_analyzer.rb'
+require_relative './ExternalStatementAnalyzers/interface_analyzer.rb'
+
+require_relative './InternalStatementAnalyzers/statement_list_analyzer.rb'
+require_relative './InternalStatementAnalyzers/switch_analyzer.rb'
+require_relative './InternalStatementAnalyzers/assignment_analyzer.rb'
+require_relative './InternalStatementAnalyzers/reassign_or_call_analyzer.rb'
+require_relative './InternalStatementAnalyzers/unless_analyzer.rb'
+require_relative './InternalStatementAnalyzers/if_analyzer.rb'
+require_relative './InternalStatementAnalyzers/elif_analyzer.rb'
+require_relative './InternalStatementAnalyzers/else_analyzer.rb'
+require_relative './InternalStatementAnalyzers/loop_analyzer.rb'
+require_relative './InternalStatementAnalyzers/for_analyzer.rb'
+require_relative './InternalStatementAnalyzers/while_analyzer.rb'
+require_relative './InternalStatementAnalyzers/continue_analyzer.rb'
+require_relative './InternalStatementAnalyzers/break_analyzer.rb'
+require_relative './InternalStatementAnalyzers/return_analyzer.rb'
+
+require_relative './ExpressionAnalyzers/function_call_analyzer.rb'
+require_relative './ExpressionAnalyzers/method_call_analyzer.rb'
+require_relative './ExpressionAnalyzers/collection_call_analyzer.rb'
+require_relative './ExpressionAnalyzers/operator_analyzer.rb'
+require_relative './ExpressionAnalyzers/name_analyzer.rb'
+require_relative './ExpressionAnalyzers/prefix_analyzer.rb'
 
 
 class SemanticAnalyzer
     def initialize()
         @error_list = Array.new()
 
-        # maybe have some types as fields here, and in other fields?
-        # enable triggering of functionality from this main analyzer
-
-
         @reference_graph_analyzer = ReferenceGraphAnalyzer.new()
         @function_call_graph_analyzer = CallGraphAnalyzer.new()
 
         @function_analyzer = FunctionAnalyzer.new(self)
+        @function_argument_analyzer = FunctionArgumentAnalyzer.new(self)
         @struct_analyzer = StructAnalyzer.new(self)
+        @struct_field_analyzer = StructFieldAnalyzer.new(self)
         @define_analyzer = DefineAnalyzer.new(self)
         @enum_analyzer = EnumAnalyzer.new(self)
         @error_analyzer = ErrorAnalyzer.new(self)
@@ -22,10 +56,10 @@ class SemanticAnalyzer
         @union_item_analyzer = UnionItemAnalyzer.new(self)
         @unittest_analyzer = UnittestAnalyzer.new(self)
         @interface_analyzer = InterfaceAnalyzer.new(self)
-        
+
         # Internal statements
         @statement_list_analyzer = StatementListAnalyzer.new(self)
-        
+
         @switch_analyzer = SwitchStatementAnalyzer.new(self)
         @case_statement_analyzer = CaseStatementAnalyzer.new(self)
 
@@ -40,13 +74,12 @@ class SemanticAnalyzer
         @loop_analyzer = LoopAnalyzer.new(self)
         @for_loop_analyzer = ForLoopAnalyzer.new(self)
         @while_loop_analyzer = WhileLoopAnalyzer.new(self)
-         
+
         @continue_analyzer = ContinueAnalyzer.new(self)
         @break_analyzer = BreakAnalyzer.new(self)
         @return_analyzer = ReturnAnalyzer.new(self)
 
-        @struct_field_analyzer = StructFieldAnalyzer.new(self)
-        @function_argument_analyzer = FunctionArgumentAnalyzer.new(self)
+        # expressions
         @function_call_analyzer = FunctionCallExpAnalyzer.new(self)
         @method_call_analyzer = MethodCallExpAnalyzer.new(self)
         @collection_analyzer = CollectionExpAnalyzer.new(self)
@@ -136,365 +169,5 @@ class SemanticAnalyzer
     
     def extend_error_list(parser_error_list)
         parser_error_list.concat(@error_list)
-    end
-end
-
-
-
-
-
-
-# These classes will be moved, but they are just stubs right now
-
-class ReferenceGraphAnalyzer
-    def initialize()
-        @reference_fields = Hash.new() # type => field type list
-    end
-end
-
-class CallGraphAnalyzer
-    def initialize()
-        @function_calls = Hash.new() # function name => call list
-    end
-end
-
-class StructAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class FunctionAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ImportAnalyzer
-
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class DefineAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class EnumAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ErrorAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ModuleAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class UnionAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class UnionItemAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class UnittestAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class InterfaceAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class StatementListAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class SwitchStatementAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class CaseStatementAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class AssignmentAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ReAssignOrCallAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class UnlessAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class IfAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ElifAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ElseAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class LoopAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ForLoopAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class WhileLoopAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ContinueAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class BreakAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class ReturnAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class StructFieldAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class FunctionArgumentAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class FunctionCallExpAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class MethodCallExpAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class CollectionExpAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class OperatorExpAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class NameExpAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
-    end
-end
-
-class PrefixExpAnalyzer
-    def initialize(main_analyzer)
-        @main_analyzer = main_analyzer
-    end
-
-    def analyze_node(ast_node)
-        return
     end
 end

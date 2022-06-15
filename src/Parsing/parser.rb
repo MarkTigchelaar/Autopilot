@@ -14,7 +14,7 @@ require_relative './ExternalStatementParsers/structparser.rb'
 require_relative './ExternalStatementParsers/unionparser.rb'
 require_relative './ExternalStatementParsers/unittestparser.rb'
 
-require_relative './InternalStatementParsers/expression_parser.rb'
+require_relative './expression_parser.rb'
 require_relative './InternalStatementParsers/statementparser.rb'
 
 require_relative '../SemanticAnalysis/semantic_analyzer.rb'
