@@ -1,5 +1,5 @@
-require_relative './parserutilities.rb'
-require_relative '../tokentype.rb'
+require_relative '../parserutilities.rb'
+require_relative '../../tokentype.rb'
 
 class ModuleParser
 

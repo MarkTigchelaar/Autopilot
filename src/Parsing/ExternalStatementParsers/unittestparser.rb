@@ -1,6 +1,6 @@
-require_relative './parserutilities.rb'
-require_relative '../tokentype.rb'
-require_relative '../Tokenization/token.rb'
+require_relative '../parserutilities.rb'
+require_relative '../../tokentype.rb'
+require_relative '../../Tokenization/token.rb'
 
 class UnittestParser
     def initialize(statement_parser)
