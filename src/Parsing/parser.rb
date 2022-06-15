@@ -16,7 +16,7 @@ require_relative './unionparser.rb'
 require_relative './unittestparser.rb'
 require_relative './StatementParsers/statementparser.rb'
 
-require_relative '../SemanticAnalysis/semantic_analyzer_phase_one.rb'
+require_relative '../SemanticAnalysis/semantic_analyzer.rb'
 
 class Parser
     def initialize
@@ -44,7 +44,7 @@ class Parser
         @union_parser = UnionParser.new
         @error_parser = ErrorParser.new
         @unittest_parser = UnittestParser.new(@statement_parser)
-        @semantic_analyzer = SemanticAnalyzerPhaseOne.new()
+        @semantic_analyzer = SemanticAnalyzer.new()
     end
 
     def toJSON()
