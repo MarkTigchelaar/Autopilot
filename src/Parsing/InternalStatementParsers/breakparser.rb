@@ -1,6 +1,7 @@
 require_relative '../parserutilities.rb'
 require_relative '../../tokentype.rb'
 require_relative '../../keywords.rb'
+require_relative '../../ASTComponents/InternalStatementComponents/break_statement.rb'
 
 class BreakParser
 
@@ -53,41 +54,5 @@ class BreakParser
         if(token.getText().upcase != BREAK)
             throw Exception.new("Did not enounter \"break\" keyword in file " + token.getFilename())
         end
-    end
-end
-
-class BreakStatement
-    def initialize(loop_label, token)
-        @loop_label = loop_label
-        @information = token
-    end
-
-    def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node(self)
-    end
-
-    def _printLiteral
-        if(@loop_label != nil)
-            return @loop_label.getText() + ", " + @information.getText()
-        end
-        return @information.getText()
-    end
-
-    def _printTokType(type_list)
-        if(@loop_label != nil)
-            type_list.append(@loop_label.getType())
-        end
-        type_list.append(@information.getType())
-    end
-
-    def toJSON()
-        return {
-            "type" => "break",
-            "loop_label" => {
-                "literal" => @information.getText(),
-                "type" => @information.getType(),
-                "line_number" => @information.getLine()
-            }
-        }
     end
 end

@@ -1,6 +1,5 @@
 require './tokentype.rb'
-require_relative '../Tokenization/scanner.rb'
-require_relative './parserutilities.rb'
+require_relative '../parserutilities.rb'
 
 HASHLITERAL = 1
 LOGICAL     = 2
