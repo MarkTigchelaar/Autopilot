@@ -35,13 +35,23 @@ require_relative './ExpressionAnalyzers/operator_analyzer.rb'
 require_relative './ExpressionAnalyzers/name_analyzer.rb'
 require_relative './ExpressionAnalyzers/prefix_analyzer.rb'
 
-
+#remember to not use this if the syntax analyzer has errors already
+# semantic errors can still happen before syntax errors, so allow for that.
+# ex. a function is Ok, syntax wise, but has semantic error, next function parsed has syntax errors.
 class SemanticAnalyzer
     def initialize()
         @error_list = Array.new()
 
         @reference_graph_analyzer = ReferenceGraphAnalyzer.new()
         @function_call_graph_analyzer = CallGraphAnalyzer.new()
+        #@reference_ownership_analyzer = ReferenceOwnershipAnalyzer.new() #<- shared object between struct analyzer and function analyzer?
+        #@variable_lifetime_analyzer = VariableLifetimeAnalyzer.new() #variables might go through a lot of functions etc. <- should this be in the function analyzer?
+
+        #@type_definitions = TypeDefinitionLookup.new() <- lookup table for seen reference / complex types: structs, unions, enums, interfaces
+        #@function_signatures = FunctionSignatureLookup.new() <- lookup table for function / method signatures, name, args + their types, return type, file + line location
+        #@function_call_signatures = FunctionCallSignatureLookup.new() <- ie , function / method call signatures and their file and line location, args + their types, expected return type
+
+        #@external_dependecy_candidates = ExternalDependancyAnaylzer.new() <- imports and the type list from that library / module, last place inside module typechecks are done
 
         @function_analyzer = FunctionAnalyzer.new(self)
         @function_argument_analyzer = FunctionArgumentAnalyzer.new(self)
