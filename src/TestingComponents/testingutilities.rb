@@ -93,37 +93,51 @@ def error_test(test_case, parser, failurelog, tracker)
     
 end
 
-def generic_parser_tests(dummy, test_case, failurelog, tracker)
-    if(test_case["errors"] == nil && dummy.hasErrors())
+def generic_tests(parser, test_case, failurelog, tracker, phase_two = false)
+    if(test_case["errors"] == nil && parser.hasErrors())
         puts "Errors detected, but did not expect errors!"
-        printErrors(dummy.getErrorList())
+        printErrors(parser.getErrorList())
         raise Exception.new("Errors detected, but did not expect errors!")
-    elsif(test_case["errors"] == nil && !dummy.hasErrors())
-        msg = getMsg(test_case["astString"], dummy.astString())
+    elsif(test_case["errors"] == nil && !parser.hasErrors())
+        if phase_two
+            ok = "no errors"
+            msg = getMsg(ok, ok)
+            component_test(
+                test_case, 
+                failurelog, 
+                tracker, 
+                msg, 
+                ok, 
+                ok
+            )
+            return
+        end
+        msg = getMsg(test_case["astString"], parser.astString())
+
         component_test(
             test_case, 
             failurelog, 
             tracker, 
             msg, 
             test_case["astString"], 
-            dummy.astString()
+            parser.astString()
         )
         msg = getMsg(
             test_case["tokenTypeString"], 
-            dummy.tokenTypeString()
+            parser.tokenTypeString()
         )
         component_test(
             test_case, 
             failurelog, 
             tracker, 
             msg, 
-            dummy.tokenTypeString(), 
+            parser.tokenTypeString(), 
             test_case["tokenTypeString"]
         )
     else
-        e = dummy.getErrorList()
+        e = parser.getErrorList()
         printErrors(e)
-        error_test(test_case, dummy, failurelog, tracker)
+        error_test(test_case, parser, failurelog, tracker)
     end
 end
 
