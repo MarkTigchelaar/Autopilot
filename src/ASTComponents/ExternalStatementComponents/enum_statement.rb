@@ -7,7 +7,38 @@ class EnumStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node(self)
+        # lets semantic analyzer figure out which analyzer to use
+        semantic_analyzer.analyze_node_locally(self)
+    end
+
+    def get_items()
+        return @items
+    end
+
+    def get_name()
+        return @name
+    end
+
+    def get_type()
+        return @enumtype
+    end
+
+    def get_types_type()
+        return "NULL" unless @enumtype
+        return @enumtype.getType()
+    end
+
+    def get_type_literal()
+        return "" unless @enumtype
+        return @enumtype.getText()
+    end
+
+    def get_type_line_number()
+        return @enumtype.getLine()
+    end
+
+    def get_filename()
+        return @enumtype.getFilename()
     end
 
     def toJSON()
@@ -27,8 +58,7 @@ class EnumStatement
             "fields" => getItemsJSON(),
             "enumtype" => {
                 "literal" => type_lit,
-                "type" => type_type,
-                "line_number" => line
+                "type" => type_type
             }
         }
     end
@@ -97,17 +127,27 @@ class EnumListItem
         return {
             "name" => {
                 "literal" => @name.getText(),
-                "type" => @name.getType()
+                "type" => @name.getType(),
+                "line_number" => @name.getLine()
             },
             "default_value" => {
                 "literal" => default_literal,
-                "type" => default_value
+                "type" => default_value,
+                "line_number" => @name.getLine()
             }
         }
     end
 
+    def getFilename()
+        return @name.getFilename()
+    end
+
     def getName()
         return @name.getText()
+    end
+
+    def getLine()
+        return @name.getLine()
     end
 
     def getType()

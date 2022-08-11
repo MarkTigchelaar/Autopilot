@@ -50,6 +50,20 @@ def error_test(test_case, parser, failurelog, tracker)
     for i in 0 .. numActualErrors-1 do
         testErr = test_case["errors"][i]
         actualErr = reportedErrors[i]
+        
+        msg = getMsg(
+            "\"" + testErr["file"] + "\"", 
+            "\"" + actualErr["file"] + "\""
+        )
+        component_test(
+            test_case, 
+            failurelog, 
+            tracker, 
+            msg, 
+            testErr["file"], 
+            actualErr["file"]
+        )
+
         msg = getMsg(
             "\"" + testErr["message"] + "\"", 
             "\"" + actualErr["message"] + "\""

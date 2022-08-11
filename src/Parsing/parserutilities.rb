@@ -96,12 +96,14 @@ def isForbiddenInExpressions(token)
     end
     return false
 end
-    
-def is_valid_r_value_keyword(token)
+
+def is_boolean_keyword(token)
     case token.getType()
     when TRUE
         true
     when FALSE
+        true
+    else
         false
     end
 end
@@ -341,6 +343,12 @@ def externalSynchronize(parser)
     end
 end
 
+def matchesGeneralKeyWord(tok_text)
+    keyword_dict = getkeywords()
+    keys = keyword_dict.keys()
+    keys.include?(tok_text)
+end
+
 def isGeneralKeyWord(tok_literal)
     case tok_literal.upcase
     when LIBRARY
@@ -468,6 +476,38 @@ def isGeneralKeyWord(tok_literal)
     when COMMA
         true
     when EOF
+        true
+    when MAP
+        true
+    when DICTIONARY
+        true
+    when HASHMAP
+        true
+    when LIST
+        true
+    when LINKEDLIST
+        true
+    when VECTOR
+        true
+    when SET
+        true
+    when HASHSET
+        true
+    when TREESET
+        true
+    when STACK
+        true
+    when QUEUE
+        true
+    when FIFOQUEUE
+        true
+    when PRIORITYQUEUE
+        true
+    when DEQUE
+        true
+    when OPTION
+        true
+    when RESULT
         true
     else
         false

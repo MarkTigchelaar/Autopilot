@@ -7,11 +7,10 @@ class WhileStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node(self)
+        semantic_analyzer.analyze_node_locally(self)
     end
 
     def toJSON()
-        puts "IN HERE!"
         return {
             "name" => get_name(),
             "expression" => @expression_ast.toJSON(),

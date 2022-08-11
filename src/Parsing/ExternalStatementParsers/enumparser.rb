@@ -151,6 +151,12 @@ class EnumParser
             # tokenizer splits text on '.'
             # floats will be 3 tokens total
             itemListLiteralStep(parser)
+        elsif(isFloat(peekTok))
+            itemListLiteralStep(parser)
+        elsif(is_boolean_keyword(peekTok))
+            itemListLiteralStep(parser)
+        elsif(is_string_or_char(peekTok))
+            itemListLiteralStep(parser)
         else
             unexpectedToken(parser)
             reset()

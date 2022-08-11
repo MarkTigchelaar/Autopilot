@@ -49,7 +49,7 @@ class IfParser
                 return
             end
             varStep(parser)
-        elsif(isValidIdentifier(peekTok) or is_valid_r_value_keyword(peekTok))
+        elsif(isValidIdentifier(peekTok) or is_boolean_keyword(peekTok))
             parseExpression(parser)
         else
             unexpectedToken(parser)

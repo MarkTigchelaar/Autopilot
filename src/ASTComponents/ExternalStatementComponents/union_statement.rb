@@ -5,8 +5,16 @@ class UnionStatement
         @items = itemList
     end
 
+    def get_name()
+        @union_name
+    end
+
+    def get_items()
+        @items
+    end
+
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node(self)
+        semantic_analyzer.analyze_node_locally(self)
     end
 
     def toJSON()
@@ -54,10 +62,6 @@ class UnionItemListType
         @item_type = item_type
     end
 
-    def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node(self)
-    end
-
     def toJSON()
         return {
             "name" => {
@@ -79,7 +83,23 @@ class UnionItemListType
         return @item_type.getType()
     end
 
+    def getTypeLiteral()
+        return @item_type.getText()
+    end
+
     def getNamesType()
         return @item_name.getType()
+    end
+
+    def getName()
+        @item_name.getText()
+    end
+
+    def getFilename()
+        return @item_name.getFilename()
+    end
+
+    def getLine()
+        return @item_name.getLine()
     end
 end

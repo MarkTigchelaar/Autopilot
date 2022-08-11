@@ -330,10 +330,6 @@ class ExpressionParser
         end
     end
 
-    def tokIskeyword(token)
-        return isGeneralKeyWord(token.getText())
-    end
-
     def discardToken(expected_literal)
         token = _peek()
         if(token.getText() != expected_literal)

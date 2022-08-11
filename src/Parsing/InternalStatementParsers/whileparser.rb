@@ -20,7 +20,7 @@ class WhileParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(isValidIdentifier(peekTok) or is_valid_r_value_keyword(peekTok))
+        elsif(isValidIdentifier(peekTok) or is_boolean_keyword(peekTok))
             parseExpression(parser)
         else
             puts "HERE!!!!!!!"

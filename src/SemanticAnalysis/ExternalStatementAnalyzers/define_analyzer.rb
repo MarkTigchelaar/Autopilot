@@ -3,7 +3,10 @@ class DefineAnalyzer
         @main_analyzer = main_analyzer
     end
 
-    def analyze_node(ast_node)
-        return
+    def analyze_node_locally(ast_node)
+        old_name = ast_node.get_old_type()
+        new_name = ast_node.get_new_name_token()
+        
+        @main_analyzer.register_name(new_name.getText(), "define")
     end
 end

@@ -216,7 +216,7 @@ class Scanner
             @charScanner.shiftRight()
         end
 
-        if(isGeneralKeyWord(@charScanner.getSlice()))
+        if(matchesGeneralKeyWord(@charScanner.getSlice()))
             addToken(@charScanner.getSlice().upcase)
         else
             addToken(IDENTIFIER)

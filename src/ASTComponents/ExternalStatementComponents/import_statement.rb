@@ -7,7 +7,15 @@ class ImportStatement
     end
 
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node(self)
+        semantic_analyzer.analyze_node_locally(self)
+    end
+
+    def get_module_name()
+        @modulename
+    end
+
+    def get_item_list()
+        @itemList
     end
 
     def toJSON()

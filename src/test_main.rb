@@ -22,15 +22,12 @@ def main()
     end
 end
 
-
-
 def get_test_listing(manifest)
     jsonfile = File.open(manifest)
     json = JSON.parse(jsonfile.read())
     jsonfile.close()
     return json
 end
-
 
 class ProgressTracker
     def initialize

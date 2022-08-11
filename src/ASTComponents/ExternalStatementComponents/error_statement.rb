@@ -5,8 +5,16 @@ class ErrorStatement
         @items = itemList
     end
 
+    def get_name()
+        @name
+    end
+
+    def get_items()
+        @items
+    end
+
     def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node(self)
+        semantic_analyzer.analyze_node_locally(self)
     end
 
     def toJSON()

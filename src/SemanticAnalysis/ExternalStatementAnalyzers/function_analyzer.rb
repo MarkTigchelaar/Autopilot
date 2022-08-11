@@ -3,7 +3,7 @@ class FunctionAnalyzer
         @main_analyzer = main_analyzer
     end
 
-    def analyze_node(ast_node)
+    def analyze_node_locally(ast_node)
         return
     end
 end
@@ -13,7 +13,7 @@ class FunctionArgumentAnalyzer
         @main_analyzer = main_analyzer
     end
 
-    def analyze_node(ast_node)
+    def analyze_node_locally(ast_node)
         return
     end
 end

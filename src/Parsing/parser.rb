@@ -20,7 +20,7 @@ require_relative './InternalStatementParsers/statementparser.rb'
 require_relative '../SemanticAnalysis/semantic_analyzer.rb'
 
 class Parser
-    def initialize
+    def initialize(semantic_analyzer = nil)
         @expression_parser = ExpressionParser.new
         @tokenizer = Scanner.new
         @expression_parser.loadTokenizer(@tokenizer)
@@ -45,7 +45,7 @@ class Parser
         @union_parser = UnionParser.new
         @error_parser = ErrorParser.new
         @unittest_parser = UnittestParser.new(@statement_parser)
-        @semantic_analyzer = SemanticAnalyzer.new()
+        @semantic_analyzer = semantic_analyzer || SemanticAnalyzer.new()
     end
 
     def toJSON()
@@ -75,6 +75,7 @@ class Parser
             type  = type_declarations()
             if(type != nil)
                 if @analyze_semantics
+                    #puts "visiting node for analysis"
                     type.visit(@semantic_analyzer)
                 end
                 ast.append(type)
@@ -84,6 +85,9 @@ class Parser
                 externalSynchronize(self)
                 syncOff()
             end
+        end
+        if @analyze_semantics
+            @semantic_analyzer.extend_error_list(@errorList)
         end
         return ast
     end
@@ -268,9 +272,7 @@ class Parser
                 @errorList.delete_at(i)
             end
         end
-        if @enable_semantics
-            semantic_analyzer.extend_error_list(@errorList)
-        end
+        
         return @errorList
     end
 

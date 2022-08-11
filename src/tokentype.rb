@@ -90,6 +90,35 @@ ENUM = "enum".upcase
 STRUCT = "struct".upcase
 UNION = "union".upcase
 
+
+# for defining data structures in "define" statements:
+
+MAP = "Map".upcase
+DICTIONARY = "Dictionary".upcase
+HASHMAP = "HashMap".upcase
+
+LIST = "List".upcase
+LINKEDLIST = "LinkedList".upcase
+VECTOR = "Vector".upcase
+
+SET = "Set".upcase
+HASHSET = "HashSet".upcase
+TREESET = "TreeSet".upcase
+
+STACK = "Stack".upcase
+
+QUEUE = "Queue".upcase
+FIFOQUEUE = "FIFOQueue".upcase
+PRIORITYQUEUE = "PriorityQueue".upcase
+DEQUE = "Deque".upcase
+
+OPTION = "Option".upcase
+RESULT = "Result".upcase
+
+
+
+
+
 ASSERT = "assert".upcase
 DEBUG = "debug".upcase
 UNITTEST = "unittest".upcase
@@ -134,8 +163,6 @@ TASKID = "tid".upcase
 SELECT = "select"
 SEND = "send"
 RECEIVE = "receive"
-
-
 
 THREAD = "thread"
 PROCESS = "process"

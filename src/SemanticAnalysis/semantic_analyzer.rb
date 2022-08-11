@@ -1,6 +1,6 @@
 require_relative './call_graph_analyzer.rb'
 require_relative './reference_graph_analyzer.rb'
-require_relative './ExternalStatementAnalyzers/struct_analyzer.rb'
+require_relative './type_definition_lookup.rb'
 
 require_relative './ExternalStatementAnalyzers/struct_analyzer.rb'
 require_relative './ExternalStatementAnalyzers/function_analyzer.rb'
@@ -39,15 +39,17 @@ require_relative './ExpressionAnalyzers/prefix_analyzer.rb'
 # semantic errors can still happen before syntax errors, so allow for that.
 # ex. a function is Ok, syntax wise, but has semantic error, next function parsed has syntax errors.
 class SemanticAnalyzer
-    def initialize()
+    def initialize(test_config = nil)
         @error_list = Array.new()
+        @current_module = "_"
+        @current_module = test_config.module_name() if test_config
 
         @reference_graph_analyzer = ReferenceGraphAnalyzer.new()
         @function_call_graph_analyzer = CallGraphAnalyzer.new()
         #@reference_ownership_analyzer = ReferenceOwnershipAnalyzer.new() #<- shared object between struct analyzer and function analyzer?
         #@variable_lifetime_analyzer = VariableLifetimeAnalyzer.new() #variables might go through a lot of functions etc. <- should this be in the function analyzer?
 
-        #@type_definitions = TypeDefinitionLookup.new() <- lookup table for seen reference / complex types: structs, unions, enums, interfaces
+        @type_definitions = TypeDefinitionLookup.new(self)# <- lookup table for seen reference / complex types: structs, unions, enums, interfaces
         #@function_signatures = FunctionSignatureLookup.new() <- lookup table for function / method signatures, name, args + their types, return type, file + line location
         #@function_call_signatures = FunctionCallSignatureLookup.new() <- ie , function / method call signatures and their file and line location, args + their types, expected return type
 
@@ -63,7 +65,6 @@ class SemanticAnalyzer
         @import_analyzer = ImportAnalyzer.new(self)
         @module_analyzer = ModuleAnalyzer.new(self)
         @union_analyzer = UnionAnalyzer.new(self)
-        @union_item_analyzer = UnionItemAnalyzer.new(self)
         @unittest_analyzer = UnittestAnalyzer.new(self)
         @interface_analyzer = InterfaceAnalyzer.new(self)
 
@@ -98,79 +99,90 @@ class SemanticAnalyzer
         @prefix_analyzer = PrefixExpAnalyzer.new(self)
     end
 
-    def analyze_node(ast_node)
+    def analyze_node_locally(ast_node)
         case ast_node.class.name
         when "ModuleStatement"
-            @module_analyzer.analyze_node(ast_node)
+            @module_analyzer.analyze_node_locally(ast_node)
         when "DefineStatement"
-            @define_analyzer.analyze_node(ast_node)
+            @define_analyzer.analyze_node_locally(ast_node)
         when "EnumStatement"
-            @enum_analyzer.analyze_node(ast_node)
+            @enum_analyzer.analyze_node_locally(ast_node)
         when "ErrorStatement"
-            @error_analyzer.analyze_node(ast_node)
+            @error_analyzer.analyze_node_locally(ast_node)
         when "ImportStatement"
-            @import_analyzer.analyze_node(ast_node)
+            @import_analyzer.analyze_node_locally(ast_node)
         when "InterfaceStatement"
-            @interface_analyzer.analyze_node(ast_node)
+            @interface_analyzer.analyze_node_locally(ast_node)
         when "UnionStatement"
-            @union_analyzer.analyze_node(ast_node)
-        when "UnionItemListType"
-            @union_item_analyzer.analyze_node(ast_node)
+            @union_analyzer.analyze_node_locally(ast_node)
         when "UnittestStatement"
-            @unittest_analyzer.analyze_node(ast_node)
+            @unittest_analyzer.analyze_node_locally(ast_node)
         when "StructStatement"
-            @struct_analyzer.analyze_node(ast_node)
+            @struct_analyzer.analyze_node_locally(ast_node)
         when "StructField"
-            @struct_field_analyzer.analyze_node(ast_node)
+            @struct_field_analyzer.analyze_node_locally(ast_node)
         when "FunctionStatement"
-            @function_analyzer.analyze_node(ast_node)
+            @function_analyzer.analyze_node_locally(ast_node)
         when "FunctionArgument"
-            @function_argument_analyzer.analyze_node(ast_node)
+            @function_argument_analyzer.analyze_node_locally(ast_node)
         when "StatementList"
-            @statement_list_analyzer.analyze_node(ast_node)
+            @statement_list_analyzer.analyze_node_locally(ast_node)
         when "PreFixExpression"
-            @prefix_analyzer.analyze_node(ast_node)
+            @prefix_analyzer.analyze_node_locally(ast_node)
         when "NameExpression"
-            @name_analyzer.analyze_node(ast_node)
+            @name_analyzer.analyze_node_locally(ast_node)
         when "OperatorExpresison"
-            @operator_analyzer.analyze_node(ast_node)
+            @operator_analyzer.analyze_node_locally(ast_node)
         when "CollectionExpression"
-            @collection_analyzer.analyze_node(ast_node)
+            @collection_analyzer.analyze_node_locally(ast_node)
         when "MethodCallExpression"
-            @method_call_analyzer.analyze_node(ast_node)
+            @method_call_analyzer.analyze_node_locally(ast_node)
         when "CallExpression"
-            @function_call_analyzer.analyze_node(ast_node)
+            @function_call_analyzer.analyze_node_locally(ast_node)
         when "AssignmentStatement"
-            @assignment_analyzer.analyze_node(ast_node)
+            @assignment_analyzer.analyze_node_locally(ast_node)
         when "ReassignmentOrCallStatement"
-            @reassign_or_call_analyzer.analyze_node(ast_node)
+            @reassign_or_call_analyzer.analyze_node_locally(ast_node)
         when "BreakStatement"
-            @break_analyzer.analyze_node(ast_node)
+            @break_analyzer.analyze_node_locally(ast_node)
         when "ContinueStatement"
-            @continue_analyzer.analyze_node(ast_node)
+            @continue_analyzer.analyze_node_locally(ast_node)
         when "ReturnStatement"
-            @return_analyzer.analyze_node(ast_node)
+            @return_analyzer.analyze_node_locally(ast_node)
         when "UnlessStatement"
-            @unless_analyzer.analyze_node(ast_node)
+            @unless_analyzer.analyze_node_locally(ast_node)
         when "IfStatement"
-            @if_analyzer.analyze_node(ast_node)
+            @if_analyzer.analyze_node_locally(ast_node)
         when "ElifStatement"
-            @elif_analyzer.analyze_node(ast_node)
+            @elif_analyzer.analyze_node_locally(ast_node)
         when "ElseStatement"
-            @else_analyzer.analyze_node(ast_node)
+            @else_analyzer.analyze_node_locally(ast_node)
         when "LoopStatement"
-            @loop_analyzer.analyze_node(ast_node)
+            @loop_analyzer.analyze_node_locally(ast_node)
         when "ForStatement"
-            @for_loop_analyzer.analyze_node(ast_node)
+            @for_loop_analyzer.analyze_node_locally(ast_node)
         when "WhileStatement"
-            @while_loop_analyzer.analyze_node(ast_node)
+            @while_loop_analyzer.analyze_node_locally(ast_node)
         when "SwitchStatement"
-            @switch_analyzer.analyze_node(ast_node)
+            @switch_analyzer.analyze_node_locally(ast_node)
         when "CaseStatement"
-            @case_statement_analyzer.analyze_node(ast_node)
+            @case_statement_analyzer.analyze_node_locally(ast_node)
         else
             raise Exception.new("Unknown abstract syntax tree node #{ast_node.class.name}")
         end
+    end
+
+    def register_name(name_tok, construct_type_tok)
+        @type_definitions.register_name(@current_module, name_tok, construct_type_tok)
+    end
+
+    # This is used AFTER first pass of parser / SA of the ENTIRE FILE
+    def is_type_defined(type_token)
+        @type_definitions.check_for_definition(type_token)
+    end
+
+    def set_current_module(current)
+        @current_module = current
     end
 
     def add_semantic_error(error)
@@ -179,5 +191,12 @@ class SemanticAnalyzer
     
     def extend_error_list(parser_error_list)
         parser_error_list.concat(@error_list)
+        @error_list = Array.new()
+    end
+
+    def reset()
+        @error_list = Array.new()
+        @current_module = "_"
+        @type_definitions.reset()
     end
 end
