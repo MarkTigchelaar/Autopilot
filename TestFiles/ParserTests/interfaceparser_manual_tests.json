@@ -128,7 +128,7 @@
         "tokenTypeString" : "",
         "errors" : [
             {
-                "file" : "../Testfiles/ParserTests/InterfaceTests/test9.txt",
+                "file" : "../Testfiles/ParserTests/InterfaceTests/test10.txt",
                 "tokenLiteral" : "end",
                 "lineNumber" : "1",
                 "message" : "Unexpected token end."

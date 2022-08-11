@@ -1,0 +1,4 @@
+enum test1(bool) is
+  fred = true, 
+  wilma = false
+end

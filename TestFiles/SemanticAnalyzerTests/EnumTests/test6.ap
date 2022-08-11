@@ -1,0 +1,4 @@
+enum test1(char) is
+  fred = 'a', 
+  wilma = 'b'
+end

@@ -121,5 +121,18 @@
         "astString" : "old name: old new name: new",
         "tokenTypeString" : "IDENTIFIER IDENTIFIER",
         "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/DefineTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/DefineTests/test11.txt",
+                "tokenLiteral" : "3",
+                "lineNumber" : "1",
+                "message" : "Invalid name for item 3."
+            }
+        ]
     }
 ]

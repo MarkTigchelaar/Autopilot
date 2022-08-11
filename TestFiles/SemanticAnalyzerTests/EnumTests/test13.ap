@@ -1,0 +1,8 @@
+enum test1(int) is
+  fred, wilma
+end
+
+enum test1(float) is
+  eh = 2.8,
+  bee = 3.4
+end

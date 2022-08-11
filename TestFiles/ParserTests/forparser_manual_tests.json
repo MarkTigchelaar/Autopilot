@@ -57,7 +57,7 @@
         "tokenTypeString" : "",
         "errors" : [
             {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/ForTests/test6.txt",
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ForTests/test5.txt",
                 "tokenLiteral" : "9",
                 "lineNumber" : "1",
                 "message" : "Unexpected token 9."

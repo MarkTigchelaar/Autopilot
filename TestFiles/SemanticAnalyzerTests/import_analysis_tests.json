@@ -1,0 +1,32 @@
+[
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/ImportTests/test1.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/ImportTests/test2.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/ImportTests/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/ImportTests/test3.ap",
+                "tokenLiteral" : "a",
+                "lineNumber" : "1",
+                "message" : "Duplicate import field name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/ImportTests/test4.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/ImportTests/test4.ap",
+                "tokenLiteral" : "test",
+                "lineNumber" : "2",
+                "message" : "Name collision, _.test of type \"import\" name matches item of same type (import)"
+            }
+        ]
+    }
+]

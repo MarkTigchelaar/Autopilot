@@ -1,0 +1,4 @@
+union test is
+  field as int,
+  field as float
+end

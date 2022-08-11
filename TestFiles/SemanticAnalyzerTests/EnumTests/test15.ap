@@ -1,0 +1,4 @@
+enum test1(thingy) is
+  fred, 
+  wilma = thingy
+end

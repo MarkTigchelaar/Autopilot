@@ -26,28 +26,31 @@
             {
               "name": {
                 "literal": "fred",
-                "type": "IDENTIFIER"
+                "type": "IDENTIFIER",
+                "line_number": "2"
               },
               "default_value": {
                 "literal": "5",
-                "type": "INT"
+                "type": "INT",
+                "line_number": "2"
               }
             },
             {
               "name": {
                 "literal": "wilma",
-                "type": "IDENTIFIER"
+                "type": "IDENTIFIER",
+                "line_number": "3"
               },
               "default_value": {
                 "literal": "",
-                "type": ""
+                "type": "",
+                "line_number": "3"
               }
             }
           ],
           "enumtype": {
             "literal": "int",
-            "type": "INT",
-            "line_number": "1"
+            "type": "INT"
           }
         }
       ]
@@ -66,28 +69,31 @@
             {
               "name": {
                 "literal": "fred",
-                "type": "IDENTIFIER"
+                "type": "IDENTIFIER",
+                "line_number": "2"
               },
               "default_value": {
                 "literal": "",
-                "type": ""
+                "type": "",
+                "line_number": "2"
               }
             },
             {
               "name": {
                 "literal": "wilma",
-                "type": "IDENTIFIER"
+                "type": "IDENTIFIER",
+                "line_number": "3"
               },
               "default_value": {
                 "literal": "",
-                "type": ""
+                "type": "",
+                "line_number": "3"
               }
             }
           ],
           "enumtype": {
             "literal": "",
-            "type": "",
-            "line_number": ""
+            "type": ""
           }
         }
       ]

@@ -2,5 +2,123 @@
     {
         "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test1.ap",
         "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test2.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test3.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test4.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test5.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test6.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test7.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test8.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test8.ap",
+                "tokenLiteral" : "bambam",
+                "lineNumber" : "4",
+                "message" : "Duplicate enum value"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test9.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test9.ap",
+                "tokenLiteral" : "fred",
+                "lineNumber" : "4",
+                "message" : "Duplicate enum field name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test10.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test10.ap",
+                "tokenLiteral" : "wilma",
+                "lineNumber" : "2",
+                "message" : "Type error, enum field type does not match enum type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test11.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test11.ap",
+                "tokenLiteral" : "test1",
+                "lineNumber" : "3",
+                "message" : "Name collision, enum field name matches enum name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test12.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test12.ap",
+                "tokenLiteral" : "wilma",
+                "lineNumber" : "3",
+                "message" : "Type error, field has mismatched type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test13.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test13.ap",
+                "tokenLiteral" : "test1",
+                "lineNumber" : "5",
+                "message" : "Name collision, _.test1 of type \"enum\" name matches item of same type (enum)"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test14.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test14.ap",
+                "tokenLiteral" : "wilma",
+                "lineNumber" : "3",
+                "message" : "Type error, enum field type cannot be a user defined type \"thingy\""
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test15.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test15.ap",
+                "tokenLiteral" : "thingy",
+                "lineNumber" : "1",
+                "message" : "Type error, enum type cannot be a user defined type \"thingy\""
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test15.ap",
+                "tokenLiteral" : "wilma",
+                "lineNumber" : "3",
+                "message" : "Type error, enum field type cannot be a user defined type \"thingy\""
+            }
+        ]
     }
 ]

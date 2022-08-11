@@ -2,5 +2,17 @@
     {
         "general_component" : "enum",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/enum_analysis_tests.json"
+    },
+    {
+        "general_component" : "error",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/error_analysis_tests.json"
+    },
+    {
+        "general_component" : "union",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/union_analysis_tests.json"
+    },
+    {
+        "general_component" : "import",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/import_analysis_tests.json"
     }
 ]

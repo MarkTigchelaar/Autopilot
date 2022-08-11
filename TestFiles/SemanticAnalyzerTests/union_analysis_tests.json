@@ -1,0 +1,43 @@
+[
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test1.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test2.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test2.ap",
+                "tokenLiteral" : "field",
+                "lineNumber" : "3",
+                "message" : "Duplicate union field name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test3.ap",
+                "tokenLiteral" : "field2",
+                "lineNumber" : "3",
+                "message" : "Duplicate union field type \"int\""
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test4.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test4.ap",
+                "tokenLiteral" : "test",
+                "lineNumber" : "6",
+                "message" : "Name collision, _.test of type \"union\" name matches item of same type (union)"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test5.ap",
+        "errors" : null
+    }
+]
