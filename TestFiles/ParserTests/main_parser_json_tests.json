@@ -145,7 +145,7 @@
     },
     {
         "file": "../Testfiles/ParserTests/toJSONTests/test7.ap",
-        "ast" : [{"type":"define","old_name":{"literal":"old","type":"IDENTIFIER","line_number":"1"},"new_name":{"literal":"new","type":"IDENTIFIER","line_number":"1"}}]
+        "ast" : [{"type":"define","old_def":{"literal":"old","type":"IDENTIFIER","line_number":"1"},"new_name":{"literal":"new","type":"IDENTIFIER","line_number":"1"}}]
     },
     {
         "file": "../Testfiles/ParserTests/toJSONTests/test8.ap",
