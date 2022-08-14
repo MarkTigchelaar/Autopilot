@@ -22,11 +22,7 @@ class DefineStatement
     def toJSON()
         return {
             "type" => "define",
-            "old_name" => {
-                "literal" => @explicitTypeDef.oldItemComponent().getText(),
-                "type" => @explicitTypeDef.oldItemComponent().getType(),
-                "line_number" => @explicitTypeDef.oldItemComponent().getLine()
-            },
+            "old_def" => @explicitTypeDef.toJSON(),
             "new_name" => {
                 "literal" => @newNameToken.getText(),
                 "type" => @newNameToken.getType(),
@@ -35,12 +31,16 @@ class DefineStatement
         }
     end
 
+
+
     def _printLiteral
-        return "old name: #{@explicitTypeDef.oldItemComponent().getText()} new name: #{@newNameToken.getText()}"
+        old = @explicitTypeDef._printLiteral()#oldItemComponent().getText()
+        _new = @newNameToken.getText()
+        return "old def: #{old} new def: #{_new}"
     end
 
     def _printTokType(item_list)
-        item_list.append(@explicitTypeDef.oldItemComponent().getType())
+        @explicitTypeDef._printTokType(item_list)
         item_list.append(@newNameToken.getType())
     end
 end

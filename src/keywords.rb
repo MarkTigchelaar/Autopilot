@@ -46,7 +46,6 @@ def getkeywords
         "TreeSet" => TREESET,
         "Stack" => STACK,
         "Queue" => QUEUE,
-        "FIFOQueue" => FIFOQUEUE,
         "PriorityQueue" => PRIORITYQUEUE,
         "Deque" => DEQUE,
 

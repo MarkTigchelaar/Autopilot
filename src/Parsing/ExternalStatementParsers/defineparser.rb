@@ -16,8 +16,7 @@ class DefineParser
             HASHSET, 
             TREESET, 
             STACK, 
-            QUEUE, 
-            FIFOQUEUE,
+            QUEUE,
             PRIORITYQUEUE,
             DEQUE,
             OPTION # technically not a linear type, but steps are the same
@@ -31,6 +30,7 @@ class DefineParser
 
     def parse(parser)
         reset()
+        @explicitTypeDef = TypeDef.new()
         token = parser.nextToken()
         enforceDefine(token)
         peekTok = parser.peek()
@@ -40,8 +40,6 @@ class DefineParser
             keyValueTypeStep(parser, peekTok)
         elsif(@linear_types.include?(peekTok.getType()))
             linearContainerTypeStep(parser, peekTok)
-        #elsif(peekTok.getType() == OPTION)
-        #    optionStep(parser)
         elsif(peekTok.getType() == RESULT)
             resultStep(parser, peekTok)
         elsif(peekTok.getType() == FUN)
@@ -55,9 +53,8 @@ class DefineParser
     end
 
     def keyValueTypeStep(parser, peekTokType)
-        #raise Exception.new("Not implemented")
-        @explicitTypeDef = TypeDef.new()
-        @explicitTypeDef.addTypeToken(peekTokType)
+        @explicitTypeDef.addSubType(KeyValueType.new(peekTokType))
+        #@explicitTypeDef.addTypeToken(peekTokType)
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -71,8 +68,8 @@ class DefineParser
 
     def linearContainerTypeStep(parser, peekTokType)
         #raise Exception.new("Not implemented")
-        @explicitTypeDef = TypeDef.new()
-        @explicitTypeDef.addTypeToken(peekTokType)
+        @explicitTypeDef.addSubType(LinearType.new(peekTokType))
+        #@explicitTypeDef.addTypeToken(peekTokType)
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -89,7 +86,7 @@ class DefineParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(peekTok.getType() == IDENTIFIER)
+        elsif(isValidIdentifier(peekTok) or isPrimitiveType(peekTok, true))
             linearTypeStep(parser)
         else
             unexpectedToken(parser)
@@ -109,14 +106,9 @@ class DefineParser
         end
     end
 
-    #def optionStep(parser)
-    #    raise Exception.new("Not implemented")
-    #end
-
     def resultStep(parser, peekTokType)
-        #raise Exception.new("Not implemented")
-        @explicitTypeDef = TypeDef.new()
-        @explicitTypeDef.addTypeToken(peekTokType)
+        
+        @explicitTypeDef.addSubType(ResultType.new(peekTokType))
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -158,7 +150,7 @@ class DefineParser
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
-        elsif(peekTok.getType() == IDENTIFIER)
+        elsif(isValidIdentifier(peekTok))
             resultErrorTypeStep(parser)
         else
             unexpectedToken(parser)
@@ -180,8 +172,8 @@ class DefineParser
 
     def functionSignatureStep(parser, peekTokType)
         #raise Exception.new("Not implemented")
-        @explicitTypeDef = TypeDef.new()
-        @explicitTypeDef.addTypeToken(peekTokType)
+        
+        @explicitTypeDef.addSubType(FunctionType.new(peekTokType))
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -327,8 +319,8 @@ class DefineParser
             eofReached(parser)
             return
         end
-        @explicitTypeDef = TypeDef.new()
-        @explicitTypeDef.oldNameToken(peekTok)
+        
+        @explicitTypeDef.addSubType(RenameType.new(peekTok))
         parser.discard()
         peekTok = parser.peek()
         if(isEOF(peekTok))
@@ -384,57 +376,211 @@ end
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class KeyValueType
+    def initialize(tokenTypeToken)
+        @tokenTypeToken = tokenTypeToken # several types, which one?
+        @key_token = nil
+        @value_token = nil
+    end
+
+    def add_key_token(key_token)
+        @key_token = key_token
+    end
+
+    def add_value_token(value_token)
+        @value_token = value_token
+    end
+
+    def _printLiteral
+        @tokenTypeToken.getText() + "(" + @key_token.getText() + ":" + @value_token.getText() + ")"
+    end
+
+    def _printTokType(item_list)
+        item_list.append(@tokenTypeToken.getType())
+        item_list.append(@key_token.getType())
+        item_list.append(@value_token.getType())
+    end
+
+    def toJSON()
+
+    end
+end
+
+class LinearType
+    def initialize(tokenTypeToken)
+        @tokenTypeToken = tokenTypeToken # several types, which one?
+        @value_token = nil
+    end
+
+    def add_value_token(value_token)
+        @value_token = value_token
+    end
+
+    def _printLiteral
+        @tokenTypeToken.getText() + "(" + @value_token.getText() + ")"
+    end
+
+    def _printTokType(item_list)
+        item_list.append(@tokenTypeToken.getType())
+        item_list.append(@value_token.getType())
+    end
+
+    def toJSON()
+
+    end
+end
+
+class RenameType
+    def initialize(tokenTypeToken)
+        @tokenTypeToken = tokenTypeToken
+    end
+
+    def _printLiteral
+        @tokenTypeToken.getText()
+    end
+
+    def _printTokType(item_list)
+        item_list.append(@tokenTypeToken.getType())
+    end
+
+    def toJSON()
+        {
+            "literal" => @tokenTypeToken.getText(),
+            "type" => @tokenTypeToken.getType(),
+            "line_number" => @tokenTypeToken.getLine()
+        }
+    end
+end
+
+class ResultType
+    def initialize(tokenTypeToken)
+        @tokenTypeToken = tokenTypeToken # several types, which one?
+        @value_token = nil
+        @error_type_token = nil
+    end
+
+    def add_value_token(value_token)
+        @value_token = value_token
+    end
+
+    def add_error_type_token(error_type_token)
+        @error_type_token = error_type_token
+    end
+
+    def _printLiteral
+        @tokenTypeToken.getText + "(" + @value_token.getText() + "," + @error_type_token.getText() + ")"
+    end
+
+    def _printTokType(item_list)
+        item_list.append(@tokenTypeToken.getType())
+        item_list.append(@value_token.getType())
+        item_list.append(@error_type_token.getType())
+    end
+
+    def toJSON()
+
+    end
+end
+
+class FunctionType
+    def initialize(tokenTypeToken)
+        @tokenTypeToken = tokenTypeToken # several types, which one?
+        @return_type_token = nil
+        @arg_types_list = Array.new()
+    end
+
+    def add_arg_type_token(value_token)
+        @arg_types_list.append(value_token)
+    end
+
+    def add_return_type_token(return_type_token)
+        @return_type_token = return_type_token
+    end
+
+    def _printLiteral
+        args = ""
+        @arg_types_list.each do |arg|
+            args += arg.getText() + ","
+        end
+        args = args.delete_suffix(",")
+        @tokenTypeToken.getText() + "(" + args + ")" + @return_type_token.getText()
+    end
+
+    def _printTokType(item_list)
+        item_list.append(@tokenTypeToken.getType())
+        @arg_types_list.each do |arg|
+            item_list.append(arg.getType())
+        end
+        item_list.append(@return_type_token.getType())
+    end
+
+    def toJSON()
+
+    end
+end
+
 class TypeDef
-
     def initialize()
-        @oldNameToken = nil
-        @valueTypeToken = nil
-        @keyTypeToken = nil
-        @funcReturnTypeToken = nil
-        @funcArgTypeToken = nil
-        @tokenTypeToken = nil
-        @errorTypeToken = nil
-        @resultTypeToken = nil
-        @linearTypeToken = nil
+        @sub_container = nil
     end
 
-    def oldNameToken(oldNameTok)
-        @oldNameToken = oldNameTok
-    end
-
-    def oldItemComponent()
-        @oldNameToken
+    def addSubType(sub_container)
+        @sub_container = sub_container
     end
 
     def addMapValueToken(valueTypeToken)
-        @valueTypeToken = valueTypeToken
+        @sub_container.add_value_token(valueTypeToken)
     end
 
     def addMapKeyToken(keyTypeToken)
-        @keyTypeToken = keyTypeToken
+        @sub_container.add_key_token(keyTypeToken)
     end
     
     def addFunctionReturnTypeToken(funcReturnTypeToken)
-        @funcReturnTypeToken = funcReturnTypeToken
+        @sub_container.add_return_type_token(funcReturnTypeToken)
     end
 
     def addFunctionArgToken(funcArgTypeToken)
-        @funcArgTypeToken = funcArgTypeToken
-    end
-
-    def addTypeToken(peekTokType)
-        @tokenTypeToken = peekTokType
+        @sub_container.add_arg_type_token(funcArgTypeToken)
     end
 
     def addResultErrorTypeToken(errorTypeToken)
-        @errorTypeToken = errorTypeToken
+        @sub_container.add_error_type_token(errorTypeToken)
     end
 
     def addResultTypeToken(resultTypeToken)
-        @resultTypeToken = resultTypeToken
+        @sub_container.add_value_token(resultTypeToken)
     end
 
     def addLinearTypeToken(linearTypeToken)
-        @linearTypeToken = linearTypeToken
+        @sub_container.add_value_token(linearTypeToken)
+    end
+
+    def _printLiteral()
+        @sub_container._printLiteral()
+    end
+
+    def _printTokType(item_list)
+        @sub_container._printTokType(item_list)
+    end
+
+    def toJSON()
+        @sub_container.toJSON()
     end
 end

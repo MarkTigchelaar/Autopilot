@@ -108,7 +108,6 @@ TREESET = "TreeSet".upcase
 STACK = "Stack".upcase
 
 QUEUE = "Queue".upcase
-FIFOQUEUE = "FIFOQueue".upcase
 PRIORITYQUEUE = "PriorityQueue".upcase
 DEQUE = "Deque".upcase
 
