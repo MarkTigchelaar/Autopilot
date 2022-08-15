@@ -132,14 +132,15 @@ end
 In Autopilot, it is forbidden to define a function in a function.
 All functions / methods are explicitly defined in their own sections of the source file.
 This is not due to the complexity of parsing nested functions (although that is a consideration), it is due to the seemingly inevitable soupiness that comes with the ability to nest functions (see javascript)
-One of the goals of Autopilot is to make the code cleaner, by being strict with definitions and other pieces of syntax, function declaration is a big consideration in this regard.
+One of the goals of Autopilot is to make the code cleaner, by being strict with definitions and other pieces of syntax.
+Function declaration is a big consideration in this regard.
 
-For the contents of functions, see the statment section below.
+For the contents of functions, see the statement section below.
 
 #### define
 All function pointers, and data structures must have their explicit types defined using the define statement.
-specific user defined types can also be renamed using the define statement, such as specific functions, structs, enums, unions, or error types.
-This is to help the programmer use the same type, but with a name that is more helpful in a given context.
+Specific user defined types can also be renamed using the define statement, such as specific functions, structs, enums, unions, or error types.
+This is to help the programmer to reuse the same type, but with a name that is more helpful in a given context.
 define statements must also be above all other code, but below the module declaration.
 define statements that define the same explicit types do not throw errors, but are discouraged.
 ```
@@ -153,13 +154,13 @@ Autopilot only allows you to define a data structures contents with the predefin
 ```
 define fun(fun(int) int, float, someType) fun(int) as funnyFunc <- ERROR!
 ```
-Each type would need to be build up in previous defines (no need to be in order)
+Each type would need to be build up in existing define statements (no need to be in order)
 ```
 define fun(int) int as MoreIntsFunction
 define fun(MoreIntsFunction, float, someType) intFunc as funnyFunc
 define fun(int) as intFunc
 ```
-This prevents define statements from being cluttered, and makes it easier to reuse the defined types.
+This prevents define statements from being cluttered, and makes it easier to reuse the individual defined types.
 The define statement is a central part of Autopilot, since it is where all compound user types are defined
 There are several built in data structures in Autopilot:
 - Map
@@ -178,10 +179,11 @@ There are several built in data structures in Autopilot:
 - Deque
 - Option
 - Result
-
+These are keywords, but can only be used inside a define statment.
 It is illegal in Autopilot to directly nest these data types:
 ```
-define Dictionary(int : HashMap(int : someType)) as NestedDict <- ERROR
+define HashMap(int : someType) as myHashContainer
+define Dictionary(int : myHashContainer) as NestedDict <- ERROR
 ```
 Instead, you are forced to place structs or unions in between nested data structures
 ```
@@ -193,7 +195,7 @@ struct structType is
   ...
 end
 ```
-This is to prevent soupy code where the data structure is difficult to handle, since you cannot add methods and fields into the nested layers, resulting in code that processes the contents being scattered everywhere.
+This is to prevent soupy code where the data structure is difficult to handle, since you cannot add methods and fields into the nested layers (without structs), resulting in code that processes the contents being scattered everywhere.
 
 Several of these types are actually built in interfaces, and cannot be instantiated directly:
 - Map
