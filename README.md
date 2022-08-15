@@ -298,7 +298,7 @@ and sets:
 ```
 for item in SomeSet do
  ...
- end
+end
 ```
 
 - assignment
