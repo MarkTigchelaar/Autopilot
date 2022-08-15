@@ -115,16 +115,33 @@ let res as someResult = MyError.errOne
 ```
 
 #### unittest
-unittests are standalone units of code similar to a function, but cannot recieve, or return a value.
-unit tests should be familiar with most / all developers
+unittests are stand alone units of code similar to a function, but cannot recieve, or return a value.
+unit tests should be familiar with most / all developers.
 ```
 unittest test_name do
 ...
 end
 ```
+For the contents of unit tests, see the statment section below.
+
+#### fun
+fun (function) is used to define functions and methods.
+as seen above, the signature of all functions is [acyclic | inline | pub] fun ([arg1,arg2,...]) [return type] do
+...
+end
+In Autopilot, it is forbidden to define a function in a function.
+All functions / methods are explicitly defined in their own sections of the source file.
+This is not due to the complexity of parsing nested functions (although that is a consideration), it is due to the seemingly inevitable soupiness that comes with the ability to nest functions (see javascript)
+One of the goals of Autopilot is to make the code cleaner, by being strict with defnitions and other pieces of syntax, function declaration is a big consideration in this regard.
+
+For the contents of functions, see the statment section below.
+
 #### define
 All function pointers, and data structures must have their explicit types defined using the define statement.
+specific user defined types can also be renamed using the define statement, such as specific functions, structs, enums, unions, or error types.
+This is to help the programmer use the same type, but with a name that is more helpful in a given context.
 define statements must also be above all other code, but below the module declaration.
+define statements that define the same explicit types do not throw errors, but are discouraged.
 ```
 define fun(int, float, someType, anotherType) thirdType as ThirdTypeFunction
 define Dictionary(int:float) as aIntDict
