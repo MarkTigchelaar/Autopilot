@@ -292,11 +292,16 @@ for let opt_variable in OptionCollection as for_loop do
  ...
 end
 ```
+Options that evaluate to a null type are skipped.
+
 for loops can also traverse ranges:
 ```
 for i in 0 .. 100 do
- ...
+ for j in i + 1 .. i * 2, step_amount as inner do
+  ...
+ end
 end
+
 ```
 for loops can also iterate through Map types:
 ```
