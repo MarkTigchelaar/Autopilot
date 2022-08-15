@@ -127,7 +127,12 @@ define Dictionary(int : HashMap(int : someType)) as NestedDict <- ERROR
 Instead, you are forced to place structs or unions in between nested data structures
 ```
 define HashMap(int : someType) as myHashContainer
-define Dictionary(int : myHashContainer) as NestedDict <- Ok
+define Dictionary(int : structType) as NestedDict <- Ok
+
+struct structType
+  pub data as myHashContainer
+  ...
+end
 ```
 This is to prevent soupy code where the data structure is difficult to handle, since you cannot add methods and fields into the nested layers, resulting in code that processes the contents being scattered everywhere.
 
