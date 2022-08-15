@@ -169,3 +169,5 @@ PROCESS = "process"
 /
 
 EOF = "EOF"
+
+INVALID = "INVALID"

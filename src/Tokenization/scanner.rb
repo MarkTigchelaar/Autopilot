@@ -203,7 +203,7 @@ class Scanner
             elsif(isAlpha(char) or @specialIdChars.include?(char))
                 identifier()
             else
-                scanner_error("Unexpected character: #{char}")
+                addToken(INVALID)
             end
         end
         while(@charScanner.currentChar() in [" ", '\t', '\n', '\r'] and !isAtEnd())
