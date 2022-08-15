@@ -238,3 +238,59 @@ pub is a simple access control. Autopilot allows you to prevent the use of field
 structs that do not have the pub attached to them cannot be used outside the module either.
 use pub struct to make them useable outside the module they are defined in.
 All structs, their fields, as well as methods and functions are private by default.
+
+### statements
+Autopilot continues its Ruby inspired syntax inside of methods, functions and unit tests.
+ther is no use of the ; Autopilot figures out the difference between statments without them.
+Here is a list of all statement types:
+- Assignment
+- Reassignment
+- if
+- elif
+- else
+- unless
+- switch (with case, and default)
+- loop
+- for
+- while
+- break
+- continue
+- return
+- function / method calls (with not assignment)
+
+the defer statment is planned to be added in the near future.
+
+- named loops
+Autopilot allows you to name loops:
+while true as a_while_loop do
+ ...
+end
+This allows you to break out of a innder loop, or continue on with a outer loop:
+while true as outer do
+  while true as inner do
+    if true do
+      break inner
+    else
+      continue outer
+    end
+  end
+end
+
+for loops also have this, but they are camable of more, such as evaluating collections of Options:
+```
+for let opt_variable in OptionCollection as for_loop do
+ ...
+end
+```
+for loops can also traverse ranges:
+```
+for i in 0 .. 100 do
+ ...
+end
+```
+for loops can also iterate through Map types:
+```
+for key, value in SomeHashMap do
+ ...
+end
+```
