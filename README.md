@@ -311,24 +311,26 @@ a = 2 <- ERROR
 - reassignment
 using the var keyword, variables can be reassigned values.
 There are several combined assignment operators, as well as normal operators:
-- +
-- +=
-- -
-- -=
-- *
-- *=
-- /
-- /=
-- %
-- %=
-- ^
-- ^=
-- and
-- nand
-- or
-- nor
-- xor
-- not
+```
++
++=
+-
+-=
+*
+*=
+/
+/=
+%
+%=
+^
+^=
+and
+nand
+or
+nor
+xor
+not
+```
 
 ```
 var a as long = 0
