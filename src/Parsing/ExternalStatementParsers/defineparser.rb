@@ -15,6 +15,7 @@ class DefineParser
             TREESET, 
             STACK, 
             QUEUE,
+            FIFOQUEUE,
             PRIORITYQUEUE,
             DEQUE,
             OPTION # technically not a linear type, but steps are the same
@@ -72,6 +73,7 @@ class DefineParser
         elsif(peekTok.getType() == LEFT_PAREN)
             leftParenLinearStep(parser)
         else
+            puts "________________HERE_________________"
             unexpectedToken(parser)
         end
     end

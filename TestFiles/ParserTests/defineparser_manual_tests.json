@@ -527,6 +527,12 @@
         "errors" : null
     },
     {
+        "file" : "../Testfiles/ParserTests/DefineTests/test54.txt",
+        "astString" : "old def: FIFOQueue(thing) new def: ThingQueue",
+        "tokenTypeString" : "FIFOQUEUE IDENTIFIER IDENTIFIER",
+        "errors" : null
+    },
+    {
         "file" : "../Testfiles/ParserTests/DefineTests/test48.txt",
         "astString" : "old def: PriorityQueue(thing) new def: ThingPQueue",
         "tokenTypeString" : "PRIORITYQUEUE IDENTIFIER IDENTIFIER",

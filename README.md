@@ -100,4 +100,49 @@ define fun(int) int as MoreIntsFunction
 define fun(MoreIntsFunction, float, someType) intFunc as funnyFunc
 define fun(int) as intFunc
 ```
-This prevents define statements from being cluttered, and makes it easier to reuse the defined types
+This prevents define statements from being cluttered, and makes it easier to reuse the defined types.
+The define statement is a central part of Autopilot, since it is where all compound user types are defined
+There are several built in data structures in Autopilot:
+- Map
+- Dictionary
+- HashMap
+- List
+- LinkedList
+- Vector
+- Set
+- HashSet
+- TreeSet
+- Stack
+- Queue
+- FIFOQueue
+- PriorityQueue
+- Deque
+- Option
+- Result
+
+It is illegal in Autopilot to directly nest these data types:
+```
+define Dictionary(int : HashMap(int : someType)) as NestedDict <- ERROR
+```
+Instead, you are forced to place structs or unions in between nested data structures
+```
+define HashMap(int : someType) as myHashContainer
+define Dictionary(int : myHashContainer) as NestedDict <- Ok
+```
+This is to prevent soupy code where the data structure is difficult to handle, since you cannot add methods and fields into the nested layers, resulting in code that processes the contents being scattered everywhere.
+
+Several of these types are acutally built in interfaces, and cannot be instantiated directly:
+- Map
+- List
+- Set
+- Queue
+If you wish to use the two types what relate to each of the following in the same function, you will have to define one of these types as well:
+```
+define LinkedList(int) as IntLinkedList
+define Vector(int) as IntVector
+define List(int) as IntList
+
+acyclic pub fun do_stuff(IntList)
+ ...
+end
+```
