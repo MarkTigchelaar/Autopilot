@@ -129,7 +129,7 @@ Instead, you are forced to place structs or unions in between nested data struct
 define HashMap(int : someType) as myHashContainer
 define Dictionary(int : structType) as NestedDict <- Ok
 
-struct structType
+struct structType is
   pub data as myHashContainer
   ...
 end
@@ -147,7 +147,7 @@ define LinkedList(int) as IntLinkedList
 define Vector(int) as IntVector
 define List(int) as IntList
 
-acyclic pub fun do_stuff(IntList)
+acyclic pub fun do_stuff(IntList) do
  ...
 end
 ```
