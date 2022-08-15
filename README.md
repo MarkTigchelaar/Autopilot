@@ -394,6 +394,13 @@ else
  ...
 end
 ```
+if statements are also used to evaluate Option types without using the Some() funtion:
+```
+if let opt_value = option_var_name do
+ ...
+end
+```
+unless statements cannot do this.
 ##### unless
 copying ruby, Autopilot does have unless statements.
 However, unless statements mus be stand alone, and cannot be in a chain of other branching logic.
