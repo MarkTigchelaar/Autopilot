@@ -20,7 +20,7 @@ Autopilot also has several types that should be familiar to most programmers
 #### enum
 The enum type can only contain primitive types.
 Although this may seem limiting given how other languages allow enums to contain values, enums in Autopilot are just a collection of defined values
-ex:
+
 ```
 enum chars(char) is
   value_one = 'a',
@@ -31,7 +31,7 @@ end
 #### union
 As a alternative to enums with tagged values, Autopilot simply has tagged unions.
 This is the type that can be used in the same way other languages (like Rust) use enums.
-ex:
+
 ```
 union sum_type is
   field_a as int,
@@ -41,21 +41,63 @@ end
 ```
 #### struct
 Autopilot is not object oriented.
-structs in 
+structs in autopilot can have pub fields and methods, as well as other attributes
 
+```
+struct items is
+  pub int id,
+  float some_field
 
+  inline pub fun method_one(var as float) int do
+    some_field = var
+    return id
+  end
+end
+```
 
+#### interface
+Autopilot does have interfaces
+a struct "uses" an interface, rather than having a struct that "implements" them.
+This might change (uses -> implements) in the future
 
+```
+interface some_api is
+  fun a_method(a as int, b as int, c as someType) someOtherType
+end
 
-### Declarations:
-Declarations are done by using the let, or the var keywords.
-let does not allow you to reassign the variable, var does:
-let a = 10
-var b = 5
+struct an_api_user uses some_api is
+  field as int
+  acyclic fun a_method(a as int, b as int, c as someType) someOtherType do
+    ...
+  end
+end
+```
 
-----
-Autopilot does have type inference, but types can be stated explicitly:
-let a as int = 10
-let b as long = 5
+#### module
+Autopilot has the module keyword, which must be placed above all other Autopilot code.
+The file will need to be named the same as the module, this is just to enforce that.
+```
+module some_module_name
+```
 
-----
+#### define
+All function pointers, and data structures must have their explicit types defined using the define statement.
+define statements must also be above all other code, but below the module declaration.
+```
+define fun(int, float, someType, anotherType) thirdType as ThirdTypeFunction
+define Dictionary(int:float) as aIntDict
+define LinkedList(someStructType) as SomeTypeList
+define Option(myStructType) as myStructOption
+define Result(goodNews, errortype) as NewsResult
+```
+Autopilot only allows you to define a data structures contents with the predefined name, having a compound definition is forbidden:
+```
+define fun(fun(int) int, float, someType) fun(int) as funnyFunc <- ERROR!
+```
+Each type would need to be build up in previous defines (no need to be in order)
+```
+define fun(int) int as MoreIntsFunction
+define fun(MoreIntsFunction, float, someType) intFunc as funnyFunc
+define fun(int) as intFunc
+```
+This prevents define statements from being cluttered, and makes it easier to reuse the defined types
