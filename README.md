@@ -260,7 +260,7 @@ Here is a list of all statement types:
 
 the defer statement is planned to be added in the near future.
 
-##### named loops
+##### (named) loops
 Autopilot allows you to name loops:
 while true as a_while_loop do
  ...
@@ -276,7 +276,7 @@ while true as outer do
   end
 end
 
-for loops also have this, but they are camable of more, such as evaluating collections of Options:
+for loops also have this, but they are capable of more, such as evaluating collections of Options:
 ```
 for let opt_variable in OptionCollection as for_loop do
  ...
