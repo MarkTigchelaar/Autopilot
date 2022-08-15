@@ -260,7 +260,7 @@ Here is a list of all statement types:
 
 the defer statement is planned to be added in the near future.
 
-- named loops
+##### named loops
 Autopilot allows you to name loops:
 while true as a_while_loop do
  ...
@@ -301,14 +301,14 @@ for item in SomeSet do
 end
 ```
 
-- assignment
+##### assignment
 In Autopilot, you have the let and var keywords.
 let allows one assignment only, var allows for reassigning at will:
 ```
 let a as int = 0
 a = 2 <- ERROR
 ```
-- reassignment
+##### reassignment
 using the var keyword, variables can be reassigned values.
 There are several combined assignment operators, as well as normal operators:
 ```
@@ -337,7 +337,7 @@ var a as long = 0
 a += 1 <- Ok
 ```
 
-- switch
+##### switch
 switch statements work in much the same way as other languages:
 ```
 switch test_condition
@@ -348,26 +348,27 @@ switch test_condition
   default
     ...
 end
+```
 switch statements MUST be exhaustive when dealing with unions and errors from Result types.
 
-- break
+##### break
 As seen above, break statements live in loops (not switches) and can refer to a label of a loop:
 ```
 break(myLoop)
 ```
-- continue
+##### continue
 As per break statements, continue statements can continue the current loop, or some named outer loop:
 ```
 continue(outerLoop)
 ```
-- return
+##### return
 return statements are mandatory when a function or method does return some type.
 In Autopilot, expressions of arbitrary size are allowed much the same as other languages:
 ```
 return a + b / (c ^ 120) - 2016 * (- 4 / 2)
 ```
 
-- if, elif, else
+##### if, elif, else
 if, elif and else statments work the same as any other language. if statments cannot be named:
 ```
 if true xor false do
@@ -378,7 +379,7 @@ else
  ...
 end
 ```
-- unless
+##### unless
 copying ruby, Autopilot does have unless statements.
 However, unless statements mus be stand alone, and cannot be in a chain of other branching logic.
 ```
