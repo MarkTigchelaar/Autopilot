@@ -102,7 +102,7 @@ libraries are assumed to be compiled, and will be linked to the exe, instead of 
 #### error
 error statements are definitions of error types.
 Very similar to enums, and similar to error types in other languages.
-In AutoPilot, error types cannot be assigned to variables that are not defined as Results (with that error as the alternatiive type)
+In AutoPilot, error types cannot be assigned to variables that are not defined as Results (with that error as the alternative type)
 ```
 error MyError as 
   errOne,
@@ -115,7 +115,7 @@ let res as someResult = MyError.errOne
 ```
 
 #### unittest
-unittests are stand alone units of code similar to a function, but cannot recieve, or return a value.
+unittests are stand alone units of code similar to a function, but cannot receive, or return a value.
 unit tests should be familiar with most / all developers.
 ```
 unittest test_name do
