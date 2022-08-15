@@ -265,6 +265,7 @@ Autopilot has 3 loop types:
 - while
 - for
 - loop
+
 Autopilot allows you to name loops:
 ```
 while true as a_while_loop do
