@@ -132,7 +132,7 @@ end
 In Autopilot, it is forbidden to define a function in a function.
 All functions / methods are explicitly defined in their own sections of the source file.
 This is not due to the complexity of parsing nested functions (although that is a consideration), it is due to the seemingly inevitable soupiness that comes with the ability to nest functions (see javascript)
-One of the goals of Autopilot is to make the code cleaner, by being strict with defnitions and other pieces of syntax, function declaration is a big consideration in this regard.
+One of the goals of Autopilot is to make the code cleaner, by being strict with definitions and other pieces of syntax, function declaration is a big consideration in this regard.
 
 For the contents of functions, see the statment section below.
 
