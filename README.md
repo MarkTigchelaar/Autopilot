@@ -15,8 +15,17 @@ Autopilot has the following primitive data types:
 - string
 - bool
 
+The integers are unsigned.
+int is 64 bits, and long is 128 bits.
+
+The float type is 32 bits, and double is 64 bits.
+
+chars are ascii, as are strings.
+unicode etc. may be added at a later point.
+
 ### Compound types
-Autopilot also has several types that should be familiar to most programmers
+Autopilot also has several types that should be familiar to most programmers.
+
 #### enum
 The enum type can only contain primitive types.
 Although this may seem limiting given how other languages allow enums to contain values, enums in Autopilot are just a collection of defined values
@@ -80,6 +89,39 @@ The file will need to be named the same as the module, this is just to enforce t
 module some_module_name
 ```
 
+#### import
+import statements must also be placed above all other code, but below the module statement.
+defines and imports can be above or below one another.
+import statements have the following syntax:
+```
+import item_one, item_two, ... from module path.to.the_module.module_name
+import item from library library_name
+```
+libraries are assumed to be compiled, and will be linked to the exe, instead of having the source code included.
+
+#### error
+error statements are definitions of error types.
+Very similar to enums, and similar to error types in other languages.
+In AutoPilot, error types cannot be assigned to variables that are not defined as Results (with that error as the alternatiive type)
+```
+error MyError as 
+  errOne,
+  errTwo
+end
+...
+define Result(int, MyError) as someResult
+...
+let res as someResult = MyError.errOne
+```
+
+#### unittest
+unittests are standalone units of code similar to a function, but cannot recieve, or return a value.
+unit tests should be familiar with most / all developers
+```
+unittest test_name do
+...
+end
+```
 #### define
 All function pointers, and data structures must have their explicit types defined using the define statement.
 define statements must also be above all other code, but below the module declaration.
