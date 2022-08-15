@@ -261,13 +261,21 @@ Here is a list of all statement types:
 the defer statement is planned to be added in the near future.
 
 ##### (named) loops
+Autopilot has 3 loop types:
+- while
+- for
+- loop
 Autopilot allows you to name loops:
+```
 while true as a_while_loop do
  ...
 end
+```
+
 This allows you to break out of a inner loop, or continue on with a outer loop:
+```
 while true as outer do
-  while true as inner do
+  loop as inner do
     if true do
       break(inner)
     else
@@ -275,6 +283,7 @@ while true as outer do
     end
   end
 end
+```
 
 for loops also have this, but they are capable of more, such as evaluating collections of Options:
 ```
