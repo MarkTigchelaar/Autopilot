@@ -269,9 +269,9 @@ This allows you to break out of a innder loop, or continue on with a outer loop:
 while true as outer do
   while true as inner do
     if true do
-      break inner
+      break(inner)
     else
-      continue outer
+      continue(outer)
     end
   end
 end
