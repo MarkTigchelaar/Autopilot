@@ -155,6 +155,7 @@ end
 
 #### acyclic, inline and pub keywords
 - acyclic
+
 This keyword can be used on methods / functions as well as structs.
 This makes it impossible for a method / function to call itself.
 for example, if the following letters represent functions, -> as calls, and A is acyclic, the following would be a compile error:
@@ -162,6 +163,7 @@ A -> B -> C-> F -> G -> A
 Likewise, the same rule applies to acyclic structs.
 Acyclic structs cannot have reference cycles at the type level.
 - inline
+
 This keyword can be used on methods / functions as well as structs
 this will select a function for inlining, which is to copy the contents into the caller function.
 This is a optimization, to save a function calls overhead.
@@ -170,3 +172,10 @@ For structs, it is better to use this on smaller structs, or structs that are me
 For funtions, this can provide a noticeable speed up, if the function would be called inside a hot loop.
 Note that niether inline structs nor inline functions can refer to themselves.
 If a struct / function is inline, they are also acyclic.
+- pub
+
+This keyword can be used on methods / functions as well as structs (and their fields).
+pub is a simple access control. Autopilot allows you to prevent the use of fields or methods / functions by other code outside the struct, or for functions, outside the module
+structs that do not have the pub attached to them cannot be used outside the module either.
+use pub struct to make them useable outside the module they are defined in.
+All structs, their fields, as well as methods and functions are private by default.
