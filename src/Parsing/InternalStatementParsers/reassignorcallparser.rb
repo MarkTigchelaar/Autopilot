@@ -7,6 +7,8 @@ class ReassignOrCallParser
     def initialize(expression_parser)
         @expression_parser = expression_parser
         @var_name = nil
+        @index_token = nil
+        @assignment_operator = nil
         @expression_ast = nil
         @functions = Array.new
     end
@@ -35,10 +37,12 @@ class ReassignOrCallParser
         elsif(peekTok.getType() == DOT)
             @var_name = name
             dotStep(parser)
+        elsif(peekTok.getType() == LEFT_BRACKET)
+            left_bracket_step(parser)
         else
             unexpectedToken(parser)
         end
-        r = ReassignmentOrCallStatement.new(@var_name, assignment_type_token, @expression_ast, @functions)
+        r = ReassignmentOrCallStatement.new(@var_name, assignment_type_token, @expression_ast, @functions, @index_token, @assignment_operator)
         reset()
         if(errCount < parser.errorCount())
             internalSynchronize(parser)
@@ -47,7 +51,7 @@ class ReassignOrCallParser
     end
 
     def equalStep(parser)
-        parser.discard()
+        @assignment_operator = parser.nextToken()
         peekTok = parser.peek()
         if(isEOF(peekTok))
             eofReached(parser)
@@ -140,8 +144,52 @@ class ReassignOrCallParser
         end
     end
 
+    def left_bracket_step(parser)
+        parser.discard()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(isValidIdentifier(peekTok) || peekTok.getType() == INT || peekTok.getType() == LONG)
+            index_step(parser)
+        else
+            unexpectedToken(parser)
+        end
+    end
+
+    def index_step(parser)
+        @index_token = parser.nextToken()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(peekTok.getType() == RIGHT_BRACKET)
+            right_bracket_step(parser)
+        else
+            unexpectedToken(parser)
+        end    
+    end
+
+    def right_bracket_step(parser)
+        parser.discard()
+        peekTok = parser.peek()
+        if(isEOF(peekTok))
+            eofReached(parser)
+        elsif(
+            [
+                EQUAL, PLUS_EQUAL, 
+                MINUS_EQUAL, STAR_EQUAL, 
+                SLASH_EQUAL, CARROT_EQUAL, MOD_EQUAL
+            ].include?(peekTok.getType())
+            )
+            equalStep(parser)
+        else
+            unexpectedToken(parser)
+        end
+    end
+
     def reset
         @var_name = nil
+        @index_token = nil
+        @assignment_operator = nil
         @expression_ast = nil
         @functions = Array.new
         @expression_parser.reset()

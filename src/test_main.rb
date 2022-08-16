@@ -12,8 +12,8 @@ def main()
     test_json = get_test_listing(TEST_MANIFEST_ONE)
     phase_one_tests(failurelog, tracker, test_json)
 
-    #test_json = get_test_listing(TEST_MANIFEST_TWO)
-    #phase_two_tests(failurelog, tracker, test_json)
+    test_json = get_test_listing(TEST_MANIFEST_TWO)
+    phase_two_tests(failurelog, tracker, test_json)
 
     failurelog.close()
     puts tracker.getResults()

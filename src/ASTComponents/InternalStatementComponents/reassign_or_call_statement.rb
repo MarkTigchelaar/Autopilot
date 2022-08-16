@@ -1,10 +1,12 @@
 
 class ReassignmentOrCallStatement
-    def initialize(var_name, assignment_type_token, expression_ast, functions)
+    def initialize(var_name, assignment_type_token, expression_ast, functions, index_token, assignment_operator)
         @var_name = var_name
         @expression_ast = expression_ast
         @functions = functions
         @assignment_type_token = assignment_type_token
+        @index_token = index_token
+        @assignment_operator = assignment_operator
     end
 
     def visit(semantic_analyzer)
