@@ -11,6 +11,14 @@ class InterfaceStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_name()
+        @name
+    end
+
+    def get_functions()
+        @functions
+    end
+
     def toJSON()
         return {
             "type" => "interface",

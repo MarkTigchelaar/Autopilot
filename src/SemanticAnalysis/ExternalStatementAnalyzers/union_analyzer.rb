@@ -5,7 +5,7 @@ class UnionAnalyzer
 
     def analyze_node_locally(union_ast_node)
         check_fields(union_ast_node)
-        @main_analyzer.register_name(union_ast_node.get_name(), "union")
+        #@main_analyzer.register_name(union_ast_node.get_name(), "union")
     end
     
     def check_fields(union_ast_node)

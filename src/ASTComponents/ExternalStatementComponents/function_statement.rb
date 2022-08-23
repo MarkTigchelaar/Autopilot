@@ -14,6 +14,14 @@ class FunctionStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_name()
+        @function_name
+    end
+
+    def get_args()
+        @arguments
+    end
+
     def toJSON()
         ret = nil
         if(@return_type != nil)
@@ -126,6 +134,10 @@ class FunctionArgument
 
     def visit(semantic_analyzer)
         semantic_analyzer.analyze_node_locally(self)
+    end
+
+    def get_name()
+        @var_name
     end
 
     def toJSON()
