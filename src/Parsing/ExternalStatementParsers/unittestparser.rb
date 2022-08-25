@@ -6,7 +6,7 @@ require_relative '../../ASTComponents/ExternalStatementComponents/unittest_state
 class UnittestParser
     def initialize(statement_parser)
         @statement_parser = statement_parser
-        @statements = Array.new()
+        @statements = nil
         @test_name = nil
     end
 
@@ -83,7 +83,7 @@ class UnittestParser
     end
 
     def reset()
-        @statements = Array.new()
+        @statements = nil
         @test_name = nil
     end
 end

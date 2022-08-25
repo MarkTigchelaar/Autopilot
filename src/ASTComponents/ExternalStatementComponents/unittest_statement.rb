@@ -21,6 +21,10 @@ class UnittestStatement
         }
     end
 
+    def getName()
+        @test_name
+    end
+
     def getStatements()
         @statements.toJSON()
     end

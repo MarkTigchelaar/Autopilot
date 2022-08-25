@@ -19,11 +19,8 @@ class EnumAnalyzer
         # Later me, that's who
         for i in (0 .. fields.length - 1) do
             for j in (0 .. fields.length - 1) do
-                if i == j
-                    next
-                elsif j < i
-                    next
-                end
+                next if j <= i
+
                 check_fields_for_duplicate_names(fields[i], fields[j])
                 check_fields_for_duplicate_values(fields[i], fields[j])
                 # Means the enum doesn't have a type, like enum thingy(int) ...

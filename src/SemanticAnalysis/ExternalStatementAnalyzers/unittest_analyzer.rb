@@ -4,6 +4,14 @@ class UnittestAnalyzer
     end
 
     def analyze_node_locally(ast_node)
-        return
+        add_test_name_extern_argument()
+        statements = ast_node.getStatements()
+        @main_analyzer.analyze_node_locally(statements)
+    end
+
+    def add_test_name_extern_argument()
+        name_tok = ast_node.getName()
+        msg = "Name collision, identifier name matches unit test name"
+        @main_analyzer.add_statement_external_argument(msg, name_tok, "test_name")
     end
 end

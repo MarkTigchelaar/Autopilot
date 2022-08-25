@@ -66,6 +66,7 @@ class SemanticAnalyzer
         @interface_analyzer = InterfaceAnalyzer.new(self)
 
         # Internal statements
+        @externArgs = StatementListExternalArgList.new()
         @statement_list_analyzer = StatementListAnalyzer.new(self)
 
         @switch_analyzer = SwitchStatementAnalyzer.new(self)
@@ -114,14 +115,18 @@ class SemanticAnalyzer
             @interface_analyzer.analyze_node_locally(ast_node)
         when "UnionStatement"
             @union_analyzer.analyze_node_locally(ast_node)
+            #@local_variable_declaration_lookup.reset()
         when "UnittestStatement"
             @unittest_analyzer.analyze_node_locally(ast_node)
+            external_statement_reset()
         when "StructStatement"
             @struct_analyzer.analyze_node_locally(ast_node)
+            external_statement_reset()
         #when "StructField"
             #@struct_field_analyzer.analyze_node_locally(ast_node)
         when "FunctionStatement"
             @function_analyzer.analyze_node_locally(ast_node)
+            external_statement_reset()
         #when "FunctionArgument"
             #@function_argument_analyzer.analyze_node_locally(ast_node)
         when "StatementList"
@@ -196,6 +201,35 @@ class SemanticAnalyzer
     def reset()
         @error_list = Array.new()
         @current_module = "_"
-        #@type_definitions.reset()
+        external_statement_reset()
+    end
+
+    def external_statement_reset()
+        @local_variable_declaration_lookup.reset()
+        @externArgs.reset()
+    end
+
+    def declare_local_variable(token)
+        @local_variable_declaration_lookup.declare_variable(token)
+    end
+
+    def inc_scope()
+        @local_variable_declaration_lookup.inc_scope()
+    end
+
+    def dec_scope()
+        @local_variable_declaration_lookup.dec_scope()
+    end
+
+    def variable_is_defined_in_current_scope(token)
+        @local_variable_declaration_lookup.is_defined_in_current_scope(token)
+    end
+
+    def variable_is_same_type_as_defined_variable(token)
+        @local_variable_declaration_lookup.is_same_type_as_defined_variable(token)
+    end
+
+    def add_statement_external_argument(errMsg, token, role)
+        @externArgs.addItem(errMsg, token, role)
     end
 end

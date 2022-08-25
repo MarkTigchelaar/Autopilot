@@ -28,6 +28,7 @@ class LocalVariableDeclarationLookup
         if(is_defined_in_current_scope(token))
             msg = "Name collision, variable declaration matches previous variable declaration"
             make_and_send_error(token, msg)
+            return
         end
         var = LocalVariableTracker.new(token, @scope_level)
         @variable_trackers.append(var)
