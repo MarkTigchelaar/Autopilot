@@ -2,7 +2,6 @@
 class NameExpression
     def initialize(token)
         @token = token
-        @checked = false
     end
 
     def visit(semantic_analyzer)
@@ -11,6 +10,10 @@ class NameExpression
 
     def get_name
         return @token.getText()
+    end
+
+    def getName()
+        @token
     end
 
     def getType

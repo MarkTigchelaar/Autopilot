@@ -6,7 +6,6 @@ class EnumAnalyzer
 
     def analyze_node_locally(enum_ast_node)
         check_fields(enum_ast_node)
-        #@main_analyzer.register_name(enum_ast_node.get_name(), "enum")
     end
 
     def check_fields(enum_ast_node)

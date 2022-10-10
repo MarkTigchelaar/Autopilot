@@ -10,6 +10,18 @@ class PreFixExpression
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def getRhsExp()
+        @rhs_exp
+    end
+
+    def getOperator()
+        @operator
+    end
+
+    def getName()
+        @token
+    end
+
     def _printLiteral(repr_list)
         repr_list.append("(")
         @rhs_exp._printLiteral(repr_list)

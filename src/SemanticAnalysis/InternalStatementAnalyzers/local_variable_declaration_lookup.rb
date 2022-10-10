@@ -1,5 +1,8 @@
 
-
+# Checks that variables which are being used are :
+# 1. Declared previously
+# 2. Are same type, or need to be cataloged
+# 3. Do not collide with previously defined variables
 class LocalVariableDeclarationLookup
     def initialize(analyzer)
         @main_analyzer = analyzer
@@ -24,13 +27,13 @@ class LocalVariableDeclarationLookup
         forget_deeper_scoped_variables()
     end
 
-    def declare_variable(token)
+    def declare_variable(token, access_modifier, type)
         if(is_defined_in_current_scope(token))
             msg = "Name collision, variable declaration matches previous variable declaration"
             make_and_send_error(token, msg)
             return
         end
-        var = LocalVariableTracker.new(token, @scope_level)
+        var = LocalVariableTracker.new(token, access_modifier, type, @scope_level)
         @variable_trackers.append(var)
     end
 
@@ -71,8 +74,10 @@ class LocalVariableDeclarationLookup
 end
 
 class LocalVariableTracker
-    def initialize(variable_token, scope_level)
+    def initialize(variable_token, access_modifier, type, scope_level)
         @token = variable_token
+        @access_modifier = access_modifier
+        @type = type
         @scope_level = scope_level
     end
 
@@ -83,9 +88,9 @@ class LocalVariableTracker
         return false
     end
 
-    def recognized_token_is_same_type(other_token)
+    def recognized_token_is_same_type(other_token, type)
         if(recognizes_token(other_token))
-            if(@token.getType() == other_token.getType())
+            if(@type == type)
                 return true
             end
         end

@@ -4,6 +4,21 @@ class NameExpAnalyzer
     end
 
     def analyze_node_locally(ast_node)
-        return
+        name = ast_node.getName()
+        @main_analyzer.check_if_external_identifier(name)
+        unless @main_analyzer.variable_is_defined_in_current_scope(name)
+            msg = "Identifier is not defined."
+            make_and_send_error(name, msg)
+        end
+        @main_analyzer.setExpressionType(name)
+    end
+
+    def make_and_send_error(field_one, message)
+        err = Hash.new()
+        err["file"] = field_one.getFilename()
+        err["tokenLiteral"] = field_one.getText()
+        err["lineNumber"] = field_one.getLine()
+        err["message"] = message
+        @main_analyzer.add_semantic_error(err)
     end
 end

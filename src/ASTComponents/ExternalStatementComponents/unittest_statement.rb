@@ -17,7 +17,7 @@ class UnittestStatement
                 "type" => @test_name.getType(),
                 "line_number" => @test_name.getLine()
             },
-            "statements" => getStatements()
+            "statements" => getStatementsJSON()
         }
     end
 
@@ -26,6 +26,10 @@ class UnittestStatement
     end
 
     def getStatements()
+        @statements
+    end
+
+    def getStatementsJSON()
         @statements.toJSON()
     end
 

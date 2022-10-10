@@ -4,7 +4,6 @@ class ModuleAnalyzer
     end
 
     def analyze_node_locally(ast_node)
-        # nothing to do for local analysis
-        return
+        @main_analyzer.set_current_module(ast_node.getName())
     end
 end

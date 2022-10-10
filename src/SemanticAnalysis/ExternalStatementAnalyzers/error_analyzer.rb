@@ -5,7 +5,6 @@ class ErrorAnalyzer
 
     def analyze_node_locally(ast_node)
         check_fields(ast_node)
-        #@main_analyzer.register_name(ast_node.get_name(), "error")
     end
 
     def check_fields(error_ast_node)

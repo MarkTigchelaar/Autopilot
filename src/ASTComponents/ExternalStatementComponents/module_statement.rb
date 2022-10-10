@@ -8,6 +8,10 @@ class ModuleStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def getName()
+        @moduleinfo
+    end
+
     def toJSON()
         return {
             "type" => "module",

@@ -20,13 +20,13 @@ class AssignmentStatement
                 "type" => @name.getType(),
                 "line_number" => @name.getLine()
             },
-            "variable_type" => getType(),
+            "variable_type" => getTypeJSON(),
             "assignment_type" => @let_or_var.getType(),
             "rvalue" => @expression_ast.toJSON()
         }
     end
 
-    def getType()
+    def getTypeJSON()
         if(@type)
             return {
                 "literal" => @type.getText(),
@@ -36,6 +36,22 @@ class AssignmentStatement
         else
             return nil
         end
+    end
+
+    def getName()
+        @name
+    end
+
+    def getTypeName()
+        @type
+    end
+
+    def getLetOrVar()
+        @let_or_var
+    end
+
+    def getExpressionAst
+        @expression_ast
     end
 
     def usesLet

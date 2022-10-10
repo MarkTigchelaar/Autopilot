@@ -1,7 +1,3 @@
-require_relative './call_graph_analyzer.rb'
-require_relative './reference_graph_analyzer.rb'
-#require_relative './type_definition_lookup.rb'
-
 require_relative './ExternalStatementAnalyzers/struct_analyzer.rb'
 require_relative './ExternalStatementAnalyzers/function_analyzer.rb'
 require_relative './ExternalStatementAnalyzers/define_analyzer.rb'
@@ -13,6 +9,7 @@ require_relative './ExternalStatementAnalyzers/union_analyzer.rb'
 require_relative './ExternalStatementAnalyzers/unittest_analyzer.rb'
 require_relative './ExternalStatementAnalyzers/interface_analyzer.rb'
 
+require_relative './statement_list_analyzer_arg_list.rb'
 require_relative './InternalStatementAnalyzers/statement_list_analyzer.rb'
 require_relative './InternalStatementAnalyzers/switch_analyzer.rb'
 require_relative './InternalStatementAnalyzers/assignment_analyzer.rb'
@@ -27,7 +24,6 @@ require_relative './InternalStatementAnalyzers/while_analyzer.rb'
 require_relative './InternalStatementAnalyzers/continue_analyzer.rb'
 require_relative './InternalStatementAnalyzers/break_analyzer.rb'
 require_relative './InternalStatementAnalyzers/return_analyzer.rb'
-require_relative './InternalStatementAnalyzers/local_variable_declaration_lookup.rb'
 
 require_relative './ExpressionAnalyzers/function_call_analyzer.rb'
 require_relative './ExpressionAnalyzers/method_call_analyzer.rb'
@@ -35,6 +31,8 @@ require_relative './ExpressionAnalyzers/collection_call_analyzer.rb'
 require_relative './ExpressionAnalyzers/operator_analyzer.rb'
 require_relative './ExpressionAnalyzers/name_analyzer.rb'
 require_relative './ExpressionAnalyzers/prefix_analyzer.rb'
+
+require_relative './analysis_utilities.rb'
 
 #remember to not use this if the syntax analyzer has errors already
 # semantic errors can still happen before syntax errors, so allow for that.
@@ -45,17 +43,8 @@ class SemanticAnalyzer
         @current_module = "_"
         @current_module = test_config.module_name() if test_config
 
-        @reference_graph_analyzer = ReferenceGraphAnalyzer.new()
-        @function_call_graph_analyzer = CallGraphAnalyzer.new()
-        #@reference_ownership_analyzer = ReferenceOwnershipAnalyzer.new() #<- shared object between struct analyzer and function analyzer?
-        #@variable_lifetime_analyzer = VariableLifetimeAnalyzer.new() #variables might go through a lot of functions etc. <- should this be in the function analyzer?
-
-        #@type_definitions = TypeDefinitionLookup.new(self)# <- lookup table for seen reference / complex types: structs, unions, enums, interfaces
-
         @function_analyzer = FunctionAnalyzer.new(self)
-        #@function_argument_analyzer = FunctionArgumentAnalyzer.new(self)
         @struct_analyzer = StructAnalyzer.new(self)
-        #@struct_field_analyzer = StructFieldAnalyzer.new(self)
         @define_analyzer = DefineAnalyzer.new(self)
         @enum_analyzer = EnumAnalyzer.new(self)
         @error_analyzer = ErrorAnalyzer.new(self)
@@ -65,9 +54,6 @@ class SemanticAnalyzer
         @unittest_analyzer = UnittestAnalyzer.new(self)
         @interface_analyzer = InterfaceAnalyzer.new(self)
 
-        # Internal statements
-        @externArgs = StatementListExternalArgList.new()
-        @statement_list_analyzer = StatementListAnalyzer.new(self)
 
         @switch_analyzer = SwitchStatementAnalyzer.new(self)
         @case_statement_analyzer = CaseStatementAnalyzer.new(self)
@@ -88,8 +74,6 @@ class SemanticAnalyzer
         @break_analyzer = BreakAnalyzer.new(self)
         @return_analyzer = ReturnAnalyzer.new(self)
 
-        @local_variable_declaration_lookup = LocalVariableDeclarationLookup.new(self)
-
         # expressions
         @function_call_analyzer = FunctionCallExpAnalyzer.new(self)
         @method_call_analyzer = MethodCallExpAnalyzer.new(self)
@@ -97,6 +81,7 @@ class SemanticAnalyzer
         @operator_analyzer = OperatorExpAnalyzer.new(self)
         @name_analyzer = NameExpAnalyzer.new(self)
         @prefix_analyzer = PrefixExpAnalyzer.new(self)
+        @expression_type = nil
     end
 
     def analyze_node_locally(ast_node)
@@ -115,20 +100,12 @@ class SemanticAnalyzer
             @interface_analyzer.analyze_node_locally(ast_node)
         when "UnionStatement"
             @union_analyzer.analyze_node_locally(ast_node)
-            #@local_variable_declaration_lookup.reset()
         when "UnittestStatement"
             @unittest_analyzer.analyze_node_locally(ast_node)
-            external_statement_reset()
         when "StructStatement"
             @struct_analyzer.analyze_node_locally(ast_node)
-            external_statement_reset()
-        #when "StructField"
-            #@struct_field_analyzer.analyze_node_locally(ast_node)
         when "FunctionStatement"
             @function_analyzer.analyze_node_locally(ast_node)
-            external_statement_reset()
-        #when "FunctionArgument"
-            #@function_argument_analyzer.analyze_node_locally(ast_node)
         when "StatementList"
             @statement_list_analyzer.analyze_node_locally(ast_node)
         when "PreFixExpression"
@@ -176,15 +153,6 @@ class SemanticAnalyzer
         end
     end
 
-    # def register_name(name_tok, construct_type_tok)
-    #     @type_definitions.register_name(@current_module, name_tok, construct_type_tok)
-    # end
-
-    # # This is used AFTER first pass of parser / SA of the ENTIRE FILE
-    # def is_type_defined(type_token)
-    #     @type_definitions.check_for_definition(type_token)
-    # end
-
     def set_current_module(current)
         @current_module = current
     end
@@ -201,35 +169,30 @@ class SemanticAnalyzer
     def reset()
         @error_list = Array.new()
         @current_module = "_"
-        external_statement_reset()
     end
 
-    def external_statement_reset()
-        @local_variable_declaration_lookup.reset()
-        @externArgs.reset()
+    def getExpressionType()
+        @expression_type
     end
 
-    def declare_local_variable(token)
-        @local_variable_declaration_lookup.declare_variable(token)
+    def setExpressionType(typeToken = nil)
+        @expression_type = typeToken
     end
 
-    def inc_scope()
-        @local_variable_declaration_lookup.inc_scope()
-    end
+    def astSubTreeCompatableWithOperator(operator)
+        compatabilityList = getCompatabilityListForOperator(operator)
+        for item in compatabilityList
+            if item == @expression_type.getType()
+                return true
+            elsif @expression_type.getType() == IDENTIFIER
+                if variable_is_defined_in_current_scope(@expression_type)
+                    raise Exception.new("code goes here for checking identifier type")
+                else
+                    raise Exception.new("file info away for round 2 of SA, need organized data store")
+                end
+            #else
 
-    def dec_scope()
-        @local_variable_declaration_lookup.dec_scope()
-    end
-
-    def variable_is_defined_in_current_scope(token)
-        @local_variable_declaration_lookup.is_defined_in_current_scope(token)
-    end
-
-    def variable_is_same_type_as_defined_variable(token)
-        @local_variable_declaration_lookup.is_same_type_as_defined_variable(token)
-    end
-
-    def add_statement_external_argument(errMsg, token, role)
-        @externArgs.addItem(errMsg, token, role)
+            end
+        end
     end
 end

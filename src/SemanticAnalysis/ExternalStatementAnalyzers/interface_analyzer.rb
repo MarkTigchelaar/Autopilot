@@ -5,7 +5,6 @@ class InterfaceAnalyzer
 
     def analyze_node_locally(ast_node)
         check_fields(ast_node)
-        #@main_analyzer.register_name(ast_node.get_name(), "interface")
     end
 
     def check_fields(ast_node)

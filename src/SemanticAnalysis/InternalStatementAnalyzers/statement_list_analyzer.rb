@@ -4,6 +4,8 @@ class StatementListAnalyzer
     end
 
     def analyze_node_locally(ast_node)
-        return
+        for statement in ast_node.getStatements() do
+            @main_analyzer.analyze_node_locally(statement)
+        end
     end
 end

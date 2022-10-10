@@ -12,6 +12,10 @@ class StatementList
         return @statements.length()
     end
 
+    def getStatements()
+        @statements
+    end
+
     def toJSON()
         stmts = Array.new()
         for s in @statements
