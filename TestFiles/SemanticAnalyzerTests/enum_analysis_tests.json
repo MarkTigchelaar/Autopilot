@@ -83,17 +83,6 @@
         ]
     },
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test13.ap",
-        "errors" : [
-            {
-                "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test13.ap",
-                "tokenLiteral" : "test1",
-                "lineNumber" : "5",
-                "message" : "Name collision, _.test1 of type \"enum\" name matches item of same type (enum)"
-            }
-        ]
-    },
-    {
         "file" : "../Testfiles/SemanticAnalyzerTests/EnumTests/test14.ap",
         "errors" : [
             {

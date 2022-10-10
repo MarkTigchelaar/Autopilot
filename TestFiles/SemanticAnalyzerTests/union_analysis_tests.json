@@ -26,17 +26,6 @@
         ]
     },
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test4.ap",
-        "errors" : [
-            {
-                "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test4.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "6",
-                "message" : "Name collision, _.test of type \"union\" name matches item of same type (union)"
-            }
-        ]
-    },
-    {
         "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test5.ap",
         "errors" : null
     }

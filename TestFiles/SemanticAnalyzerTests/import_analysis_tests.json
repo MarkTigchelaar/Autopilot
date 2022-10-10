@@ -17,16 +17,5 @@
                 "message" : "Duplicate import field name"
             }
         ]
-    },
-    {
-        "file" : "../Testfiles/SemanticAnalyzerTests/ImportTests/test4.ap",
-        "errors" : [
-            {
-                "file" : "../Testfiles/SemanticAnalyzerTests/ImportTests/test4.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "2",
-                "message" : "Name collision, _.test of type \"import\" name matches item of same type (import)"
-            }
-        ]
     }
 ]

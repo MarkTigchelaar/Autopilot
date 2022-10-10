@@ -24,16 +24,5 @@
                 "message" : "Name collision, error field matches error name"
             }
         ]
-    },
-    {
-        "file" : "../Testfiles/SemanticAnalyzerTests/ErrorTests/test4.ap",
-        "errors" : [
-            {
-                "file" : "../Testfiles/SemanticAnalyzerTests/ErrorTests/test4.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "5",
-                "message" : "Name collision, _.test of type \"error\" name matches item of same type (error)"
-            }
-        ]
     }
 ]
