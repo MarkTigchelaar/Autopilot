@@ -5,12 +5,15 @@ class NameExpAnalyzer
 
     def analyze_node_locally(ast_node)
         name = ast_node.getName()
-        @main_analyzer.check_if_external_identifier(name)
-        unless @main_analyzer.variable_is_defined_in_current_scope(name)
-            msg = "Identifier is not defined."
-            make_and_send_error(name, msg)
+        #@main_analyzer.check_if_external_identifier(name)
+        #unless @main_analyzer.variable_is_defined_in_current_scope(name)
+        #    msg = "Identifier is not defined."
+        #    make_and_send_error(name, msg)
+        #end
+        if name.getType() == IDENTIFIER
+            raise Exception.new("Only constants are implemented currently")
         end
-        @main_analyzer.setExpressionType(name)
+        @main_analyzer.setExpressionTypeToken(name)
     end
 
     def make_and_send_error(field_one, message)

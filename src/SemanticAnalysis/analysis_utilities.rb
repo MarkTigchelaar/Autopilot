@@ -10,7 +10,7 @@ def getCompatabilityListForOperator(token)
         compatabilityList.append(LONG)
         compatabilityList.append(FLOAT)
         compatabilityList.append(DOUBLE)
-        compatabilityList.append(STRING) # remove substrings
+        #compatabilityList.append(STRING) # remove substrings
     when PLUS
         compatabilityList.append(INT)
         compatabilityList.append(LONG)

@@ -27,7 +27,7 @@ require_relative './InternalStatementAnalyzers/return_analyzer.rb'
 
 require_relative './ExpressionAnalyzers/function_call_analyzer.rb'
 require_relative './ExpressionAnalyzers/method_call_analyzer.rb'
-require_relative './ExpressionAnalyzers/collection_call_analyzer.rb'
+require_relative './ExpressionAnalyzers/collection_analyzer.rb'
 require_relative './ExpressionAnalyzers/operator_analyzer.rb'
 require_relative './ExpressionAnalyzers/name_analyzer.rb'
 require_relative './ExpressionAnalyzers/prefix_analyzer.rb'
@@ -171,11 +171,11 @@ class SemanticAnalyzer
         @current_module = "_"
     end
 
-    def getExpressionType()
+    def getExpressionTypeToken()
         @expression_type
     end
 
-    def setExpressionType(typeToken = nil)
+    def setExpressionTypeToken(typeToken = nil)
         @expression_type = typeToken
     end
 
@@ -185,13 +185,7 @@ class SemanticAnalyzer
             if item == @expression_type.getType()
                 return true
             elsif @expression_type.getType() == IDENTIFIER
-                if variable_is_defined_in_current_scope(@expression_type)
-                    raise Exception.new("code goes here for checking identifier type")
-                else
-                    raise Exception.new("file info away for round 2 of SA, need organized data store")
-                end
-            #else
-
+                raise Exception.new("non constants are not implemented yet")
             end
         end
     end

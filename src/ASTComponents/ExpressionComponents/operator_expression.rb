@@ -1,15 +1,30 @@
 
 class OperatorExpresison
-    def initialize(token, lhs_exp, token_type, rhs_exp)
+    def initialize(token, lhs_exp, rhs_exp)
         @lhs = lhs_exp
         @rhs = rhs_exp
-        @type = token_type
+        @type = token.getType()
         @token = token
-        @checked = false
     end
 
     def visit(semantic_analyzer)
         semantic_analyzer.analyze_node_locally(self)
+    end
+
+    def getRhsExp()
+        return @rhs
+    end
+
+    def getLhsExp()
+        return @lhs
+    end
+
+    def getName()
+        return getOperator()
+    end
+
+    def getOperator()
+        return @token
     end
 
     def _printLiteral(repr_list)

@@ -10,8 +10,6 @@ class PrefixExpAnalyzer
             msg = "Operator cannot be applied to expression"
             make_and_send_error(ast_node.getName(), msg)
         end
-        # might not need to set expression type, since operator, (if compatible) keep the sub trees type
-        # unless it's a binary operator, in that case != <= etc take numbers, returns bool
     end
 
     def make_and_send_error(field_one, message)

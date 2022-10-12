@@ -1,7 +1,7 @@
 
 class CallExpression
-    def initialize(token, expression, arguments)
-        @function = expression
+    def initialize(token, name, arguments)
+        @function = name
         @args = arguments
         @token = token
         @checked = false
@@ -9,6 +9,10 @@ class CallExpression
 
     def visit(semantic_analyzer)
         semantic_analyzer.analyze_node_locally(self)
+    end
+
+    def getArguments()
+        return @args
     end
 
     def toJSON()

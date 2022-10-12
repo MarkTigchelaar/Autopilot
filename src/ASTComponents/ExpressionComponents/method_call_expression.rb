@@ -2,11 +2,15 @@
 class MethodCallExpression
     def initialize(struct_name_token, methods)
         @struct_name = struct_name_token
-        @methods = methods
+        @methods = methods #might be fields, if public!, might be enums / unions!
     end
 
     def visit(semantic_analyzer)
         semantic_analyzer.analyze_node_locally(self)
+    end
+
+    def getMethods()
+        return @methods
     end
 
     def toJSON()

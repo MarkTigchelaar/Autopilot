@@ -73,7 +73,6 @@ class DefineParser
         elsif(peekTok.getType() == LEFT_PAREN)
             leftParenLinearStep(parser)
         else
-            puts "________________HERE_________________"
             unexpectedToken(parser)
         end
     end

@@ -12,7 +12,7 @@ class AssignmentAnalyzer
         
         @main_analyzer.analyze_node_locally(ast_node.getExpressionAst())
         type = ast_node.getTypeName()
-        exp_type = @main_analyzer.getExpressionType()
+        exp_type = @main_analyzer.getExpressionTypeToken()
         if type.nil? && exp_type.nil?
             raise Exception.new("Assignment variable type could not be determined")
         elsif type.nil?
@@ -21,7 +21,7 @@ class AssignmentAnalyzer
             msg = "Expressions value does not resolve to assigned variables type"
             make_and_send_error(type, msg)
         end
-        @main_analyzer.declare_local_variable(name, accessor, type)
+        #@main_analyzer.declare_local_variable(name, accessor, type)
     end
 
     def make_and_send_error(field_one, message)

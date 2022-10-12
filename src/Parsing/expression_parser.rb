@@ -263,7 +263,7 @@ class ExpressionParser
             precedence -= 1
         end
         rhs_exp = _parse(precedence)
-        return OperatorExpresison.new(token, lhs_exp, token.getType(), rhs_exp)
+        return OperatorExpresison.new(token, lhs_exp, rhs_exp)
     end
 
     def parse_method_call(left_exp, token)

@@ -14,8 +14,6 @@ class EnumAnalyzer
             raise Exception.new("Items are nil, they should not be")
         end
         check_if_enum_is_allowed_enum_type(enum_ast_node)
-        # Brute force, but who cares?
-        # Later me, that's who
         for i in (0 .. fields.length - 1) do
             for j in (0 .. fields.length - 1) do
                 next if j <= i

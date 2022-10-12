@@ -12,6 +12,6 @@ class UnittestAnalyzer
     def add_test_name_extern_argument()
         name_tok = ast_node.getName()
         msg = "Name collision, identifier name matches unit test name"
-        @main_analyzer.add_statement_external_identifier(msg, name_tok, "test_name")
+        #@main_analyzer.add_statement_external_identifier(msg, name_tok, "test_name")
     end
 end

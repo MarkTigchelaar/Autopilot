@@ -4,11 +4,26 @@ class CollectionExpression
         @left_bracket = left_bracket
         @elements = elements
         @right_bracket = right_bracket
-        @checked = false
     end
 
     def visit(semantic_analyzer)
         semantic_analyzer.analyze_node_locally(self)
+    end
+
+    def getName()
+        return nil
+    end
+
+    def leftBracket()
+        return @left_bracket
+    end
+
+    def rightBracket()
+        return @right_bracket
+    end
+
+    def getElements()
+        return @elements
     end
 
     def _printLiteral(repr_list)
