@@ -1,13 +1,13 @@
 [
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/ErrorTests/test1.ap",
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test1.ap",
         "errors" : null
     },
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/ErrorTests/test2.ap",
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test2.ap",
         "errors" : [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/ErrorTests/test2.ap",
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test2.ap",
                 "tokenLiteral" : "field1",
                 "lineNumber" : "2",
                 "message" : "Duplicate enum field name"
@@ -15,10 +15,10 @@
         ]
     },
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/ErrorTests/test3.ap",
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test3.ap",
         "errors" : [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/ErrorTests/test3.ap",
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test3.ap",
                 "tokenLiteral" : "test",
                 "lineNumber" : "4",
                 "message" : "Name collision, error field matches error name"

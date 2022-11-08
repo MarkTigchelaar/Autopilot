@@ -8,6 +8,22 @@ class ElifStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_unwrapped_var()
+        @if_statement.get_unwrapped_var()
+    end
+
+    def get_option()
+        @if_statement.get_option()
+    end
+
+    def get_ast()
+        @if_statement.get_ast()
+    end
+
+    def get_statements()
+        @if_statement.get_statements()
+    end
+
     def toJSON()
         json = @if_statement.toJSON()
         json["type"] = "elif"

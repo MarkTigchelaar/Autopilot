@@ -9,6 +9,14 @@ class BreakStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_loop_label()
+        @loop_label
+    end
+
+    def get_info()
+        @information
+    end
+
     def _printLiteral
         if(@loop_label != nil)
             return @loop_label.getText() + ", " + @information.getText()

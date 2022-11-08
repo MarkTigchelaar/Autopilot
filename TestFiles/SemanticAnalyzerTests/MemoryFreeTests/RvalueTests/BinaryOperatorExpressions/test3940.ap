@@ -1,0 +1,4 @@
+fun function() do
+   let a as float = 2147483648 % 10.12345678
+end
+

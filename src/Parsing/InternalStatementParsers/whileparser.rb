@@ -23,7 +23,6 @@ class WhileParser
         elsif(isValidIdentifier(peekTok) or is_boolean_keyword(peekTok))
             parseExpression(parser)
         else
-            puts "HERE!!!!!!!"
             unexpectedToken(parser)
         end
         w = WhileStatement.new(@loop_name, @expression_ast, @statements)

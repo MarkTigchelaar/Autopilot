@@ -86,7 +86,7 @@ class ExpressionParser
     def _parse(precedence)
         token = _peek()
         if(token == nil)
-            raise Exception.new("INCORRECT!")
+            raise Exception.new("INTERNAL ERROR: token is null")
         end
         if(hasErrors())
             return nil
@@ -102,6 +102,7 @@ class ExpressionParser
     end
 
     def parse_prefix_expression()
+        
         token = _next()
         return case token.getType()
         when MINUS
@@ -121,8 +122,12 @@ class ExpressionParser
         if(isEOF(_peek()))
             eofReached(self)
             return nil
-        elsif(!isIdentifier(_peek()))
-            msg = "Unexpected token #{token.getText()}."
+        end
+        rhs = nil
+        #els
+        unless(is_string_or_char(_peek()) or isIdentifier(_peek()) or is_boolean_keyword(_peek()) or isInt(_peek()) or isFloat(_peek()))
+        #elsif(!isIdentifier(_peek()))
+            msg = "Unexpected token #{_peek().getText()}."
             addError(token, msg)
             return nil
         end

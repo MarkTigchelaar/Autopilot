@@ -5,5 +5,6 @@ class ContinueAnalyzer
 
     def analyze_node_locally(ast_node)
         return
+        # just need to check if inside a loop, see break analyzer
     end
 end

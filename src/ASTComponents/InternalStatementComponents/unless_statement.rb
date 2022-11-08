@@ -23,6 +23,22 @@ class UnlessStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_unwrapped_var()
+        nil
+    end
+
+    def get_option()
+        nil
+    end
+
+    def get_ast()
+        @if_statement.get_ast()
+    end
+
+    def get_statements()
+        @if_statement.get_statements()
+    end
+
     def toJSON()
         json = @if.toJSON()
         json["type"] = "unless"

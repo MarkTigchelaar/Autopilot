@@ -5,9 +5,10 @@ class PrefixExpAnalyzer
 
     def analyze_node_locally(ast_node)
         @main_analyzer.analyze_node_locally(ast_node.getRhsExp())
-        operator = ast_node.getOperator()
+        operator = ast_node.getName()
+        exp_type = @main_analyzer.getExpressionTypeToken()
         unless @main_analyzer.astSubTreeCompatableWithOperator(operator)
-            msg = "Operator cannot be applied to expression"
+            msg = "Operator \"#{operator.getText()}\" cannot be applied to expression of type \"#{exp_type.getType().downcase()}\""
             make_and_send_error(ast_node.getName(), msg)
         end
     end

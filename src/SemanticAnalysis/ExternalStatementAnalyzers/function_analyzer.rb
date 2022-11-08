@@ -4,16 +4,7 @@ class FunctionAnalyzer
     end
 
     def analyze_node_locally(ast_node)
-        return
+        stmts = ast_node.get_statements()
+        @main_analyzer.analyze_node_locally(stmts)
     end
 end
-
-# class FunctionArgumentAnalyzer
-#     def initialize(main_analyzer)
-#         @main_analyzer = main_analyzer
-#     end
-
-#     def analyze_node_locally(ast_node)
-#         return
-#     end
-# end

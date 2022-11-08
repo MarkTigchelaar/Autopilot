@@ -1,0 +1,4 @@
+fun function() do
+   let a as string = "str" nor 10.12345678
+end
+

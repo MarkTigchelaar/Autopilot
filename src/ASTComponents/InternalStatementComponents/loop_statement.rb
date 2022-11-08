@@ -9,6 +9,14 @@ class LoopStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_name()
+        @name
+    end
+
+    def get_statements()
+        @sub_statements
+    end
+
     def toJSON()
         return {
             "type" => "loop",

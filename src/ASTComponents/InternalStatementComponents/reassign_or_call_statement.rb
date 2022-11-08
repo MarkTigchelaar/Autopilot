@@ -13,6 +13,26 @@ class ReassignmentOrCallStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_name()
+        @var_name
+    end
+
+    def get_expressions()
+        @expression_ast
+    end
+
+    def get_functions()
+        @functions
+    end
+
+    def get_index_token()
+        @index_token
+    end
+
+    def get_assignment_operator()
+        @assignment_operator
+    end
+
     def toJSON()
         funcs = Array.new()
         if(@functions != nil)

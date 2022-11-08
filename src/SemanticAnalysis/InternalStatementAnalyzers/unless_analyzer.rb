@@ -1,9 +1,11 @@
-class UnlessAnalyzer
+require_relative '.\if_analyzer.rb'
+
+class UnlessAnalyzer < IfAnalyzer
     def initialize(main_analyzer)
         @main_analyzer = main_analyzer
     end
 
     def analyze_node_locally(ast_node)
-        return
+        super(ast_node)
     end
 end

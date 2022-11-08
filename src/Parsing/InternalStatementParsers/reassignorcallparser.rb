@@ -139,6 +139,11 @@ class ReassignOrCallParser
             eofReached(parser)
         elsif(peekTok.getType() == LEFT_PAREN)
             callFuncStep(parser, name)
+        #elsif( ... == LEFT_bracket)
+            # index_access_step()
+        #elsif(... == DOT)
+        # is a public field
+            # dotStep()
         else
             unexpectedToken(parser)
         end

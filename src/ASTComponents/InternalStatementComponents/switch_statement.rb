@@ -10,6 +10,18 @@ class SwitchStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_test_case()
+        @test_case
+    end
+
+    def get_case_statements()
+        @case_statements
+    end
+
+    def get_default_case()
+        @default_case
+    end
+
     def toJSON()
         return {
             "type" => "switch",
@@ -70,8 +82,12 @@ class CaseStatement
         @statements = statements
     end
 
-    def visit(semantic_analyzer)
-        semantic_analyzer.analyze_node_locally(self)
+    def get_values()
+        @values
+    end
+
+    def get_statements()
+        @statements
     end
 
     def toJSON()

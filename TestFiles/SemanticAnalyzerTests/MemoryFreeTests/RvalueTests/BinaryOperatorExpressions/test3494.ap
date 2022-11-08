@@ -1,0 +1,4 @@
+fun function() do
+   let a as long = true nand 'a'
+end
+

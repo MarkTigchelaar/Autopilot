@@ -98,7 +98,7 @@ def isForbiddenInExpressions(token)
 end
 
 def is_boolean_keyword(token)
-    case token.getType()
+    case token.getText().upcase()
     when TRUE
         true
     when FALSE

@@ -1,13 +1,13 @@
 [
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test1.ap",
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/UnionTests/test1.ap",
         "errors" : null
     },
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test2.ap",
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/UnionTests/test2.ap",
         "errors" : [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test2.ap",
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/UnionTests/test2.ap",
                 "tokenLiteral" : "field",
                 "lineNumber" : "3",
                 "message" : "Duplicate union field name"
@@ -15,10 +15,10 @@
         ]
     },
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test3.ap",
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/UnionTests/test3.ap",
         "errors" : [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test3.ap",
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/UnionTests/test3.ap",
                 "tokenLiteral" : "field2",
                 "lineNumber" : "3",
                 "message" : "Duplicate union field type \"int\""
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "file" : "../Testfiles/SemanticAnalyzerTests/UnionTests/test5.ap",
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/UnionTests/test5.ap",
         "errors" : null
     }
 ]

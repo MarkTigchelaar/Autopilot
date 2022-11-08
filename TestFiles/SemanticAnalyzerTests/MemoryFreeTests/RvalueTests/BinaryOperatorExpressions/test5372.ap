@@ -1,0 +1,4 @@
+fun function() do
+   let a as bool = 'a' != 10
+end
+

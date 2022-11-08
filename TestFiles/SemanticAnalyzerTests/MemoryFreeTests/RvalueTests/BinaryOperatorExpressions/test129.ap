@@ -1,0 +1,4 @@
+fun function() do
+   let a as char = "str" + 10
+end
+

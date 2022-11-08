@@ -75,7 +75,6 @@ class Parser
             type  = type_declarations()
             if(type != nil)
                 if @analyze_semantics
-                    #puts "visiting node for analysis"
                     type.visit(@semantic_analyzer)
                 end
                 ast.append(type)

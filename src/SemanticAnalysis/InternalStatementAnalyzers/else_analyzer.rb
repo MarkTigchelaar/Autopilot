@@ -4,6 +4,7 @@ class ElseAnalyzer
     end
 
     def analyze_node_locally(ast_node)
-        return
+        statements = ast_node.get_statements()
+        @main_analyzer.analyze_node_locally(statements)
     end
 end

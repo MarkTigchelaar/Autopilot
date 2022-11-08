@@ -1,0 +1,4 @@
+fun function() do
+   let a as double = "str" xor 10.7
+end
+

@@ -1,0 +1,4 @@
+fun function() do
+   let a as string = 10.12345678 nand 2147483648
+end
+

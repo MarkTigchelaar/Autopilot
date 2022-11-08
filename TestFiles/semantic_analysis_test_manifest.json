@@ -14,5 +14,13 @@
     {
         "general_component" : "import",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/import_analysis_tests.json"
+    },
+    {
+        "general_component" : "rvalues",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/rvalue_analysis_tests.json"
+    },
+    {
+        "general_component" : "rbinvalues",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/rvalue_bin_operator_tests.json"
     }
 ]

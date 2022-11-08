@@ -4,6 +4,9 @@ class ReturnAnalyzer
     end
 
     def analyze_node_locally(ast_node)
-        return
+        return_expression = ast_node.get_ast()
+        unless return_expression.nil?
+            @main_analyzer.analyze_node_locally(return_expression)
+        end
     end
 end

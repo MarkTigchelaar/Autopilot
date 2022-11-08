@@ -16,6 +16,10 @@ class ForStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_name()
+        @loop_name
+    end
+
     def toJSON()
         json = Hash.new()
         json["type"] = "forloop"

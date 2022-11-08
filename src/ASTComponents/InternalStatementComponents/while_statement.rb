@@ -10,6 +10,18 @@ class WhileStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_name()
+        @loop_name
+    end
+
+    def get_ast()
+        @expression_ast
+    end
+
+    def get_statements()
+        @statememts
+    end
+
     def toJSON()
         return {
             "name" => get_name(),

@@ -9,7 +9,7 @@ require_relative './ExternalStatementAnalyzers/union_analyzer.rb'
 require_relative './ExternalStatementAnalyzers/unittest_analyzer.rb'
 require_relative './ExternalStatementAnalyzers/interface_analyzer.rb'
 
-require_relative './statement_list_analyzer_arg_list.rb'
+#require_relative './statement_list_analyzer_arg_list.rb'
 require_relative './InternalStatementAnalyzers/statement_list_analyzer.rb'
 require_relative './InternalStatementAnalyzers/switch_analyzer.rb'
 require_relative './InternalStatementAnalyzers/assignment_analyzer.rb'
@@ -56,7 +56,7 @@ class SemanticAnalyzer
 
 
         @switch_analyzer = SwitchStatementAnalyzer.new(self)
-        @case_statement_analyzer = CaseStatementAnalyzer.new(self)
+        @statement_list_analyzer = StatementListAnalyzer.new(self)
 
         @assignment_analyzer = AssignmentAnalyzer.new(self)
         @reassign_or_call_analyzer = ReAssignOrCallAnalyzer.new(self)
@@ -188,5 +188,18 @@ class SemanticAnalyzer
                 raise Exception.new("non constants are not implemented yet")
             end
         end
+        return false
+    end
+
+    def is_inside_loop()
+        false
+    end
+
+    def get_loop_names()
+        unless is_inside_loop()
+            raise Exception.new("Internal error, not currently in loop")
+        end
+        names = Array.new()
+        return names
     end
 end

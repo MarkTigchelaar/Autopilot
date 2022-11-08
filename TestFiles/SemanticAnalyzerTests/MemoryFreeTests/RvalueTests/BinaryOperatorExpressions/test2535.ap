@@ -1,0 +1,4 @@
+fun function() do
+   let a as int = true * 'a'
+end
+

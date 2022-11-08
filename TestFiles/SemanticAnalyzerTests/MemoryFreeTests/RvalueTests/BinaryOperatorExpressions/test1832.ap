@@ -1,0 +1,4 @@
+fun function() do
+   let a as int = 'a' >= 10.7
+end
+

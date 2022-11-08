@@ -22,6 +22,10 @@ class FunctionStatement
         @arguments
     end
 
+    def get_statements()
+        @statements
+    end
+
     def toJSON()
         ret = nil
         if(@return_type != nil)

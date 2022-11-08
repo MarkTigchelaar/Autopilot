@@ -216,8 +216,15 @@ class Scanner
             @charScanner.shiftRight()
         end
 
+        #if(["true", "false"].include?(@charScanner.getSlice()))
+            #addToken(BOOL)
+        #els
         if(matchesGeneralKeyWord(@charScanner.getSlice()))
-            addToken(@charScanner.getSlice().upcase)
+            t_type = @charScanner.getSlice().upcase
+            if(["TRUE", "FALSE"].include?(t_type))
+                t_type = BOOL
+            end
+            addToken(t_type)
         else
             addToken(IDENTIFIER)
         end
@@ -236,10 +243,27 @@ class Scanner
             end
         end
 
+        
+
         if(isfloat)
-            addToken(FLOAT)
+            max_f32 = 0
+            as_f32 = @charScanner.getSlice()
+            parts = as_f32.split(".")
+            # revisit this later??
+            if parts[1].length > 7
+                addToken(DOUBLE)
+            else
+                addToken(FLOAT)
+            end
         else
-            addToken(INT)
+            min_i32 = -2147483648
+            max_i32 = 2147483647
+            as_int = @charScanner.getSlice().to_i()
+            if as_int <= max_i32 and as_int >= min_i32
+                addToken(INT)
+            else
+                addToken(LONG)
+            end
         end
     end
 

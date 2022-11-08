@@ -5,5 +5,7 @@ class BreakAnalyzer
 
     def analyze_node_locally(ast_node)
         return
+        # main analyzer needs to know if it's currently in a loop, use this to check,
+        # also, loop name must be registered
     end
 end

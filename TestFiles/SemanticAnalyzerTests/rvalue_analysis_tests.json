@@ -1,0 +1,410 @@
+[
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test1.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test1.ap",
+                "tokenLiteral" : "int",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 'a' of type: \"char\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test2.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test2.ap",
+                "tokenLiteral" : "int",
+                "lineNumber" : "2",
+                "message" : "Expressions value: \"string\" of type: \"string\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test3.ap",
+                "tokenLiteral" : "int",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 2.7 of type: \"float\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test4.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test5.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test5.ap",
+                "tokenLiteral" : "int",
+                "lineNumber" : "2",
+                "message" : "Expressions value: true of type: \"bool\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test6.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test6.ap",
+                "tokenLiteral" : "char",
+                "lineNumber" : "2",
+                "message" : "Expressions value: \"10\" of type: \"string\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test7.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test7.ap",
+                "tokenLiteral" : "char",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 20607.8 of type: \"float\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test8.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test8.ap",
+                "tokenLiteral" : "char",
+                "lineNumber" : "2",
+                "message" : "Expressions value: false of type: \"bool\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test9.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test10.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test10.ap",
+                "tokenLiteral" : "string",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 'a' of type: \"char\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test11.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test12.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test12.ap",
+                "tokenLiteral" : "string",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 22 of type: \"int\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test13.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test13.ap",
+                "tokenLiteral" : "string",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 13.4 of type: \"float\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test14.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test14.ap",
+                "tokenLiteral" : "string",
+                "lineNumber" : "2",
+                "message" : "Expressions value: true of type: \"bool\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test15.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test15.ap",
+                "tokenLiteral" : "long",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 'b' of type: \"char\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test16.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test16.ap",
+                "tokenLiteral" : "long",
+                "lineNumber" : "2",
+                "message" : "Expressions value: \"str\" of type: \"string\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test17.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test18.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test18.ap",
+                "tokenLiteral" : "long",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 10.7 of type: \"float\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test19.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test19.ap",
+                "tokenLiteral" : "long",
+                "lineNumber" : "2",
+                "message" : "Expressions value: false of type: \"bool\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test20.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test20.ap",
+                "tokenLiteral" : "float",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 'a' of type: \"char\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test21.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test21.ap",
+                "tokenLiteral" : "float",
+                "lineNumber" : "2",
+                "message" : "Expressions value: \"str\" of type: \"string\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test22.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test22.ap",
+                "tokenLiteral" : "float",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 10 of type: \"int\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test23.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test24.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test24.ap",
+                "tokenLiteral" : "float",
+                "lineNumber" : "2",
+                "message" : "Expressions value: true of type: \"bool\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test25.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test25.ap",
+                "tokenLiteral" : "double",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 'g' of type: \"char\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test26.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test26.ap",
+                "tokenLiteral" : "double",
+                "lineNumber" : "2",
+                "message" : "Expressions value: \"str\" of type: \"string\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test27.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test27.ap",
+                "tokenLiteral" : "double",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 10 of type: \"int\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test28.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test29.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test29.ap",
+                "tokenLiteral" : "double",
+                "lineNumber" : "2",
+                "message" : "Expressions value: false of type: \"bool\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test30.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test30.ap",
+                "tokenLiteral" : "bool",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 'g' of type: \"char\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test31.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test31.ap",
+                "tokenLiteral" : "bool",
+                "lineNumber" : "2",
+                "message" : "Expressions value: \"str\" of type: \"string\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test32.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test32.ap",
+                "tokenLiteral" : "bool",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 10 of type: \"int\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test33.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test33.ap",
+                "tokenLiteral" : "bool",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 10.7 of type: \"float\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test34.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test35.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test35.ap",
+                "tokenLiteral" : "int",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 2147483648 of type: \"long\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test36.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test37.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test37.ap",
+                "tokenLiteral" : "float",
+                "lineNumber" : "2",
+                "message" : "Expressions value: 2147483648.12345678 of type: \"double\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/Constants/test38.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test1.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test1.ap",
+                "tokenLiteral" : "-",
+                "lineNumber" : "2",
+                "message" : "Operator \"-\" cannot be applied to expression of type \"char\""
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test2.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test2.ap",
+                "tokenLiteral" : "-",
+                "lineNumber" : "2",
+                "message" : "Operator \"-\" cannot be applied to expression of type \"string\""
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test2.ap",
+                "tokenLiteral" : "char",
+                "lineNumber" : "2",
+                "message" : "Expressions value: \"str\" of type: \"string\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test3.ap",
+                "tokenLiteral" : "-",
+                "lineNumber" : "2",
+                "message" : "Operator \"-\" cannot be applied to expression of type \"bool\""
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test3.ap",
+                "tokenLiteral" : "char",
+                "lineNumber" : "2",
+                "message" : "Expressions value: true of type: \"bool\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test4.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/PrefixExpressions/test5.ap",
+        "errors" : null
+    }
+]

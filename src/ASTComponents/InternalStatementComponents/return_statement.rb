@@ -8,6 +8,10 @@ class ReturnStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_ast()
+        @return_expression
+    end
+
     def toJSON()
         return {
             "type" => "return",

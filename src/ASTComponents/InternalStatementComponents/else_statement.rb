@@ -8,6 +8,10 @@ class ElseStatement
         semantic_analyzer.analyze_node_locally(self)
     end
 
+    def get_statements()
+        @sub_statements
+    end
+
     def _printLiteral
         return "else"
     end

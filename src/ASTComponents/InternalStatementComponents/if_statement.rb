@@ -14,10 +14,18 @@ class IfStatement
     end
 
     def set_unwrapped_var(opt)
+        @unwrapped_var = opt
+    end
+
+    def get_unwrapped_var()
         @unwrapped_var
     end
 
     def set_option(opt)
+        @option = opt
+    end
+
+    def get_option()
         @option
     end
 

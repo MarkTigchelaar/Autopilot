@@ -289,11 +289,7 @@ end
 def call_parser_component_tests(test_case, failurelog, tracker, parser, name)
     puts "\nTesting #{name} parser, file #{test_case["file"]} ... "
     parser.parse(test_case["file"])
-    #begin
     generic_tests(parser, test_case, failurelog, tracker)
-    #rescue
-    #    puts "call_parser_component_tests hit a problem"
-    #end
     puts "Done test for #{name} parser"
 end
 

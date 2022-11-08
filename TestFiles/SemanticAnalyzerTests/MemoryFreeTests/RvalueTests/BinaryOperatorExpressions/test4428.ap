@@ -1,0 +1,4 @@
+fun function() do
+   let a as double = 'a' * 2147483648
+end
+
