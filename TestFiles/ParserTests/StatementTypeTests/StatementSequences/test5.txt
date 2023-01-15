@@ -1,6 +1,6 @@
 if a do
   let p = g
-  let g equal h
+  let g = h
   var t = 800
   if d do
     let p = mars

@@ -1,6 +1,6 @@
 switch a
   case 10 do
-    if
+    let v = 0
   case 15 do
-    if
+    let b = 16
 end

@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test2.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test3.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -47,7 +47,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test4.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -60,7 +60,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test5.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -73,7 +73,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test6.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -86,7 +86,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test7.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -99,7 +99,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test8.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -112,7 +112,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test9.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -125,7 +125,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test10.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -138,7 +138,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test11.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -151,7 +151,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test12.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -164,7 +164,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test13.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -177,7 +177,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test14.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -190,7 +190,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test15.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -203,7 +203,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test16.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -216,7 +216,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test17.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -229,7 +229,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test18.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -242,7 +242,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test19.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -255,7 +255,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test20.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -268,7 +268,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test21.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -281,7 +281,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test22.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -294,7 +294,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test23.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -307,7 +307,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test24.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -320,7 +320,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test25.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -333,7 +333,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test26.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -346,7 +346,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test27.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -359,7 +359,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test28.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -372,7 +372,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test29.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -385,7 +385,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test30.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -398,7 +398,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test31.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -411,7 +411,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test32.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -424,7 +424,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test33.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -437,7 +437,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test34.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -450,7 +450,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test35.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -463,7 +463,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test36.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -476,7 +476,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test37.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -489,7 +489,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test38.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -502,7 +502,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test39.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -515,7 +515,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test40.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -528,7 +528,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test41.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -541,7 +541,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test42.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -554,7 +554,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test43.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -567,7 +567,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test44.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -580,7 +580,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test45.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -593,7 +593,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test46.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -606,7 +606,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test47.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -619,7 +619,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test48.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -632,7 +632,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test49.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -645,7 +645,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test50.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -658,7 +658,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test51.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -671,7 +671,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test52.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -684,7 +684,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test53.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -697,7 +697,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test54.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -710,7 +710,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test55.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -723,7 +723,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test56.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -736,7 +736,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test57.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -749,7 +749,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test58.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -762,7 +762,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test59.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -775,7 +775,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test60.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -788,7 +788,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test61.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -801,7 +801,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test62.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -814,7 +814,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test63.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -827,7 +827,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test64.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -840,7 +840,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test65.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -853,7 +853,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test66.txt",
                 "tokenLiteral" : "3.14",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 3.14."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -866,7 +866,7 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test67.txt",
                 "tokenLiteral" : "\"test\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"test\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -879,20 +879,20 @@
                 "file" : "../Testfiles/ParserTests/FunctionTests/test68.txt",
                 "tokenLiteral" : "'t'",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 't'."
+                "message" : "unexpected token"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/FunctionTests/test69.txt",
-        "astString" : "test a int b float thing if",
-        "tokenTypeString" : "IDENTIFIER IDENTIFIER INT IDENTIFIER FLOAT IDENTIFIER IF",
+        "astString" : "test a int b float thing ",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER INT IDENTIFIER FLOAT IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/FunctionTests/test70.txt",
-        "astString" : "test a int 11.7 b float \"string\" thing if",
-        "tokenTypeString" : "IDENTIFIER IDENTIFIER INT FLOAT IDENTIFIER FLOAT STRING IDENTIFIER IF",
+        "astString" : "test a int 11.7 b float \"string\" thing ",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER INT FLOAT IDENTIFIER FLOAT STRING IDENTIFIER",
         "errors" : null
     }
 ]

@@ -1,0 +1,57 @@
+[
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test1.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test1.ap",
+                "tokenLiteral" : "+",
+                "lineNumber" : "2",
+                "message" : "Type \"char\" not compatable with type \"int\""
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test2.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test2.ap",
+                "tokenLiteral" : "+",
+                "lineNumber" : "2",
+                "message" : "Type \"char\" not compatable with type \"int\""
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test3.ap",
+                "tokenLiteral" : "string",
+                "lineNumber" : "2",
+                "message" : "Expressions value: + of type: \"int\" does not resolve to assigned variables type"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test4.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test4.ap",
+                "tokenLiteral" : "*",
+                "lineNumber" : "2",
+                "message" : "Operator \"*\" cannot be applied to right hand side expression of type \"char\""
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test5.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/RvalueTests/NestedBinaryOperatorTests/test5.ap",
+                "tokenLiteral" : "-",
+                "lineNumber" : "2",
+                "message" : "Operator \"-\" cannot be applied to right hand side expression of type \"char\""
+            }
+        ]
+    }
+]

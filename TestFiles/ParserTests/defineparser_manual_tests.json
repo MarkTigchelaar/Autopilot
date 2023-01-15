@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test2.txt",
                 "tokenLiteral" : "module",
                 "lineNumber" : "1",
-                "message" : "Invalid name for item module."
+                "message" : "invalid name for defined item"
             }
         ]
     },
@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test3.txt",
                 "tokenLiteral" : ",",
                 "lineNumber" : "1",
-                "message" : "Invalid name for item ,."
+                "message" : "invalid name for defined item"
             }
         ]
     },
@@ -45,9 +45,9 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test4.txt",
-                "tokenLiteral" : "",
+                "tokenLiteral" : "aname",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "cannot rename items using define statement"
             }
         ]
     },
@@ -58,9 +58,9 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test5.txt",
-                "tokenLiteral" : "b",
+                "tokenLiteral" : "a",
                 "lineNumber" : "1",
-                "message" : "Unexpected token b."
+                "message" : "cannot rename items using define statement"
             }
         ]
     },
@@ -73,7 +73,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test6.txt",
                 "tokenLiteral" : "6",
                 "lineNumber" : "1",
-                "message" : "Invalid name for item 6."
+                "message" : "invalid name for defined item"
             }
         ]
     },
@@ -84,9 +84,9 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test7.txt",
-                "tokenLiteral" : "",
+                "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "invalid name for defined item"
             }
         ]
     },
@@ -99,7 +99,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test8.txt",
                 "tokenLiteral" : ",",
                 "lineNumber" : "1",
-                "message" : "Invalid name for item ,."
+                "message" : "invalid name for defined item"
             }
         ]
     },
@@ -112,14 +112,14 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test9.txt",
                 "tokenLiteral" : "do",
                 "lineNumber" : "1",
-                "message" : "Invalid name for item do."
+                "message" : "invalid name for defined item"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test10.txt",
-        "astString" : "old def: old new def: new",
-        "tokenTypeString" : "IDENTIFIER IDENTIFIER",
+        "astString" : "List(float) -> new",
+        "tokenTypeString" : "LIST FLOAT -> IDENTIFIER",
         "errors" : null
     },
     {
@@ -131,7 +131,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test11.txt",
                 "tokenLiteral" : "3",
                 "lineNumber" : "1",
-                "message" : "Invalid name for item 3."
+                "message" : "invalid name for defined item"
             }
         ]
     },
@@ -144,7 +144,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test12.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -157,7 +157,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test13.txt",
                 "tokenLiteral" : "[",
                 "lineNumber" : "1",
-                "message" : "Unexpected token [."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -170,7 +170,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test14.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -183,7 +183,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test15.txt",
                 "tokenLiteral" : "(",
                 "lineNumber" : "1",
-                "message" : "Unexpected token (."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -196,7 +196,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test16.txt",
                 "tokenLiteral" : "do",
                 "lineNumber" : "1",
-                "message" : "Unexpected token do."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -209,7 +209,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test17.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -222,7 +222,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test18.txt",
                 "tokenLiteral" : ")",
                 "lineNumber" : "1",
-                "message" : "Unexpected token )."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -235,7 +235,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test19.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -248,7 +248,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test20.txt",
                 "tokenLiteral" : ")",
                 "lineNumber" : "1",
-                "message" : "Unexpected token )."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -261,7 +261,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test21.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -274,7 +274,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test22.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -287,7 +287,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test23.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -300,7 +300,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test24.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -313,7 +313,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test25.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -326,26 +326,26 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test26.txt",
                 "tokenLiteral" : "int",
                 "lineNumber" : "1",
-                "message" : "Invalid name for item int."
+                "message" : "invalid name for defined item"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test27.txt",
-        "astString" : "old def: Map(thingy:test) new def: newThing",
-        "tokenTypeString" : "MAP IDENTIFIER IDENTIFIER IDENTIFIER",
+        "astString" : "Map(thingy:test) -> newThing",
+        "tokenTypeString" : "MAP IDENTIFIER IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test28.txt",
-        "astString" : "old def: Dictionary(thingy:test) new def: newThing",
-        "tokenTypeString" : "DICTIONARY IDENTIFIER IDENTIFIER IDENTIFIER",
+        "astString" : "Dictionary(thingy:test) -> newThing",
+        "tokenTypeString" : "DICTIONARY IDENTIFIER IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test29.txt",
-        "astString" : "old def: HashMap(thingy:test) new def: newThing",
-        "tokenTypeString" : "HASHMAP IDENTIFIER IDENTIFIER IDENTIFIER",
+        "astString" : "HashMap(thingy:test) -> newThing",
+        "tokenTypeString" : "HASHMAP IDENTIFIER IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
@@ -357,7 +357,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test30.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -370,7 +370,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test31.txt",
                 "tokenLiteral" : "[",
                 "lineNumber" : "1",
-                "message" : "Unexpected token [."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -383,7 +383,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test32.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -396,7 +396,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test33.txt",
                 "tokenLiteral" : ")",
                 "lineNumber" : "1",
-                "message" : "Unexpected token )."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -409,7 +409,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test34.txt",
                 "tokenLiteral" : "enum",
                 "lineNumber" : "1",
-                "message" : "Unexpected token enum."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -422,7 +422,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test35.txt",
                 "tokenLiteral" : "Vector",
                 "lineNumber" : "1",
-                "message" : "Unexpected token Vector."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -435,7 +435,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test36.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -448,7 +448,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test37.txt",
                 "tokenLiteral" : "=",
                 "lineNumber" : "1",
-                "message" : "Unexpected token =."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -461,7 +461,7 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test38.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -474,98 +474,98 @@
                 "file" : "../Testfiles/ParserTests/DefineTests/test39.txt",
                 "tokenLiteral" : "assk",
                 "lineNumber" : "1",
-                "message" : "Unexpected token assk."
+                "message" : "unexpected token"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test40.txt",
-        "astString" : "old def: Vector(int) new def: IntVector",
-        "tokenTypeString" : "VECTOR INT IDENTIFIER",
+        "astString" : "Vector(int) -> IntVector",
+        "tokenTypeString" : "VECTOR INT -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test41.txt",
-        "astString" : "old def: LinkedList(thing) new def: ThingList",
-        "tokenTypeString" : "LINKEDLIST IDENTIFIER IDENTIFIER",
+        "astString" : "LinkedList(thing) -> ThingList",
+        "tokenTypeString" : "LINKEDLIST IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test42.txt",
-        "astString" : "old def: List(thing) new def: ThingList",
-        "tokenTypeString" : "LIST IDENTIFIER IDENTIFIER",
+        "astString" : "List(thing) -> ThingList",
+        "tokenTypeString" : "LIST IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test43.txt",
-        "astString" : "old def: Set(thing) new def: ThingSet",
-        "tokenTypeString" : "SET IDENTIFIER IDENTIFIER",
+        "astString" : "Set(thing) -> ThingSet",
+        "tokenTypeString" : "SET IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test44.txt",
-        "astString" : "old def: HashSet(thing) new def: ThingHashSet",
-        "tokenTypeString" : "HASHSET IDENTIFIER IDENTIFIER",
+        "astString" : "HashSet(thing) -> ThingHashSet",
+        "tokenTypeString" : "HASHSET IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test45.txt",
-        "astString" : "old def: TreeSet(thing) new def: ThingTreeSet",
-        "tokenTypeString" : "TREESET IDENTIFIER IDENTIFIER",
+        "astString" : "TreeSet(thing) -> ThingTreeSet",
+        "tokenTypeString" : "TREESET IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test46.txt",
-        "astString" : "old def: Stack(thing) new def: ThingStack",
-        "tokenTypeString" : "STACK IDENTIFIER IDENTIFIER",
+        "astString" : "Stack(thing) -> ThingStack",
+        "tokenTypeString" : "STACK IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test47.txt",
-        "astString" : "old def: Queue(thing) new def: ThingQueue",
-        "tokenTypeString" : "QUEUE IDENTIFIER IDENTIFIER",
+        "astString" : "Queue(thing) -> ThingQueue",
+        "tokenTypeString" : "QUEUE IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test54.txt",
-        "astString" : "old def: FIFOQueue(thing) new def: ThingQueue",
-        "tokenTypeString" : "FIFOQUEUE IDENTIFIER IDENTIFIER",
+        "astString" : "FifoQueue(thing) -> ThingQueue",
+        "tokenTypeString" : "FIFOQUEUE IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test48.txt",
-        "astString" : "old def: PriorityQueue(thing) new def: ThingPQueue",
-        "tokenTypeString" : "PRIORITYQUEUE IDENTIFIER IDENTIFIER",
+        "astString" : "PriorityQueue(thing) -> ThingPQueue",
+        "tokenTypeString" : "PRIORITYQUEUE IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test49.txt",
-        "astString" : "old def: Deque(thing) new def: ThingDeque",
-        "tokenTypeString" : "DEQUE IDENTIFIER IDENTIFIER",
+        "astString" : "Deque(thing) -> ThingDeque",
+        "tokenTypeString" : "DEQUE IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test50.txt",
-        "astString" : "old def: Option(thing) new def: ThingOption",
-        "tokenTypeString" : "OPTION IDENTIFIER IDENTIFIER",
+        "astString" : "Option(thing) -> ThingOption",
+        "tokenTypeString" : "OPTION IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test51.txt",
-        "astString" : "old def: Result(thing,err) new def: ThingResult",
-        "tokenTypeString" : "RESULT IDENTIFIER IDENTIFIER IDENTIFIER",
+        "astString" : "Result(thing,err) -> ThingResult",
+        "tokenTypeString" : "RESULT IDENTIFIER IDENTIFIER -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test52.txt",
-        "astString" : "old def: fun(thing,thing2,int)int new def: ThingFunction",
-        "tokenTypeString" : "FUN IDENTIFIER IDENTIFIER INT INT IDENTIFIER",
+        "astString" : "fun(thing,thing2,int)int -> ThingFunction",
+        "tokenTypeString" : "FUN IDENTIFIER IDENTIFIER INT INT -> IDENTIFIER",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/DefineTests/test53.txt",
-        "astString" : "old def: fun(a,b,c,d,e,f,g,thing,thing2,int)someType new def: Function",
-        "tokenTypeString" : "FUN IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER INT IDENTIFIER IDENTIFIER",
+        "astString" : "fun(a,b,c,d,e,f,g,thing,thing2,int)someType -> Function",
+        "tokenTypeString" : "FUN IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER IDENTIFIER INT IDENTIFIER -> IDENTIFIER",
         "errors" : null
     }
 ]

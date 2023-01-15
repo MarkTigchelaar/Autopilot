@@ -1,0 +1,14 @@
+fun function() int do
+    if true do
+        return 10
+    else
+        let a = 10
+        while false do
+            if false do
+                return 5
+            else
+                return 6
+            end
+        end
+    end
+end

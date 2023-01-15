@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test1.txt",
                 "tokenLiteral" : "+",
                 "lineNumber" : "1",
-                "message" : "Invalid constant or variable."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test2.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test3.txt",
                 "tokenLiteral" : "-",
                 "lineNumber" : "1",
-                "message" : "Unexpected token -."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -47,7 +47,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test4.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -60,7 +60,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test5.txt",
                 "tokenLiteral" : "+",
                 "lineNumber" : "1",
-                "message" : "Invalid constant or variable."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -73,7 +73,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test6.txt",
                 "tokenLiteral" : "do",
                 "lineNumber" : "1",
-                "message" : "Unexpected token do."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -86,7 +86,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test7.txt",
                 "tokenLiteral" : "fun",
                 "lineNumber" : "1",
-                "message" : "Unexpected token fun."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -99,7 +99,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test8.txt",
                 "tokenLiteral" : "let",
                 "lineNumber" : "1",
-                "message" : "Unexpected token let."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -112,7 +112,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test9.txt",
                 "tokenLiteral" : "int",
                 "lineNumber" : "1",
-                "message" : "Unexpected token int."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -125,7 +125,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test10.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -138,7 +138,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test11.txt",
                 "tokenLiteral" : "+",
                 "lineNumber" : "1",
-                "message" : "Invalid constant or variable."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -151,7 +151,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test12.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -164,7 +164,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test13.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -177,7 +177,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test14.txt",
                 "tokenLiteral" : "^",
                 "lineNumber" : "1",
-                "message" : "Invalid constant or variable."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -190,7 +190,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test15.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -203,7 +203,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test16.txt",
                 "tokenLiteral" : ")",
                 "lineNumber" : "1",
-                "message" : "Empty Expression."
+                "message" : "empty expression"
             }
         ]
     },
@@ -216,7 +216,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test17.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -229,7 +229,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test18.txt",
                 "tokenLiteral" : ",",
                 "lineNumber" : "1",
-                "message" : "Unexpected token ,."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -242,7 +242,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test19.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -255,7 +255,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test20.txt",
                 "tokenLiteral" : ",",
                 "lineNumber" : "1",
-                "message" : "Unexpected token ,."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -268,15 +268,22 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test21.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test22.txt",
-        "astString" : "[]",
-        "tokenTypeString" : "[]",
-        "errors" : null
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test22.txt",
+                "tokenLiteral" : "]",
+                "lineNumber" : "1",
+                "message" : "empty expression"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test23.txt",
@@ -287,7 +294,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test23.txt",
                 "tokenLiteral" : ",",
                 "lineNumber" : "1",
-                "message" : "Unexpected token ,."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -300,7 +307,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test24.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -313,7 +320,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test25.txt",
                 "tokenLiteral" : "}",
                 "lineNumber" : "1",
-                "message" : "Unexpected token }."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -326,7 +333,7 @@
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test26.txt",
                 "tokenLiteral" : "}",
                 "lineNumber" : "1",
-                "message" : "Unexpected token }."
+                "message" : "collection is missing expression"
             }
         ]
     },
@@ -338,8 +345,8 @@
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionErrorTests/test28.txt",
-        "astString" : "aStruct(method(a)(methodb(b)))",
-        "tokenTypeString" : "IDENTIFIER(IDENTIFIER(IDENTIFIER)(IDENTIFIER(IDENTIFIER)))",
+        "astString" : "aStruct.method(a).methodb(b)",
+        "tokenTypeString" : "IDENTIFIER DOT IDENTIFIER(IDENTIFIER) DOT IDENTIFIER(IDENTIFIER)",
         "errors" : null
     }
 ]

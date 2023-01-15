@@ -1,0 +1,14 @@
+inline pub fun test_func() do
+    if true do
+        if a + b > 10 do
+            a += 5
+        elif a - b < 3 do
+            b += 11
+        end
+        if false do
+            things += 1
+        else
+            things += 2
+        end
+    end
+end

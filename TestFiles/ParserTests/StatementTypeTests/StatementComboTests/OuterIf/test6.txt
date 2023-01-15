@@ -1,5 +1,5 @@
 if a do
-  elif b do
+  unless b do
     let a = 5
   end
   elif b do

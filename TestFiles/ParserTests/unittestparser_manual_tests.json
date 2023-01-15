@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test2.txt",
                 "tokenLiteral" : "10",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 10."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test3.txt",
                 "tokenLiteral" : "int",
                 "lineNumber" : "1",
-                "message" : "Unexpected token int."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -47,7 +47,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test4.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -60,7 +60,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test5.txt",
                 "tokenLiteral" : "int",
                 "lineNumber" : "1",
-                "message" : "Unexpected token int."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -73,7 +73,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test6.txt",
                 "tokenLiteral" : "test",
                 "lineNumber" : "1",
-                "message" : "Unexpected token test."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -86,7 +86,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test7.txt",
                 "tokenLiteral" : "\"name\"",
                 "lineNumber" : "1",
-                "message" : "Unexpected token \"name\"."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -99,7 +99,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test8.txt",
                 "tokenLiteral" : "10",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 10."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -112,7 +112,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test9.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -125,7 +125,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test10.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "2",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -138,7 +138,7 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test11.txt",
                 "tokenLiteral" : "int",
                 "lineNumber" : "2",
-                "message" : "Unexpected token int."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -151,27 +151,20 @@
                 "file" : "../Testfiles/ParserTests/UnittestTests/test12.txt",
                 "tokenLiteral" : "10",
                 "lineNumber" : "2",
-                "message" : "Unexpected token 10."
+                "message" : "unexpected token"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/UnittestTests/test13.txt",
-        "astString" : "",
-        "tokenTypeString" : "",
-        "errors" : [
-            {
-                "file" : "../Testfiles/ParserTests/UnittestTests/test13.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "2",
-                "message" : "Empty Statement."
-            }
-        ]
+        "astString" : "test1",
+        "tokenTypeString" : "IDENTIFIER",
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/UnittestTests/test14.txt",
-        "astString" : "test if",
-        "tokenTypeString" : "IDENTIFIER IF",
+        "astString" : "test",
+        "tokenTypeString" : "IDENTIFIER",
         "errors" : null
     }
 ]

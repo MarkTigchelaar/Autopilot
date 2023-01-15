@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test2.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -34,7 +34,188 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test3.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test4.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test4.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test5.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test5.txt",
+                "tokenLiteral" : "elif",
+                "lineNumber" : "1",
+                "message" : "unexpected token"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test6.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test6.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test7.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test7.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "3",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test8.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test8.txt",
+                "tokenLiteral" : "struct",
+                "lineNumber" : "3",
+                "message" : "invalid constant or variable"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test9.txt",
+        "astString" : "a",
+        "tokenTypeString" : "IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test10.txt",
+        "astString" : "a",
+        "tokenTypeString" : "IDENTIFIER",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test11.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test11.txt",
+                "tokenLiteral" : "if",
+                "lineNumber" : "1",
+                "message" : "unexpected token"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test12.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test12.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test13.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test13.txt",
+                "tokenLiteral" : "if",
+                "lineNumber" : "1",
+                "message" : "unexpected token"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test14.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test14.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test15.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test15.txt",
+                "tokenLiteral" : "if",
+                "lineNumber" : "1",
+                "message" : "unexpected token"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test16.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test16.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test17.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test17.txt",
+                "tokenLiteral" : "struct",
+                "lineNumber" : "1",
+                "message" : "unexpected token"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test18.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test18.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
             }
         ]
     }

@@ -1,4 +1,4 @@
-inline fun test() long do
+inline fun function_with_switch_statement() long do
     let a = 0
     switch variable
         case 'a', 'c' do

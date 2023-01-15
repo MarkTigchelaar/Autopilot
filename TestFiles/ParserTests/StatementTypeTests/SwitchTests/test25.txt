@@ -1,5 +1,5 @@
 switch name
   case 'b' do
-   if
+   let a = 0
   default 
-    if
+    let b = 0

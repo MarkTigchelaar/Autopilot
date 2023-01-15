@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test2.txt",
                 "tokenLiteral" : "end",
                 "lineNumber" : "1",
-                "message" : "Empty Statement."
+                "message" : "empty statement"
             }
         ]
     },
@@ -34,14 +34,21 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test3.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test4.txt",
-        "astString" : "else",
-        "tokenTypeString" : "ELSE",
-        "errors" : null
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test4.txt",
+                "tokenLiteral" : "end",
+                "lineNumber" : "1",
+                "message" : "empty statement"
+            }
+        ]
     }
 ]

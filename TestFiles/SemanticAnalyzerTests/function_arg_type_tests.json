@@ -1,0 +1,34 @@
+[
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test1.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test2.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test2.ap",
+                "tokenLiteral" : "a",
+                "lineNumber" : "1",
+                "message" : "Name Collision, arguments have same name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test3.ap",
+                "tokenLiteral" : "a",
+                "lineNumber" : "1",
+                "message" : "Name Collision, arguments have same name"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test3.ap",
+                "tokenLiteral" : "b",
+                "lineNumber" : "1",
+                "message" : "Name Collision, arguments have same name"
+            }
+        ]
+    }
+]

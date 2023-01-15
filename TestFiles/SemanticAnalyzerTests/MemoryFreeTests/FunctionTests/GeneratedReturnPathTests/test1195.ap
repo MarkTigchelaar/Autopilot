@@ -1,0 +1,108 @@
+pub fun function() int do
+  if true do
+    unless true do
+      if true do
+        for i in 1 .. 10 do
+          if true do
+            while true do
+              let a0 as int = 10
+            end
+            return 0
+          else
+            while true do
+              let a1 as int = 10
+            end
+            return 0
+          end
+        end
+      elif true do
+        if true do
+          while true do
+            for i in 1 .. 10 do
+              let a2 as int = 10
+            end
+          end
+          return 0
+        else
+          for i in 1 .. 10 do
+            while true do
+              let a3 as int = 10
+            end
+            return 0
+          end
+        end
+      else
+        while true do
+          for i in 1 .. 10 do
+            if true do
+              let a4 as int = 10
+            else
+              let a5 as int = 10
+            end
+          end
+        end
+        return 0
+      end
+    end
+    return 0
+  else
+    if true do
+      for i in 1 .. 10 do
+        if true do
+          while true do
+            unless true do
+              let a6 as int = 10
+            end
+            return 0
+          end
+          return 0
+        else
+          unless true do
+            while true do
+              let a7 as int = 10
+            end
+            return 0
+          end
+          return 0
+        end
+      end
+    elif true do
+      if true do
+        while true do
+          unless true do
+            for i in 1 .. 10 do
+              let a8 as int = 10
+            end
+          end
+          return 0
+        end
+        return 0
+      else
+        unless true do
+          for i in 1 .. 10 do
+            while true do
+              let a9 as int = 10
+            end
+            return 0
+          end
+        end
+        return 0
+      end
+    else
+      while true do
+        unless true do
+          for i in 1 .. 10 do
+            if true do
+              let a10 as int = 10
+            else
+              let a11 as int = 10
+            end
+          end
+        end
+        return 0
+      end
+      return 0
+    end
+  end
+  return 0
+end

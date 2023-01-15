@@ -1,0 +1,61 @@
+[
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test1.ap",
+        "errors" : null
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test2.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test2.ap",
+                "tokenLiteral" : "function",
+                "lineNumber" : "1",
+                "message" : "Function not valid, function returns a value, but not all code paths return a value"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test3.ap",
+                "tokenLiteral" : "function",
+                "lineNumber" : "1",
+                "message" : "Function not valid, function returns a value, but not all code paths return a value"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test4.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test4.ap",
+                "tokenLiteral" : "function",
+                "lineNumber" : "1",
+                "message" : "Function not valid, function returns a value, but not all code paths return a value"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test5.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test5.ap",
+                "tokenLiteral" : "function",
+                "lineNumber" : "1",
+                "message" : "Function not valid, function returns a value, but not all code paths return a value"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test6.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test6.ap",
+                "tokenLiteral" : "function",
+                "lineNumber" : "1",
+                "message" : "Function not valid, function returns a value, but not all code paths return a value"
+            }
+        ]
+    }
+]

@@ -1,0 +1,77 @@
+pub fun function() int do
+  if true do
+    loop
+      if true do
+        loop
+          unless true do
+            switch 'c'
+            case 'a' do
+              let a0 as int = 10
+            case 'b' do
+              let a1 as int = 10
+            default
+              let a2 as int = 10
+            end
+            return 0
+          end
+        end
+      end
+    end
+    return 0
+  elif true do
+    if true do
+      loop
+        unless true do
+          switch 'c'
+          case 'a' do
+            loop
+              let a3 as int = 10
+            end
+            return 0
+          case 'b' do
+            loop
+              let a4 as int = 10
+            end
+            return 0
+          default
+            loop
+              let a5 as int = 10
+            end
+            return 0
+          end
+          return 0
+        end
+      end
+    end
+  else
+    loop
+      unless true do
+        switch 'c'
+        case 'a' do
+          loop
+            if true do
+              let a6 as int = 10
+            end
+          end
+          return 0
+        case 'b' do
+          if true do
+            loop
+              let a7 as int = 10
+            end
+            return 0
+          end
+        default
+          loop
+            if true do
+              let a8 as int = 10
+            end
+          end
+          return 0
+        end
+        return 0
+      end
+    end
+  end
+  return 0
+end

@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test2.txt",
                 "tokenLiteral" : "do",
                 "lineNumber" : "1",
-                "message" : "Unexpected token do."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test3.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -47,7 +47,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test4.txt",
                 "tokenLiteral" : "eh",
                 "lineNumber" : "1",
-                "message" : "Unexpected token eh."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -60,7 +60,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test5.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -73,7 +73,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test6.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "2",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -86,14 +86,14 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test7.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "3",
-                "message" : "Unexpected token struct."
+                "message" : "invalid constant or variable"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test8.txt",
-        "astString" : "exp: a",
-        "tokenTypeString" : "IDENTIFIER IF",
+        "astString" : "a name: i, type: , ownership type: let, exp: 0",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER LET INT",
         "errors" : null
     },
     {
@@ -105,7 +105,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test9.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -118,7 +118,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test10.txt",
                 "tokenLiteral" : "9",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 9."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -131,14 +131,14 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test11.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test12.txt",
-        "astString" : "name: test, exp: a",
-        "tokenTypeString" : "IDENTIFIER IDENTIFIER IF",
+        "astString" : "a testname: i, type: , ownership type: var, exp: 0",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER IDENTIFIER VAR INT",
         "errors" : null
     }
 ]

@@ -1,0 +1,124 @@
+pub fun function() int do
+  for i in 1 .. 10 do
+    unless true do
+      if true do
+        for i in 1 .. 10 do
+          if true do
+            while true do
+              switch 'c'
+              case 'a' do
+                let a0 as int = 10
+              case 'b' do
+                let a1 as int = 10
+              default
+                let a2 as int = 10
+              end
+              return 0
+            end
+            return 0
+          else
+            switch 'c'
+            case 'a' do
+              while true do
+                let a3 as int = 10
+              end
+              return 0
+            case 'b' do
+              while true do
+                let a4 as int = 10
+              end
+              return 0
+            default
+              while true do
+                let a5 as int = 10
+              end
+              return 0
+            end
+            return 0
+          end
+        end
+      elif true do
+        if true do
+          while true do
+            switch 'c'
+            case 'a' do
+              for i in 1 .. 10 do
+                let a6 as int = 10
+              end
+            case 'b' do
+              for i in 1 .. 10 do
+                let a7 as int = 10
+              end
+            default
+              for i in 1 .. 10 do
+                let a8 as int = 10
+              end
+            end
+            return 0
+          end
+          return 0
+        else
+          switch 'c'
+          case 'a' do
+            for i in 1 .. 10 do
+              while true do
+                let a9 as int = 10
+              end
+              return 0
+            end
+          case 'b' do
+            while true do
+              for i in 1 .. 10 do
+                let a10 as int = 10
+              end
+            end
+            return 0
+          default
+            for i in 1 .. 10 do
+              while true do
+                let a11 as int = 10
+              end
+              return 0
+            end
+          end
+          return 0
+        end
+      else
+        while true do
+          switch 'c'
+          case 'a' do
+            for i in 1 .. 10 do
+              if true do
+                let a12 as int = 10
+              else
+                let a13 as int = 10
+              end
+            end
+          case 'b' do
+            if true do
+              for i in 1 .. 10 do
+                let a14 as int = 10
+              end
+            else
+              for i in 1 .. 10 do
+                let a15 as int = 10
+              end
+            end
+          default
+            for i in 1 .. 10 do
+              if true do
+                let a16 as int = 10
+              else
+                let a17 as int = 10
+              end
+            end
+          end
+          return 0
+        end
+        return 0
+      end
+    end
+    return 0
+  end
+  return 0
+end

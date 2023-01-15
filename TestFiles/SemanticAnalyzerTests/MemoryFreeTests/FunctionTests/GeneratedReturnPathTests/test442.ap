@@ -1,0 +1,34 @@
+fun function() int do
+  unless true do
+    switch 'c'
+    case 'a' do
+      if true do
+        if true do
+          loop
+            let a0 as int = 10
+          end
+        end
+      end
+      return 0
+    case 'b' do
+      if true do
+        loop
+          if true do
+            let a1 as int = 10
+          end
+          return 0
+        end
+      end
+    default
+      loop
+        if true do
+          if true do
+            let a2 as int = 10
+          end
+        end
+        return 0
+      end
+    end
+    return 0
+  end
+end

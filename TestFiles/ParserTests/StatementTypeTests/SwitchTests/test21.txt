@@ -1,5 +1,5 @@
 switch name
   case 'a' do
-    if
+    let a = 0
   default
 end

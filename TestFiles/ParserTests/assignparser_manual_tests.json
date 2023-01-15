@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test2.txt",
                 "tokenLiteral" : "bad",
                 "lineNumber" : "1",
-                "message" : "Unexpected token bad."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test3.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -47,7 +47,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test4.txt",
                 "tokenLiteral" : "long",
                 "lineNumber" : "1",
-                "message" : "Unexpected token long."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -60,7 +60,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test5.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -73,7 +73,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test6.txt",
                 "tokenLiteral" : "9",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 9."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -86,7 +86,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test7.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -99,20 +99,20 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test8.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test9.txt",
         "astString" : "name: name, type: type, ownership type: var, exp: 9",
-        "tokenTypeString" : "IDENTIFIER IDENTIFIER INT",
+        "tokenTypeString" : "IDENTIFIER IDENTIFIER VAR INT",
         "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/AssignTests/test10.txt",
         "astString" : "name: name, type: , ownership type: var, exp: 9",
-        "tokenTypeString" : "IDENTIFIER INT",
+        "tokenTypeString" : "IDENTIFIER VAR INT",
         "errors" : null
     }
 ]

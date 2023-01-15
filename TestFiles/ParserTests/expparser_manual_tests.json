@@ -3,432 +3,474 @@
         "file" : "../Testfiles/ParserTests/ExpressionTests/test1.txt",
         "astString" : "a",
         "tokenTypeString" : "IDENTIFIER",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test2.txt",
         "astString" : "1",
         "tokenTypeString" : "INT",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test3.txt",
         "astString" : "1.6",
         "tokenTypeString" : "FLOAT",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test4.txt",
         "astString" : "(a + b)",
         "tokenTypeString" : "(IDENTIFIER PLUS IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test5.txt",
         "astString" : "(a - b)",
         "tokenTypeString" : "(IDENTIFIER MINUS IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test6.txt",
         "astString" : "(a * b)",
         "tokenTypeString" : "(IDENTIFIER STAR IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test7.txt",
         "astString" : "(a / b)",
         "tokenTypeString" : "(IDENTIFIER SLASH IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test8.txt",
         "astString" : "(a ^ b)",
         "tokenTypeString" : "(IDENTIFIER CARROT IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test9.txt",
         "astString" : "(a % b)",
         "tokenTypeString" : "(IDENTIFIER MOD IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test10.txt",
         "astString" : "(1 + 1)",
         "tokenTypeString" : "(INT PLUS INT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test11.txt",
         "astString" : "(1 - 1)",
         "tokenTypeString" : "(INT MINUS INT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test12.txt",
         "astString" : "(1 * 1)",
         "tokenTypeString" : "(INT STAR INT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test13.txt",
         "astString" : "(1 / 1)",
         "tokenTypeString" : "(INT SLASH INT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test14.txt",
         "astString" : "(1 ^ 1)",
         "tokenTypeString" : "(INT CARROT INT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test15.txt",
         "astString" : "(1 % 1)",
         "tokenTypeString" : "(INT MOD INT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test16.txt",
         "astString" : "(1.8 + 1.8)",
         "tokenTypeString" : "(FLOAT PLUS FLOAT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test17.txt",
         "astString" : "(1.8 - 1.8)",
         "tokenTypeString" : "(FLOAT MINUS FLOAT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test18.txt",
         "astString" : "(1.8 * 1.8)",
         "tokenTypeString" : "(FLOAT STAR FLOAT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test19.txt",
         "astString" : "(1.8 / 1.8)",
         "tokenTypeString" : "(FLOAT SLASH FLOAT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test20.txt",
         "astString" : "(1.8 ^ 1.8)",
         "tokenTypeString" : "(FLOAT CARROT FLOAT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test21.txt",
         "astString" : "(1.8 % 1.8)",
         "tokenTypeString" : "(FLOAT MOD FLOAT)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test23.txt",
         "astString" : "((1 + 1) + a)",
         "tokenTypeString" : "((INT PLUS INT) PLUS IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test24.txt",
         "astString" : "((1 + 1) - a)",
         "tokenTypeString" : "((INT PLUS INT) MINUS IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test22.txt",
         "astString" : "(1 + (1 * a))",
         "tokenTypeString" : "(INT PLUS (INT STAR IDENTIFIER))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test25.txt",
         "astString" : "(1 + (1 / a))",
         "tokenTypeString" : "(INT PLUS (INT SLASH IDENTIFIER))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test26.txt",
         "astString" : "(1 + (1 ^ a))",
         "tokenTypeString" : "(INT PLUS (INT CARROT IDENTIFIER))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test27.txt",
         "astString" : "(1 + (1 % a))",
         "tokenTypeString" : "(INT PLUS (INT MOD IDENTIFIER))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test28.txt",
         "astString" : "((1 * 1) - a)",
         "tokenTypeString" : "((INT STAR INT) MINUS IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test29.txt",
         "astString" : "((1 + (1 * a)) + a)",
         "tokenTypeString" : "((INT PLUS (INT STAR IDENTIFIER)) PLUS IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test30.txt",
         "astString" : "[a]",
         "tokenTypeString" : "[IDENTIFIER]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test31.txt",
         "astString" : "[(a + 1)]",
         "tokenTypeString" : "[(IDENTIFIER PLUS INT)]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test32.txt",
         "astString" : "[a,b,3]",
         "tokenTypeString" : "[IDENTIFIER,IDENTIFIER,INT]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test33.txt",
         "astString" : "callMe()",
         "tokenTypeString" : "IDENTIFIER()",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test34.txt",
         "astString" : "(callMe() + meAlso())",
         "tokenTypeString" : "(IDENTIFIER() PLUS IDENTIFIER())",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test35.txt",
-        "astString" : "[(callMe() + meAlso())]",
-        "tokenTypeString" : "[(IDENTIFIER() PLUS IDENTIFIER())]",
-        "error" : null
+        "astString" : "some_array[(callMe() + meAlso())]",
+        "tokenTypeString" : "IDENTIFIER[(IDENTIFIER() PLUS IDENTIFIER())]",
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test36.txt",
         "astString" : "[callMe(),meAlso()]",
         "tokenTypeString" : "[IDENTIFIER(),IDENTIFIER()]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test37.txt",
         "astString" : "[callMe(),meAlso(),ImAFunction()]",
         "tokenTypeString" : "[IDENTIFIER(),IDENTIFIER(),IDENTIFIER()]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test38.txt",
-        "astString" : "[]",
-        "tokenTypeString" : "[]",
-        "error" : null
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ExpressionTests/test38.txt",
+                "tokenLiteral" : "]",
+                "lineNumber" : "1",
+                "message" : "empty expression"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test39.txt",
-        "astString" : "[[]]",
-        "tokenTypeString" : "[[]]",
-        "error" : null
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ExpressionTests/test39.txt",
+                "tokenLiteral" : "]",
+                "lineNumber" : "1",
+                "message" : "empty expression"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test40.txt",
-        "astString" : "[[],[]]",
-        "tokenTypeString" : "[[],[]]",
-        "error" : null
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ExpressionTests/test40.txt",
+                "tokenLiteral" : "]",
+                "lineNumber" : "1",
+                "message" : "empty expression"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test41.txt",
         "astString" : "[[callMe()]]",
         "tokenTypeString" : "[[IDENTIFIER()]]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test42.txt",
         "astString" : "[callMe([])]",
         "tokenTypeString" : "[IDENTIFIER([])]",
-        "error" : null
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ExpressionTests/test42.txt",
+                "tokenLiteral" : "]",
+                "lineNumber" : "1",
+                "message" : "empty expression"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test43.txt",
         "astString" : "[[callMe([])],[callMe([])]]",
         "tokenTypeString" : "[[IDENTIFIER([])],[IDENTIFIER([])]]",
-        "error" : null
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ExpressionTests/test43.txt",
+                "tokenLiteral" : "]",
+                "lineNumber" : "1",
+                "message" : "empty expression"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test44.txt",
         "astString" : "[callMe([a,b,c])]",
         "tokenTypeString" : "[IDENTIFIER([IDENTIFIER,IDENTIFIER,IDENTIFIER])]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test45.txt",
         "astString" : "[callMe([a(b,c)])]",
         "tokenTypeString" : "[IDENTIFIER([IDENTIFIER(IDENTIFIER,IDENTIFIER)])]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test46.txt",
         "astString" : "{}",
         "tokenTypeString" : "{}",
-        "error" : null
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ExpressionTests/test46.txt",
+                "tokenLiteral" : "}",
+                "lineNumber" : "1",
+                "message" : "empty expression"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test47.txt",
         "astString" : "{(a : b)}",
         "tokenTypeString" : "{(IDENTIFIER COLON IDENTIFIER)}",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test48.txt",
         "astString" : "{(a : b),(c : d)}",
         "tokenTypeString" : "{(IDENTIFIER COLON IDENTIFIER),(IDENTIFIER COLON IDENTIFIER)}",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test49.txt",
         "astString" : "[(a : b)]",
         "tokenTypeString" : "[(IDENTIFIER COLON IDENTIFIER)]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test50.txt",
         "astString" : "[(a : b),(c : d)]",
         "tokenTypeString" : "[(IDENTIFIER COLON IDENTIFIER),(IDENTIFIER COLON IDENTIFIER)]",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test51.txt",
         "astString" : "{(a() : b())}",
         "tokenTypeString" : "{(IDENTIFIER() COLON IDENTIFIER())}",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test52.txt",
         "astString" : "{(a([d,e,f]) : b({(h : i)}))}",
         "tokenTypeString" : "{(IDENTIFIER([IDENTIFIER,IDENTIFIER,IDENTIFIER]) COLON IDENTIFIER({(IDENTIFIER COLON IDENTIFIER)}))}",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test53.txt",
         "astString" : "((a + b) : c)",
         "tokenTypeString" : "((IDENTIFIER PLUS IDENTIFIER) COLON IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/ExpressionTests/test54.txt",
         "astString" : "(a : b(v))",
         "tokenTypeString" : "(IDENTIFIER COLON IDENTIFIER(IDENTIFIER))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test1.txt",
         "astString" : "(a <= b)",
         "tokenTypeString" : "(IDENTIFIER LESS_EQUAL IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test2.txt",
         "astString" : "(a < b)",
         "tokenTypeString" : "(IDENTIFIER LESS IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test3.txt",
         "astString" : "(a > b)",
         "tokenTypeString" : "(IDENTIFIER GREATER IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test4.txt",
         "astString" : "(a >= b)",
         "tokenTypeString" : "(IDENTIFIER GREATER_EQUAL IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test5.txt",
         "astString" : "(a == b)",
         "tokenTypeString" : "(IDENTIFIER EQUAL_EQUAL IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test6.txt",
         "astString" : "(a != b)",
         "tokenTypeString" : "(IDENTIFIER BANG_EQUAL IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test7.txt",
         "astString" : "(a and b)",
         "tokenTypeString" : "(IDENTIFIER AND IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test8.txt",
         "astString" : "(a nand b)",
         "tokenTypeString" : "(IDENTIFIER NAND IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test9.txt",
         "astString" : "(a or b)",
         "tokenTypeString" : "(IDENTIFIER OR IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test10.txt",
         "astString" : "(a nor b)",
         "tokenTypeString" : "(IDENTIFIER NOR IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test11.txt",
         "astString" : "(a xor b)",
         "tokenTypeString" : "(IDENTIFIER XOR IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test12.txt",
         "astString" : "(a not b)",
         "tokenTypeString" : "(IDENTIFIER NOT IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test13.txt",
         "astString" : "((a + b) < (5 - h))",
         "tokenTypeString" : "((IDENTIFIER PLUS IDENTIFIER) LESS (INT MINUS IDENTIFIER))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test14.txt",
         "astString" : "((a * b) == (5 / h))",
         "tokenTypeString" : "((IDENTIFIER STAR IDENTIFIER) EQUAL_EQUAL (INT SLASH IDENTIFIER))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test15.txt",
         "astString" : "(((a == b) == 5) != h)",
         "tokenTypeString" : "(((IDENTIFIER EQUAL_EQUAL IDENTIFIER) EQUAL_EQUAL INT) BANG_EQUAL IDENTIFIER)",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test16.txt",
         "astString" : "(((a + b) <= c) and (((f + g) - 6) > 4))",
         "tokenTypeString" : "(((IDENTIFIER PLUS IDENTIFIER) LESS_EQUAL IDENTIFIER) AND (((IDENTIFIER PLUS IDENTIFIER) MINUS INT) GREATER INT))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test17.txt",
         "astString" : "(key : (((a + b) <= c) and (((f + g) - 6) > 4)))",
         "tokenTypeString" : "(IDENTIFIER COLON (((IDENTIFIER PLUS IDENTIFIER) LESS_EQUAL IDENTIFIER) AND (((IDENTIFIER PLUS IDENTIFIER) MINUS INT) GREATER INT)))",
-        "error" : null
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test18.txt",
         "astString" : "((((a + b) <= c) and (((f + g) - 6) > 4)) : key)",
         "tokenTypeString" : "((((IDENTIFIER PLUS IDENTIFIER) LESS_EQUAL IDENTIFIER) AND (((IDENTIFIER PLUS IDENTIFIER) MINUS INT) GREATER INT)) COLON IDENTIFIER)",
-        "error" : null
+        "errors" : null
     }
 ]

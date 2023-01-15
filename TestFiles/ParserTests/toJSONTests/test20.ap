@@ -1,0 +1,69 @@
+module parsing_testing
+
+import a as b, b as c, d as e from module folder.subfolder.amodule
+import thing from library space
+import library station
+import Needle from module current..up..upsome_more..keep_going..kinda.other_sub_folder:one_folder_among_many.haystack
+
+// define statements here
+define HashMap(int: string) as IntStringHashMap
+define Map(int : string) as IntStringMap
+define Dictionary(int : string) as IntStringDict
+
+define Vector(int) as IntVector
+define LinkedList(long) as LongLinkedList
+define List(SomeUserDefinedType) as ListOfSomeType
+
+define Stack(SomeUserDefinedType) as StackOfSomeType
+
+define HashSet(Thing) as ThingHash
+define TreeSet(Amajig) as TreeAmajig
+define Set(All) as AllSet
+
+define FifoQueue(Line) as ImHereFirst
+define PriorityQueue(MeMeMe) as SnobQueue
+define Deque(Thing) as ThingDeque
+define Queue(People) as Lineup
+
+define Option(maybe) as CouldBe
+define Result(ThingIWant, Whoops) as StuffIWant
+define fun() as DoNothingFn
+define fun(int) as TakeAthingFn
+define fun(int, Thing, MyStruct, float, long, double, char, string) Needle as FunctionType
+
+
+enum Thing(long) is
+ i = 0,
+ b = 2
+end
+
+acyclic struct MyStruct
+  uses MuhFace, MuhHands is
+  pub count as int,
+  pub i as "string"
+end
+
+error Whoops is
+  badidea,
+  badluck
+end
+
+/*
+    Too many comments is a sign your code is messy
+    but comments are still useful in general
+*/
+union EverythingBagel is
+  field1 as Thing,
+  field2 as MyStruct,
+  fields3 as Whoops,
+  field4 as Needle
+end
+
+acyclic pub interface MuhFace is
+    fun fun_one() int end
+end
+
+inline fun afunction() int do
+    let i as float = 0.1
+    return 0
+end

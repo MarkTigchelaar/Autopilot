@@ -1,0 +1,19 @@
+pub fun function() int do
+  if true do
+    if true do
+      loop
+        unless true do
+          unless true do
+            if true do
+              let a0 as int = 10
+            else
+              let a1 as int = 10
+            end
+          end
+          return 0
+        end
+      end
+    end
+  end
+  return 0
+end

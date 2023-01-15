@@ -1,9 +1,16 @@
 [
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test1.txt",
-        "astString" : "break",
-        "tokenTypeString" : "BREAK",
-        "errors" : null
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test1.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test2.txt",
@@ -14,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test2.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -27,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test3.txt",
                 "tokenLiteral" : "5",
                 "lineNumber" : "1",
-                "message" : "Unexpected token 5."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -40,14 +47,14 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test4.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test5.txt",
-        "astString" : "test, break",
-        "tokenTypeString" : "IDENTIFIER BREAK",
+        "astString" : "test",
+        "tokenTypeString" : "IDENTIFIER",
         "errors" : null
     }
 ]

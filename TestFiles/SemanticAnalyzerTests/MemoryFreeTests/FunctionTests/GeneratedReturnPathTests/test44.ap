@@ -1,0 +1,10 @@
+pub fun function() int do
+  if true do
+    if true do
+      loop
+        let a0 as int = 10
+      end
+    end
+  end
+  return 0
+end

@@ -1,0 +1,29 @@
+pub fun function() int do
+  switch 'c'
+  case 'a' do
+    for i in 1 .. 10 do
+      if true do
+        let a0 as int = 10
+      end
+      return 0
+    end
+    return 0
+  case 'b' do
+    if true do
+      for i in 1 .. 10 do
+        let a1 as int = 10
+      end
+      return 0
+    end
+    return 0
+  default
+    for i in 1 .. 10 do
+      if true do
+        let a2 as int = 10
+      end
+      return 0
+    end
+    return 0
+  end
+  return 0
+end

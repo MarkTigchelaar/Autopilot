@@ -1,6 +1,6 @@
 switch name
   case 'b' do
-   if
+   var a = 6
   default 
-    if
+    let a = 0
 end

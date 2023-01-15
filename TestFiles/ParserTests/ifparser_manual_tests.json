@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test2.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "3",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test3.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -47,7 +47,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test4.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -60,7 +60,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test5.txt",
                 "tokenLiteral" : "if",
                 "lineNumber" : "1",
-                "message" : "Unexpected token if."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -73,7 +73,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test6.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -86,7 +86,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test7.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "3",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -99,26 +99,19 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test8.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "3",
-                "message" : "Unexpected token struct."
+                "message" : "invalid constant or variable"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test9.txt",
-        "astString" : "",
-        "tokenTypeString" : "",
-        "errors" : [
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test9.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "2",
-                "message" : "Empty Statement."
-            }
-        ]
+        "astString" : "a",
+        "tokenTypeString" : "IDENTIFIER",
+        "errors" : null
     },
     {
         "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test10.txt",
-        "astString" : "exp:a",
+        "astString" : "a",
         "tokenTypeString" : "IDENTIFIER",
         "errors" : null
     },
@@ -131,7 +124,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test11.txt",
                 "tokenLiteral" : "if",
                 "lineNumber" : "1",
-                "message" : "Unexpected token if."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -144,7 +137,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test12.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -157,7 +150,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test13.txt",
                 "tokenLiteral" : "if",
                 "lineNumber" : "1",
-                "message" : "Unexpected token if."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -170,7 +163,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test14.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -183,7 +176,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test15.txt",
                 "tokenLiteral" : "if",
                 "lineNumber" : "1",
-                "message" : "Unexpected token if."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -196,7 +189,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test16.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -209,7 +202,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test17.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -222,7 +215,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/IfTests/test18.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     }

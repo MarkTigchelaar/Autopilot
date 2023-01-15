@@ -22,5 +22,25 @@
     {
         "general_component" : "rbinvalues",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/rvalue_bin_operator_tests.json"
+    },
+    {
+        "general_component" : "nested_binary_operations",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/nested_bin_operator_tests.json"
+    },
+    {
+        "general_component" : "function_return_types",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/function_return_type_tests.json"
+    },
+    {
+        "general_component" : "function_arg_types",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/function_arg_type_tests.json"
+    },
+    {
+        "general_component" : "function_return_paths",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/function_return_paths_tests.json"
+    },
+    {
+        "general_component" : "generated_function_return_paths",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/function_return_paths_generated_tests.json"
     }
 ]

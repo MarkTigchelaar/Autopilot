@@ -13,6 +13,10 @@
     },
     {
         "general_component" : "expparser",
+        "test_manifest_file" : "../TestFiles/ParserTests/expparser_error_tests_pt_2.json"
+    },
+    {
+        "general_component" : "expparser",
         "test_manifest_file" : "../TestFiles/ParserTests/expparser_manual_tests.json"
     },
     {
@@ -114,10 +118,6 @@
     {
         "general_component" : "statementparserwdummy",
         "test_manifest_file" : "../TestFiles/ParserTests/statement_with_dummy_parser_manual_tests.json"
-    },
-    {
-        "general_component" : "statementcombinations",
-        "test_manifest_file" : "../TestFiles/ParserTests/statement_combination_tests.json"
     },
     {
         "general_component" : "statementsequences",

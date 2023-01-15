@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test1.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Unexpected token struct."
+                "message" : "invalid constant or variable"
             }
         ]
     },
@@ -21,13 +21,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test2.txt",
                 "tokenLiteral" : "dee",
                 "lineNumber" : "2",
-                "message" : "Unexpected token dee."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test2.txt",
-                "tokenLiteral" : "eh",
-                "lineNumber" : "5",
-                "message" : "Unexpected token eh."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -40,13 +34,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test3.txt",
                 "tokenLiteral" : "equal",
                 "lineNumber" : "3",
-                "message" : "Unexpected token equal."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test3.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "6",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -59,13 +47,7 @@
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test4.txt",
                 "tokenLiteral" : "equal",
                 "lineNumber" : "3",
-                "message" : "Unexpected token equal."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test4.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "9",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -76,15 +58,9 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test5.txt",
-                "tokenLiteral" : "equal",
-                "lineNumber" : "3",
-                "message" : "Unexpected token equal."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test5.txt",
                 "tokenLiteral" : "done",
                 "lineNumber" : "9",
-                "message" : "Unexpected token done."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -95,21 +71,9 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test6.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "3",
-                "message" : "Unexpected token struct."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test6.txt",
                 "tokenLiteral" : "==",
                 "lineNumber" : "5",
-                "message" : "Unexpected token ==."
-            },
-            {
-                "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test6.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "9",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     }

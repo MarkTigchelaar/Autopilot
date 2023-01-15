@@ -8,7 +8,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test1.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test2.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test3.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -47,7 +47,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test4.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -60,7 +60,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test5.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -73,7 +73,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test6.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -86,7 +86,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test7.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -99,7 +99,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test8.txt",
                 "tokenLiteral" : "if",
                 "lineNumber" : "1",
-                "message" : "Unexpected token if."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -112,7 +112,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test9.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -125,7 +125,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test10.txt",
                 "tokenLiteral" : "interface",
                 "lineNumber" : "1",
-                "message" : "Unexpected token interface."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -138,7 +138,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test11.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -151,7 +151,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test12.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "2",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -164,7 +164,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test13.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "2",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -177,7 +177,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test14.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -190,7 +190,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test15.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "1",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -203,7 +203,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test16.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "1",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -216,7 +216,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test17.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "2",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -229,7 +229,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test18.txt",
                 "tokenLiteral" : "else",
                 "lineNumber" : "2",
-                "message" : "Unexpected token else."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -242,7 +242,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test19.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "2",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -255,7 +255,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test20.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "2",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -268,7 +268,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test21.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "2",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -281,7 +281,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test22.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "2",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -294,13 +294,13 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test23.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "2",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/StructTests/test24.txt",
-        "astString" : "name some_interface test pub nameOne int nameTwo double pub thingy thing pub avariable string",
+        "astString" : "name some_interface test pub nameOne int nameTwo double pub thingy thing pub avariable string ",
         "tokenTypeString" : "IDENTIFIER IDENTIFIER IDENTIFIER PUB IDENTIFIER INT IDENTIFIER DOUBLE PUB IDENTIFIER IDENTIFIER PUB IDENTIFIER STRING",
         "errors" : null
     },
@@ -313,7 +313,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test25.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "7",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -326,7 +326,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test26.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "7",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -339,7 +339,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test27.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "7",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -352,7 +352,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test28.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "7",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -365,7 +365,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test29.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "7",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -378,7 +378,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test30.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "7",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -391,7 +391,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test31.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "7",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -404,7 +404,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test32.txt",
                 "tokenLiteral" : "",
                 "lineNumber" : "9",
-                "message" : "End of file reached."
+                "message" : "end of file reached"
             }
         ]
     },
@@ -417,7 +417,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test33.txt",
                 "tokenLiteral" : "struct",
                 "lineNumber" : "10",
-                "message" : "Unexpected token struct."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -430,7 +430,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test34.txt",
                 "tokenLiteral" : "if",
                 "lineNumber" : "13",
-                "message" : "Unexpected token if."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -443,7 +443,7 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test35.txt",
                 "tokenLiteral" : "tree",
                 "lineNumber" : "16",
-                "message" : "Unexpected token tree."
+                "message" : "unexpected token"
             }
         ]
     },
@@ -456,14 +456,14 @@
                 "file" : "../Testfiles/ParserTests/StructTests/test36.txt",
                 "tokenLiteral" : "tree",
                 "lineNumber" : "20",
-                "message" : "Unexpected token tree."
+                "message" : "unexpected token"
             }
         ]
     },
     {
         "file" : "../Testfiles/ParserTests/StructTests/test37.txt",
-        "astString" : "pumpkin pub variable int acyclic pub test int name: a, type: float, ownership type: let, exp: 0",
-        "tokenTypeString" : "IDENTIFIER PUB IDENTIFIER INT ACYCLIC PUB IDENTIFIER INT IDENTIFIER FLOAT INT",
+        "astString" : "pumpkin pub variable int acyclic pub test int ",
+        "tokenTypeString" : "IDENTIFIER PUB IDENTIFIER INT ACYCLIC PUB IDENTIFIER INT",
         "errors" : null
     }
 ]
