@@ -1,0 +1,70 @@
+
+class DefineStatement:
+    def __init__(self):
+        self.sub_type = None
+        self.new_type_name_token = None
+
+    def add_subtype(self, sub_type):
+        self.sub_type = sub_type
+
+    def add_definition(self, definition_token):
+        self.new_type_name_token = definition_token
+
+# hashMaps, Dictionarys, Map interface
+class KeyValueType:
+    def __init__(self):
+        self.type_token = None
+        self.key_token = None
+        self.value_token = None
+
+    def add_type_token(self, type_token):
+        self.type_token = type_token
+
+    def add_key_token(self, key_token):
+        self.key_token = key_token
+
+    def add_value_token(self, value_token):
+        self.value_token = value_token
+
+
+# Lists, arrays, queues, and includes 
+# hashsets and treesets, and set interface
+class LinearType:
+    def __init__(self):
+        self.type_token = None
+        self.value_token = None
+
+    def add_type_token(self, type_token):
+        self.type_token = type_token
+
+    def add_value_token(self, value_token):
+        self.value_token = value_token
+
+
+# Option, or Result
+class FailableType:
+    def __init__(self):
+        self.type_token = None
+        self.value_token = None
+        self.error_token = None
+
+    def add_type_token(self, type_token):
+        self.type_token = type_token
+
+    def add_value_token(self, value_token):
+        self.value_token = value_token
+
+    def add_alternate_token(self, error_token):
+        self.error_token = error_token
+
+
+class FunctionType:
+    def __init__(self):
+        self.arg_type_list = list()
+        self.return_type_token = None
+
+    def add_argument(self, arg_token):
+        self.arg_type_list.append(arg_token)
+    
+    def add_return_type(self, return_type_token):
+        self.return_type_token = return_type_token

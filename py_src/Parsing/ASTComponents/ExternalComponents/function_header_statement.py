@@ -1,0 +1,38 @@
+
+class FunctionHeaderStatement:
+    def __init__(self):
+        self.name_token = None
+        self.arguments = list()
+        self.return_type_token = None
+        self.acyclic_token = None
+        self.is_public = False
+
+    def add_name(self, name_token):
+        self.name_token = name_token
+
+    def add_arg(self, argument):
+        self.arguments.append(argument)
+    
+    def add_return_type(self, return_type_token):
+        self.return_type_token = return_type_token
+    
+    def add_acyclic_field(self, acyclic_token):
+        self.acyclic_token = acyclic_token
+
+    def set_as_public(self, is_public):
+        self.is_public = is_public
+
+class FunctionArgument:
+    def __init__(self):
+        self.arg_name_token = None
+        self.arg_type_token = None
+        self.default_value_token = None
+
+    def add_name(self, arg_name_token):
+        self.arg_name_token = arg_name_token
+
+    def add_type(self, arg_type_token):
+        self.arg_type_token = arg_type_token
+    
+    def add_default_value(self, default_value_token):
+        self.default_value_token = default_value_token
