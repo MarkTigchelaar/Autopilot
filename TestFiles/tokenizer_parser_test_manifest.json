@@ -130,5 +130,10 @@
     {
         "general_component" : "mainparserJSON",
         "test_manifest_file" : "../TestFiles/ParserTests/main_parser_json_tests.json"
+    },
+    {
+        "general_component": "happy_path",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/function_return_paths_generated_tests.json"
     }
+    
 ] 
