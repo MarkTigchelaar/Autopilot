@@ -1,4 +1,4 @@
-from TestingComponents.testing_utilities import get_json_from_file, call_parsing_tests, call_tokenizer_tests
+from TestingComponents.testing_utilities import get_json_from_file, call_parsing_tests, call_tokenizer_tests, parser_happy_path_tests
 from TestingComponents.testing_parsing_driver import TestingParsingDriver
 
 from Parsing.expression_parsing import parse_expression
@@ -35,7 +35,7 @@ def phase_one_tests(tracker, test_json, current_dir: str) -> None:
         print(general_component)
         test_fn = None
         if general_component == "scanner":
-            #call_tokenizer_tests(component_tests, tracker, current_dir)
+            call_tokenizer_tests(component_tests, tracker, current_dir)
             continue
         if general_component == "expparser":
             test_fn = parse_expression_test
@@ -93,6 +93,10 @@ def phase_one_tests(tracker, test_json, current_dir: str) -> None:
             test_fn = statement_parse_test
         elif general_component == "mainparserJSON":
             test_fn = main_parse_test
+        elif general_component == "happy_path":
+            test_fn = happy_path
+            parser_happy_path_tests(component_tests, tracker, test_fn, current_dir)
+            continue
         else:
             continue
         if test_fn is None:
@@ -232,5 +236,9 @@ def statement_parse_test(tok, err_manager):
 
 
 def main_parse_test(tok, err_manager):
+    driver = TestingParsingDriver(tok, err_manager)
+    return parse_src(driver)
+
+def happy_path(tok, err_manager):
     driver = TestingParsingDriver(tok, err_manager)
     return parse_src(driver)

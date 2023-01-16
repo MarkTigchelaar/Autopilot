@@ -58,10 +58,6 @@ def call_parsing_tests(component_tests, tracker, current_dir, parse_test_fn, com
         tok = Tokenizer(err_manager)
 
 
-        # if "toJSONTests/test28.ap" not in test["file"]:
-        #     continue
-
-        #print(test["file"]) OuterIf/test15.txt
         try:
             tok.load_src(test["file"])
         except:
@@ -213,3 +209,29 @@ def compare_asts(ast_json, expected_ast, test, tracker):
             record_component_test(test, tracker, json.dumps(expected_ast), json.dumps(ast_json))
     else:
         record_component_test(test, tracker, expected_ast, ast_json)
+
+
+def parser_happy_path_tests(test_list, tracker, parse_test_fn, current_dir):
+    print("happy path tests")
+    for i, test in enumerate(test_list):
+        print("running happy path test " + str(i + 1))
+        err_manager = ErrorManager()
+        tok = Tokenizer(err_manager)
+        try:
+            tok.load_src(test["file"])
+        except:
+            tok.load_src(current_dir + "/" + test["file"])
+        try:
+            _ = parse_test_fn(tok, err_manager)
+        except Exception as e:
+            print("EXCEPTION in file: " + test["file"] + ":\n" + str(e))
+            record_component_test(test, tracker, "OK", "EXCEPTION: " + str(e))
+            continue
+
+        if err_manager.has_errors():
+            print("Errors found! Should have 0 errors")
+            while err_manager.has_errors():
+                err = err_manager.next_error()
+                record_component_test(test, tracker, "ok", err.message + ": " + err.token.to_string())
+        else:
+            record_component_test(test, tracker, "ok", "ok")
