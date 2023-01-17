@@ -1,9 +1,0 @@
-elif a do
-  switch b
-  case 'a' do
-    let a = 5
-  end
-  switch b
-  case 'b' do
-  end
-end
