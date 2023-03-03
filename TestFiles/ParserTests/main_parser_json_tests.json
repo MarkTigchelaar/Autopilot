@@ -235,10 +235,13 @@
           {
               "type": "import",
               "name": {
-                  "literal": "testlib",
-                  "type": "IDENTIFIER",
-                  "line_number": 1,
-                  "column_number": 29
+                "node" : {
+                    "literal": "testlib",
+                    "type": "IDENTIFIER",
+                    "line_number": 1,
+                    "column_number": 29
+                },
+                "direction" : {}
               },
               "import_list": [
                 {
@@ -2349,34 +2352,41 @@
             "type": "import",
             "name": [
                 {
-                    "literal": "folder",
-                    "type": "IDENTIFIER",
-                    "line_number": 3,
-                    "column_number": 43
+                    "node" : {
+                        "literal": "folder",
+                        "type": "IDENTIFIER",
+                        "line_number": 3,
+                        "column_number": 43
+                    },
+                    "direction" : {
+                        "literal": ".",
+                        "type": "DOT",
+                        "line_number": 3,
+                        "column_number": 49
+                    }
                 },
                 {
-                    "literal": ".",
-                    "type": "DOT",
-                    "line_number": 3,
-                    "column_number": 49
+                    "node" : {
+                        "literal": "subfolder",
+                        "type": "IDENTIFIER",
+                        "line_number": 3,
+                        "column_number": 50
+                    },
+                    "direction" : {
+                        "literal": ".",
+                        "type": "DOT",
+                        "line_number": 3,
+                        "column_number": 59
+                    }
                 },
                 {
-                    "literal": "subfolder",
-                    "type": "IDENTIFIER",
-                    "line_number": 3,
-                    "column_number": 50
-                },
-                {
-                    "literal": ".",
-                    "type": "DOT",
-                    "line_number": 3,
-                    "column_number": 59
-                },
-                {
-                    "literal": "amodule",
-                    "type": "IDENTIFIER",
-                    "line_number": 3,
-                    "column_number": 60
+                    "node" : {
+                        "literal": "amodule",
+                        "type": "IDENTIFIER",
+                        "line_number": 3,
+                        "column_number": 60
+                    },
+                    "direction" : {}
                 }
             ],
             "import_list": [
@@ -2428,10 +2438,13 @@
         {
             "type": "import",
             "name": {
-                "literal": "space",
-                "type": "IDENTIFIER",
-                "line_number": 4,
-                "column_number": 27
+                "node" : {
+                    "literal": "space",
+                    "type": "IDENTIFIER",
+                    "line_number": 4,
+                    "column_number": 27
+                },
+                "direction" : {}
             },
             "import_list": {
                 "name": {
@@ -2446,11 +2459,14 @@
         },
         {
             "type": "import",
-            "name": {
-                "literal": "station",
-                "type": "IDENTIFIER",
-                "line_number": 5,
-                "column_number": 16
+            "name":     {
+                "node" : {
+                    "literal": "station",
+                    "type": "IDENTIFIER",
+                    "line_number": 5,
+                    "column_number": 16
+                },
+                "direction" : {}
             },
             "import_list": [],
             "import_type": "library"
@@ -2459,94 +2475,111 @@
             "type": "import",
             "name": [
                 {
-                    "literal": "current",
-                    "type": "IDENTIFIER",
-                    "line_number": 6,
-                    "column_number": 27
+                    "node" : {
+                        "literal": "current",
+                        "type": "IDENTIFIER",
+                        "line_number": 6,
+                        "column_number": 27
+                    },
+                    "direction" : {
+                        "literal": "..",
+                        "type": "RANGE",
+                        "line_number": 6,
+                        "column_number": 34
+                    }
                 },
                 {
-                    "literal": "..",
-                    "type": "RANGE",
-                    "line_number": 6,
-                    "column_number": 34
+                    "node" : {
+                        "literal": "up",
+                        "type": "IDENTIFIER",
+                        "line_number": 6,
+                        "column_number": 36
+                    },
+                    "direction" : {
+                        "literal": "..",
+                        "type": "RANGE",
+                        "line_number": 6,
+                        "column_number": 38
+                    }
                 },
                 {
-                    "literal": "up",
-                    "type": "IDENTIFIER",
-                    "line_number": 6,
-                    "column_number": 36
+                    "node" : {
+                        "literal": "upsome_more",
+                        "type": "IDENTIFIER",
+                        "line_number": 6,
+                        "column_number": 40
+                    },
+                    "direction" : {
+                        "literal": "..",
+                        "type": "RANGE",
+                        "line_number": 6,
+                        "column_number": 51
+                    }
                 },
                 {
-                    "literal": "..",
-                    "type": "RANGE",
-                    "line_number": 6,
-                    "column_number": 38
+                    "node" : {
+                        "literal": "keep_going",
+                        "type": "IDENTIFIER",
+                        "line_number": 6,
+                        "column_number": 53
+                    },
+                    "direction" : {
+                        "literal": "..",
+                        "type": "RANGE",
+                        "line_number": 6,
+                        "column_number": 63
+                    }
                 },
                 {
-                    "literal": "upsome_more",
-                    "type": "IDENTIFIER",
-                    "line_number": 6,
-                    "column_number": 40
+                    "node" : {
+                        "literal": "kinda",
+                        "type": "IDENTIFIER",
+                        "line_number": 6,
+                        "column_number": 65
+                    },
+                    "direction" : {
+                        "literal": ".",
+                        "type": "DOT",
+                        "line_number": 6,
+                        "column_number": 70
+                    }
                 },
                 {
-                    "literal": "..",
-                    "type": "RANGE",
-                    "line_number": 6,
-                    "column_number": 51
+                    "node" : {
+                        "literal": "other_sub_folder",
+                        "type": "IDENTIFIER",
+                        "line_number": 6,
+                        "column_number": 71
+                    },
+                    "direction" : {
+                        "literal": ":",
+                        "type": "COLON",
+                        "line_number": 6,
+                        "column_number": 87
+                    }
                 },
                 {
-                    "literal": "keep_going",
-                    "type": "IDENTIFIER",
-                    "line_number": 6,
-                    "column_number": 53
+                    "node" : {
+                        "literal": "one_folder_among_many",
+                        "type": "IDENTIFIER",
+                        "line_number": 6,
+                        "column_number": 88
+                    },
+                    "direction" : {
+                        "literal": ".",
+                        "type": "DOT",
+                        "line_number": 6,
+                        "column_number": 109
+                    }
                 },
                 {
-                    "literal": "..",
-                    "type": "RANGE",
-                    "line_number": 6,
-                    "column_number": 63
-                },
-                {
-                    "literal": "kinda",
-                    "type": "IDENTIFIER",
-                    "line_number": 6,
-                    "column_number": 65
-                },
-                {
-                    "literal": ".",
-                    "type": "DOT",
-                    "line_number": 6,
-                    "column_number": 70
-                },
-                {
-                    "literal": "other_sub_folder",
-                    "type": "IDENTIFIER",
-                    "line_number": 6,
-                    "column_number": 71
-                },
-                {
-                    "literal": ":",
-                    "type": "COLON",
-                    "line_number": 6,
-                    "column_number": 87
-                },
-                {
-                    "literal": "one_folder_among_many",
-                    "type": "IDENTIFIER",
-                    "line_number": 6,
-                    "column_number": 88
-                },
-                {
-                    "literal": ".",
-                    "type": "DOT",
-                    "line_number": 6,
-                    "column_number": 109
-                },
-                {
-                    "literal": "haystack",
-                    "type": "IDENTIFIER",
-                    "line_number": 6,
-                    "column_number": 110
+                    "node" : {
+                        "literal": "haystack",
+                        "type": "IDENTIFIER",
+                        "line_number": 6,
+                        "column_number": 110
+                    },
+                    "direction" : {}
                 }
             ],
             "import_list": {

@@ -1,5 +1,6 @@
 from .tokenizer_error import TokenizerError
 from .parser_error import ParserError
+from .semantic_error import SemanticError
 
 # This class is used for the entire compilation process,
 # but only for one thread. If multi threaded, the compiler 
@@ -11,12 +12,12 @@ class ErrorManager:
         self.semantic_errors = list()
         self.organized = False
 
-    def has_errors(self) -> bool:
+    def has_errors(self, include_semantic_errors = False) -> bool:
         if len(self.tokenizer_errors) > 0:
             return True
         elif len(self.parser_errors) > 0:
             return True
-        elif len(self.semantic_errors) > 0:
+        elif len(self.semantic_errors) > 0 and include_semantic_errors:
             return True
         return False
 
@@ -42,11 +43,24 @@ class ErrorManager:
             raise Exception("INTERNAL ERROR: parse error list empty")
         return self.parser_errors.pop()
 
+    def add_semantic_error(self, token, message) -> None:
+        semantic_error = SemanticError(token, message)
+        self.semantic_errors.append(semantic_error)
+
+    def next_semantic_error(self) -> SemanticError:
+        if not self.organized:
+            self.organize()
+        if len(self.semantic_errors) < 1:
+            raise Exception("INTERNAL ERROR: semantic error list empty")
+        return self.semantic_errors.pop()
+
     def next_error(self):
         if len(self.tokenizer_errors) > 0:
             return self.tokenizer_errors.pop()
         if len(self.parser_errors) > 0:
             return self.parser_errors.pop()
+        if len(self.semantic_errors) > 0:
+            return self.semantic_errors.pop()
         return None
 
     def organize(self) -> None:

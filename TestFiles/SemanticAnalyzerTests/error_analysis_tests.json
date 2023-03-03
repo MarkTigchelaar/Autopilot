@@ -10,7 +10,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test2.ap",
                 "tokenLiteral" : "field1",
                 "lineNumber" : "2",
-                "message" : "Duplicate enum field name"
+                "message" : "duplicate error field name"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test3.ap",
                 "tokenLiteral" : "test",
                 "lineNumber" : "4",
-                "message" : "Name collision, error field matches error name"
+                "message" : "error field matches error name"
             }
         ]
     }

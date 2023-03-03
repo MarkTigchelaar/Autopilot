@@ -1,5 +1,3 @@
-
-
 class ParserError:
     def __init__(self, token, message, expected_types = None):
         self.token = token

@@ -16,6 +16,18 @@
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/import_analysis_tests.json"
     },
     {
+        "general_component" : "module",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/module_analysis_tests.json"
+    },
+    {
+        "general_component" : "define",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/define_analysis_tests.json"
+    },
+    {
+        "general_component" : "interface",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/interface_analysis_tests.json"
+    },
+    {
         "general_component" : "rvalues",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/rvalue_analysis_tests.json"
     },

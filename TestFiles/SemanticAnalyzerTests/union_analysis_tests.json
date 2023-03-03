@@ -10,7 +10,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/UnionTests/test2.ap",
                 "tokenLiteral" : "field",
                 "lineNumber" : "3",
-                "message" : "Duplicate union field name"
+                "message" : "duplicate union field name"
             }
         ]
     },
@@ -21,7 +21,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/UnionTests/test3.ap",
                 "tokenLiteral" : "field2",
                 "lineNumber" : "3",
-                "message" : "Duplicate union field type \"int\""
+                "message" : "duplicate union field type"
             }
         ]
     },

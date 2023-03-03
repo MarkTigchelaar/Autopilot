@@ -34,7 +34,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test8.ap",
                 "tokenLiteral" : "bambam",
                 "lineNumber" : "4",
-                "message" : "Duplicate enum value"
+                "message" : "duplicate enum value"
             }
         ]
     },
@@ -45,7 +45,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test9.ap",
                 "tokenLiteral" : "fred",
                 "lineNumber" : "4",
-                "message" : "Duplicate enum field name"
+                "message" : "duplicate enum field name"
             }
         ]
     },
@@ -54,9 +54,9 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test10.ap",
-                "tokenLiteral" : "wilma",
+                "tokenLiteral" : "\"hello\"",
                 "lineNumber" : "2",
-                "message" : "Type error, enum field type does not match enum type"
+                "message" : "enum field type does not match enum type"
             }
         ]
     },
@@ -67,7 +67,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test11.ap",
                 "tokenLiteral" : "test1",
                 "lineNumber" : "3",
-                "message" : "Name collision, enum field name matches enum name"
+                "message" : "enum field name matches enum name"
             }
         ]
     },
@@ -78,7 +78,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test12.ap",
                 "tokenLiteral" : "wilma",
                 "lineNumber" : "3",
-                "message" : "Type error, field has mismatched type"
+                "message" : "enum field has mismatched type"
             }
         ]
     },
@@ -89,7 +89,7 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test14.ap",
                 "tokenLiteral" : "wilma",
                 "lineNumber" : "3",
-                "message" : "Type error, enum field type cannot be a user defined type \"thingy\""
+                "message" : "enum field type cannot be a user defined type"
             }
         ]
     },
@@ -100,13 +100,13 @@
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test15.ap",
                 "tokenLiteral" : "thingy",
                 "lineNumber" : "1",
-                "message" : "Type error, enum type cannot be a user defined type \"thingy\""
+                "message" : "enum type cannot be a user defined type"
             },
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test15.ap",
                 "tokenLiteral" : "wilma",
                 "lineNumber" : "3",
-                "message" : "Type error, enum field type cannot be a user defined type \"thingy\""
+                "message" : "enum field type cannot be a user defined type"
             }
         ]
     }

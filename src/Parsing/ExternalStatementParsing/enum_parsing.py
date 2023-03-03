@@ -1,5 +1,5 @@
 import symbols
-from keywords import is_eof_type, is_primitive_type
+from keywords import is_eof_type, is_primitive_type, is_boolean_literal
 from ErrorHandling.parsing_error_messages import *
 from Parsing.ASTComponents import ast_node_keys
 
@@ -42,6 +42,7 @@ def is_step(driver, enum_stmt):
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None
+    # This is an error, but it's a semantic error, not a parser error.
     elif peek_token.type_symbol == symbols.IDENTIFIER:
         return item_list_step(driver, enum_stmt)
     else:
@@ -133,6 +134,8 @@ def equal_step(driver, enum_stmt, item_name_token):
         return item_list_literal_step(driver, enum_stmt, item_name_token)
     elif is_primitive_type(peek_token):
         return item_list_literal_step(driver, enum_stmt, item_name_token)
+    elif is_boolean_literal(peek_token):
+        return item_list_literal_step(driver, enum_stmt, item_name_token)
     elif peek_token.type_symbol == symbols.MINUS:
         return item_list_literal_step(driver, enum_stmt, item_name_token)
     else:
@@ -144,6 +147,7 @@ def item_list_literal_step(driver, enum_stmt, item_name_token):
     token = driver.next_token()
     peek_token = driver.peek_token()
     if token.type_symbol == symbols.MINUS:
+        # enum values can be - numbers, identifiers are a semantic error.
         if peek_token.type_symbol == symbols.IDENTIFIER:
             token.literal += peek_token.literal
             enum_stmt.new_item(item_name_token, token)
@@ -159,6 +163,8 @@ def item_list_literal_step(driver, enum_stmt, item_name_token):
     elif token.type_symbol == symbols.IDENTIFIER:
         enum_stmt.new_item(item_name_token, token)
     elif is_primitive_type(token):
+        enum_stmt.new_item(item_name_token, token)
+    elif is_boolean_literal(token):
         enum_stmt.new_item(item_name_token, token)
     else:
         driver.add_error(peek_token, UNEXPECTED_TOKEN)

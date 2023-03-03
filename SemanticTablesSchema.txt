@@ -1,0 +1,132 @@
+Objects:
+    ObjectId            int
+    TypeId              int
+    StatusCode          enum.int
+    name                string
+    AccessModifierCode  enum.int
+    ObjectReference     AstNode
+
+TypeDefs:
+    TypeId              int
+    TypeDefName         string
+
+Structs:
+    ObjectId            int
+    InterfaceNameList   list
+
+StructFields:
+    ObjectId            int
+    StructId            int
+    MutationModifier    enum.int
+    DefaultValue        string
+
+Functions:
+    ObjectId            int
+    SignatureId         int
+    OwnerId             int
+
+FunctionSignatures:
+    ObjectId            int
+    ReturnTypeId        int
+    ArgList             list
+
+Defines:
+    ObjectId            int
+    ContainerTypeId     int
+    LHSTypeId           int
+    RHSTypeId           int
+
+StatementLists:
+    ObjectId            int
+    OwnerId             int
+    ScopeLevel          int
+
+Statement:
+    ObjectId            int
+    OwnerId             int
+    PositionNumber      int
+    Type                enum.int
+
+Modules:
+    ObjectId            int
+    DirectoryPath       string
+
+ModuleSrcFiles:
+    ModuleId            int
+    filename            string
+
+ModuleItems:
+    ObjectId            int
+    ModuleId            int
+
+ModuleImports:
+    ObjectId            int
+    ModuleId            int
+    ImportType          string
+    ImportName          string
+
+ImportPaths:
+    ObjectId            int
+    ImportId            int
+    PathList            list
+
+ImportItems:
+    ObjectId            int
+    ImportId            int
+    ItemName            int <- is object, objects have names already
+    ItemAlias           int
+
+Errors:
+    ObjectId            int
+    TypeId              int
+
+ErrorFields:
+    ObjectId            int
+    ErrorId             int
+
+Enums:
+    ObjectId            int
+    TypeId              int
+
+EnumFields:
+    ObjectId            int
+    EnumId              int
+    DefaultValue        string
+
+// All resolved types can go through objects table
+BinaryExpressions:
+    ObjectId            int
+    ResolvedType        string <- type defs through objects table
+    LHSExpressionId     int
+    RHSExpressionId     int
+    OwnerId             int
+
+OptResultAssignExpressions:
+    ObjectId            int
+    OwnerId             int
+    UnwrappedName       string
+    WrappedName         string
+
+RangeExpresssions:
+    ObjectId            int
+    OwnerId             int
+    IndexVariableName   string
+    IdxStartName        string
+    IdxStartTypeId      int
+    IdxStopName         string
+    IdxStopTypeId       int
+    IterStep            int
+
+CollectionExpressions:
+    ObjectId            int
+    OwnerId             int
+    IterOrKeyItemName   string
+    ValueItemName       string
+    CollectionName      string
+
+FunctionCallExpressions:
+    ObjectId            int
+    OwnerId             int
+    FnName              string <- name in objects table
+    ResolvedReturnType  string <- TypeDefs?
+    ArgTypeList         list

@@ -296,5 +296,83 @@
                 "message" : "invalid module or library name"
             }
         ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test25.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test25.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test26.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test26.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test27.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test27.txt",
+                "tokenLiteral" : "a",
+                "lineNumber" : "1",
+                "message" : "unexpected token"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test28.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test28.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test29.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test29.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/ParserTests/ImportTests/test30.txt",
+        "astString" : "",
+        "tokenTypeString" : "",
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/ImportTests/test30.txt",
+                "tokenLiteral" : "",
+                "lineNumber" : "1",
+                "message" : "end of file reached"
+            }
+        ]
     }
 ]

@@ -134,24 +134,25 @@ def comma_step(driver, import_stmt):
 
 def module_name_step(driver, import_stmt):
     name_token = driver.next_token()
-    import_stmt.new_path_item(name_token)
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
+        import_stmt.new_path_item(name_token, None)
         return import_stmt
     elif peek_token.type_symbol == symbols.DOT:
-        return module_path_step(driver, import_stmt)
+        return module_path_step(driver, import_stmt, name_token)
     elif peek_token.type_symbol == symbols.RANGE:
-        return module_path_step(driver, import_stmt)
+        return module_path_step(driver, import_stmt, name_token)
     elif peek_token.type_symbol == symbols.COLON:
-        return module_path_step(driver, import_stmt)
+        return module_path_step(driver, import_stmt, name_token)
     else:
+        import_stmt.new_path_item(name_token, None)
         return import_stmt
 
 
-def module_path_step(driver, import_stmt):
-    path_token = driver.next_token()
-    import_stmt.new_path_item(path_token)
+def module_path_step(driver, import_stmt, name_token):
+    next_token = driver.next_token()
     peek_token = driver.peek_token()
+    import_stmt.new_path_item(name_token, next_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None

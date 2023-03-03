@@ -2,16 +2,7 @@ import symbols
 from .parsing_utilities import *
 from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
-from Parsing.ExternalStatementParsing.enum_parsing import parse_enum
-from Parsing.ExternalStatementParsing.union_parsing import parse_union
-from Parsing.ExternalStatementParsing.error_parsing import parse_error
-from Parsing.ExternalStatementParsing.import_parsing import parse_import 
-from Parsing.ExternalStatementParsing.module_parsing import parse_module 
-from Parsing.ExternalStatementParsing.define_parsing import parse_define
-from Parsing.ExternalStatementParsing.interface_parsing import parse_interface
-from Parsing.ExternalStatementParsing.function_parsing import parse_function
-from Parsing.ExternalStatementParsing.unittest_parsing import parse_unittest
-from Parsing.ExternalStatementParsing.struct_parsing import parse_struct
+from routes import parse_enum, parse_union, parse_error, parse_import, parse_module, parse_define, parse_interface, parse_function, parse_unittest, parse_struct
 
 class StatementRestrictionTracker:
     def __init__(self):

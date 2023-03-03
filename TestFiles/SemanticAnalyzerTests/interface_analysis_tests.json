@@ -1,0 +1,68 @@
+[
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test1.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test1.ap",
+                "tokenLiteral" : "functionA",
+                "lineNumber" : "4",
+                "message" : "function name matches previous function name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test2.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test2.ap",
+                "tokenLiteral" : "test",
+                "lineNumber" : "4",
+                "message" : "function name matches interface name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test3.ap",
+                "tokenLiteral" : "second",
+                "lineNumber" : "4",
+                "message" : "function argument name matches function name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test4.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test4.ap",
+                "tokenLiteral" : "c",
+                "lineNumber" : "3",
+                "message" : "function argument name matches previous function argument name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test5.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test5.ap",
+                "tokenLiteral" : "test",
+                "lineNumber" : "3",
+                "message" : "function argument name matches interface name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test6.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test6.ap",
+                "tokenLiteral" : "functionA",
+                "lineNumber" : "3",
+                "message" : "function argument name matches previous function name"
+            }
+        ]
+    }
+]

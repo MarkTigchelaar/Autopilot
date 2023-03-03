@@ -12,8 +12,9 @@ class ImportStatement:
     def set_as_module(self):
         self.import_type = "module"
 
-    def new_path_item(self, path_item_token):
-        self.path_list.append(path_item_token)
+    def new_path_item(self, path_node_token, direction_token):
+        path_node = PathItem(path_node_token, direction_token)
+        self.path_list.append(path_node)
 
     def new_import_item(self, name_token, new_name_token):
         self.import_list.append(ImportItem(name_token, new_name_token))
@@ -22,3 +23,9 @@ class ImportItem:
     def __init__(self, name_token, new_name_token):
         self.name_token = name_token
         self.new_name_token = new_name_token
+
+
+class PathItem:
+    def __init__(self, node_token, direction_token):
+        self.node_token = node_token
+        self.direction_token = direction_token

@@ -47,6 +47,8 @@ def is_key_value_collection_type(token: Token) -> bool:
 def is_special_union_type(token: Token) -> bool:
     return token.type_symbol in special_union_type_keywords()
 
+def is_boolean_literal(token: Token) -> bool:
+    return token.type_symbol in boolean_keywords()
 
 def collection_or_paren_type_keywords() -> set:
     collections = collection_delimiter_keywords()

@@ -28,7 +28,7 @@ class ErrorAnalyzer
 
     def check_fields_for_duplicate_names(field_one, field_two)
         if field_one.getText() == field_two.getText()
-            msg = "Duplicate enum field name"
+            msg = "Duplicate error field name"
             make_and_send_error(field_two, msg)
         end
     end

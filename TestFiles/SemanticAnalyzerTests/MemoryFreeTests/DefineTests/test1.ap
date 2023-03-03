@@ -1,1 +1,5 @@
-define old as new
+define LinkedList(int) as IntList
+define HashMap( thingy : test) as newThing
+define Vector(float) as FloatVector
+define Option(SomeStruct) as SomeOption
+define Result(SomeStruct, SomeError) as SomeResult
