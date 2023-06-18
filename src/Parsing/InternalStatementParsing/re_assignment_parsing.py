@@ -16,6 +16,7 @@ def parse_defer(driver):
     if driver.has_errors():
         return None
     defer_stmt = driver.make_node(ast_node_keys.DEFER_STMT)
+    defer_stmt.add_descriptor_token(type_token)
     defer_stmt.add_reassignment_statement(re_assign_stmt)
     return defer_stmt
     
@@ -28,6 +29,7 @@ def parse_re_assignment(driver):
         return None
     peek_token = driver.peek_token()
     re_assign_stmt = driver.make_node(ast_node_keys.REASSIGN_STMT)
+    re_assign_stmt.add_descriptor_token(type_token)
     re_assign_stmt.add_l_value_exp(l_value)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)

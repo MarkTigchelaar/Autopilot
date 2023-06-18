@@ -1,0 +1,6 @@
+fun function() int do
+    switch a
+        case b do
+           return 1
+    end
+end

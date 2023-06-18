@@ -13,7 +13,10 @@ def parse_switch(driver):
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None
-    return test_expression_step(driver)
+    switch_stmt = test_expression_step(driver)
+    if switch_stmt:
+        switch_stmt.add_descriptor_token(switch_token)
+    return switch_stmt
 
 
 def test_expression_step(driver):

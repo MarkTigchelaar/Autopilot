@@ -4,7 +4,13 @@ from TestingComponents.testing_utilities import token_to_json
 class TestingSwitchStatement:
     def __init__(self):
         self.switch_statement = SwitchStatement()
-    
+
+    def add_descriptor_token(self, token):
+        self.switch_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.switch_statement.get_descriptor_token()
+
     def add_test_expression(self, test_exp):
         self.switch_statement.add_test_expression(test_exp)
     

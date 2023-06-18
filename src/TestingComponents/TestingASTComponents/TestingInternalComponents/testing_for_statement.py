@@ -5,6 +5,12 @@ from TestingComponents.testing_utilities import token_to_json
 class TestingForStatement:
     def __init__(self):
         self.for_statement = ForStatement()
+
+    def add_descriptor_token(self, token):
+        self.for_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.for_statement.get_descriptor_token()
     
     def add_assignment_type(self, assign_token):
         self.for_statement.add_assignment_type(assign_token)

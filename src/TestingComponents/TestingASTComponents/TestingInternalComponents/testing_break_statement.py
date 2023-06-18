@@ -20,3 +20,9 @@ class TestingBreakStatement:
             "type" : "break",
             "destination" : token_to_json(self.break_statement.label_name_token)
         }
+
+    def add_descriptor_token(self, token):
+        self.break_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.break_statement.get_descriptor_token()

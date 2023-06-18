@@ -12,6 +12,7 @@ def parse_while(driver):
     enforce_while(while_token)
     peek_token = driver.peek_token()
     while_statement = driver.make_node(ast_node_keys.WHILE_STMT)
+    while_statement.add_descriptor_token(while_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None

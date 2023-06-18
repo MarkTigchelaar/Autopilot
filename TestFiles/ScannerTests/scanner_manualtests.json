@@ -225,7 +225,7 @@
         "line_numbers" : [],
         "token_types" : [],
         "error" : {
-            "file" : "./../Testfiles/ScannerTests/test17.txt",
+            "file" : "../Testfiles/ScannerTests/test17.txt",
             "line" : 2,
             "column" : 3,
             "message" : "unterminated string"
@@ -245,7 +245,7 @@
         "line_numbers" : [],
         "token_types" : [],
         "error" : {
-            "file" : "./../Testfiles/ScannerTests/test20.txt",
+            "file" : "../Testfiles/ScannerTests/test20.txt",
             "line" : 1,
             "column" : 5,
             "message" : "invalid floating point number"
@@ -258,7 +258,7 @@
         "line_numbers" : [],
         "token_types" : [],
         "error" : {
-            "file" : "./../Testfiles/ScannerTests/test21.txt",
+            "file" : "../Testfiles/ScannerTests/test21.txt",
             "line" : 1,
             "column" : 4,
             "message" : "empty character"
@@ -271,7 +271,7 @@
         "line_numbers" : [],
         "token_types" : [],
         "error" : {
-            "file" : "./../Testfiles/ScannerTests/test22.txt",
+            "file" : "../Testfiles/ScannerTests/test22.txt",
             "line" : 1,
             "column" : 1,
             "message" : "invalid escape character"
@@ -291,7 +291,7 @@
         "line_numbers" : [],
         "token_types" : [],
         "error" : {
-            "file" : "./../Testfiles/ScannerTests/test24.txt",
+            "file" : "../Testfiles/ScannerTests/test24.txt",
             "line" : 1,
             "column" : 1,
             "message" : "unterminated character"
@@ -311,7 +311,7 @@
         "line_numbers" : [],
         "token_types" : [],
         "error" : {
-            "file" : "./../Testfiles/ScannerTests/test26.txt",
+            "file" : "../Testfiles/ScannerTests/test26.txt",
             "line" : 1,
             "column" : 1,
             "message" : "unterminated string"
@@ -331,7 +331,7 @@
         "line_numbers" : [],
         "token_types" : [],
         "error" : {
-            "file" : "./../Testfiles/ScannerTests/test28.txt",
+            "file" : "../Testfiles/ScannerTests/test28.txt",
             "line" : 1,
             "column" : 1,
             "message" : "unterminated block comment"

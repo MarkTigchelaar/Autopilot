@@ -5,6 +5,12 @@ class TestingLoopStatement:
     def __init__(self):
         self.loop_statement = LoopStatement()
 
+    def add_descriptor_token(self, token):
+        self.loop_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.loop_statement.get_descriptor_token()
+
     def add_loop_name(self, loop_name):
         self.loop_statement.add_loop_name(loop_name)
 

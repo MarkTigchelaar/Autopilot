@@ -28,3 +28,9 @@ class TestingElseStatement:
         for stmt in self.else_statement.statements:
             stmts.append(stmt.to_json())
         return stmts
+
+    def add_descriptor_token(self, token):
+        self.else_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.else_statement.get_descriptor_token()

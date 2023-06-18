@@ -7,6 +7,7 @@ class AssignmentStatement:
         self.name_token = None
         self.type_token = None
         self.exp_ast = None
+        self.descriptor_token = None
     
     def add_let_or_var(self, let_or_var_token):
         self.let_or_var_token = let_or_var_token
@@ -19,4 +20,12 @@ class AssignmentStatement:
 
     def add_expression_value(self, exp_ast):
         self.exp_ast = exp_ast
-    
+
+    def add_descriptor_token(self, token):
+        self.descriptor_token = token
+
+    def get_descriptor_token(self):
+        return self.descriptor_token
+
+    def has_nested_statements(self):
+        return False

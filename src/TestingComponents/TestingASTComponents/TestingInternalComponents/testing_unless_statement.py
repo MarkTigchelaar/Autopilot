@@ -5,6 +5,12 @@ class TestingUnlessStatement:
     def __init__(self):
         self.unless_statement = UnlessStatement()
 
+    def add_descriptor_token(self, token):
+        self.unless_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.unless_statement.get_descriptor_token()
+
     def add_expression(self, exp_ast):
         self.unless_statement.add_expression(exp_ast)
 

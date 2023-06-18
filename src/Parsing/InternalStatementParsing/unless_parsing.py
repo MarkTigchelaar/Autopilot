@@ -11,6 +11,7 @@ def parse_unless(driver):
     enforce_unless(unless_token)
     peek_token = driver.peek_token()
     unless_statement = driver.make_node(ast_node_keys.UNLESS_STMT)
+    unless_statement.add_descriptor_token(unless_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None

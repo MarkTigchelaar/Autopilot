@@ -3,6 +3,16 @@
 class DeferStatement:
     def __init__(self):
         self.method_call = None
+        self.descriptor_token = None
     
     def add_reassignment_statement(self, re_assign_stmt):
         self.method_call = re_assign_stmt
+
+    def add_descriptor_token(self, token):
+        self.descriptor_token = token
+
+    def get_descriptor_token(self):
+        return self.descriptor_token
+    
+    def has_nested_statements(self):
+        return False

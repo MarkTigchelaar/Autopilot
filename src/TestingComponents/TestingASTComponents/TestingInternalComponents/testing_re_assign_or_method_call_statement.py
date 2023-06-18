@@ -5,6 +5,12 @@ class TestingReAssignOrMethodCallStatement:
     def __init__(self):
         self.re_assign_or_method_Call_statement = ReassignmentOrMethodCall()
 
+    def add_descriptor_token(self, token):
+        self.re_assign_or_method_Call_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.re_assign_or_method_Call_statement.get_descriptor_token()
+
     def add_l_value_exp(self, l_value_exp):
         self.re_assign_or_method_Call_statement.add_l_value_exp(l_value_exp)
 

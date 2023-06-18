@@ -9,6 +9,7 @@ def parse_break(driver):
     enforce_break(break_token)
     peek_token = driver.peek_token()
     break_statement = driver.make_node(ast_node_keys.BREAK_STMT)
+    break_statement.add_descriptor_token(break_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None

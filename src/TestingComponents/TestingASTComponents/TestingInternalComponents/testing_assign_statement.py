@@ -42,3 +42,9 @@ class TestingAssignmentStatement:
             "assignment_type" : token_to_json(self.assign_statement.let_or_var_token),
             "rvalue" : self.assign_statement.exp_ast.to_json()
         }
+    
+    def add_descriptor_token(self, token):
+        self.assign_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.assign_statement.get_descriptor_token()

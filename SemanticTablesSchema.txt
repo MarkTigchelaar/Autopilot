@@ -1,132 +1,240 @@
-Objects:
-    ObjectId            int
-    TypeId              int
-    StatusCode          enum.int
-    name                string
-    AccessModifierCode  enum.int
-    ObjectReference     AstNode
+//https://dbdiagram.io/d
 
-TypeDefs:
-    TypeId              int
-    TypeDefName         string
 
-Structs:
-    ObjectId            int
-    InterfaceNameList   list
 
-StructFields:
-    ObjectId            int
-    StructId            int
-    MutationModifier    enum.int
-    DefaultValue        string
+// Creating references
+// You can also define relaionship separately
+// > many-to-one; < one-to-many; - one-to-one; <> many-to-many
 
-Functions:
-    ObjectId            int
-    SignatureId         int
-    OwnerId             int
+//Ref: ecommerce.products.merchant_id > ecommerce.merchants.id // many-to-one
+//Ref: ecommerce.product_tags.id <> ecommerce.products.id // many-to-many
+//composite foreign key
+//Ref: ecommerce.merchant_periods.(merchant_id, country_code) > ecommerce.merchants.(id, country_code)
 
-FunctionSignatures:
-    ObjectId            int
-    ReturnTypeId        int
-    ArgList             list
+Ref: Objects.(TypeId) > TypeNames.(TypeId)
+Ref: Objects.(ObjectId) - StructFields.(ObjectId)
+Ref: Objects.(ObjectId) - Structs.(ObjectId)
+Ref: Objects.(ObjectId) - Functions.(ObjectId)
+Ref: Objects.(ObjectId) - FunctionSignatures.(ObjectId)
+Ref: Objects.(ObjectId) - Defines.(ObjectId)
+Ref: Objects.(ObjectId) - StatementLists.(ObjectId)
+Ref: Objects.(ObjectId) - Statements.(ObjectId)
+Ref: Objects.(ObjectId) - Modules.(ObjectId)
+Ref: Objects.(ObjectId) - ModuleSrcFiles.(ObjectId)
+Ref: Objects.(ObjectId) - ModuleImports.(ObjectId)
+Ref: Objects.(ObjectId) - ModuleItems.(ObjectId)
+Ref: Objects.(ObjectId) - ImportItems.(ObjectId)
+Ref: Objects.(ObjectId) - Errors.(ObjectId)
+Ref: Objects.(ObjectId) - ErrorFields.(ObjectId)
+Ref: Objects.(ObjectId) - Enums.(ObjectId)
+Ref: Objects.(ObjectId) - EnumFields.(ObjectId)
+Ref: Objects.(ObjectId) - BinaryExpressions.(ObjectId)
+Ref: Objects.(ObjectId) - OptResultAssignExpressions.(ObjectId)
+Ref: Objects.(ObjectId) - RangeExpressions.(ObjectId)
+Ref: Objects.(ObjectId) - CollectionExpressions.(ObjectId)
+Ref: Objects.(ObjectId) - FunctionCallExpressions.(ObjectId)
 
-Defines:
-    ObjectId            int
-    ContainerTypeId     int
-    LHSTypeId           int
-    RHSTypeId           int
+Ref: Structs.(ObjectId) < StructFields.(StructId)
+Ref: StatementLists.(ObjectId) - Statements.(OwnerId)
+Ref: Errors.(ObjectId) - ErrorFields.(ErrorId)
 
-StatementLists:
-    ObjectId            int
-    OwnerId             int
-    ScopeLevel          int
+//Ref: Objects.(ObjectId) - StructFields.(ObjectId)
+//Ref: Objects.(ObjectId) - StructFields.(ObjectId)
+//Ref: Objects.(ObjectId) - StructFields.(ObjectId)
+//Ref: Objects.(ObjectId) - StructFields.(ObjectId)
+//Ref: Objects.(ObjectId) - StructFields.(ObjectId)
+//Ref: Objects.(ObjectId) - StructFields.(ObjectId)
+Enum StatusCode {
+  Unresolved
+  Resovled
+}
 
-Statement:
-    ObjectId            int
-    OwnerId             int
-    PositionNumber      int
-    Type                enum.int
+Enum AccessModifierCode {
+  public
+  private
+}
 
-Modules:
-    ObjectId            int
-    DirectoryPath       string
+Enum MutationModifier {
+  let
+  var
+}
 
-ModuleSrcFiles:
-    ModuleId            int
-    filename            string
+Enum AstNode {
+  node
+}
 
-ModuleItems:
-    ObjectId            int
-    ModuleId            int
+Enum StatementType {
+  If
+  Elif
+  Unless
+  Else
+  While
+  for
+  loop
+  switch
+  case
+  break
+  continue
+  return
+  assign
+  reassign
+  defer
+}
 
-ModuleImports:
-    ObjectId            int
-    ModuleId            int
-    ImportType          string
-    ImportName          string
+Table Objects {
+  ObjectId int [pk, increment]
+  TypeId int
+  status StatusCode 
+  name string
+  access_modifier AccessModifierCode
+  object_reference AstNode
+  Indexes {
+    (ObjectId) [unique, name: "ObjectId"]
+  }
+}
 
-ImportPaths:
-    ObjectId            int
-    ImportId            int
-    PathList            list
+Table TypeNames {
+  TypeId int [pk]
+  TypeDefName string
+}
 
-ImportItems:
-    ObjectId            int
-    ImportId            int
-    ItemName            int <- is object, objects have names already
-    ItemAlias           int
+Table Structs {
+  ObjectId int [pk]
+  InterfaceObjectIdList list
+}
 
-Errors:
-    ObjectId            int
-    TypeId              int
+Table StructFields {
+  ObjectId [pk]
+  StructId int
+  MutationType MutationModifier
+  DefaultValue string
+}
 
-ErrorFields:
-    ObjectId            int
-    ErrorId             int
+Table Functions {
+  ObjectId int [pk]
+  SignatureId int
+  OwnerId int
+}
 
-Enums:
-    ObjectId            int
-    TypeId              int
+Table FunctionSignatures {
+  ObjectId int [pk]
+  ReturnTypeObjectId int
+  ArgObjectIdList list
+}
 
-EnumFields:
-    ObjectId            int
-    EnumId              int
-    DefaultValue        string
+Table Defines {
+  ObjectId int [pk]
+  ContainerTypeId int
+  LHSTypeId int
+  RHSTypeId int
+}
 
-// All resolved types can go through objects table
-BinaryExpressions:
-    ObjectId            int
-    ResolvedType        string <- type defs through objects table
-    LHSExpressionId     int
-    RHSExpressionId     int
-    OwnerId             int
+Table StatementLists {
+  ObjectId int [pk]
+  OwnerId int
+  ScopeLevel int
+}
 
-OptResultAssignExpressions:
-    ObjectId            int
-    OwnerId             int
-    UnwrappedName       string
-    WrappedName         string
+Table Statements {
+  ObjectId int [pk]
+  OwnerId int
+  PositionNumber int
+  Type StatementType
+}
 
-RangeExpresssions:
-    ObjectId            int
-    OwnerId             int
-    IndexVariableName   string
-    IdxStartName        string
-    IdxStartTypeId      int
-    IdxStopName         string
-    IdxStopTypeId       int
-    IterStep            int
+Table Modules {
+  ObjectId int [pk]
+  DirectoryPath string
+}
 
-CollectionExpressions:
-    ObjectId            int
-    OwnerId             int
-    IterOrKeyItemName   string
-    ValueItemName       string
-    CollectionName      string
+Table ModuleSrcFiles {
+  ObjectId int [pk]
+  Filename string
+}
 
-FunctionCallExpressions:
-    ObjectId            int
-    OwnerId             int
-    FnName              string <- name in objects table
-    ResolvedReturnType  string <- TypeDefs?
-    ArgTypeList         list
+Table ModuleItems {
+  ObjectId int [pk]
+  ModuleId int
+}
+
+Table ModuleImports {
+  ObjectId int [pk]
+  ModuleId int
+  ImportType string
+  ImportName string
+}
+
+Table ImportPaths {
+  ObjectId int [pk]
+  ImportId int
+  PathList list
+}
+
+Table ImportItems {
+  ObjectId int [pk]
+  ImportId int
+  ItemAlias string
+}
+
+Table Errors {
+  ObjectId int [pk]
+  TypeId int
+}
+
+Table ErrorFields {
+  ObjectId int [pk]
+  ErrorId int
+}
+
+Table Enums {
+  ObjectId int [pk]
+  TypeId int
+}
+
+Table EnumFields {
+  ObjectId int
+  EnumId int
+  DefaultValue string
+}
+
+Table BinaryExpressions {
+  ObjectId int [pk]
+  //ResolvedTypeId int <- can get through objects table
+  LHSExpressionId int
+  RHSExpressionId int
+  OwnerId int
+}
+
+Table OptResultAssignExpressions {
+  ObjectId int [pk]
+  OwnerId int
+  UnwrappedVarId int
+  WrappedVarId int
+}
+
+Table RangeExpressions {
+  ObjectId int [pk]
+  OwnerId int
+  IndexVariableName string
+  IdxStartName string
+  IdxStartTypeId int
+  IdxStopName string
+  IdxStopTypeId int
+  IterStepObjectId int
+}
+
+Table CollectionExpressions {
+  ObjectId int [pk]
+  OwnerId int
+  IterOrKeyItemName string
+  ValueItemName string
+  CollectionName string
+}
+
+Table FunctionCallExpressions {
+  ObjectId int [pk]
+  OwnerId int
+  // name <- through objects table
+  // ResolvedReturnTypeId TypeDef table through objects
+  ArgTypeIdList list
+}

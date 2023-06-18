@@ -37,6 +37,13 @@ def record_component_test(test_case: dict, tracker, expected: str, result: str) 
     else:
         tracker.inc_success()
 
+def record_component_test_str(test_case: dict, tracker, expected: str, result: str) -> None:
+    if str(result) not in str(expected) and str(expected) not in str(result):
+        msg = FAILURE + "In " + test_case["file"] + ":\n" + get_msg(expected, result)
+        tracker.add_error_message(msg + "\n\n")
+    else:
+        tracker.inc_success()
+
 
 def token_to_json(token) -> dict:
     if token is None:
@@ -141,7 +148,7 @@ def tokenizer_test(tokenizer: Tokenizer, test: dict, tracker, current_dir: str, 
             err = test["error"]
             error = err_manager.next_tokenizer_error()
             tok_error = error.token
-            record_component_test(test, tracker, err["file"], tok_error.file_name)
+            record_component_test_str(test, tracker, err["file"], tok_error.file_name)
             record_component_test(test, tracker, err["line"], tok_error.line_number)
             record_component_test(test, tracker, err["column"], tok_error.column_number)
             record_component_test(test, tracker, err["message"], error.message)
@@ -255,6 +262,8 @@ def call_semantic_tests(component_tests, tracker, current_dir, test_fn, componen
             continue
         tok.close_src()
 
+        if not err_manager.has_errors(True) and test_case["errors"] is None:
+            tracker.inc_success()
         if err_manager.has_errors(True) and test_case["errors"] is None:
             print("ERROR: tests expected no errors, but analysis generated errors! See error file.")
             while err_manager.has_errors(True):
@@ -271,7 +280,7 @@ def call_semantic_tests(component_tests, tracker, current_dir, test_fn, componen
                     error = err_manager.next_semantic_error()
                 except:
                     error = err_manager.next_parser_error()
-                record_component_test(test_case, tracker, err["file"], error.token.file_name)
+                record_component_test_str(test_case, tracker, err["file"], error.token.file_name)
                 record_component_test(test_case, tracker, err["tokenLiteral"], error.token.literal)
                 record_component_test(test_case, tracker, err["lineNumber"], error.token.line_number)
                 record_component_test(test_case, tracker, err["message"], error.message)

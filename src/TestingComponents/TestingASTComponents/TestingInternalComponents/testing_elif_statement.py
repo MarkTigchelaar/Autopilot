@@ -5,6 +5,12 @@ class TestingElifStatement:
     def __init__(self):
         self.elif_statement = ElifStatement()
 
+    def add_descriptor_token(self, token):
+        self.elif_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.elif_statement.get_descriptor_token()
+
     def add_expression(self, exp_ast):
         self.elif_statement.add_expression(exp_ast)
     

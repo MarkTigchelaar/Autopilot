@@ -5,6 +5,12 @@ class TestingReturnStatement:
     def __init__(self):
         self.return_statement = ReturnStatement()
 
+    def add_descriptor_token(self, token):
+        self.return_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.return_statement.get_descriptor_token()
+
     def add_expression(self, exp_ast):
         self.return_statement.add_expression(exp_ast)
 

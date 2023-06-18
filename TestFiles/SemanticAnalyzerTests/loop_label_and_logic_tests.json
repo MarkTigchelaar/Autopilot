@@ -1,0 +1,88 @@
+[
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test1.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test1.ap",
+                "tokenLiteral" : "loop_one",
+                "lineNumber" : "3",
+                "columnNumber" : "17",
+                "message" : "duplicate loop name"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test2.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test2.ap",
+                "tokenLiteral" : "break",
+                "lineNumber" : "8",
+                "columnNumber" : "5",
+                "message" : "break statement only valid inside loops"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test3.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test3.ap",
+                "tokenLiteral" : "continue",
+                "lineNumber" : "8",
+                "columnNumber" : "5",
+                "message" : "continue statement only valid inside loops"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test4.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test4.ap",
+                "tokenLiteral" : "test",
+                "lineNumber" : "6",
+                "columnNumber" : "15",
+                "message" : "loop label not defined"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test5.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test5.ap",
+                "tokenLiteral" : "break",
+                "lineNumber" : "6",
+                "columnNumber" : "9",
+                "message" : "break statement only valid inside loops"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test5.ap",
+                "tokenLiteral" : "test",
+                "lineNumber" : "6",
+                "columnNumber" : "15",
+                "message" : "loop label not defined"
+            }
+        ]
+    },
+    {
+        "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test6.ap",
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test6.ap",
+                "tokenLiteral" : "break",
+                "lineNumber" : "8",
+                "columnNumber" : "9",
+                "message" : "break statement only valid inside loops"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test6.ap",
+                "tokenLiteral" : "test",
+                "lineNumber" : "8",
+                "columnNumber" : "15",
+                "message" : "loop label not defined"
+            }
+        ]
+    }
+]

@@ -7,6 +7,7 @@ class IfStatement:
         self.optional_variable_name = None
         self.statements = None
         self.next_statement_in_block = None
+        self.descriptor_token = None
 
     def add_expression(self, exp_ast):
         self.test_expression = exp_ast
@@ -22,6 +23,18 @@ class IfStatement:
 
     def add_statements(self, statements):
         self.statements = statements
+    
+    def get_statements(self):
+        return self.statements
 
     def add_next_statement_in_block(self, statement):
         self.next_statement_in_block = statement
+
+    def add_descriptor_token(self, token):
+        self.descriptor_token = token
+
+    def get_descriptor_token(self):
+        return self.descriptor_token
+    
+    def has_nested_statements(self):
+        return True

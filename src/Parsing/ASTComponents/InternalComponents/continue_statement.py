@@ -1,8 +1,13 @@
 
-
 class ContinueStatement:
     def __init__(self):
-        self.continue_token = None
+        self.descriptor_token = None
 
-    def add_descriptor_token(self, continue_token):
-        self.continue_token = continue_token
+    def add_descriptor_token(self, token):
+        self.descriptor_token = token
+
+    def get_descriptor_token(self):
+        return self.descriptor_token
+
+    def has_nested_statements(self):
+        return False

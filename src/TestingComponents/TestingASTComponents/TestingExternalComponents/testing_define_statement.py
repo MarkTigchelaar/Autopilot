@@ -8,6 +8,12 @@ class TestingDefineStatement:
     def __init__(self):
         self.define_statement = DefineStatement()
 
+    def add_descriptor_token(self, token):
+        self.define_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.define_statement.get_descriptor_token()
+
     def add_subtype(self, sub_type):
         self.define_statement.add_subtype(sub_type)
 
@@ -33,6 +39,12 @@ class TestingDefineStatement:
 class TestingKeyValueType:
     def __init__(self):
         self.key_value_type = KeyValueType()
+
+    def add_descriptor_token(self, token):
+        self.key_value_type.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.key_value_type.get_descriptor_token()
 
     def add_type_token(self, type_token):
         self.key_value_type.add_type_token(type_token)
@@ -67,6 +79,12 @@ class TestingLinearType:
     def __init__(self):
         self.linear_type = LinearType()
 
+    def add_descriptor_token(self, token):
+        self.linear_type.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.linear_type.get_descriptor_token()
+
     def add_type_token(self, type_token):
         self.linear_type.add_type_token(type_token)
 
@@ -92,7 +110,13 @@ class TestingLinearType:
 class TestingFailableType:
     def __init__(self):
         self.failable_type = FailableType()
-    
+
+    def add_descriptor_token(self, token):
+        self.failable_type.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.failable_type.get_descriptor_token()
+
     def add_type_token(self, type_token):
         self.failable_type.add_type_token(type_token)
 
@@ -127,7 +151,13 @@ class TestingFailableType:
 class TestingFunctionType:
     def __init__(self):
         self.function_type = FunctionType()
-    
+
+    def add_descriptor_token(self, token):
+        self.function_type.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.function_type.get_descriptor_token()
+
     def add_argument(self, arg_token):
         self.function_type.add_argument(arg_token)
     

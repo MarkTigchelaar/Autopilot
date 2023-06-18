@@ -17,9 +17,12 @@ from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_interface_a
 from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_module_analysis import analyze_module
 from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_define_analysis import analyze_define
 from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_unittest_analysis import analyze_unittest
+from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_function_analysis import analyze_function
+from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_struct_analysis import analyze_struct
 
-def temp(analyzer, ast_node):
-    return
+from SemanticAnalysis.Database.SaveData.save_enum import save_enum
+
+
 
 # these functions should make the rows and columns
 # for what ever table(s) are needed for each type
@@ -30,7 +33,7 @@ def save_fn(analyzer, ast_node):
 
 def parse_enum(driver):
     ast = p_enum(driver)
-    driver.analyze_locally(analyze_enum, save_fn, ast)
+    driver.analyze_locally(analyze_enum, save_enum, ast)
     return ast
 
 def parse_union(driver):
@@ -70,10 +73,10 @@ def parse_unittest(driver):
 
 def parse_function(driver):
     ast = p_function(driver)
-    driver.analyze_locally(temp, save_fn, ast)
+    driver.analyze_locally(analyze_function, save_fn, ast)
     return ast
 
 def parse_struct(driver):
     ast = p_struct(driver)
-    driver.analyze_locally(temp, save_fn, ast)
+    driver.analyze_locally(analyze_struct, save_fn, ast)
     return ast

@@ -5,6 +5,12 @@ class TestingIfStatement:
     def __init__(self):
         self.if_statement = IfStatement()
 
+    def add_descriptor_token(self, token):
+        self.if_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.if_statement.get_descriptor_token()
+
     def add_expression(self, exp_ast):
         self.if_statement.add_expression(exp_ast)
     

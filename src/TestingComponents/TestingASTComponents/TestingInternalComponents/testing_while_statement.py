@@ -5,6 +5,12 @@ class TestingWhileStatement:
     def __init__(self):
         self.while_statement = WhileStatement()
 
+    def add_descriptor_token(self, token):
+        self.while_statement.add_descriptor_token(token)
+
+    def get_descriptor_token(self):
+        return self.while_statement.get_descriptor_token()
+
     def add_expression(self, exp_ast):
         self.while_statement.add_expression(exp_ast)
 

@@ -10,6 +10,7 @@ def parse_loop(driver):
     loop_token = driver.next_token()
     enforce_loop(loop_token)
     loop_statement = driver.make_node(ast_node_keys.LOOP_STMT)
+    loop_statement.add_descriptor_token(loop_token)
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)

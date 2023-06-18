@@ -35,6 +35,7 @@ def hash_collection_step(driver):
     type_token = driver.next_token()
     hash_type = driver.make_node(ast_node_keys.KV_DEFINE)
     hash_type.add_type_token(type_token)
+    hash_type.add_descriptor_token(type_token)
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
@@ -108,6 +109,7 @@ def linear_collection_type_step(driver):
     type_token = driver.next_token()
     linear_type = driver.make_node(ast_node_keys.LINEAR_DEFINE)
     linear_type.add_type_token(type_token)
+    linear_type.add_descriptor_token(type_token)
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
@@ -152,6 +154,7 @@ def special_union_type_step(driver, is_option = False):
     type_token = driver.next_token()
     failable_type = driver.make_node(ast_node_keys.FAIL_DEFINE)
     failable_type.add_type_token(type_token)
+    failable_type.add_descriptor_token(type_token)
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
@@ -226,9 +229,10 @@ def failable_type_alternate_step(driver, failable_type):
 
 
 def function_type_step(driver):
-    driver.discard_token()
+    fn_token = driver.next_token()
     peek_token = driver.peek_token()
     function_type = driver.make_node(ast_node_keys.FN_SIG_DEFINE)
+    function_type.add_descriptor_token(fn_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None
@@ -349,6 +353,7 @@ def new_name_step(driver, sub_type):
     define_stmt = driver.make_node(ast_node_keys.DEFINE)
     define_stmt.add_subtype(sub_type)
     define_stmt.add_definition(definition_token)
+    define_stmt.add_descriptor_token(definition_token)
     return define_stmt
 
 

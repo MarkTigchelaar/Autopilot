@@ -12,6 +12,7 @@ def parse_if(driver):
     enforce_if(if_token)
     peek_token = driver.peek_token()
     if_statement = driver.make_node(ast_node_keys.IF_STMT)
+    if_statement.add_descriptor_token(if_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None

@@ -13,7 +13,10 @@ def parse_else(driver):
         driver.add_error(peek_token, EOF_REACHED)
         return None
     else:
-        return statements_step(driver)
+        else_stmt = statements_step(driver)
+        if else_stmt:
+            else_stmt.add_descriptor_token(else_token)
+        return else_stmt
 
 
 def statements_step(driver):

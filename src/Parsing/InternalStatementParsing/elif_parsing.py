@@ -12,6 +12,7 @@ def parse_elif(driver):
     enforce_elif(elif_token)
     peek_token = driver.peek_token()
     elif_statement = driver.make_node(ast_node_keys.ELIF_STMT)
+    elif_statement.add_descriptor_token(elif_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None

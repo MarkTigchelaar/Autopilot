@@ -10,6 +10,7 @@ def parse_return(driver):
     enforce_return(return_token)
     peek_token = driver.peek_token()
     return_statement = driver.make_node(ast_node_keys.RETURN_STMT)
+    return_statement.add_descriptor_token(return_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None
