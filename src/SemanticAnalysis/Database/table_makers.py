@@ -1,4 +1,4 @@
-from table import Table
+from SemanticAnalysis.Database.table import Table
 
 def make_all_tables():
     tables = dict()

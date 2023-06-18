@@ -17,7 +17,6 @@ def analyze_for_loop(analyzer, ast_node):
     check_collection_variable(analyzer, ast_node)
     check_optional_variable(analyzer, ast_node)
     check_second_optional_variable(analyzer, ast_node)
-    analyze_sub_statements(analyzer, ast_node)
 
 
 def check_iteration_index_variable(analyzer, ast_node):
@@ -143,7 +142,3 @@ def check_second_optional_variable(analyzer, ast_node):
         if opt.literal == ast_node.loop_name:
             analyzer.add_error(ast_node.loop_name, LOOP_NAME_SHADOWS_OPTIONAL_VALUE_VARIABLE)
 
-
-def analyze_sub_statements(analyzer, case):
-    from local_statement_analysis import analyze_statements
-    analyze_statements(analyzer, case.statements)

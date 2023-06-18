@@ -8,12 +8,12 @@ class Table:
         self.name = table_name
     
     def make_index(self, col_name):
-        for col, i in enumerate(self.column_names):
+        for i, col in enumerate(self.column_names):
             if col == col_name:
                 self.index_column_number = i
                 break
         if self.index_column_number is None:
-            raise Exception("INTERNAL ERROR: column name " + col_name + " not found")
+            raise Exception(f"INTERNAL ERROR: column name {col_name } not found {self.column_names}")
     
     def make_blank_row(self):
         return Row(self.column_names)

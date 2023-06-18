@@ -244,8 +244,8 @@ def parser_happy_path_tests(test_list, tracker, parse_test_fn, current_dir):
             record_component_test(test, tracker, "ok", "ok")
 
 
-def call_semantic_tests(component_tests, tracker, current_dir, test_fn, component_name):
-    print("Testing semantic analysis for " + component_name + "...")
+def call_local_semantic_tests(component_tests, tracker, current_dir, test_fn, component_name):
+    print("Testing local semantic analysis for " + component_name + "...")
     for test_case in component_tests:
         err_manager = ErrorManager()
         tok = Tokenizer(err_manager)

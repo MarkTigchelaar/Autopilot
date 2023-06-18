@@ -1,25 +1,9 @@
 from ErrorHandling.semantic_error_messages import *
 
 def analyze_function(analyzer, ast_node, struct_fields = None):
-    from SemanticAnalysis.LocalAnalysis.InternalStatementAnalyzers.local_statement_analysis import analyze_statements
-    analyzer.begin_local_analysis()
-    # if struct_fields:
-    #     register_args_as_local_variables(analyzer, struct_fields)
-    # register_args_as_local_variables(analyzer, ast_node.header.arguments)
-    analyze_statements(analyzer, ast_node.statements)
-    analyzer.finish_local_analysis()
-
     analyze_arg_names(analyzer, ast_node)
     analyze_return_paths(analyzer, ast_node)
     analyze_loop_branching_and_labels(analyzer, ast_node)
-
-# Don't bother, just do this using the global tables
-# def register_args_as_local_variables(analyzer, arg_tokens):
-#     for arg in arg_tokens:
-#         analyzer.register_local_variable(arg.arg_name_token)
-
-
-
 
 def analyze_arg_names(analyzer, ast_node):
     args = ast_node.header.arguments
@@ -74,8 +58,6 @@ def has_path_with_no_return(analyzer, statements):
     return True
 
 
-
-
 def if_statement_chain_has_dead_end(analyzer, if_statement):
     stmt = if_statement
     while stmt is not None:
@@ -103,7 +85,6 @@ def switch_statement_chain_has_dead_end(analyzer, switch_statement):
 
 def last_statement_in_block_is_default(stmt):
     return stmt.default_case is not None
-
 
 
 # Need to check that breaks, and continues are actually inside loops.
