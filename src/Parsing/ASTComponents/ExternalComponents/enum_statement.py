@@ -2,9 +2,9 @@
 class EnumStatement:
     def __init__(self):
         self.name = None
+        self.public_token = None
         self.item_list = list()
         self.general_type = None
-        self.public_token = None
 
     def add_name(self, name):
         self.name = name

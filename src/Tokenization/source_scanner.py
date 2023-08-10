@@ -110,7 +110,7 @@ class FileReader:
 
     def read(self) -> str:
         if not self.is_open:
-            raise Exception("INTERNALL ERROR: attempted to read file that is no longer open")
+            raise Exception("INTERNAL ERROR: attempted to read file that is no longer open")
         return self.src_file.read(1)
 
     def close(self) -> None:

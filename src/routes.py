@@ -21,8 +21,8 @@ from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_function_an
 from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_struct_analysis import analyze_struct
 
 from SemanticAnalysis.Database.SaveData.save_enum import save_enum
-
-
+from SemanticAnalysis.Database.SaveData.save_module import save_module
+from SemanticAnalysis.Database.SaveData.save_import import save_import
 
 # these functions should make the rows and columns
 # for what ever table(s) are needed for each type
@@ -53,7 +53,7 @@ def parse_import(driver):
 
 def parse_module(driver):
     ast = p_module(driver)
-    driver.analyze_locally(analyze_module, save_fn, ast)
+    driver.analyze_locally(analyze_module, save_module, ast)
     return ast
 
 def parse_define(driver):

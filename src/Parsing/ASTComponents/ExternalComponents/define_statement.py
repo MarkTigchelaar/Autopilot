@@ -11,6 +11,18 @@ class DefineStatement:
     def add_definition(self, definition_token):
         self.new_type_name_token = definition_token
 
+    def get_key_token(self):
+        return self.sub_type.get_key_token()
+    
+    def get_value_token(self):
+        return self.sub_type.get_value_token()
+    
+    def get_arg_list(self):
+        return self.sub_type.get_arg_list()
+    
+    def get_error_token(self):
+        return self.sub_type.get_error_token()
+
     def add_descriptor_token(self, token):
         self.descriptor_token = token
 
@@ -35,6 +47,18 @@ class KeyValueType:
     def add_value_token(self, value_token):
         self.value_token = value_token
 
+    def get_key_token(self):
+        return None
+    
+    def get_value_token(self):
+        return None
+    
+    def get_arg_list(self):
+        return None
+    
+    def get_error_token(self):
+        return None
+
     def add_descriptor_token(self, token):
         self.descriptor_token = token
 
@@ -54,6 +78,18 @@ class LinearType:
 
     def add_value_token(self, value_token):
         self.value_token = value_token
+
+    def get_key_token(self):
+        return None
+    
+    def get_value_token(self):
+        return None
+    
+    def get_arg_list(self):
+        return None
+    
+    def get_error_token(self):
+        return None
 
     def add_descriptor_token(self, token):
         self.descriptor_token = token
@@ -79,6 +115,18 @@ class FailableType:
     def add_alternate_token(self, error_token):
         self.error_token = error_token
 
+    def get_key_token(self):
+        return None
+    
+    def get_value_token(self):
+        return None
+    
+    def get_arg_list(self):
+        return None
+    
+    def get_error_token(self):
+        return None
+
     def add_descriptor_token(self, token):
         self.descriptor_token = token
 
@@ -98,6 +146,18 @@ class FunctionType:
     
     def add_return_type(self, return_type_token):
         self.return_type_token = return_type_token
+
+    def get_key_token(self):
+        return None
+    
+    def get_value_token(self):
+        return None
+    
+    def get_arg_list(self):
+        return None
+    
+    def get_error_token(self):
+        return None
 
     def add_descriptor_token(self, token):
         self.descriptor_token = token

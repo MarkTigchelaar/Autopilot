@@ -3,7 +3,7 @@ from SemanticAnalysis.Database.database import Database
 class SemanticAnalyzer:
     def __init__(self, error_manager):
         self.error_manager = error_manager
-        self.database = Database()
+        self.database = Database(error_manager)
 
     def add_error(self, token, message):
         self.error_manager.add_semantic_error(token, message)

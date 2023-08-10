@@ -1,5 +1,7 @@
 from Parsing.ASTComponents.make_ast_node_map import make_ast_map
 
+# Pushes the compilation process forward,
+# and provides general services for each stage.
 class Driver:
     # analyzer collects data first pass, saves compiler from 2nd pass
     def __init__(self, tokenizer, err_manager, analyzer):

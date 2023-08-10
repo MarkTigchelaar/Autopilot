@@ -64,11 +64,11 @@ Enum AstNode {
 }
 
 Enum StatementType {
-  If
-  Elif
-  Unless
-  Else
-  While
+  if
+  elif
+  unless
+  else
+  while
   for
   loop
   switch

@@ -7,11 +7,7 @@ def phase_two_tests(tracker, test_json, current_dir):
     print("\n\n\n Local Semantic Analysis Tests:\n")
     for test in test_json:
         component_tests = get_json_from_file(current_dir + "/" + test["test_manifest_file"])
-
         general_component = test["general_component"]
-        print(general_component)
-        # if "generated" in general_component:
-        #     continue
         call_local_semantic_tests(component_tests, tracker, current_dir, semantic_test, general_component)
 
 def semantic_test(tokenizer, err_manager):
