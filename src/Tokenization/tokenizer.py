@@ -15,6 +15,10 @@ class Tokenizer:
         self.src_file_name = None
         self.error_manager = err_manager
         self.kw_literal_to_symbol_map = keyword_literal_to_symbol_map()
+        self.path_to_remove = ""
+
+    def remove_path(self, path):
+        self.path_to_remove = path
 
     def load_src(self, file_name) -> None:
         self.src_file_name = file_name
@@ -161,7 +165,7 @@ class Tokenizer:
 
     def add_token(self, token_type) -> None:
         literal = self.src_scanner.get_buffer()
-        file_name = self.src_file_name
+        file_name = self.current_file()
         line_number = self.src_scanner.line_number
         token_column_number = self.src_scanner.current_token_col_start
         self.current_token = Token(token_type, literal, file_name, line_number, token_column_number)
@@ -302,7 +306,7 @@ class Tokenizer:
 
     def add_error(self, message) -> None:
         self.src_scanner.is_complete = True
-        file_name = self.src_file_name
+        file_name = self.current_file()
         line_number = self.src_scanner.line_number
         column_number = self.src_scanner.current_token_col_start
         err = Token(symbols.ERROR, "", file_name, line_number, column_number)

@@ -11,21 +11,34 @@ def table_load_tests(component_tests, tracker, current_dir, semantic_test, compo
     print("Testing table loading for " + component_name + "...")
     for test_case in component_tests:
         err_manager = ErrorManager()
-        tok = Tokenizer(err_manager)
-
-        try:
-            tok.load_src(test_case["file"])
-        except:
-            tok.load_src(current_dir + "/" + test_case["file"])
+        
+        #tok.remove_path(current_dir)
         database = None
-        #semantic_test(tok, err_manager)
-        try:
-            database = semantic_test(tok, err_manager)
-        except Exception as e:
-            print("EXCEPTION in file: " + test_case["file"] + ":\n" + str(e))
-            record_component_test(test_case, tracker, "OK", "EXCEPTION: " + str(e))
-            continue
-        tok.close_src()
+        for i in range(len(test_case["files"])):
+            tok = Tokenizer(err_manager)
+            try:
+                tok.load_src(test_case["files"][i])
+            except:
+                tok.load_src(current_dir + "/" + test_case["files"][i])
+            # current_path = current_dir + "/" + test_case["files"][i]
+            # print(f"current path: {current_path}")
+            # temp = test_case["files"][i].split("../")
+            # temp = temp[1]
+            # test_case["files"][i] = "../" + temp
+            # current_path = test_case["files"][i]
+            # print(f"current path after: {current_path}")
+
+
+            
+            #semantic_test(tok, err_manager)
+            try:
+                database = semantic_test(tok, err_manager, database)
+            except Exception as e:
+                print("EXCEPTION in file: " + test_case["files"][i] + ":\n" + str(e))
+                record_component_test(test_case, tracker, "OK", "EXCEPTION: " + str(e))
+                continue
+            tok.close_src()
+
         if database is None:
             raise Exception("INTERNAL ERROR: Databse was not returned by semantic test function")
         
@@ -50,7 +63,8 @@ def get_msg(expect: str, actual: str) -> str:
 
 def record_component_test(test_case: dict, tracker, expected: str, result: str) -> None:
     if str(result) != str(expected):
-        msg = FAILURE + "In " + test_case["file"] + ":\n" + get_msg(expected, result)
+        files = "\n".join([file + "," for file in test_case["files"]])
+        msg = FAILURE + "In " + files + ":\n" + get_msg(expected, result)
         tracker.add_error_message(msg + "\n\n")
     else:
         tracker.inc_success()
@@ -91,6 +105,7 @@ def check_table_contents(database, test_case, tracker):
         query_runner.set_table(table)
         for row in test_table:
             record_component_test(test_case, tracker, True, query_runner.row_is_defined(row))
+            record_component_test(test_case, tracker, True, query_runner.contents_match(row))
 
 
 
@@ -118,6 +133,9 @@ class TestQueryRunner:
     
     def row_is_defined(self, _):
         raise Exception("Not implemented")
+    
+    def contents_match(self, _):
+        raise Exception("Not implemented")
 
 class ModuleTableTestQueryRunner(TestQueryRunner):
     def __init__(self) -> None:
@@ -125,6 +143,20 @@ class ModuleTableTestQueryRunner(TestQueryRunner):
 
     def row_is_defined(self, row):
         return self.table.is_module_defined(row["name"])
+    
+    def contents_match(self, row):
+        id = self.table.get_module_id_by_name_and_path(row["name"], row["path"])
+        if id is None:
+            raise Exception("INTERNAL ERROR: module id not found")
+        if id != row["object_id"]:
+            return False
+        table_row = self.table.get_module_for_id(id)
+        if table_row.module_name.literal != row["name"]:
+            return False
+        if table_row.path != row["path"]:
+            return False
+        return True
+
 
 
 class FilesTableTestQueryRunner(TestQueryRunner):
@@ -132,11 +164,22 @@ class FilesTableTestQueryRunner(TestQueryRunner):
         pass
 
     def row_is_defined(self, row):
-        pass
+        return self.table.is_file_defined(row["module_id"], row["name"])
+
+    def contents_match(self, row):
+        name_included = row["name"] in self.table.get_module_file_names(row["module_id"])
+        module_included = row["module_id"] in self.table.get_module_ids_by_file_name(row["name"])
+        return name_included and module_included
 
 class TypenamesTableTestQueryRunner(TestQueryRunner):
     def __init__(self) -> None:
         pass
 
     def row_is_defined(self, row):
-        pass
+        return self.table.is_name_defined_in_table(row["name"], row["module_id"])
+
+    def contents_match(self, row):
+        type_matches = row["type"] == self.table.get_category_by_name_and_module_id(row["name"], row["module_id"])
+        category_has_name = row["name"] in [tok.literal for tok in self.table.get_names_by_category(row["type"])]
+        module_has_name = row["name"] in [tok.literal for tok in self.table.get_names_by_module_id(row["module_id"])]
+        return type_matches and category_has_name and module_has_name

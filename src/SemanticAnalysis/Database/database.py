@@ -33,7 +33,7 @@ class Database:
 
     def save_object(self, object_ref):
         self.objects.append(object_ref)
-        return len(self.objects)
+        return len(self.objects) - 1
 
 
     def get_table(self, table_name):
@@ -86,9 +86,9 @@ class TypeNameTable:
         if category not in self.categories:
             raise Exception(f"INTERNAL ERROR: category {category} not recognized")
 
-        if name not in self.by_name:
-            self.by_name[name] = []
-        self.by_name[name].append(TypeRow(category, module_id, object_id))
+        if name.literal not in self.by_name:
+            self.by_name[name.literal] = []
+        self.by_name[name.literal].append(TypeRow(category, module_id, object_id))
         
         if category not in self.by_category:
             self.by_category[category] = []
@@ -98,23 +98,33 @@ class TypeNameTable:
             self.by_module_id[module_id] = []
         self.by_module_id[module_id].append(name)
 
-    def is_type_name_defined(self, type_name, module_id):
-        if type_name not in self.by_name:
+    def is_name_defined_in_table(self, name, module_id):
+        if name not in self.by_name:
             return False
-        matched_rows = self.by_name[type_name]
+        matched_rows = self.by_name[name]
         for row in matched_rows:
             if row.module_id == module_id:
                 return True
         return False
     
-    def get_category_by_name_and_id(self, type_name, module_id):
-        if type_name not in self.by_name:
+    def get_category_by_name_and_module_id(self, name, module_id):
+        if name not in self.by_name:
             raise Exception("INTERNAL ERROR: type not found")
-        matched_rows = self.by_name[type_name]
+        matched_rows = self.by_name[name]
         for row in matched_rows:
             if row.module_id == module_id:
                 return row.category
         raise Exception("INTERNAL ERROR: module id not found")
+
+    def get_names_by_category(self, category_name):
+        if category_name not in self.by_category:
+            return []
+        return self.by_category[category_name]
+    
+    def get_names_by_module_id(self, module_id):
+        if module_id not in self.by_module_id:
+            return []
+        return self.by_module_id[module_id]
         
 class TypeRow:
     def __init__(self, category, module_id, object_id):
@@ -145,8 +155,10 @@ class ModuleTable:
         self.by_path[path].append(ModuleNameIdRow(module_name, id))
 
         if id not in self.by_id:
-            self.by_id[id] = []
-        self.by_id[id].append(ModuleNamePathRow(module_name, path))
+            self.by_id[id] = ModuleNamePathRow(module_name, path)
+        else:
+            raise Exception("INTERNAL ERROR: module id already defined")
+        #self.by_id[id].append(ModuleNamePathRow(module_name, path))
     
     def is_module_defined(self, module_name):
         return module_name in self.by_name
@@ -155,16 +167,22 @@ class ModuleTable:
         return self.get_module_id_by_name_and_path(module_name, path) != None
 
     def get_module_id_by_name_and_path(self, module_name, path):
-        mods = self.get_module_data_for_name(module_name)
+        mods = self.get_modules_data_for_name(module_name)
         for mod in mods:
             if mod.path == path:
                 return mod.id
         return None
 
-    def get_module_data_for_name(self, module_name):
-        if module_name.literal not in self.by_name:
+    def get_modules_data_for_name(self, module_name):
+        if module_name not in self.by_name:
             raise Exception("INTERNAL ERROR: module name not found")
         return self.by_name[module_name]
+    
+    def get_module_for_id(self, id):
+        if id not in self.by_id:
+            raise Exception("INTERNAL ERROR: module id not found")
+        return self.by_id[id]
+
 
 
 

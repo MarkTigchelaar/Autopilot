@@ -15,8 +15,8 @@ def phase_three_tests(tracker, test_json, current_dir):
         print(general_component)
         table_load_tests(component_tests, tracker, current_dir, semantic_test, general_component)
 
-def semantic_test(tokenizer, err_manager):
-    analyzer = SemanticAnalyzer(err_manager)
+def semantic_test(tokenizer, err_manager, database = None):
+    analyzer = SemanticAnalyzer(err_manager, database)
     driver = Driver(tokenizer, err_manager, analyzer)
     parse_src(driver)
     return analyzer.database
