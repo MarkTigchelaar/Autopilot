@@ -12,6 +12,8 @@ class TestingErrorStatement:
     def new_item(self, item_name):
         self.error_statement.new_item(item_name)
 
+    def add_public_token(self, public_token):
+        self.error_statement.add_public_token(public_token)
 
     def print_literal(self, repr_list: list) -> None:
         error_string = self.error_statement.name_token.literal + ' '

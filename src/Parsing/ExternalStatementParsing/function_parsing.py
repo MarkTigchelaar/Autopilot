@@ -12,6 +12,10 @@ def parse_function(driver):
         return None
     func_stmt = driver.make_node(ast_node_keys.FN_STMT)
     func_stmt.add_header(header)
+    modifier_container = driver.get_modifier_container()
+    func_stmt.add_public_token(modifier_container.get_public_token())
+    func_stmt.add_acyclic_token(modifier_container.get_acyclic_token())
+    func_stmt.add_inline_token(modifier_container.get_inline_token())
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)

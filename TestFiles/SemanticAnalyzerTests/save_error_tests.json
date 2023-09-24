@@ -1,0 +1,66 @@
+[
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/ErrorTests/test1.ap"
+        ],
+        "errors" : null,
+        "object_count" : 2,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/ErrorTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test1.ap"
+                }
+            ],
+            "enumerables" : [
+                {
+                    "module_id" : 0,
+                    "object_id" : 1,
+                    "general_type" : "some_error",
+                    "items" : [
+                        {
+                            "name" : "Martha",
+                            "type" : null
+                        },
+                        {
+                            "name" : "Jane",
+                            "type" : null
+                        },
+                        {
+                            "name" : "Cassandra",
+                            "type" : null
+                        }
+                    ]
+                }
+            ],
+            "modifiers" : [
+                {
+                    
+                    "object_id" : 1,
+                    "modifier_list" : [null]
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "object_id" : 0,
+                    "module_id" : 0
+                },
+                {
+                    "type" : "error",
+                    "name" : "some_error",
+                    "object_id" : 1,
+                    "module_id" : 0
+                }
+            ]
+        }
+    }
+]

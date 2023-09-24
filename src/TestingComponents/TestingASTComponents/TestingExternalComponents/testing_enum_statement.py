@@ -11,6 +11,9 @@ class TestingEnumStatement:
     def new_item(self, item_name_token, default_value_token) -> None:
         self.enum_statement.new_item(item_name_token, default_value_token)
 
+    def add_public_token(self, public_token):
+        self.enum_statement.add_public_token(public_token)
+
     def add_general_type(self, type_token) -> None:
         self.enum_statement.add_general_type(type_token)
 

@@ -20,3 +20,6 @@ class UnionListItem:
     def __init__(self, item_name_token, type_token):
         self.item_name_token = item_name_token
         self.type_token = type_token
+
+    def get_value(self):
+        return self.type_token

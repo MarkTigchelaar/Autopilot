@@ -1,0 +1,7 @@
+module main
+
+pub union test_union is
+  field as int,
+  field2 as float,
+  field3 as someType
+end

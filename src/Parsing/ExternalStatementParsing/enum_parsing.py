@@ -22,6 +22,8 @@ def parse_enum(driver):
 def enum_name_step(driver):
     name_token = driver.next_token()
     enum_stmt = driver.make_node(ast_node_keys.ENUM)
+    modifier_container = driver.get_modifier_container()
+    enum_stmt.add_public_token(modifier_container.get_public_token())
     enum_stmt.add_name(name_token)
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):

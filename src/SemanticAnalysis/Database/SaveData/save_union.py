@@ -1,5 +1,5 @@
 from SemanticAnalysis.Database.SaveData.saver import Saver
-
+from SemanticAnalysis.analysis_utilities import split_path_and_file_name
 
 def save_union(analyzer, ast_node):
     enum_saver = UnionSaver(ast_node)
@@ -20,6 +20,11 @@ class UnionSaver(Saver):
         type_name_table = database.get_table("typenames")
         enumerable_table = database.get_table("enumerables")
         modifier_table = database.get_table("modifiers")
+        file_table = database.get_table("files")
+
+        file_path = name.file_name
+        # dir path not needed, refers to the current module, which knows its dir path.
+        _, file_name = split_path_and_file_name(file_path)
 
         type_name_table.insert(
             name,
@@ -35,3 +40,8 @@ class UnionSaver(Saver):
             object_id,
             [public_token]
         )
+
+        if file_table.is_file_defined(object_id, file_name):
+            raise Exception(f"INTERNAL ERROR: file {file_path} has been processed already")
+        if not file_table.is_file_defined(current_module_id, file_name):
+            file_table.insert(file_name, current_module_id)

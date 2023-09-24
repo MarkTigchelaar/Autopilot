@@ -1,6 +1,6 @@
 module main
 
-pub enum some_enum(some_type) is
+error some_error is
     Martha,
     Jane,
     Cassandra

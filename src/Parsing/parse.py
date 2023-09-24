@@ -27,6 +27,7 @@ def parse_src(driver):
     ast = list()
     peek_token = driver.peek_token()
     while not is_eof_type(peek_token):
+        driver.delete_modifier_container()
         type_declaration = type_declarations(driver, restrictor)
         if driver.has_errors():
             return None
@@ -85,11 +86,14 @@ def try_parse_import(driver, restrictor):
 
 def parse_acyclic_type(driver):
     acyclic_token = driver.next_token()
+    modifier_container = driver.get_modifier_container()
+    modifier_container.add_acyclic_token(acyclic_token)
     peek_token = driver.peek_token()
     public_token = None
     if peek_token.type_symbol == symbols.PUB:
         public_token = driver.next_token()
         peek_token = driver.peek_token()
+    modifier_container.add_public_token(public_token)
     
     ast_node = None
     if peek_token.type_symbol == symbols.INTERFACE:
@@ -103,19 +107,19 @@ def parse_acyclic_type(driver):
 
     if driver.has_errors():
         return None
-    ast_node.add_acyclic_token(acyclic_token)
-    ast_node.add_public_token(public_token)
     return ast_node
 
 
 def parse_inline_type(driver):
     inline_token = driver.next_token()
+    modifier_container = driver.get_modifier_container()
+    modifier_container.add_inline_token(inline_token)
     peek_token = driver.peek_token()
     public_token = None
     if peek_token.type_symbol == symbols.PUB:
         public_token = driver.next_token()
         peek_token = driver.peek_token()
-    
+    modifier_container.add_public_token(public_token)
     ast_node = None
     if peek_token.type_symbol == symbols.STRUCT:
         ast_node = parse_struct(driver)
@@ -126,17 +130,16 @@ def parse_inline_type(driver):
 
     if driver.has_errors():
         return None
-    ast_node.add_inline_token(inline_token)
-    ast_node.add_public_token(public_token)
     return ast_node
 
 
 def parse_public_type(driver):
     public_token = driver.next_token()
+    modifier_container = driver.get_modifier_container()
+    modifier_container.add_public_token(public_token)
     ast_node = parse_other_type(driver)
     if driver.has_errors():
         return None
-    ast_node.add_public_token(public_token)
     return ast_node
 
 

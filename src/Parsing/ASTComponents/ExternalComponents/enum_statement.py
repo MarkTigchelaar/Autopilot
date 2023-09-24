@@ -23,3 +23,6 @@ class EnumListItem:
     def __init__(self, item_name_token, default_value_token):
         self.item_name_token = item_name_token
         self.default_value_token = default_value_token
+
+    def get_value(self):
+        return self.default_value_token

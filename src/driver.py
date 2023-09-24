@@ -9,6 +9,7 @@ class Driver:
         self.tokenizer = tokenizer
         self.node_func_map = make_ast_map()
         self.analyzer = analyzer
+        self.modifier_container = None
 
 
     def current_file(self):
@@ -26,6 +27,13 @@ class Driver:
     def discard_token(self):
         self.tokenizer.next_token()
 
+    def get_modifier_container(self):
+        if self.modifier_container is None:
+            self.modifier_container = ModifierContainer()
+        return self.modifier_container
+
+    def delete_modifier_container(self):
+        self.modifier_container = None
 
     def next_token(self):
         return self.tokenizer.next_token()
@@ -50,3 +58,28 @@ class Driver:
             return
         analysis_fn(self.analyzer, root_node)
         save_fn(self.analyzer, root_node)
+
+
+class ModifierContainer:
+    def __init__(self):
+        self.public_token = None
+        self.inline_token = None
+        self.acyclic_token = None
+
+    def add_public_token(self, token):
+        self.public_token = token
+
+    def add_inline_token(self,inline_token):
+        self.inline_token = inline_token
+
+    def add_acyclic_token(self, token):
+        self.acyclic_token = token
+
+    def get_public_token(self):
+        return self.public_token
+
+    def get_inline_token(self):
+        return self.inline_token
+
+    def get_acyclic_token(self):
+        return self.acyclic_token

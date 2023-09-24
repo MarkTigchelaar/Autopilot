@@ -2,5 +2,17 @@
     {
         "general_component" : "save_module",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_module_tests.json"
+    },
+    {
+        "general_component" : "save_enum",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_enum_tests.json"
+    },
+    {
+        "general_component" : "save_error",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_error_tests.json"
+    },
+    {
+        "general_component" : "save_union",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_union_tests.json"
     }
 ]

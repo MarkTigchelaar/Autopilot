@@ -21,6 +21,8 @@ from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_function_an
 from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_struct_analysis import analyze_struct
 
 from SemanticAnalysis.Database.SaveData.save_enum import save_enum
+from SemanticAnalysis.Database.SaveData.save_error import save_error
+from SemanticAnalysis.Database.SaveData.save_union import save_union
 from SemanticAnalysis.Database.SaveData.save_module import save_module
 from SemanticAnalysis.Database.SaveData.save_import import save_import
 
@@ -38,12 +40,12 @@ def parse_enum(driver):
 
 def parse_union(driver):
     ast = p_union(driver)
-    driver.analyze_locally(analyze_union, save_fn, ast)
+    driver.analyze_locally(analyze_union, save_union, ast)
     return ast
 
 def parse_error(driver):
     ast = p_error(driver)
-    driver.analyze_locally(analyze_error, save_fn, ast)
+    driver.analyze_locally(analyze_error, save_error, ast)
     return ast
 
 def parse_import(driver):

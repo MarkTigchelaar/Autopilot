@@ -25,6 +25,8 @@ def union_name_step(driver):
     union_name_token = driver.next_token()
     union_stmt = driver.make_node(ast_node_keys.UNION)
     union_stmt.add_name(union_name_token)
+    modifier_container = driver.get_modifier_container()
+    union_stmt.add_public_token(modifier_container.get_public_token())
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)

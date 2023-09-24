@@ -12,6 +12,9 @@ def parse_interface(driver):
     enforce_interface(interface_token)
     peek_token = driver.peek_token()
     interface_stmt = driver.make_node(ast_node_keys.INTERFACE_DEFINE)
+    modifier_container = driver.get_modifier_container()
+    interface_stmt.add_public_token(modifier_container.get_public_token())
+    interface_stmt.add_acyclic_token(modifier_container.get_acyclic_token())
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None

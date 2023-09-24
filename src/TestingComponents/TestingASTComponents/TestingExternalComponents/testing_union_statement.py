@@ -11,6 +11,9 @@ class TestingUnionStatement:
     def add_item(self, item_name_token, type_token):
         self.union_statement.add_item(item_name_token, type_token)
 
+    def add_public_token(self, public_token):
+        self.union_statement.add_public_token(public_token)
+
     def print_literal(self, repr_list: list) -> None:
         union_string = self.union_statement.name_token.literal
         for item in self.union_statement.items:

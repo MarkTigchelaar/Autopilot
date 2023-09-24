@@ -41,7 +41,8 @@ class Database:
             raise Exception(f"INTERNAL ERROR: database asked for table \"{table_name}\", but isn't present")
         return self.tables[table_name]
     
-
+    def object_count(self):
+        return len(self.objects)
 
 
     
@@ -79,42 +80,59 @@ class TypeNameTable:
         self.by_category = dict()
         self.by_module_id = dict()
 
+    def get_size(self):
+        count = 0
+        for key in self.by_category:
+            count += len(self.by_category[key])
+        return count
+
     def has_contents(self):
         return len(self.by_name) + len(self.by_category) + len(self.by_module_id) > 0
 
     def insert(self, name, category, module_id, object_id):
         if category not in self.categories:
-            raise Exception(f"INTERNAL ERROR: category {category} not recognized")
+            raise Exception(f"INTERNAL ERROR: category '{category}' not recognized")
+
+        if self.is_name_defined_in_table(name, category):#, module_id, object_id):
+            return
 
         if name.literal not in self.by_name:
             self.by_name[name.literal] = []
         self.by_name[name.literal].append(TypeRow(category, module_id, object_id))
         
+        
         if category not in self.by_category:
             self.by_category[category] = []
-        self.by_category[category].append(name)
+
+        found = False
+        for type_name in self.by_category[category]:
+            if type_name.literal == name.literal:
+                found = True
+                break
+        if not found:
+            self.by_category[category].append(name)
 
         if module_id not in self.by_module_id:
             self.by_module_id[module_id] = []
         self.by_module_id[module_id].append(name)
 
-    def is_name_defined_in_table(self, name, module_id):
+    def is_name_defined_in_table(self, name, category):
         if name not in self.by_name:
             return False
         matched_rows = self.by_name[name]
         for row in matched_rows:
-            if row.module_id == module_id:
+            if row.category == category:
                 return True
         return False
     
     def get_category_by_name_and_module_id(self, name, module_id):
         if name not in self.by_name:
-            raise Exception("INTERNAL ERROR: type not found")
+            raise Exception(f"INTERNAL ERROR: type '{name}' not found")
         matched_rows = self.by_name[name]
         for row in matched_rows:
             if row.module_id == module_id:
                 return row.category
-        raise Exception("INTERNAL ERROR: module id not found")
+        raise Exception("INTERNAL ERROR: module id not found, could not retrieve category")
 
     def get_names_by_category(self, category_name):
         if category_name not in self.by_category:
@@ -125,6 +143,14 @@ class TypeNameTable:
         if module_id not in self.by_module_id:
             return []
         return self.by_module_id[module_id]
+    
+    def is_already_defined_type(self, name, category, module_id, object_id):
+        if name in self.by_name:
+            items = self.by_name[name]
+            for item in items:
+                if item.category == category:
+                    return True
+        return False
         
 class TypeRow:
     def __init__(self, category, module_id, object_id):
@@ -144,6 +170,9 @@ class ModuleTable:
 
     def has_contents(self):
         return len(self.by_name) + len(self.by_path) + len(self.by_id) > 0
+    
+    def get_size(self):
+        return len(self.by_id)
 
     def insert(self, module_name, path, id):
         if module_name.literal not in self.by_name:
@@ -164,7 +193,7 @@ class ModuleTable:
         return module_name in self.by_name
     
     def is_same_module(self, module_name, path):
-        return self.get_module_id_by_name_and_path(module_name, path) != None
+        return self.get_module_id_by_name_and_path(module_name.literal, path) != None
 
     def get_module_id_by_name_and_path(self, module_name, path):
         mods = self.get_modules_data_for_name(module_name)
@@ -213,17 +242,26 @@ class FileTable:
         self.by_name = dict()
         self.by_module_id = dict()
 
+    def get_size(self):
+        count = 0
+        for key in self.by_module_id:
+            count += len(self.by_module_id[key])
+        return count
+
     def has_contents(self):
         return len(self.by_name) + len(self.by_module_id) > 0
 
     def insert(self, file_name, module_id):
+        if self.is_file_defined(module_id, file_name):
+            raise Exception("INTERNAL ERROR: File is already defined.")
+
         if file_name not in self.by_name:
             self.by_name[file_name] = []
         self.by_name[file_name].append(module_id)
 
         if module_id not in self.by_module_id:
-            self.by_module_id[module_id] = []
-        self.by_module_id[module_id].append(file_name)
+            self.by_module_id[module_id] = set()
+        self.by_module_id[module_id].add(file_name)
 
     def is_file_defined(self, module_id, file_name):
         files_in_module = self.get_module_file_names(module_id)
@@ -262,7 +300,10 @@ class ImportTable:
         self.by_id = dict()
         self.by_file_name = dict()
         self.by_imported_module_name = dict()
-    
+
+    def get_size(self):
+        return 0
+
     def has_contents(self):
         temp = len(self.by_current_module_id) + len(self.by_id)
         temp += len(self.by_file_name) + len(self.by_imported_module_name)
@@ -292,6 +333,9 @@ class DefineTable:
     def __init__(self):
         self.by_id = dict()
         self.by_new_type_name = dict()
+
+    def get_size(self):
+        return 0
 
     def has_contents(self):
         return len(self.by_id) + len(self.by_new_type_name) > 0
@@ -330,6 +374,9 @@ class EnumerableTable:
     def __init__(self):
         self.by_id = dict()
 
+    def get_size(self):
+        return len(self.by_id)
+
     def has_contents(self):
         return len(self.by_id) > 0
 
@@ -342,8 +389,17 @@ class EnumerableTable:
             general_type_token
         )
         self.by_id[object_id] = new_row
+    
+    def is_object_defined(self, object_id):
+        return object_id in self.by_id
+    
+    def get_general_type_token_by_id(self, id):
+        row = self.by_id[id]
+        return row.general_type_token
 
-
+    def get_items_by_id(self, id):
+        row = self.by_id[id]
+        return row.item_list
 
 
 class EnumerableTableRow:
@@ -355,6 +411,9 @@ class ModifierTable:
     def __init__(self):
         self.by_id = dict()
 
+    def get_size(self):
+        return len(self.by_id)
+
     def has_contents(self):
         return len(self.by_id) > 0
 
@@ -363,4 +422,14 @@ class ModifierTable:
             raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
         
         self.by_id[object_id] = modifier_list
+
+    def is_object_defined(self, object_id):
+        return object_id in self.by_id
+    
+    def get_modifier_list_by_id(self, object_id):
+        return self.by_id[object_id]
+
+
+    
+
 

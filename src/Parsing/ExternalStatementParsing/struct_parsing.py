@@ -9,6 +9,10 @@ def parse_struct(driver):
     struct_token = driver.next_token()
     enforce_struct(struct_token)
     struct_stmt = driver.make_node(ast_node_keys.STRUCT_STMT)
+    modifier_container = driver.get_modifier_container()
+    struct_stmt.add_public_token(modifier_container.get_public_token())
+    struct_stmt.add_acyclic_token(modifier_container.get_acyclic_token())
+    struct_stmt.add_inline_token(modifier_container.get_inline_token())
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
