@@ -176,6 +176,8 @@ def table_tester_factory(table_name):
             tester = EnumTableTestQueryRunner()
         case "modifiers":
             tester = ModifierTableTestQueryRunner()
+        case "imports":
+            tester = ImportTableTestQueryRunner()
         case _:
             raise Exception(
                 f"INTERNAL ERROR: table tester for table {table_name} not found"
@@ -312,3 +314,43 @@ class ModifierTableTestQueryRunner(TestQueryRunner):
             if mod.literal != row["modifier_list"][i]:
                 return False
         return True
+
+
+class ImportTableTestQueryRunner(TestQueryRunner):
+    def __init__(self) -> None:
+        pass
+
+    def row_is_defined(self, row):
+        return self.table.is_object_defined(row["object_id"])
+
+    def contents_match(self, row):
+        path = row["path"]
+        items = row["items"]
+        item_list = self.table.get_items_by_id(row["object_id"])
+        path_list = self.table.get_path_by_id(row["object_id"])
+        for i in range(len(item_list)):
+            if item_list[i].name_token.literal != items[i]["name"]:
+                return False
+            new_name = item_list[i].new_name_token
+            if new_name is not None and items[i]["newname"] is not None:
+                if new_name.literal != items[i]["newname"]:
+                    return False
+            elif new_name is None and items[i]["newname"] is not None:
+                raise Exception("INTERNAL ERROR: new name for import is null")
+            elif new_name is not None and items[i]["newname"] is None:
+                raise Exception("INTERNAL ERROR: test new name is null")
+
+        for i in range(len(path_list)):
+            if path_list[i].node_token.literal != path[i]["node"]:
+                return False
+            direction = path_list[i].direction_token
+            if direction is not None and path[i]["direction"] is not None:
+                if direction.literal != path[i]["direction"]:
+                    return False
+            elif direction is None and path[i]["direction"] is not None:
+                raise Exception("INTERNAL ERROR: direction for import is null")
+            elif direction is not None and path[i]["direction"] is None:
+                raise Exception("INTERNAL ERROR: test direction is null")
+        
+        return True
+            

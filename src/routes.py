@@ -50,7 +50,7 @@ def parse_error(driver):
 
 def parse_import(driver):
     ast = p_import(driver)
-    driver.analyze_locally(analyze_import, save_fn, ast)
+    driver.analyze_locally(analyze_import, save_import, ast)
     return ast
 
 def parse_module(driver):

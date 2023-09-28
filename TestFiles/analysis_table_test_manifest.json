@@ -14,5 +14,9 @@
     {
         "general_component" : "save_union",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_union_tests.json"
+    },
+    {
+        "general_component" : "save_import",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_import_tests.json"
     }
 ]

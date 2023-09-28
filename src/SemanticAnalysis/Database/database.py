@@ -69,7 +69,7 @@ class TypeNameTable:
     def __init__(self):
         self.categories = [
             "module_name",
-            "import_item",
+            #"import_item", # Import items to be treated as names only, with types being declared in their actual location
             "struct",
             "enum",
             "error",
@@ -302,7 +302,7 @@ class ImportTable:
         self.by_imported_module_name = dict()
 
     def get_size(self):
-        return 0
+        return len(self.by_id)
 
     def has_contents(self):
         temp = len(self.by_current_module_id) + len(self.by_id)
@@ -318,7 +318,7 @@ class ImportTable:
             self.by_file_name[filename] = []
 
         imported_module_name = path[-1].node_token.literal
-        if imported_module_name not in self.self.by_imported_module_name:
+        if imported_module_name not in self.by_imported_module_name:
             self.by_imported_module_name[imported_module_name] = []
 
         row = ImportTableRow(object_id, current_module_id, filename, path, items)
@@ -326,6 +326,22 @@ class ImportTable:
         self.by_current_module_id[current_module_id].append(row)
         self.by_file_name[filename].append(row)
         self.by_imported_module_name[imported_module_name].append(row)
+    
+    def is_object_defined(self, object_id):
+        return object_id in self.by_id
+    
+    def get_items_by_id(self, object_id):
+        row = self.by_id[object_id]
+        return row.items
+    
+    def get_path_by_id(self, object_id):
+        row = self.by_id[object_id]
+        return row.path
+
+    
+    
+
+
 
 
 

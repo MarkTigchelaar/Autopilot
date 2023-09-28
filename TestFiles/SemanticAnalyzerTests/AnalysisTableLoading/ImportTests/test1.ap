@@ -1,0 +1,3 @@
+module main
+
+import thing as stuff, other_thing from module place.location
