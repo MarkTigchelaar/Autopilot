@@ -205,11 +205,16 @@ def pub_function_step(driver, struct_stmt, acyclic_token):
 
 
 def function_step(driver, struct_stmt, public_token, acyclic_token):
+    driver.delete_modifier_container()
+    mods = driver.get_modifier_container()
+    mods.add_public_token(public_token)
+    mods.add_acyclic_token(acyclic_token)
     function = parse_function(driver)
     if driver.has_errors():
         return None
-    function.add_acyclic_token(acyclic_token)
-    function.add_public_token(public_token)
+    #function.add_acyclic_token(acyclic_token)
+    #function.add_public_token(public_token)
+
     struct_stmt.add_function(function)
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):

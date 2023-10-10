@@ -4,24 +4,8 @@ from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
 from routes import parse_enum, parse_union, parse_error, parse_import, parse_module, parse_define, parse_interface, parse_function, parse_unittest, parse_struct
 
-class StatementRestrictionTracker:
-    def __init__(self):
-        self.seen_module = False
-        self.import_and_define_not_allowed = False
-    
-    def module_seen(self):
-        self.seen_module = True
-    
-    def has_seen_module(self):
-        return self.seen_module
 
-    def restrict_statements(self):
-        self.import_and_define_not_allowed = True
-
-    def def_import_not_allowed(self):
-        return self.import_and_define_not_allowed
-
-
+# Entry point for parsing Autopilot source code
 def parse_src(driver):
     restrictor = StatementRestrictionTracker()
     ast = list()
@@ -160,3 +144,20 @@ def parse_other_type(driver):
     else:
         driver.add_error(peek_token, UNEXPECTED_TOKEN)
         return None
+
+class StatementRestrictionTracker:
+    def __init__(self):
+        self.seen_module = False
+        self.import_and_define_not_allowed = False
+    
+    def module_seen(self):
+        self.seen_module = True
+    
+    def has_seen_module(self):
+        return self.seen_module
+
+    def restrict_statements(self):
+        self.import_and_define_not_allowed = True
+
+    def def_import_not_allowed(self):
+        return self.import_and_define_not_allowed

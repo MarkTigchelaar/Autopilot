@@ -3,3 +3,4 @@ define HashMap( thingy : test) as newThing
 define Vector(float) as FloatVector
 define Option(SomeStruct) as SomeOption
 define Result(SomeStruct, SomeError) as SomeResult
+define fun(int, int, float) float as FloatFn

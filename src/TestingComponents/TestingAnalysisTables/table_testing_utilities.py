@@ -33,6 +33,7 @@ def table_load_tests(
             # print(f"current path after: {current_path}")
 
             # semantic_test(tok, err_manager)
+            #database = semantic_test(tok, err_manager, database)
             try:
                 database = semantic_test(tok, err_manager, database)
             except Exception as e:
@@ -116,20 +117,16 @@ def involved_table_check(database, test_case, tracker):
             )
 
 
-# modules
-# files
-# typenames
+
 def check_table_contents(database, test_case, tracker):
     expected_tables = list(test_case["tables"].keys())
-    # Just to prove that these tests do not require a certain order.
-    random.shuffle(expected_tables)
 
     for table_name in expected_tables:
         table = database.get_table(table_name)
         object_count = test_case["object_count"]
         test_table = test_case["tables"][table_name]
-        if table_name == "modules":
-            continue
+        # if table_name == "modules":
+        #     continue
         query_runner = table_tester_factory(table_name)
         query_runner.set_table(table)
         for row in test_table:
@@ -178,6 +175,20 @@ def table_tester_factory(table_name):
             tester = ModifierTableTestQueryRunner()
         case "imports":
             tester = ImportTableTestQueryRunner()
+        case "defines":
+            tester = DefineTableTestQueryRunner()
+        case "functions":
+            tester = FunctionTableTestQueryRunner()
+        case "fn_headers":
+            tester = FunctionHeaderTableTestQueryRunner()
+        case "interfaces":
+            tester = InterfaceTableTestQueryRunner()
+        # case "unittests":
+        #     tester = UnittestTableTestQueryRunner() <- unittests just have typenames, and statements
+        case "statements":
+            tester = StatementTableTestQueryRunner()
+        case "structs":
+            tester = StructTableTestQueryRunner()
         case _:
             raise Exception(
                 f"INTERNAL ERROR: table tester for table {table_name} not found"
@@ -354,3 +365,204 @@ class ImportTableTestQueryRunner(TestQueryRunner):
         
         return True
             
+
+
+class DefineTableTestQueryRunner(TestQueryRunner):
+    def __init__(self) -> None:
+        pass
+
+    def row_is_defined(self, row):
+        return self.table.is_object_defined(row["object_id"])
+
+    def contents_match(self, test_row):
+        table_row = self.table.get_item_by_id(test_row["object_id"])
+        match_list = []
+        match_list.append(self.match_arg(table_row.built_in_type_token, test_row["built_in_type"]))
+        match_list.append(self.match_arg(table_row.user_defined_type_token, test_row["defined_type"]))
+        match_list.append(self.match_arg(table_row.key_type, test_row["key_type"]))
+        match_list.append(self.match_arg(table_row.value_type, test_row["value_type"]))
+        match_list.append(self.match_args(table_row.arg_list, test_row["arg_type_list"]))
+        match_list.append(self.match_arg(table_row.union_type, test_row["union_type"]))
+        for match in match_list:
+            if not match:
+                return False
+        return True
+
+    def match_args(self, table_row_arg_list, test_row_arg_list):
+        if table_row_arg_list is None:
+            if test_row_arg_list is None:
+                return True
+            return False
+        elif test_row_arg_list is None:
+            raise Exception("INTERNAL ERROR: test case has argument list for function, table does not")
+        if len(table_row_arg_list) != len(test_row_arg_list):
+            return False
+        for arg in table_row_arg_list:
+            if arg.literal not in test_row_arg_list:
+                return False
+        return True
+    
+    def match_arg(self, lhs, rhs):
+        if lhs is None:
+            if rhs is None:
+                return True
+            return False
+        return lhs.literal == rhs
+
+
+class InterfaceTableTestQueryRunner(TestQueryRunner):
+    def __init__(self) -> None:
+        pass
+
+    def row_is_defined(self, test_row):
+        return self.table.is_object_defined(test_row["object_id"])
+
+    def contents_match(self, test_row):
+        table_row = self.table.get_item_by_id(test_row["object_id"])
+        object_ids = self.table.get_rows_by_module_id(test_row["module_id"])
+        if len(table_row) != len(test_row["header_ids"]):
+            return False
+        for id in table_row:
+            if id not in test_row["header_ids"]:
+                return False
+        for object_id in object_ids:
+            if object_id == test_row["object_id"]:
+                return True
+        return False
+
+
+
+class FunctionTableTestQueryRunner(TestQueryRunner):
+    def __init__(self) -> None:
+        pass
+
+    def row_is_defined(self, test_row):
+        return self.table.is_object_defined(test_row["object_id"])
+
+    def contents_match(self, test_row):
+        function_row = self.table.get_item_by_id(test_row["object_id"])
+        return function_row.header_id == test_row["header_id"]
+
+
+class FunctionHeaderTableTestQueryRunner(TestQueryRunner):
+    def __init__(self) -> None:
+        pass
+
+    def row_is_defined(self, test_row):
+        return self.table.is_object_defined(test_row["object_id"])
+
+    def contents_match(self, test_row):
+        table_row = self.table.get_item_by_id(test_row["object_id"])
+        if table_row.return_type_token and not test_row["return_type"]:
+            return False
+        if not table_row.return_type_token and test_row["return_type"]:
+            return False
+        if test_row["return_type"] != table_row.return_type_token.literal:
+            return False
+        
+        if test_row["args"] and not table_row.arguments:
+            raise Exception("INTERNAL ERROR: test row has args, but table row does not")
+        if table_row.arguments and not test_row["args"]:
+            raise Exception("INTERNAL ERROR: table has args, but test row does not")
+        if len(test_row["args"]) != len(table_row.arguments):
+            return False
+        for i in range(len(test_row["args"])):
+            test_arg = test_row["args"][i]
+            header_arg = table_row.arguments[i]
+            if test_arg["name"] != header_arg.arg_name_token.literal:
+                return False
+            if test_arg["type"] != header_arg.arg_type_token.literal:
+                return False
+            if test_arg["default_value"] and not header_arg.default_value_token:
+                raise Exception("INTERNAL ERROR: test row has default value, but table row does not")
+            if not test_arg["default_value"] and header_arg.default_value_token:
+                raise Exception("INTERNAL ERROR: test row has no default value, but table row does")
+            if not test_arg["default_value"] and not header_arg.default_value_token:
+                continue
+            if test_arg["default_value"] != header_arg.default_value_token.literal:
+                return False
+        return True
+
+class StatementTableTestQueryRunner(TestQueryRunner):
+    def __init__(self) -> None:
+        pass
+
+    def row_is_defined(self, test_row):
+        return self.table.is_object_defined(test_row["container_object_id"], test_row["sequence_num"])
+
+    def contents_match(self, test_row):
+        table_row = self.table.get_item_by_id_and_seq_num(test_row["container_object_id"], test_row["sequence_num"])
+        if test_row["container_object_id"] != table_row.container_object_id:
+            raise Exception("INTERNAL ERROR: container object id used to retrieve object, but wrong one returned")
+        if test_row["sequence_num"] != table_row.sequence_num:
+            raise Exception("INTERNAL ERROR: sequence number used to retrieve object, but wrong one returned")
+        if test_row["scope_depth"] != table_row.scope_depth:
+            return False
+        if test_row["stmt_type"] != table_row.stmt_type_token.type_symbol:
+            return False
+        if test_row["stmt_specific_items"] is None:
+            return True
+        
+        return False
+
+
+class StructTableTestQueryRunner(TestQueryRunner):
+    def __init__(self) -> None:
+        pass
+
+    def row_is_defined(self, test_row):
+        return self.table.is_object_defined(test_row["object_id"])
+
+    def contents_match(self, test_row):
+        table_row = self.table.get_item_by_id(test_row["object_id"])
+        table_fn_ids = table_row.function_ids
+        test_row_fn_ids = test_row["function_ids"]
+        if not self.check_fn_ids(table_fn_ids, test_row_fn_ids):
+            return False
+        table_fields = table_row.fields
+        test_row_fields = test_row["fields"]
+        if not self.check_fields(table_fields, test_row_fields):
+            return False
+        interfaces = table_row.interfaces
+        test_interfaces = test_row["interfaces"]
+        if not self.check_interfaces(interfaces, test_interfaces):
+            return False
+        return True
+        
+    
+    def check_fn_ids(self, table_fn_ids, test_row_fn_ids):
+        if len(table_fn_ids) != len(test_row_fn_ids):
+            return False
+        for id in table_fn_ids:
+            if id not in test_row_fn_ids:
+                return False
+        return True
+
+    def check_fields(self, table_fields, test_row_fields):
+        if len(table_fields) != len(test_row_fields):
+            return False
+        for i in range(len(table_fields)):
+            field = table_fields[i]
+            test_field = test_row_fields[i]
+            if field.public_token and test_field["mod"]:
+                if field.public_token.literal != test_field["mod"]:
+                    return False
+            else:
+                raise Exception("INTERNAL ERROR: either test or table field missing modifier")
+            
+            if field.field_name_token.literal != test_field["name"]:
+                return False
+            
+            if field.type_token.literal != test_field["type"]:
+                return False
+
+        return True
+    
+    def check_interfaces(self, interfaces, test_interfaces):
+        if len(interfaces) != len(test_interfaces):
+            return False
+        
+        for i in range(len(interfaces)):
+            if interfaces[i].literal != test_interfaces[i]:
+                return False
+        return True

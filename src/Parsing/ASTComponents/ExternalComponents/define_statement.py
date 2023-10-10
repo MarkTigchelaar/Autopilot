@@ -139,7 +139,7 @@ class FunctionType:
         self.arg_type_list = list()
         self.return_type_token = None
         self.descriptor_token = None
-
+        self.type_token = None
 
     def add_argument(self, arg_token):
         self.arg_type_list.append(arg_token)
@@ -151,16 +151,18 @@ class FunctionType:
         return None
     
     def get_value_token(self):
-        return None
+        return self.return_type_token
     
     def get_arg_list(self):
-        return None
+        return self.arg_type_list
     
     def get_error_token(self):
         return None
 
     def add_descriptor_token(self, token):
         self.descriptor_token = token
+        self.type_token = token
 
     def get_descriptor_token(self):
         return self.descriptor_token
+

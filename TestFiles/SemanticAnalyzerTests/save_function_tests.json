@@ -1,0 +1,77 @@
+[
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/FunctionTests/test1.ap"
+        ],
+        "errors" : null,
+        "object_count" : 3,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/FunctionTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test1.ap"
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "object_id" : 0,
+                    "module_id" : 0
+                },
+                {
+                    "type" : "fn_header",
+                    "name" : "my_function",
+                    "object_id" : 2,
+                    "module_id" : 0
+                }
+            ],
+            "statements": [
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 1,
+                    "scope_depth" : 0,
+                    "stmt_type" : "RETURN",
+                    "stmt_specific_items" : null
+                }
+            ],
+            "functions" : [
+                {
+                    "object_id": 1,
+                    "header_id": 2
+                }
+            ],
+            "fn_headers" : [
+                {
+                    "object_id" : 2,
+                    "args" : [
+                        {
+                            "name": "a",
+                            "type" : "int",
+                            "default_value" : null
+                        },
+                        {
+                            "name": "b",
+                            "type" : "float",
+                            "default_value" : null
+                        }
+                    ],
+                    "return_type" : "bool"
+                }
+            ],
+            "modifiers" : [
+                {
+                    "object_id" : 2,
+                    "modifier_list" : ["acyclic", "pub"]
+                }
+            ]
+        }
+    }
+]

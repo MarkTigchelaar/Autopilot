@@ -1,5 +1,5 @@
 from SemanticAnalysis.Database.SaveData.saver import Saver
-#from SemanticAnalysis.analysis_utilities import split_path_and_file_name
+from SemanticAnalysis.analysis_utilities import split_path_and_file_name
 
 def save_define(analyzer, ast_node):
     define_saver = DefineSaver(ast_node)
@@ -17,17 +17,21 @@ class DefineSaver(Saver):
         self.define = define_ast
 
     def save_to_db(self, database):
-        type_name_table = database.get_table("typenames")
-        define_table = database.get_table("defines")
+
 
         current_module_id = database.get_current_module_id()
-        # file_path = self.define.descriptor_token.filename
-        # current_directory_path, current_file_name = split_path_and_file_name(file_path)
+        type_name_table = database.get_table("typenames")
+        define_table = database.get_table("defines")
+        file_table = database.get_table("files")
+
+        
+        file_path = self.define.descriptor_token.file_name
+        _, file_name = split_path_and_file_name(file_path)
 
         # print(f"directory path: {current_directory_path}")
         # print(f"filename: {current_file_name}")
 
-        object_id = database.save_object(self.import_stmt)
+        object_id = database.save_object(self.define)
 
         new_type_name = self.define.descriptor_token
 
@@ -47,3 +51,8 @@ class DefineSaver(Saver):
             current_module_id,
             object_id
         )
+
+        if file_table.is_file_defined(object_id, file_name):
+            raise Exception(f"INTERNAL ERROR: file {file_path} has been processed already")
+        if not file_table.is_file_defined(current_module_id, file_name):
+            file_table.insert(file_name, current_module_id)

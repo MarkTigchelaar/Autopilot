@@ -39,9 +39,12 @@ class EnumSaver(Saver):
             items,
             contained_type
         )
+        mods = []
+        if public_token:
+            mods.append(public_token)
         modifier_table.insert(
             object_id,
-            [public_token]
+            mods
         )
         if file_table.is_file_defined(object_id, file_name):
             raise Exception(f"INTERNAL ERROR: file {file_path} has been processed already")

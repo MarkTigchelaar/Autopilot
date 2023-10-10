@@ -25,14 +25,16 @@ from SemanticAnalysis.Database.SaveData.save_error import save_error
 from SemanticAnalysis.Database.SaveData.save_union import save_union
 from SemanticAnalysis.Database.SaveData.save_module import save_module
 from SemanticAnalysis.Database.SaveData.save_import import save_import
+from SemanticAnalysis.Database.SaveData.save_define import save_define
+from SemanticAnalysis.Database.SaveData.save_interface import save_interface 
+from SemanticAnalysis.Database.SaveData.save_unittest import save_unittest
+from SemanticAnalysis.Database.SaveData.save_function import save_function
+from SemanticAnalysis.Database.SaveData.save_struct import save_struct
 
 # these functions should make the rows and columns
 # for what ever table(s) are needed for each type
 # then return a tree or list of these objects which insert themselves
 # into the correct tables, and refer back to the ast as well.
-def save_fn(analyzer, ast_node):
-    return
-
 def parse_enum(driver):
     ast = p_enum(driver)
     driver.analyze_locally(analyze_enum, save_enum, ast)
@@ -60,25 +62,25 @@ def parse_module(driver):
 
 def parse_define(driver):
     ast = p_define(driver)
-    driver.analyze_locally(analyze_define, save_fn, ast)
+    driver.analyze_locally(analyze_define, save_define, ast)
     return ast
 
 def parse_interface(driver):
     ast = p_interface(driver)
-    driver.analyze_locally(analyze_interface, save_fn, ast)
+    driver.analyze_locally(analyze_interface, save_interface, ast)
     return ast
 
 def parse_unittest(driver):
     ast = p_unittest(driver)
-    driver.analyze_locally(analyze_unittest, save_fn, ast)
+    driver.analyze_locally(analyze_unittest, save_unittest, ast)
     return ast
 
 def parse_function(driver):
     ast = p_function(driver)
-    driver.analyze_locally(analyze_function, save_fn, ast)
+    driver.analyze_locally(analyze_function, save_function, ast)
     return ast
 
 def parse_struct(driver):
     ast = p_struct(driver)
-    driver.analyze_locally(analyze_struct, save_fn, ast)
+    driver.analyze_locally(analyze_struct, save_struct, ast)
     return ast

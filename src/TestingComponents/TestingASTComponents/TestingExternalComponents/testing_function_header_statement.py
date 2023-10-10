@@ -20,6 +20,15 @@ class TestingFunctionHeader:
     def set_as_public(self, is_public):
         self.function_header.set_as_public(is_public)
 
+    def add_acyclic_token(self, acyclic_token):
+        self.function_header.add_acyclic_token(acyclic_token)
+    
+    def add_inline_token(self, inline_token):
+        self.function_header.add_inline_token(inline_token)
+    
+    def add_public_token(self, pub_token):
+        self.function_header.add_public_token(pub_token)
+
     def print_literal(self, repr_list: list) -> None:
         if self.function_header.acyclic_token:
             repr_list.append(self.function_header.acyclic_token.literal + " ")

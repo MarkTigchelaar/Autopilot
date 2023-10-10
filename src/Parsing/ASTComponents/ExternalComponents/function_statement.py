@@ -23,3 +23,11 @@ class FunctionStatement:
     
     def add_public_token(self, pub_token):
         self.pub_token = pub_token
+
+"""
+,
+    {
+        "general_component" : "save_function",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_function_tests.json"
+    }
+"""

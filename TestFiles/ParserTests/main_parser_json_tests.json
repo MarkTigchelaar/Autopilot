@@ -487,7 +487,12 @@
                     "column_number": 38
                 },
                 "header_attributes": {
-                    "acyclic": {},
+                    "acyclic": {
+                        "literal": "acyclic",
+                        "type": "ACYCLIC",
+                        "line_number": 1,
+                        "column_number": 1
+                    },
                     "public": false
                 }
             },
@@ -2279,7 +2284,12 @@
                             "column_number": 36
                         },
                         "header_attributes": {
-                            "acyclic": {},
+                            "acyclic": {
+                                "literal": "acyclic",
+                                "type": "ACYCLIC",
+                                "line_number": 5,
+                                "column_number": 3
+                            },
                             "public": false
                         }
                     },

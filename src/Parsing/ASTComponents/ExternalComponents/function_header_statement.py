@@ -6,6 +6,8 @@ class FunctionHeaderStatement:
         self.return_type_token = None
         self.acyclic_token = None
         self.is_public = False
+        self.inline_token = None
+        self.public_token = None
 
     def add_name(self, name_token):
         self.name_token = name_token
@@ -21,6 +23,15 @@ class FunctionHeaderStatement:
 
     def set_as_public(self, is_public):
         self.is_public = is_public
+
+    def add_inline_token(self, inline_token):
+        self.inline_token = inline_token
+    
+    def add_public_token(self, public_token):
+        self.public_token = public_token
+
+    def add_acyclic_token(self, acyclic_token):
+        self.acyclic_token = acyclic_token
 
 class FunctionArgument:
     def __init__(self):

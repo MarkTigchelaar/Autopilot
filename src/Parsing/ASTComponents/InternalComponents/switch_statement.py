@@ -31,6 +31,9 @@ class SwitchStatement:
     
     def has_nested_statements(self):
         return True
+    
+    def has_next_statement_in_block(self):
+        return False
 
 class CaseStatement:
     def __init__(self):
@@ -55,3 +58,6 @@ class CaseStatement:
 
     def has_nested_statements(self):
         return True
+
+    def has_next_statement_in_block(self):
+        return False

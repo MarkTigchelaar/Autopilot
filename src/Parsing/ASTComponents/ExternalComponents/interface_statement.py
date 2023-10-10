@@ -1,6 +1,3 @@
-
-
-
 class InterfaceStatement:
     def __init__(self):
         self.name_token = None
@@ -10,7 +7,7 @@ class InterfaceStatement:
 
     def add_name(self, name_token):
         self.name_token = name_token
-    
+
     def add_function_headers(self, fn_headers):
         self.fn_headers = fn_headers
 

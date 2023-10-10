@@ -38,3 +38,8 @@ class IfStatement:
     
     def has_nested_statements(self):
         return True
+    
+    def has_next_statement_in_block(self):
+        return self.next_statement_in_block is not None
+    
+    

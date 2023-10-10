@@ -462,8 +462,8 @@
     },
     {
         "file" : "../Testfiles/ParserTests/StructTests/test37.txt",
-        "astString" : "pumpkin pub variable int acyclic pub test int ",
-        "tokenTypeString" : "IDENTIFIER PUB IDENTIFIER INT ACYCLIC PUB IDENTIFIER INT",
+        "astString" : "pumpkin pub variable int acyclic pub acyclic test int ",
+        "tokenTypeString" : "IDENTIFIER PUB IDENTIFIER INT ACYCLIC PUB ACYCLIC IDENTIFIER INT",
         "errors" : null
     }
 ]

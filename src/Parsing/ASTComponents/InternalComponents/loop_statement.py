@@ -23,3 +23,6 @@ class LoopStatement:
     
     def has_nested_statements(self):
         return True
+    
+    def has_next_statement_in_block(self):
+        return False

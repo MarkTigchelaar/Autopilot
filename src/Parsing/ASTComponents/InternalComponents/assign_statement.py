@@ -29,3 +29,6 @@ class AssignmentStatement:
 
     def has_nested_statements(self):
         return False
+
+    def has_next_statement_in_block(self):
+        return False

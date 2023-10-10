@@ -14,7 +14,12 @@ class Database:
             "imports" : ImportTable(),
             "defines" : DefineTable(),
             "enumerables" : EnumerableTable(),
-            "modifiers" : ModifierTable()
+            "modifiers" : ModifierTable(),
+            "functions" : FunctionTable(),
+            "fn_headers": FunctionHeaderTable(),
+            "interfaces" : InterfaceTable(),
+            "statements" : StatementTable(),
+            "structs": StructTable()
         }
         self.current_module_id = None
     
@@ -74,7 +79,11 @@ class TypeNameTable:
             "enum",
             "error",
             "union",
-            "defined_type"
+            "defined_type",
+            "interface",
+            "fn_header",
+            #"function",
+            "unittest"
         ]
         self.by_name = dict()
         self.by_category = dict()
@@ -144,7 +153,7 @@ class TypeNameTable:
             return []
         return self.by_module_id[module_id]
     
-    def is_already_defined_type(self, name, category, module_id, object_id):
+    def is_already_built_in_type_token(self, name, category, module_id, object_id):
         if name in self.by_name:
             items = self.by_name[name]
             for item in items:
@@ -348,40 +357,46 @@ class ImportTable:
 class DefineTable:
     def __init__(self):
         self.by_id = dict()
-        self.by_new_type_name = dict()
+        self.by_user_defined_type_token = dict()
 
     def get_size(self):
-        return 0
+        return len(self.by_id)
 
     def has_contents(self):
-        return len(self.by_id) + len(self.by_new_type_name) > 0
+        return len(self.by_id) + len(self.by_user_defined_type_token) > 0
 
-    def insert(self, object_id, defined_type, new_type_name, key_type, value_type, arg_list, union_type):
+    def insert(self, object_id, built_in_type_token, user_defined_type_token, key_type, value_type, arg_list, union_type):
         if object_id in self.by_id:
             raise Exception("INTERNAL ERROR: id of define statement already defined")
 
-        if new_type_name.literal not in self.by_new_type_name:
-            self.by_new_type_name[new_type_name.literal] = []
+        if user_defined_type_token.literal not in self.by_user_defined_type_token:
+            self.by_user_defined_type_token[user_defined_type_token.literal] = []
         new_row = DefineTableRow(
-            defined_type,
-            new_type_name,
+            built_in_type_token,
+            user_defined_type_token,
             key_type,
             value_type,
             arg_list,
             union_type
         )
         self.by_id[object_id] = new_row
-        self.by_new_type_name[new_type_name.literal].append(new_row)
+        self.by_user_defined_type_token[user_defined_type_token.literal].append(new_row)
+
+    def is_object_defined(self, object_id):
+        return object_id in self.by_id
+    
+    def get_item_by_id(self, object_id):
+        return self.by_id[object_id]
 
 
 class DefineTableRow:
-        def __init__(self, defined_type, new_type_name, key_type, value_type, arg_list, error_type):
-            self.defined_type = defined_type
-            self.new_type_name = new_type_name
-            self.key_type = key_type
-            self.value_type = value_type
-            self.arg_list = arg_list
-            self.error_type = error_type
+    def __init__(self, built_in_type_token, user_defined_type_token, key_type, value_type, arg_list, union_type):
+        self.built_in_type_token = built_in_type_token
+        self.user_defined_type_token = user_defined_type_token
+        self.key_type = key_type
+        self.value_type = value_type
+        self.arg_list = arg_list
+        self.union_type = union_type
 
 
 
@@ -449,3 +464,205 @@ class ModifierTable:
     
 
 
+class InterfaceTable:
+    def __init__(self):
+        self.by_id = dict()
+        self.by_module_id = dict()
+
+    def get_size(self):
+        return len(self.by_id)
+
+    def has_contents(self):
+        return len(self.by_id) > 0
+
+    def insert(self, object_id, module_id, fn_header_ids):
+        if object_id in self.by_id:
+            raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
+        
+        self.by_id[object_id] = fn_header_ids
+
+        if module_id not in self.by_module_id:
+            self.by_module_id[module_id] = []
+        self.by_module_id[module_id].append(object_id)
+
+    def is_object_defined(self, object_id):
+        return object_id in self.by_id
+    
+    def get_item_by_id(self, id):
+        row = self.by_id[id]
+        return row
+    
+    def get_rows_by_module_id(self, module_id):
+        if module_id not in self.by_module_id:
+            raise Exception("INTERNAL ERROR: Module Id not found")
+        return self.by_module_id[module_id]
+
+
+class FunctionTable:
+    def __init__(self):
+        self.by_id = dict()
+        self.by_module_id = dict()
+
+    def get_size(self):
+        return len(self.by_id)
+
+    def has_contents(self):
+        return len(self.by_id) > 0
+
+    def insert(self, object_id, header_id, module_id):
+        if object_id in self.by_id:
+            raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
+        row = FunctionTableRow(object_id, header_id)
+        self.by_id[object_id] = row
+
+
+        if module_id not in self.by_module_id:
+            self.by_module_id[module_id] = []
+        self.by_module_id[module_id].append(row)
+
+    def is_object_defined(self, object_id):
+        return object_id in self.by_id
+
+    def get_item_by_id(self, object_id):
+        return self.by_id[object_id]
+
+
+class FunctionTableRow:
+    def __init__(self, object_id, header_id):
+        self.object_id = object_id
+        self.header_id = header_id
+
+
+class FunctionHeaderTable:
+    def __init__(self):
+        self.by_id = dict()
+        #self.by_parent_id = dict()
+
+    def get_size(self):
+        return len(self.by_id)
+
+    def has_contents(self):
+        return len(self.by_id) > 0
+
+    def insert(self, object_id, header_object):#, parent_id):
+        if object_id in self.by_id:
+            raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
+        
+        self.by_id[object_id] = header_object
+        #self.by_parent_id[parent_id] = header_object
+
+    def is_object_defined(self, object_id):
+        return object_id in self.by_id
+    
+    def get_item_by_id(self, object_id):
+        return self.by_id[object_id]
+    
+    # def get_item_by_parent_id(self, parent_id):
+    #     return self.by_parent_id[parent_id]
+
+
+
+
+class StatementTable:
+    def __init__(self):
+        self.by_key = dict()
+        self.by_container_id = dict()
+
+    def get_size(self):
+        return len(self.by_key)
+
+    def has_contents(self):
+        return len(self.by_key) > 0
+
+    def insert(self, stmt_type_token, statement, container_object_id, sequence_num, scope_depth):
+        # Container id is always the function, or unittest object id.
+        potential_key = StatementTableKey(sequence_num, container_object_id)
+        if potential_key in self.by_key:
+            raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
+        
+        row = StatementRow(stmt_type_token, statement, container_object_id, sequence_num, scope_depth)#, lval_id, r_val_id)
+        self.by_key[potential_key] = row
+
+        if container_object_id not in self.by_container_id:
+            self.by_container_id[container_object_id] = list()
+        self.by_container_id[container_object_id].append(row)
+
+    def is_object_defined(self, container_object_id, sequence_num):
+        potential_key = StatementTableKey(sequence_num, container_object_id)
+        return potential_key in self.by_key
+    
+    def get_item_by_id_and_seq_num(self, container_object_id, sequence_num):
+        return self.by_key[StatementTableKey(sequence_num, container_object_id)]
+    
+    def get_rows_by_container_id(self, container_id):
+        rows = self.by_container_id[container_id]
+        rows.sort(key=lambda x: x.sequence_num, reverse=False)
+        return rows
+
+
+class StatementTableKey:
+    def __init__(self, sequence, container_id):
+        self.sequence = sequence
+        self.container_id = container_id
+    
+    def __hash__(self):
+        return int(str(self.sequence) + str(self.container_id))
+
+    def __eq__(self, other):
+        return self.sequence == other.sequence and self.container_id == other.container_id
+
+class StatementRow:
+    def __init__(
+        self,
+        stmt_type_token,
+        statement,
+        container_object_id, # function / unittest
+        sequence_num, # ordering of statements, depth first
+        scope_depth,
+        #,
+        #r_val_expression_id, # might as well make a expression table
+        #l_val_expression_id
+    ):
+        self.statement = statement
+        self.container_object_id = container_object_id
+        self.sequence_num = sequence_num
+        self.scope_depth = scope_depth
+        self.stmt_type_token = stmt_type_token
+        #self.r_val_expression_id = r_val_expression_id
+        #self.l_val_expression_id = l_val_expression_id
+
+
+class StructTable:
+    def __init__(self):
+        self.by_id = dict()
+        self.by_module_id = dict()
+
+    def get_size(self):
+        return len(self.by_id)
+
+    def has_contents(self):
+        return len(self.by_id) > 0
+
+    def insert(self, interfaces, fields, object_id, module_id, function_ids):
+        if object_id in self.by_id:
+            raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
+        row = StructTableRow(object_id, interfaces, fields, function_ids)
+        self.by_id[object_id] = row
+
+        if module_id not in self.by_module_id:
+            self.by_module_id[module_id] = list()
+        self.by_module_id[module_id].append(row)
+
+    def is_object_defined(self, object_id):
+        return object_id in self.by_id
+    
+    def get_item_by_id(self, object_id):
+        return self.by_id[object_id]
+    
+
+class StructTableRow:
+    def __init__(self, object_id, interfaces, fields, function_ids):
+        self.object_id = object_id
+        self.interfaces = interfaces
+        self.fields = fields
+        self.function_ids = function_ids

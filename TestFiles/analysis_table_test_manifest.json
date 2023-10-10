@@ -18,5 +18,25 @@
     {
         "general_component" : "save_import",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_import_tests.json"
+    },
+    {
+        "general_component" : "save_define",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_define_tests.json"
+    },
+    {
+        "general_component" : "save_interface",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_interface_tests.json"
+    },
+    {
+        "general_component" : "save_unittest",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_unittest_tests.json"
+    },
+    {
+        "general_component" : "save_function",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_function_tests.json"
+    },
+    {
+        "general_component" : "save_struct",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/save_struct_tests.json"
     }
 ]

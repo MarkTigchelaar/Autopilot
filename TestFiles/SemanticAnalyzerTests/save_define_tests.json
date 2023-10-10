@@ -1,0 +1,54 @@
+[
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/DefineTests/test1.ap"
+        ],
+        "errors" : null,
+        "object_count" : 2,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/DefineTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test1.ap"
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "object_id" : 0,
+                    "module_id" : 0
+                },
+                {
+                    "type" : "defined_type",
+                    "name" : "MakeAMap",
+                    "object_id" : 1,
+                    "module_id" : 0
+                }
+            ],
+            "defines" : [
+                {
+                    "module_id" : 0,
+                    "built_in_type" : "fun",
+                    "defined_type": "MakeAMap",
+                    "object_id" : 1,
+                    "key_type" : null,
+                    "value_type" : "GeneralMap",
+                    "arg_type_list" : [
+                        "int", 
+                        "some_thing", 
+                        "AHashMapOfSomeType"
+                    ],
+                    "union_type" : null
+                }
+            ]
+        }
+    }
+]
