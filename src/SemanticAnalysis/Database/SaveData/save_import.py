@@ -15,24 +15,15 @@ class ImportSaver(Saver):
         self.import_stmt = import_ast
 
     def save_to_db(self, database):
-        #pass
-        # collect all imports from same module (files are in same module)
-        
-        # This is a bit of a hack, but all tokens do keep this data
         path_item = self.import_stmt.path_list[0]
         file_path = path_item.node_token.file_name
 
-        current_directory_path, current_file_name = split_path_and_file_name(file_path)
-        
-        print(f"directory path: {current_directory_path}")
-        print(f"filename: {current_file_name}")
+        _, current_file_name = split_path_and_file_name(file_path)
+    
 
         import_table = database.get_table("imports")
         file_table = database.get_table("files")
-        #type_name_table = database.get_table("typenames")
         current_module_id = database.get_current_module_id()
-        # Since no comparisons of one import item list to another is needed,
-        # don't unpack import list into rows
         
         object_id = database.save_object(self.import_stmt)
 
@@ -43,7 +34,6 @@ class ImportSaver(Saver):
             self.import_stmt.path_list,
             self.import_stmt.import_list
         )
-        #type_name_table.insert()
 
         if file_table.is_file_defined(object_id, current_file_name):
             raise Exception(f"INTERNAL ERROR: file {file_path} has been processed already")

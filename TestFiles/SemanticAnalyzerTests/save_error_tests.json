@@ -51,13 +51,95 @@
                 {
                     "type" : "module_name",
                     "name" : "main",
-                    "object_id" : 0,
                     "module_id" : 0
                 },
                 {
                     "type" : "error",
                     "name" : "some_error",
+                    "module_id" : 0
+                }
+            ]
+        }
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/ErrorTests/test2.ap"
+        ],
+        "errors" : null,
+        "object_count" : 3,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/ErrorTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test2.ap"
+                }
+            ],
+            "enumerables" : [
+                {
+                    "module_id" : 0,
                     "object_id" : 1,
+                    "general_type" : "some_error",
+                    "items" : [
+                        {
+                            "name" : "Martha",
+                            "type" : null
+                        },
+                        {
+                            "name" : "Jane",
+                            "type" : null
+                        },
+                        {
+                            "name" : "Cassandra",
+                            "type" : null
+                        }
+                    ]
+                },
+                {
+                    "module_id" : 0,
+                    "object_id" : 2,
+                    "general_type" : "some_error",
+                    "items" : [
+                        {
+                            "name" : "Martha",
+                            "type" : null
+                        },
+                        {
+                            "name" : "Jane",
+                            "type" : null
+                        },
+                        {
+                            "name" : "Cassandra",
+                            "type" : null
+                        }
+                    ]
+                }
+            ],
+            "modifiers" : [
+                {
+                    "object_id" : 1,
+                    "modifier_list" : []
+                },
+                {
+                    "object_id" : 2,
+                    "modifier_list" : ["pub"]
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "module_id" : 0
+                },
+                {
+                    "type" : "error",
+                    "name" : "some_error",
                     "module_id" : 0
                 }
             ]

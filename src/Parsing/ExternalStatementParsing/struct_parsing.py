@@ -49,10 +49,6 @@ def is_step(driver, struct_stmt):
         return None
     elif peek_token.type_symbol == symbols.PUB:
         return pub_field_step(driver, struct_stmt, field)
-    # elif peek_token.type_symbol == symbols.ACYCLIC:
-    #     return acyclic_field_step(driver, struct_stmt, field)
-    # elif peek_token.type_symbol == symbols.INLINE:
-    #     return inline_field_step(driver, struct_stmt, field)
     elif peek_token.type_symbol == symbols.IDENTIFIER:
         return field_name_step(driver, struct_stmt, field)
     else:
@@ -72,37 +68,6 @@ def pub_field_step(driver, struct_stmt, field):
     else:
         driver.add_error(peek_token, UNEXPECTED_TOKEN)
         return None
-
-# def acyclic_field_step(driver, struct_stmt, field):
-#     acyclic_token = driver.next_token()
-#     field.add_acyclic_token(acyclic_token)
-#     peek_token = driver.peek_token()
-#     if is_eof_type(peek_token):
-#         driver.add_error(peek_token, EOF_REACHED)
-#         return None
-#     elif peek_token.type_symbol == symbols.PUB:
-#         return pub_field_step(driver, struct_stmt, field)
-#     elif peek_token.type_symbol == symbols.IDENTIFIER:
-#         return field_name_step(driver, struct_stmt, field)
-#     else:
-#         driver.add_error(peek_token, UNEXPECTED_TOKEN)
-#         return None
-
-
-# def inline_field_step(driver, struct_stmt, field):
-#     inline_token = driver.next_token()
-#     field.add_inline_token(inline_token)
-#     peek_token = driver.peek_token()
-#     if is_eof_type(peek_token):
-#         driver.add_error(peek_token, EOF_REACHED)
-#         return None
-#     elif peek_token.type_symbol == symbols.PUB:
-#         return pub_field_step(driver, struct_stmt, field)
-#     elif peek_token.type_symbol == symbols.IDENTIFIER:
-#         return field_name_step(driver, struct_stmt, field)
-#     else:
-#         driver.add_error(peek_token, UNEXPECTED_TOKEN)
-#         return None
 
 def field_name_step(driver, struct_stmt, field):
     field_name_token = driver.next_token()
@@ -165,10 +130,6 @@ def field_comma_step(driver, struct_stmt):
         return None
     elif peek_token.type_symbol == symbols.PUB:
         return pub_field_step(driver, struct_stmt, field)
-    # elif peek_token.type_symbol == symbols.ACYCLIC:
-    #     return acyclic_field_step(driver, struct_stmt, field)
-    # elif peek_token.type_symbol == symbols.INLINE:
-    #     return inline_field_step(driver, struct_stmt, field)
     elif peek_token.type_symbol == symbols.IDENTIFIER:
         return field_name_step(driver, struct_stmt, field)
     else:
@@ -212,8 +173,6 @@ def function_step(driver, struct_stmt, public_token, acyclic_token):
     function = parse_function(driver)
     if driver.has_errors():
         return None
-    #function.add_acyclic_token(acyclic_token)
-    #function.add_public_token(public_token)
 
     struct_stmt.add_function(function)
     peek_token = driver.peek_token()

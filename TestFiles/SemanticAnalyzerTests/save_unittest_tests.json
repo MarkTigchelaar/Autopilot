@@ -43,5 +43,235 @@
                 }
             ]
         }
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/UnittestTests/test2.ap"
+        ],
+        "errors" : null,
+        "object_count" : 2,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/UnittestTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test2.ap"
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "object_id" : 0,
+                    "module_id" : 0
+                },
+                {
+                    "type" : "unittest",
+                    "name" : "my_unittest",
+                    "object_id" : 1,
+                    "module_id" : 0
+                }
+            ],
+            "statements": [
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 1,
+                    "scope_depth" : 0,
+                    "stmt_type" : "IF",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 2,
+                    "scope_depth" : 1,
+                    "stmt_type" : "IDENTIFIER",
+                    "stmt_specific_items" : null
+                }
+            ]
+        }
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/UnittestTests/test3.ap"
+        ],
+        "errors" : null,
+        "object_count" : 2,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/UnittestTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test3.ap"
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "object_id" : 0,
+                    "module_id" : 0
+                },
+                {
+                    "type" : "unittest",
+                    "name" : "my_unittest",
+                    "object_id" : 1,
+                    "module_id" : 0
+                }
+            ],
+            "statements": [
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 1,
+                    "scope_depth" : 0,
+                    "stmt_type" : "WHILE",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 2,
+                    "scope_depth" : 1,
+                    "stmt_type" : "DEFER",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 3,
+                    "scope_depth" : 1,
+                    "stmt_type" : "IF",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 4,
+                    "scope_depth" : 2,
+                    "stmt_type" : "CONTINUE",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 5,
+                    "scope_depth" : 1,
+                    "stmt_type" : "ELIF",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 6,
+                    "scope_depth" : 2,
+                    "stmt_type" : "RETURN",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 7,
+                    "scope_depth" : 1,
+                    "stmt_type" : "ELSE",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 8,
+                    "scope_depth" : 2,
+                    "stmt_type" : "BREAK",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 9,
+                    "scope_depth" : 1,
+                    "stmt_type" : "FOR",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 10,
+                    "scope_depth" : 2,
+                    "stmt_type" : "SWITCH",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 11,
+                    "scope_depth" : 3,
+                    "stmt_type" : "CASE",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 12,
+                    "scope_depth" : 4,
+                    "stmt_type" : "LET",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 13,
+                    "scope_depth" : 3,
+                    "stmt_type" : "DEFAULT",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 14,
+                    "scope_depth" : 4,
+                    "stmt_type" : "LOOP",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 15,
+                    "scope_depth" : 5,
+                    "stmt_type" : "UNLESS",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 16,
+                    "scope_depth" : 6,
+                    "stmt_type" : "IDENTIFIER",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 17,
+                    "scope_depth" : 6,
+                    "stmt_type" : "CONTINUE",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 18,
+                    "scope_depth" : 5,
+                    "stmt_type" : "IF",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 19,
+                    "scope_depth" : 6,
+                    "stmt_type" : "BREAK",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 20,
+                    "scope_depth" : 4,
+                    "stmt_type" : "BREAK",
+                    "stmt_specific_items" : null
+                }
+            ]
+        }
     }
 ]

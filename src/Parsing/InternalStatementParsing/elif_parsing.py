@@ -117,7 +117,6 @@ def statements_step(driver, elif_statement):
         driver.add_error(peek_token, EOF_REACHED)
         return None
     elif peek_token.type_symbol == symbols.ELIF:
-        #return elif_statement
         next_stmt_in_block = parse_elif(driver)
         elif_statement.add_next_statement_in_block(next_stmt_in_block)
         return elif_statement

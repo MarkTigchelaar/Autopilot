@@ -35,19 +35,11 @@ class StructStatement:
 class StructField:
     def __init__(self):
         self.public_token = None
-        #self.acyclic_token = None
-        #self.inline_token = None
         self.field_name_token = None
         self.type_token = None
 
     def add_public_token(self, public_token):
         self.public_token = public_token
-    
-    # def add_acyclic_token(self, acyclic_token):
-    #     self.acyclic_token = acyclic_token
-    
-    # def add_inline_token(self, inline_token):
-    #     self.inline_token = inline_token
     
     def add_field_name(self, field_name_token):
         self.field_name_token = field_name_token

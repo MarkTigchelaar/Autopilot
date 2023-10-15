@@ -22,9 +22,6 @@ class FunctionSaver(Saver):
         statement_table = database.get_table("statements")
 
         file_path = self.function.header.name_token.file_name
-        # public_token = self.function.pub_token
-        # acyclic_token = self.function.acyclic_token
-        # inline_token = self.function.inline_token
         _, file_name = split_path_and_file_name(file_path)
 
         self.object_id = database.save_object(self.function)
@@ -35,15 +32,6 @@ class FunctionSaver(Saver):
         if len(header_ids) != 1:
             raise Exception("INTERNAL ERROR: function does not have exactly 1 header")
 
-        # mods = []
-        # for tok in [acyclic_token, inline_token, public_token]:
-        #     if tok:
-        #         mods.append(tok)
- 
-        # modifier_table.insert(
-        #     self.object_id,
-        #     mods
-        # )
         header_saver.save_headers()
         
         type_name_table.insert(

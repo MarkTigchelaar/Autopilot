@@ -118,7 +118,6 @@ def statements_step(driver, if_statement):
         return None
     elif peek_token.type_symbol == symbols.ELIF:
         from Parsing.InternalStatementParsing.elif_parsing import parse_elif
-        #return if_statement
         next_stmt_in_block = parse_elif(driver)
         if_statement.add_next_statement_in_block(next_stmt_in_block)
         return if_statement

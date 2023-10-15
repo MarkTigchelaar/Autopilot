@@ -11,13 +11,9 @@ class ModuleSaver(Saver):
         self.module = module_ast
 
     def save_to_db(self, database):      
-        module_name = self.module.name#.literal
+        module_name = self.module.name
         file_path = self.module.name.file_name
         directory_path, file_name = split_path_and_file_name(file_path)
-        
-        # print(f"directory path: {directory_path}")
-        # print(f"filename: {file_name}")
-        # print(f"Module name: {module_name.literal}")
 
         # Coupling? yeah, but savers know how to save!
         module_table = database.get_table("modules")
@@ -40,7 +36,7 @@ class ModuleSaver(Saver):
         file_table.insert(file_name, object_id)
 
         # if type_name_table detects it is defined, get category, must be "module_name"
-        if type_name_table.is_name_defined_in_table(module_name, object_id):
+        if type_name_table.is_name_defined_in_table(module_name.literal, object_id):
             # This is done to avoid redefining the same module, in different source files.
             if type_name_table.get_category_by_name_and_module_id(module_name, object_id) != "module_name":
                 type_name_table.insert(module_name, "module_name", object_id, object_id)

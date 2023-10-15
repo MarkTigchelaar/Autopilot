@@ -1,0 +1,17 @@
+struct thing uses a, a is
+    pub variable as int,
+    pub variable as int
+
+
+    acyclic pub fun my_function(a as int, b as float) bool do
+        return
+    end
+
+    pub fun my_function2(a as int, b as float) bool do
+        return
+    end
+
+    acyclic pub fun my_function(a as int, b as float) bool do
+        return
+    end
+end

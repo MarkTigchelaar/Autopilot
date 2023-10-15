@@ -28,9 +28,6 @@ class DefineSaver(Saver):
         file_path = self.define.descriptor_token.file_name
         _, file_name = split_path_and_file_name(file_path)
 
-        # print(f"directory path: {current_directory_path}")
-        # print(f"filename: {current_file_name}")
-
         object_id = database.save_object(self.define)
 
         new_type_name = self.define.descriptor_token

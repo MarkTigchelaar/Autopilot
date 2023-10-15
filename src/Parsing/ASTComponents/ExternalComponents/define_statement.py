@@ -48,10 +48,10 @@ class KeyValueType:
         self.value_token = value_token
 
     def get_key_token(self):
-        return None
+        return self.key_token
     
     def get_value_token(self):
-        return None
+        return self.value_token
     
     def get_arg_list(self):
         return None
@@ -83,7 +83,7 @@ class LinearType:
         return None
     
     def get_value_token(self):
-        return None
+        return self.value_token
     
     def get_arg_list(self):
         return None
@@ -119,13 +119,13 @@ class FailableType:
         return None
     
     def get_value_token(self):
-        return None
+        return self.value_token
     
     def get_arg_list(self):
         return None
     
     def get_error_token(self):
-        return None
+        return self.error_token
 
     def add_descriptor_token(self, token):
         self.descriptor_token = token

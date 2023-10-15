@@ -14,32 +14,14 @@ def table_load_tests(
     for test_case in component_tests:
         err_manager = ErrorManager()
 
-        # tok.remove_path(current_dir)
         database = None
         for i in range(len(test_case["files"])):
-            # if i != 3:
-            #     continue
             tok = Tokenizer(err_manager)
             try:
                 tok.load_src(test_case["files"][i])
             except:
                 tok.load_src(current_dir + "/" + test_case["files"][i])
-            current_path = current_dir + "/" + test_case["files"][i]
-            # print(f"current path: {current_path}")
-            # temp = test_case["files"][i].split("../")
-            # temp = temp[1]
-            # test_case["files"][i] = "../" + temp
-            # current_path = test_case["files"][i]
-            # print(f"current path after: {current_path}")
-
-            # semantic_test(tok, err_manager)
-            #database = semantic_test(tok, err_manager, database)
-            try:
-                database = semantic_test(tok, err_manager, database)
-            except Exception as e:
-                print("EXCEPTION in file: " + test_case["files"][i] + ":\n" + str(e))
-                record_component_test(test_case, tracker, "OK", "EXCEPTION: " + str(e))
-                continue
+            database = semantic_test(tok, err_manager, database)
             tok.close_src()
 
         if database is None:
@@ -117,7 +99,6 @@ def involved_table_check(database, test_case, tracker):
             )
 
 
-
 def check_table_contents(database, test_case, tracker):
     expected_tables = list(test_case["tables"].keys())
 
@@ -125,8 +106,6 @@ def check_table_contents(database, test_case, tracker):
         table = database.get_table(table_name)
         object_count = test_case["object_count"]
         test_table = test_case["tables"][table_name]
-        # if table_name == "modules":
-        #     continue
         query_runner = table_tester_factory(table_name)
         query_runner.set_table(table)
         for row in test_table:
@@ -184,7 +163,7 @@ def table_tester_factory(table_name):
         case "interfaces":
             tester = InterfaceTableTestQueryRunner()
         # case "unittests":
-        #     tester = UnittestTableTestQueryRunner() <- unittests just have typenames, and statements
+        #     tester = UnittestTableTestQueryRunner() <- unittests just have typenames, and statements, skip
         case "statements":
             tester = StatementTableTestQueryRunner()
         case "structs":
@@ -268,7 +247,6 @@ class TypenamesTableTestQueryRunner(TestQueryRunner):
         module_has_name = row["name"] in [
             tok.literal for tok in self.table.get_names_by_module_id(row["module_id"])
         ]
-        # print(f"HERE --------------------- {self.table.}")
         return type_matches and category_has_name and module_has_name
 
 
@@ -284,7 +262,9 @@ class EnumTableTestQueryRunner(TestQueryRunner):
         type_matches = False
         if general_type_token is not None:
             if row["general_type"] is None:
-                raise Exception("INTERNAL ERROR: Expecting no general type for enumerable type, but one is present")
+                raise Exception(
+                    "INTERNAL ERROR: Expecting no general type for enumerable type, but one is present"
+                )
             type_matches = general_type_token.literal == row["general_type"]
         else:
             type_matches = True
@@ -296,12 +276,13 @@ class EnumTableTestQueryRunner(TestQueryRunner):
                     if test_item["type"] != None and item.get_value() != None:
                         items_match = test_item["type"] == item.get_value().literal
                     elif test_item["type"] != None and item.get_value() == None:
-                        raise Exception("INTERNAL ERROR: table shows no type, but type expected")
+                        raise Exception(
+                            "INTERNAL ERROR: table shows no type, but type expected"
+                        )
                     elif test_item["type"] == None and item.get_value() == None:
                         items_match = True
         length_matches = len(items) == len(row["items"])
         return type_matches and items_match and length_matches
-
 
 
 class ModifierTableTestQueryRunner(TestQueryRunner):
@@ -321,7 +302,9 @@ class ModifierTableTestQueryRunner(TestQueryRunner):
                 if row["modifier_list"][i] == None:
                     continue
                 else:
-                    raise Exception("INTERNAL ERROR: modifier found to be None, but was expected not to be")
+                    raise Exception(
+                        "INTERNAL ERROR: modifier found to be None, but was expected not to be"
+                    )
             if mod.literal != row["modifier_list"][i]:
                 return False
         return True
@@ -362,9 +345,8 @@ class ImportTableTestQueryRunner(TestQueryRunner):
                 raise Exception("INTERNAL ERROR: direction for import is null")
             elif direction is not None and path[i]["direction"] is None:
                 raise Exception("INTERNAL ERROR: test direction is null")
-        
+
         return True
-            
 
 
 class DefineTableTestQueryRunner(TestQueryRunner):
@@ -377,11 +359,17 @@ class DefineTableTestQueryRunner(TestQueryRunner):
     def contents_match(self, test_row):
         table_row = self.table.get_item_by_id(test_row["object_id"])
         match_list = []
-        match_list.append(self.match_arg(table_row.built_in_type_token, test_row["built_in_type"]))
-        match_list.append(self.match_arg(table_row.user_defined_type_token, test_row["defined_type"]))
+        match_list.append(
+            self.match_arg(table_row.built_in_type_token, test_row["built_in_type"])
+        )
+        match_list.append(
+            self.match_arg(table_row.user_defined_type_token, test_row["defined_type"])
+        )
         match_list.append(self.match_arg(table_row.key_type, test_row["key_type"]))
         match_list.append(self.match_arg(table_row.value_type, test_row["value_type"]))
-        match_list.append(self.match_args(table_row.arg_list, test_row["arg_type_list"]))
+        match_list.append(
+            self.match_args(table_row.arg_list, test_row["arg_type_list"])
+        )
         match_list.append(self.match_arg(table_row.union_type, test_row["union_type"]))
         for match in match_list:
             if not match:
@@ -394,14 +382,16 @@ class DefineTableTestQueryRunner(TestQueryRunner):
                 return True
             return False
         elif test_row_arg_list is None:
-            raise Exception("INTERNAL ERROR: test case has argument list for function, table does not")
+            raise Exception(
+                "INTERNAL ERROR: test case has argument list for function, table does not"
+            )
         if len(table_row_arg_list) != len(test_row_arg_list):
             return False
         for arg in table_row_arg_list:
             if arg.literal not in test_row_arg_list:
                 return False
         return True
-    
+
     def match_arg(self, lhs, rhs):
         if lhs is None:
             if rhs is None:
@@ -431,7 +421,6 @@ class InterfaceTableTestQueryRunner(TestQueryRunner):
         return False
 
 
-
 class FunctionTableTestQueryRunner(TestQueryRunner):
     def __init__(self) -> None:
         pass
@@ -459,7 +448,7 @@ class FunctionHeaderTableTestQueryRunner(TestQueryRunner):
             return False
         if test_row["return_type"] != table_row.return_type_token.literal:
             return False
-        
+
         if test_row["args"] and not table_row.arguments:
             raise Exception("INTERNAL ERROR: test row has args, but table row does not")
         if table_row.arguments and not test_row["args"]:
@@ -474,35 +463,48 @@ class FunctionHeaderTableTestQueryRunner(TestQueryRunner):
             if test_arg["type"] != header_arg.arg_type_token.literal:
                 return False
             if test_arg["default_value"] and not header_arg.default_value_token:
-                raise Exception("INTERNAL ERROR: test row has default value, but table row does not")
+                raise Exception(
+                    "INTERNAL ERROR: test row has default value, but table row does not"
+                )
             if not test_arg["default_value"] and header_arg.default_value_token:
-                raise Exception("INTERNAL ERROR: test row has no default value, but table row does")
+                raise Exception(
+                    "INTERNAL ERROR: test row has no default value, but table row does"
+                )
             if not test_arg["default_value"] and not header_arg.default_value_token:
                 continue
             if test_arg["default_value"] != header_arg.default_value_token.literal:
                 return False
         return True
 
+
 class StatementTableTestQueryRunner(TestQueryRunner):
     def __init__(self) -> None:
         pass
 
     def row_is_defined(self, test_row):
-        return self.table.is_object_defined(test_row["container_object_id"], test_row["sequence_num"])
+        return self.table.is_object_defined(
+            test_row["container_object_id"], test_row["sequence_num"]
+        )
 
     def contents_match(self, test_row):
-        table_row = self.table.get_item_by_id_and_seq_num(test_row["container_object_id"], test_row["sequence_num"])
+        table_row = self.table.get_item_by_id_and_seq_num(
+            test_row["container_object_id"], test_row["sequence_num"]
+        )
         if test_row["container_object_id"] != table_row.container_object_id:
-            raise Exception("INTERNAL ERROR: container object id used to retrieve object, but wrong one returned")
+            raise Exception(
+                "INTERNAL ERROR: container object id used to retrieve object, but wrong one returned"
+            )
         if test_row["sequence_num"] != table_row.sequence_num:
-            raise Exception("INTERNAL ERROR: sequence number used to retrieve object, but wrong one returned")
+            raise Exception(
+                "INTERNAL ERROR: sequence number used to retrieve object, but wrong one returned"
+            )
         if test_row["scope_depth"] != table_row.scope_depth:
             return False
         if test_row["stmt_type"] != table_row.stmt_type_token.type_symbol:
             return False
         if test_row["stmt_specific_items"] is None:
             return True
-        
+
         return False
 
 
@@ -528,8 +530,7 @@ class StructTableTestQueryRunner(TestQueryRunner):
         if not self.check_interfaces(interfaces, test_interfaces):
             return False
         return True
-        
-    
+
     def check_fn_ids(self, table_fn_ids, test_row_fn_ids):
         if len(table_fn_ids) != len(test_row_fn_ids):
             return False
@@ -548,20 +549,22 @@ class StructTableTestQueryRunner(TestQueryRunner):
                 if field.public_token.literal != test_field["mod"]:
                     return False
             else:
-                raise Exception("INTERNAL ERROR: either test or table field missing modifier")
-            
+                raise Exception(
+                    "INTERNAL ERROR: either test or table field missing modifier"
+                )
+
             if field.field_name_token.literal != test_field["name"]:
                 return False
-            
+
             if field.type_token.literal != test_field["type"]:
                 return False
 
         return True
-    
+
     def check_interfaces(self, interfaces, test_interfaces):
         if len(interfaces) != len(test_interfaces):
             return False
-        
+
         for i in range(len(interfaces)):
             if interfaces[i].literal != test_interfaces[i]:
                 return False

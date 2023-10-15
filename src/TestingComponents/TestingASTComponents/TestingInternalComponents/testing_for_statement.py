@@ -11,13 +11,13 @@ class TestingForStatement:
 
     def get_descriptor_token(self):
         return self.for_statement.get_descriptor_token()
-    
+
     def add_assignment_type(self, assign_token):
         self.for_statement.add_assignment_type(assign_token)
 
     def add_variable_name(self, unwrapped_option_token):
         self.for_statement.add_variable_name(unwrapped_option_token)
-    
+
     def add_second_variable_name(self, unwrapped_option_token):
         self.for_statement.add_second_variable_name(unwrapped_option_token)
 
@@ -38,7 +38,7 @@ class TestingForStatement:
 
     def add_index_stop_name(self, index_stop_token):
         self.for_statement.add_index_stop_name(index_stop_token)
-    
+
     def add_collection_name(self, collection_token):
         self.for_statement.add_collection_name(collection_token)
 
@@ -49,15 +49,18 @@ class TestingForStatement:
         self.for_statement.add_statements(statements)
 
     def print_literal(self, repr_list: list) -> None:
-        #repr_list.append(" ")
         if self.for_statement.optional_assignment_type:
             repr_list.append(self.for_statement.optional_assignment_type.literal + " ")
 
         if self.for_statement.unwrapped_optional_variable_name:
-            repr_list.append(self.for_statement.unwrapped_optional_variable_name.literal + " ")
+            repr_list.append(
+                self.for_statement.unwrapped_optional_variable_name.literal + " "
+            )
 
         if self.for_statement.second_unwrapped_optional_variable_name:
-            repr_list.append(self.for_statement.second_unwrapped_optional_variable_name.literal + " ")
+            repr_list.append(
+                self.for_statement.second_unwrapped_optional_variable_name.literal + " "
+            )
 
         if self.for_statement.optional_collection_name:
             repr_list.append(self.for_statement.optional_collection_name.literal + " ")
@@ -76,35 +79,43 @@ class TestingForStatement:
 
         if self.for_statement.index_stop_name:
             repr_list.append(self.for_statement.index_stop_name.literal + " ")
-        
+
         if self.for_statement.iter_size:
             repr_list.append(self.for_statement.iter_size.literal + " ")
 
         if self.for_statement.loop_name:
             repr_list.append(self.for_statement.loop_name.literal + " ")
 
-        # if self.for_statement.statements:
-        #     for stmt in self.for_statement.statements:
-        #         stmt.print_literal(repr_list)
-        
+
     def print_token_types(self, type_list: list) -> None:
         if self.for_statement.optional_assignment_type:
-            type_list.append(self.for_statement.optional_assignment_type.type_symbol + " ")
+            type_list.append(
+                self.for_statement.optional_assignment_type.type_symbol + " "
+            )
 
         if self.for_statement.unwrapped_optional_variable_name:
-            type_list.append(self.for_statement.unwrapped_optional_variable_name.type_symbol + " ")
+            type_list.append(
+                self.for_statement.unwrapped_optional_variable_name.type_symbol + " "
+            )
 
         if self.for_statement.second_unwrapped_optional_variable_name:
-            type_list.append(self.for_statement.second_unwrapped_optional_variable_name.type_symbol + " ")
+            type_list.append(
+                self.for_statement.second_unwrapped_optional_variable_name.type_symbol
+                + " "
+            )
 
         if self.for_statement.optional_collection_name:
-            type_list.append(self.for_statement.optional_collection_name.type_symbol + " ")
+            type_list.append(
+                self.for_statement.optional_collection_name.type_symbol + " "
+            )
 
         if self.for_statement.collection_name:
             type_list.append(self.for_statement.collection_name.type_symbol + " ")
 
         if self.for_statement.index_or_key_name_token:
-            type_list.append(self.for_statement.index_or_key_name_token.type_symbol + " ")
+            type_list.append(
+                self.for_statement.index_or_key_name_token.type_symbol + " "
+            )
 
         if self.for_statement.map_value_name_token:
             type_list.append(self.for_statement.map_value_name_token.type_symbol + " ")
@@ -114,34 +125,39 @@ class TestingForStatement:
 
         if self.for_statement.index_stop_name:
             type_list.append(self.for_statement.index_stop_name.type_symbol + " ")
-        
+
         if self.for_statement.iter_size:
             type_list.append(self.for_statement.iter_size.type_symbol + " ")
 
         if self.for_statement.loop_name:
             type_list.append(self.for_statement.loop_name.type_symbol + " ")
 
-        # if self.for_statement.statements:
-        #     for stmt in self.for_statement.statements:
-        #         stmt.print_token_types(type_list)
-
     def to_json(self) -> dict:
         return {
-            "type" : "for_loop",
-            "name" : token_to_json(self.for_statement.loop_name),
-            "optional_assignment_type" : token_to_json(self.for_statement.optional_assignment_type),
-            "unwrapped_optional" : token_to_json(self.for_statement.unwrapped_optional_variable_name),
-            "second_unwrapped_optional" : token_to_json(self.for_statement.second_unwrapped_optional_variable_name),
-            "optional_collection" : token_to_json(self.for_statement.optional_collection_name),
-            "collection" : token_to_json(self.for_statement.collection_name),
-            "index_or_key_name" : token_to_json(self.for_statement.index_or_key_name_token),
-            "value_name" : token_to_json(self.for_statement.map_value_name_token),
-            "range_start" : token_to_json(self.for_statement.index_start_name),
-            "range_stop" : token_to_json(self.for_statement.index_stop_name),
-            "range_step" : token_to_json(self.for_statement.iter_size),
-            "statememts" : self.statements_to_json()
+            "type": "for_loop",
+            "name": token_to_json(self.for_statement.loop_name),
+            "optional_assignment_type": token_to_json(
+                self.for_statement.optional_assignment_type
+            ),
+            "unwrapped_optional": token_to_json(
+                self.for_statement.unwrapped_optional_variable_name
+            ),
+            "second_unwrapped_optional": token_to_json(
+                self.for_statement.second_unwrapped_optional_variable_name
+            ),
+            "optional_collection": token_to_json(
+                self.for_statement.optional_collection_name
+            ),
+            "collection": token_to_json(self.for_statement.collection_name),
+            "index_or_key_name": token_to_json(
+                self.for_statement.index_or_key_name_token
+            ),
+            "value_name": token_to_json(self.for_statement.map_value_name_token),
+            "range_start": token_to_json(self.for_statement.index_start_name),
+            "range_stop": token_to_json(self.for_statement.index_stop_name),
+            "range_step": token_to_json(self.for_statement.iter_size),
+            "statememts": self.statements_to_json(),
         }
-    
 
     def statements_to_json(self):
         stmts = list()

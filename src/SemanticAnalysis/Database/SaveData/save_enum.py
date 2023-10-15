@@ -22,7 +22,6 @@ class EnumSaver(Saver):
         enumerable_table = database.get_table("enumerables")
         modifier_table = database.get_table("modifiers")
         file_table = database.get_table("files")
-        #module_table = database.get_table("modules")
 
         file_path = name.file_name
         # dir path not needed, refers to the current module, which knows its dir path.

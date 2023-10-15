@@ -21,9 +21,7 @@ class TestingReAssignOrMethodCallStatement:
         self.re_assign_or_method_Call_statement.add_r_value(r_value_exp)
 
     def print_literal(self, repr_list: list) -> None:
-        #repr_list.append()
         self.re_assign_or_method_Call_statement.l_value_exp.print_literal(repr_list)
-        #repr_list.append(" ")
         if self.re_assign_or_method_Call_statement.assignment_token:
             repr_list.append(" " + self.re_assign_or_method_Call_statement.assignment_token.literal + " ")
         if self.re_assign_or_method_Call_statement.r_value_exp:

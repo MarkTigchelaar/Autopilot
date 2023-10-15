@@ -3,10 +3,15 @@ from ..parsing_utilities import *
 from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
 from Parsing.InternalStatementParsing.assignment_parsing import parse_assignment
-from Parsing.InternalStatementParsing.re_assignment_parsing import parse_re_assignment, parse_defer
+from Parsing.InternalStatementParsing.re_assignment_or_call_parsing import (
+    parse_re_assignment_or_call,
+    parse_defer,
+)
+
 # Imports below brought into statements due to circular import issue
 
-def parse_statements(driver, in_if_or_elif = False):
+
+def parse_statements(driver, in_if_or_elif=False):
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
@@ -28,13 +33,14 @@ def parse_statements(driver, in_if_or_elif = False):
         if driver.has_errors():
             return None
         if peek_token.type_symbol == symbols.ENDSCOPE:
-            #parent statement / function/ unit test handles the END token
+            # parent statement / function/ unit test handles the END token
             break
     if len(statement_list) == 0 and not driver.has_errors():
         driver.add_error(peek_token, EMPTY_STATEMENT)
     if driver.has_errors():
         return None
     return statement_list
+
 
 def is_statement_token(peek_token):
     if is_eof_type(peek_token):
@@ -45,12 +51,14 @@ def is_statement_token(peek_token):
         return False
     return True
 
+
 def secondary_branching_logic(peek_token):
     if peek_token.type_symbol == symbols.ELIF:
         return True
     if peek_token.type_symbol == symbols.ELSE:
         return True
     return False
+
 
 def statement_step(driver):
     peek_token = driver.peek_token()
@@ -62,9 +70,10 @@ def statement_step(driver):
     elif peek_token.type_symbol == symbols.DEFER:
         stmt = parse_defer(driver)
     elif peek_token.type_symbol == symbols.IDENTIFIER:
-        stmt = parse_re_assignment(driver)
+        stmt = parse_re_assignment_or_call(driver)
     elif peek_token.type_symbol == symbols.IF:
         from Parsing.InternalStatementParsing.if_parsing import parse_if
+
         stmt = parse_if(driver)
     elif peek_token.type_symbol == symbols.ELIF:
         return None
@@ -72,27 +81,35 @@ def statement_step(driver):
         return None
     elif peek_token.type_symbol == symbols.UNLESS:
         from Parsing.InternalStatementParsing.unless_parsing import parse_unless
+
         stmt = parse_unless(driver)
     elif peek_token.type_symbol == symbols.LOOP:
         from Parsing.InternalStatementParsing.loop_parsing import parse_loop
+
         stmt = parse_loop(driver)
     elif peek_token.type_symbol == symbols.WHILE:
         from Parsing.InternalStatementParsing.while_parsing import parse_while
+
         stmt = parse_while(driver)
     elif peek_token.type_symbol == symbols.FOR:
         from Parsing.InternalStatementParsing.for_parsing import parse_for
+
         stmt = parse_for(driver)
     elif peek_token.type_symbol == symbols.RETURN:
         from Parsing.InternalStatementParsing.return_parsing import parse_return
+
         stmt = parse_return(driver)
     elif peek_token.type_symbol == symbols.BREAK:
         from Parsing.InternalStatementParsing.break_parsing import parse_break
+
         stmt = parse_break(driver)
     elif peek_token.type_symbol == symbols.CONTINUE:
         from Parsing.InternalStatementParsing.continue_parsing import parse_continue
+
         stmt = parse_continue(driver)
     elif peek_token.type_symbol == symbols.SWITCH:
         from Parsing.InternalStatementParsing.switch_parsing import parse_switch
+
         stmt = parse_switch(driver)
     elif peek_token.type_symbol == symbols.ENDSCOPE:
         return None

@@ -1,8 +1,9 @@
 from typing import Union
 
+
 # Designed to be used for 1 source only
 class SourceScanner:
-    def __init__(self, read_string = False):
+    def __init__(self, read_string=False):
         self.is_complete = False
         self.src = None
         self.line_number = 1
@@ -17,7 +18,7 @@ class SourceScanner:
             self.src = StringReader(file_name_or_string)
         else:
             self.src = FileReader(file_name_or_string)
-    
+
     def close_src(self) -> None:
         self.src.close()
 
@@ -48,7 +49,7 @@ class SourceScanner:
 
     def add_to_buffer(self, char) -> None:
         if self.buffer:
-            self.buffer += char 
+            self.buffer += char
         else:
             self.buffer = "" + char
 
@@ -56,7 +57,7 @@ class SourceScanner:
         if self.is_complete:
             return None
         char = self.src.read()
-        if char == '':
+        if char == "":
             self.is_complete = True
             return None
         else:
@@ -78,11 +79,11 @@ class SourceScanner:
         self.current_token_col_start = self.column_number
 
     def inc_position(self, char: str) -> None:
-        if char in ('\n', '\r'):
+        if char in ("\n", "\r"):
             self.line_number += 1
             self.column_number = 0
             self.current_token_col_start = 0
-        elif char == '\t':
+        elif char == "\t":
             self.column_number += 2
         else:
             self.column_number += 1
@@ -98,10 +99,11 @@ class StringReader:
             temp = self.src[self.current]
             self.current += 1
             return temp
-        return ''
+        return ""
 
     def close(self) -> None:
         return
+
 
 class FileReader:
     def __init__(self, file_name: str):
@@ -110,7 +112,9 @@ class FileReader:
 
     def read(self) -> str:
         if not self.is_open:
-            raise Exception("INTERNAL ERROR: attempted to read file that is no longer open")
+            raise Exception(
+                "INTERNAL ERROR: attempted to read file that is no longer open"
+            )
         return self.src_file.read(1)
 
     def close(self) -> None:

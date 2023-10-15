@@ -102,5 +102,158 @@
                 }
             ]
         }
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/StructTests/test2.ap"
+        ],
+        "errors" : null,
+        "object_count" : 7,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/StructTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test2.ap"
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "module_id" : 0
+                },
+                {
+                    "type" : "fn_header",
+                    "name" : "my_function",
+                    "module_id" : 0
+                },
+                {
+                    "type" : "struct",
+                    "name" : "my_struct",
+                    "module_id" : 0
+                }
+            ],
+            "structs": [
+                {
+                    "object_id": 1,
+                    "interfaces" : [
+                        "my_interface",
+                        "other_interface"
+                    ],
+                    "fields" : [
+                        {
+                            "name" : "variable",
+                            "type" : "int",
+                            "mod" : "pub"
+                        }
+                    ],
+                    "function_ids" : [
+                        2
+                    ]
+                },
+                {
+                    "object_id": 4,
+                    "interfaces" : [
+                        "my_interface",
+                        "other_interface"
+                    ],
+                    "fields" : [
+                        {
+                            "name" : "variable",
+                            "type" : "int",
+                            "mod" : "pub"
+                        }
+                    ],
+                    "function_ids" : [
+                        5
+                    ]
+                }
+            ],
+            "statements": [
+                {
+                    "container_object_id": 2, 
+                    "sequence_num" : 1,
+                    "scope_depth" : 0,
+                    "stmt_type" : "RETURN",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 5, 
+                    "sequence_num" : 1,
+                    "scope_depth" : 0,
+                    "stmt_type" : "RETURN",
+                    "stmt_specific_items" : null
+                }
+            ],
+            "functions" : [
+                {
+                    "object_id": 2,
+                    "header_id": 3
+                },
+                {
+                    "object_id": 5,
+                    "header_id": 6
+                }
+            ],
+            "fn_headers" : [
+                {
+                    "object_id" : 3,
+                    "args" : [
+                        {
+                            "name": "a",
+                            "type" : "int",
+                            "default_value" : null
+                        },
+                        {
+                            "name": "b",
+                            "type" : "float",
+                            "default_value" : null
+                        }
+                    ],
+                    "return_type" : "bool"
+                },
+                {
+                    "object_id" : 6,
+                    "args" : [
+                        {
+                            "name": "a",
+                            "type" : "int",
+                            "default_value" : null
+                        },
+                        {
+                            "name": "b",
+                            "type" : "float",
+                            "default_value" : null
+                        }
+                    ],
+                    "return_type" : "bool"
+                }
+            ],
+            "modifiers" : [
+                {
+                    "object_id" : 3,
+                    "modifier_list" : ["acyclic", "pub"]
+                },
+                {
+                    "object_id" : 1,
+                    "modifier_list" : ["inline", "pub"]
+                },
+                {
+                    "object_id" : 6,
+                    "modifier_list" : ["acyclic", "pub"]
+                },
+                {
+                    "object_id" : 4,
+                    "modifier_list" : ["inline", "pub"]
+                }
+            ]
+        }
     }
 ]

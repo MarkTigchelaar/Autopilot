@@ -1,28 +1,23 @@
-#from SemanticAnalysis.Database.table import Table
-#from SemanticAnalysis.Database.table_makers import make_all_tables
-
 class Database:
     def __init__(self, error_manager):
-        #self.tables = make_all_tables()
         self.objects = []
-        #self.modules = ModuleTable()
         self.error_manager = error_manager
         self.tables = {
             "typenames": TypeNameTable(),
-            "modules" : ModuleTable(),
-            "files" : FileTable(),
-            "imports" : ImportTable(),
-            "defines" : DefineTable(),
-            "enumerables" : EnumerableTable(),
-            "modifiers" : ModifierTable(),
-            "functions" : FunctionTable(),
+            "modules": ModuleTable(),
+            "files": FileTable(),
+            "imports": ImportTable(),
+            "defines": DefineTable(),
+            "enumerables": EnumerableTable(),
+            "modifiers": ModifierTable(),
+            "functions": FunctionTable(),
             "fn_headers": FunctionHeaderTable(),
-            "interfaces" : InterfaceTable(),
-            "statements" : StatementTable(),
-            "structs": StructTable()
+            "interfaces": InterfaceTable(),
+            "statements": StatementTable(),
+            "structs": StructTable(),
         }
         self.current_module_id = None
-    
+
     def set_current_module_id(self, module_id):
         self.current_module_id = module_id
 
@@ -30,51 +25,27 @@ class Database:
         return self.current_module_id
 
     def process_queries(self, analyzer):
-        pass # begin analysis
-        # for i, ast_object in enumerate(self.objects):
-            # for key in self.tables:
-                # if i in self.tables[key]:
-                    #analyzer.analyze_object(ast_object, key, self)
+        pass
 
     def save_object(self, object_ref):
         self.objects.append(object_ref)
         return len(self.objects) - 1
 
-
     def get_table(self, table_name):
         if table_name not in self.tables:
-            raise Exception(f"INTERNAL ERROR: database asked for table \"{table_name}\", but isn't present")
+            raise Exception(
+                f'INTERNAL ERROR: database asked for table "{table_name}", but isn\'t present'
+            )
         return self.tables[table_name]
-    
+
     def object_count(self):
         return len(self.objects)
-
-
-    
-    # def next_type_id(self):
-    #     temp = self.type_id_sequence
-    #     self.type_id_sequence += 1
-    #     return temp
-
-    # def make_blank_row(self, table_name):
-    #     if table_name not in self.tables:
-    #         raise Exception("INTERNAL ERROR: table name not found")
-    #     return self.tables[table_name].make_blank_row()
-    
-
-
-# Tables:
-# class Table:
-#     def __init__(self, error_manager):
-#         self.error_manager = error_manager
-
 
 
 class TypeNameTable:
     def __init__(self):
         self.categories = [
             "module_name",
-            #"import_item", # Import items to be treated as names only, with types being declared in their actual location
             "struct",
             "enum",
             "error",
@@ -82,8 +53,7 @@ class TypeNameTable:
             "defined_type",
             "interface",
             "fn_header",
-            #"function",
-            "unittest"
+            "unittest",
         ]
         self.by_name = dict()
         self.by_category = dict()
@@ -102,14 +72,15 @@ class TypeNameTable:
         if category not in self.categories:
             raise Exception(f"INTERNAL ERROR: category '{category}' not recognized")
 
-        if self.is_name_defined_in_table(name, category):#, module_id, object_id):
+        if self.is_name_defined_in_table(
+            name.literal, category
+        ):
             return
 
         if name.literal not in self.by_name:
             self.by_name[name.literal] = []
         self.by_name[name.literal].append(TypeRow(category, module_id, object_id))
-        
-        
+
         if category not in self.by_category:
             self.by_category[category] = []
 
@@ -133,7 +104,7 @@ class TypeNameTable:
             if row.category == category:
                 return True
         return False
-    
+
     def get_category_by_name_and_module_id(self, name, module_id):
         if name not in self.by_name:
             raise Exception(f"INTERNAL ERROR: type '{name}' not found")
@@ -141,18 +112,20 @@ class TypeNameTable:
         for row in matched_rows:
             if row.module_id == module_id:
                 return row.category
-        raise Exception("INTERNAL ERROR: module id not found, could not retrieve category")
+        raise Exception(
+            "INTERNAL ERROR: module id not found, could not retrieve category"
+        )
 
     def get_names_by_category(self, category_name):
         if category_name not in self.by_category:
             return []
         return self.by_category[category_name]
-    
+
     def get_names_by_module_id(self, module_id):
         if module_id not in self.by_module_id:
             return []
         return self.by_module_id[module_id]
-    
+
     def is_already_built_in_type_token(self, name, category, module_id, object_id):
         if name in self.by_name:
             items = self.by_name[name]
@@ -160,15 +133,13 @@ class TypeNameTable:
                 if item.category == category:
                     return True
         return False
-        
+
+
 class TypeRow:
     def __init__(self, category, module_id, object_id):
         self.category = category
         self.module_id = module_id
         self.object_id = object_id
-
-
-
 
 
 class ModuleTable:
@@ -179,7 +150,7 @@ class ModuleTable:
 
     def has_contents(self):
         return len(self.by_name) + len(self.by_path) + len(self.by_id) > 0
-    
+
     def get_size(self):
         return len(self.by_id)
 
@@ -196,11 +167,10 @@ class ModuleTable:
             self.by_id[id] = ModuleNamePathRow(module_name, path)
         else:
             raise Exception("INTERNAL ERROR: module id already defined")
-        #self.by_id[id].append(ModuleNamePathRow(module_name, path))
-    
+
     def is_module_defined(self, module_name):
         return module_name in self.by_name
-    
+
     def is_same_module(self, module_name, path):
         return self.get_module_id_by_name_and_path(module_name.literal, path) != None
 
@@ -215,35 +185,29 @@ class ModuleTable:
         if module_name not in self.by_name:
             raise Exception("INTERNAL ERROR: module name not found")
         return self.by_name[module_name]
-    
+
     def get_module_for_id(self, id):
         if id not in self.by_id:
             raise Exception("INTERNAL ERROR: module id not found")
         return self.by_id[id]
 
 
-
-
-
-
-
-
 class ModulePathIdRow:
     def __init__(self, path, id):
         self.path = path
         self.id = id
-    
+
+
 class ModuleNameIdRow:
     def __init__(self, module_name, path):
         self.module_name = module_name
         self.path = path
 
+
 class ModuleNamePathRow:
     def __init__(self, module_name, path):
         self.module_name = module_name
         self.path = path
-
-
 
 
 class FileTable:
@@ -281,7 +245,6 @@ class FileTable:
 
     def get_module_file_names(self, module_id):
         if module_id not in self.by_module_id:
-            #raise Exception("INTERNAL ERROR: module id not found")
             return []
         return self.by_module_id[module_id]
 
@@ -289,7 +252,6 @@ class FileTable:
         if file_name not in self.by_name:
             raise Exception("INTERNAL ERROR: filename not found")
         return self.by_name[file_name]
-    
 
 
 class ImportTableRow:
@@ -299,8 +261,6 @@ class ImportTableRow:
         self.filenames = [filename]
         self.path = path
         self.items = items
-
-
 
 
 class ImportTable:
@@ -335,23 +295,17 @@ class ImportTable:
         self.by_current_module_id[current_module_id].append(row)
         self.by_file_name[filename].append(row)
         self.by_imported_module_name[imported_module_name].append(row)
-    
+
     def is_object_defined(self, object_id):
         return object_id in self.by_id
-    
+
     def get_items_by_id(self, object_id):
         row = self.by_id[object_id]
         return row.items
-    
+
     def get_path_by_id(self, object_id):
         row = self.by_id[object_id]
         return row.path
-
-    
-    
-
-
-
 
 
 class DefineTable:
@@ -365,7 +319,16 @@ class DefineTable:
     def has_contents(self):
         return len(self.by_id) + len(self.by_user_defined_type_token) > 0
 
-    def insert(self, object_id, built_in_type_token, user_defined_type_token, key_type, value_type, arg_list, union_type):
+    def insert(
+        self,
+        object_id,
+        built_in_type_token,
+        user_defined_type_token,
+        key_type,
+        value_type,
+        arg_list,
+        union_type,
+    ):
         if object_id in self.by_id:
             raise Exception("INTERNAL ERROR: id of define statement already defined")
 
@@ -377,28 +340,34 @@ class DefineTable:
             key_type,
             value_type,
             arg_list,
-            union_type
+            union_type,
         )
         self.by_id[object_id] = new_row
         self.by_user_defined_type_token[user_defined_type_token.literal].append(new_row)
 
     def is_object_defined(self, object_id):
         return object_id in self.by_id
-    
+
     def get_item_by_id(self, object_id):
         return self.by_id[object_id]
 
 
 class DefineTableRow:
-    def __init__(self, built_in_type_token, user_defined_type_token, key_type, value_type, arg_list, union_type):
+    def __init__(
+        self,
+        built_in_type_token,
+        user_defined_type_token,
+        key_type,
+        value_type,
+        arg_list,
+        union_type,
+    ):
         self.built_in_type_token = built_in_type_token
         self.user_defined_type_token = user_defined_type_token
         self.key_type = key_type
         self.value_type = value_type
         self.arg_list = arg_list
         self.union_type = union_type
-
-
 
 
 class EnumerableTable:
@@ -411,19 +380,18 @@ class EnumerableTable:
     def has_contents(self):
         return len(self.by_id) > 0
 
-    def insert(self, object_id, item_list, general_type_token = None):
+    def insert(self, object_id, item_list, general_type_token=None):
         if object_id in self.by_id:
-            raise Exception("INTERNAL ERROR: id of enumerable statement already defined")
+            raise Exception(
+                "INTERNAL ERROR: id of enumerable statement already defined"
+            )
 
-        new_row = EnumerableTableRow(
-            item_list,
-            general_type_token
-        )
+        new_row = EnumerableTableRow(item_list, general_type_token)
         self.by_id[object_id] = new_row
-    
+
     def is_object_defined(self, object_id):
         return object_id in self.by_id
-    
+
     def get_general_type_token_by_id(self, id):
         row = self.by_id[id]
         return row.general_type_token
@@ -438,6 +406,7 @@ class EnumerableTableRow:
         self.item_list = item_list
         self.general_type_token = general_type_token
 
+
 class ModifierTable:
     def __init__(self):
         self.by_id = dict()
@@ -451,17 +420,14 @@ class ModifierTable:
     def insert(self, object_id, modifier_list):
         if object_id in self.by_id:
             raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
-        
+
         self.by_id[object_id] = modifier_list
 
     def is_object_defined(self, object_id):
         return object_id in self.by_id
-    
+
     def get_modifier_list_by_id(self, object_id):
         return self.by_id[object_id]
-
-
-    
 
 
 class InterfaceTable:
@@ -478,7 +444,7 @@ class InterfaceTable:
     def insert(self, object_id, module_id, fn_header_ids):
         if object_id in self.by_id:
             raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
-        
+
         self.by_id[object_id] = fn_header_ids
 
         if module_id not in self.by_module_id:
@@ -487,11 +453,11 @@ class InterfaceTable:
 
     def is_object_defined(self, object_id):
         return object_id in self.by_id
-    
+
     def get_item_by_id(self, id):
         row = self.by_id[id]
         return row
-    
+
     def get_rows_by_module_id(self, module_id):
         if module_id not in self.by_module_id:
             raise Exception("INTERNAL ERROR: Module Id not found")
@@ -515,7 +481,6 @@ class FunctionTable:
         row = FunctionTableRow(object_id, header_id)
         self.by_id[object_id] = row
 
-
         if module_id not in self.by_module_id:
             self.by_module_id[module_id] = []
         self.by_module_id[module_id].append(row)
@@ -536,7 +501,6 @@ class FunctionTableRow:
 class FunctionHeaderTable:
     def __init__(self):
         self.by_id = dict()
-        #self.by_parent_id = dict()
 
     def get_size(self):
         return len(self.by_id)
@@ -544,23 +508,17 @@ class FunctionHeaderTable:
     def has_contents(self):
         return len(self.by_id) > 0
 
-    def insert(self, object_id, header_object):#, parent_id):
+    def insert(self, object_id, header_object):
         if object_id in self.by_id:
             raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
-        
+
         self.by_id[object_id] = header_object
-        #self.by_parent_id[parent_id] = header_object
 
     def is_object_defined(self, object_id):
         return object_id in self.by_id
-    
+
     def get_item_by_id(self, object_id):
         return self.by_id[object_id]
-    
-    # def get_item_by_parent_id(self, parent_id):
-    #     return self.by_parent_id[parent_id]
-
-
 
 
 class StatementTable:
@@ -574,13 +532,19 @@ class StatementTable:
     def has_contents(self):
         return len(self.by_key) > 0
 
-    def insert(self, stmt_type_token, statement, container_object_id, sequence_num, scope_depth):
+    def insert(
+        self, stmt_type_token, statement, container_object_id, sequence_num, scope_depth
+    ):
+        if stmt_type_token is None:
+            print(type(statement))
         # Container id is always the function, or unittest object id.
         potential_key = StatementTableKey(sequence_num, container_object_id)
         if potential_key in self.by_key:
             raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
-        
-        row = StatementRow(stmt_type_token, statement, container_object_id, sequence_num, scope_depth)#, lval_id, r_val_id)
+
+        row = StatementRow(
+            stmt_type_token, statement, container_object_id, sequence_num, scope_depth
+        )
         self.by_key[potential_key] = row
 
         if container_object_id not in self.by_container_id:
@@ -590,10 +554,10 @@ class StatementTable:
     def is_object_defined(self, container_object_id, sequence_num):
         potential_key = StatementTableKey(sequence_num, container_object_id)
         return potential_key in self.by_key
-    
+
     def get_item_by_id_and_seq_num(self, container_object_id, sequence_num):
         return self.by_key[StatementTableKey(sequence_num, container_object_id)]
-    
+
     def get_rows_by_container_id(self, container_id):
         rows = self.by_container_id[container_id]
         rows.sort(key=lambda x: x.sequence_num, reverse=False)
@@ -604,32 +568,30 @@ class StatementTableKey:
     def __init__(self, sequence, container_id):
         self.sequence = sequence
         self.container_id = container_id
-    
+
     def __hash__(self):
         return int(str(self.sequence) + str(self.container_id))
 
     def __eq__(self, other):
-        return self.sequence == other.sequence and self.container_id == other.container_id
+        return (
+            self.sequence == other.sequence and self.container_id == other.container_id
+        )
+
 
 class StatementRow:
     def __init__(
         self,
         stmt_type_token,
         statement,
-        container_object_id, # function / unittest
-        sequence_num, # ordering of statements, depth first
+        container_object_id,  # function / unittest
+        sequence_num,  # ordering of statements, depth first
         scope_depth,
-        #,
-        #r_val_expression_id, # might as well make a expression table
-        #l_val_expression_id
     ):
         self.statement = statement
         self.container_object_id = container_object_id
         self.sequence_num = sequence_num
         self.scope_depth = scope_depth
         self.stmt_type_token = stmt_type_token
-        #self.r_val_expression_id = r_val_expression_id
-        #self.l_val_expression_id = l_val_expression_id
 
 
 class StructTable:
@@ -655,10 +617,10 @@ class StructTable:
 
     def is_object_defined(self, object_id):
         return object_id in self.by_id
-    
+
     def get_item_by_id(self, object_id):
         return self.by_id[object_id]
-    
+
 
 class StructTableRow:
     def __init__(self, object_id, interfaces, fields, function_ids):

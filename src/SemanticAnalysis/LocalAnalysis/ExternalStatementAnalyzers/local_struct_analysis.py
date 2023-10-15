@@ -19,7 +19,7 @@ def check_for_duplicate_function_names(analyzer, ast_node):
             fn_name_one = ast_node.functions[i].header.name_token.literal
             fn_name_two = ast_node.functions[j].header.name_token.literal
             if fn_name_one  == fn_name_two:
-                analyzer.add_error(fn_name_two, METHOD_NAME_COLLISION)
+                analyzer.add_error(ast_node.functions[j].header.name_token, METHOD_NAME_COLLISION)
 
 
 def analyze_fields(analyzer, ast_node):

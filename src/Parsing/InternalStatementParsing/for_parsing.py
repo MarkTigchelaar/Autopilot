@@ -189,7 +189,6 @@ def collection_or_index_start_step(driver, for_stmt):
         driver.add_error(peek_token, UNEXPECTED_TOKEN)
         return None
 
-        
 
 def index_start_step(driver, for_stmt):
     index_start_token = driver.next_token()
@@ -309,8 +308,6 @@ def statements_step(driver, for_stmt):
     stmts = parse_statements(driver)
     if driver.has_errors():
         return None
-    # if stmts is None:
-    #     return None
     for_stmt.add_statements(stmts)
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
@@ -330,4 +327,6 @@ def end_step(driver, for_stmt):
 
 def enforce_for(for_token):
     if for_token.type_symbol != symbols.FOR:
-        raise Exception("INTERNAL ERROR: expected for statement, got " + for_token.literal)
+        raise Exception(
+            "INTERNAL ERROR: expected for statement, got " + for_token.literal
+        )

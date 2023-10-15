@@ -16,6 +16,3 @@ class SemanticAnalyzer:
 
     def analyze_globally(self):
         self.database.process_queries(self)
-
-
-    # have a bunch of queries here to run, maybe need more classes etc?

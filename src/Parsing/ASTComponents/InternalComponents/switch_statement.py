@@ -15,7 +15,10 @@ class SwitchStatement:
         self.case_statements.append(case)
 
     def get_statements(self):
-        return self.case_statements
+        stmts = [stmt for stmt in self.case_statements]
+        if self.default_case is not None:
+            stmts.append(self.default_case)
+        return stmts
     
     def add_default_case(self, default):
         self.default_case = default

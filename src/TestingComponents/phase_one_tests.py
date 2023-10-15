@@ -13,7 +13,7 @@ from Parsing.ExternalStatementParsing.function_parsing import parse_function
 from Parsing.ExternalStatementParsing.unittest_parsing import parse_unittest
 from Parsing.ExternalStatementParsing.struct_parsing import parse_struct
 from Parsing.InternalStatementParsing.assignment_parsing import parse_assignment
-from Parsing.InternalStatementParsing.re_assignment_parsing import parse_re_assignment, parse_defer
+from Parsing.InternalStatementParsing.re_assignment_or_call_parsing import parse_re_assignment_or_call, parse_defer
 from Parsing.InternalStatementParsing.if_parsing import parse_if
 from Parsing.InternalStatementParsing.elif_parsing import parse_elif
 from Parsing.InternalStatementParsing.else_parsing import parse_else
@@ -167,7 +167,7 @@ def assign_parse_test(tok, err_manager):
 
 def reassign_parse_test(tok, err_manager):
     driver = TestingParsingDriver(tok, err_manager)
-    return parse_re_assignment(driver)
+    return parse_re_assignment_or_call(driver)
 
 
 def defer_parse_test(tok, err_manager):

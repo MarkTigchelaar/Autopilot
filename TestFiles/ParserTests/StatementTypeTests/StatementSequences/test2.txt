@@ -4,6 +4,6 @@ end
 if a do
   let b eh 0
 end
-# Both errors are seen, since the parsers pop up a level,
-# both errors are in seperate statements, and are the only sub statements in their
-# parent statements
+// Both errors are seen, since the parsers pop up a level,
+// both errors are in seperate statements, and are the only sub statements in their
+// parent statements

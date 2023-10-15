@@ -36,7 +36,7 @@ def main():
         try:
             os.remove(err_file)
         except FileNotFoundError:
-            return
+            print("No errors reported")
     else:
         failurelog = open(err_file, 'w')
         for err in tracker.get_error_messages():

@@ -73,5 +73,109 @@
                 }
             ]
         }
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/FunctionTests/test2.ap"
+        ],
+        "errors" : null,
+        "object_count" : 5,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/FunctionTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test2.ap"
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "module_id" : 0
+                },
+                {
+                    "type" : "fn_header",
+                    "name" : "my_function",
+                    "module_id" : 0
+                }
+            ],
+            "statements": [
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 1,
+                    "scope_depth" : 0,
+                    "stmt_type" : "RETURN",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 3, 
+                    "sequence_num" : 1,
+                    "scope_depth" : 0,
+                    "stmt_type" : "RETURN",
+                    "stmt_specific_items" : null
+                }
+            ],
+            "functions" : [
+                {
+                    "object_id": 1,
+                    "header_id": 2
+                },
+                {
+                    "object_id": 3,
+                    "header_id": 4
+                }
+            ],
+            "fn_headers" : [
+                {
+                    "object_id" : 2,
+                    "args" : [
+                        {
+                            "name": "a",
+                            "type" : "int",
+                            "default_value" : null
+                        },
+                        {
+                            "name": "b",
+                            "type" : "float",
+                            "default_value" : null
+                        }
+                    ],
+                    "return_type" : "bool"
+                },
+                {
+                    "object_id" : 4,
+                    "args" : [
+                        {
+                            "name": "a",
+                            "type" : "int",
+                            "default_value" : null
+                        },
+                        {
+                            "name": "b",
+                            "type" : "float",
+                            "default_value" : null
+                        }
+                    ],
+                    "return_type" : "bool"
+                }
+            ],
+            "modifiers" : [
+                {
+                    "object_id" : 2,
+                    "modifier_list" : ["acyclic", "pub"]
+                },
+                {
+                    "object_id" : 4,
+                    "modifier_list" : ["acyclic", "pub"]
+                }
+            ]
+        }
     }
 ]

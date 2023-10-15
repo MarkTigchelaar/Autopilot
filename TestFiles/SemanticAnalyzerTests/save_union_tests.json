@@ -62,5 +62,90 @@
                 }
             ]
         }
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/UnionTests/test2.ap"
+        ],
+        "errors" : null,
+        "object_count" : 3,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/UnionTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test2.ap"
+                }
+            ],
+            "enumerables" : [
+                {
+                    "module_id" : 0,
+                    "object_id" : 1,
+                    "general_type" : "some_type",
+                    "items" : [
+                        {
+                            "name" : "field",
+                            "type" : "int"
+                        },
+                        {
+                            "name" : "field2",
+                            "type" : "float"
+                        },
+                        {
+                            "name" : "field3",
+                            "type" : "someType"
+                        }
+                    ]
+                },
+                {
+                    "module_id" : 0,
+                    "object_id" : 2,
+                    "general_type" : "some_type",
+                    "items" : [
+                        {
+                            "name" : "field",
+                            "type" : "int"
+                        },
+                        {
+                            "name" : "field2",
+                            "type" : "float"
+                        },
+                        {
+                            "name" : "field3",
+                            "type" : "someType"
+                        }
+                    ]
+                }
+            ],
+            "modifiers" : [
+                {
+                    
+                    "object_id" : 1,
+                    "modifier_list" : ["pub"]
+                },
+                {
+                    "object_id" : 2,
+                    "modifier_list" : []
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "module_id" : 0
+                },
+                {
+                    "type" : "union",
+                    "name" : "test_union",
+                    "module_id" : 0
+                }
+            ]
+        }
     }
 ]

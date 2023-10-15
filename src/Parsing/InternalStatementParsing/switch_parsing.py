@@ -39,9 +39,10 @@ def test_expression_step(driver):
 
 
 def case_step(driver, switch_stmt):
-    driver.discard_token()
+    type_token = driver.next_token()
     peek_token = driver.peek_token()
     case_stmt = driver.make_node(ast_node_keys.CASE_STMT)
+    case_stmt.add_descriptor_token(type_token)
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None
@@ -130,6 +131,7 @@ def default_step(driver, switch_stmt):
         driver.add_error(peek_token, EOF_REACHED)
         return None
     default_case = driver.make_node(ast_node_keys.CASE_STMT)
+    default_case.add_descriptor_token(default_token)
     return statements_step(driver, switch_stmt, default_case, True)
 
 

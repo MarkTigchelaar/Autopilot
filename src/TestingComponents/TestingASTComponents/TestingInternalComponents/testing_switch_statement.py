@@ -64,6 +64,9 @@ class TestingCaseStatement:
     def add_statements(self, statement_list):
         self.case_statement.add_statements(statement_list)
 
+    def add_descriptor_token(self, token):
+        self.case_statement.add_descriptor_token(token)
+
     def print_literal(self, repr_list: list) -> None:
         for value in self.case_statement.values:
             repr_list.append(value.literal + " ")

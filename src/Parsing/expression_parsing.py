@@ -4,6 +4,7 @@ from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
 from Parsing.ASTComponents import ast_node_keys
 
+
 # Pratt Parsing technique
 def parse_expression(driver):
     ast = _parse(driver, 0)
@@ -150,7 +151,10 @@ def parse_infix_sub_tree(driver, left_exp, precedence):
         if driver.has_errors():
             return None
         if left_exp == None:
-            raise Exception("INTERNAL ERROR: Could not parse infix expression " + driver.current_file())
+            raise Exception(
+                "INTERNAL ERROR: Could not parse infix expression "
+                + driver.current_file()
+            )
     return left_exp
 
 
@@ -174,10 +178,13 @@ def parse_infix_expression(driver, token, left_exp):
     elif is_field_accessor_operator(token):
         return parse_method_call_or_field_access(driver, token, left_exp)
     else:
-        raise Exception("INTERNAL ERROR: token past check, but still not recognized: " + token.to_string())
+        raise Exception(
+            "INTERNAL ERROR: token past check, but still not recognized: "
+            + token.to_string()
+        )
 
 
-def parse_binary_operator(precedence, driver, token, lhs_exp, right_associative = False):
+def parse_binary_operator(precedence, driver, token, lhs_exp, right_associative=False):
     if right_associative:
         precedence -= 1
     rhs_exp = _parse(driver, precedence)
@@ -198,8 +205,10 @@ def parse_binary_operator(precedence, driver, token, lhs_exp, right_associative 
 def parse_function_call(driver, fn_name_exp):
     return fn_call_or_collection_access(driver, fn_name_exp, symbols.RIGHT_PAREN)
 
+
 def parse_collection_access(driver, name_exp):
     return fn_call_or_collection_access(driver, name_exp, symbols.RIGHT_BRACKET)
+
 
 def fn_call_or_collection_access(driver, name_exp, rhs_type):
     argument_list = list()
@@ -223,7 +232,7 @@ def fn_call_or_collection_access(driver, name_exp, rhs_type):
             else:
                 msg = COLLECTION_ACCESS_MISSING_EXPRESSION
             driver.add_error(driver.peek_token(), msg)
-    
+
     if driver.has_errors():
         return None
     peek_token = driver.peek_token()
@@ -240,12 +249,15 @@ def fn_call_or_collection_access(driver, name_exp, rhs_type):
         fn_call.add_argument_list(argument_list)
         return fn_call
     elif rhs_type == symbols.RIGHT_BRACKET:
-        collection_access =  driver.make_node(ast_node_keys.COLLECT_ACCESS_EXP)
+        collection_access = driver.make_node(ast_node_keys.COLLECT_ACCESS_EXP)
         collection_access.add_name_exp(name_exp)
         collection_access.add_argument_list(argument_list)
         return collection_access
     else:
-        raise Exception("INTERNAL ERROR: closing symbol for collection access or function call not recognized: " + rhs_type)
+        raise Exception(
+            "INTERNAL ERROR: closing symbol for collection access or function call not recognized: "
+            + rhs_type
+        )
 
 
 def parse_method_call_or_field_access(driver, token, left_exp):

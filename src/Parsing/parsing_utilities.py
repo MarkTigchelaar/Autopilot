@@ -1,4 +1,4 @@
-from keywords import is_primitive_type, is_operator, is_scope_keyword 
+from keywords import is_primitive_type, is_operator, is_scope_keyword
 from keywords import is_external_keyword, is_internal_statement_keyword
 from keywords import is_other_internal_keyword, is_parens_or_collection_keyword
 from ErrorHandling.parsing_error_messages import *
@@ -6,18 +6,20 @@ import symbols
 
 # Operator precedence
 HASHLITERAL = 1
-LOGICAL     = 2
-COMPARISON  = 3
-SUM         = 4
-PRODUCT     = 5
-EXPONENT    = 6
+LOGICAL = 2
+COMPARISON = 3
+SUM = 4
+PRODUCT = 5
+EXPONENT = 6
 STRUCTFIELD = 7
-PREFIX      = 8
-POSTFIX     = 9
-CALL        = 10
+PREFIX = 8
+POSTFIX = 9
+CALL = 10
+
 
 def is_primitive_literal(token):
     return is_primitive_type(token) and not is_primitive_type(token, True)
+
 
 def passes_expression_name_token_check(driver, token):
     if is_external_keyword(token):
@@ -44,9 +46,11 @@ def passes_expression_name_token_check(driver, token):
     else:
         return True
 
+
 def is_valid_index_token(token):
     int_types = (symbols.INT, symbols.LONG)
     return is_primitive_literal(token) and token.type_symbol in int_types
+
 
 def is_valid_expression_token(token):
     if token.type_symbol == symbols.CHAR:
@@ -64,6 +68,8 @@ def is_valid_expression_token(token):
     elif token.type_symbol == symbols.DOUBLE:
         return True
     elif token.type_symbol == symbols.LEFT_PAREN:
+        return True
+    elif token.type_symbol == symbols.LEFT_BRACE:
         return True
     elif token.type_symbol == symbols.IDENTIFIER:
         return True
@@ -97,9 +103,23 @@ def find_infix_precedence(peek_token):
         return EXPONENT
     elif peek_token.type_symbol == symbols.COLON:
         return HASHLITERAL
-    elif peek_token.type_symbol in (symbols.LESS, symbols.LESS_EQUAL, symbols.GREATER, symbols.GREATER_EQUAL, symbols.EQUAL_EQUAL, symbols.BANG_EQUAL):
+    elif peek_token.type_symbol in (
+        symbols.LESS,
+        symbols.LESS_EQUAL,
+        symbols.GREATER,
+        symbols.GREATER_EQUAL,
+        symbols.EQUAL_EQUAL,
+        symbols.BANG_EQUAL,
+    ):
         return COMPARISON
-    elif peek_token.type_symbol in (symbols.AND, symbols.NAND, symbols.NOR, symbols.OR, symbols.XOR, symbols.NOT):
+    elif peek_token.type_symbol in (
+        symbols.AND,
+        symbols.NAND,
+        symbols.NOR,
+        symbols.OR,
+        symbols.XOR,
+        symbols.NOT,
+    ):
         return LOGICAL
     elif peek_token.type_symbol == symbols.DOT:
         return STRUCTFIELD
@@ -108,56 +128,66 @@ def find_infix_precedence(peek_token):
     else:
         return -1
 
+
 def is_sum_type(token):
     return token.type_symbol in (symbols.PLUS, symbols.MINUS)
+
 
 def is_product(token):
     return token.type_symbol in (symbols.STAR, symbols.SLASH, symbols.MOD)
 
+
 def is_exponent(token):
     return token.type_symbol in (symbols.CARROT)
+
 
 def is_hash_literal(token):
     return token.type_symbol in (symbols.COLON)
 
+
 def is_comparison_operator(token):
     return token.type_symbol in (
-        symbols.LESS, 
-        symbols.LESS_EQUAL, 
+        symbols.LESS,
+        symbols.LESS_EQUAL,
         symbols.GREATER,
-        symbols.GREATER_EQUAL, 
-        symbols.EQUAL_EQUAL, 
-        symbols.BANG_EQUAL
+        symbols.GREATER_EQUAL,
+        symbols.EQUAL_EQUAL,
+        symbols.BANG_EQUAL,
     )
+
 
 def is_logical_operator(token):
     return token.type_symbol in (
-        symbols.AND, 
-        symbols.NAND, 
+        symbols.AND,
+        symbols.NAND,
         symbols.OR,
-        symbols.NOR, 
-        symbols.XOR, 
-        symbols.NOT
+        symbols.NOR,
+        symbols.XOR,
+        symbols.NOT,
     )
+
 
 def is_function_call(token):
     return token.type_symbol in (symbols.LEFT_PAREN)
 
+
 def is_collection_access_by_index(token):
     return token.type_symbol in (symbols.LEFT_BRACKET)
+
 
 def is_field_accessor_operator(token):
     return token.type_symbol in (symbols.DOT)
 
+
 def get_collection_literal(delimiter_type):
     if delimiter_type == symbols.LEFT_BRACKET:
-        return '['
+        return "["
     elif delimiter_type == symbols.RIGHT_BRACKET:
-        return ']'
+        return "]"
     elif delimiter_type == symbols.LEFT_BRACE:
-        return '{'
+        return "{"
     elif delimiter_type == symbols.RIGHT_BRACE:
-        return '}'
+        return "}"
     else:
         raise Exception("INTERNAL ERROR: unknown symbol type: " + delimiter_type)
 

@@ -32,6 +32,10 @@
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/function_arg_type_tests.json"
     },
     {
+        "general_component" : "structs",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/struct_analysis_tests.json"
+    },
+    {
         "general_component" : "loop_label_and_logic_check",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/loop_label_and_logic_tests.json"
     },

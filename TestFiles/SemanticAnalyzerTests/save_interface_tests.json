@@ -23,19 +23,16 @@
                 {
                     "type" : "module_name",
                     "name" : "main",
-                    "object_id" : 0,
                     "module_id" : 0
                 },
                 {
                     "type" : "interface",
                     "name" : "my_interface",
-                    "object_id" : 1,
                     "module_id" : 0
                 },
                 {
                     "type" : "fn_header",
                     "name" : "functionA",
-                    "object_id" : 2,
                     "module_id" : 0
                 }
             ],
@@ -73,6 +70,113 @@
                 },
                 {
                     "object_id" : 2,
+                    "modifier_list" : ["acyclic"]
+                }
+            ]
+        }
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/InterfaceTests/test2.ap"
+        ],
+        "errors" : null,
+        "object_count" : 5,
+        "tables" : {
+            "modules" : [
+                {
+                    "object_id" : 0,
+                    "name" : "main",
+                    "path" : "../Testfiles/SemanticAnalyzerTests/AnalysisTableLoading/InterfaceTests/"
+                }
+            ],
+            "files" : [
+                {
+                    "module_id" : 0,
+                    "name" : "test2.ap"
+                }
+            ],
+            "typenames" : [
+                {
+                    "type" : "module_name",
+                    "name" : "main",
+                    "module_id" : 0
+                },
+                {
+                    "type" : "interface",
+                    "name" : "my_interface",
+                    "module_id" : 0
+                },
+                {
+                    "type" : "fn_header",
+                    "name" : "functionA",
+                    "module_id" : 0
+                }
+            ],
+            "interfaces" : [
+                {
+                    "module_id" : 0,
+                    "object_id" : 1,
+                    "header_ids" : [
+                        2
+                    ]
+                },
+                {
+                    "module_id" : 0,
+                    "object_id" : 3,
+                    "header_ids" : [
+                        4
+                    ]
+                }
+            ],
+            "fn_headers" : [
+                {
+                    "object_id" : 2,
+                    "args" : [
+                        {
+                            "name": "a",
+                            "type" : "int",
+                            "default_value" : null
+                        },
+                        {
+                            "name": "b",
+                            "type" : "float",
+                            "default_value" : null
+                        }
+                    ],
+                    "return_type" : "bool"
+                },
+                {
+                    "object_id" : 4,
+                    "args" : [
+                        {
+                            "name": "a",
+                            "type" : "int",
+                            "default_value" : null
+                        },
+                        {
+                            "name": "b",
+                            "type" : "float",
+                            "default_value" : null
+                        }
+                    ],
+                    "return_type" : "bool"
+                }
+            ],
+            "modifiers" : [
+                {
+                    "object_id" : 1,
+                    "modifier_list" : ["acyclic", "pub"]
+                },
+                {
+                    "object_id" : 2,
+                    "modifier_list" : ["acyclic"]
+                },
+                {
+                    "object_id" : 3,
+                    "modifier_list" : ["acyclic", "pub"]
+                },
+                {
+                    "object_id" : 4,
                     "modifier_list" : ["acyclic"]
                 }
             ]

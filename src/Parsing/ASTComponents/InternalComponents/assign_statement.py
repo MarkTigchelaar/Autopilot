@@ -11,6 +11,7 @@ class AssignmentStatement:
     
     def add_let_or_var(self, let_or_var_token):
         self.let_or_var_token = let_or_var_token
+        self.add_descriptor_token(let_or_var_token)
 
     def add_name(self, name_token):
         self.name_token = name_token

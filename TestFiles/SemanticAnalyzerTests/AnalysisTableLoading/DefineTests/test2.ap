@@ -1,0 +1,4 @@
+module main
+
+
+define Dictionary(int : string) as IntMap
