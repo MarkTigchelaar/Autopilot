@@ -38,7 +38,7 @@ class TestingMethodCallOrFieldExpression:
     def to_json(self) -> dict:
         return {
             "type" : "method_call",
-            "struct" : token_to_json(self.exp.struct_name_exp),
+            "struct" : self.exp.struct_name_exp.to_json(),
             "methods" : self.args_to_json()
         }
 

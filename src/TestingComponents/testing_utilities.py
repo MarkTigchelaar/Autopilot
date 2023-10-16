@@ -74,12 +74,7 @@ def call_parsing_tests(
             tok.load_src(test["file"])
         except:
             tok.load_src(current_dir + "/" + test["file"])
-        try:
-            ast = parse_test_fn(tok, err_manager)
-        except Exception as e:
-            print("EXCEPTION in file: " + test["file"] + ":\n" + str(e))
-            record_component_test(test, tracker, "OK", "EXCEPTION: " + str(e))
-            continue
+        ast = parse_test_fn(tok, err_manager)
 
         tok.close_src()
         if err_manager.has_errors() and test["errors"] is None:

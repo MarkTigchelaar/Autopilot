@@ -14,3 +14,9 @@ class TestingDeferStatement:
 
     def get_descriptor_token(self):
         return self.defer_statement.get_descriptor_token()
+    
+    def to_json(self) -> dict:
+        return {
+            "type": "defer",
+            "expression": self.defer_statement.method_call.to_json(),
+        }

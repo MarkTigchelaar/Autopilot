@@ -1,0 +1,283 @@
+[
+    {
+        "type": "function",
+        "header": {
+            "type": "function_header",
+            "name": {
+                "literal": "main",
+                "type": "IDENTIFIER",
+                "line_number": 3,
+                "column_number": 16
+            },
+            "arguments": [],
+            "return_type": {},
+            "header_attributes": {
+                "acyclic": {},
+                "public": false
+            }
+        },
+        "attributes": {
+            "acyclic": {},
+            "public": {
+                "literal": "pub",
+                "type": "PUB",
+                "line_number": 3,
+                "column_number": 8
+            },
+            "inline": {
+                "literal": "inline",
+                "type": "INLINE",
+                "line_number": 3,
+                "column_number": 1
+            }
+        },
+        "statements": [
+            {
+                "type": "assignment",
+                "token": {
+                    "literal": "a",
+                    "type": "IDENTIFIER",
+                    "line_number": 4,
+                    "column_number": 9
+                },
+                "variable_type": {},
+                "assignment_type": {
+                    "literal": "let",
+                    "type": "LET",
+                    "line_number": 4,
+                    "column_number": 5
+                },
+                "rvalue": {
+                    "type": "collection",
+                    "left_delimiter": "LEFT_BRACE",
+                    "elements": [
+                        {
+                            "type": "binary",
+                            "token": {
+                                "literal": ":",
+                                "type": "COLON",
+                                "line_number": 5,
+                                "column_number": 13
+                            },
+                            "lhs_exp": {
+                                "type": "identifier_or_literal",
+                                "token": {
+                                    "literal": "\"a\"",
+                                    "type": "STRING",
+                                    "line_number": 5,
+                                    "column_number": 9
+                                }
+                            },
+                            "rhs_exp": {
+                                "type": "function_call",
+                                "fn_name": {
+                                    "type": "identifier_or_literal",
+                                    "token": {
+                                        "literal": "test",
+                                        "type": "IDENTIFIER",
+                                        "line_number": 5,
+                                        "column_number": 15
+                                    }
+                                },
+                                "arguments": []
+                            }
+                        },
+                        {
+                            "type": "binary",
+                            "token": {
+                                "literal": ":",
+                                "type": "COLON",
+                                "line_number": 6,
+                                "column_number": 22
+                            },
+                            "lhs_exp": {
+                                "type": "identifier_or_literal",
+                                "token": {
+                                    "literal": "\"basketball\"",
+                                    "type": "STRING",
+                                    "line_number": 6,
+                                    "column_number": 9
+                                }
+                            },
+                            "rhs_exp": {
+                                "type": "binary",
+                                "token": {
+                                    "literal": "+",
+                                    "type": "PLUS",
+                                    "line_number": 6,
+                                    "column_number": 26
+                                },
+                                "lhs_exp": {
+                                    "type": "identifier_or_literal",
+                                    "token": {
+                                        "literal": "1",
+                                        "type": "INT",
+                                        "line_number": 6,
+                                        "column_number": 24
+                                    }
+                                },
+                                "rhs_exp": {
+                                    "type": "binary",
+                                    "token": {
+                                        "literal": "*",
+                                        "type": "STAR",
+                                        "line_number": 6,
+                                        "column_number": 35
+                                    },
+                                    "lhs_exp": {
+                                        "type": "binary",
+                                        "token": {
+                                            "literal": "/",
+                                            "type": "SLASH",
+                                            "line_number": 6,
+                                            "column_number": 30
+                                        },
+                                        "lhs_exp": {
+                                            "type": "identifier_or_literal",
+                                            "token": {
+                                                "literal": "b",
+                                                "type": "IDENTIFIER",
+                                                "line_number": 6,
+                                                "column_number": 28
+                                            }
+                                        },
+                                        "rhs_exp": {
+                                            "type": "identifier_or_literal",
+                                            "token": {
+                                                "literal": "14",
+                                                "type": "INT",
+                                                "line_number": 6,
+                                                "column_number": 32
+                                            }
+                                        }
+                                    },
+                                    "rhs_exp": {
+                                        "type": "binary",
+                                        "token": {
+                                            "literal": "-",
+                                            "type": "MINUS",
+                                            "line_number": 6,
+                                            "column_number": 42
+                                        },
+                                        "lhs_exp": {
+                                            "type": "identifier_or_literal",
+                                            "token": {
+                                                "literal": "11",
+                                                "type": "INT",
+                                                "line_number": 6,
+                                                "column_number": 39
+                                            }
+                                        },
+                                        "rhs_exp": {
+                                            "type": "identifier_or_literal",
+                                            "token": {
+                                                "literal": "16",
+                                                "type": "INT",
+                                                "line_number": 6,
+                                                "column_number": 43
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "binary",
+                            "token": {
+                                "literal": ":",
+                                "type": "COLON",
+                                "line_number": 7,
+                                "column_number": 16
+                            },
+                            "lhs_exp": {
+                                "type": "identifier_or_literal",
+                                "token": {
+                                    "literal": "\"test\"",
+                                    "type": "STRING",
+                                    "line_number": 7,
+                                    "column_number": 9
+                                }
+                            },
+                            "rhs_exp": {
+                                "type": "collection",
+                                "left_delimiter": "LEFT_BRACE",
+                                "elements": [
+                                    {
+                                        "type": "binary",
+                                        "token": {
+                                            "literal": ":",
+                                            "type": "COLON",
+                                            "line_number": 8,
+                                            "column_number": 23
+                                        },
+                                        "lhs_exp": {
+                                            "type": "identifier_or_literal",
+                                            "token": {
+                                                "literal": "\"subtest\"",
+                                                "type": "STRING",
+                                                "line_number": 8,
+                                                "column_number": 13
+                                            }
+                                        },
+                                        "rhs_exp": {
+                                            "type": "collection",
+                                            "left_delimiter": "LEFT_BRACKET",
+                                            "elements": [
+                                                {
+                                                    "type": "identifier_or_literal",
+                                                    "token": {
+                                                        "literal": "\"item1\"",
+                                                        "type": "STRING",
+                                                        "line_number": 9,
+                                                        "column_number": 17
+                                                    }
+                                                },
+                                                {
+                                                    "type": "collection",
+                                                    "left_delimiter": "LEFT_BRACE",
+                                                    "elements": [
+                                                        {
+                                                            "type": "identifier_or_literal",
+                                                            "token": {
+                                                                "literal": "\"stuff\"",
+                                                                "type": "STRING",
+                                                                "line_number": 11,
+                                                                "column_number": 21
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "identifier_or_literal",
+                                                            "token": {
+                                                                "literal": "\"inaset\"",
+                                                                "type": "STRING",
+                                                                "line_number": 11,
+                                                                "column_number": 30
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "identifier_or_literal",
+                                                            "token": {
+                                                                "literal": "\"in a set\"",
+                                                                "type": "STRING",
+                                                                "line_number": 11,
+                                                                "column_number": 40
+                                                            }
+                                                        }
+                                                    ],
+                                                    "right_delimiter": "RIGHT_BRACE"
+                                                }
+                                            ],
+                                            "right_delimiter": "RIGHT_BRACKET"
+                                        }
+                                    }
+                                ],
+                                "right_delimiter": "RIGHT_BRACE"
+                            }
+                        }
+                    ],
+                    "right_delimiter": "RIGHT_BRACE"
+                }
+            }
+        ]
+    }
+]

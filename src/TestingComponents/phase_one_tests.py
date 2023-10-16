@@ -93,6 +93,8 @@ def phase_one_tests(tracker, test_json, current_dir: str) -> None:
             test_fn = statement_parse_test
         elif general_component == "mainparserJSON":
             test_fn = main_parse_test
+        elif general_component == "mainparserJSONpt2":
+            test_fn = main_parse_test
         elif general_component == "happy_path":
             test_fn = happy_path
             parser_happy_path_tests(component_tests, tracker, test_fn, current_dir)

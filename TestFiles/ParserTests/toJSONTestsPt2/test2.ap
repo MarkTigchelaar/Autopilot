@@ -1,0 +1,16 @@
+
+
+inline pub fun main() do
+    let a = {
+        "a" : test(),
+        "basketball" : 1 + b / 14 * ( 11 -16),
+        "test" : {
+            "subtest" : [
+                "item1",
+                {
+                    "stuff", "inaset", "in a set"
+                }
+            ]
+        }
+    }
+end

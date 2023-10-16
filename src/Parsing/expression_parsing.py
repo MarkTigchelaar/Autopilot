@@ -268,7 +268,7 @@ def parse_method_call_or_field_access(driver, token, left_exp):
             return None
         field_or_method = _parse(driver, 0)
         field_or_method_list.append(field_or_method)
-        token = driver.next_token()
+        token = driver.peek_token()
     if driver.has_errors():
         return None
     method_or_field = driver.make_node(ast_node_keys.METHOD_OR_FIELD_EXP)
