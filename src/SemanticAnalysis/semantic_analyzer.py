@@ -64,9 +64,9 @@ class SemanticAnalyzer:
         """
         first_module_object = self.database.get_object(object_id)
         module_table = self.database.get_table("modules")
-        module_name_and_path = module_table.get_module_for_id(object_id)
+        module_row = module_table.get_module_for_id(object_id)
         other_modules_with_same_name = module_table.get_modules_data_for_name(
-            module_name_and_path.module_name.literal
+            module_row.module_name.literal
         )
         # print(f"number of modules: {len(other_modules_with_same_name)}")
         for mod in other_modules_with_same_name:
@@ -77,7 +77,7 @@ class SemanticAnalyzer:
                 # Collision already recorded
                 # print(f"collision reported for {object_id}")
                 break  # because first module (lowest id) already found ALL collisions
-            if mod.path == module_name_and_path.path:
+            if mod.path == module_row.path:
                 raise Exception(
                     "INTERNAL ERROR: Other module found with same path, should be same module"
                 )
@@ -86,21 +86,21 @@ class SemanticAnalyzer:
             self.add_error(
                 module_object.name, ErrMsg.NON_UNIQUE_MODULE, first_module_object.name
             )
-        self.check_items_in_module_for_name_collisions_with_module(object_id)
+        self.check_items_in_module_for_name_collisions_with_module(object_id, module_row)
 
     
-    def check_items_in_module_for_name_collisions_with_module(self, object_id):
+    def check_items_in_module_for_name_collisions_with_module(self, object_id, module_row):
         typename_table = self.database.get_table("typenames")
         other_items_in_module = typename_table.get_items_by_module_id(object_id)
 
         for item in other_items_in_module:
             if item.object_id == object_id:
                 continue
-            if item.name_token.literal == item.module_name:
+            if item.name_token.literal == module_row.module_name.literal:
                 self.add_error(
                     item.name_token,
                     ErrMsg.MODULE_NAME_AND_ITEM_COLLISION,
-                    item.module_name,
+                    module_row.module_name,
                 )
 
     def run_import_checks(self, object_id):
@@ -117,9 +117,6 @@ class SemanticAnalyzer:
     # unions have types, they must be checked (like defines)
     # enums only have primitive types, this might have been covered by local analysis (check that)
     # enums and errors must have field names not named the same as other items in module
-
-
-
     def run_enumerable_checks(self, object_id):
         """
         Check that the name does not collide with other names in import lists / module
