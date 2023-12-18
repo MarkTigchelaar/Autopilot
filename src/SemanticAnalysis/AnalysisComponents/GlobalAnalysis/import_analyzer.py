@@ -197,9 +197,6 @@ class ImportAnalyzer:
                     self.check_names_if_two_aliases_used(
                         current_import_item, other_import_item
                     )
-                # self.check_if_import_item_same_name_as_other_imported_module(
-                #     current_import_item, row
-                # )
 
     def check_names_if_no_aliases_used(self, current_import_item, other_import_item):
         if current_import_item.new_name_token or other_import_item.new_name_token:
@@ -260,31 +257,6 @@ class ImportAnalyzer:
                 other_import_item.new_name_token,
             )
 
-    # A item being imported, (in the same manner as something else in the module) can
-    # have the same name as a different imported module
-    # def check_if_import_item_same_name_as_other_imported_module(
-    #     self, current_import_item, row
-    # ):
-    #     if current_import_item.new_name_token is None:
-    #         if (
-    #             current_import_item.name_token.literal
-    #             == row.path[-1].node_token.literal
-    #         ):
-    #             self.add_error(
-    #                 current_import_item.name_token.literal,
-    #                 ErrMsg.IMPORT_NAME_COLLIDES_WITH_MOD_NAME,
-    #                 row.path[-1].node_token.literal,
-    #             )
-    #     elif (
-    #         current_import_item.new_name_token.literal
-    #         == row.path[-1].node_token.literal
-    #     ):
-    #         self.add_error(
-    #             current_import_item.new_name_token.literal,
-    #             ErrMsg.IMPORT_NAME_COLLIDES_WITH_MOD_NAME,
-    #             row.path[-1].node_token.literal,
-    #         )
-
     def get_module_items(self, object_id):
         import_table = self.database.get_table("imports")
         typename_table = self.database.get_table("typenames")
@@ -299,16 +271,6 @@ class ImportAnalyzer:
             for imported_item in import_row.items:
                 self.check_imported_item(imported_item, module_item)
 
-            # Something in the module having the name of a module being imported from isn't a issue
-            # if (
-            #     import_row.imported_module_name_token.literal
-            #     == module_item.name_token.literal
-            # ):
-            #     self.add_error(
-            #         import_row.imported_module_name,
-            #         ErrMsg.IMPORT_ITEM_COLLIDES_WITH_MOD_NAME,
-            #         module_item.name_token,
-            #     )
 
     def check_imported_item(self, imported_item, module_item):
         if imported_item.new_name_token and (
