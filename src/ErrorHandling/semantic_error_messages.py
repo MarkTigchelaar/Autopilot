@@ -80,7 +80,7 @@ LOOP_NAME_SHADOWS_ITER_SIZE = "loop name matches iteration step variable name"
 
 MAP_VALUE_NAME_SHADOWS_KEY_ITEM = "map value variable name matches map key variable name"
 
-COLLECTION_NAME_SHADOWS_ITEM = "collection name matches collection item vairable name"
+COLLECTION_NAME_SHADOWS_ITEM = "collection name matches collection item variable name"
 
 LOOP_NAME_SHADOWS_VALUE_ITEM = "loop name matches map value variable name"
 
@@ -115,3 +115,65 @@ CONTINUE_NOT_IN_LOOP = "continue statement only valid inside loops"
 BREAK_NOT_IN_LOOP = "break statement only valid inside loops"
 
 LOOP_LABEL_UNDEFINED = "loop label not defined"
+
+
+#--------------------------- GLOBAL SEMANTIC ERRORS ---------------------------
+
+NON_UNIQUE_MODULE = "module is not uniquely named"
+
+MODULE_NAME_AND_ITEM_COLLISION = "item in module has name that matches its module name"
+
+INVALID_IMPORTED_MODULE = "imported module is not defined"
+
+INVALID_IMPORTED_MODULE_PATH = "imported module not found in included path"
+
+INVALID_IMPORT_PATH_START = "import path must start with current folder name"
+
+IMPORT_PATH_MISSING_PARENT_FOLDER = "import path must contain parent folder name in directory within 10 levels"
+
+PATH_BACKTRACKING = "import path cannot backtrack up directory paths"
+
+DUPLICATE_IMPORT_IN_MODULE = "import of module of same name detected, other modules are only allowed to be imported once in a module"
+
+IMPORT_ITEM_NAME_COLLISION = "item in import matches name of other item also being imported"
+
+#IMPORT_NAME_COLLIDES_WITH_OTHER_IMPORTED_MOD_NAME = "item in import matches name of other module being imported from"
+
+# Get this error in module check also, but should be kept here too, to show all the lcations where it can occur
+IMPORT_ITEM_HAS_SAME_NAME_AS_ITS_MODULE = "item in import matches name of module being imported from"
+
+IMPORT_ITEM_NAME_COLLIDES_WITH_MODULE_ITEM = "item in import matches name of another item in module"
+
+IMPORT_ITEM_COLLIDES_WITH_MOD_NAME = "item in import matches name of current module"
+
+IMPORTED_ITEM_NOT_FOUND = "item in import not defined in imported module"
+
+MULTIPLE_MODULES_FOUND_ON_PATH = "multiple modules found on import path"
+
+DEFINE_NEW_NAME_COLLISION = "type definition name matches other items name"
+
+DEFINE_USES_SAME_COMPONENTS = "define statement uses same exact types in definition"
+
+FUNCTION_TYPE_HAS_NO_EFFECT = "function definition does not have arguments or a return value"
+
+UNDEFINED_ITEM_IN_DEFINE_STMT = "define statement contains a argument that is not defined"
+
+ENUMERABLE_NAME_COLLISION_IN_MODULE = "enumerable name matches name of other item in module"
+
+UNDEFINED_ITEM_IN_UNION_STMT = "union elements type is not defined"
+
+ENUMERABLE_LIST_ITEM_NAME_COLLISION_IN_MODULE = "enumurable element name matches name of item in module"
+
+ENUMERABLE_LIST_ITEM_NAME_COLLISION_IN_IMPORT = "enumurable element name matches name of item in import"
+
+INTERFACE_NAME_COLLIDES_WITH_MODULE_ITEM = "interface name matches name of item in module"
+
+INTERFACE_FN_ARG_COLLIDES_WITH_MODULE_ITEM = "interface function argument matches name of item in module"
+
+INTERFACE_FN_NAME_COLLIDES_WITH_IMPORT_ITEM = "interface name matches name of item in import"
+
+INTERFACE_FN_ARG_COLLIDES_WITH_IMPORT_ITEM = "interface function argument matches name of item in import"
+
+INVALID_FUNCTION_ARG_TYPE = "invalid function argument type"
+
+UNDEFINED_TYPE = "Undefined argument type"

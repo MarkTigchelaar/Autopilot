@@ -209,3 +209,21 @@ def is_assignment_operator(token):
         return True
     else:
         return False
+
+
+
+class AstContainer:
+    def __init__(self):
+        self.node_list = list()
+    
+    def add_ast_for_file(self, ast, filename):
+        node = AstNode(filename, ast)
+        self.add_node(node)
+
+    def add_node(self, node):
+        self.node_list.append(node)
+
+class AstNode:
+    def __init__(self, filename, ast):
+        self.filename = filename
+        self.ast = ast

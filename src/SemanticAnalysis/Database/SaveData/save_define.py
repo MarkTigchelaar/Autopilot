@@ -33,6 +33,7 @@ class DefineSaver(Saver):
         new_type_name = self.define.descriptor_token
 
         define_table.insert(
+            current_module_id,
             object_id,
             self.define.sub_type.get_descriptor_token(),
             new_type_name,

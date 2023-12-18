@@ -30,7 +30,7 @@ class DefineStatement:
         return self.descriptor_token
 
 
-# hashMaps, Dictionarys, Map interface
+# HashMaps, Dictionarys, Map interface
 class KeyValueType:
     def __init__(self):
         self.type_token = None

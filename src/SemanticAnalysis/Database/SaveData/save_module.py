@@ -38,7 +38,7 @@ class ModuleSaver(Saver):
         # if type_name_table detects it is defined, get category, must be "module_name"
         if type_name_table.is_name_defined_in_table(module_name.literal, object_id):
             # This is done to avoid redefining the same module, in different source files.
-            if type_name_table.get_category_by_name_and_module_id(module_name, object_id) != "module_name":
+            if "module_name" not in type_name_table.get_categories_by_name_and_module_id(module_name, object_id):
                 type_name_table.insert(module_name, "module_name", object_id, object_id)
         else:
             type_name_table.insert(module_name, "module_name", object_id, object_id)

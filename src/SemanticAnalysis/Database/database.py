@@ -23,13 +23,20 @@ class Database:
 
     def get_current_module_id(self):
         return self.current_module_id
-
-    def process_queries(self, analyzer):
-        pass
+    
+    def get_tablename_for_object(self, object_id):
+        for table_name in self.tables:
+            table = self.get_table(table_name)
+            if table.is_object_defined(object_id):
+                return table_name
+        raise Exception("INTERNAL ERROR: table name for object id was not found")
 
     def save_object(self, object_ref):
         self.objects.append(object_ref)
         return len(self.objects) - 1
+    
+    def get_object(self, object_id):
+        return self.objects[object_id]
 
     def get_table(self, table_name):
         if table_name not in self.tables:
@@ -55,6 +62,7 @@ class TypeNameTable:
             "fn_header",
             "unittest",
         ]
+        self.by_id = dict()
         self.by_name = dict()
         self.by_category = dict()
         self.by_module_id = dict()
@@ -71,6 +79,16 @@ class TypeNameTable:
     def insert(self, name, category, module_id, object_id):
         if category not in self.categories:
             raise Exception(f"INTERNAL ERROR: category '{category}' not recognized")
+        #what about types in othermodules?
+
+        row = TypeRow(category, module_id, object_id, name)
+        if module_id not in self.by_module_id:
+            self.by_module_id[module_id] = []
+        self.by_module_id[module_id].append(row)
+
+
+        if object_id not in self.by_id:
+            self.by_id[object_id] = row
 
         if self.is_name_defined_in_table(
             name.literal, category
@@ -79,7 +97,9 @@ class TypeNameTable:
 
         if name.literal not in self.by_name:
             self.by_name[name.literal] = []
-        self.by_name[name.literal].append(TypeRow(category, module_id, object_id))
+        self.by_name[name.literal].append(row)
+
+
 
         if category not in self.by_category:
             self.by_category[category] = []
@@ -92,9 +112,9 @@ class TypeNameTable:
         if not found:
             self.by_category[category].append(name)
 
-        if module_id not in self.by_module_id:
-            self.by_module_id[module_id] = []
-        self.by_module_id[module_id].append(name)
+
+
+
 
     def is_name_defined_in_table(self, name, category):
         if name not in self.by_name:
@@ -105,26 +125,32 @@ class TypeNameTable:
                 return True
         return False
 
-    def get_category_by_name_and_module_id(self, name, module_id):
+    def get_categories_by_name_and_module_id(self, name, module_id):
         if name not in self.by_name:
             raise Exception(f"INTERNAL ERROR: type '{name}' not found")
         matched_rows = self.by_name[name]
+        categories = []
         for row in matched_rows:
             if row.module_id == module_id:
-                return row.category
-        raise Exception(
-            "INTERNAL ERROR: module id not found, could not retrieve category"
-        )
+                categories.append(row.category)
+        if len(categories) < 1:
+            raise Exception(
+                "INTERNAL ERROR: module id not found, could not retrieve category"
+            )
+        return categories
 
     def get_names_by_category(self, category_name):
         if category_name not in self.by_category:
             return []
         return self.by_category[category_name]
 
-    def get_names_by_module_id(self, module_id):
+    def get_items_by_module_id(self, module_id):
         if module_id not in self.by_module_id:
             return []
         return self.by_module_id[module_id]
+    
+    def get_item_by_id(self, object_id):
+        return self.by_id[object_id]
 
     def is_already_built_in_type_token(self, name, category, module_id, object_id):
         if name in self.by_name:
@@ -133,13 +159,17 @@ class TypeNameTable:
                 if item.category == category:
                     return True
         return False
+    
+    def is_object_defined(self, _):
+        return False
 
 
 class TypeRow:
-    def __init__(self, category, module_id, object_id):
+    def __init__(self, category, module_id, object_id, name_token):
         self.category = category
         self.module_id = module_id
         self.object_id = object_id
+        self.name_token = name_token
 
 
 class ModuleTable:
@@ -157,7 +187,7 @@ class ModuleTable:
     def insert(self, module_name, path, id):
         if module_name.literal not in self.by_name:
             self.by_name[module_name.literal] = []
-        self.by_name[module_name.literal].append(ModulePathIdRow(path, id))
+        self.by_name[module_name.literal].append(ModulePathIdRow(path, id, module_name))
 
         if path not in self.by_path:
             self.by_path[path] = []
@@ -167,6 +197,9 @@ class ModuleTable:
             self.by_id[id] = ModuleNamePathRow(module_name, path)
         else:
             raise Exception("INTERNAL ERROR: module id already defined")
+
+    def is_object_defined(self, module_id):
+        return module_id in self.by_id
 
     def is_module_defined(self, module_name):
         return module_name in self.by_name
@@ -178,7 +211,7 @@ class ModuleTable:
         mods = self.get_modules_data_for_name(module_name)
         for mod in mods:
             if mod.path == path:
-                return mod.id
+                return mod.module_id
         return None
 
     def get_modules_data_for_name(self, module_name):
@@ -193,15 +226,16 @@ class ModuleTable:
 
 
 class ModulePathIdRow:
-    def __init__(self, path, id):
+    def __init__(self, path, module_id, name):
         self.path = path
-        self.id = id
+        self.module_id = module_id
+        self.name = name
 
 
 class ModuleNameIdRow:
-    def __init__(self, module_name, path):
+    def __init__(self, module_name, id):
         self.module_name = module_name
-        self.path = path
+        self.id = id
 
 
 class ModuleNamePathRow:
@@ -252,15 +286,32 @@ class FileTable:
         if file_name not in self.by_name:
             raise Exception("INTERNAL ERROR: filename not found")
         return self.by_name[file_name]
+    
+    def is_object_defined(self, _):
+        return False
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class ImportTableRow:
-    def __init__(self, object_id, current_module_id, filename, path, items):
+    def __init__(self, object_id, current_module_id, filename, path, items, imported_module_name, imported_module_name_token):
         self.id = object_id
         self.current_module_id = current_module_id
-        self.filenames = [filename]
+        self.filename = filename
         self.path = path
         self.items = items
+        self.imported_module_name = imported_module_name
+        self.imported_module_name_token = imported_module_name_token
 
 
 class ImportTable:
@@ -287,10 +338,11 @@ class ImportTable:
             self.by_file_name[filename] = []
 
         imported_module_name = path[-1].node_token.literal
+        imported_module_name_token = path[-1].node_token
         if imported_module_name not in self.by_imported_module_name:
             self.by_imported_module_name[imported_module_name] = []
 
-        row = ImportTableRow(object_id, current_module_id, filename, path, items)
+        row = ImportTableRow(object_id, current_module_id, filename, path, items, imported_module_name, imported_module_name_token)
         self.by_id[object_id] = row
         self.by_current_module_id[current_module_id].append(row)
         self.by_file_name[filename].append(row)
@@ -302,15 +354,27 @@ class ImportTable:
     def get_items_by_id(self, object_id):
         row = self.by_id[object_id]
         return row.items
+    
+    def get_row_by_id(self, object_id):
+        return self.by_id[object_id]
 
     def get_path_by_id(self, object_id):
         row = self.by_id[object_id]
         return row.path
+    
+    def get_module_data_by_module_name(self, module_name):
+        if module_name in self.by_imported_module_name:
+            return self.by_imported_module_name[module_name]
+        return None
+    
+    def get_imports_by_module_id(self, module_id):
+        return self.by_current_module_id[module_id]
 
 
 class DefineTable:
     def __init__(self):
         self.by_id = dict()
+        self.by_module_id = dict()
         self.by_user_defined_type_token = dict()
 
     def get_size(self):
@@ -321,9 +385,10 @@ class DefineTable:
 
     def insert(
         self,
+        current_module_id,
         object_id,
         built_in_type_token,
-        user_defined_type_token,
+        new_type_name_token,
         key_type,
         value_type,
         arg_list,
@@ -332,42 +397,56 @@ class DefineTable:
         if object_id in self.by_id:
             raise Exception("INTERNAL ERROR: id of define statement already defined")
 
-        if user_defined_type_token.literal not in self.by_user_defined_type_token:
-            self.by_user_defined_type_token[user_defined_type_token.literal] = []
+        if new_type_name_token.literal not in self.by_user_defined_type_token:
+            self.by_user_defined_type_token[new_type_name_token.literal] = []
         new_row = DefineTableRow(
             built_in_type_token,
-            user_defined_type_token,
+            new_type_name_token,
             key_type,
             value_type,
             arg_list,
             union_type,
+            current_module_id,
+            object_id
         )
         self.by_id[object_id] = new_row
-        self.by_user_defined_type_token[user_defined_type_token.literal].append(new_row)
+        if current_module_id not in self.by_module_id:
+            self.by_module_id[current_module_id] = list()
+        self.by_module_id[current_module_id].append(new_row)
+        self.by_user_defined_type_token[new_type_name_token.literal].append(new_row)
 
     def is_object_defined(self, object_id):
         return object_id in self.by_id
 
     def get_item_by_id(self, object_id):
         return self.by_id[object_id]
+    
+    def get_items_by_module_id(self, module_id):
+        return self.by_module_id[module_id]
+    
+
 
 
 class DefineTableRow:
     def __init__(
         self,
         built_in_type_token,
-        user_defined_type_token,
+        new_type_name_token,
         key_type,
         value_type,
         arg_list,
         union_type,
+        current_module_id,
+        object_id
     ):
         self.built_in_type_token = built_in_type_token
-        self.user_defined_type_token = user_defined_type_token
+        self.new_type_name_token = new_type_name_token
         self.key_type = key_type
         self.value_type = value_type
         self.arg_list = arg_list
-        self.union_type = union_type
+        self.union_type = union_type # enums / unions can be ints, strings etc.
+        self.current_module_id = current_module_id
+        self.object_id = object_id
 
 
 class EnumerableTable:
@@ -396,9 +475,15 @@ class EnumerableTable:
         row = self.by_id[id]
         return row.general_type_token
 
+    # This method is poorly named.
+    # Rename to something more specific
     def get_items_by_id(self, id):
         row = self.by_id[id]
         return row.item_list
+    
+    def get_item_by_id(self, id):
+        row = self.by_id[id]
+        return row
 
 
 class EnumerableTableRow:
@@ -620,6 +705,11 @@ class StructTable:
 
     def get_item_by_id(self, object_id):
         return self.by_id[object_id]
+    
+    def get_items_by_module_id(self, module_id):
+        if module_id not in self.by_module_id:
+            raise Exception("INTERNAL ERROR: module id not found")
+        return self.by_module_id[module_id]
 
 
 class StructTableRow:
