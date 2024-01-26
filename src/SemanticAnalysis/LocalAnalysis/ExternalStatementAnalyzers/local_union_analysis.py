@@ -18,7 +18,7 @@ def check_fields_for_duplicate_names(analyzer, field_one, field_two):
 def check_fields_for_duplicate_types(analyzer, field_one, field_two):
     if field_one.type_token.type_symbol == field_two.type_token.type_symbol:
         if field_one.type_token.type_symbol != IDENTIFIER:
-            analyzer.add_error(field_two.type_token, DUPLICATE_UNION_FIELD_TYPE)
+            analyzer.add_error(field_two.item_name_token, DUPLICATE_UNION_FIELD_TYPE)
         elif field_one.type_token.literal == field_two.type_token.literal:
             analyzer.add_error(field_two.item_name_token, DUPLICATE_UNION_FIELD_TYPE)
 
