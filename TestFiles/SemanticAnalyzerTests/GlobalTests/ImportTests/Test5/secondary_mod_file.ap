@@ -1,0 +1,11 @@
+module secondary_module
+
+import other_other_thing from module subfolder.place
+
+pub enum thing is 
+    a = 3
+end
+
+pub enum other_thing is 
+    a = 3
+end

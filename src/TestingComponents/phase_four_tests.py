@@ -2,9 +2,9 @@ from SemanticAnalysis.semantic_analyzer import SemanticAnalyzer
 from Tokenization.tokenizer import Tokenizer
 from ErrorHandling.error_manager import ErrorManager
 from driver import Driver
-from SemanticAnalysis.Database.database import Database
+#from SemanticAnalysis.Database.database import Database
 from Parsing.parse import parse_src
-from Parsing.parsing_utilities import AstContainer
+#from Parsing.parsing_utilities import AstContainer
 
 from TestingComponents.testing_utilities import get_json_from_file, record_component_test
 
@@ -38,8 +38,8 @@ def semantic_test(test_case, current_dir, tracker):
         _ = parse_src(driver)
         #program_ast.add_ast_for_file(ast_for_file, filename)
         tokenizer.close_src()
-    
-    analyzer.run_global_analysis()
+    if not err_manager.has_errors():
+        analyzer.run_global_analysis()
 
     check_for_token_and_parser_errors(err_manager, test_case, tracker)
     validate_results(err_manager, test_case, tracker)
@@ -56,7 +56,7 @@ def validate_results(err_manager, test_case, tracker):
     for expected_error in expected_errors:
         #print(f" expected error: {expected_error}")
         if not err_manager.has_errors(True):
-            raise Exception("INTERNAL ERROR: ErrorManager is missing errors")
+            raise Exception(f"INTERNAL ERROR: ErrorManager is missing errors for test: {expected_error['file']}")
         actual_error = err_manager.next_semantic_error()
         #print(type(actual_error))
 

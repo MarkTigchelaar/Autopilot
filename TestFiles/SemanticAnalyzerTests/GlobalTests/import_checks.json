@@ -1,0 +1,320 @@
+[
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test1.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test/folder/module_folder/test1b.ap"
+
+        ],
+        "errors" : [],
+        "comment" : "If import statement path leads to module of matching name, then good."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test2.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test/folder/module_folder/test1b.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test2.ap",
+                "token_literal" : "module_one_bee",
+                "line_number" : "3",
+                "column" : "38",
+        
+                "message" : "imported module not found in included path",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            }
+        ],
+        "comment" : "If module is actually found, but the module is not in the relative location of the file according to the import path"
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3/sandwiches/test3a.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3/sandwiches/module_folder/onedeeper/test3d.ap"
+        ],
+        "errors" : [
+            {
+            "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3.ap",
+            "token_literal" : "module_name",
+            "line_number" : "4",
+            "column" : "39",
+    
+            "message" : "imported module is not defined",
+    
+            "shadowed_file" : null,
+            "shadowed_token_literal" : null,
+            "shadowed_line_number" : null,
+            "shadowed_column" : null
+            }
+        ],
+        "comment" : "if import statement is aimed at folder, and module is not in that folder, error."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/import_one.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/import_two.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/subfolder/import_three.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/subfolder/import_four.ap"
+
+        ],
+        "errors" : [],
+        "comment" : "Imports of modules with imports should also work correctly."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/second.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/secondaryish_file.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/secondary_mod_file.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/subfolder/some_file.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/subfolder/subsubfolder/the_module_below_the_other_one.ap"
+
+        ],
+        "errors" : [],
+        "comment" : "Imports of modules with imports should also work correctly, slight variation."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test6/main/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test6/test/folder/module_folder/second_file.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test6/main/other/third_file.ap"
+            
+        ],
+        "errors" : [],
+        "comment" : "Imports of modules should be able to import from folders above its own folder. And also from folder that are down a path, after going up"
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/second_file.ap"
+            
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap",
+                "token_literal" : "private_thing1",
+                "line_number" : "3",
+                "column" : "8",
+        
+                "message" : "item in import not defined in imported module",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap",
+                "token_literal" : "non_existant_thing2",
+                "line_number" : "3",
+                "column" : "24",
+        
+                "message" : "item in import not defined in imported module",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            }
+        ],
+        "comment" : "Items imported from a module must be defined, and public."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/second_file.ap"
+            
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap",
+                "token_literal" : "Test8",
+                "line_number" : "3",
+                "column" : "44",
+        
+                "message" : "import path must contain parent folder name in directory within 10 levels",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap",
+                "token_literal" : "second_module",
+                "line_number" : "3",
+                "column" : "50",
+        
+                "message" : "imported module not found in included path",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            }
+        ],
+        "comment" : "Items imported from a module must be within 10 levels of the current file. Otherwise, use a library."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathA/some_folder/folder/subfolder/second_file.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap"
+            
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap",
+                "token_literal" : "second_module",
+                "line_number" : "3",
+                "column" : "48",
+        
+                "message" : "multiple modules found on import path",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathA/some_folder/folder/subfolder/second_file.ap",
+                "shadowed_token_literal" : "second_module",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap",
+                "token_literal" : "second_module",
+                "line_number" : "3",
+                "column" : "48",
+        
+                "message" : "multiple modules found on import path",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap",
+                "shadowed_token_literal" : "second_module",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap",
+                "token_literal" : "second_module",
+                "line_number" : "1",
+                "column" : "8",
+        
+                "message" : "module is not uniquely named",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathA/some_folder/folder/subfolder/second_file.ap",
+                "shadowed_token_literal" : "second_module",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            }
+        ],
+        "comment" : "Using the : operator, you must be sure that there are not identical paths to moduels of the same name, otherwise, you will get an error."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/second_file.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/third_file.ap"
+            
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/second_file.ap",
+                "token_literal" : "second_module",
+                "line_number" : "3",
+                "column" : "27",
+        
+                "message" : "import of module of same name detected, other modules are only allowed to be imported once in a module",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/main.ap",
+                "shadowed_token_literal" : "second_module",
+                "shadowed_line_number" : "3",
+                "shadowed_column" : "26"
+            }
+        ],
+        "comment" : "Duplicating imports is not allowed, even from different files in the same module."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/second_file.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/third_file.ap"
+            
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap",
+                "token_literal" : "thing",
+                "line_number" : "3",
+                "column" : "8",
+        
+                "message" : "item in import matches name of other item also being imported",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap",
+                "shadowed_token_literal" : "thing",
+                "shadowed_line_number" : "5",
+                "shadowed_column" : "23"
+            }
+        ],
+        "comment" : "Imported items must be named uniquely, otherwise, you will get an error."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap"
+            
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/main.ap",
+                "token_literal" : "second_module",
+                "line_number" : "4",
+                "column" : "8",
+        
+                "message" : "item in import matches name of module being imported from",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap",
+                "token_literal" : "second_module",
+                "line_number" : "4",
+                "column" : "10",
+        
+                "message" : "item in module has name that matches its module name",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap",
+                "shadowed_token_literal" : "second_module",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            }
+        ],
+        "comment" : "Imported items must not be named after the module that they are being imported from, otherwise, you will get an error."
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/second_file.ap"
+            
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap",
+                "token_literal" : "second_item",
+                "line_number" : "4",
+                "column" : "11",
+        
+                "message" : "item in import matches name of another item in module",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap",
+                "shadowed_token_literal" : "second_item",
+                "shadowed_line_number" : "7",
+                "shadowed_column" : "6"
+            }
+        ],
+        "comment" : "Imported items must not be named the same as a existing item in the module, aliases used to avoid this, one error here, two items imported, overlapping names"
+    }
+]

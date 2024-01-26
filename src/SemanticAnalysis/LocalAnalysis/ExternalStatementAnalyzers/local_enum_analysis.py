@@ -50,7 +50,8 @@ def check_fields_for_mismatched_types(analyzer, field_one, field_two):
     if "NULL" in (type1.type_symbol, type2.type_symbol):
         return
     if (type1.literal != type2.literal) and (not_a_bool(type1) and not_a_bool(type2)):
-        analyzer.add_error(field_two.item_name_token, ENUM_MISMATCHED_TYPE)
+        if type1.type_symbol != type2.type_symbol:
+            analyzer.add_error(field_two.item_name_token, ENUM_MISMATCHED_TYPE)
 
 
 def check_field_if_type_matches_enum(analyzer, field_one, enum_ast_node):

@@ -1,0 +1,6 @@
+module second_module
+
+
+pub struct Thingy is
+    i as int
+end

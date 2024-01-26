@@ -1,0 +1,11 @@
+module main
+
+
+define Result(int, err) as FirstResult
+
+define Result(int, err) as SecondResult
+
+
+error err is 
+    failed
+end

@@ -150,9 +150,11 @@ IMPORTED_ITEM_NOT_FOUND = "item in import not defined in imported module"
 
 MULTIPLE_MODULES_FOUND_ON_PATH = "multiple modules found on import path"
 
-DEFINE_NEW_NAME_COLLISION = "type definition name matches other items name"
+DEFINE_NEW_NAME_COLLISION = "define statement names new type the same as another type"
 
-DEFINE_USES_SAME_COMPONENTS = "define statement uses same exact types in definition"
+DEFINE_NEW_NAME_COLLISION_W_IMPORT = "define statement names new type the same as an imported type"
+
+DEFINE_USES_SAME_COMPONENTS = "define statement uses same exact types in definition as other define statement"
 
 FUNCTION_TYPE_HAS_NO_EFFECT = "function definition does not have arguments or a return value"
 
@@ -177,3 +179,71 @@ INTERFACE_FN_ARG_COLLIDES_WITH_IMPORT_ITEM = "interface function argument matche
 INVALID_FUNCTION_ARG_TYPE = "invalid function argument type"
 
 UNDEFINED_TYPE = "Undefined argument type"
+
+CYCLE_IN_DEFINE_DEPENDANCIES = "cycle in define statement dependancies"
+
+NON_ERROR_TYPE_IN_RESULT = "non error type for alternative value in result definition"
+
+UNIONS_NOT_HASHABLE = "union type is not hashable"
+
+ENUMS_NOT_HASHABLE = "enum type is not hashable"
+
+ERRORS_NOT_HASHABLE = "error type is not hashable"
+
+FUNCTIONS_NOT_HASHABLE = "function types are not hashable"
+
+STRUCT_HASH_FUNCTION_WRONG_RETURN_TYPE = "struct hash function does not return a int value"
+
+STRUCT_HASH_FUNCTION_WRONG_ARG_COUNT = "struct hash function does not have the correct number of arguments, should be 0"
+
+INTERFACES_NOT_HASHABLE = "interface types are not hashable"
+
+GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES = "type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results"
+
+LIST_TYPE_DEFINE_NESTING_INVALID_DEFINES = "general list " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+LINKED_LIST_TYPE_DEFINE_NESTING_INVALID_DEFINES = "linked list " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+VECTOR_TYPE_DEFINE_NESTING_INVALID_DEFINES = "vector " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES = "queue " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+FIFO_QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES = "fifo queue " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+DEQUE_TYPE_DEFINE_NESTING_INVALID_DEFINES = "deque " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+PRIORITY_QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES = "priority queue " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+STACK_TYPE_DEFINE_NESTING_INVALID_DEFINES = "stack " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+GENERIC_SET_TYPE_DEFINE_NESTING_INVALID_DEFINES = "type define statement can only contain primitives, structs and interfaces"
+
+SET_TYPE_DEFINE_NESTING_INVALID_DEFINES = "general set " + GENERIC_SET_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+HASHSET_TYPE_DEFINE_NESTING_INVALID_DEFINES = "hash set " + GENERIC_SET_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+TREESET_TYPE_DEFINE_NESTING_INVALID_DEFINES = "tree set " + GENERIC_SET_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+MAP_TYPE_VALUE_DEFINE_NESTING_INVALID_DEFINES = "map value " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+HASHMAP_TYPE_DEFINE_NESTING_INVALID_DEFINES = "hashmap value " + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+DICT_TYPE_DEFINE_NESTING_INVALID_DEFINES = "dictionary value" + GENERIC_LINEAR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+GENERIC_MAP_KEY_TYPE_DEFINE_NESTING_INVALID_DEFINES = "type can only be primitives, structs or interfaces"
+
+MAP_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES = "map key " + GENERIC_MAP_KEY_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+HASHMAP_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES = "hashmap key " + GENERIC_MAP_KEY_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+DICT_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES = "dictionary key " + GENERIC_MAP_KEY_TYPE_DEFINE_NESTING_INVALID_DEFINES
+
+OPTION_TYPE_DEFINE_NESTING_INVALID_DEFINES = "optional value type cannot be a result type"
+
+RESULT_TYPE_DEFINE_NESTING_INVALID_DEFINES = "result value type cannot be a option type"
+
+RESULT_TYPE_ERROR_DEFINE_NESTING_INVALID_DEFINES = "result error type must be an error"
+
+FUNCTION_TYPE_ARG_DEFINE_NESTING_INVALID_DEFINES = "function argument type cannot be a error type"
+
+FUNCTION_TYPE_RETURN_VAL_DEFINE_NESTING_INVALID_DEFINES = "function return value type cannot be a error type"

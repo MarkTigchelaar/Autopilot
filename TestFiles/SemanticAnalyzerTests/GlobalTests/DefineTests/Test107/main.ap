@@ -1,0 +1,4 @@
+module main
+
+define LinkedList(int) as intlinkedlist
+define Deque(intlinkedlist) as compoundList

@@ -1,0 +1,3 @@
+module main
+
+import thing from module test:folder.subfolder.second_module

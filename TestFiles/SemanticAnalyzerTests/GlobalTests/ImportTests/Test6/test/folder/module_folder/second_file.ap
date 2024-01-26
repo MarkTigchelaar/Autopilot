@@ -1,0 +1,7 @@
+module module_two
+
+import item2 from module ^Test6.main.other.module_three
+
+pub enum item1 is 
+    a = 3
+end

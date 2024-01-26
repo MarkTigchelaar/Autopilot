@@ -1,0 +1,4 @@
+module main
+
+define Dictionary(int : int) as intdictionary
+define Vector(intdictionary) as compoundList

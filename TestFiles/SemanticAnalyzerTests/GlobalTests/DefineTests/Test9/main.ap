@@ -1,0 +1,11 @@
+module main
+
+define fun(int) int as IntFunction
+
+define fun(int) as OtherIntFunction
+
+define fun(int, int) int as OtherOtherFunction
+
+define fun(int) int as CopyCatFunction
+
+define fun(int) as OtherCopyCatIntFunction

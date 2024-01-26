@@ -1,0 +1,4 @@
+module main
+
+define HashMap(int : int) as inthashmap
+define PriorityQueue(inthashmap) as compoundList

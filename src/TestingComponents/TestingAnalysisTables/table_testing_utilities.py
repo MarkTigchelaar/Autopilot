@@ -370,7 +370,7 @@ class DefineTableTestQueryRunner(TestQueryRunner):
         match_list.append(
             self.match_args(table_row.arg_list, test_row["arg_type_list"])
         )
-        match_list.append(self.match_arg(table_row.union_type, test_row["union_type"]))
+        match_list.append(self.match_arg(table_row.result_type, test_row["union_type"]))
         for match in match_list:
             if not match:
                 return False

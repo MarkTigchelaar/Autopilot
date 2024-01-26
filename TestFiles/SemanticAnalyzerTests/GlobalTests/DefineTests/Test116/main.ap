@@ -1,0 +1,4 @@
+module main
+
+define TreeSet(int) as inttreeset
+define Deque(inttreeset) as compoundList

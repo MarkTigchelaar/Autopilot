@@ -1,0 +1,5 @@
+module main
+
+define Dictionary(int: string) as StringDict
+
+define Dictionary(int: string) as OtherDict

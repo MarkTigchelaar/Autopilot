@@ -1,0 +1,27 @@
+module main
+
+
+define Vector(Thing) as ThingVector
+
+struct Thing is
+    a as Inggy
+end
+
+struct Inggy is
+    b as Foo
+end
+
+union Foo is
+    c as Bar,
+    d as int,
+    e as EnumThing
+end
+
+struct Bar is
+    e as ThingVector
+end
+
+enum EnumThing is
+    f = 0,
+    g = 2
+end

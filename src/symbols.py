@@ -112,7 +112,7 @@ TREESET = "TreeSet".upper()
 STACK = "Stack".upper()
 
 QUEUE = "Queue".upper()
-FIFOQUEUE = "FIFOQueue".upper()
+FIFOQUEUE = "FifoQueue".upper()
 PRIORITYQUEUE = "PriorityQueue".upper()
 DEQUE = "Deque".upper()
 

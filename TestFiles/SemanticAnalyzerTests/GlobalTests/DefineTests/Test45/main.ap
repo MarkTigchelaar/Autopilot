@@ -1,0 +1,4 @@
+module main
+
+define HashSet(int) as inthashset
+define LinkedList(inthashset) as compoundList

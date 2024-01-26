@@ -15,3 +15,8 @@ class Token:
         repr += " literal: " + self.literal + "\n"
         repr += " type: " + self.type_symbol + "\n"
         return repr
+    
+
+    def __str__(self) -> str:
+        return self.to_string()
+    

@@ -1,0 +1,5 @@
+module main
+
+define Vector(int) as IntVector
+
+define Vector(int) as OtherVector

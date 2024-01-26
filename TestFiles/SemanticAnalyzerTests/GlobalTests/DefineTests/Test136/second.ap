@@ -1,0 +1,22 @@
+module secondary
+
+
+
+pub struct myStruct is
+    a as int
+end
+
+pub union myUnion is
+    a as int,
+    b as float
+end
+
+pub enum myEnum is
+    a,
+    b
+end
+
+pub interface myInterface is
+    fun myMethod() end
+end
+

@@ -1,12 +1,93 @@
-TEST CASE FAILURE,In ../Testfiles/ParserTests/toJSONTestsPt2/test1.ap:
- expected: "module", got "unittest"
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestOne/test1other.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestOne/test1other.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestOne/test1other.ap"
 
-TEST CASE FAILURE,In ../Testfiles/ParserTests/toJSONTestsPt2/test1.ap:
- expected: "one", got "my_unittest"
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestOne/test1other.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test1.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test1.ap"
 
-TEST CASE FAILURE,In ../Testfiles/ParserTests/toJSONTestsPt2/test1.ap:
- expected: "8", got "10"
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap"
 
-TEST CASE FAILURE,In ../Testfiles/ParserTests/toJSONTestsPt2/test1.ap:
- expected: "type,name", got "type,name,statements"
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test2.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test2.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test2.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test7/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test8/a/b/c/d/e/f/g/h/i/j/k/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathA/some_folder/folder/subfolder/second_file.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathA/some_folder/folder/subfolder/second_file.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathB/folder/subfolder/second_file.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathA/some_folder/folder/subfolder/second_file.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test9/test/pathA/some_folder/folder/subfolder/second_file.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/second_file.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/second_file.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/second_file.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/second_file.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test10/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test11/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test12/second_file.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap"
+
+TEST CASE FAILURE,In ../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap:
+ expected: "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap", got "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test13/main.ap"
 

@@ -1,0 +1,7 @@
+module main
+
+
+
+enum IntVector is
+  i = 0
+end

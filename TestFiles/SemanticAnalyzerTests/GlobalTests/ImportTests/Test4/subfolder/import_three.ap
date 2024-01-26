@@ -1,0 +1,7 @@
+module fourth_module
+
+import fifth_thing from module fifth_module
+
+pub enum fourth_thing is 
+    a = 3
+end

@@ -1,0 +1,4 @@
+module main
+
+define TreeSet(int) as inttreeset
+define Queue(inttreeset) as compoundList

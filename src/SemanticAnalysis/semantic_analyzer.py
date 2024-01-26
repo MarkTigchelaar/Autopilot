@@ -39,8 +39,8 @@ class SemanticAnalyzer:
                 case "imports":
                     self.run_import_checks(object_id)
                 case "defines":
-                    continue
-                    # self.run_define_checks(object_id)
+                    #continue
+                    self.run_define_checks(object_id)
                 case "enumerables":
                     continue
                     # self.run_enumerable_checks(object_id)
@@ -110,7 +110,7 @@ class SemanticAnalyzer:
 
     def run_define_checks(self, object_id):
         if self.define_analyzer is None:
-            self.define_analyzer = DefineAnalyzer(self.database, self.error_manager, self.import_dependency_graph)
+            self.define_analyzer = DefineAnalyzer(self.database, self.error_manager)
         self.define_analyzer.analyze(object_id)
 
     # Unions, enums, and errors
@@ -171,4 +171,5 @@ class SemanticAnalyzer:
         if modifier_table.is_object_defined(object_id):
             print(f"--> Is a modifier")
         else:
-            raise Exception("Shit, I don't know what that is. :(")
+            table_name = self.database.get_tablename_for_object(object_id)
+            raise Exception(f"Shit, I don't know what that is. :( {table_name} {str(type(self.database.get_object(object_id)))}")

@@ -1,0 +1,4 @@
+module main
+
+define HashSet(int) as inthashset
+define Vector(inthashset) as compoundList

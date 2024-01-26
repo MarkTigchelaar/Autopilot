@@ -1,0 +1,4 @@
+module main
+
+define Deque(int) as intdeque
+define Stack(intdeque) as compoundList
