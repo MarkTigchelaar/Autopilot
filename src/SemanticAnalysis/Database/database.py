@@ -10,7 +10,7 @@ from SemanticAnalysis.Database.Tables.functions import FunctionHeaderTable
 from SemanticAnalysis.Database.Tables.interfaces import InterfaceTable
 from SemanticAnalysis.Database.Tables.statements import StatementTable
 from SemanticAnalysis.Database.Tables.structs import StructTable
-
+from SemanticAnalysis.Database.Tables.unittests import UnittestTable
 
 class Database:
     def __init__(self, error_manager):
@@ -29,6 +29,7 @@ class Database:
             "interfaces": InterfaceTable(),
             "statements": StatementTable(),
             "structs": StructTable(),
+            "unittests": UnittestTable()
         }
         self.current_module_id = None
 

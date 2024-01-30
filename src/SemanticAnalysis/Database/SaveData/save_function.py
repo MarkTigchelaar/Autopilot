@@ -46,7 +46,7 @@ class FunctionSaver(Saver):
             current_module_id
         )
 
-        statement_saver.save_statements(statement_table, self.function.statements, 0)
+        statement_saver.save_statements(statement_table, self.function.statements)
 
         if file_table.is_file_defined(self.object_id, file_name):
             raise Exception(f"INTERNAL ERROR: file {file_path} has been processed already")

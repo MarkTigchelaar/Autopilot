@@ -17,6 +17,7 @@ class UnittestSaver(Saver):
         type_name_table = database.get_table("typenames")
         file_table = database.get_table("files")
         statement_table = database.get_table("statements")
+        unittest_table = database.get_table("unittests")
 
         file_path = self.unittest.name.file_name
         _, file_name = split_path_and_file_name(file_path)
@@ -30,8 +31,13 @@ class UnittestSaver(Saver):
             current_module_id,
             self.object_id
         )
+        unittest_table.insert(
+            self.object_id,
+            current_module_id,
+            self.unittest.name
+        )
 
-        statement_saver.save_statements(statement_table, self.unittest.statements, 0)
+        statement_saver.save_statements(statement_table, self.unittest.statements)
 
         if file_table.is_file_defined(self.object_id, file_name):
             raise Exception(f"INTERNAL ERROR: file {file_path} has been processed already")

@@ -6,7 +6,7 @@ class StatementSaver(Saver):
         self.object_id = object_id
         self.sequence_number = 0
 
-    def save_statements(self, statement_table, statements, scope_level):
+    def save_statements(self, statement_table, statements, scope_level = 0):
         for statement in statements:
             self.sequence_number += 1
             descriptor = statement.get_descriptor_token()
