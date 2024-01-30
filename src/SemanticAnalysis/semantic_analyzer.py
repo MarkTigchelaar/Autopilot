@@ -48,7 +48,8 @@ class SemanticAnalyzer:
                     self.run_interface_checks(object_id)
                 case "structs":
                     self.run_struct_checks(object_id)
-                # Figure out how to add unittests
+                case "unittests":
+                    self.run_unittest_checks(object_id)
                 case _:
                     self.identify_type(object_id)
         # Then check imports, functions, and ref types for cycles
@@ -145,7 +146,7 @@ class SemanticAnalyzer:
         Check if expressions violate int / float promotion rules
         Check that function / method calls are public
         """
-        function_object = self.database.get_object(object_id)
+        function_table = self.database.get_table("functions")
 
     def run_struct_checks(self, object_id):
         """
@@ -153,7 +154,14 @@ class SemanticAnalyzer:
         Check functions for references to fields, or make function checks try to get struct fields
         Add fields to reference graph table to later check inline / acyclic rules
         """
-        struct_object = self.database.get_object(object_id)
+        struct_table = self.database.get_table("structs")
+
+    def run_unittest_checks(self, object_id):
+        """
+        Check that unittests have no name collisions
+        """
+        unittest_table = self.database.get_table("unittests")
+        unittest_row = unittest_table.get_unittest_for_id(object_id)
 
     def identify_type(self, object_id):
         header_table = self.database.get_table("fn_headers")

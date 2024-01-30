@@ -33,13 +33,7 @@ class FunctionSaver(Saver):
             raise Exception("INTERNAL ERROR: function does not have exactly 1 header")
 
         header_saver.save_headers()
-        
-        # type_name_table.insert(
-        #     self.function.header.name_token,
-        #     "function",
-        #     current_module_id,
-        #     self.object_id
-        # )
+
         function_table.insert(
             self.object_id,
             header_ids[0],
