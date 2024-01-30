@@ -97,7 +97,7 @@ def phase_one_tests(tracker, test_json, current_dir: str) -> None:
             test_fn = main_parse_test
         elif general_component == "happy_path":
             test_fn = happy_path
-            #parser_happy_path_tests(component_tests, tracker, test_fn, current_dir)
+            parser_happy_path_tests(component_tests, tracker, test_fn, current_dir)
             continue
         else:
             continue

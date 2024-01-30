@@ -10,7 +10,7 @@ from TestingComponents.testing_utilities import (
 
 
 def phase_four_tests(tracker, test_json, current_dir):
-    print("Phase 3 tests")
+    print("Phase 4 tests")
     for test in test_json:
         component_tests = get_json_from_file(
             current_dir + "/" + test["test_manifest_file"]
