@@ -1,5 +1,5 @@
 from SemanticAnalysis.Database.SaveData.saver import Saver
-from SemanticAnalysis.analysis_utilities import split_path_and_file_name
+from SemanticAnalysis.AnalysisComponents.analysis_utilities  import split_path_and_file_name
 
 def save_enum(analyzer, ast_node):
     enum_saver = EnumSaver(ast_node)

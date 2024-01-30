@@ -1,6 +1,6 @@
 from SemanticAnalysis.Database.SaveData.saver import Saver
 from SemanticAnalysis.Database.SaveData.save_fn_header import FnHeaderSaver
-from SemanticAnalysis.analysis_utilities import split_path_and_file_name
+from SemanticAnalysis.AnalysisComponents.analysis_utilities  import split_path_and_file_name
 
 def save_interface(analyzer, ast_node):
     interface_saver = InterfaceSaver(ast_node)

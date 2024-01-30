@@ -1,6 +1,6 @@
 from SemanticAnalysis.Database.SaveData.saver import Saver
 from SemanticAnalysis.Database.SaveData.save_function import FunctionSaver
-from SemanticAnalysis.analysis_utilities import split_path_and_file_name
+from SemanticAnalysis.AnalysisComponents.analysis_utilities  import split_path_and_file_name
 
 def save_struct(analyzer, ast_node):
     struct_saver = StructSaver(ast_node)

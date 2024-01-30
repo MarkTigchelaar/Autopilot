@@ -2,10 +2,10 @@ from SemanticAnalysis.Database.database import Database
 
 import ErrorHandling.semantic_error_messages as ErrMsg
 
-from SemanticAnalysis.AnalysisComponents.GlobalAnalysis.import_analyzer import ImportAnalyzer
-from SemanticAnalysis.AnalysisComponents.GlobalAnalysis.define_analyzer import DefineAnalyzer
-from SemanticAnalysis.AnalysisComponents.GlobalAnalysis.enumerable_analyzer import EnumerableAnalyzer
-from SemanticAnalysis.AnalysisComponents.GlobalAnalysis.interface_analyzer import InterfaceAnalyzer
+from SemanticAnalysis.GlobalAnalysis.import_analyzer import ImportAnalyzer
+from SemanticAnalysis.GlobalAnalysis.define_analyzer import DefineAnalyzer
+from SemanticAnalysis.GlobalAnalysis.enumerable_analyzer import EnumerableAnalyzer
+from SemanticAnalysis.GlobalAnalysis.interface_analyzer import InterfaceAnalyzer
 
 # NOTE: Most types of objects check their own names against names of other items in their own
 #       module, so multiple name collision errors can occur. This is ok, because the compiler doesn't know which

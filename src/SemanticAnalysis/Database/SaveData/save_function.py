@@ -1,7 +1,7 @@
 from SemanticAnalysis.Database.SaveData.saver import Saver
 from SemanticAnalysis.Database.SaveData.save_statements import StatementSaver
 from SemanticAnalysis.Database.SaveData.save_fn_header import FnHeaderSaver
-from SemanticAnalysis.analysis_utilities import split_path_and_file_name
+from SemanticAnalysis.AnalysisComponents.analysis_utilities  import split_path_and_file_name
 
 def save_function(analyzer, ast_node):
     function_saver = FunctionSaver(ast_node)

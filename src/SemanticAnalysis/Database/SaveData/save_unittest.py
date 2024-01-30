@@ -1,6 +1,6 @@
 from SemanticAnalysis.Database.SaveData.saver import Saver
 from SemanticAnalysis.Database.SaveData.save_statements import StatementSaver
-from SemanticAnalysis.analysis_utilities import split_path_and_file_name
+from SemanticAnalysis.AnalysisComponents.analysis_utilities  import split_path_and_file_name
 
 def save_unittest(analyzer, ast_node):
     unittest_saver = UnittestSaver(ast_node)

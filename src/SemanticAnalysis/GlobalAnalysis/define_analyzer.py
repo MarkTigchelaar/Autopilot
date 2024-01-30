@@ -1,7 +1,10 @@
 import ErrorHandling.semantic_error_messages as ErrMsg
 from keywords import is_primitive_type
-from symbols import OPTION, RESULT, MAP, HASHMAP, DICTIONARY, SET, HASHSET, TREESET
+from symbols import OPTION, RESULT
 import symbols
+from SemanticAnalysis.AnalysisComponents.define_statement_dependancy_checker import (
+    DefineStatementDependencyChecker,
+)
 
 
 class DefineAnalyzer:
@@ -655,43 +658,49 @@ class DefineAnalyzer:
                     # Is a duplicate, in that case, skip these checks
                     # or, import refers to non existant module, in which case, skip these checks
                 imported_module = possible_modules[0]
+                self.inspect_import_items_for_define_nesting(
+                    import_row,
+                    contained_type_token,
+                    typename_table,
+                    imported_module,
+                    modifier_table,
+                    error_message,
+                    types_to_check,
+                )
 
-                for item in import_row.items:
-                    if item.name_token.literal == contained_type_token.literal:
-                        type_name_rows = typename_table.get_rows_by_name_and_module(
-                            contained_type_token.literal, imported_module.module_id
-                        )
-                        if len(type_name_rows) != 1:
-                            # return, since duplicates are already caught by the define name collision check
-                            return
-                        type_name_row = type_name_rows[0]
-                        # Check if it's public, if not, skip it, previous existance check should have caught it
-                        if not modifier_table.is_object_defined(
-                            type_name_row.object_id
-                        ):
-                            continue
-                        modifier_list = modifier_table.get_modifier_list_by_id(
-                            type_name_row.object_id
-                        )
-                        found = False
-                        if (
-                            modifier_list
-                        ):  # Things like module statements don't have modifiers
-                            for mod in modifier_list:
-                                if mod.literal == "pub":
-                                    found = True
-                                    break
-                        if not found:
-                            # This is an error, but "undefined" types due to them being private
-                            # is already handled
-                            continue
-                        self.check_for_invalid_nested_defines(
-                            type_name_row,
-                            contained_type_token,
-                            error_message,
-                            types_to_check,
-                            True,
-                        )
+    def is_public(self, type_name_row, modifier_table):
+        if not modifier_table.is_object_defined(type_name_row.object_id):
+            return False
+        modifier_list = modifier_table.get_modifier_list_by_id(type_name_row.object_id)
+        return any(mod.literal == "pub" for mod in modifier_list if modifier_list)
+
+    def inspect_import_items_for_define_nesting(
+        self,
+        import_row,
+        contained_type_token,
+        typename_table,
+        imported_module,
+        modifier_table,
+        error_message,
+        types_to_check,
+    ):
+        for item in import_row.items:
+            if item.name_token.literal == contained_type_token.literal:
+                type_name_rows = typename_table.get_rows_by_name_and_module(
+                    contained_type_token.literal, imported_module.module_id
+                )
+                if len(type_name_rows) != 1:
+                    # return, since duplicates are already caught by the define name collision check
+                    return
+                type_name_row = type_name_rows[0]
+                if self.is_public(type_name_row, modifier_table):
+                    self.check_for_invalid_nested_defines(
+                        type_name_row,
+                        contained_type_token,
+                        error_message,
+                        types_to_check,
+                        True,
+                    )
 
     def check_for_invalid_nested_defines(
         self,
@@ -726,164 +735,6 @@ class DefineAnalyzer:
         else:
             print(f"type name row category not found: {type_name_row.category}")
 
-    def check_types_are_hashable_for_maps_and_sets(self, object_id):
-        define_table = self.database.get_table("defines")
-        define_row = define_table.get_item_by_id(object_id)
-        current_module_id = define_row.current_module_id
-        typename_table = self.database.get_table("typenames")
-        import_table = self.database.get_table("imports")
-
-        if define_row.built_in_type_token.type_symbol not in (
-            MAP,
-            HASHMAP,
-            DICTIONARY,
-            SET,
-            HASHSET,
-            TREESET,
-        ):
-            return
-        for typename in typename_table.get_items_by_module_id(current_module_id):
-            if typename.object_id == object_id:
-                continue
-            if define_row.built_in_type_token.type_symbol in (MAP, HASHMAP, DICTIONARY):
-                if typename.name_token.literal == define_row.key_type.literal:
-                    self.check_for_hashable_methods(typename)
-            elif define_row.built_in_type_token.type_symbol in (SET, HASHSET, TREESET):
-                if typename.name_token.literal == define_row.value_type.literal:
-                    self.check_for_hashable_methods(typename)
-        # Also do this for types that are imported into the module
-        if import_table.module_has_imports(current_module_id):
-            imports = import_table.get_imports_by_module_id(current_module_id)
-            for import_row in imports:
-                for item in import_row.items:
-                    if item.name_token.literal == define_row.key_type.literal:
-                        # check type in module being imported
-                        if not typename_table.is_object_defined(
-                            item.name_token.object_id
-                        ):
-                            raise Exception(
-                                "INTERNAL ERROR: Type not found in module being imported"
-                            )
-                        typename = typename_table.get_item_by_id(
-                            item.name_token.object_id
-                        )
-                        self.check_for_hashable_methods(typename)
-                    if item.name_token.literal == define_row.value_type.literal:
-                        # check type in module being imported
-                        if not typename_table.is_object_defined(
-                            item.name_token.object_id
-                        ):
-                            raise Exception(
-                                "INTERNAL ERROR: Type not found in module being imported"
-                            )
-                        typename = typename_table.get_item_by_id(
-                            item.name_token.object_id
-                        )
-                        self.check_for_hashable_methods(typename)
-
-    def check_for_hashable_methods(self, typename):
-        object_id = typename.object_id
-
-        match typename.category:
-            case "union":
-                enumerable_table = self.database.get_table("enumerables")
-                union_row = enumerable_table.get_item_by_id(object_id)
-                if union_row.name_token.literal == typename.name_token.literal:
-                    self.add_error(
-                        union_row.name_token.literal, ErrMsg.UNIONS_NOT_HASHABLE
-                    )
-                    return
-                else:
-                    raise Exception(
-                        "INTERNAL ERROR: Union not found in check_for_hashable_methods"
-                    )
-            case "defined_type":
-                raise Exception(
-                    "INTERNAL ERROR: Defined type found in check_for_hashable_methods"
-                )
-            case "error":
-                enumerable_table = self.database.get_table("enumerables")
-                error_row = enumerable_table.get_item_by_id(object_id)
-                if error_row.name_token.literal == typename.name_token.literal:
-                    self.add_error(
-                        error_row.name_token.literal, ErrMsg.ERRORS_NOT_HASHABLE
-                    )
-                    return
-                else:
-                    raise Exception(
-                        "INTERNAL ERROR: Error not found in check_for_hashable_methods"
-                    )
-            case "struct":
-                struct_table = self.database.get_table("structs")
-                struct_row = struct_table.get_item_by_id(object_id)
-                functions = struct_row.functions
-                hash_function = None
-                for function in functions:
-                    if function.header.name_token.literal == "hash":
-                        hash_function = function
-                if hash_function is None:
-                    return
-                else:
-                    if hash_function.header.return_type.literal != "int":
-                        self.add_error(
-                            struct_row.name_token.literal,
-                            ErrMsg.STRUCT_HASH_FUNCTION_WRONG_RETURN_TYPE,
-                        )
-                    if len(hash_function.header.arg_list) != 0:
-                        self.add_error(
-                            struct_row.name_token.literal,
-                            ErrMsg.STRUCT_HASH_FUNCTION_WRONG_ARG_COUNT,
-                        )
-                    return
-
-            case "interface":
-                self.add_error(
-                    typename.name_token.literal, ErrMsg.INTERFACES_NOT_HASHABLE
-                )
-                return  # interfaces can be hashable ... later ... maybe
-            case "enum":
-                enumerable_table = self.database.get_table("enumerables")
-                enum_row = enumerable_table.get_item_by_id(object_id)
-                if enum_row.name_token.literal == typename.name_token.literal:
-                    self.add_error(
-                        enum_row.name_token.literal, ErrMsg.ENUMS_NOT_HASHABLE
-                    )
-                    return
-                else:
-                    raise Exception(
-                        "INTERNAL ERROR: Enum not found in check_for_hashable_methods"
-                    )
-            case "function":
-                function_table = self.database.get_table("functions")
-                function_row = function_table.get_item_by_id(object_id)
-                if (
-                    function_row.header.name_token.literal
-                    == typename.name_token.literal
-                ):
-                    self.add_error(
-                        function_row.header.name_token.literal,
-                        ErrMsg.FUNCTIONS_NOT_HASHABLE,
-                    )
-                return  # functions are not hashable
-            case "primitive":
-                return  # primitives are hashable
-            case "fn_header":
-                raise Exception(
-                    "INTERNAL ERROR: Function header found in check_for_hashable_methods"
-                )
-            case "unittest":
-                raise Exception(
-                    "INTERNAL ERROR: Unittest found in check_for_hashable_methods"
-                )
-            case "module_name":
-                raise Exception(
-                    "INTERNAL ERROR: Module name found in check_for_hashable_methods"
-                )
-            case _:
-                raise Exception(
-                    "INTERNAL ERROR: Type not found in check_for_hashable_methods"
-                )
-
     def enforce_define_rules(self, object_id, undefined_items):
         self.check_that_there_are_no_cycles_in_defined_types(object_id, undefined_items)
         self.enforce_nested_define_rules(object_id)
@@ -893,87 +744,3 @@ class UnionProxy:
     def __init__(self, name_token, item_list):
         self.name_token = name_token
         self.fields = item_list
-
-
-class DefineStatementDependencyChecker:
-    def __init__(
-        self, undefined_items, structs, unions, enums, errors, defines, error_manager
-    ):
-        self.undefined_items = undefined_items
-        self.structs = structs
-        self.unions = unions
-        self.enums = enums
-        self.errors = errors
-        self.defines = defines
-        self.error_manager = error_manager
-
-        self.visited = set()
-        self.defined_type = None
-
-    def check_dag(self, define_row):
-        self.defined_type = define_row.new_type_name_token
-        self.visited.add(define_row.new_type_name_token.literal)
-        self.visit_define(define_row)
-
-    def find_type(self, type):
-        for undefined_item in self.undefined_items:
-            if type.literal == undefined_item.literal:
-                return
-        for struct_row in self.structs:
-            if type.literal == struct_row.name_token.literal:
-                self.visit_item_with_fields(struct_row)
-                return
-
-        for union_row in self.unions:
-            if type.literal == union_row.name_token.literal:
-                self.visit_item_with_fields(union_row)
-                return
-
-        for enum_row in self.enums:
-            if type.literal == enum_row.name_token.literal:
-                return
-
-        for error_row in self.errors:
-            if type.literal == error_row.name_token.literal:
-                return
-
-        for define_row in self.defines:
-            if type.literal == define_row.new_type_name_token.literal:
-                self.visit_define(define_row)
-                return
-
-    def visit_item_with_fields(self, struct_row):
-        for field in struct_row.fields:
-            if is_primitive_type(field.type_token):
-                continue
-            if field.type_token.literal in self.visited:
-                if field.type_token.literal == self.defined_type.literal:
-                    self.error_manager.add_semantic_error(
-                        self.defined_type,
-                        ErrMsg.CYCLE_IN_DEFINE_DEPENDANCIES,
-                        field.type_token,
-                    )
-            else:
-                self.visited.add(field.type_token.literal)
-                self.find_type(field.type_token)
-
-    def visit_define(self, define_row):
-        key_type = define_row.key_type
-        value_type = define_row.value_type
-        arg_list = define_row.arg_list
-        result_type = define_row.result_type
-
-        if key_type and not is_primitive_type(key_type):
-            self.find_type(key_type)
-
-        if value_type and not is_primitive_type(value_type):
-            self.find_type(value_type)
-
-        if result_type and not is_primitive_type(result_type):
-            self.find_type(result_type)
-
-        if arg_list is None:
-            return
-        for arg in arg_list:
-            if arg and not is_primitive_type(arg):
-                self.find_type(arg)

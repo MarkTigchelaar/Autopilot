@@ -1,6 +1,6 @@
 import symbols
 from ErrorHandling.semantic_error_messages import *
-from SemanticAnalysis.analysis_utilities import get_token_literal
+from SemanticAnalysis.AnalysisComponents.analysis_utilities  import get_token_literal
 
 def analyze_import(analyzer, import_node):
     check_import_list_items(analyzer, import_node)
