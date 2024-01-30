@@ -2,12 +2,7 @@ from SemanticAnalysis.semantic_analyzer import SemanticAnalyzer
 from Tokenization.tokenizer import Tokenizer
 from ErrorHandling.error_manager import ErrorManager
 from driver import Driver
-
-# from SemanticAnalysis.Database.database import Database
 from Parsing.parse import parse_src
-
-# from Parsing.parsing_utilities import AstContainer
-
 from TestingComponents.testing_utilities import (
     get_json_from_file,
     record_component_test,

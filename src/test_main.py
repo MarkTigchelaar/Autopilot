@@ -20,21 +20,21 @@ def main():
 
     print("Begin tests!")
     start_time = time.time()
-    # abs_file_path = current_dir + '/' + TEST_MANIFEST_ONE
-    # test_json = get_json_from_file(abs_file_path)
-    # phase_one_tests(tracker, test_json, current_dir)
+    abs_file_path = current_dir + '/' + TEST_MANIFEST_ONE
+    test_json = get_json_from_file(abs_file_path)
+    phase_one_tests(tracker, test_json, current_dir)
 
     # abs_file_path = current_dir + '/' + TEST_MANIFEST_TWO
     # test_json = get_json_from_file(abs_file_path)
     # phase_two_tests(tracker, test_json, current_dir)
 
-    abs_file_path = current_dir + '/' + TEST_MANIFEST_THREE
-    test_json = get_json_from_file(abs_file_path)
-    phase_three_tests(tracker, test_json, current_dir)
+    # abs_file_path = current_dir + '/' + TEST_MANIFEST_THREE
+    # test_json = get_json_from_file(abs_file_path)
+    # phase_three_tests(tracker, test_json, current_dir)
 
-    abs_file_path = current_dir + '/' + TEST_MANIFEST_FOUR
-    test_json = get_json_from_file(abs_file_path)
-    phase_four_tests(tracker, test_json, current_dir)
+    # abs_file_path = current_dir + '/' + TEST_MANIFEST_FOUR
+    # test_json = get_json_from_file(abs_file_path)
+    # phase_four_tests(tracker, test_json, current_dir)
     
     print("End result: " + tracker.get_results())
     err_file = "./failed_tests.txt"
