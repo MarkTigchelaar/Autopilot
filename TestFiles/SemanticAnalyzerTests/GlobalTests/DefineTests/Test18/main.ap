@@ -13,12 +13,16 @@ end
 
 union Foo is
     c as Bar,
-    d as int,
-    e as EnumThing
+    e as Baz
 end
+
 
 struct Bar is
     e as ThingVector
+end
+
+struct Baz is
+    a as EnumThing
 end
 
 enum EnumThing is

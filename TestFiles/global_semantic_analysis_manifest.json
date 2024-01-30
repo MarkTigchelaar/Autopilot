@@ -14,5 +14,9 @@
     {
         "general_component" : "nested define checks",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/nested_define_checks.json"
+    },
+    {
+        "general_component" : "enum checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/enum_checks.json"
     }
 ]

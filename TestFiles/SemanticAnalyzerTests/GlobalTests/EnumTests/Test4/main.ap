@@ -1,0 +1,19 @@
+module main
+
+
+import otherThing, otherOtherThing as thingThree from module secondary
+
+// should complain about otherThing, but not about otherOtherThing as thingThree
+union myUnion is
+    a as otherThing,
+    b as thingThree
+end
+
+
+struct otherThing is
+    a as int
+end
+
+struct otherOtherThing is
+    b as float
+end
