@@ -26,6 +26,8 @@ DUPLICATE_UNION_FIELD_TYPE = "duplicate union field type"
 
 UNION_AND_FIELD_NAME_COLLISION = "union field name matches union name"
 
+UNION_AND_FIELD_TYPE_COLLISION = "union field type matches union name"
+
 FUNCTION_NAME_COLLISION = "function name matches previous function name"
 
 ARGUMENT_NAME_COLLISION = "function argument name matches previous function argument name"
@@ -161,6 +163,10 @@ FUNCTION_TYPE_HAS_NO_EFFECT = "function definition does not have arguments or a 
 UNDEFINED_ITEM_IN_DEFINE_STMT = "define statement contains a argument that is not defined"
 
 ENUMERABLE_NAME_COLLISION_IN_MODULE = "enumerable name matches name of other item in module"
+
+UNION_MEMBER_NAME_ALREADY_MATCHED_TO_TYPE = "union member name already matched to type"
+
+UNION_MEMBER_INVALID_TYPE = "union member type is not valid"
 
 UNDEFINED_ITEM_IN_UNION_STMT = "union elements type is not defined"
 

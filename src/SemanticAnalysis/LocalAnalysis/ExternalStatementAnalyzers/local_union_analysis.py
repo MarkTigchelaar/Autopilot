@@ -26,3 +26,5 @@ def check_fields_for_duplicate_types(analyzer, field_one, field_two):
 def check_field_if_name_matches_union(analyzer, field_one, union_name):
     if field_one.item_name_token.literal == union_name.literal:
         analyzer.add_error(field_one.item_name_token, UNION_AND_FIELD_NAME_COLLISION)
+    if field_one.type_token.literal == union_name.literal:
+        analyzer.add_error(field_one.type_token, UNION_AND_FIELD_TYPE_COLLISION)

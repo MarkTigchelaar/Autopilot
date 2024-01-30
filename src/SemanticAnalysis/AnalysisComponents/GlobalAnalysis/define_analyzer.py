@@ -13,14 +13,9 @@ class DefineAnalyzer:
         self.error_manager.add_semantic_error(token, message, shadowed_token)
 
     def analyze(self, object_id):
-        # Check that the definition is not using the same name as some other item in the module.
-        # Check that there is no other definition of same name somewhere in the module.
-        # Check that the definition is not using the same name as some import item.
         self.check_for_new_typename_collisions(object_id)
-        # Check that there is no other definition with the same exact components in the module
         self.check_other_defines_for_same_components(object_id)
         self.check_if_is_function_type_with_no_args_no_return_type(object_id)
-        # Check that components of item being defined are also defined.
         undefined_items = self.check_items_in_definition_are_defined(object_id)
 
         self.enforce_define_rules(object_id, undefined_items)
@@ -327,16 +322,13 @@ class DefineAnalyzer:
                 continue
             if typename.category == type_name:
                 enumerable = enumerable_table.get_item_by_id(typename.object_id)
-                union_proxy = HackyUnionProxy(typename.name_token, enumerable.item_list)
+                union_proxy = UnionProxy(typename.name_token, enumerable.item_list)
                 enumerables.append(union_proxy)
         return enumerables
 
     def enforce_nested_define_rules(self, object_id):
         define_table = self.database.get_table("defines")
         define_row = define_table.get_item_by_id(object_id)
-        # current_module_id = define_row.current_module_id
-
-        # defines = define_table.get_items_by_module_id(current_module_id)
 
         match define_row.built_in_type_token.type_symbol:
             case symbols.LIST:
@@ -632,12 +624,10 @@ class DefineAnalyzer:
     def analyze_define_elements_for_generic_collection_types(
         self, contained_type_token, current_module_id, error_message, types_to_check
     ):
-        # define_table = self.database.get_table("defines")
         typename_table = self.database.get_table("typenames")
         import_table = self.database.get_table("imports")
         module_table = self.database.get_table("modules")
         modifier_table = self.database.get_table("modifiers")
-        # contained_type_token = define_row.value_type
         if contained_type_token is None:
             raise Exception("INTERNAL ERROR: contained type token is None")
         if is_primitive_type(contained_type_token):
@@ -645,33 +635,22 @@ class DefineAnalyzer:
         if typename_table.is_name_defined_in_module(
             contained_type_token.literal, current_module_id
         ):
-            # items_to_check = self.get_items_to_check(define_row)
             type_name_rows = typename_table.get_rows_by_name_and_module(
                 contained_type_token.literal, current_module_id
             )
-            # for type_name_row in type_name_rows:
-
             if len(type_name_rows) != 1:
-                # Or just return, since duplicates are already caught by the define name collision check
-                print("type name rows does not have length 1, skipping")
                 return
-                # raise Exception("INTERNAL ERROR: Length of type name rows should be 1")
             type_name_row = type_name_rows[0]
             self.check_for_invalid_nested_defines(
                 type_name_row, contained_type_token, error_message, types_to_check
             )
-        # Revisit making defines public in the future, for now just have defines limited to the module they are defined in
-
         elif import_table.module_has_imports(current_module_id):
             imports = import_table.get_imports_by_module_id(current_module_id)
             for import_row in imports:
-                is_module_defined = module_table.is_module_defined(import_row.imported_module_name_token.literal)
                 possible_modules = module_table.get_modules_data_for_name(
                     import_row.imported_module_name_token.literal
                 )
-                print(f"possible modules: {possible_modules}, is module defined: {is_module_defined}")
                 if len(possible_modules) != 1:
-                    print("duplicate modules detected, skipping")
                     continue
                     # Is a duplicate, in that case, skip these checks
                     # or, import refers to non existant module, in which case, skip these checks
@@ -679,39 +658,31 @@ class DefineAnalyzer:
 
                 for item in import_row.items:
                     if item.name_token.literal == contained_type_token.literal:
-                        # check type in module being imported
-                        # if len(typename_table.get_rows_by_name_and_module(
-                        #     item.name_token,
-                        # )) < 1:
-                        #     raise Exception(
-                        #         "INTERNAL ERROR: Type not found in module being imported"
-                        #     )
-                        print(f"checking for invalid nested defines: {item.name_token.literal} {item.name_token}")
-                        type_name_rows = (
-                            typename_table.get_rows_by_name_and_module(
-                                contained_type_token.literal, imported_module.module_id
-                            )
+                        type_name_rows = typename_table.get_rows_by_name_and_module(
+                            contained_type_token.literal, imported_module.module_id
                         )
                         if len(type_name_rows) != 1:
-                            # Or just return, since duplicates are already caught by the define name collision check
-                            print("type name rows does not have length 1, skipping")
+                            # return, since duplicates are already caught by the define name collision check
                             return
-                            # raise Exception("INTERNAL ERROR: Length of type name rows should be 1")
                         type_name_row = type_name_rows[0]
                         # Check if it's public, if not, skip it, previous existance check should have caught it
-                        if not modifier_table.is_object_defined(type_name_row.object_id):
+                        if not modifier_table.is_object_defined(
+                            type_name_row.object_id
+                        ):
                             continue
                         modifier_list = modifier_table.get_modifier_list_by_id(
                             type_name_row.object_id
                         )
                         found = False
-                        if modifier_list:  # Things like module statements don't have modifiers
+                        if (
+                            modifier_list
+                        ):  # Things like module statements don't have modifiers
                             for mod in modifier_list:
                                 if mod.literal == "pub":
                                     found = True
                                     break
                         if not found:
-                            # This is an error, but "undefined" types due to them being private 
+                            # This is an error, but "undefined" types due to them being private
                             # is already handled
                             continue
                         self.check_for_invalid_nested_defines(
@@ -719,17 +690,17 @@ class DefineAnalyzer:
                             contained_type_token,
                             error_message,
                             types_to_check,
-                            True
+                            True,
                         )
-        else:
-            print(
-                f"Type not found in module being imported or in home module: {contained_type_token}"
-            )
 
     def check_for_invalid_nested_defines(
-        self, type_name_row, contained_type_token, error_message, types_to_check, skip = False
+        self,
+        type_name_row,
+        contained_type_token,
+        error_message,
+        types_to_check,
+        skip=False,
     ):
-        
         define_table = self.database.get_table("defines")
         if type_name_row.category in types_to_check["acceptable_user_def_types"]:
             return
@@ -744,37 +715,16 @@ class DefineAnalyzer:
                 return
             else:
                 self.add_error(contained_type_token, error_message)
-        elif type_name_row.category in ("struct", "union", "enum", "interface", "error"):
+        elif type_name_row.category in (
+            "struct",
+            "union",
+            "enum",
+            "interface",
+            "error",
+        ):
             self.add_error(contained_type_token, error_message)
         else:
             print(f"type name row category not found: {type_name_row.category}")
-
-    # def check_result_types_are_error_types(self, object_id):
-    #     define_table = self.database.get_table("defines")
-    #     define_row = define_table.get_item_by_id(object_id)
-    #     current_module_id = define_row.current_module_id
-    #     typename_table = self.database.get_table("typenames")
-    #     enumerable_table = self.database.get_table("enumerables")
-    #     if define_row.result_type is None:
-    #         return
-    #     for typename in typename_table.get_items_by_module_id(current_module_id):
-    #         if typename.object_id == object_id:
-    #             continue
-    #         if not enumerable_table.is_object_defined(typename.object_id):
-    #             if typename.name_token.literal == define_row.result_type.literal:
-    #                 self.add_error(
-    #                     define_row.result_type,
-    #                     ErrMsg.NON_ERROR_TYPE_IN_RESULT,
-    #                     typename.name_token,
-    #                 )
-    #                 return
-    #             else:
-    #                 continue
-    #         if typename.category == "error":
-    #             if typename.name_token.literal == define_row.result_type.literal:
-    #                 return
-    #     # Types should be defined by this point, if one is still not, explode:
-    #     raise Exception("INTERNAL ERROR: Type not found")
 
     def check_types_are_hashable_for_maps_and_sets(self, object_id):
         define_table = self.database.get_table("defines")
@@ -795,8 +745,6 @@ class DefineAnalyzer:
         for typename in typename_table.get_items_by_module_id(current_module_id):
             if typename.object_id == object_id:
                 continue
-            # if not typename_table.is_object_defined(typename.object_id):
-            #     continue
             if define_row.built_in_type_token.type_symbol in (MAP, HASHMAP, DICTIONARY):
                 if typename.name_token.literal == define_row.key_type.literal:
                     self.check_for_hashable_methods(typename)
@@ -870,15 +818,10 @@ class DefineAnalyzer:
                 struct_row = struct_table.get_item_by_id(object_id)
                 functions = struct_row.functions
                 hash_function = None
-                # eq_function = None
                 for function in functions:
                     if function.header.name_token.literal == "hash":
                         hash_function = function
-                    # if function.header.name_token.literal == "equals":
-                    #     eq_function = function
                 if hash_function is None:
-                    # self.add_error(struct_row.name_token.literal, ErrMsg.STRUCT_MISSING_HASH_FUNCTION)
-                    # structs should be hashable by defualt by using their memory address
                     return
                 else:
                     if hash_function.header.return_type.literal != "int":
@@ -941,48 +884,12 @@ class DefineAnalyzer:
                     "INTERNAL ERROR: Type not found in check_for_hashable_methods"
                 )
 
-    # def check_types_are_sortable_for_lists(self, object_id):
-    #     define_table = self.database.get_table("defines")
-    #     define_row = define_table.get_item_by_id(object_id)
-    #     current_module_id = define_row.current_module_id
-    #     typename_table = self.database.get_table("typenames")
-
-    #     if define_row.built_in_type_token.type_symbol not in (LIST, LINKEDLIST, VECTOR):
-    #         return
-    #     for typename in typename_table.get_items_by_module_id(current_module_id):
-    #         if typename.object_id == object_id:
-    #             continue
-    #         if typename.name_token.literal == define_row.value_type.literal:
-    #             self.check_for_comparable_methods(typename)
-
-    # def check_for_comparable_methods(self, typename):
-    #     pass
-
     def enforce_define_rules(self, object_id, undefined_items):
         self.check_that_there_are_no_cycles_in_defined_types(object_id, undefined_items)
-
-        # TODO
-        # a result in a option cannot be an option
-        # a option in a result cannot be a result
-        # self.check_for_invalid_option_and_result_type_relationships(object_id)
-
         self.enforce_nested_define_rules(object_id)
-        return
-
-        # nested define rules cover this already
-        # self.check_result_types_are_error_types(object_id)
-        # self.check_types_are_hashable_for_maps_and_sets(object_id)
-
-        # self.check_types_are_sortable_for_lists(object_id) <- this check should be done if a sort() is present on the collection
-        # uses compare method
-        # re use check_types_are_hashable_for_maps_and_sets, send args in, and check for compare method
 
 
-# Just one more sign that a major refactor is needed. This is a hacky way to get around the fact that
-# the union type stores its name in the typenames table, which breaks apart the union type into its
-# components. This is a hacky way to get around that.
-# The typename table should just be used as a reference. The union type name should also be stored in its own table.
-class HackyUnionProxy:
+class UnionProxy:
     def __init__(self, name_token, item_list):
         self.name_token = name_token
         self.fields = item_list
@@ -1001,8 +908,6 @@ class DefineStatementDependencyChecker:
         self.error_manager = error_manager
 
         self.visited = set()
-        # self.stack = list()
-        # self.is_dag = True
         self.defined_type = None
 
     def check_dag(self, define_row):
@@ -1013,11 +918,7 @@ class DefineStatementDependencyChecker:
     def find_type(self, type):
         for undefined_item in self.undefined_items:
             if type.literal == undefined_item.literal:
-                # print(f"found undefined item: {undefined_item.literal} {undefined_item.file_name} {undefined_item.line_number}")
                 return
-            # else:
-            # print(f"not found undefined item: {undefined_item.literal} {undefined_item.file_name} {undefined_item.line_number}")
-
         for struct_row in self.structs:
             if type.literal == struct_row.name_token.literal:
                 self.visit_item_with_fields(struct_row)
@@ -1040,8 +941,6 @@ class DefineStatementDependencyChecker:
             if type.literal == define_row.new_type_name_token.literal:
                 self.visit_define(define_row)
                 return
-        print("Type not found in current module, is an imported item")
-        # raise Exception(f"INTERNAL ERROR: Type not found: {type.literal} {type.file_name} {type.line_number}")
 
     def visit_item_with_fields(self, struct_row):
         for field in struct_row.fields:

@@ -245,7 +245,8 @@ class TypenamesTableTestQueryRunner(TestQueryRunner):
             tok.literal for tok in self.table.get_names_by_category(row["type"])
         ]
         module_has_name = row["name"] in [
-            row.name_token.literal for row in self.table.get_items_by_module_id(row["module_id"])
+            row.name_token.literal
+            for row in self.table.get_items_by_module_id(row["module_id"])
         ]
         return type_matches and category_has_name and module_has_name
 

@@ -12,35 +12,14 @@ class ImportAnalyzer:
         self.error_manager.add_semantic_error(token, message, shadowed_token)
 
     def analyze(self, object_id):
-        """
-        * Need to check relative path from that import objects location to the supposed source location.
-            By this time, the parser has already read the import statement, and parsed it, otherwise, it simply moves on.
-            This works since the module name does not appear in any .ap files in that folder, so the import statement checks
-            cannot find the module for the given path, and given name
-        * Check that the module importing from exists, check that the items being imported exist.
-        * Check that there is not another import statement using the same module.
-        * Check that alias for current_import_item does not collide with other items.
-
-        The import path is used by parser to attempt to parse more source files. This is done before Semantic Analysis
-        """
-
         imported_module_id = self.check_imported_module_exists(object_id)
         if imported_module_id is None:
             return
         self.add_imported_module_to_dependency_graph(imported_module_id, object_id)
         self.check_for_duplicated_imports(object_id)
-        # Don't check for name collisions in other imports, since they should not be importing
-        # from "same" module anyway (modules of same name illegal too)
-
-        # Check that imported items are named different from other imported items from other modules
-        # and that imported items are not the same name as the module
         self.check_for_name_collisions_from_other_imported_modules(object_id)
-
-        # Check that imported items are not named the same as other items in current module
         self.check_for_name_collisions_with_other_items_in_module(object_id)
-        # Check for existance of items from module that is being imported.
         self.check_for_existence_of_items_being_imported(object_id, imported_module_id)
-        # Done, for now
 
     def get_imported_data(self, object_id):
         import_table = self.database.get_table("imports")
@@ -98,7 +77,6 @@ class ImportAnalyzer:
         path_matcher = self.get_path_matcher(imported_data, module_id, module_table)
         path_matcher.collect_valid_paths()
         modules_that_match = path_matcher.collect_matching_module_ids(possible_modules)
-        # print(f"modules that match: {modules_that_match}")
         if len(modules_that_match) < 1:
             self.add_error(imported_module_token, ErrMsg.INVALID_IMPORTED_MODULE_PATH)
         elif len(modules_that_match) > 1:
@@ -271,7 +249,6 @@ class ImportAnalyzer:
             for imported_item in import_row.items:
                 self.check_imported_item(imported_item, module_item)
 
-
     def check_imported_item(self, imported_item, module_item):
         if imported_item.new_name_token and (
             imported_item.new_name_token.literal == module_item.name_token.literal
@@ -305,8 +282,6 @@ class ImportAnalyzer:
         )
         import_row = import_table.get_row_by_id(current_import_id)
         return (
-            # typename_table,
-            # import_table,
             modifier_table,
             imported_module_items,
             import_row,

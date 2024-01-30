@@ -39,11 +39,9 @@ class SemanticAnalyzer:
                 case "imports":
                     self.run_import_checks(object_id)
                 case "defines":
-                    #continue
                     self.run_define_checks(object_id)
                 case "enumerables":
-                    continue
-                    # self.run_enumerable_checks(object_id)
+                    self.run_enumerable_checks(object_id)
                 case "functions":
                     self.run_function_checks(object_id)
                 case "interfaces":
@@ -53,7 +51,7 @@ class SemanticAnalyzer:
                 # Figure out how to add unittests
                 case _:
                     self.identify_type(object_id)
-        # Then checkimports, functions, and ref types for cycles
+        # Then check imports, functions, and ref types for cycles
 
     # NOTE: Semantic Analyzer should not error if some imported module has code that is not referenced
     #       by anything being used in the program.
@@ -68,21 +66,17 @@ class SemanticAnalyzer:
         other_modules_with_same_name = module_table.get_modules_data_for_name(
             module_row.module_name.literal
         )
-        # print(f"number of modules: {len(other_modules_with_same_name)}")
         for mod in other_modules_with_same_name:
             if mod.module_id == object_id:
-                # print(f"Found same module, skipping {mod.id}")
                 continue
             elif object_id > mod.module_id:
                 # Collision already recorded
-                # print(f"collision reported for {object_id}")
-                break  # because first module (lowest id) already found ALL collisions
+                break
             if mod.path == module_row.path:
                 raise Exception(
                     "INTERNAL ERROR: Other module found with same path, should be same module"
                 )
             module_object = self.database.get_object(mod.module_id)
-            # print(f"Recording for {object_id}")
             self.add_error(
                 module_object.name, ErrMsg.NON_UNIQUE_MODULE, first_module_object.name
             )
@@ -162,14 +156,13 @@ class SemanticAnalyzer:
         struct_object = self.database.get_object(object_id)
 
     def identify_type(self, object_id):
-        print(f"\nObject not in list: {object_id}, is likely header, or modifier")
         header_table = self.database.get_table("fn_headers")
         modifier_table = self.database.get_table("modifiers")
         if header_table.is_object_defined(object_id):
-            print(f"--> Is a function header")
+            return
         # BC modifiers use the object ids of the things they modify
         if modifier_table.is_object_defined(object_id):
-            print(f"--> Is a modifier")
+            return
         else:
             table_name = self.database.get_tablename_for_object(object_id)
-            raise Exception(f"Shit, I don't know what that is. :( {table_name} {str(type(self.database.get_object(object_id)))}")
+            raise Exception(f"INTERNAL ERROR: unidentified type for table: {table_name} {str(type(self.database.get_object(object_id)))}")

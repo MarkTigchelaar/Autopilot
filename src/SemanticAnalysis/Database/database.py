@@ -62,6 +62,7 @@ class TypeNameTable:
             "defined_type",
             "interface",
             "fn_header",
+            #"function",
             "unittest",
         ]
         self.by_id = dict()
@@ -417,7 +418,7 @@ class DefineTable:
         new_type_name_token,
         key_type,
         value_type,
-        arg_list, # list[Token]
+        arg_list,
         result_type,
     ):
         if object_id in self.by_id:
@@ -443,15 +444,6 @@ class DefineTable:
 
     def is_object_defined(self, object_id):
         return object_id in self.by_id
-    
-    # def is_object_defined_by_module_id_and_name(self, module_id, name):
-    #     if module_id not in self.by_module_id:
-    #         return False
-    #     rows = self.by_module_id[module_id]
-    #     for row in rows:
-    #         if row.new_type_name_token.literal == name:
-    #             return True
-    #     return False
 
     def get_item_by_id(self, object_id):
         return self.by_id[object_id]
@@ -513,8 +505,6 @@ class EnumerableTable:
         row = self.by_id[id]
         return row.general_type_token
 
-    # This method is poorly named.
-    # Rename to something more specific
     def get_items_by_id(self, id):
         row = self.by_id[id]
         return row.item_list

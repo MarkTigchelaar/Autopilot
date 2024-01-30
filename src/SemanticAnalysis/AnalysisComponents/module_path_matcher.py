@@ -1,23 +1,6 @@
 import os
 import ErrorHandling.semantic_error_messages as ErrMsg
 from symbols import CARROT, RANGE, COLON, DOT
-# class Token:
-#     def __init__(self, literal: str):
-#         self.literal = literal
-
-
-# class PathItem:
-#     def __init__(self, node_token: Token, direction_token: Token):
-#         self.node_token = node_token
-#         self.direction_token = direction_token
-
-
-# class ModulePathIdRow:
-#     def __init__(self, path, module_id, name):
-#         self.path = path
-#         self.module_id = module_id
-#         self.name = name
-
 
 class ModulePathMatcher:
     def __init__(self, current_module_id, path_list, starting_directory, error_manager):
@@ -69,7 +52,6 @@ class ModulePathMatcher:
                 path_item = self.path_list[i]
                 for _ in range(10):
                     if os.path.basename(directory) == path_item.node_token.literal: 
-                        # should probably add a new wildcard for going upwards
                         found = True
                         break
                     directory = os.path.dirname(directory)
@@ -103,34 +85,3 @@ class ModulePathMatcher:
             if target_folder in dirs:
                 matching_subdirectories.append(os.path.join(root, target_folder))
         return matching_subdirectories
-
-# Example usage
-# current_module_id = 1
-
-# path_list = [
-#     PathItem(Token("current_folder_name"), Token("..")),
-#     PathItem(Token("otherfolder"), Token("..")),
-#     PathItem(Token("another_folder"), Token("down_into_a_folder")),
-#     PathItem(Token(":"), Token("one_of_the_folders")),
-#     PathItem(Token("last_folder"), Token("")),
-# ]
-
-# starting_directory = "/path/to/current_folder_name"
-
-# module_list = [
-#     ModulePathIdRow("/path/to/current_folder_name", 1, "current_folder_name"),
-#     ModulePathIdRow("/path/to/otherfolder", 2, "otherfolder"),
-#     ModulePathIdRow(
-#         "/path/to/another_folder/down_into_a_folder", 3, "down_into_a_folder"
-#     ),
-#     ModulePathIdRow("/path/to/one_of_the_folders/last_folder", 4, "last_folder"),
-# ]
-
-# matcher = ModulePathMatcher(current_module_id, path_list, starting_directory)
-# matcher.collect_valid_paths()
-# matching_modules = matcher.collect_matching_modules(module_list)
-
-# for module in matching_modules:
-#     print(
-#         f"Matching Module: {module.name}, ID: {module.module_id}, Path: {module.path}"
-#     )

@@ -199,8 +199,6 @@ def tokenizer_test(
         raise Exception("Did not encounter eof token")
     if eof_token.literal != "":
         raise Exception("eof token contains a literal")
-    # if eof_token.file_name != current_dir + '/' + test["file"]:
-    #     raise Exception("eof token contains wrong filename")
     if eof_token.line_number == None:
         raise Exception("eof token does not contain a line number")
 

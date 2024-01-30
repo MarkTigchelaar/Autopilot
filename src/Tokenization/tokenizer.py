@@ -1,26 +1,35 @@
 from typing import Union
-from .tokenization_utilities import is_digit, is_alpha, is_alpha_numeric, is_special_char
+from .tokenization_utilities import (
+    is_digit,
+    is_alpha,
+    is_alpha_numeric,
+    is_special_char,
+)
 from ErrorHandling.tokenizer_error_messages import *
 from .source_scanner import SourceScanner
 import symbols
 from .token import Token
 from keywords import keyword_literal_to_symbol_map
 
+
 # Designed to be used for 1 file only;
 # don't use on multiple files, just instantiate a new one.
 class Tokenizer:
-    def __init__(self, err_manager, reading_string = False):
+    def __init__(self, err_manager, reading_string=False):
         self.src_scanner = SourceScanner(reading_string)
         self.current_token = None
         self.src_file_name = None
         self.error_manager = err_manager
         self.kw_literal_to_symbol_map = keyword_literal_to_symbol_map()
         self.path_to_remove = ""
+        self.done = False
 
     def remove_path(self, path):
         self.path_to_remove = path
 
     def load_src(self, file_name) -> None:
+        if self.done:
+            raise Exception("INTERNAL ERROR - Tokenizer already used")
         self.src_file_name = file_name
         self.src_scanner.load_src(file_name)
 
@@ -29,12 +38,15 @@ class Tokenizer:
 
     def close_src(self) -> None:
         self.src_scanner.close_src()
+        self.done = True
 
     def has_tokens(self) -> bool:
         return not self.src_scanner.complete()
 
     # next token immediately returns current token, no save
     def next_token(self) -> Union[Token, None]:
+        if self.done:
+            raise Exception("INTERNAL ERROR - Tokenizer already used")
         if self.current_token is not None:
             temp = self.current_token
             self.current_token = None
@@ -45,8 +57,6 @@ class Tokenizer:
             self.get_token()
         temp = self.current_token
         self.current_token = None
-        #if self.error_manager.has_errors():
-            #return None
         return temp
 
     # peek next token saves, and returns current token
@@ -71,7 +81,7 @@ class Tokenizer:
         if char is None:
             self.end_of_file_token()
             return
-        elif char in (" ", '\t', '\n', '\r'):
+        elif char in (" ", "\t", "\n", "\r"):
             self.clear_buffer()
             return
         else:
@@ -154,11 +164,11 @@ class Tokenizer:
                 self.add_token(symbols.GREATER)
         elif is_alpha(char) or is_special_char(char):
             self.add_identifier_token()
-        elif char == "\'":
+        elif char == "'":
             self.add_char_token()
-        elif char == "\"":
+        elif char == '"':
             self.add_string_token()
-        elif is_digit(char): 
+        elif is_digit(char):
             self.add_number_token()
         else:
             raise Exception("INTERNAL ERROR - Unknown char: " + char)
@@ -168,7 +178,9 @@ class Tokenizer:
         file_name = self.current_file()
         line_number = self.src_scanner.line_number
         token_column_number = self.src_scanner.current_token_col_start
-        self.current_token = Token(token_type, literal, file_name, line_number, token_column_number)
+        self.current_token = Token(
+            token_type, literal, file_name, line_number, token_column_number
+        )
         self.src_scanner.clear_buffer()
 
     def match_general_keyword(self, text: str) -> Union[str, None]:
@@ -199,11 +211,13 @@ class Tokenizer:
             else:
                 self.add_error(INVALID_FLOAT)
                 return
-        
+
         if is_float:
             f32 = self.src_scanner.get_buffer()
             parts = f32.split(".")
-            if len(parts[1]) > 7: # basically a "good enough for now", could be updated laeter
+            if (
+                len(parts[1]) > 7
+            ):  # basically a "good enough for now", could be updated laeter
                 self.add_token(symbols.DOUBLE)
             else:
                 self.add_token(symbols.FLOAT)
@@ -217,19 +231,19 @@ class Tokenizer:
                 self.add_token(symbols.LONG)
 
     def add_char_token(self) -> None:
-        if self.peek_char() == "\'":
+        if self.peek_char() == "'":
             self.add_error(EMPTY_CHAR)
             return
         if self.peek_char() == "\\":
             self.shift_right()
             char = self.read_char()
-            if char not in ('\\', '\'', '\"', 't', 'n'):
+            if char not in ("\\", "'", '"', "t", "n"):
                 self.add_error(INVALID_ESCAPE_CHAR)
                 return
         else:
             self.shift_right()
         char = self.read_char()
-        if char != '\'':
+        if char != "'":
             self.add_error(OPEN_CHAR)
             return
         self.add_token(symbols.CHAR)
@@ -237,7 +251,7 @@ class Tokenizer:
     def add_slash_type_token(self) -> None:
         peek_char = self.peek_char()
         if peek_char == "/":
-            while self.has_tokens() and self.peek_char() not in ('\n', '\r'):
+            while self.has_tokens() and self.peek_char() not in ("\n", "\r"):
                 self.shift_right()
             self.shift_right()
             self.clear_buffer()
@@ -253,7 +267,6 @@ class Tokenizer:
         self.shift_right()
         comments_section = 1
         while self.has_tokens():
-            
             current = self.read_char()
             peek = self.peek_char()
 
@@ -279,16 +292,16 @@ class Tokenizer:
         while self.has_tokens():
             current = self.read_char()
             if current == "\\":
-                if self.peek_char() == "\"":
+                if self.peek_char() == '"':
                     self.shift_right()
-            elif current == "\"":
+            elif current == '"':
                 break
         if not self.has_tokens():
             self.add_error(OPEN_STRING)
             return
         self.add_token(symbols.STRING)
 
-    def peek_char(self)  -> Union[str, None]:
+    def peek_char(self) -> Union[str, None]:
         return self.src_scanner.peek_char()
 
     def read_char(self) -> Union[str, None]:
