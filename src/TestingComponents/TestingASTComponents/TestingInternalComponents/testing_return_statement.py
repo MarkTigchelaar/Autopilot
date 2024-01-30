@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.return_statement import ReturnStatement
+from ASTComponents.InternalComponents.return_statement import ReturnStatement
 
 
 class TestingReturnStatement:

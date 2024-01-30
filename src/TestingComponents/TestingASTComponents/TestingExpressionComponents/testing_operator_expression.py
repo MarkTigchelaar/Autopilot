@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExpressionComponents.operator_expression import OperatorExpression
+from ASTComponents.ExpressionComponents.operator_expression import OperatorExpression
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingOperatorExpression:

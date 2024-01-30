@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.break_statement import BreakStatement
+from ASTComponents.InternalComponents.break_statement import BreakStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

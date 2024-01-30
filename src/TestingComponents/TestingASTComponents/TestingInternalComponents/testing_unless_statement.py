@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.unless_statement import UnlessStatement
+from ASTComponents.InternalComponents.unless_statement import UnlessStatement
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingUnlessStatement:

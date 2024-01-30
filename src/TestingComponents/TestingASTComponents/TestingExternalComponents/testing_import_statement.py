@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.import_statement import ImportStatement
+from ASTComponents.ExternalComponents.import_statement import ImportStatement
 from TestingComponents.testing_utilities import token_to_json
 from symbols import EOF
 

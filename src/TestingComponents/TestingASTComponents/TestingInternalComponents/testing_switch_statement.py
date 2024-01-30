@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.switch_statement import SwitchStatement, CaseStatement
+from ASTComponents.InternalComponents.switch_statement import SwitchStatement, CaseStatement
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingSwitchStatement:

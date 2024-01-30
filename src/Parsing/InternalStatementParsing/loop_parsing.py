@@ -3,7 +3,7 @@ from ..parsing_utilities import *
 from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
 from Parsing.InternalStatementParsing.statement_parsing import parse_statements
-from Parsing.ASTComponents import ast_node_keys
+from ASTComponents import ast_node_keys
 
 
 def parse_loop(driver):

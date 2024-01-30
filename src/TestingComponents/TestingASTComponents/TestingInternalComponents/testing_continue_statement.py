@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.continue_statement import ContinueStatement
+from ASTComponents.InternalComponents.continue_statement import ContinueStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

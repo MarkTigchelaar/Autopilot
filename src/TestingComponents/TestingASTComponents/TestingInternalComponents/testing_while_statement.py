@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.while_statement import WhileStatement
+from ASTComponents.InternalComponents.while_statement import WhileStatement
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingWhileStatement:

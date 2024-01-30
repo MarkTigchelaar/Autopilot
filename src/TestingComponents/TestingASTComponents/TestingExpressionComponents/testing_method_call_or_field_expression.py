@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExpressionComponents.method_call_or_field_expression import MethodCallOrFieldExpression
+from ASTComponents.ExpressionComponents.method_call_or_field_expression import MethodCallOrFieldExpression
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingMethodCallOrFieldExpression:

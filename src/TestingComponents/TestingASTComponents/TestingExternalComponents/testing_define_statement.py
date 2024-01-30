@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.define_statement import \
+from ASTComponents.ExternalComponents.define_statement import \
 DefineStatement, KeyValueType, LinearType, FailableType, FunctionType
 from TestingComponents.testing_utilities import token_to_json
 

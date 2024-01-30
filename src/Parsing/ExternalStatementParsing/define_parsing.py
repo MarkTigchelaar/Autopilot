@@ -2,7 +2,7 @@ import symbols
 from keywords import is_eof_type, is_primitive_type, \
 is_key_value_collection_type, is_linear_collection_type
 from ErrorHandling.parsing_error_messages import *
-from Parsing.ASTComponents import ast_node_keys
+from ASTComponents import ast_node_keys
 
 def parse_define(driver):
     token = driver.next_token()

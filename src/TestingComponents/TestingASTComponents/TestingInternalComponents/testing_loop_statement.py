@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.loop_statement import LoopStatement
+from ASTComponents.InternalComponents.loop_statement import LoopStatement
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingLoopStatement:

@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.union_statement import UnionStatement
+from ASTComponents.ExternalComponents.union_statement import UnionStatement
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingUnionStatement:

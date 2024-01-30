@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.struct_statement import (
+from ASTComponents.ExternalComponents.struct_statement import (
     StructStatement,
     StructField,
 )

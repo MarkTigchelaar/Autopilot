@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.assign_statement import AssignmentStatement
+from ASTComponents.InternalComponents.assign_statement import AssignmentStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

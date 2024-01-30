@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExpressionComponents.name_expression import NameExpression
+from ASTComponents.ExpressionComponents.name_expression import NameExpression
 from TestingComponents.testing_utilities import token_to_json
 
 

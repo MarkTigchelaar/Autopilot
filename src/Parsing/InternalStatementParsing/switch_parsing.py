@@ -4,7 +4,7 @@ from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
 from Parsing.expression_parsing import parse_expression
 from Parsing.InternalStatementParsing.statement_parsing import parse_statements
-from Parsing.ASTComponents import ast_node_keys
+from ASTComponents import ast_node_keys
 
 def parse_switch(driver):
     switch_token = driver.next_token()

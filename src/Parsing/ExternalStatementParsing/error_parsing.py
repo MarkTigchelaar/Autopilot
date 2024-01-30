@@ -1,7 +1,7 @@
 import symbols
 from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
-from Parsing.ASTComponents import ast_node_keys
+from ASTComponents import ast_node_keys
 
 def parse_error(driver):
     token = driver.next_token()

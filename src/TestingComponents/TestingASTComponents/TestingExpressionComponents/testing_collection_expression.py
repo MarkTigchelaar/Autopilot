@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExpressionComponents.collection_expression import CollectionExpression
+from ASTComponents.ExpressionComponents.collection_expression import CollectionExpression
 from Parsing.parsing_utilities import get_collection_literal
 
 class TestingCollectionExpression:

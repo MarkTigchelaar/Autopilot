@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.elif_statement import ElifStatement
+from ASTComponents.InternalComponents.elif_statement import ElifStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

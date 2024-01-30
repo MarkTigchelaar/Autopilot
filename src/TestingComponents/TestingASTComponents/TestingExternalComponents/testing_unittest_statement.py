@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.unittest_statement import UnittestStatement
+from ASTComponents.ExternalComponents.unittest_statement import UnittestStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

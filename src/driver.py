@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.make_ast_node_map import make_ast_map
+from ASTComponents.make_ast_node_map import make_ast_map
 
 # Pushes the compilation process forward,
 # and provides general services for each stage.

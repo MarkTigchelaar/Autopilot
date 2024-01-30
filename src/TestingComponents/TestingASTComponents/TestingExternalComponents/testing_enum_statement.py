@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.enum_statement import EnumStatement
+from ASTComponents.ExternalComponents.enum_statement import EnumStatement
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingEnumStatement:

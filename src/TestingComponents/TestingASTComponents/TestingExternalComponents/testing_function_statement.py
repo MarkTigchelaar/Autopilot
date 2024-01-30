@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.function_statement import FunctionStatement
+from ASTComponents.ExternalComponents.function_statement import FunctionStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

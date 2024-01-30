@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.function_header_statement import FunctionHeaderStatement, FunctionArgument
+from ASTComponents.ExternalComponents.function_header_statement import FunctionHeaderStatement, FunctionArgument
 from TestingComponents.testing_utilities import token_to_json
 
 class TestingFunctionHeader:

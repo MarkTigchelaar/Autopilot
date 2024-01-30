@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.if_statement import IfStatement
+from ASTComponents.InternalComponents.if_statement import IfStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

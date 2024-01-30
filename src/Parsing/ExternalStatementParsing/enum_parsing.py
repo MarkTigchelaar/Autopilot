@@ -1,7 +1,7 @@
 import symbols
 from keywords import is_eof_type, is_primitive_type, is_boolean_literal
 from ErrorHandling.parsing_error_messages import *
-from Parsing.ASTComponents import ast_node_keys
+from ASTComponents import ast_node_keys
 
 def parse_enum(driver):
     token = driver.next_token()

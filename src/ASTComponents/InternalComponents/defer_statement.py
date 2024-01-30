@@ -1,4 +1,4 @@
-#from Parsing.ASTComponents.InternalComponents.re_assign_or_method_call import ReassignmentOrMethodCall
+#from ASTComponents.InternalComponents.re_assign_or_method_call import ReassignmentOrMethodCall
 
 class DeferStatement:
     def __init__(self):

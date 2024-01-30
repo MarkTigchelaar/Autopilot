@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.defer_statement import DeferStatement
+from ASTComponents.InternalComponents.defer_statement import DeferStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

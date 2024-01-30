@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.InternalComponents.else_statement import ElseStatement
+from ASTComponents.InternalComponents.else_statement import ElseStatement
 
 class TestingElseStatement:
     def __init__(self):

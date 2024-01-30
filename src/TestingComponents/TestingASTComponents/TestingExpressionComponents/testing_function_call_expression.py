@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExpressionComponents.function_call_expression import FunctionCallExpression
+from ASTComponents.ExpressionComponents.function_call_expression import FunctionCallExpression
 
 class TestingFunctionCallExpression:
     def __init__(self):

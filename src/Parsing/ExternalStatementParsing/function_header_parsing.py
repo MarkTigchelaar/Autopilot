@@ -2,7 +2,7 @@ import symbols
 from ..parsing_utilities import *
 from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
-from Parsing.ASTComponents import ast_node_keys
+from ASTComponents import ast_node_keys
 
 def parse_function_header(driver, is_function_def = True):
     function_token = driver.next_token()

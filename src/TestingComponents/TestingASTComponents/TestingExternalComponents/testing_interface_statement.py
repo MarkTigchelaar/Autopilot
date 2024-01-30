@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExternalComponents.interface_statement import InterfaceStatement
+from ASTComponents.ExternalComponents.interface_statement import InterfaceStatement
 from TestingComponents.testing_utilities import token_to_json
 
 

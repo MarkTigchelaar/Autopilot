@@ -3,7 +3,7 @@ from ..parsing_utilities import *
 from keywords import is_eof_type
 from ErrorHandling.parsing_error_messages import *
 from Parsing.ExternalStatementParsing.function_header_parsing import parse_function_header
-from Parsing.ASTComponents import ast_node_keys
+from ASTComponents import ast_node_keys
 
 
 

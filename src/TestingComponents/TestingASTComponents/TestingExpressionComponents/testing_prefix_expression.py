@@ -1,4 +1,4 @@
-from Parsing.ASTComponents.ExpressionComponents.prefix_expression import PrefixExpression
+from ASTComponents.ExpressionComponents.prefix_expression import PrefixExpression
 from TestingComponents.testing_utilities import token_to_json
 
 
