@@ -1,0 +1,4 @@
+module main
+
+define Stack(int) as intstack
+define FifoQueue(intstack) as compoundList

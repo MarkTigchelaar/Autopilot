@@ -34,6 +34,10 @@ def module_step(driver, import_stmt):
         return None
     elif peek_token.type_symbol == symbols.IDENTIFIER:
         return module_name_step(driver, import_stmt)
+    elif peek_token.type_symbol == symbols.RANGE:
+        return module_path_step(driver, import_stmt, None)
+    elif peek_token.type_symbol == symbols.CARROT:
+        return module_path_step(driver, import_stmt, None)
     else:
         driver.add_error(peek_token, INVALID_IMPORTED_MODULE_NAME)
         return None
@@ -47,6 +51,10 @@ def library_step(driver, import_stmt):
         return None
     elif peek_token.type_symbol == symbols.IDENTIFIER:
         return module_name_step(driver, import_stmt)
+    elif peek_token.type_symbol == symbols.RANGE:
+        return module_path_step(driver, import_stmt, None)
+    elif peek_token.type_symbol == symbols.CARROT:
+        return module_path_step(driver, import_stmt, None)
     else:
         driver.add_error(peek_token, INVALID_IMPORTED_MODULE_NAME)
         return None
@@ -144,6 +152,8 @@ def module_name_step(driver, import_stmt):
         return module_path_step(driver, import_stmt, name_token)
     elif peek_token.type_symbol == symbols.COLON:
         return module_path_step(driver, import_stmt, name_token)
+    elif peek_token.type_symbol == symbols.CARROT:
+        return module_path_step(driver, import_stmt, None)
     else:
         import_stmt.new_path_item(name_token, None)
         return import_stmt

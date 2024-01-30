@@ -1,0 +1,12 @@
+module main
+
+
+
+enum eh is
+    a
+end 
+
+
+enum eh is 
+    b
+end

@@ -2,14 +2,13 @@ import symbols
 from ErrorHandling.semantic_error_messages import *
 from keywords import is_primitive_type, is_boolean_literal
 
+
 def analyze_enum(analyzer, enum_ast_node):
     check_if_enum_is_allowed_enum_type(analyzer, enum_ast_node)
 
     fields = enum_ast_node.item_list
     for i in range(len(fields)):
         for j in range(i + 1, len(fields)):
-            # if j <= i:
-            #     continue
             check_fields_for_duplicate_names(analyzer, fields[i], fields[j])
             check_fields_for_duplicate_values(analyzer, fields[i], fields[j])
             if enum_ast_node.general_type is None:
@@ -29,7 +28,7 @@ def check_if_enum_is_allowed_enum_type(analyzer, enum_ast_node):
 def check_fields_for_duplicate_names(analyzer, field_one, field_two):
     if field_one.item_name_token.literal == field_two.item_name_token.literal:
         analyzer.add_error(field_two.item_name_token, ENUM_DUP_FIELD_NAME)
-    
+
 
 def check_fields_for_duplicate_values(analyzer, field_one, field_two):
     type1 = field_one.default_value_token
@@ -50,7 +49,8 @@ def check_fields_for_mismatched_types(analyzer, field_one, field_two):
     if "NULL" in (type1.type_symbol, type2.type_symbol):
         return
     if (type1.literal != type2.literal) and (not_a_bool(type1) and not_a_bool(type2)):
-        analyzer.add_error(field_two.item_name_token, ENUM_MISMATCHED_TYPE)
+        if type1.type_symbol != type2.type_symbol:
+            analyzer.add_error(field_two.item_name_token, ENUM_MISMATCHED_TYPE)
 
 
 def check_field_if_type_matches_enum(analyzer, field_one, enum_ast_node):

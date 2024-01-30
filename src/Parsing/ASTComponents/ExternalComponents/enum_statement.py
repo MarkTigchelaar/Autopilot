@@ -1,13 +1,18 @@
 
 class EnumStatement:
     def __init__(self):
+        # Name will be replaced, but left in for now
         self.name = None
+        self.name_token = None
         self.public_token = None
+        # Same deal here
         self.item_list = list()
+        self.items = self.item_list
         self.general_type = None
 
     def add_name(self, name):
         self.name = name
+        self.name_token = name
 
     def add_public_token(self, public_token):
         self.public_token = public_token

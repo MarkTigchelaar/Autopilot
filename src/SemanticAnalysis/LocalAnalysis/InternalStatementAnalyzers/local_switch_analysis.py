@@ -1,11 +1,6 @@
 from ErrorHandling.semantic_error_messages import *
 
-# switch name
-#   case 'b', 'c', d do
-#    var a = 6
-#   default 
-#     let a = 0
-# end
+
 def analyze_switch(analyzer, ast_node):
     cases = ast_node.case_statements
     for i in range(len(cases)):
@@ -26,4 +21,3 @@ def check_values_in_other_case_stmt_for_dups(analyzer, case_one, case_two):
         for val_two in case_two.values:
             if val_one.literal == val_two.literal:
                 analyzer.add_error(val_two, DUPLICATE_CASE_VALUE)
-

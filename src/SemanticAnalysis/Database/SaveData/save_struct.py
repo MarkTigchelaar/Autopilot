@@ -38,11 +38,13 @@ class StructSaver(Saver):
         )
 
         struct_table.insert(
+            self.struct.name_token,
             self.struct.interfaces,
             self.struct.fields,
             object_id,
             current_module_id,
-            function_ids
+            function_ids,
+            self.struct.functions
         )
 
         acyclic_token = self.struct.acyclic_token

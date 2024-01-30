@@ -1,0 +1,4 @@
+module main
+
+define Set(int) as intset
+define Deque(intset) as compoundList

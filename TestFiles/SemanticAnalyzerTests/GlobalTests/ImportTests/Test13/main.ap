@@ -1,0 +1,13 @@
+module main
+
+
+import    second_item, third_item as other_item from module second_module
+
+
+enum second_item is 
+    i = 10
+end
+
+enum third_item is 
+    i = 10
+end

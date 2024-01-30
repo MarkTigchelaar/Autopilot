@@ -1,0 +1,4 @@
+module main
+
+define Set(int) as intset
+define List(intset) as compoundList

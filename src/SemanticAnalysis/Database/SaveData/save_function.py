@@ -34,12 +34,12 @@ class FunctionSaver(Saver):
 
         header_saver.save_headers()
         
-        type_name_table.insert(
-            self.function.header.name_token,
-            "fn_header",
-            current_module_id,
-            self.object_id
-        )
+        # type_name_table.insert(
+        #     self.function.header.name_token,
+        #     "function",
+        #     current_module_id,
+        #     self.object_id
+        # )
         function_table.insert(
             self.object_id,
             header_ids[0],

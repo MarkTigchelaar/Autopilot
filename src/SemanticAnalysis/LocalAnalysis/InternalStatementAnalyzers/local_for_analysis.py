@@ -1,11 +1,6 @@
 from ErrorHandling.semantic_error_messages import *
 
 
-# for a in b..c, d as test do
-# for a in b as test do
-# for a, b in dict do
-# for let a in b do
-# for let a, b in option do
 def analyze_for_loop(analyzer, ast_node):
     if ast_node.index_or_key_name_token is None:
         raise Exception("INTERNAL ERROR: index/key/iteration variable is None")

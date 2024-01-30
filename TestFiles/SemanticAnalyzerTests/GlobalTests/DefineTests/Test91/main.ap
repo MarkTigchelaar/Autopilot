@@ -1,0 +1,4 @@
+module main
+
+define Dictionary(int : int) as intdictionary
+define FifoQueue(intdictionary) as compoundList

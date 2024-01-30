@@ -1,0 +1,22 @@
+[
+    {
+        "general_component" : "module uniqueness checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/module_uniqueness_tests.json"
+    },
+    {
+        "general_component" : "import checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/import_checks.json"
+    },
+    {
+        "general_component" : "define checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/define_checks.json"
+    },
+    {
+        "general_component" : "nested define checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/nested_define_checks.json"
+    },
+    {
+        "general_component" : "enum checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/enum_checks.json"
+    }
+]

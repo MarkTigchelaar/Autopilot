@@ -1,0 +1,4 @@
+module main
+
+define List(int) as intlist
+define Vector(intlist) as compoundList

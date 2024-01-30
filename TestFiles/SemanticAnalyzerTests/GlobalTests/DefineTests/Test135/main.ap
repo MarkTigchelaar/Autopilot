@@ -1,0 +1,34 @@
+module main
+
+define Set(myUnion) as myUnionSet
+
+define HashSet(myUnion) as myUnionHashSet
+
+define TreeSet(myUnion) as myUnionTreeSet
+
+define Set(myEnum) as myEnumSet
+
+define HashSet(myEnum) as myEnumHashSet
+
+define TreeSet(myEnum) as myEnumTreeSet
+
+define Set(myError) as myErrorSet
+
+define HashSet(myError) as myErrorHashSet
+
+define TreeSet(myError) as myErrorTreeSet
+
+union myUnion is
+    a as int,
+    b as string
+end
+
+enum myEnum is
+    c,
+    d
+end
+
+error myError is
+    e,
+    f
+end

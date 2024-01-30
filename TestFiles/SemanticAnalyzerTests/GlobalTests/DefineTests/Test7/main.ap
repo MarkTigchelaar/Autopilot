@@ -1,0 +1,16 @@
+module main
+
+define Option(int) as FirstOptional
+
+define Option(int) as SecondOptional
+
+define LinkedList(int) as FourthOptional
+
+define Option(long) as ThirdOptional
+
+define Result(int, err) as FirstResult
+
+
+error err is
+    failed
+end

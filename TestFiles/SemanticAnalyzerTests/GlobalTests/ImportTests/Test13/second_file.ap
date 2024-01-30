@@ -1,0 +1,11 @@
+module second_module
+
+
+pub enum second_item is 
+    i = 10
+end
+
+
+pub enum third_item is 
+    i = 10
+end

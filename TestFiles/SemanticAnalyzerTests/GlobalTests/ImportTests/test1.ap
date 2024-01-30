@@ -1,0 +1,3 @@
+module some_module
+
+import item1 from module test.folder.module_folder.module_one_bee

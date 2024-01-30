@@ -1,0 +1,4 @@
+module main
+
+define List(int) as intlist
+define Queue(intlist) as compoundList

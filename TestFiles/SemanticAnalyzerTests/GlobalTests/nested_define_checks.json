@@ -1,0 +1,2387 @@
+[
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test19/main.ap"
+        ],
+        "errors" : [],
+        "comment" : "List can contain primitives, structs, unions, enums, interfaces, functions, options and results"
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test20/main.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test20/main.ap",
+                "token_literal" : "otherList",
+                "line_number" : "3",
+                "column" : "13",
+        
+                "message" : "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            }
+        ],
+        "comment" : "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test21/main.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test21/main.ap",
+                "token_literal" : "otherList",
+                "line_number" : "3",
+                "column" : "13",
+        
+                "message" : "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            }
+        ],
+        "comment" : "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+
+
+
+
+
+
+
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test22/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test22/main.ap",
+                "token_literal": "intlist",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test23/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test23/main.ap",
+                "token_literal": "intlinkedlist",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test24/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test24/main.ap",
+                "token_literal": "intvector",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test25/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test25/main.ap",
+                "token_literal": "intqueue",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test26/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test26/main.ap",
+                "token_literal": "intfifoqueue",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test27/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test27/main.ap",
+                "token_literal": "intpriorityqueue",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test28/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test28/main.ap",
+                "token_literal": "intdeque",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test29/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test29/main.ap",
+                "token_literal": "intstack",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test30/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test30/main.ap",
+                "token_literal": "intset",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test31/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test31/main.ap",
+                "token_literal": "inthashset",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test32/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test32/main.ap",
+                "token_literal": "inttreeset",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test33/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test33/main.ap",
+                "token_literal": "intmap",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test34/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test34/main.ap",
+                "token_literal": "inthashmap",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test35/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test35/main.ap",
+                "token_literal": "intdictionary",
+                "line_number": "4",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+
+
+
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test36/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test36/main.ap",
+                "token_literal": "intlist",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test37/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test37/main.ap",
+                "token_literal": "intlinkedlist",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test38/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test38/main.ap",
+                "token_literal": "intvector",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test39/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test39/main.ap",
+                "token_literal": "intqueue",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test40/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test40/main.ap",
+                "token_literal": "intfifoqueue",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test41/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test41/main.ap",
+                "token_literal": "intpriorityqueue",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test42/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test42/main.ap",
+                "token_literal": "intdeque",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test43/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test43/main.ap",
+                "token_literal": "intstack",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test44/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test44/main.ap",
+                "token_literal": "intset",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test45/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test45/main.ap",
+                "token_literal": "inthashset",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test46/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test46/main.ap",
+                "token_literal": "inttreeset",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test47/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test47/main.ap",
+                "token_literal": "intmap",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test48/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test48/main.ap",
+                "token_literal": "inthashmap",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test49/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test49/main.ap",
+                "token_literal": "intdictionary",
+                "line_number": "4",
+                "column": 19,
+                "message": "linked list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test50/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test50/main.ap",
+                "token_literal": "intlist",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test51/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test51/main.ap",
+                "token_literal": "intlinkedlist",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test52/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test52/main.ap",
+                "token_literal": "intvector",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test53/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test53/main.ap",
+                "token_literal": "intqueue",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test54/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test54/main.ap",
+                "token_literal": "intfifoqueue",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test55/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test55/main.ap",
+                "token_literal": "intpriorityqueue",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test56/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test56/main.ap",
+                "token_literal": "intdeque",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test57/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test57/main.ap",
+                "token_literal": "intstack",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test58/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test58/main.ap",
+                "token_literal": "intset",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test59/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test59/main.ap",
+                "token_literal": "inthashset",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test60/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test60/main.ap",
+                "token_literal": "inttreeset",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test61/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test61/main.ap",
+                "token_literal": "intmap",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test62/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test62/main.ap",
+                "token_literal": "inthashmap",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test63/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test63/main.ap",
+                "token_literal": "intdictionary",
+                "line_number": "4",
+                "column": 15,
+                "message": "vector type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test64/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test64/main.ap",
+                "token_literal": "intlist",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test65/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test65/main.ap",
+                "token_literal": "intlinkedlist",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test66/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test66/main.ap",
+                "token_literal": "intvector",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test67/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test67/main.ap",
+                "token_literal": "intqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test68/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test68/main.ap",
+                "token_literal": "intfifoqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test69/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test69/main.ap",
+                "token_literal": "intpriorityqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test70/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test70/main.ap",
+                "token_literal": "intdeque",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test71/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test71/main.ap",
+                "token_literal": "intstack",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test72/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test72/main.ap",
+                "token_literal": "intset",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test73/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test73/main.ap",
+                "token_literal": "inthashset",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test74/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test74/main.ap",
+                "token_literal": "inttreeset",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test75/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test75/main.ap",
+                "token_literal": "intmap",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test76/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test76/main.ap",
+                "token_literal": "inthashmap",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test77/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test77/main.ap",
+                "token_literal": "intdictionary",
+                "line_number": "4",
+                "column": 14,
+                "message": "queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test78/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test78/main.ap",
+                "token_literal": "intlist",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test79/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test79/main.ap",
+                "token_literal": "intlinkedlist",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test80/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test80/main.ap",
+                "token_literal": "intvector",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test81/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test81/main.ap",
+                "token_literal": "intqueue",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test82/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test82/main.ap",
+                "token_literal": "intfifoqueue",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test83/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test83/main.ap",
+                "token_literal": "intpriorityqueue",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test84/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test84/main.ap",
+                "token_literal": "intdeque",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test85/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test85/main.ap",
+                "token_literal": "intstack",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test86/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test86/main.ap",
+                "token_literal": "intset",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test87/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test87/main.ap",
+                "token_literal": "inthashset",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test88/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test88/main.ap",
+                "token_literal": "inttreeset",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test89/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test89/main.ap",
+                "token_literal": "intmap",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test90/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test90/main.ap",
+                "token_literal": "inthashmap",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test91/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test91/main.ap",
+                "token_literal": "intdictionary",
+                "line_number": "4",
+                "column": 18,
+                "message": "fifo queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test92/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test92/main.ap",
+                "token_literal": "intlist",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test93/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test93/main.ap",
+                "token_literal": "intlinkedlist",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test94/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test94/main.ap",
+                "token_literal": "intvector",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test95/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test95/main.ap",
+                "token_literal": "intqueue",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test96/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test96/main.ap",
+                "token_literal": "intfifoqueue",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test97/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test97/main.ap",
+                "token_literal": "intpriorityqueue",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test98/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test98/main.ap",
+                "token_literal": "intdeque",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test99/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test99/main.ap",
+                "token_literal": "intstack",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test100/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test100/main.ap",
+                "token_literal": "intset",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test101/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test101/main.ap",
+                "token_literal": "inthashset",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test102/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test102/main.ap",
+                "token_literal": "inttreeset",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test103/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test103/main.ap",
+                "token_literal": "intmap",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test104/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test104/main.ap",
+                "token_literal": "inthashmap",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test105/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test105/main.ap",
+                "token_literal": "intdictionary",
+                "line_number": "4",
+                "column": 22,
+                "message": "priority queue type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test106/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test106/main.ap",
+                "token_literal": "intlist",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test107/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test107/main.ap",
+                "token_literal": "intlinkedlist",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test108/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test108/main.ap",
+                "token_literal": "intvector",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test109/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test109/main.ap",
+                "token_literal": "intqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test110/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test110/main.ap",
+                "token_literal": "intfifoqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test111/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test111/main.ap",
+                "token_literal": "intpriorityqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test112/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test112/main.ap",
+                "token_literal": "intdeque",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test113/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test113/main.ap",
+                "token_literal": "intstack",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test114/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test114/main.ap",
+                "token_literal": "intset",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test115/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test115/main.ap",
+                "token_literal": "inthashset",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test116/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test116/main.ap",
+                "token_literal": "inttreeset",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test117/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test117/main.ap",
+                "token_literal": "intmap",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test118/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test118/main.ap",
+                "token_literal": "inthashmap",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test119/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test119/main.ap",
+                "token_literal": "intdictionary",
+                "line_number": "4",
+                "column": 14,
+                "message": "deque type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test120/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test120/main.ap",
+                "token_literal": "intlist",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test121/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test121/main.ap",
+                "token_literal": "intlinkedlist",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test122/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test122/main.ap",
+                "token_literal": "intvector",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test123/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test123/main.ap",
+                "token_literal": "intqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test124/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test124/main.ap",
+                "token_literal": "intfifoqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test125/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test125/main.ap",
+                "token_literal": "intpriorityqueue",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test126/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test126/main.ap",
+                "token_literal": "intdeque",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test127/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test127/main.ap",
+                "token_literal": "intstack",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test128/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test128/main.ap",
+                "token_literal": "intset",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test129/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test129/main.ap",
+                "token_literal": "inthashset",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test130/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test130/main.ap",
+                "token_literal": "inttreeset",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test131/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test131/main.ap",
+                "token_literal": "intmap",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test132/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test132/main.ap",
+                "token_literal": "inthashmap",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test133/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test133/main.ap",
+                "token_literal": "intdictionary",
+                "line_number": "4",
+                "column": 14,
+                "message": "stack type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test134/main.ap"
+        ],
+        "errors": [],
+        "comment": "Hashes can contain structs, and interfaces"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myUnion",
+                "line_number": "3",
+                "column": 12,
+                "message": "general set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myUnion",
+                "line_number": "5",
+                "column": 16,
+                "message": "hash set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myUnion",
+                "line_number": "7",
+                "column": 16,
+                "message": "tree set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myEnum",
+                "line_number": "9",
+                "column": 12,
+                "message": "general set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myEnum",
+                "line_number": "11",
+                "column": 16,
+                "message": "hash set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myEnum",
+                "line_number": "13",
+                "column": 16,
+                "message": "tree set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myError",
+                "line_number": "15",
+                "column": 12,
+                "message": "general set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myError",
+                "line_number": "17",
+                "column": 16,
+                "message": "hash set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test135/main.ap",
+                "token_literal": "myError",
+                "line_number": "19",
+                "column": 16,
+                "message": "tree set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+
+        ],
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test136/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test136/second.ap"
+        ],
+        "errors": [],
+        "comment": "Lists can contain items from other modules"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test137/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test137/second.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test137/main.ap",
+                "token_literal": "myUnion",
+                "line_number": "5",
+                "column": 16,
+                "message": "hash set type define statement can only contain primitives, structs and interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Lists can contain items from other modules"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test138/main.ap"
+        ],
+        "errors": [],
+        "comment": "Maps can contain structs and interfaces as keys"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test139/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test139/main.ap",
+                "token_literal": "IntList",
+                "line_number": "27",
+                "column": "12",
+                "message": "map key type can only be primitives, structs or interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test139/main.ap",
+                "token_literal": "StringStack",
+                "line_number": "28",
+                "column": "16",
+                "message": "hashmap key type can only be primitives, structs or interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test139/main.ap",
+                "token_literal": "IntResult",
+                "line_number": "29",
+                "column": "19",
+                "message": "dictionary key type can only be primitives, structs or interfaces",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "comment": "Maps can contain primitives, structs and interfaces as keys"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test140/main.ap"
+        ],
+        "errors": [],
+        "comment": "Functions an take functions, options, results, etc, as well as all the beuilt in defined types"
+    }
+]

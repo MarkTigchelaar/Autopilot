@@ -1,0 +1,14 @@
+module main
+
+define List(Thingy) as ThingyList
+define HashMap(ABob: int) as ABobHash
+
+struct Thingy is
+    a as int
+end
+
+
+struct ABob is
+  b as ThingyList
+end
+

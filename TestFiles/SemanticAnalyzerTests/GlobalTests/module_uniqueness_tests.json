@@ -1,0 +1,107 @@
+[
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test1.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestOne/test1other.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestOne/test1other.ap",
+                "token_literal" : "main",
+                "line_number" : "1",
+                "column" : "8",
+
+                "message" : "module is not uniquely named",
+
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test1.ap",
+                "shadowed_token_literal" : "main",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            }
+        ],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap",
+                "token_literal" : "some_module",
+                "line_number" : "5",
+                "column" : "5",
+
+                "message" : "module is not uniquely named",
+
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap",
+                "shadowed_token_literal" : "some_module",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap",
+                "token_literal" : "some_module",
+                "line_number" : "1",
+                "column" : "8",
+
+                "message" : "module is not uniquely named",
+
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap",
+                "shadowed_token_literal" : "some_module",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            }
+        ],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test3.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/test3other.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/test3otherother.ap"
+        ],
+        "errors" : [],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/test3other.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/test3otherother.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap",
+                "token_literal" : "some_module",
+                "line_number" : "5",
+                "column" : "5",
+
+                "message" : "module is not uniquely named",
+
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap",
+                "shadowed_token_literal" : "some_module",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap",
+                "token_literal" : "some_module",
+                "line_number" : "1",
+                "column" : "8",
+
+                "message" : "module is not uniquely named",
+
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap",
+                "shadowed_token_literal" : "some_module",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            }
+        ],
+        "comment" : ""
+    }
+]

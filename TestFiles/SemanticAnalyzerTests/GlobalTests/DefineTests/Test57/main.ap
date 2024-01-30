@@ -1,0 +1,4 @@
+module main
+
+define Stack(int) as intstack
+define Vector(intstack) as compoundList

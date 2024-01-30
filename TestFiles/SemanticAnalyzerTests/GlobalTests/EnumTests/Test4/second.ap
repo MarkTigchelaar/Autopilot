@@ -1,0 +1,10 @@
+module secondary
+
+pub struct otherThing is
+    a as int
+end
+
+
+pub struct otherOtherThing is
+    b as otherThing
+end

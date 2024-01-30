@@ -1,0 +1,17 @@
+module main
+
+
+union myUnion is
+    a as myUnion,
+    b as myEnum
+end
+
+
+
+struct myUnion is
+    b as int
+end
+
+enum myEnum is
+    i = 0
+end

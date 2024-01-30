@@ -1,0 +1,4 @@
+module main
+
+define Map(int : int) as intmap
+define Vector(intmap) as compoundList

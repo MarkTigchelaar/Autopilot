@@ -238,14 +238,15 @@ class TypenamesTableTestQueryRunner(TestQueryRunner):
         return self.table.is_name_defined_in_table(row["name"], row["type"])
 
     def contents_match(self, row):
-        type_matches = row["type"] == self.table.get_category_by_name_and_module_id(
+        type_matches = row["type"] in self.table.get_categories_by_name_and_module_id(
             row["name"], row["module_id"]
         )
         category_has_name = row["name"] in [
             tok.literal for tok in self.table.get_names_by_category(row["type"])
         ]
         module_has_name = row["name"] in [
-            tok.literal for tok in self.table.get_names_by_module_id(row["module_id"])
+            row.name_token.literal
+            for row in self.table.get_items_by_module_id(row["module_id"])
         ]
         return type_matches and category_has_name and module_has_name
 
@@ -363,14 +364,14 @@ class DefineTableTestQueryRunner(TestQueryRunner):
             self.match_arg(table_row.built_in_type_token, test_row["built_in_type"])
         )
         match_list.append(
-            self.match_arg(table_row.user_defined_type_token, test_row["defined_type"])
+            self.match_arg(table_row.new_type_name_token, test_row["defined_type"])
         )
         match_list.append(self.match_arg(table_row.key_type, test_row["key_type"]))
         match_list.append(self.match_arg(table_row.value_type, test_row["value_type"]))
         match_list.append(
             self.match_args(table_row.arg_list, test_row["arg_type_list"])
         )
-        match_list.append(self.match_arg(table_row.union_type, test_row["union_type"]))
+        match_list.append(self.match_arg(table_row.result_type, test_row["union_type"]))
         for match in match_list:
             if not match:
                 return False

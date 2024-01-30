@@ -1,0 +1,13 @@
+module main
+
+
+
+error error1 is
+    a
+end
+
+
+enum error1 is
+    a = 0
+end
+

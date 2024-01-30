@@ -16,7 +16,10 @@ class ImportSaver(Saver):
 
     def save_to_db(self, database):
         path_item = self.import_stmt.path_list[0]
-        file_path = path_item.node_token.file_name
+        if path_item.node_token:
+            file_path = path_item.node_token.file_name
+        else:
+            file_path = path_item.direction_token.file_name
 
         _, current_file_name = split_path_and_file_name(file_path)
     

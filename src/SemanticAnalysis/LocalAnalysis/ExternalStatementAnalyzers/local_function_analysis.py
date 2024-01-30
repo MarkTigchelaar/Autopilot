@@ -27,7 +27,7 @@ def analyze_return_paths(analyzer, ast_node):
 
 # Whether the type being returned (if any) is correct,
 # Is determined later using tables
-# FYI: This is a very expensive check to perform
+# NOTE: This is a very expensive check to perform
 def has_path_with_no_return(analyzer, statements):
     for i in range(len(statements)):
         is_last_stmt = i >= len(statements) - 1

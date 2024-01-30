@@ -24,6 +24,8 @@ def is_operator(token: Token) -> bool:
     return token.type_symbol in operator_keywords()
 
 def is_primitive_type(token: Token, check_literal = False) -> bool:
+    if token is None:
+        return False
     tok_type = token.type_symbol
     if check_literal:
         tok_type = token.literal.upper()

@@ -1,0 +1,12 @@
+module secondary
+
+
+
+pub struct myStruct is
+    a as int
+end
+
+pub union myUnion is
+    a as int,
+    b as float
+end

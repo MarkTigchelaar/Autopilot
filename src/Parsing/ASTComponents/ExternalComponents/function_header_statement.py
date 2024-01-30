@@ -11,9 +11,15 @@ class FunctionHeaderStatement:
 
     def add_name(self, name_token):
         self.name_token = name_token
+    
+    def get_name(self):
+        return self.name_token
 
     def add_arg(self, argument):
         self.arguments.append(argument)
+
+    def get_args(self):
+        return self.arguments
     
     def add_return_type(self, return_type_token):
         self.return_type_token = return_type_token
@@ -41,9 +47,15 @@ class FunctionArgument:
 
     def add_name(self, arg_name_token):
         self.arg_name_token = arg_name_token
+    
+    def get_name(self):
+        return self.arg_name_token
 
     def add_type(self, arg_type_token):
         self.arg_type_token = arg_type_token
+
+    def get_type(self):
+        return self.arg_type_token
     
     def add_default_value(self, default_value_token):
         self.default_value_token = default_value_token

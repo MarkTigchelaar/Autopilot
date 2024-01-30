@@ -1,0 +1,4 @@
+module main
+
+define Queue(int) as intqueue
+define PriorityQueue(intqueue) as compoundList

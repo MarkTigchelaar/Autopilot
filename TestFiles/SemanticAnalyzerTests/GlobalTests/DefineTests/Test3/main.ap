@@ -1,0 +1,9 @@
+module main
+
+import IntVector, FloatVector as NotIntVector from module secondary
+
+define Vector(int) as IntVector
+
+define Queue(float) as FloatVector
+
+define Deque(int) as NotIntVector

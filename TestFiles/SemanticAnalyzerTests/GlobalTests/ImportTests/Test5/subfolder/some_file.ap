@@ -1,0 +1,7 @@
+module place
+
+import thing_from_above from module subsubfolder.another_one
+
+pub enum other_other_thing is 
+    a = 3
+end

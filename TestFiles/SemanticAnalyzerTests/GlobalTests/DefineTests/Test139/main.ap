@@ -1,0 +1,59 @@
+module main
+
+define Option(int) as IntOption
+
+define Result(int, someError) as IntResult
+
+
+
+define Map(myStruct : string) as myStructMap
+
+define Map(bob : string) as BobMap
+
+define HashMap(myStruct : int) as myStructHashMap
+
+define HashMap(bob : string) as BobHashMap
+
+define Dictionary(myStruct : myStruct) as myStructDictionary
+
+define Dictionary(bob : bob) as BobDictionary
+
+
+define List(int) as IntList
+
+define Stack(string) as StringStack
+
+
+define Map(IntList : IntResult) as  BadMapOne
+define HashMap(StringStack : IntOption) as BadHashMapOne
+define Dictionary(IntResult : myFunction) as BadDictionaryOne
+
+
+struct myStruct is
+    a as string
+end
+
+interface bob is 
+    fun myMethod() end
+end
+
+union someunion is
+    a as int,
+    b as string
+end
+
+enum myEnum is 
+    a,
+    b,
+    c 
+end
+
+error someError is 
+    a,
+    b,
+    c 
+end
+
+fun myFunction(a as int) int do 
+    return a * 2
+end
