@@ -34,6 +34,7 @@ class InterfaceSaver(Saver):
         interface_table.insert(
             object_id,
             current_module_id,
+            name_token,
             header_ids
         )
         type_name_table.insert(
@@ -47,11 +48,12 @@ class InterfaceSaver(Saver):
         mods = []
         for tok in [acyclic_token, public_token]:
             if tok:
-                mods.append(tok)     
-        modifier_table.insert(
-            object_id,
-            mods
-        )
+                mods.append(tok)
+        if len(mods) > 0:
+            modifier_table.insert(
+                object_id,
+                mods
+            )
 
         if file_table.is_file_defined(object_id, file_name):
             raise Exception(f"INTERNAL ERROR: file {file_path} has been processed already")

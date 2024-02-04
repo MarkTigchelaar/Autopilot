@@ -1,6 +1,7 @@
 import ErrorHandling.semantic_error_messages as ErrMsg
 from SemanticAnalysis.AnalysisComponents.module_path_matcher import ModulePathMatcher
-
+from SemanticAnalysis.Database.Queries.import_items_in_module_query import ImportItemsInModuleQuery
+from SemanticAnalysis.Database.Queries.single_import_query import SingleImportQuery
 
 class ImportAnalyzer:
     def __init__(self, database, error_manager, import_dependency_graph):
@@ -103,6 +104,7 @@ class ImportAnalyzer:
         import_table = self.database.get_table("imports")
         import_row = import_table.get_row_by_id(object_id)
         current_module_id = import_row.current_module_id
+        
         return import_table.get_imports_by_module_id(current_module_id), import_row
 
     def get_matching_imports(self, other_imports_in_module, import_row):
@@ -121,6 +123,8 @@ class ImportAnalyzer:
 
     def check_for_duplicated_imports(self, object_id):
         other_imports_in_module, import_row = self.get_imports_in_module(object_id)
+        # other_imports_in_module = self.database.execute_query(ImportItemsInModuleQuery(object_id))
+        # import_row = self.database.execute_query(SingleImportQuery(object_id)).next()
         other_matching_imports, max_id = self.get_matching_imports(
             other_imports_in_module, import_row
         )

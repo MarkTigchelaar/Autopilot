@@ -24,6 +24,7 @@ class SemanticAnalyzer:
         self.import_analyzer = None
         self.define_analyzer = None
         self.enum_analyzer = None
+        self.interface_analyzer = None
 
     def add_error(self, token, message, shadowed_token=None):
         self.error_manager.add_semantic_error(token, message, shadowed_token)

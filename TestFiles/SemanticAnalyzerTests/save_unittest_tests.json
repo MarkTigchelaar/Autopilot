@@ -41,6 +41,13 @@
                     "stmt_type" : "RETURN",
                     "stmt_specific_items" : null
                 }
+            ],
+            "unittests" : [
+                {
+                    "name" : "my_unittest",
+                    "object_id" : 1,
+                    "module_id" : 0
+                }
             ]
         }
     },
@@ -93,6 +100,13 @@
                     "stmt_type" : "IDENTIFIER",
                     "stmt_specific_items" : null
                 }
+            ],
+            "unittests" : [
+                {
+                    "name" : "my_unittest",
+                    "object_id" : 1,
+                    "module_id" : 0
+                }
             ]
         }
     },
@@ -125,6 +139,13 @@
                 },
                 {
                     "type" : "unittest",
+                    "name" : "my_unittest",
+                    "object_id" : 1,
+                    "module_id" : 0
+                }
+            ],
+            "unittests" : [
+                {
                     "name" : "my_unittest",
                     "object_id" : 1,
                     "module_id" : 0
@@ -267,6 +288,13 @@
                 {
                     "container_object_id": 1, 
                     "sequence_num" : 20,
+                    "scope_depth" : 4,
+                    "stmt_type" : "IDENTIFIER",
+                    "stmt_specific_items" : null
+                },
+                {
+                    "container_object_id": 1, 
+                    "sequence_num" : 21,
                     "scope_depth" : 4,
                     "stmt_type" : "BREAK",
                     "stmt_specific_items" : null

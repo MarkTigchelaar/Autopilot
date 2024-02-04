@@ -33,6 +33,10 @@ class Database:
         }
         self.current_module_id = None
 
+    def execute_query(self, query):
+        query.execute(self)
+        return iter(query)
+
     def set_current_module_id(self, module_id):
         self.current_module_id = module_id
 

@@ -1,0 +1,6 @@
+module second
+
+
+pub enum thing is
+    a = 0
+end

@@ -5,40 +5,45 @@ import symbols
 from SemanticAnalysis.AnalysisComponents.define_statement_dependancy_checker import (
     DefineStatementDependencyChecker,
 )
+from SemanticAnalysis.Database.Queries.module_items_query import ModuleItemsQuery
+from SemanticAnalysis.Database.Queries.import_items_in_module_query import ImportItemsInModuleQuery
+from SemanticAnalysis.Database.Queries.single_define_query import SingleDefineQuery
+from SemanticAnalysis.Database.Queries.defines_in_module_query import (
+    DefinesInModuleQuery,
+)
 
 
 class DefineAnalyzer:
     def __init__(self, database, error_manager):
         self.database = database
         self.error_manager = error_manager
+        self.object_id = None
 
     def add_error(self, token, message, shadowed_token=None):
         self.error_manager.add_semantic_error(token, message, shadowed_token)
 
     def analyze(self, object_id):
-        self.check_for_new_typename_collisions(object_id)
-        self.check_other_defines_for_same_components(object_id)
-        self.check_if_is_function_type_with_no_args_no_return_type(object_id)
-        undefined_items = self.check_items_in_definition_are_defined(object_id)
+        self.object_id = object_id
+        self.check_for_new_typename_collisions()
+        self.check_other_defines_for_same_components()
+        self.check_if_is_function_type_with_no_args_no_return_type()
+        undefined_items = self.check_items_in_definition_are_defined()
 
-        self.enforce_define_rules(object_id, undefined_items)
+        self.enforce_define_rules(undefined_items)
 
-    def get_tables_and_items(self, object_id):
-        import_table = self.database.get_table("imports")
-        typename_table = self.database.get_table("typenames")
-        define_table = self.database.get_table("defines")
-        define_row = define_table.get_item_by_id(object_id)
-        current_module_id = define_row.current_module_id
-        module_items = typename_table.get_items_by_module_id(current_module_id)
-        if import_table.module_has_imports(current_module_id):
-            current_module_imports = import_table.get_imports_by_module_id(
-                current_module_id
-            )
-        else:
-            current_module_imports = []
-        return module_items, define_row, current_module_imports
+    def check_for_new_typename_collisions(self):
+        module_items = self.database.execute_query(ModuleItemsQuery(self.object_id))
+        for module_item in module_items:
+            self.check_module_item(module_item)
 
-    def check_module_item(self, module_item, define_row):
+        imports = self.database.execute_query(ImportItemsInModuleQuery(self.object_id))
+        for import_item in imports:
+            self.check_import_item(import_item)
+
+    def check_module_item(self, module_item):
+        define_row = self.database.execute_query(
+            SingleDefineQuery(self.object_id)
+        ).next()
         if module_item.object_id <= define_row.object_id:
             return
         if module_item.name_token.literal == define_row.new_type_name_token.literal:
@@ -48,40 +53,41 @@ class DefineAnalyzer:
                 module_item.name_token,
             )
 
-    def check_import_item(self, item, define_row):
-        if item.new_name_token and (
-            item.new_name_token.literal == define_row.new_type_name_token.literal
-        ):
-            self.add_error(
-                define_row.new_type_name_token,
-                ErrMsg.DEFINE_NEW_NAME_COLLISION_W_IMPORT,
-                item.new_name_token,
-            )
-        elif not item.new_name_token and (
-            item.name_token.literal == define_row.new_type_name_token.literal
-        ):
-            self.add_error(
-                define_row.new_type_name_token,
-                ErrMsg.DEFINE_NEW_NAME_COLLISION_W_IMPORT,
-                item.name_token,
-            )
-
-    def check_for_new_typename_collisions(self, object_id):
-        module_items, define_row, current_module_imports = self.get_tables_and_items(
-            object_id
+    def check_import_item(self, import_item):
+        name_token = (
+            import_item.new_name_token
+            if import_item.new_name_token
+            else import_item.name_token
         )
-        for module_item in module_items:
-            self.check_module_item(module_item, define_row)
-        for import_row in current_module_imports:
-            for item in import_row.items:
-                self.check_import_item(item, define_row)
+        define_row = self.database.execute_query(
+            SingleDefineQuery(self.object_id)
+        ).next()
+        if name_token.literal == define_row.new_type_name_token.literal:
+            self.add_error(
+                define_row.new_type_name_token,
+                ErrMsg.DEFINE_NEW_NAME_COLLISION_W_IMPORT,
+                name_token,
+            )
 
-    def get_define_table_and_rows(self, object_id):
-        define_table = self.database.get_table("defines")
-        define_row = define_table.get_item_by_id(object_id)
-        current_module_id = define_row.current_module_id
-        other_defines = define_table.get_items_by_module_id(current_module_id)
-        return define_row, other_defines
+    def check_other_defines_for_same_components(self):
+        define_row = self.database.execute_query(
+            SingleDefineQuery(self.object_id)
+        ).next()
+        other_defines = self.database.execute_query(
+            DefinesInModuleQuery(self.object_id)
+        )
+        for other_define in other_defines:
+            if define_row.object_id >= other_define.object_id:
+                continue
+            if (
+                define_row.built_in_type_token.literal
+                != other_define.built_in_type_token.literal
+            ):
+                continue
+            self.check_key_type(define_row, other_define)
+            self.check_value_type(define_row, other_define)
+            self.check_optional_or_result_type(define_row, other_define)
+            self.check_function_signature(define_row, other_define)
 
     def check_key_type(self, define_row, other_define):
         if define_row.key_type and other_define.key_type:
@@ -174,24 +180,10 @@ class DefineAnalyzer:
                 other_define.new_type_name_token,
             )
 
-    def check_other_defines_for_same_components(self, object_id):
-        define_row, other_defines = self.get_define_table_and_rows(object_id)
-        for other_define in other_defines:
-            if define_row.object_id >= other_define.object_id:
-                continue
-            if (
-                define_row.built_in_type_token.literal
-                != other_define.built_in_type_token.literal
-            ):
-                continue
-            self.check_key_type(define_row, other_define)
-            self.check_value_type(define_row, other_define)
-            self.check_optional_or_result_type(define_row, other_define)
-            self.check_function_signature(define_row, other_define)
-
-    def check_if_is_function_type_with_no_args_no_return_type(self, object_id):
-        define_table = self.database.get_table("defines")
-        define_row = define_table.get_item_by_id(object_id)
+    def check_if_is_function_type_with_no_args_no_return_type(self):
+        define_row = self.database.execute_query(
+            SingleDefineQuery(self.object_id)
+        ).next()
         if define_row.key_type:
             return
         if define_row.value_type:
@@ -205,15 +197,10 @@ class DefineAnalyzer:
             define_row.new_type_name_token, ErrMsg.FUNCTION_TYPE_HAS_NO_EFFECT
         )
 
-    def get_tables_and_rows_for_define_checks(self, object_id):
-        import_table = self.database.get_table("imports")
-        typename_table = self.database.get_table("typenames")
-        define_table = self.database.get_table("defines")
-        define_row = define_table.get_item_by_id(object_id)
-        current_module_id = define_row.current_module_id
-        return import_table, typename_table, define_row, current_module_id
-
-    def get_items_to_check(self, define_row):
+    def get_items_to_check(self):
+        define_row = self.database.execute_query(
+            SingleDefineQuery(self.object_id)
+        ).next()
         items_to_check = [
             define_row.key_type,
             define_row.value_type,
@@ -226,50 +213,46 @@ class DefineAnalyzer:
         ]
         return items_to_check
 
-    def check_items_in_same_module(self, items_to_check, module_items, define_row):
-        for i in reversed(range(len(items_to_check))):
+    def check_items_in_same_module(self, items_to_check):
+        module_items = self.database.execute_query(ModuleItemsQuery(self.object_id))
+        define_row = self.database.execute_query(
+            SingleDefineQuery(self.object_id)
+        ).next()
+        for module_item in module_items:
             if len(items_to_check) < 1:
                 return
-            defined_item = items_to_check[i]
-            for module_item in module_items:
+            for i in reversed(range(len(items_to_check))):
+                defined_item = items_to_check[i]
                 if module_item.object_id == define_row.object_id:
                     continue
                 if module_item.name_token.literal == defined_item.literal:
                     items_to_check.pop(i)
 
-    def check_items_in_imports(self, items_to_check, imports):
-        for i in reversed(range(len(items_to_check))):
+    def check_items_in_imports(self, items_to_check):
+        imports = self.database.execute_query(ImportItemsInModuleQuery(self.object_id))
+        for imported_item in imports:
             if len(items_to_check) < 1:
                 return
-            defined_item = items_to_check[i]
-            for import_row in imports:
-                for imported_item in import_row.items:
-                    if len(items_to_check) < 1:
-                        return
-                    if imported_item.new_name_token:
-                        if imported_item.new_name_token.literal == defined_item.literal:
-                            items_to_check.pop(i)
-                    elif imported_item.name_token:
-                        if imported_item.name_token.literal == defined_item.literal:
-                            items_to_check.pop(i)
+            for i in reversed(range(len(items_to_check))):
+                defined_item = items_to_check[i]
 
-    def check_items_in_definition_are_defined(self, object_id):
-        (
-            import_table,
-            typename_table,
-            define_row,
-            current_module_id,
-        ) = self.get_tables_and_rows_for_define_checks(object_id)
-        items_to_check = self.get_items_to_check(define_row)
+                if len(items_to_check) < 1:
+                    return
+                if imported_item.new_name_token:
+                    if imported_item.new_name_token.literal == defined_item.literal:
+                        items_to_check.pop(i)
+                elif imported_item.name_token:
+                    if imported_item.name_token.literal == defined_item.literal:
+                        items_to_check.pop(i)
+
+    def check_items_in_definition_are_defined(self):
+        items_to_check = self.get_items_to_check()
         if len(items_to_check) < 1:
             return items_to_check
-        module_items = typename_table.get_items_by_module_id(current_module_id)
-        self.check_items_in_same_module(items_to_check, module_items, define_row)
+        self.check_items_in_same_module(items_to_check)
         if len(items_to_check) < 1:
             return items_to_check
-        if import_table.module_has_imports(current_module_id):
-            imports = import_table.get_imports_by_module_id(current_module_id)
-            self.check_items_in_imports(items_to_check, imports)
+        self.check_items_in_imports(items_to_check)
         for undefined_item_token in items_to_check:
             self.add_error(undefined_item_token, ErrMsg.UNDEFINED_ITEM_IN_DEFINE_STMT)
 
@@ -280,182 +263,97 @@ class DefineAnalyzer:
             return False
         return not is_primitive_type(token)
 
-    def check_that_there_are_no_cycles_in_defined_types(
-        self, object_id, undefined_items
-    ):
-        define_table = self.database.get_table("defines")
-        define_row = define_table.get_item_by_id(object_id)
-        current_module_id = define_row.current_module_id
-        struct_table = self.database.get_table("structs")
-
-        if struct_table.is_module_id_defined(current_module_id):
-            structs = struct_table.get_items_by_module_id(current_module_id)
-        else:
-            structs = list()
-        if define_table.is_module_id_defined(current_module_id):
-            defines = define_table.get_items_by_module_id(current_module_id)
-        else:
-            defines = list()
-        unions = self.get_all_unions_in_module(object_id, current_module_id)
-        enums = self.get_all_enum_in_module(object_id, current_module_id)
-        errors = self.get_all_errors_in_module(object_id, current_module_id)
-
+    def check_that_there_are_no_cycles_in_defined_types(self, undefined_items):
+        define_row = self.database.execute_query(
+            SingleDefineQuery(self.object_id)
+        ).next()
         checker = DefineStatementDependencyChecker(
-            undefined_items, structs, unions, enums, errors, defines, self.error_manager
+            undefined_items, self.error_manager, self.database, self.object_id
         )
         checker.check_dag(define_row)
 
-    def get_all_unions_in_module(self, object_id, current_module_id):
-        return self.get_all_enums_in_module(object_id, current_module_id, "union")
-
-    def get_all_enum_in_module(self, object_id, current_module_id):
-        return self.get_all_enums_in_module(object_id, current_module_id, "enum")
-
-    def get_all_errors_in_module(self, object_id, current_module_id):
-        return self.get_all_enums_in_module(object_id, current_module_id, "error")
-
-    def get_all_enums_in_module(self, object_id, current_module_id, type_name):
-        typename_table = self.database.get_table("typenames")
-        enumerable_table = self.database.get_table("enumerables")
-        enumerables = list()
-        for typename in typename_table.get_items_by_module_id(current_module_id):
-            if typename.object_id == object_id:
-                continue
-            if not enumerable_table.is_object_defined(typename.object_id):
-                continue
-            if typename.category == type_name:
-                enumerable = enumerable_table.get_item_by_id(typename.object_id)
-                union_proxy = UnionProxy(typename.name_token, enumerable.item_list)
-                enumerables.append(union_proxy)
-        return enumerables
-
-    def enforce_nested_define_rules(self, object_id):
-        define_table = self.database.get_table("defines")
-        define_row = define_table.get_item_by_id(object_id)
-
+    def enforce_nested_define_rules(self):
+        define_row = self.database.execute_query(
+            SingleDefineQuery(self.object_id)
+        ).next()
         match define_row.built_in_type_token.type_symbol:
             case symbols.LIST:
-                self.analyze_define_elements_for_list_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.LIST_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.LINKEDLIST:
-                self.analyze_define_elements_for_linked_list_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.LINKED_LIST_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.VECTOR:
-                self.analyze_define_elements_for_vector_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.VECTOR_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.MAP:
-                self.analyze_define_elements_for_map_types(define_row)
+                # for the values in kv pair:
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.MAP_TYPE_VALUE_DEFINE_NESTING_INVALID_DEFINES
+                )
+                # for keys in kv pair:
+                self.analyze_define_elements_for_hash_key_collection_types(
+                    define_row, ErrMsg.MAP_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.HASHMAP:
-                self.analyze_define_elements_for_hashmap_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.HASHMAP_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
+                self.analyze_define_elements_for_hash_key_collection_types(
+                    define_row, ErrMsg.HASHMAP_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.DICTIONARY:
-                self.analyze_define_elements_for_dictionary_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.DICT_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
+                self.analyze_define_elements_for_hash_key_collection_types(
+                    define_row, ErrMsg.DICT_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.SET:
-                self.analyze_define_elements_for_set_types(define_row)
+                self.analyze_define_elements_for_hash_collection_types(
+                    define_row, ErrMsg.SET_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.HASHSET:
-                self.analyze_define_elements_for_hashset_types(define_row)
+                self.analyze_define_elements_for_hash_collection_types(
+                    define_row, ErrMsg.HASHSET_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.TREESET:
-                self.analyze_define_elements_for_treeset_types(define_row)
+                self.analyze_define_elements_for_hash_collection_types(
+                    define_row, ErrMsg.TREESET_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.OPTION:
                 self.analyze_define_elements_for_option_types(define_row)
             case symbols.RESULT:
                 self.analyze_define_elements_for_result_types(define_row)
             case symbols.QUEUE:
-                self.analyze_define_elements_for_queue_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.FIFOQUEUE:
-                self.analyze_define_elements_for_fifo_queue_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.FIFO_QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.DEQUE:
-                self.analyze_define_elements_for_deque_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.DEQUE_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.PRIORITYQUEUE:
-                self.analyze_define_elements_for_priority_queue_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.PRIORITY_QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.STACK:
-                self.analyze_define_elements_for_stack_types(define_row)
+                self.analyze_define_elements_for_linear_collection_types_default(
+                    define_row, ErrMsg.STACK_TYPE_DEFINE_NESTING_INVALID_DEFINES
+                )
             case symbols.FUN:
                 self.analyze_define_elements_for_function_types(define_row)
             case _:
                 raise Exception(
                     f"INTERNAL ERROR: Invalid define type found: {define_row.built_in_type_token.type_symbol}"
                 )
-
-    def analyze_define_elements_for_map_types(self, define_row):
-        # for the values in kv pair:
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.MAP_TYPE_VALUE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-        # for keys in kv pair:
-        self.analyze_define_elements_for_hash_key_collection_types(
-            define_row, ErrMsg.MAP_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_hashmap_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.HASHMAP_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-        self.analyze_define_elements_for_hash_key_collection_types(
-            define_row, ErrMsg.HASHMAP_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_dictionary_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.DICT_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-        self.analyze_define_elements_for_hash_key_collection_types(
-            define_row, ErrMsg.DICT_TYPE_KEY_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_set_types(self, define_row):
-        self.analyze_define_elements_for_hash_collection_types(
-            define_row, ErrMsg.SET_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_hashset_types(self, define_row):
-        self.analyze_define_elements_for_hash_collection_types(
-            define_row, ErrMsg.HASHSET_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_treeset_types(self, define_row):
-        self.analyze_define_elements_for_hash_collection_types(
-            define_row, ErrMsg.TREESET_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_list_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.LIST_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_linked_list_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.LINKED_LIST_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_vector_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.VECTOR_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_queue_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_fifo_queue_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.FIFO_QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_deque_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.DEQUE_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_priority_queue_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.PRIORITY_QUEUE_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
-
-    def analyze_define_elements_for_stack_types(self, define_row):
-        self.analyze_define_elements_for_linear_collection_types_default(
-            define_row, ErrMsg.STACK_TYPE_DEFINE_NESTING_INVALID_DEFINES
-        )
 
     def analyze_define_elements_for_hash_collection_types(
         self, define_row, error_message
@@ -735,9 +633,9 @@ class DefineAnalyzer:
         else:
             print(f"type name row category not found: {type_name_row.category}")
 
-    def enforce_define_rules(self, object_id, undefined_items):
-        self.check_that_there_are_no_cycles_in_defined_types(object_id, undefined_items)
-        self.enforce_nested_define_rules(object_id)
+    def enforce_define_rules(self, undefined_items):
+        self.check_that_there_are_no_cycles_in_defined_types(undefined_items)
+        self.enforce_nested_define_rules()
 
 
 class UnionProxy:

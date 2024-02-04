@@ -162,8 +162,8 @@ def table_tester_factory(table_name):
             tester = FunctionHeaderTableTestQueryRunner()
         case "interfaces":
             tester = InterfaceTableTestQueryRunner()
-        # case "unittests":
-        #     tester = UnittestTableTestQueryRunner() <- unittests just have typenames, and statements, skip
+        case "unittests":
+            tester = UnittestTableTestQueryRunner()
         case "statements":
             tester = StatementTableTestQueryRunner()
         case "structs":
@@ -294,9 +294,15 @@ class ModifierTableTestQueryRunner(TestQueryRunner):
         return self.table.is_object_defined(row["object_id"])
 
     def contents_match(self, row):
+        if not self.table.is_object_defined(row["object_id"]):
+            if len(row["modifier_list"]) == 0:
+                return True
         modifier_list = self.table.get_modifier_list_by_id(row["object_id"])
         if len(row["modifier_list"]) != len(modifier_list):
             return False
+        elif len(row["modifier_list"]) == 0:
+            # means there are no modifiers, so they match
+            return True
         for i in range(len(modifier_list)):
             mod = modifier_list[i]
             if mod is None:
@@ -307,6 +313,7 @@ class ModifierTableTestQueryRunner(TestQueryRunner):
                         "INTERNAL ERROR: modifier found to be None, but was expected not to be"
                     )
             if mod.literal != row["modifier_list"][i]:
+                print("FALSE!_______")
                 return False
         return True
 
@@ -410,14 +417,14 @@ class InterfaceTableTestQueryRunner(TestQueryRunner):
 
     def contents_match(self, test_row):
         table_row = self.table.get_item_by_id(test_row["object_id"])
-        object_ids = self.table.get_rows_by_module_id(test_row["module_id"])
-        if len(table_row) != len(test_row["header_ids"]):
+        other_rows = self.table.get_rows_by_module_id(test_row["module_id"])
+        if len(table_row.fn_header_ids) != len(test_row["header_ids"]):
             return False
-        for id in table_row:
+        for id in table_row.fn_header_ids:
             if id not in test_row["header_ids"]:
                 return False
-        for object_id in object_ids:
-            if object_id == test_row["object_id"]:
+        for other_row in other_rows:
+            if other_row.object_id == test_row["object_id"]:
                 return True
         return False
 
@@ -477,6 +484,23 @@ class FunctionHeaderTableTestQueryRunner(TestQueryRunner):
                 return False
         return True
 
+class UnittestTableTestQueryRunner(TestQueryRunner):
+    def __init__(self) -> None:
+        pass
+
+    def row_is_defined(self, test_row):
+        return self.table.is_object_defined(test_row["object_id"])
+
+    def contents_match(self, test_row):
+        table_row = self.table.get_item_by_id(test_row["object_id"])
+        if test_row["name"] != table_row.name.literal:
+            return False
+        if test_row["module_id"] != table_row.module_id:
+            return False
+        return True
+    
+    def table_size(self):
+        return self.table.get_size()
 
 class StatementTableTestQueryRunner(TestQueryRunner):
     def __init__(self) -> None:

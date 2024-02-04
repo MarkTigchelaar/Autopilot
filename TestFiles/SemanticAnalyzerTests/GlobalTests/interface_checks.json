@@ -1,0 +1,92 @@
+[
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test1/main.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test1/main.ap",
+                "token_literal" : "thing",
+                "line_number" : "4",
+                "column" : "11",
+        
+                "message" : "interface name matches name of item in module",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test1/main.ap",
+                "shadowed_token_literal" : "thing",
+                "shadowed_line_number" : "8",
+                "shadowed_column" : "6"
+            }
+        ],
+        "comment" : "No defines using primitives should raise errors"
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test2/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test2/secondary.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test2/main.ap",
+                "token_literal" : "thing",
+                "line_number" : "3",
+                "column" : "8",
+        
+                "message" : "item in import matches name of another item in module",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test2/main.ap",
+                "shadowed_token_literal" : "thing",
+                "shadowed_line_number" : "5",
+                "shadowed_column" : "11"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test2/main.ap",
+                "token_literal" : "thing",
+                "line_number" : "5",
+                "column" : "11",
+        
+                "message" : "interface name matches name of item in import",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test2/main.ap",
+                "shadowed_token_literal" : "thing",
+                "shadowed_line_number" : "3",
+                "shadowed_column" : "8"
+            }
+        ],
+        "comment" : "No defines using primitives should raise errors"
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test3/main.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test3/main.ap",
+                "token_literal" : "myError",
+                "line_number" : "22",
+                "column" : "49",
+        
+                "message" : "invalid function argument type",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test3/main.ap",
+                "token_literal" : "myError",
+                "line_number" : "22",
+                "column" : "58",
+        
+                "message" : "invalid function return type",
+        
+                "shadowed_file" : null,
+                "shadowed_token_literal" : null,
+                "shadowed_line_number" : null,
+                "shadowed_column" : null
+            }
+        ],
+        "comment" : "No defines using primitives should raise errors"
+    }
+]

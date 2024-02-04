@@ -1,0 +1,10 @@
+module main
+
+
+interface thing is
+    fun functionA() int end
+end
+
+enum thing is
+    a = 0
+end

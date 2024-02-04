@@ -28,7 +28,9 @@ class StatementTable:
             self.by_container_id[container_object_id] = list()
         self.by_container_id[container_object_id].append(row)
 
-    def is_object_defined(self, container_object_id, sequence_num):
+    def is_object_defined(self, container_object_id, sequence_num = None):
+        if sequence_num is None:
+            return False
         potential_key = StatementTableKey(sequence_num, container_object_id)
         return potential_key in self.by_key
 

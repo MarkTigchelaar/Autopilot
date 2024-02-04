@@ -16,7 +16,6 @@ class FunctionSaver(Saver):
 
     def save_to_db(self, database):
         current_module_id = database.get_current_module_id()
-        type_name_table = database.get_table("typenames")
         function_table = database.get_table("functions")
         file_table = database.get_table("files")
         statement_table = database.get_table("statements")

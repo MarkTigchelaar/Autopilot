@@ -33,9 +33,9 @@ unittest my_unittest do
                         break(loopy_loop)
                     end
                 end
-                /*
+                
                 b = a.b.f(1 + 1)
-                */
+                
                 break
             end
         end

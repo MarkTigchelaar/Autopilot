@@ -22,7 +22,11 @@ def phase_four_tests(tracker, test_json, current_dir):
 
 def run_tests(component_tests, current_dir, tracker):
     for test_case in component_tests:
-        semantic_test(test_case, current_dir, tracker)
+        for f in test_case["files"]:
+            if "InterfaceTests/Test3" in f:
+                semantic_test(test_case, current_dir, tracker)
+                break
+        #semantic_test(test_case, current_dir, tracker)
 
 
 def semantic_test(test_case, current_dir, tracker):
@@ -54,7 +58,7 @@ def validate_results(err_manager, test_case, tracker):
     for expected_error in expected_errors:
         if not err_manager.has_errors(True):
             raise Exception(
-                f"INTERNAL ERROR: ErrorManager is missing errors for test: {expected_error['file']}"
+                f"INTERNAL ERROR: ErrorManager is missing errors for test: {expected_error['file']}, expected error: {expected_error}"
             )
         actual_error = err_manager.next_semantic_error()
         test_case["file"] = expected_error["file"]

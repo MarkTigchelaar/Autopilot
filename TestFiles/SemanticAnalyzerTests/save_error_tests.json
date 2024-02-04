@@ -40,13 +40,7 @@
                     ]
                 }
             ],
-            "modifiers" : [
-                {
-                    
-                    "object_id" : 1,
-                    "modifier_list" : []
-                }
-            ],
+            
             "typenames" : [
                 {
                     "type" : "module_name",
@@ -122,10 +116,7 @@
                 }
             ],
             "modifiers" : [
-                {
-                    "object_id" : 1,
-                    "modifier_list" : []
-                },
+                
                 {
                     "object_id" : 2,
                     "modifier_list" : ["pub"]

@@ -18,5 +18,9 @@
     {
         "general_component" : "enum checks",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/enum_checks.json"
+    },
+    {
+        "general_component" : "interface checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/interface_checks.json"
     }
 ]

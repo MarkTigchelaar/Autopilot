@@ -22,7 +22,13 @@ class StructTable:
         if object_id in self.by_id:
             raise Exception("INTERNAL ERROR: id of modifed ast node already defined")
         row = StructTableRow(
-            name_token, object_id, interfaces, fields, function_ids, functions
+            name_token,
+            object_id,
+            module_id,
+            interfaces,
+            fields,
+            function_ids,
+            functions,
         )
         self.by_id[object_id] = row
 
@@ -47,10 +53,18 @@ class StructTable:
 
 class StructTableRow:
     def __init__(
-        self, name_token, object_id, interfaces, fields, function_ids, functions
+        self,
+        name_token,
+        object_id,
+        module_id,
+        interfaces,
+        fields,
+        function_ids,
+        functions,
     ):
         self.name_token = name_token
         self.object_id = object_id
+        self.module_id = module_id
         self.interfaces = interfaces
         self.fields = fields
         self.function_ids = function_ids

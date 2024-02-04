@@ -26,10 +26,11 @@ class FnHeaderSaver(Saver):
             for tok in [acyclic_token, inline_token, public_token]:
                 if tok:
                     mods.append(tok)
-            modifier_table.insert(
-                header_id,
-                mods
-            )
+            if len(mods) > 0:
+                modifier_table.insert(
+                    header_id,
+                    mods
+                )
             header_table.insert(
                 header_id, 
                 self.fn_headers[i]

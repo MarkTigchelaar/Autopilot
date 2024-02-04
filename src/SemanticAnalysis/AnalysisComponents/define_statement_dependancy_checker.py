@@ -1,18 +1,19 @@
 from keywords import is_primitive_type
 import ErrorHandling.semantic_error_messages as ErrMsg
-
+from SemanticAnalysis.Database.Queries.structs_in_module_query import StructsInModuleQuery
+from SemanticAnalysis.Database.Queries.defines_in_module_query import DefinesInModuleQuery
+from SemanticAnalysis.Database.Queries.enums_in_module_query import EnumsInModuleQuery
+from SemanticAnalysis.Database.Queries.unions_in_module_query import UnionsInModuleQuery
+from SemanticAnalysis.Database.Queries.errors_in_module_query import ErrorsInModuleQuery
 
 class DefineStatementDependencyChecker:
     def __init__(
-        self, undefined_items, structs, unions, enums, errors, defines, error_manager
+        self, undefined_items, error_manager, database, object_id
     ):
         self.undefined_items = undefined_items
-        self.structs = structs
-        self.unions = unions
-        self.enums = enums
-        self.errors = errors
-        self.defines = defines
         self.error_manager = error_manager
+        self.database = database
+        self.object_id = object_id
 
         self.visited = set()
         self.defined_type = None
@@ -26,25 +27,29 @@ class DefineStatementDependencyChecker:
         for undefined_item in self.undefined_items:
             if type.literal == undefined_item.literal:
                 return
-        for struct_row in self.structs:
+        structs = self.database.execute_query(StructsInModuleQuery(self.object_id))
+        for struct_row in structs:
             if type.literal == struct_row.name_token.literal:
                 self.visit_item_with_fields(struct_row)
                 return
 
-        for union_row in self.unions:
+        unions = self.database.execute_query(UnionsInModuleQuery(self.object_id))
+        for union_row in unions:
             if type.literal == union_row.name_token.literal:
                 self.visit_item_with_fields(union_row)
                 return
-
-        for enum_row in self.enums:
+        enums = self.database.execute_query(EnumsInModuleQuery(self.object_id))
+        for enum_row in enums:
             if type.literal == enum_row.name_token.literal:
                 return
 
-        for error_row in self.errors:
+        errors = self.database.execute_query(ErrorsInModuleQuery(self.object_id))
+        for error_row in errors:
             if type.literal == error_row.name_token.literal:
                 return
 
-        for define_row in self.defines:
+        defines = self.database.execute_query(DefinesInModuleQuery(self.object_id))
+        for define_row in defines:
             if type.literal == define_row.new_type_name_token.literal:
                 self.visit_define(define_row)
                 return

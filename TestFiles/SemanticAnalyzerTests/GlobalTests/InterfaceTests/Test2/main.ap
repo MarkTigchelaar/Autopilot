@@ -1,0 +1,8 @@
+module main
+
+import thing from module second
+
+interface thing is
+    fun functionA() int end
+end
+

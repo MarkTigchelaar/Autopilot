@@ -1,153 +1,153 @@
 import ErrorHandling.semantic_error_messages as ErrMsg
+from SemanticAnalysis.Database.Queries.module_items_query import ModuleItemsQuery
+from SemanticAnalysis.Database.Queries.interface_header_query import (
+    InterfaceHeaderQuery,
+)
+from SemanticAnalysis.Database.Queries.interface_name_query import InterfaceNameQuery
+from SemanticAnalysis.Database.Queries.import_items_in_module_query import (
+    ImportItemsInModuleQuery,
+)
+from SemanticAnalysis.Database.Queries.imported_items_by_import_statement_item_name_query import (
+    ImportedItemsByImportStatementItemNameQuery,
+)
+from SemanticAnalysis.Database.Queries.built_in_typename_query import (
+    BuiltInTypeNameQuery,
+)
+from keywords import is_primitive_type
+
+OK_TYPES = ["struct", "enum", "union", "defined_type", "interface"]
+FORBIDDEN_TYPES = ["error"]
 
 
 class InterfaceAnalyzer:
     def __init__(self, database, error_manager):
         self.database = database
         self.error_manager = error_manager
+        self.object_id = None
 
     def add_error(self, token, message, shadowed_token=None):
         self.error_manager.add_semantic_error(token, message, shadowed_token)
 
     def analyze(self, object_id):
-        (
-            typename_table,
-            import_table,
-            interface_table,
-            fn_header_table,
-        ) = self.get_tables()
-        header_list = self.get_header_list(interface_table, fn_header_table, object_id)
-        module_items, current_module_id, name_of_interface = self.get_module_items(
-            typename_table, object_id
-        )
+        self.object_id = object_id
+        self.check_name_collisions()
+        self.check_method_type_useage()
 
-        self.check_name_collisions(module_items, header_list, name_of_interface)
-        self.check_import_collisions(
-            import_table, header_list, current_module_id, name_of_interface
-        )
-        self.check_arg_types(typename_table, header_list, current_module_id)
+    def check_name_collisions(self):
+        self.check_name_collisions_in_module()
+        self.check_name_collisions_in_imports()
 
-    def get_tables(self):
-        typename_table = self.database.get_table("typenames")
-        import_table = self.database.get_table("imports")
-        interface_table = self.database.get_table("interfaces")
-        fn_header_table = self.database.get_table("fn_headers")
-        return typename_table, import_table, interface_table, fn_header_table
-
-    def get_header_list(self, interface_table, fn_header_table, object_id):
-        header_id_list = interface_table.get_item_by_id(object_id)
-        header_list = [
-            fn_header_table.get_item_by_id(header_id) for header_id in header_id_list
-        ]
-        return header_list
-
-    def get_module_items(self, typename_table, object_id):
-        type_row = typename_table.get_item_by_id(object_id)
-        current_module_id = type_row.module_id
-        name_of_interface = type_row.name_token
-        module_items = typename_table.get_items_by_module_id(current_module_id)
-        return module_items, current_module_id, name_of_interface
-
-    def check_name_collisions(self, module_items, header_list, name_of_interface):
+    def check_name_collisions_in_module(self):
+        module_items = self.database.execute_query(ModuleItemsQuery(self.object_id))
+        interface_row = self.database.execute_query(
+            InterfaceNameQuery(self.object_id)
+        ).next()
         for module_item in module_items:
-            if module_item.name_token.literal == name_of_interface.name_token.literal:
+            if module_item.object_id <= interface_row.object_id:
+                continue
+            if module_item.name_token.literal == interface_row.name_token.literal:
                 self.add_error(
-                    name_of_interface.name_token,
+                    interface_row.name_token,
                     ErrMsg.INTERFACE_NAME_COLLIDES_WITH_MODULE_ITEM,
                     module_item.name_token,
                 )
-            self.check_header_collisions(header_list, module_item)
 
-    def check_header_collisions(self, header_list, module_item):
-        for header in header_list:
-            name_token = header.get_name()
-            if name_token.literal == module_item.name_token.literal:
+    def check_name_collisions_in_imports(self):
+        import_items = self.database.execute_query(
+            ImportItemsInModuleQuery(self.object_id)
+        )
+        interface_row = self.database.execute_query(
+            InterfaceNameQuery(self.object_id)
+        ).next()
+        for import_item in import_items:
+            name_token = (
+                import_item.new_name_token
+                if import_item.new_name_token
+                else import_item.name_token
+            )
+            if name_token.literal == interface_row.name_token.literal:
                 self.add_error(
-                    name_token,
-                    ErrMsg.INTERFACE_FN_NAME_COLLIDES_WITH_MODULE_ITEM,
-                    module_item.name_token,
-                )
-            self.check_arg_collisions(header, module_item)
-
-    def check_arg_collisions(self, header, module_item):
-        for arg in header.get_args():
-            if arg.get_name().literal == module_item.name_token.literal:
-                self.add_error(
-                    arg.get_name(),
-                    ErrMsg.INTERFACE_FN_ARG_COLLIDES_WITH_MODULE_ITEM,
-                    module_item.name_token,
-                )
-
-    def check_import_collisions(
-        self, import_table, header_list, current_module_id, name_of_interface
-    ):
-        imports = import_table.get_imports_by_module_id(current_module_id)
-        for import_row in imports:
-            for import_item in import_row.items:
-                name_token = (
-                    import_item.new_name_token
-                    if import_item.new_name_token
-                    else import_item.name_token
-                )
-                if name_token.literal == name_of_interface.name_token.literal:
-                    self.add_error(
-                        name_of_interface.name_token,
-                        ErrMsg.INTERFACE_NAME_COLLIDES_WITH_MODULE_ITEM,
-                        name_token,
-                    )
-                self.check_import_header_collisions(header_list, name_token)
-
-    def check_import_header_collisions(self, header_list, name_token):
-        for header in header_list:
-            header_name_token = header.get_name()
-            if header_name_token.literal == name_token.literal:
-                self.add_error(
-                    header_name_token,
-                    ErrMsg.INTERFACE_FN_NAME_COLLIDES_WITH_IMPORT_ITEM,
-                    name_token,
-                )
-            self.check_import_arg_collisions(header, name_token)
-
-    def check_import_arg_collisions(self, header, name_token):
-        for arg in header.get_args():
-            if arg.get_name().literal == name_token.literal:
-                self.add_error(
-                    arg.get_name(),
-                    ErrMsg.INTERFACE_FN_ARG_COLLIDES_WITH_IMPORT_ITEM,
+                    interface_row.name_token,
+                    ErrMsg.INTERFACE_NAME_COLLIDES_WITH_IMPORT,
                     name_token,
                 )
 
-    def check_arg_types(self, typename_table, header_list, current_module_id):
-        ok_arg_types = ["interfaces", "structs", "defines", "enums", "unions"]
-        forbidden_types = ["functions", "errors"]
+    def check_method_type_useage(self):
+        header_list = self.database.execute_query(InterfaceHeaderQuery(self.object_id))
         for header in header_list:
             for arg in header.get_args():
                 arg_type_token = arg.get_type()
-                found = False
-                module_items = typename_table.get_items_by_module_id(current_module_id)
-                found = self.check_module_item_types(
-                    module_items, arg_type_token, ok_arg_types, forbidden_types, found
-                )
-                if not found:
-                    self.check_imported_types_for_arg(arg_type_token, current_module_id)
+                if is_primitive_type(arg_type_token):
+                    continue
+                if not self.check_module_item_types(
+                    arg_type_token, ErrMsg.INVALID_FUNCTION_ARG_TYPE
+                ):
+                    self.check_imported_types_for_arg(
+                        arg_type_token, ErrMsg.INVALID_FUNCTION_ARG_TYPE
+                    )
+            self.check_return_type(header.return_type_token)
 
-    def check_module_item_types(
-        self, module_items, arg_type_token, ok_arg_types, forbidden_types, found
-    ):
+    def check_return_type(self, return_type_token):
+        if return_type_token is None:
+            return
+        if is_primitive_type(return_type_token):
+            return
+        if not self.check_module_item_types(
+            return_type_token, ErrMsg.INVALID_FUNCTION_RETURN_TYPE
+        ):
+            self.check_imported_types_for_arg(
+                return_type_token, ErrMsg.INVALID_FUNCTION_RETURN_TYPE
+            )
+
+    def check_module_item_types(self, arg_type_token, error_message):
+
+        module_items = self.database.execute_query(ModuleItemsQuery(self.object_id))
         for module_item in module_items:
+            if module_item.name_token.literal != arg_type_token.literal:
+                continue
             item_object_id = module_item.object_id
-            try:
-                table_name = self.database.get_tablename_for_object(item_object_id)
-            except:
-                self.add_error(arg_type_token, ErrMsg.UNDEFINED_TYPE)
-            if table_name in forbidden_types:
-                self.add_error(arg_type_token, ErrMsg.INVALID_FUNCTION_ARG_TYPE)
-            elif table_name in ok_arg_types:
+
+            type_name = self.database.execute_query(
+                BuiltInTypeNameQuery(item_object_id)
+            ).next()
+
+            if type_name in FORBIDDEN_TYPES:
+                self.add_error(arg_type_token, error_message)
+                return True
+            elif type_name in OK_TYPES:
                 if module_item.name_token.literal == arg_type_token.literal:
-                    found = True
-                    break
-            else:
-                raise Exception(
-                    "INTERNAL ERROR: type checking encountered a unknown error"
+                    return True
+
+        return False
+
+    def check_imported_types_for_arg(self, arg_type_token, error_message):
+        import_items = self.database.execute_query(
+            ImportItemsInModuleQuery(self.object_id)
+        )
+        for import_item in import_items:
+            name_token = (
+                import_item.new_name_token
+                if import_item.new_name_token
+                else import_item.name_token
+            )
+            if name_token.literal != arg_type_token.literal:
+                continue
+            # Could have duplicate names coming in from more than one import statement
+            # check them all
+            items_from_imported_module = self.database.execute_query(
+                ImportedItemsByImportStatementItemNameQuery(
+                    import_item.import_statement_id, import_item.name_token
                 )
-        return found
+            )
+            for item in items_from_imported_module:
+                if item.name_token.literal != arg_type_token.literal:
+                    continue
+                item_object_id = item.object_id
+                type_name = self.database.execute_query(
+                    BuiltInTypeNameQuery(item_object_id)
+                ).next()
+                if type_name in FORBIDDEN_TYPES:
+                    self.add_error(arg_type_token, error_message)
+                    return
+                elif type_name in OK_TYPES:
+                    return

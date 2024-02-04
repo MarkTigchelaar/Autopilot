@@ -176,6 +176,8 @@ ENUMERABLE_LIST_ITEM_NAME_COLLISION_IN_IMPORT = "enumurable element name matches
 
 INTERFACE_NAME_COLLIDES_WITH_MODULE_ITEM = "interface name matches name of item in module"
 
+INTERFACE_NAME_COLLIDES_WITH_IMPORT = "interface name matches name of item in import"
+
 INTERFACE_FN_ARG_COLLIDES_WITH_MODULE_ITEM = "interface function argument matches name of item in module"
 
 INTERFACE_FN_NAME_COLLIDES_WITH_IMPORT_ITEM = "interface name matches name of item in import"
@@ -183,6 +185,8 @@ INTERFACE_FN_NAME_COLLIDES_WITH_IMPORT_ITEM = "interface name matches name of it
 INTERFACE_FN_ARG_COLLIDES_WITH_IMPORT_ITEM = "interface function argument matches name of item in import"
 
 INVALID_FUNCTION_ARG_TYPE = "invalid function argument type"
+
+INVALID_FUNCTION_RETURN_TYPE = "invalid function return type"
 
 UNDEFINED_TYPE = "Undefined argument type"
 
