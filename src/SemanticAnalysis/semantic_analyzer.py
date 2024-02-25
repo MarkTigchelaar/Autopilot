@@ -6,6 +6,8 @@ from SemanticAnalysis.GlobalAnalysis.import_analyzer import ImportAnalyzer
 from SemanticAnalysis.GlobalAnalysis.define_analyzer import DefineAnalyzer
 from SemanticAnalysis.GlobalAnalysis.enumerable_analyzer import EnumerableAnalyzer
 from SemanticAnalysis.GlobalAnalysis.interface_analyzer import InterfaceAnalyzer
+from SemanticAnalysis.GlobalAnalysis.struct_analyzer import StructAnalyzer
+from SemanticAnalysis.GlobalAnalysis.function_analyzer import FunctionAnalyzer
 
 # NOTE: Most types of objects check their own names against names of other items in their own
 #       module, so multiple name collision errors can occur. This is ok, because the compiler doesn't know which
@@ -25,6 +27,8 @@ class SemanticAnalyzer:
         self.define_analyzer = None
         self.enum_analyzer = None
         self.interface_analyzer = None
+        self.struct_analyzer = None
+        self.function_analyzer = None
 
     def add_error(self, token, message, shadowed_token=None):
         self.error_manager.add_semantic_error(token, message, shadowed_token)
@@ -73,7 +77,7 @@ class SemanticAnalyzer:
                 continue
             elif object_id > mod.module_id:
                 # Collision already recorded
-                break
+                continue
             if mod.path == module_row.path:
                 raise Exception(
                     "INTERNAL ERROR: Other module found with same path, should be same module"
@@ -126,43 +130,24 @@ class SemanticAnalyzer:
             self.interface_analyzer = InterfaceAnalyzer(self.database, self.error_manager)
         self.interface_analyzer.analyze(object_id)
 
-    def run_function_checks(self, object_id):
-        """
-        Check that argument types are defined somewhere
-        Check that function name has no collisions
-        Check the variable names are defined in their scope
-        Check types for argument re assignment
-        check types of expressions
-        Check method and function calls
-        Register current function as caller of any called functions to later check inline / acyclic rules
-        Check fields and methods of types referenced in function
-        Check arguments to other functions and methods
-        Enforce enumerable type rules, like with switch statements for unions
-        Enforce optional variable rules.
-        Enforce that collections return Results or Optionals if guarantee of membership is not present
-        Check that Errors in results have valid fields
-        Check that break statements that refer to labels have labels that exist
-        Check that labels have no name collisions
-        Check assignment types, for let, and var
-        Check if expressions violate int / float promotion rules
-        Check that function / method calls are public
-        """
-        function_table = self.database.get_table("functions")
-
     def run_struct_checks(self, object_id):
-        """
-        Check for name collisions
-        Check functions for references to fields, or make function checks try to get struct fields
-        Add fields to reference graph table to later check inline / acyclic rules
-        """
-        struct_table = self.database.get_table("structs")
+        if self.struct_analyzer is None:
+            self.struct_analyzer = StructAnalyzer(self.database, self.error_manager)
+        self.struct_analyzer.analyze(object_id)
+
+    def run_function_checks(self, object_id):
+        if self.function_analyzer is None:
+            self.function_analyzer = FunctionAnalyzer(self.database, self.error_manager)
+        self.function_analyzer.analyze(object_id)
+
 
     def run_unittest_checks(self, object_id):
         """
         Check that unittests have no name collisions
+        Check that unittests use the assert or enforce, or variations of them
+        Includes a statement analyzer like the function analyzer has
         """
-        unittest_table = self.database.get_table("unittests")
-        unittest_row = unittest_table.get_unittest_for_id(object_id)
+        pass
 
     def identify_type(self, object_id):
         header_table = self.database.get_table("fn_headers")

@@ -69,7 +69,7 @@
         
                 "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/EnumTests/Test3/main.ap",
                 "shadowed_token_literal" : "myUnion",
-                "shadowed_line_number" : "11",
+                "shadowed_line_number" : "14",
                 "shadowed_column" : "8"
             },
             {
@@ -82,7 +82,7 @@
         
                 "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/EnumTests/Test3/main.ap",
                 "shadowed_token_literal" : "myEnum",
-                "shadowed_line_number" : "15",
+                "shadowed_line_number" : "10",
                 "shadowed_column" : "6"
             }
         ],
@@ -114,6 +114,19 @@
                 "column" : "10",
         
                 "message" : "union member name already matched to type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/EnumTests/Test4/main.ap",
+                "shadowed_token_literal" : "otherThing",
+                "shadowed_line_number" : "4",
+                "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/EnumTests/Test4/main.ap",
+                "token_literal" : "otherThing",
+                "line_number" : "13",
+                "column" : "8",
+        
+                "message" : "struct name matches name of item in import",
         
                 "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/EnumTests/Test4/main.ap",
                 "shadowed_token_literal" : "otherThing",

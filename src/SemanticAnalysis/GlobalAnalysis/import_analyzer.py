@@ -89,6 +89,7 @@ class ImportAnalyzer:
                         ErrMsg.MULTIPLE_MODULES_FOUND_ON_PATH,
                         module_row.module_name,
                     )
+            return modules_that_match[0]
         else:
             return modules_that_match[0]
 

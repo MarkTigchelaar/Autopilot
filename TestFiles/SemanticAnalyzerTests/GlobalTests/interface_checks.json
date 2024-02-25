@@ -87,6 +87,218 @@
                 "shadowed_column" : null
             }
         ],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test4/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test4/secondary.ap"
+        ],
+        "errors" : [],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test5/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test5/secondary.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test5/main.ap",
+                "token_literal" : "muhErr",
+                "line_number" : "7",
+                "column" : "49",
+        
+                "message" : "invalid function argument type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test5/secondary.ap",
+                "shadowed_token_literal" : "myError",
+                "shadowed_line_number" : "16",
+                "shadowed_column" : "11"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test5/main.ap",
+                "token_literal" : "muhErr",
+                "line_number" : "7",
+                "column" : "57",
+        
+                "message" : "invalid function return type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test5/secondary.ap",
+                "shadowed_token_literal" : "myError",
+                "shadowed_line_number" : "16",
+                "shadowed_column" : "11"
+            }
+        ],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test6/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test6/others/secondary.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test6/others/others/third.ap"
+        ],
+        "errors" : [],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/others/secondary.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/others/others/third.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/main.ap",
+                "token_literal" : "myError",
+                "line_number" : "7",
+                "column" : "49",
+        
+                "message" : "invalid function argument type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/others/secondary.ap",
+                "shadowed_token_literal" : "myError",
+                "shadowed_line_number" : "16",
+                "shadowed_column" : "11"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/main.ap",
+                "token_literal" : "myError",
+                "line_number" : "7",
+                "column" : "58",
+        
+                "message" : "invalid function return type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/others/secondary.ap",
+                "shadowed_token_literal" : "myError",
+                "shadowed_line_number" : "16",
+                "shadowed_column" : "11"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/others/others/third.ap",
+                "token_literal" : "second",
+                "line_number" : "1",
+                "column" : "8",
+        
+                "message" : "module is not uniquely named",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test7/others/secondary.ap",
+                "shadowed_token_literal" : "second",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            }
+        ],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/others/secondary.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/others/others/third.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/main.ap",
+                "token_literal" : "second",
+                "line_number" : "3",
+                "column" : "62",
+        
+                "message" : "multiple modules found on import path",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/others/secondary.ap",
+                "shadowed_token_literal" : "second",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/main.ap",
+                "token_literal" : "second",
+                "line_number" : "3",
+                "column" : "62",
+        
+                "message" : "multiple modules found on import path",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/others/others/third.ap",
+                "shadowed_token_literal" : "second",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/main.ap",
+                "token_literal" : "myError",
+                "line_number" : "7",
+                "column" : "49",
+        
+                "message" : "invalid function argument type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/others/secondary.ap",
+                "shadowed_token_literal" : "myError",
+                "shadowed_line_number" : "16",
+                "shadowed_column" : "11"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/main.ap",
+                "token_literal" : "myError",
+                "line_number" : "7",
+                "column" : "58",
+        
+                "message" : "invalid function return type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/others/secondary.ap",
+                "shadowed_token_literal" : "myError",
+                "shadowed_line_number" : "16",
+                "shadowed_column" : "11"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/others/others/third.ap",
+                
+                "token_literal" : "second",
+                "line_number" : "1",
+                "column" : "8",
+        
+                "message" : "module is not uniquely named",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test8/others/secondary.ap",
+                "shadowed_token_literal" : "second",
+                "shadowed_line_number" : "1",
+                "shadowed_column" : "8"
+            }
+        ],
+        "comment" : ""
+    },
+    {
+        "files" : [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test9/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test9/second.ap"
+        ],
+        "errors" : [
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test9/main.ap",
+                "token_literal" : "myError",
+                "line_number" : "8",
+                "column" : "21",
+        
+                "message" : "invalid function argument type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test9/second.ap",
+                "shadowed_token_literal" : "myError",
+                "shadowed_line_number" : "4",
+                "shadowed_column" : "11"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test9/main.ap",
+                "token_literal" : "myError",
+                "line_number" : "8",
+                "column" : "30",
+        
+                "message" : "invalid function return type",
+        
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/InterfaceTests/Test9/second.ap",
+                "shadowed_token_literal" : "myError",
+                "shadowed_line_number" : "4",
+                "shadowed_column" : "11"
+            }
+        ],
         "comment" : "No defines using primitives should raise errors"
     }
 ]

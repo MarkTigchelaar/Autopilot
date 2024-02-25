@@ -34,7 +34,11 @@ class ModulePathMatcher:
         while i < len(self.path_list):
             path_item = self.path_list[i]
 
-            if path_item.direction_token.type_symbol == RANGE:
+            if path_item.direction_token is None:
+                #child_folder = self.path_list[i].node_token.literal
+                #directory = os.path.join(directory, child_folder)
+                break
+            elif path_item.direction_token.type_symbol == RANGE:
                 if self.upward_search_restricted:
                     self.error_manager.add_semantic_error(
                         path_item.direction_token, ErrMsg.PATH_BACKTRACKING
@@ -61,14 +65,33 @@ class ModulePathMatcher:
                     )
                     return
             elif path_item.direction_token.type_symbol == COLON:
+                
+                if i == 0 and len(self.path_list) == 2:
+                    # import ... from module name:module_name
+                    # This means that a special case is present, collect ALL subdirectories
+                    # of the current directory
+                    matching_subdirectories = self._check_subfolders(directory)
+                    for subdirectory in matching_subdirectories:
+                        # dirty way to just add to the set.
+                        self._collect_valid_paths_helper(subdirectory, len(self.path_list) + 1)
+                    break
                 i += 1
                 if i < len(self.path_list):
                     child_folder = self.path_list[i].node_token.literal
                     matching_subdirectories = self._check_subfolders(
-                        directory, child_folder, i + 1
+                        directory, child_folder
                     )
                     for subdirectory in matching_subdirectories:
                         self._collect_valid_paths_helper(subdirectory, i + 1)
+                elif i == len(self.path_list) and len(self.path_list) == 1:
+                    child_folder = self.path_list[i-1].node_token.literal
+                    matching_subdirectories = self._check_subfolders(
+                        directory, child_folder
+                    )
+                    for subdirectory in matching_subdirectories:
+                        self._collect_valid_paths_helper(subdirectory, i + 1)
+
+                    
             elif path_item.direction_token.type_symbol == DOT:
                 self.upward_search_restricted = True
                 if i < len(self.path_list):
@@ -79,9 +102,9 @@ class ModulePathMatcher:
         directory = self.reformat_path_list(directory)
         self.matching_directories.add(directory)
 
-    def _check_subfolders(self, directory, target_folder, index):
+    def _check_subfolders(self, directory, target_folder = ""):
         matching_subdirectories = []
         for root, dirs, _ in os.walk(directory):
-            if target_folder in dirs:
+            if target_folder in dirs or target_folder == "":
                 matching_subdirectories.append(os.path.join(root, target_folder))
         return matching_subdirectories

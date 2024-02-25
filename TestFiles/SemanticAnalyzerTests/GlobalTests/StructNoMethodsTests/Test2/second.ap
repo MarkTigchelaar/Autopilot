@@ -1,0 +1,10 @@
+module secondary
+
+
+pub enum myStruct is
+    a
+end
+
+pub struct otherStruct is
+    a as string
+end

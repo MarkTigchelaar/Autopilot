@@ -1,0 +1,9 @@
+module main
+
+import myError from module secondary
+
+
+interface myInterface is
+
+    fun method(a as myError) myError end
+end

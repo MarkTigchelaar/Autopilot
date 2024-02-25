@@ -22,5 +22,13 @@
     {
         "general_component" : "interface checks",
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/interface_checks.json"
+    },
+    {
+        "general_component" : "structs without methods checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/struct_no_method_checks.json"
+    },
+    {
+        "general_component" : "unittests and statement checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/unittests_and_statement_checks.json"
     }
 ]

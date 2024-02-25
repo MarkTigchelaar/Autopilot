@@ -36,3 +36,4 @@ def check_import_path(analyzer, import_node):
             if dot_or_colon_found:
                 analyzer.add_error(node.direction_token, PATH_BACKTRACKING)
                 break
+            

@@ -1,0 +1,13 @@
+module main
+
+
+struct myStruct is
+ a as int,
+ b as float
+end
+
+enum myStruct is
+ a = 0,
+ b,
+ c
+end

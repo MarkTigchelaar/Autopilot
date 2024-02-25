@@ -53,9 +53,22 @@
                 "shadowed_token_literal" : "some_module",
                 "shadowed_line_number" : "1",
                 "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap",
+                "token_literal" : "some_module",
+                "line_number" : "1",
+                "column" : "8",
+
+                "message" : "module is not uniquely named",
+
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap",
+                "shadowed_token_literal" : "some_module",
+                "shadowed_line_number" : "5",
+                "shadowed_column" : "5"
             }
         ],
-        "comment" : ""
+        "comment" : "first module complains about the other two, the second complains about the third, for a totoal of 3 errors."
     },
     {
         "files" : [
@@ -100,8 +113,21 @@
                 "shadowed_token_literal" : "some_module",
                 "shadowed_line_number" : "1",
                 "shadowed_column" : "8"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap",
+                "token_literal" : "some_module",
+                "line_number" : "1",
+                "column" : "8",
+
+                "message" : "module is not uniquely named",
+
+                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap",
+                "shadowed_token_literal" : "some_module",
+                "shadowed_line_number" : "5",
+                "shadowed_column" : "5"
             }
         ],
-        "comment" : ""
+        "comment" : "Same deal, first module complains about all following, the next following module complains about the remaining following modules etc."
     }
 ]

@@ -7,8 +7,8 @@ from SemanticAnalysis.Database.Queries.interface_name_query import InterfaceName
 from SemanticAnalysis.Database.Queries.import_items_in_module_query import (
     ImportItemsInModuleQuery,
 )
-from SemanticAnalysis.Database.Queries.imported_items_by_import_statement_item_name_query import (
-    ImportedItemsByImportStatementItemNameQuery,
+from SemanticAnalysis.Database.Queries.actual_imported_items_by_import_statement_item_name_query import (
+    ActualImportedItemsByImportStatementItemNameQuery,
 )
 from SemanticAnalysis.Database.Queries.built_in_typename_query import (
     BuiltInTypeNameQuery,
@@ -30,12 +30,10 @@ class InterfaceAnalyzer:
 
     def analyze(self, object_id):
         self.object_id = object_id
-        self.check_name_collisions()
-        self.check_method_type_useage()
-
-    def check_name_collisions(self):
         self.check_name_collisions_in_module()
         self.check_name_collisions_in_imports()
+        self.check_method_type_useage()
+        
 
     def check_name_collisions_in_module(self):
         module_items = self.database.execute_query(ModuleItemsQuery(self.object_id))
@@ -133,21 +131,30 @@ class InterfaceAnalyzer:
             if name_token.literal != arg_type_token.literal:
                 continue
             # Could have duplicate names coming in from more than one import statement
-            # check them all
+            # check all of them
             items_from_imported_module = self.database.execute_query(
-                ImportedItemsByImportStatementItemNameQuery(
-                    import_item.import_statement_id, import_item.name_token
+                ActualImportedItemsByImportStatementItemNameQuery(
+                    self.object_id, import_item
                 )
             )
+            if not items_from_imported_module.has_next():
+                raise Exception(
+                    "INTERNAL ERROR: No items found for import statement, should have been caught in import analyzer"
+                )
             for item in items_from_imported_module:
-                if item.name_token.literal != arg_type_token.literal:
+                # BUG?: new names are not being checked, only the original name
+                # line up new names also with the correct
+                # FIX IN PLACE, add tests to check that analyzer is not confused by name aliasing
+                if item.name_token.literal != import_item.name_token.literal:
                     continue
                 item_object_id = item.object_id
                 type_name = self.database.execute_query(
                     BuiltInTypeNameQuery(item_object_id)
                 ).next()
                 if type_name in FORBIDDEN_TYPES:
-                    self.add_error(arg_type_token, error_message)
+                    # Be sure to use which ever name is being used in the function header
+                    # so name_token is used here, not arg_type_token, which could be the new name
+                    self.add_error(arg_type_token, error_message, item.name_token)
                     return
                 elif type_name in OK_TYPES:
                     return

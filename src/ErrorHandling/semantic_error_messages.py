@@ -257,3 +257,9 @@ RESULT_TYPE_ERROR_DEFINE_NESTING_INVALID_DEFINES = "result error type must be an
 FUNCTION_TYPE_ARG_DEFINE_NESTING_INVALID_DEFINES = "function argument type cannot be a error type"
 
 FUNCTION_TYPE_RETURN_VAL_DEFINE_NESTING_INVALID_DEFINES = "function return value type cannot be a error type"
+
+STRUCT_NAME_COLLIDES_WITH_MODULE_ITEM = "struct name matches name of item in module"
+
+STRUCT_NAME_COLLIDES_WITH_IMPORT = "struct name matches name of item in import"
+
+STRUCT_INTERFACE_MATCHES_TO_MULTIPLE_INTERFACES = "struct interface matches to multiple interfaces"

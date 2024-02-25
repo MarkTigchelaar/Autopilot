@@ -1,0 +1,12 @@
+module main
+
+import myStruct, myUnion, myEnum from module second
+
+error myError is
+    something
+end
+
+interface thing is
+    fun method1(a as int, b as myStruct) int end
+    fun method2(c as myEnum, d as myUnion, e as myStruct) msStruct end
+end
