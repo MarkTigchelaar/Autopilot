@@ -1,0 +1,9 @@
+module main
+
+pub fun main() do
+    let i as int = second()
+end
+
+fun second() int do
+    return 5
+end

@@ -1,23 +1,12 @@
 import ErrorHandling.semantic_error_messages as ErrMsg
 from SemanticAnalysis.Database.Queries.module_items_query import ModuleItemsQuery
-# from SemanticAnalysis.Database.Queries.interface_header_query import (
-#     InterfaceHeaderQuery,
-# )
 from SemanticAnalysis.Database.Queries.struct_name_query import StructNameQuery
-# from SemanticAnalysis.Database.Queries.interface_name_query import InterfaceNameQuery
 from SemanticAnalysis.Database.Queries.import_items_in_module_query import (
     ImportItemsInModuleQuery,
 )
 from SemanticAnalysis.Database.Queries.all_actual_interfaces_known_in_module_by_module_item_id import (
     AllActualInterfacesKnownInModuleByModuleItemId
 )
-# from SemanticAnalysis.Database.Queries.actual_imported_items_by_import_statement_item_name_query import (
-#     ActualImportedItemsByImportStatementItemNameQuery,
-# )
-# from SemanticAnalysis.Database.Queries.built_in_typename_query import (
-#     BuiltInTypeNameQuery,
-# )
-# from keywords import is_primitive_type
 
 OK_TYPES = ["struct", "enum", "union", "defined_type", "interface"]
 FORBIDDEN_TYPES = ["error"]

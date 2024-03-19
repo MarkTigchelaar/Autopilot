@@ -1,0 +1,12 @@
+module main
+
+
+import second, third as thrid from module secondary
+
+fun second() do
+    let i as int = 0
+end
+
+fun thrid() do
+    let j as int = 0
+end

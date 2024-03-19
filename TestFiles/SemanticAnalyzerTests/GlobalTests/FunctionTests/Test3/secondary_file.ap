@@ -1,0 +1,10 @@
+module secondary
+
+pub enum second is
+    a
+end
+
+
+pub error third is
+    bad
+end

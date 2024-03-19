@@ -28,7 +28,7 @@
         "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/struct_no_method_checks.json"
     },
     {
-        "general_component" : "unittests and statement checks",
-        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/unittests_and_statement_checks.json"
+        "general_component" : "function and statement checks",
+        "test_manifest_file" : "../TestFiles/SemanticAnalyzerTests/GlobalTests/function_checks.json"
     }
 ]

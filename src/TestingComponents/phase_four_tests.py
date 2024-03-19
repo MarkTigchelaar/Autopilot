@@ -22,10 +22,6 @@ def phase_four_tests(tracker, test_json, current_dir):
 
 def run_tests(component_tests, current_dir, tracker):
     for test_case in component_tests:
-        # for f in test_case["files"]:
-        #     if "StructNoMethodsTests/Test2" in f:
-        #         semantic_test(test_case, current_dir, tracker)
-        #         break
         semantic_test(test_case, current_dir, tracker)
 
 
@@ -55,13 +51,14 @@ def validate_results(err_manager, test_case, tracker):
         test_case["file"] = test_case["files"][0]
         record_component_test(test_case, tracker, "no error", "no error")
 
+    elif not err_manager.has_errors(True):
+        num_errors = len(err_manager.semantic_errors)
+        num_expected_errors = len(expected_errors)
+        raise Exception(
+            f"INTERNAL ERROR: ErrorManager is missing errors for test: {expected_error['file']}, expected error: {expected_error}. \nNumber of errors: {num_errors}, number of expected errors: {num_expected_errors}"
+        )
     for expected_error in expected_errors:
-        if not err_manager.has_errors(True):
-            num_errors = len(err_manager.semantic_errors)
-            num_expected_errors = len(expected_errors)
-            raise Exception(
-                f"INTERNAL ERROR: ErrorManager is missing errors for test: {expected_error['file']}, expected error: {expected_error}. \nNumber of errors: {num_errors}, number of expected errors: {num_expected_errors}"
-            )
+
         actual_error = err_manager.next_semantic_error()
         test_case["file"] = expected_error["file"]
         record_component_test(

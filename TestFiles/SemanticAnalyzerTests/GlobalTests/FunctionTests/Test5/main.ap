@@ -1,0 +1,16 @@
+module main
+
+import myStruct, myUnion, myEnum, myError as muhErr from module second
+
+pub fun main() do
+    let c as myEnum = myEnum()
+    let dee as myUnion = myUnion()
+    // let eee as muhErr = muErr()
+    // leaving that there to indicate the intention, send in a error, which whould not
+    // happen, errors only exist in results
+    // let i as int = secondary(c, dee, eee) // will cause missing arg in statement analysis later (when implemented), but also desired type error
+end
+
+fun secondary(c as myEnum, d as myUnion, e as muhErr) muhErr do
+    return 5
+end

@@ -97,6 +97,8 @@ class SemanticAnalyzer:
             if item.object_id == object_id:
                 continue
             if item.name_token.literal == module_row.module_name.literal:
+                if module_row.module_name.literal == "main":
+                    continue
                 self.add_error(
                     item.name_token,
                     ErrMsg.MODULE_NAME_AND_ITEM_COLLISION,

@@ -263,3 +263,7 @@ STRUCT_NAME_COLLIDES_WITH_MODULE_ITEM = "struct name matches name of item in mod
 STRUCT_NAME_COLLIDES_WITH_IMPORT = "struct name matches name of item in import"
 
 STRUCT_INTERFACE_MATCHES_TO_MULTIPLE_INTERFACES = "struct interface matches to multiple interfaces"
+
+FUNCTION_NAME_COLLIDES_WITH_MODULE_ITEM = "function name matches name of item in module"
+
+FUNCTION_NAME_COLLIDES_WITH_IMPORT = "function name matches name of item in import"

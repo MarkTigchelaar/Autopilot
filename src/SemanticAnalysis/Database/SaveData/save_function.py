@@ -14,7 +14,7 @@ class FunctionSaver(Saver):
         self.object_id = None
 
 
-    def save_to_db(self, database):
+    def save_to_db(self, database, struct_id=None):
         current_module_id = database.get_current_module_id()
         function_table = database.get_table("functions")
         file_table = database.get_table("files")
@@ -36,7 +36,8 @@ class FunctionSaver(Saver):
         function_table.insert(
             self.object_id,
             header_ids[0],
-            current_module_id
+            current_module_id,
+            struct_id
         )
 
         statement_saver.save_statements(statement_table, self.function.statements)

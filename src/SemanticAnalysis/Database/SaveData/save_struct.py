@@ -26,7 +26,7 @@ class StructSaver(Saver):
         function_ids = list()
         for fn in self.struct.functions:
             function_saver = FunctionSaver(fn)
-            function_saver.save_to_db(database)
+            function_saver.save_to_db(database, object_id)
             function_id = function_saver.object_id
             function_ids.append(function_id)
 
