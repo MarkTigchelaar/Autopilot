@@ -36,12 +36,8 @@ def get_json_from_file(manifest: str):
     jsonfile = open(manifest, "r")
     tests = json.load(jsonfile)
     jsonfile.close()
-    #f = open(manifest, "w")
     for test in tests:
         test["analyzer_test_config_names"] = ["skip_statements"]
-    #json.dump(tests, f, indent=4)
-    #print(tests)
-
     return tests
 
 

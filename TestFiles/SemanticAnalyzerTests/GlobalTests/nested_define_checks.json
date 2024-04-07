@@ -1,60 +1,58 @@
 [
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test19/main.ap"
         ],
-        "errors" : [],
-        "comment" : "List can contain primitives, structs, unions, enums, interfaces, functions, options and results"
+        "errors": [],
+        "comment": "List can contain primitives, structs, unions, enums, interfaces, functions, options and results",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test20/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test20/main.ap",
-                "token_literal" : "otherList",
-                "line_number" : "3",
-                "column" : "13",
-        
-                "message" : "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
-        
-                "shadowed_file" : null,
-                "shadowed_token_literal" : null,
-                "shadowed_line_number" : null,
-                "shadowed_column" : null
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test20/main.ap",
+                "token_literal": "otherList",
+                "line_number": "3",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
             }
         ],
-        "comment" : "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test21/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test21/main.ap",
-                "token_literal" : "otherList",
-                "line_number" : "3",
-                "column" : "13",
-        
-                "message" : "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
-        
-                "shadowed_file" : null,
-                "shadowed_token_literal" : null,
-                "shadowed_line_number" : null,
-                "shadowed_column" : null
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test21/main.ap",
+                "token_literal": "otherList",
+                "line_number": "3",
+                "column": "13",
+                "message": "general list type define statement can only contain primitives, unions, enums, structs, interfaces, function, options and results",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
             }
         ],
-        "comment" : "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
-
-
-
-
-
-
-
     {
         "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test22/main.ap"
@@ -72,7 +70,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -91,7 +92,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -110,7 +114,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -129,7 +136,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -148,7 +158,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -167,7 +180,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -186,7 +202,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -205,7 +224,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -224,7 +246,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -243,7 +268,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -262,7 +290,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -281,7 +312,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -300,7 +334,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -319,11 +356,11 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
-
-
-
     {
         "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test36/main.ap"
@@ -341,7 +378,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -360,7 +400,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -379,7 +422,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -398,7 +444,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -417,7 +466,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -436,7 +488,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -455,7 +510,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -474,7 +532,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -493,7 +554,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -512,7 +576,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -531,7 +598,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -550,7 +620,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -569,7 +642,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -588,7 +664,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -607,7 +686,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -626,7 +708,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -645,7 +730,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -664,7 +752,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -683,7 +774,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -702,7 +796,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -721,7 +818,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -740,7 +840,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -759,7 +862,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -778,7 +884,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -797,7 +906,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -816,7 +928,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -835,7 +950,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -854,7 +972,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -873,7 +994,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -892,7 +1016,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -911,7 +1038,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -930,7 +1060,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -949,7 +1082,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -968,7 +1104,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -987,7 +1126,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1006,7 +1148,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1025,7 +1170,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1044,7 +1192,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1063,7 +1214,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1082,7 +1236,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1101,7 +1258,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1120,7 +1280,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1139,7 +1302,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1158,7 +1324,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1177,7 +1346,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1196,7 +1368,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1215,7 +1390,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1234,7 +1412,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1253,7 +1434,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1272,7 +1456,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1291,7 +1478,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1310,7 +1500,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1329,7 +1522,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1348,7 +1544,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1367,7 +1566,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1386,7 +1588,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1405,7 +1610,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1424,7 +1632,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1443,7 +1654,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1462,7 +1676,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1481,7 +1698,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1500,7 +1720,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1519,7 +1742,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1538,7 +1764,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1557,7 +1786,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1576,7 +1808,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1595,7 +1830,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1614,7 +1852,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1633,7 +1874,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1652,7 +1896,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1671,7 +1918,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1690,7 +1940,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1709,7 +1962,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1728,7 +1984,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1747,7 +2006,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1766,7 +2028,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1785,7 +2050,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1804,7 +2072,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1823,7 +2094,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1842,7 +2116,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1861,7 +2138,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1880,7 +2160,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1899,7 +2182,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1918,7 +2204,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1937,7 +2226,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1956,7 +2248,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1975,7 +2270,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -1994,7 +2292,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2013,7 +2314,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2032,7 +2336,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2051,7 +2358,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2070,7 +2380,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2089,7 +2402,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2108,7 +2424,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2127,7 +2446,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2146,7 +2468,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2165,7 +2490,10 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2184,14 +2512,20 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test134/main.ap"
         ],
         "errors": [],
-        "comment": "Hashes can contain structs, and interfaces"
+        "comment": "Hashes can contain structs, and interfaces",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2297,9 +2631,11 @@
                 "shadowed_line_number": null,
                 "shadowed_column": null
             }
-
         ],
-        "comment": "Lists cannot contain lists, or other container types (except for options and results)"
+        "comment": "Lists cannot contain lists, or other container types (except for options and results)",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2307,7 +2643,10 @@
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test136/second.ap"
         ],
         "errors": [],
-        "comment": "Lists can contain items from other modules"
+        "comment": "Lists can contain items from other modules",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2327,14 +2666,20 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Lists can contain items from other modules"
+        "comment": "Lists can contain items from other modules",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test138/main.ap"
         ],
         "errors": [],
-        "comment": "Maps can contain structs and interfaces as keys"
+        "comment": "Maps can contain structs and interfaces as keys",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
@@ -2375,13 +2720,19 @@
                 "shadowed_column": null
             }
         ],
-        "comment": "Maps can contain primitives, structs and interfaces as keys"
+        "comment": "Maps can contain primitives, structs and interfaces as keys",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
         "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test140/main.ap"
         ],
         "errors": [],
-        "comment": "Functions an take functions, options, results, etc, as well as all the beuilt in defined types"
+        "comment": "Functions an take functions, options, results, etc, as well as all the beuilt in defined types",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     }
 ]

@@ -1,84 +1,80 @@
 [
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test1/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test1/main.ap",
-                "token_literal" : "myStruct",
-                "line_number" : "4",
-                "column" : "8",
-        
-                "message" : "struct name matches name of item in module",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test1/main.ap",
-                "shadowed_token_literal" : "myStruct",
-                "shadowed_line_number" : "9",
-                "shadowed_column" : "6"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test1/main.ap",
+                "token_literal": "myStruct",
+                "line_number": "4",
+                "column": "8",
+                "message": "struct name matches name of item in module",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test1/main.ap",
+                "shadowed_token_literal": "myStruct",
+                "shadowed_line_number": "9",
+                "shadowed_column": "6"
             }
         ],
-        "comment" : "No defines using primitives should raise errors, name collisions continue to raise errors"
+        "comment": "No defines using primitives should raise errors, name collisions continue to raise errors",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/second.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
-                "token_literal" : "myStruct",
-                "line_number" : "3",
-                "column" : "8",
-        
-                "message" : "item in import matches name of another item in module",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
-                "shadowed_token_literal" : "myStruct",
-                "shadowed_line_number" : "5",
-                "shadowed_column" : "8"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
+                "token_literal": "myStruct",
+                "line_number": "3",
+                "column": "8",
+                "message": "item in import matches name of another item in module",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
+                "shadowed_token_literal": "myStruct",
+                "shadowed_line_number": "5",
+                "shadowed_column": "8"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
-                "token_literal" : "AlsoCollide",
-                "line_number" : "3",
-                "column" : "33",
-        
-                "message" : "item in import matches name of another item in module",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
-                "shadowed_token_literal" : "AlsoCollide",
-                "shadowed_line_number" : "9",
-                "shadowed_column" : "8"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
+                "token_literal": "AlsoCollide",
+                "line_number": "3",
+                "column": "33",
+                "message": "item in import matches name of another item in module",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
+                "shadowed_token_literal": "AlsoCollide",
+                "shadowed_line_number": "9",
+                "shadowed_column": "8"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
-                "token_literal" : "myStruct",
-                "line_number" : "5",
-                "column" : "8",
-        
-                "message" : "struct name matches name of item in import",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
-                "shadowed_token_literal" : "myStruct",
-                "shadowed_line_number" : "3",
-                "shadowed_column" : "8"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
+                "token_literal": "myStruct",
+                "line_number": "5",
+                "column": "8",
+                "message": "struct name matches name of item in import",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
+                "shadowed_token_literal": "myStruct",
+                "shadowed_line_number": "3",
+                "shadowed_column": "8"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
-                "token_literal" : "AlsoCollide",
-                "line_number" : "9",
-                "column" : "8",
-        
-                "message" : "struct name matches name of item in import",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
-                "shadowed_token_literal" : "AlsoCollide",
-                "shadowed_line_number" : "3",
-                "shadowed_column" : "33"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
+                "token_literal": "AlsoCollide",
+                "line_number": "9",
+                "column": "8",
+                "message": "struct name matches name of item in import",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StructNoMethodsTests/Test2/main.ap",
+                "shadowed_token_literal": "AlsoCollide",
+                "shadowed_line_number": "3",
+                "shadowed_column": "33"
             }
         ],
-        "comment" : "Name collisions with imported items continue to be raiseds"
+        "comment": "Name collisions with imported items continue to be raiseds",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     }
 ]

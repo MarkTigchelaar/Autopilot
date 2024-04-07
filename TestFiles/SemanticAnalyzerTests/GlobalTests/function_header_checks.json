@@ -1,137 +1,134 @@
 [
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test1/main.ap"
         ],
-        "errors" : [],
-        "analyzer_test_config_names" : ["skip_statements"],
-        "comment" : "Test1: Simple statement with one variable. Should pass."
+        "errors": [],
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ],
+        "comment": "Test1: Simple statement with one variable. Should pass."
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test2/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test2/main.ap",
-                "token_literal" : "second",
-                "line_number" : "3",
-                "column" : "5",
-        
-                "message" : "function name matches name of item in module",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test2/main.ap",
-                "shadowed_token_literal" : "second",
-                "shadowed_line_number" : "7",
-                "shadowed_column" : "5"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test2/main.ap",
+                "token_literal": "second",
+                "line_number": "3",
+                "column": "5",
+                "message": "function name matches name of item in module",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test2/main.ap",
+                "shadowed_token_literal": "second",
+                "shadowed_line_number": "7",
+                "shadowed_column": "5"
             }
         ],
-        "analyzer_test_config_names" : ["skip_statements"],
-        "comment" : "Test2: 2 functions with the same name, the first one should complain about the second one."
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ],
+        "comment": "Test2: 2 functions with the same name, the first one should complain about the second one."
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/secondary_file.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
-                "token_literal" : "second",
-                "line_number" : "4",
-                "column" : "8",
-        
-                "message" : "item in import matches name of another item in module",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
-                "shadowed_token_literal" : "second",
-                "shadowed_line_number" : "6",
-                "shadowed_column" : "5"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
+                "token_literal": "second",
+                "line_number": "4",
+                "column": "8",
+                "message": "item in import matches name of another item in module",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
+                "shadowed_token_literal": "second",
+                "shadowed_line_number": "6",
+                "shadowed_column": "5"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
-                "token_literal" : "thrid",
-                "line_number" : "4",
-                "column" : "25",
-        
-                "message" : "item in import matches name of another item in module",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
-                "shadowed_token_literal" : "thrid",
-                "shadowed_line_number" : "10",
-                "shadowed_column" : "5"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
+                "token_literal": "thrid",
+                "line_number": "4",
+                "column": "25",
+                "message": "item in import matches name of another item in module",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
+                "shadowed_token_literal": "thrid",
+                "shadowed_line_number": "10",
+                "shadowed_column": "5"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
-                "token_literal" : "second",
-                "line_number" : "6",
-                "column" : "5",
-        
-                "message" : "function name matches name of item in import",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
-                "shadowed_token_literal" : "second",
-                "shadowed_line_number" : "4",
-                "shadowed_column" : "8"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
+                "token_literal": "second",
+                "line_number": "6",
+                "column": "5",
+                "message": "function name matches name of item in import",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
+                "shadowed_token_literal": "second",
+                "shadowed_line_number": "4",
+                "shadowed_column": "8"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
-                "token_literal" : "thrid",
-                "line_number" : "10",
-                "column" : "5",
-        
-                "message" : "function name matches name of item in import",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
-                "shadowed_token_literal" : "thrid",
-                "shadowed_line_number" : "4",
-                "shadowed_column" : "25"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
+                "token_literal": "thrid",
+                "line_number": "10",
+                "column": "5",
+                "message": "function name matches name of item in import",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test3/main.ap",
+                "shadowed_token_literal": "thrid",
+                "shadowed_line_number": "4",
+                "shadowed_column": "25"
             }
         ],
-        "analyzer_test_config_names" : ["skip_statements"],
-        "comment" : "Test3: Functions with same names as items in import list (one has alias)"
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ],
+        "comment": "Test3: Functions with same names as items in import list (one has alias)"
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test4/main.ap"
         ],
-        "errors" : [],
-        "analyzer_test_config_names" : ["skip_statements"],
-        "comment" : ""
+        "errors": [],
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ],
+        "comment": ""
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/main.ap",
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/secondary.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/main.ap",
-                "token_literal" : "muhErr",
-                "line_number" : "14",
-                "column" : "47",
-        
-                "message" : "invalid function argument type",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/secondary.ap",
-                "shadowed_token_literal" : "myError",
-                "shadowed_line_number" : "15",
-                "shadowed_column" : "11"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/main.ap",
+                "token_literal": "muhErr",
+                "line_number": "14",
+                "column": "47",
+                "message": "invalid function argument type",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/secondary.ap",
+                "shadowed_token_literal": "myError",
+                "shadowed_line_number": "15",
+                "shadowed_column": "11"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/main.ap",
-                "token_literal" : "muhErr",
-                "line_number" : "14",
-                "column" : "55",
-        
-                "message" : "invalid function return type",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/secondary.ap",
-                "shadowed_token_literal" : "myError",
-                "shadowed_line_number" : "15",
-                "shadowed_column" : "11"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/main.ap",
+                "token_literal": "muhErr",
+                "line_number": "14",
+                "column": "55",
+                "message": "invalid function return type",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test5/secondary.ap",
+                "shadowed_token_literal": "myError",
+                "shadowed_line_number": "15",
+                "shadowed_column": "11"
             }
         ],
-        "comment" : ""
+        "comment": "",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     }
 ]

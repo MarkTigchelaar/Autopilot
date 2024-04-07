@@ -1,382 +1,398 @@
 [
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test1/main.ap"
         ],
-        "errors" : [],
-        "comment" : "No defines using primitives should raise errors"
+        "errors": [],
+        "comment": "No defines using primitives should raise errors",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/main.ap",
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/file2.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/main.ap",
-                "token_literal" : "IntVector",
-                "line_number" : "3",
-                "column" : "23",
-        
-                "message" : "define statement names new type the same as another type",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/file2.ap",
-                "shadowed_token_literal" : "IntVector",
-                "shadowed_line_number" : "5",
-                "shadowed_column" : "6"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/main.ap",
+                "token_literal": "IntVector",
+                "line_number": "3",
+                "column": "23",
+                "message": "define statement names new type the same as another type",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/file2.ap",
+                "shadowed_token_literal": "IntVector",
+                "shadowed_line_number": "5",
+                "shadowed_column": "6"
             }
         ],
-        "comment" : "Define can't create typename that already exists in the same module"
+        "comment": "Define can't create typename that already exists in the same module",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/file2.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "token_literal" : "IntVector",
-                "line_number" : "3",
-                "column" : "8",
-        
-                "message" : "item in import matches name of another item in module",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "shadowed_token_literal" : "IntVector",
-                "shadowed_line_number" : "5",
-                "shadowed_column" : "23"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
+                "token_literal": "IntVector",
+                "line_number": "3",
+                "column": "8",
+                "message": "item in import matches name of another item in module",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
+                "shadowed_token_literal": "IntVector",
+                "shadowed_line_number": "5",
+                "shadowed_column": "23"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "token_literal" : "NotIntVector",
-                "line_number" : "3",
-                "column" : "34",
-        
-                "message" : "item in import matches name of another item in module",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "shadowed_token_literal" : "NotIntVector",
-                "shadowed_line_number" : "9",
-                "shadowed_column" : "22"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
+                "token_literal": "NotIntVector",
+                "line_number": "3",
+                "column": "34",
+                "message": "item in import matches name of another item in module",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
+                "shadowed_token_literal": "NotIntVector",
+                "shadowed_line_number": "9",
+                "shadowed_column": "22"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "token_literal" : "IntVector",
-                "line_number" : "5",
-                "column" : "23",
-        
-                "message" : "define statement names new type the same as an imported type",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "shadowed_token_literal" : "IntVector",
-                "shadowed_line_number" : "3",
-                "shadowed_column" : "8"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
+                "token_literal": "IntVector",
+                "line_number": "5",
+                "column": "23",
+                "message": "define statement names new type the same as an imported type",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
+                "shadowed_token_literal": "IntVector",
+                "shadowed_line_number": "3",
+                "shadowed_column": "8"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "token_literal" : "NotIntVector",
-                "line_number" : "9",
-                "column" : "22",
-        
-                "message" : "define statement names new type the same as an imported type",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "shadowed_token_literal" : "NotIntVector",
-                "shadowed_line_number" : "3",
-                "shadowed_column" : "34"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
+                "token_literal": "NotIntVector",
+                "line_number": "9",
+                "column": "22",
+                "message": "define statement names new type the same as an imported type",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
+                "shadowed_token_literal": "NotIntVector",
+                "shadowed_line_number": "3",
+                "shadowed_column": "34"
             }
         ],
-        "comment" : "This also includes import items"
+        "comment": "This also includes import items",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test4/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-            "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test4/main.ap",
-            "token_literal" : "StringDict",
-            "line_number" : "3",
-            "column" : "35",
-    
-            "message" : "define statement uses same exact types in definition as other define statement",
-    
-            "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test4/main.ap",
-            "shadowed_token_literal" : "OtherDict",
-            "shadowed_line_number" : "5",
-            "shadowed_column" : "35"
-        }
-    ],
-        "comment" : "Defines with same exact components and built in types is an error"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test4/main.ap",
+                "token_literal": "StringDict",
+                "line_number": "3",
+                "column": "35",
+                "message": "define statement uses same exact types in definition as other define statement",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test4/main.ap",
+                "shadowed_token_literal": "OtherDict",
+                "shadowed_line_number": "5",
+                "shadowed_column": "35"
+            }
+        ],
+        "comment": "Defines with same exact components and built in types is an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test5/main.ap"
         ],
-        "errors" : [
-            
-    ],
-        "comment" : "Defines with same exact components but different built in types is not an error"
+        "errors": [],
+        "comment": "Defines with same exact components but different built in types is not an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test6/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test6/main.ap",
-                "token_literal" : "IntVector",
-                "line_number" : "3",
-                "column" : "23",
-        
-                "message" : "define statement uses same exact types in definition as other define statement",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test6/main.ap",
-                "shadowed_token_literal" : "OtherVector",
-                "shadowed_line_number" : "5",
-                "shadowed_column" : "23"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test6/main.ap",
+                "token_literal": "IntVector",
+                "line_number": "3",
+                "column": "23",
+                "message": "define statement uses same exact types in definition as other define statement",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test6/main.ap",
+                "shadowed_token_literal": "OtherVector",
+                "shadowed_line_number": "5",
+                "shadowed_column": "23"
             }
         ],
-        "comment" : "Defines with same exact components and built in types is an error"
+        "comment": "Defines with same exact components and built in types is an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test7/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test7/main.ap",
-                "token_literal" : "FirstOptional",
-                "line_number" : "3",
-                "column" : "23",
-        
-                "message" : "define statement uses same exact types in definition as other define statement",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test7/main.ap",
-                "shadowed_token_literal" : "SecondOptional",
-                "shadowed_line_number" : "5",
-                "shadowed_column" : "23"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test7/main.ap",
+                "token_literal": "FirstOptional",
+                "line_number": "3",
+                "column": "23",
+                "message": "define statement uses same exact types in definition as other define statement",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test7/main.ap",
+                "shadowed_token_literal": "SecondOptional",
+                "shadowed_line_number": "5",
+                "shadowed_column": "23"
             }
         ],
-        "comment" : "Defines with same exact components and built in types is an error"
+        "comment": "Defines with same exact components and built in types is an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test8/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test8/main.ap",
-                "token_literal" : "FirstResult",
-                "line_number" : "4",
-                "column" : "28",
-        
-                "message" : "define statement uses same exact types in definition as other define statement",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test8/main.ap",
-                "shadowed_token_literal" : "SecondResult",
-                "shadowed_line_number" : "6",
-                "shadowed_column" : "28"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test8/main.ap",
+                "token_literal": "FirstResult",
+                "line_number": "4",
+                "column": "28",
+                "message": "define statement uses same exact types in definition as other define statement",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test8/main.ap",
+                "shadowed_token_literal": "SecondResult",
+                "shadowed_line_number": "6",
+                "shadowed_column": "28"
             }
         ],
-        "comment" : "Defines with same exact components and built in types is an error"
+        "comment": "Defines with same exact components and built in types is an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap",
-                "token_literal" : "IntFunction",
-                "line_number" : "3",
-                "column" : "24",
-        
-                "message" : "define statement uses same exact types in definition as other define statement",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap",
-                "shadowed_token_literal" : "CopyCatFunction",
-                "shadowed_line_number" : "9",
-                "shadowed_column" : "24"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap",
+                "token_literal": "IntFunction",
+                "line_number": "3",
+                "column": "24",
+                "message": "define statement uses same exact types in definition as other define statement",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap",
+                "shadowed_token_literal": "CopyCatFunction",
+                "shadowed_line_number": "9",
+                "shadowed_column": "24"
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap",
-                "token_literal" : "OtherIntFunction",
-                "line_number" : "5",
-                "column" : "20",
-        
-                "message" : "define statement uses same exact types in definition as other define statement",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap",
-                "shadowed_token_literal" : "OtherCopyCatIntFunction",
-                "shadowed_line_number" : "11",
-                "shadowed_column" : "20"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap",
+                "token_literal": "OtherIntFunction",
+                "line_number": "5",
+                "column": "20",
+                "message": "define statement uses same exact types in definition as other define statement",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test9/main.ap",
+                "shadowed_token_literal": "OtherCopyCatIntFunction",
+                "shadowed_line_number": "11",
+                "shadowed_column": "20"
             }
         ],
-        "comment" : "Defines with same exact components and built in types is an error"
+        "comment": "Defines with same exact components and built in types is an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test10/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test10/main.ap",
-                "token_literal" : "WhyFunction",
-                "line_number" : "3",
-                "column" : "17",
-        
-                "message" : "function definition does not have arguments or a return value",
-        
-                "shadowed_file" : null,
-                "shadowed_token_literal" : null,
-                "shadowed_line_number" : null,
-                "shadowed_column" : null
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test10/main.ap",
+                "token_literal": "WhyFunction",
+                "line_number": "3",
+                "column": "17",
+                "message": "function definition does not have arguments or a return value",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
             }
         ],
-        "comment" : "Defines with same exact components and built in types is an error"
+        "comment": "Defines with same exact components and built in types is an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test11/main.ap",
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test11/file2.ap"
         ],
-        "errors" : [],
-        "comment" : "Defines with a defined type throw no errors"
+        "errors": [],
+        "comment": "Defines with a defined type throw no errors",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test12/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test12/main.ap",
-                "token_literal" : "Thingy",
-                "line_number" : "4",
-                "column" : "15",
-        
-                "message" : "define statement contains a argument that is not defined",
-        
-                "shadowed_file" : null,
-                "shadowed_token_literal" : null,
-                "shadowed_line_number" : null,
-                "shadowed_column" : null
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test12/main.ap",
+                "token_literal": "Thingy",
+                "line_number": "4",
+                "column": "15",
+                "message": "define statement contains a argument that is not defined",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
             }
         ],
-        "comment" : "Defines with same exact components and built in types is an error"
+        "comment": "Defines with same exact components and built in types is an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test13/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test13/main.ap",
-                "token_literal" : "Foo",
-                "line_number" : "6",
-                "column" : "19",
-        
-                "message" : "define statement contains a argument that is not defined",
-        
-                "shadowed_file" : null,
-                "shadowed_token_literal" : null,
-                "shadowed_line_number" : null,
-                "shadowed_column" : null
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test13/main.ap",
+                "token_literal": "Foo",
+                "line_number": "6",
+                "column": "19",
+                "message": "define statement contains a argument that is not defined",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
             },
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test13/main.ap",
-                "token_literal" : "Bar",
-                "line_number" : "6",
-                "column" : "24",
-        
-                "message" : "define statement contains a argument that is not defined",
-        
-                "shadowed_file" : null,
-                "shadowed_token_literal" : null,
-                "shadowed_line_number" : null,
-                "shadowed_column" : null
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test13/main.ap",
+                "token_literal": "Bar",
+                "line_number": "6",
+                "column": "24",
+                "message": "define statement contains a argument that is not defined",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
             }
         ],
-        "comment" : "Defines with same exact components and built in types is an error"
+        "comment": "Defines with same exact components and built in types is an error",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test14/main.ap",
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test14/file2.ap"
         ],
-        "errors" : [],
-        "comment" : "Defines with a defined type from import statements throw no errors"
+        "errors": [],
+        "comment": "Defines with a defined type from import statements throw no errors",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test15/main.ap"
         ],
-        "errors" : [],
-        "comment" : "Defines which depend on defines in the same module throw no errors"
+        "errors": [],
+        "comment": "Defines which depend on defines in the same module throw no errors",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test16/main.ap",
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test16/file2.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test16/main.ap",
-                "token_literal" : "OtherStuff",
-                "line_number" : "4",
-                "column" : "8",
-        
-                "message" : "item in import not defined in imported module",
-        
-                "shadowed_file" : null,
-                "shadowed_token_literal" : null,
-                "shadowed_line_number" : null,
-                "shadowed_column" : null
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test16/main.ap",
+                "token_literal": "OtherStuff",
+                "line_number": "4",
+                "column": "8",
+                "message": "item in import not defined in imported module",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
             }
         ],
-        "comment" : "Defines cannot be imported (technically a import test, but whatever"
+        "comment": "Defines cannot be imported (technically a import test, but whatever",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test17/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test17/main.ap",
-                "token_literal" : "ThingVector",
-                "line_number" : "4",
-                "column" : "25",
-        
-                "message" : "cycle in define statement dependancies",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test17/main.ap",
-                "shadowed_token_literal" : "ThingVector",
-                "shadowed_line_number" : "8",
-                "shadowed_column" : "10"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test17/main.ap",
+                "token_literal": "ThingVector",
+                "line_number": "4",
+                "column": "25",
+                "message": "cycle in define statement dependancies",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test17/main.ap",
+                "shadowed_token_literal": "ThingVector",
+                "shadowed_line_number": "8",
+                "shadowed_column": "10"
             }
         ],
-        "comment" : "Defines cannot depend on each other in a cyclic fashion"
+        "comment": "Defines cannot depend on each other in a cyclic fashion",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     },
     {
-        "files" : [
+        "files": [
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test18/main.ap"
         ],
-        "errors" : [
+        "errors": [
             {
-                "file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test18/main.ap",
-                "token_literal" : "ThingVector",
-                "line_number" : "4",
-                "column" : "25",
-        
-                "message" : "cycle in define statement dependancies",
-        
-                "shadowed_file" : "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test18/main.ap",
-                "shadowed_token_literal" : "ThingVector",
-                "shadowed_line_number" : "21",
-                "shadowed_column" : "10"
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test18/main.ap",
+                "token_literal": "ThingVector",
+                "line_number": "4",
+                "column": "25",
+                "message": "cycle in define statement dependancies",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test18/main.ap",
+                "shadowed_token_literal": "ThingVector",
+                "shadowed_line_number": "21",
+                "shadowed_column": "10"
             }
         ],
-        "comment" : "Same as before, but layers deeper"
+        "comment": "Same as before, but layers deeper",
+        "analyzer_test_config_names": [
+            "skip_statements"
+        ]
     }
 ]
