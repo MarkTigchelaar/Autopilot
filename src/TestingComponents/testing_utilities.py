@@ -1,15 +1,47 @@
 import json
+from typing import List
+
 from Tokenization.tokenizer import Tokenizer
 from ErrorHandling.error_manager import ErrorManager
+from SemanticAnalysis.semantic_analyzer import SemanticAnalyzer
+from SemanticAnalysis.GlobalAnalysis.function_analyzer import FunctionAnalyzer
+from TestingComponents.DummyAnalyzers.dummy_statement_analyzer import DummyStatementAnalyzer
+
 import symbols
 
 FAILURE = "TEST CASE FAILURE,"
+
+
+# This function allows for custom behaviour of the semantic analyzer.
+# This makes it easier to target specific things, avoiding the layering of tests
+# and their associated regressions due to additonal functionality, which lead to tripping over previous tests
+# which have items that were not considered closely, and were not relavant to those specific tests, 
+# but would later be analyzed by added functionality
+# leading to the analyzer(s) catching errors that were not intended to be caught at that time.
+def make_analyzer(err_manager: ErrorManager, test) -> SemanticAnalyzer:
+    config_list = test["analyzer_test_config_names"]
+    analyzer = SemanticAnalyzer(err_manager)
+    for config in config_list:
+        match config:
+            case "skip_statements":
+                function_analyzer = FunctionAnalyzer(analyzer.database, err_manager)
+                function_analyzer.statement_analyzer = DummyStatementAnalyzer()
+                analyzer.function_analyzer = function_analyzer
+            case _:
+                raise Exception("INTERNAL ERROR: Invalid dummy analyzer type: {}".format(config))
+    return analyzer
 
 
 def get_json_from_file(manifest: str):
     jsonfile = open(manifest, "r")
     tests = json.load(jsonfile)
     jsonfile.close()
+    #f = open(manifest, "w")
+    for test in tests:
+        test["analyzer_test_config_names"] = ["skip_statements"]
+    #json.dump(tests, f, indent=4)
+    #print(tests)
+
     return tests
 
 

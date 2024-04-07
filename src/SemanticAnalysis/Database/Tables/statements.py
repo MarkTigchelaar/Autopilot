@@ -71,3 +71,6 @@ class StatementRow:
         self.sequence_num = sequence_num
         self.scope_depth = scope_depth
         self.stmt_type_token = stmt_type_token
+
+    def has_nested_statements(self) -> bool:
+        return self.statement.has_nested_statements()

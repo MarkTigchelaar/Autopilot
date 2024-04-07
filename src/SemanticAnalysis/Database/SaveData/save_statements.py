@@ -6,6 +6,10 @@ class StatementSaver(Saver):
         self.object_id = object_id
         self.sequence_number = 0
 
+    def save_to_db(self, database, statements):
+        statement_table = database.get_table("statements")
+        self.save_statements(statement_table, statements)
+
     def save_statements(self, statement_table, statements, scope_level = 0):
         for statement in statements:
             self.sequence_number += 1

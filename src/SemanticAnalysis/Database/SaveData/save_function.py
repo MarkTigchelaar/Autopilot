@@ -18,14 +18,13 @@ class FunctionSaver(Saver):
         current_module_id = database.get_current_module_id()
         function_table = database.get_table("functions")
         file_table = database.get_table("files")
-        statement_table = database.get_table("statements")
 
         file_path = self.function.header.name_token.file_name
         _, file_name = split_path_and_file_name(file_path)
 
         self.object_id = database.save_object(self.function)
 
-        statement_saver = StatementSaver(self.object_id)
+        
         header_saver = FnHeaderSaver(database, [self.function.header])
         header_ids = header_saver.save_header_ids()
         if len(header_ids) != 1:
@@ -39,8 +38,8 @@ class FunctionSaver(Saver):
             current_module_id,
             struct_id
         )
-
-        statement_saver.save_statements(statement_table, self.function.statements)
+        statement_saver = StatementSaver(self.object_id)
+        statement_saver.save_to_db(database, self.function.statements)
 
         if file_table.is_file_defined(self.object_id, file_name):
             raise Exception(f"INTERNAL ERROR: file {file_path} has been processed already")

@@ -10,28 +10,24 @@ from SemanticAnalysis.Database.Queries.function_header_query import (
 )
 from SemanticAnalysis.Database.Queries.function_name_query import FunctionNameQuery
 from keywords import is_primitive_type
-
-from SemanticAnalysis.Database.Queries.module_items_query import ModuleItemsQuery
-
-from SemanticAnalysis.Database.Queries.import_items_in_module_query import (
-    ImportItemsInModuleQuery,
-)
 from SemanticAnalysis.Database.Queries.actual_imported_items_by_import_statement_item_name_from_function_query import (
     ActualImportedItemsByImportStatementItemNameFromFunctionQuery,
 )
 from SemanticAnalysis.Database.Queries.built_in_typename_query import (
     BuiltInTypeNameQuery,
 )
+from SemanticAnalysis.GlobalAnalysis.statement_analyzer import StatementAnalyzer
 
 OK_TYPES = ["struct", "enum", "union", "defined_type", "interface"]
 FORBIDDEN_TYPES = ["error"]
 
 class FunctionAnalyzer:
-    def __init__(self, database, error_manager):
+    def __init__(self, database, error_manager, statement_analyzer=None):
         self.database = database
         self.error_manager = error_manager
         self.object_id = None
         self.is_main = False
+        self.statement_analyzer = statement_analyzer
 
     def add_error(self, token, message, shadowed_token=None):
         self.error_manager.add_semantic_error(token, message, shadowed_token)
@@ -216,13 +212,20 @@ class FunctionAnalyzer:
 
 
     def analyze_function_body(self):
-        pass
+        if self.statement_analyzer == None:
+            self.statement_analyzer = StatementAnalyzer(self.database, self.error_manager)
+        self.statement_analyzer.analyze(self.object_id)
+
 
 
 """
-TODO list:
+
+Done:
 Check that argument types are defined somewhere
 Check that function name has no collisions
+
+
+TODO list:
 Check the variable names are defined in their scope
 Check types for argument re assignment
 check types of expressions

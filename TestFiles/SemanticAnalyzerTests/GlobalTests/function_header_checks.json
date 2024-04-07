@@ -4,6 +4,7 @@
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test1/main.ap"
         ],
         "errors" : [],
+        "analyzer_test_config_names" : ["skip_statements"],
         "comment" : "Test1: Simple statement with one variable. Should pass."
     },
     {
@@ -25,6 +26,7 @@
                 "shadowed_column" : "5"
             }
         ],
+        "analyzer_test_config_names" : ["skip_statements"],
         "comment" : "Test2: 2 functions with the same name, the first one should complain about the second one."
     },
     {
@@ -86,6 +88,7 @@
                 "shadowed_column" : "25"
             }
         ],
+        "analyzer_test_config_names" : ["skip_statements"],
         "comment" : "Test3: Functions with same names as items in import list (one has alias)"
     },
     {
@@ -93,6 +96,7 @@
             "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test4/main.ap"
         ],
         "errors" : [],
+        "analyzer_test_config_names" : ["skip_statements"],
         "comment" : ""
     },
     {

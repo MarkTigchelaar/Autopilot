@@ -1,4 +1,4 @@
-from SemanticAnalysis.semantic_analyzer import SemanticAnalyzer
+
 from Tokenization.tokenizer import Tokenizer
 from ErrorHandling.error_manager import ErrorManager
 from driver import Driver
@@ -6,6 +6,7 @@ from Parsing.parse import parse_src
 from TestingComponents.testing_utilities import (
     get_json_from_file,
     record_component_test,
+    make_analyzer,
 )
 
 
@@ -27,7 +28,7 @@ def run_tests(component_tests, current_dir, tracker):
 
 def semantic_test(test_case, current_dir, tracker):
     err_manager = ErrorManager()
-    analyzer = SemanticAnalyzer(err_manager)
+    analyzer = make_analyzer(err_manager, test_case)
 
     for i in range(len(test_case["files"])):
         tokenizer = Tokenizer(err_manager)

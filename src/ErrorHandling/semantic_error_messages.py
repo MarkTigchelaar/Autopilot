@@ -267,3 +267,5 @@ STRUCT_INTERFACE_MATCHES_TO_MULTIPLE_INTERFACES = "struct interface matches to m
 FUNCTION_NAME_COLLIDES_WITH_MODULE_ITEM = "function name matches name of item in module"
 
 FUNCTION_NAME_COLLIDES_WITH_IMPORT = "function name matches name of item in import"
+
+UNDEFINED_VARIABLE = "undefined variable"

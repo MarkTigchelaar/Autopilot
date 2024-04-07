@@ -8,11 +8,13 @@ from TestingComponents.phase_one_tests import phase_one_tests
 from TestingComponents.phase_two_tests import phase_two_tests
 from TestingComponents.phase_three_tests import phase_three_tests
 from TestingComponents.phase_four_tests import phase_four_tests
+#from TestingComponents.phase_five_tests import phase_five_tests
 
 TEST_MANIFEST_ONE = "../TestFiles/tokenizer_parser_test_manifest.json"
 TEST_MANIFEST_TWO = "../TestFiles/local_semantic_analysis_test_manifest.json"
 TEST_MANIFEST_THREE = "../TestFiles/analysis_table_test_manifest.json"
 TEST_MANIFEST_FOUR = "../TestFiles/global_semantic_analysis_manifest.json"
+TEST_MANIFEST_FIVE = "../TestFiles/global_statement_ananlysis_manifest.json"
 
 def main():
     current_dir = os.path.dirname(__file__)
@@ -35,6 +37,11 @@ def main():
     abs_file_path = current_dir + '/' + TEST_MANIFEST_FOUR
     test_json = get_json_from_file(abs_file_path)
     phase_four_tests(tracker, test_json, current_dir)
+
+    # abs_file_path = current_dir + '/' + TEST_MANIFEST_FIVE
+    # test_json = get_json_from_file(abs_file_path)
+    # phase_five_tests(tracker, test_json, current_dir)
+
     
     print("End result: " + tracker.get_results())
     err_file = "./failed_tests.txt"
