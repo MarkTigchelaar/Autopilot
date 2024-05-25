@@ -1,0 +1,16 @@
+module main
+
+// Same type of error, for floats and doubles:
+
+pub fun main() do
+    let a as float = 'a'
+    let b as float = "string"
+    let c as double = 'b'
+    let d as double = "string"
+    let e as float = 1
+    let f as double = 1
+    let g as float = true
+    let h as float = false
+    let i as double = true
+    let j as double = false
+end

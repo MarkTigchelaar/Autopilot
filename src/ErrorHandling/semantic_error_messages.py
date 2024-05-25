@@ -268,4 +268,13 @@ FUNCTION_NAME_COLLIDES_WITH_MODULE_ITEM = "function name matches name of item in
 
 FUNCTION_NAME_COLLIDES_WITH_IMPORT = "function name matches name of item in import"
 
+
+DUPLICATE_DECLARATION = "variable declaration shadows previous declaration"
+
+
+
 UNDEFINED_VARIABLE = "undefined variable"
+
+UNDECLARED_EXP_VAR = "undeclared expression variable"
+
+EXP_VAR_TYPE_MISMATCH = "expression variable type does not match declared type of variable"

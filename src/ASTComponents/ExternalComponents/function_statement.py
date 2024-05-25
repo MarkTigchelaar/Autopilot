@@ -12,8 +12,17 @@ class FunctionStatement:
     def add_header(self, header):
         self.header = header
     
+    def get_name_token(self):
+        return self.header.get_name()
+    
     def add_statements(self, statements):
         self.statements = statements
+
+    def get_statements(self):
+        return self.statements
+    
+    def get_args(self):
+        return self.header.get_args()
     
     def add_acyclic_token(self, acyclic_token):
         self.acyclic_token = acyclic_token
@@ -23,6 +32,9 @@ class FunctionStatement:
     
     def add_public_token(self, pub_token):
         self.pub_token = pub_token
+
+    def accept(self, visitor):
+        visitor.analyze_function_statements(self)
 
 """
 ,

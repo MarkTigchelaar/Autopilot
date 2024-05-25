@@ -11,4 +11,6 @@ class PrefixExpression:
 
     def add_rhs_exp(self, rhs_expression):
         self.rhs_exp = rhs_expression
-    
+
+    def accept(self, expression_analyzer):
+        expression_analyzer.visit_prefix_expression(self)

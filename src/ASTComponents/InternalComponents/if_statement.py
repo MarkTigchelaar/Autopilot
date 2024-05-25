@@ -42,4 +42,5 @@ class IfStatement:
     def has_next_statement_in_block(self):
         return self.next_statement_in_block is not None
     
-    
+    def accept(self, visitor, scope_depth):
+        visitor.analyze_if_statement(self, scope_depth)

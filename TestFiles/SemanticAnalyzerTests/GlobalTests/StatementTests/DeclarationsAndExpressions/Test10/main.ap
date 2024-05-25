@@ -1,0 +1,16 @@
+module main
+
+// Same type of error, for chars and strings:
+
+pub fun main() do
+    let a as char = 10
+    let b as char = "string"
+    let c as string = 'b'
+    let d as string = 10
+    let e as char = 1.2
+    let f as string = 1.5
+    let g as char = true
+    let h as char = false
+    let i as string = true
+    let j as string = false
+end

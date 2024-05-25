@@ -25,6 +25,9 @@ class StructStatement:
     def add_field(self, field):
         self.fields.append(field)
 
+    def get_fields(self):
+        return self.fields
+
     def add_function(self, function):
         self.functions.append(function)
     

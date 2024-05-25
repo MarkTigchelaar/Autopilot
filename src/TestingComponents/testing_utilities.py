@@ -5,7 +5,7 @@ from Tokenization.tokenizer import Tokenizer
 from ErrorHandling.error_manager import ErrorManager
 from SemanticAnalysis.semantic_analyzer import SemanticAnalyzer
 from SemanticAnalysis.GlobalAnalysis.function_analyzer import FunctionAnalyzer
-from TestingComponents.DummyAnalyzers.dummy_statement_analyzer import DummyStatementAnalyzer
+from TestingComponents.DummyAnalyzers.dummy_analyzer import DummyAnalyzer
 
 import symbols
 
@@ -25,10 +25,10 @@ def make_analyzer(err_manager: ErrorManager, test) -> SemanticAnalyzer:
         match config:
             case "skip_statements":
                 function_analyzer = FunctionAnalyzer(analyzer.database, err_manager)
-                function_analyzer.statement_analyzer = DummyStatementAnalyzer()
+                function_analyzer.statement_analyzer = DummyAnalyzer()
                 analyzer.function_analyzer = function_analyzer
             case _:
-                raise Exception("INTERNAL ERROR: Invalid dummy analyzer type: {}".format(config))
+                raise Exception("INTERNAL ERROR: Invalid configuration type: {}".format(config))
     return analyzer
 
 
@@ -36,8 +36,8 @@ def get_json_from_file(manifest: str):
     jsonfile = open(manifest, "r")
     tests = json.load(jsonfile)
     jsonfile.close()
-    for test in tests:
-        test["analyzer_test_config_names"] = ["skip_statements"]
+    # for test in tests:
+    #     test["analyzer_test_config_names"] = ["skip_statements"]
     return tests
 
 

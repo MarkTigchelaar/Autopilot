@@ -11,7 +11,10 @@ from TestingComponents.testing_utilities import (
 
 
 def phase_four_tests(tracker, test_json, current_dir):
-    print("Phase 4 tests")
+    test_control_function(tracker, test_json, current_dir, "Phase 4 tests")
+
+def test_control_function(tracker, test_json, current_dir, phase_name):
+    print(phase_name)
     for test in test_json:
         component_tests = get_json_from_file(
             current_dir + "/" + test["test_manifest_file"]
@@ -23,7 +26,13 @@ def phase_four_tests(tracker, test_json, current_dir):
 
 def run_tests(component_tests, current_dir, tracker):
     for test_case in component_tests:
-        semantic_test(test_case, current_dir, tracker)
+        skip = False
+        # for test in test_case["files"]:
+        #     if "Test12" not in test:
+        #         skip = True
+        #         break
+        if not skip:
+            semantic_test(test_case, current_dir, tracker)
 
 
 def semantic_test(test_case, current_dir, tracker):
@@ -52,11 +61,11 @@ def validate_results(err_manager, test_case, tracker):
         test_case["file"] = test_case["files"][0]
         record_component_test(test_case, tracker, "no error", "no error")
 
-    elif not err_manager.has_errors(True):
+    elif len(expected_errors) > 0 and not err_manager.has_errors(True):
         num_errors = len(err_manager.semantic_errors)
         num_expected_errors = len(expected_errors)
         raise Exception(
-            f"INTERNAL ERROR: ErrorManager is missing errors for test: {expected_error['file']}, expected error: {expected_error}. \nNumber of errors: {num_errors}, number of expected errors: {num_expected_errors}"
+            f"INTERNAL ERROR: ErrorManager is missing errors for test: {expected_errors[0]['file']}, expected error: {expected_errors}. \nNumber of errors: {num_errors}, number of expected errors: {num_expected_errors}"
         )
     for expected_error in expected_errors:
 

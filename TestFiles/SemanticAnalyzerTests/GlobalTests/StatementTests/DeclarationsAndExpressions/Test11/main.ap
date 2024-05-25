@@ -1,0 +1,10 @@
+module main
+
+// Same type of error, for bools:
+
+pub fun main() do
+    let a as bool = 10
+    let b as bool = "bool"
+    let c as bool = 'b'
+    let e as bool = 1.2
+end

@@ -14,3 +14,6 @@ class ContinueStatement:
 
     def has_next_statement_in_block(self):
         return False
+    
+    def accept(self, visitor, scope_depth):
+        visitor.analyze_continue_statement(self, scope_depth)

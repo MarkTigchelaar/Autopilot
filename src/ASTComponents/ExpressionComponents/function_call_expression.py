@@ -9,3 +9,7 @@ class FunctionCallExpression:
 
     def add_argument_list(self, argument_list):
         self.argument_list = argument_list
+
+
+    def accept(self, expression_analyzer):
+        expression_analyzer.visit_function_call_expression(self)

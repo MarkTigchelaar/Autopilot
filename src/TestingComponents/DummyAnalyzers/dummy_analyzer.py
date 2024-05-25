@@ -1,6 +1,5 @@
 
-
-class DummyStatementAnalyzer:
+class DummyAnalyzer:
     def __init__(self):
         pass
 

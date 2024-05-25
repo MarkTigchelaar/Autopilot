@@ -1,0 +1,27 @@
+module main
+
+// Lets test a few things at once:
+
+pub fun main() do
+    // assigns exp type to var
+    let a = 0
+    let b as int = 0
+    let c = 1.4
+    let d as float = 0.7
+    let e = 12344566778853352342342342332423234
+    let f as long = 12344566778853352342342342332423234
+    let g = 123312349876863563255345.23532523652
+    let h as double = 123312349876863563255345.23532523652
+
+    // Now check that compiler knows when type is too small for the literal
+    let i as int = 12344566778853352342342342332423234
+    let j as float = 123312349876863563255345.23532523652
+
+    // Other primitives
+    let m = "hey oh"
+    let n as string = "eh oh"
+    let o = 'a'
+    let p as char = 'b'
+    let k = true
+    let l as bool = false
+end

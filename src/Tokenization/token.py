@@ -7,6 +7,9 @@ class Token:
         self.line_number = line_number
         self.column_number = column_number
 
+    def get_type(self) -> str:
+        return self.type_symbol
+
     def to_string(self) -> str:
         repr = "Token:\n"
         repr += " file: " + self.file_name + "\n"

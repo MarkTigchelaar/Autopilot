@@ -1,0 +1,17 @@
+module main
+
+
+pub fun main() do
+    let a as long = 10
+    let b as long = a
+    let c as float = 1.0
+    let d as float = c
+    let e as double = 10.0
+    let f as double = e
+    let g as bool = true
+    let h as bool = g
+    let i as string = "hello"
+    let j as string = i
+    let k as char = 'k'
+    let l as char = k
+end

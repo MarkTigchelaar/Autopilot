@@ -14,3 +14,6 @@ class CollectionExpression:
     
     def add_rhs_type(self, rhs_type):
         self.rhs_type = rhs_type
+
+    def accept(self, expression_analyzer):
+        expression_analyzer.visit_collection_expression(self)

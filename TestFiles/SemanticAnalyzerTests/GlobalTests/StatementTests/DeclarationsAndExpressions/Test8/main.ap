@@ -1,0 +1,16 @@
+module main
+
+// Same type of error, for ints and longs:
+
+pub fun main() do
+    let a as int = 'a'
+    let b as int = "string"
+    let c as long = 'b'
+    let d as long = "string"
+    let e as int = 1.2
+    let f as long = 1.5
+    let g as int = true
+    let h as int = false
+    let i as long = true
+    let j as long = false
+end

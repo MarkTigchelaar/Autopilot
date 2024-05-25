@@ -25,3 +25,6 @@ class UnlessStatement:
     
     def has_next_statement_in_block(self):
         return False
+    
+    def accept(self, visitor, scope_depth):
+        visitor.analyze_unless_statement(self, scope_depth)

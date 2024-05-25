@@ -10,3 +10,6 @@ class MethodCallOrFieldExpression:
     
     def add_field_or_methods(self, field_or_method_list):
         self.argument_list = field_or_method_list
+
+    def accept(self, expression_analyzer):
+        expression_analyzer.visit_method_call_or_field_expression(self)

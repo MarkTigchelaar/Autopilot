@@ -30,12 +30,13 @@ class StatementTable:
 
     def is_object_defined(self, container_object_id, sequence_num = None):
         if sequence_num is None:
-            return False
+            return container_object_id in self.by_container_id
         potential_key = StatementTableKey(sequence_num, container_object_id)
         return potential_key in self.by_key
 
     def get_item_by_id_and_seq_num(self, container_object_id, sequence_num):
         return self.by_key[StatementTableKey(sequence_num, container_object_id)]
+
 
     def get_rows_by_container_id(self, container_id):
         rows = self.by_container_id[container_id]

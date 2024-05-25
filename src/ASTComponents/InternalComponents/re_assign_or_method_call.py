@@ -28,3 +28,6 @@ class ReassignmentOrMethodCall:
     
     def has_next_statement_in_block(self):
         return False
+    
+    def accept(self, visitor, scope_depth):
+        visitor.analyze_re_assign_or_method_call(self, scope_depth)

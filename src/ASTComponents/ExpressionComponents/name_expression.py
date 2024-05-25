@@ -6,3 +6,9 @@ class NameExpression:
     
     def add_name(self, name_token):
         self.token = name_token
+
+    def get_name(self):
+        return self.token
+
+    def accept(self, expression_analyzer):
+        expression_analyzer.visit_name_expression(self)

@@ -1,0 +1,577 @@
+[
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test1/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test1/main.ap",
+                "token_literal": "this",
+                "line_number": "6",
+                "column": "9",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test1/main.ap",
+                "shadowed_token_literal": "this",
+                "shadowed_line_number": "5",
+                "shadowed_column": "9"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "same scope level, higher sequence number, shadowing variable identified"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test2/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test2/main.ap",
+                "token_literal": "a",
+                "line_number": "6",
+                "column": "13",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test2/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "4",
+                "shadowed_column": "9"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "shadowing variable is in a sub statement, shadowing variable identified"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test3/main.ap"
+        ],
+        "errors": [],
+        "analyzer_test_config_names": [],
+        "comment": "two variables are in seperate sub statements and do not shadow each other"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test4/main.ap"
+        ],
+        "errors": [],
+        "analyzer_test_config_names": [],
+        "comment": "If first declared variable is in a deeper scope, the second declaration is not shadowing the first"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test5/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test5/main.ap",
+                "token_literal": "a",
+                "line_number": "7",
+                "column": "17",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test5/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "5",
+                "shadowed_column": "13"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test5/main.ap",
+                "token_literal": "a",
+                "line_number": "9",
+                "column": "21",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test5/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "5",
+                "shadowed_column": "13"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test5/main.ap",
+                "token_literal": "a",
+                "line_number": "9",
+                "column": "21",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test5/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "7",
+                "shadowed_column": "17"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "if multiplee shadowing variables are in sub statements, shadowing variables shadow the first variable, but also the second third etc."
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test6/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test6/main.ap",
+                "token_literal": "a",
+                "line_number": "16",
+                "column": "29",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test6/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "5",
+                "shadowed_column": "13"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "shadowing variable is in a sub statement, shadowing variable identified, despite how far away"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test7/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test7/main.ap",
+                "token_literal": "int",
+                "line_number": "17",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test7/main.ap",
+                "shadowed_token_literal": "12344566778853352342342342332423234",
+                "shadowed_line_number": "17",
+                "shadowed_column": "20"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test7/main.ap",
+                "token_literal": "float",
+                "line_number": "18",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test7/main.ap",
+                "shadowed_token_literal": "123312349876863563255345.23532523652",
+                "shadowed_line_number": "18",
+                "shadowed_column": "22"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "types are correctly checked against literals, and sizes of ints and floats also checked"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "int",
+                "line_number": "6",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "'a'",
+                "shadowed_line_number": "6",
+                "shadowed_column": "20"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "int",
+                "line_number": "7",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "\"string\"",
+                "shadowed_line_number": "7",
+                "shadowed_column": "20"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "long",
+                "line_number": "8",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "'b'",
+                "shadowed_line_number": "8",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "long",
+                "line_number": "9",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "\"string\"",
+                "shadowed_line_number": "9",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "int",
+                "line_number": "10",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "1.2",
+                "shadowed_line_number": "10",
+                "shadowed_column": "20"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "long",
+                "line_number": "11",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "1.5",
+                "shadowed_line_number": "11",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "int",
+                "line_number": "12",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "true",
+                "shadowed_line_number": "12",
+                "shadowed_column": "20"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "int",
+                "line_number": "13",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "false",
+                "shadowed_line_number": "13",
+                "shadowed_column": "20"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "long",
+                "line_number": "14",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "true",
+                "shadowed_line_number": "14",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "token_literal": "long",
+                "line_number": "15",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test8/main.ap",
+                "shadowed_token_literal": "false",
+                "shadowed_line_number": "15",
+                "shadowed_column": "21"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "expression type needs to match declared type of variable"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "float",
+                "line_number": "6",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "'a'",
+                "shadowed_line_number": "6",
+                "shadowed_column": "22"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "float",
+                "line_number": "7",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "\"string\"",
+                "shadowed_line_number": "7",
+                "shadowed_column": "22"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "double",
+                "line_number": "8",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "'b'",
+                "shadowed_line_number": "8",
+                "shadowed_column": "23"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "double",
+                "line_number": "9",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "\"string\"",
+                "shadowed_line_number": "9",
+                "shadowed_column": "23"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "float",
+                "line_number": "10",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "1",
+                "shadowed_line_number": "10",
+                "shadowed_column": "22"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "double",
+                "line_number": "11",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "1",
+                "shadowed_line_number": "11",
+                "shadowed_column": "23"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "float",
+                "line_number": "12",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "true",
+                "shadowed_line_number": "12",
+                "shadowed_column": "22"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "float",
+                "line_number": "13",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "false",
+                "shadowed_line_number": "13",
+                "shadowed_column": "22"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "double",
+                "line_number": "14",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "true",
+                "shadowed_line_number": "14",
+                "shadowed_column": "23"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "token_literal": "double",
+                "line_number": "15",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test9/main.ap",
+                "shadowed_token_literal": "false",
+                "shadowed_line_number": "15",
+                "shadowed_column": "23"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "shadowing variable is in a sub statement, shadowing variable identified, despite how far away"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "char",
+                "line_number": "6",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "10",
+                "shadowed_line_number": "6",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "char",
+                "line_number": "7",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "\"string\"",
+                "shadowed_line_number": "7",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "string",
+                "line_number": "8",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "'b'",
+                "shadowed_line_number": "8",
+                "shadowed_column": "23"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "string",
+                "line_number": "9",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "10",
+                "shadowed_line_number": "9",
+                "shadowed_column": "23"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "char",
+                "line_number": "10",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "1.2",
+                "shadowed_line_number": "10",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "string",
+                "line_number": "11",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "1.5",
+                "shadowed_line_number": "11",
+                "shadowed_column": "23"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "char",
+                "line_number": "12",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "true",
+                "shadowed_line_number": "12",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "char",
+                "line_number": "13",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "false",
+                "shadowed_line_number": "13",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "string",
+                "line_number": "14",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "true",
+                "shadowed_line_number": "14",
+                "shadowed_column": "23"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "token_literal": "string",
+                "line_number": "15",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test10/main.ap",
+                "shadowed_token_literal": "false",
+                "shadowed_line_number": "15",
+                "shadowed_column": "23"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "chars and strings also have types checked"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap",
+                "token_literal": "bool",
+                "line_number": "6",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap",
+                "shadowed_token_literal": "10",
+                "shadowed_line_number": "6",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap",
+                "token_literal": "bool",
+                "line_number": "7",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap",
+                "shadowed_token_literal": "\"bool\"",
+                "shadowed_line_number": "7",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap",
+                "token_literal": "bool",
+                "line_number": "8",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap",
+                "shadowed_token_literal": "'b'",
+                "shadowed_line_number": "8",
+                "shadowed_column": "21"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap",
+                "token_literal": "bool",
+                "line_number": "9",
+                "column": "14",
+                "message": "expression variable type does not match declared type of variable",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test11/main.ap",
+                "shadowed_token_literal": "1.2",
+                "shadowed_line_number": "9",
+                "shadowed_column": "21"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "bool variables also have types checked"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test12/main.ap"
+        ],
+        "errors": [],
+        "analyzer_test_config_names": [],
+        "comment": "declaring a variable to be the same value as previous variable is ok"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test13/main.ap"
+        ],
+        "errors": [],
+        "analyzer_test_config_names": [],
+        "comment": "declaring a variable to be the same value as previous variable is ok"
+    }
+]

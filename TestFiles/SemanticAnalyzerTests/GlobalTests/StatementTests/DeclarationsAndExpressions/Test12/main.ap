@@ -1,0 +1,7 @@
+module main
+
+
+pub fun main() do
+    let a as int = 10
+    let b as int = a
+end

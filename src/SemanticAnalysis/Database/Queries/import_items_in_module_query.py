@@ -36,3 +36,8 @@ class ImportItemsInModuleQueryRow:
         self.name_token = import_item.name_token
         self.new_name_token = import_item.new_name_token
         self.import_statement_id = statement_id
+
+    def get_type_name_token(self):
+        if self.new_name_token is not None:
+            return self.new_name_token
+        return self.name_token

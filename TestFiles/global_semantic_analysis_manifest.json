@@ -1,58 +1,34 @@
 [
     {
         "general_component": "module uniqueness checks",
-        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/module_uniqueness_tests.json",
-        "analyzer_test_config_names": [
-            "skip_statements"
-        ]
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/module_uniqueness_tests.json"
     },
     {
         "general_component": "import checks",
-        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/import_checks.json",
-        "analyzer_test_config_names": [
-            "skip_statements"
-        ]
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/import_checks.json"
     },
     {
         "general_component": "define checks",
-        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/define_checks.json",
-        "analyzer_test_config_names": [
-            "skip_statements"
-        ]
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/define_checks.json"
     },
     {
         "general_component": "nested define checks",
-        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/nested_define_checks.json",
-        "analyzer_test_config_names": [
-            "skip_statements"
-        ]
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/nested_define_checks.json"
     },
     {
         "general_component": "enum checks",
-        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/enum_checks.json",
-        "analyzer_test_config_names": [
-            "skip_statements"
-        ]
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/enum_checks.json"
     },
     {
         "general_component": "interface checks",
-        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/interface_checks.json",
-        "analyzer_test_config_names": [
-            "skip_statements"
-        ]
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/interface_checks.json"
     },
     {
         "general_component": "structs without methods checks",
-        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/struct_no_method_checks.json",
-        "analyzer_test_config_names": [
-            "skip_statements"
-        ]
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/struct_no_method_checks.json"
     },
     {
         "general_component": "function header checks",
-        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/function_header_checks.json",
-        "analyzer_test_config_names": [
-            "skip_statements"
-        ]
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/function_header_checks.json"
     }
 ]
