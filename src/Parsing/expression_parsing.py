@@ -29,7 +29,9 @@ def _parse(driver, precedence):
 def parse_prefix_expression(driver):
     token = driver.next_token()
     if token.type_symbol == symbols.MINUS:
-        return parse_minus_prefix(token, driver)
+        return parse_prefix(token, driver)
+    elif token.type_symbol == symbols.NOT:
+        return parse_prefix(token, driver)
     elif token.type_symbol == symbols.LEFT_PAREN:
         return parse_parenthesis(driver)
     elif token.type_symbol == symbols.LEFT_BRACKET:
@@ -40,7 +42,7 @@ def parse_prefix_expression(driver):
         return parse_name(token, driver)
 
 
-def parse_minus_prefix(token, driver):
+def parse_prefix(token, driver):
     peek_token = driver.peek_token()
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
@@ -170,6 +172,9 @@ def parse_infix_expression(driver, token, left_exp):
     elif is_comparison_operator(token):
         return parse_binary_operator(COMPARISON, driver, token, left_exp)
     elif is_logical_operator(token):
+        if is_prefix_logical_operator(token):
+            driver.add_error(token, INVALID_PREFIX_USAGE)
+            return None
         return parse_binary_operator(LOGICAL, driver, token, left_exp)
     elif is_function_call(token):
         return parse_function_call(driver, left_exp)

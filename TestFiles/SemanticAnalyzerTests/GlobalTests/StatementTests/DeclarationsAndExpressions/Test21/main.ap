@@ -1,0 +1,8 @@
+module main
+
+pub fun main() do
+    let a as bool = true and not false
+    let b as bool = true xor true
+    let c as bool = false nor false
+    let d as bool = true nand true
+end

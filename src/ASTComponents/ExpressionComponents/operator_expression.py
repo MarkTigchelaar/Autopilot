@@ -8,6 +8,9 @@ class OperatorExpression:
 
     def add_name(self, operator_token):
         self.operator_token = operator_token
+
+    def get_name(self):
+        return self.operator_token
     
     def add_lhs_exp(self, lhs_exp):
         self.left_expression = lhs_exp
@@ -22,4 +25,4 @@ class OperatorExpression:
         return self.right_expression
 
     def accept(self, expression_analyzer):
-        expression_analyzer.visit_operator_expression(self)
+        expression_analyzer.visit_binary_operator_expression(self)

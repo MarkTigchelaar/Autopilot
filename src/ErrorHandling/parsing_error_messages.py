@@ -9,6 +9,8 @@ INVALID_CONST_OR_VAR = "invalid constant or variable"
 
 INVALID_OPERATOR = "invalid operator"
 
+INVALID_PREFIX_USAGE = "invalid prefix operator usage"
+
 #UNIDENTIFIED_INFIX = "infix expression is not identified"
 MISSING_ARG_EXPRESSION = "function call is missing expression"
 

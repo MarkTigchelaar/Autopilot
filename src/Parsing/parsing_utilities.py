@@ -51,7 +51,7 @@ def is_valid_index_token(token):
     int_types = (symbols.INT, symbols.LONG)
     return is_primitive_literal(token) and token.type_symbol in int_types
 
-
+# Does the left most token start with one of the following?
 def is_valid_expression_token(token):
     if token.type_symbol == symbols.CHAR:
         return True
@@ -76,6 +76,10 @@ def is_valid_expression_token(token):
     elif token.type_symbol == symbols.TRUE:
         return True
     elif token.type_symbol == symbols.FALSE:
+        return True
+    elif token.type_symbol == symbols.MINUS:
+        return True
+    elif token.type_symbol == symbols.NOT:
         return True
     else:
         return False
@@ -165,6 +169,9 @@ def is_logical_operator(token):
         symbols.XOR,
         symbols.NOT,
     )
+
+def is_prefix_logical_operator(token):
+    return token.type_symbol == symbols.NOT
 
 
 def is_function_call(token):

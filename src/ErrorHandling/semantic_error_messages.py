@@ -278,3 +278,9 @@ UNDEFINED_VARIABLE = "undefined variable"
 UNDECLARED_EXP_VAR = "undeclared expression variable"
 
 EXP_VAR_TYPE_MISMATCH = "expression variable type does not match declared type of variable"
+
+INVALID_PREFIX_EXP = "expression not compatible with prefix"
+
+INVALID_BINARY_EXP = "expression not compatible with binary operator"
+
+INCOMPATIBLE_EXPRESSION_TYPES = "incompatible expression types"

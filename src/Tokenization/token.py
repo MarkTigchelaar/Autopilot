@@ -9,6 +9,9 @@ class Token:
 
     def get_type(self) -> str:
         return self.type_symbol
+    
+    def set_type(self, type_symbol: str) -> None:
+        self.type_symbol = type_symbol
 
     def to_string(self) -> str:
         repr = "Token:\n"

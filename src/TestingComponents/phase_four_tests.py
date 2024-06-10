@@ -27,11 +27,12 @@ def test_control_function(tracker, test_json, current_dir, phase_name):
 def run_tests(component_tests, current_dir, tracker):
     for test_case in component_tests:
         skip = False
-        # for test in test_case["files"]:
-        #     if "Test12" not in test:
-        #         skip = True
-        #         break
+        for test in test_case["files"]:
+            if "Test21" not in test:
+                skip = True
+                break
         if not skip:
+            print(f"Running test: {test_case['files'][0]}")
             semantic_test(test_case, current_dir, tracker)
 
 
@@ -133,6 +134,20 @@ def validate_results(err_manager, test_case, tracker):
             record_component_test(
                 test_case, tracker, expected_error["shadowed_column"], None
             )
+        if actual_error.lhs_type_token:
+            record_component_test(
+                test_case,
+                tracker,
+                expected_error["lhs_type_token_type"],
+                actual_error.lhs_type_token.get_type(),
+            )
+        if actual_error.rhs_type_token:
+            record_component_test(
+                test_case,
+                tracker,
+                expected_error["rhs_type_token_type"],
+                actual_error.rhs_type_token.get_type(),
+            )
 
     if err_manager.has_errors(True):
         while err_manager.has_errors(True):
@@ -161,4 +176,5 @@ def check_for_token_and_parser_errors(err_manager, test_case, tracker):
             print(actual_error.token.line_number)
             print(actual_error.token.column_number)
             print(actual_error.message)
+            test_case["file"] = test_case["files"][0]
             record_component_test(test_case, tracker, "no error", "error")

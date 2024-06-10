@@ -1,0 +1,5 @@
+module main
+
+pub fun main() do
+    let a as float = 10.5 % 5.5
+end

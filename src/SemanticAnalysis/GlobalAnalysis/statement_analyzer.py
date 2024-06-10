@@ -1,5 +1,5 @@
 from keywords import is_primitive_type, is_boolean_literal
-from symbols import VAR, BOOL
+from symbols import VAR, BOOL, INT, LONG, FLOAT, DOUBLE
 from SemanticAnalysis.GlobalAnalysis.ExpressionAnalyzer.expression_analyzer import (
     ExpressionAnalyzer,
 )
@@ -27,7 +27,11 @@ class LocalVariableDeclaration:
         self.sequence_number = None
         self.scope_depth = None
         self.is_loop_variable = False
+        # hashability, eq, and ordering info
         self.variable_type_data = None
+        # r values type, useful for a literal to a promotable type
+        # like long <- int, or double <- float
+        self.inferred_type_data = None
         
 
 class FunctionArgsData:
@@ -178,7 +182,7 @@ class StatementAnalyzer:
         exp_analyzer.analyze(statement.get_expression_ast())
         inferred_type_data = exp_analyzer.get_analysis_result()
         if inferred_type_data is None:
-            print("no inferred type data")
+            print("no inferred type data, likely error")
             # Found some kind of semantic error in the expression
             return
         # # This way a variable in the expression will be undeclared if it has the same
@@ -207,17 +211,24 @@ class StatementAnalyzer:
 
         if type_name_token.get_type() != inferred_type_data.type_token.get_type():
             print(f"Type mismatch: {type_name_token.get_type()} != {inferred_type_data.type_token.get_type()}")
-            if not self.both_are_bools(type_name_token, inferred_type_data.type_token):
-                print("both are not bools")
-                if not self.r_value_implements_l_value_type_as_interface(type_name_token, inferred_type_data.type_token):
-                    print("adding error")
-                    self.add_error(
-                        type_name_token, ErrMsgs.EXP_VAR_TYPE_MISMATCH, inferred_type_data.type_token
-                    )
+            incompatible_types = True
+            if self.r_value_is_promotable_to_l_value_type(type_name_token, inferred_type_data.type_token):
+                incompatible_types = False
+            elif self.both_are_bools(type_name_token, inferred_type_data.type_token):
+                print("both are bools")
+                incompatible_types = False
+            elif self.r_value_implements_l_value_type_as_interface(type_name_token, inferred_type_data.type_token):
+                print("adding error")
+                incompatible_types = False
+            if incompatible_types:
+                self.add_error(
+                    type_name_token, ErrMsgs.EXP_VAR_TYPE_MISMATCH, inferred_type_data.type_token
+                )
 
         # Because if the type as stated is wrong,
         # we'll just treat the expression as the true type (because that is the true type anyways)
-        variable_data.type_token = inferred_type_data.type_token
+        variable_data.type_token = type_name_token
+        variable_data.inferred_type_data = inferred_type_data
 
     def analyze_reassignment(statement):
         pass
@@ -345,7 +356,23 @@ class StatementAnalyzer:
                     return True
 
         return False
-            
+    
+
+    def r_value_is_promotable_to_l_value_type(self, type_name_token, inferred_type_token):
+        if not is_primitive_type(type_name_token):
+            return False
+        if not is_primitive_type(inferred_type_token):
+            return False
+        
+        if inferred_type_token.get_type() == FLOAT and type_name_token.get_type() == DOUBLE:
+            print("float to double")
+            return True
+        if inferred_type_token.get_type() == INT and type_name_token.get_type() == LONG:
+            print("int to long")
+            return True
+        print("returning false")
+        return False
+
     def both_are_bools(self, type_name_token, inferred_type_token):
         return is_boolean_literal(inferred_type_token) and type_name_token.get_type() == BOOL
 

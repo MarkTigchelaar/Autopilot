@@ -1,6 +1,7 @@
 module main
 
-
+// happy path, can get types of variables,
+// and also do promotion of type that can be promoted
 pub fun main() do
     let a as long = 10
     let b as long = a
@@ -14,4 +15,8 @@ pub fun main() do
     let j as string = i
     let k as char = 'k'
     let l as char = k
+    let m as int = 1
+    let n as long = m
+    let o as float = 1.5
+    let p as double = o
 end

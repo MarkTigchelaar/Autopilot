@@ -1,0 +1,9 @@
+module main
+
+
+pub fun main() do
+    let a as string = - "string"
+    let b as char =  -'a'
+    let c as bool = -true
+    let d as bool = not 'a'
+end

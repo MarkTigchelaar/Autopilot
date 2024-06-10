@@ -1,0 +1,5 @@
+module main
+
+pub fun main() do
+    let a as int = 10 + true
+end

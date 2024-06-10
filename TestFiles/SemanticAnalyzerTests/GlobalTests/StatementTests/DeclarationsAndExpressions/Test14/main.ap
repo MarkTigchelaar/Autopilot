@@ -1,0 +1,9 @@
+module main
+
+
+pub fun main() do
+    let a as int = -1
+    let b as bool = not false
+    let c as bool = not true
+    let d as float = -1.5
+end

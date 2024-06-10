@@ -43,8 +43,8 @@ class ErrorManager:
             raise Exception("INTERNAL ERROR: parse error list empty")
         return self.parser_errors.pop()
 
-    def add_semantic_error(self, token, message, shadowed_token = None) -> None:
-        semantic_error = SemanticError(token, message, shadowed_token)
+    def add_semantic_error(self, token, message, shadowed_token = None, lhs_type_token = None, rhs_type_token = None) -> None:
+        semantic_error = SemanticError(token, message, shadowed_token, lhs_type_token, rhs_type_token)
         self.semantic_errors.append(semantic_error)
 
     def next_semantic_error(self) -> SemanticError:
