@@ -1,0 +1,16 @@
+module main
+
+import return_true as return_distant_value from module other_booleans
+
+
+pub fun main() do
+    let a as bool = return_true() // undefined
+    let b as bool = return_distant_bool() // undefined
+    let c as bool = Thingy()
+
+end
+
+
+enum Thingy is
+    a
+end

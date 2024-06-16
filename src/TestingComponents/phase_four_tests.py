@@ -28,7 +28,7 @@ def run_tests(component_tests, current_dir, tracker):
     for test_case in component_tests:
         skip = False
         for test in test_case["files"]:
-            if "Test21" not in test:
+            if "Test23" not in test:
                 skip = True
                 break
         if not skip:

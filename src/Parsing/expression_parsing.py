@@ -47,7 +47,7 @@ def parse_prefix(token, driver):
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None
-    elif not is_valid_expression_token(peek_token):
+    elif not is_valid_expression_token(peek_token, include_prefixes = False):
         driver.add_error(peek_token, UNEXPECTED_TOKEN)
         return None
     rhs_expression = _parse(driver, PREFIX)

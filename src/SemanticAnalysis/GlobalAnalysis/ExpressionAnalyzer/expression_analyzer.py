@@ -1,8 +1,12 @@
 import ErrorHandling.semantic_error_messages as ErrMsgs
 from keywords import is_primitive_type, is_boolean_literal
 from symbols import *
-
-
+# from SemanticAnalysis.Database.Queries.module_items_query import ModuleItemsQuery
+# from SemanticAnalysis.Database.Queries.actual_imported_items_by_import_statement_item_name_query import ActualImportedItemsByImportStatementItemNameQuery
+# from SemanticAnalysis.Database.Queries.function_name_query import FunctionNameQuery
+from SemanticAnalysis.Database.Queries.module_and_imported_items_from_function_id_query import ModuleAndImportedItemsFromCallerFunctionIdAndCalleeNameQuery
+from SemanticAnalysis.Database.Queries.matching_import_item_alias_from_function import MatchingImportItemAliasFromFunction
+from SemanticAnalysis.Database.Queries.current_module_id_query import CurrentModuleIdQueryQuery
 class ExpressionType:
     def __init__(self, name_or_symbol_token, type_token, variable_type_data=None):
         self.name_or_symbol_token = name_or_symbol_token
@@ -144,10 +148,17 @@ class ExpressionAnalyzer:
             self.expression_type = None
 
     def visit_function_call_expression(self, function_call_expression):
-        # find the function in the global scope, or error
-        # check if the arguments are compatible with the function
-        # set the expression type to the return type of the function
-        # return
+        # is List[TypeRow]
+        matching_definitions = self.check_if_function_is_defined(function_call_expression.fn_name_exp.get_name())
+
+
+            
+        # Find something in module, or imported module that matches name of function
+        # Error if nothing found, error if things found are not a function
+        # check argument types
+        # check it returns something
+        # check that it returns the right type
+        # done
         pass
 
     def visit_collection_access_expression(self, collection_access_expression):
@@ -244,3 +255,71 @@ class ExpressionAnalyzer:
         # if both are user defined types, check if they are the same type
         # if not, error
         
+
+
+    def check_if_function_is_defined(self, function_name_token):
+        function_id = self.parent_analyzer.fn_or_test_id
+        
+        items_visible_to_function_query = ModuleAndImportedItemsFromCallerFunctionIdAndCalleeNameQuery(function_id, function_name_token.literal)
+        query_result = self.parent_analyzer.database.execute_query(items_visible_to_function_query)
+        
+        
+        
+        header_id = self.parent_analyzer.database.get_table("functions").get_item_by_id(function_id).header_id
+
+
+        current_module_id_query = CurrentModuleIdQueryQuery(header_id)
+        current_module_id = self.parent_analyzer.database.execute_query(current_module_id_query).next()
+
+        all_names_from_matching_alias = self.get_names_for_aliases(function_name_token, function_id)
+        # account for multiple results, and raise ambiguity related errors
+        found_items = []
+        for item in query_result:
+            if item.name_token.literal == function_name_token.literal:
+                # must be current module_id
+                found_items.append(item)
+                
+            else:
+                for name_row in all_names_from_matching_alias:
+                    # Ensure it is only collecting items where the name matches the alias given in
+                    # import statement
+                    if item.name_token.literal == name_row.literal:
+                        if current_module_id != item.module_id:
+                            found_items.append(item)
+
+        if len(found_items) == 0:
+            self.add_error(
+                function_name_token,
+                ErrMsgs.FUNCTION_NOT_DEFINED
+            )
+        
+        matching_functions = list()
+        for found_item in found_items:
+            if found_item.category not in ("function", "fn_header"):
+                # check for union, struct type names, if so, is constructor
+                self.add_error(
+                    function_name_token,
+                    ErrMsgs.REFERENCED_ITEM_IS_NOT_A_FUNCTION,
+                    found_item.name_token
+                )
+            else:
+                matching_functions.append(found_item)
+        return matching_functions # List[TypeRow]
+        
+
+
+    def get_names_for_aliases(self, function_name_token, function_id):
+        item_import_alias_query = MatchingImportItemAliasFromFunction(function_id, function_name_token.literal)
+        query_result = self.parent_analyzer.database.execute_query(item_import_alias_query)
+        aliases = []
+        for row in query_result:
+            if row.get_type_name_token().literal == function_name_token.literal:
+                aliases.append(row.name_token)
+        return list(set(aliases))
+
+# class TypeRow:
+#     def __init__(self, category, module_id, object_id, name_token):
+#         self.category = category
+#         self.module_id = module_id
+#         self.object_id = object_id
+#         self.name_token = name_token

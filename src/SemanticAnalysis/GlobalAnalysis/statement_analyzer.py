@@ -175,7 +175,7 @@ class StatementAnalyzer:
                     )
 
         
-        # This code is good, but needs testing / fixing. Test above code first
+        
 
         print("exp analysis")
         exp_analyzer = ExpressionAnalyzer(self)

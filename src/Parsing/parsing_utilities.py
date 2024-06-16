@@ -52,7 +52,7 @@ def is_valid_index_token(token):
     return is_primitive_literal(token) and token.type_symbol in int_types
 
 # Does the left most token start with one of the following?
-def is_valid_expression_token(token):
+def is_valid_expression_token(token, include_prefixes = True):
     if token.type_symbol == symbols.CHAR:
         return True
     elif token.type_symbol == symbols.STRING:
@@ -78,9 +78,9 @@ def is_valid_expression_token(token):
     elif token.type_symbol == symbols.FALSE:
         return True
     elif token.type_symbol == symbols.MINUS:
-        return True
+        return True and include_prefixes
     elif token.type_symbol == symbols.NOT:
-        return True
+        return True and include_prefixes
     else:
         return False
 

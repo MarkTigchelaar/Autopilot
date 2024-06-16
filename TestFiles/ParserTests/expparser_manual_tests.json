@@ -435,7 +435,14 @@
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test12.txt",
         "astString" : "(a not b)",
         "tokenTypeString" : "(IDENTIFIER NOT IDENTIFIER)",
-        "errors" : null
+        "errors" : [
+            {
+                "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test12.txt",
+                "tokenLiteral" : "not",
+                "lineNumber" : "1",
+                "message" : "invalid prefix operator usage"
+            }
+        ]
     },
     {
         "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test13.txt",

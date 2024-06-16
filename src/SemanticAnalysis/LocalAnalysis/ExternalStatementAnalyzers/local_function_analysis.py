@@ -1,6 +1,7 @@
 from ErrorHandling.semantic_error_messages import *
 
 def analyze_function(analyzer, ast_node, struct_fields = None):
+    #raise Exception("here")
     analyze_arg_names(analyzer, ast_node)
     analyze_return_paths(analyzer, ast_node)
     analyze_loop_branching_and_labels(analyzer, ast_node)

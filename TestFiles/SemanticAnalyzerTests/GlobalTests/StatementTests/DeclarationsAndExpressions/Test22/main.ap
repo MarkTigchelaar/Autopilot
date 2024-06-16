@@ -1,0 +1,15 @@
+module main
+
+import return_true as return_distant_bool from module other_booleans
+
+// baseline test for lining up function return
+// types with variable types.
+pub fun main() do
+    let a as bool = return_true()
+    let b as bool = return_distant_bool()
+end
+
+
+fun return_true() bool do
+    return true
+end

@@ -768,7 +768,7 @@
                 "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test20/main.ap",
                 "shadowed_token_literal": "%",
                 "shadowed_line_number": "4",
-                "shadowed_column": "24",
+                "shadowed_column": "27",
                 "rhs_type_token_type": "FLOAT"
             }
         ],
@@ -784,5 +784,62 @@
         ],
         "analyzer_test_config_names": [],
         "comment": "binary expressions with correct types are ok"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test22/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test22/secondary.ap"
+        ],
+        "errors": [
+            
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "function calls of correct return type (no args) are ok"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test23/main.ap",
+            "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test23/secondary.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test23/main.ap",
+                "token_literal": "return_true",
+                "line_number": "7",
+                "column": "21",
+                "message": "function is not defined",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null,
+                "lhs_type_token_type": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test23/main.ap",
+                "token_literal": "return_distant_bool",
+                "line_number": "8",
+                "column": "21",
+                "message": "function is not defined",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null,
+                "rhs_type_token_type": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test23/main.ap",
+                "token_literal": "Thingy",
+                "line_number": "9",
+                "column": "21",
+                "message": "referenced item is not a function or initializer",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/StatementTests/DeclarationsAndExpressions/Test23/main.ap",
+                "shadowed_token_literal": "Thingy",
+                "shadowed_line_number": "14",
+                "shadowed_column": "6",
+                "rhs_type_token_type": null
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "compiler detects missing functions, in module or imported, also if function call refers to something that's not a function"
     }
 ]

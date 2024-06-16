@@ -1,0 +1,5 @@
+module other_booleans
+
+pub fun return_true() bool do
+    return true
+end

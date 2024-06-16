@@ -284,3 +284,8 @@ INVALID_PREFIX_EXP = "expression not compatible with prefix"
 INVALID_BINARY_EXP = "expression not compatible with binary operator"
 
 INCOMPATIBLE_EXPRESSION_TYPES = "incompatible expression types"
+
+
+FUNCTION_NOT_DEFINED = "function is not defined"
+
+REFERENCED_ITEM_IS_NOT_A_FUNCTION = "referenced item is not a function or initializer"
