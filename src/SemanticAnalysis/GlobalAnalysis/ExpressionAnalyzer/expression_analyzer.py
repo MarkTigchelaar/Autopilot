@@ -153,9 +153,8 @@ class ExpressionAnalyzer:
 
 
             
-        # Find something in module, or imported module that matches name of function
-        # Error if nothing found, error if things found are not a function
-        # check argument types
+        
+        # check argument types / number of arguments
         # check it returns something
         # check that it returns the right type
         # done
