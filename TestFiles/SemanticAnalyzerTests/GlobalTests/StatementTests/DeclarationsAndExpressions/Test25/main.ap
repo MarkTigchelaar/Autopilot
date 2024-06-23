@@ -1,0 +1,14 @@
+module main
+
+import also_return_boolean from module other_functions
+
+
+pub fun main() do
+    let a as bool = return_boolean()
+    let b as bool = also_return_boolean(1)
+end
+
+
+fun return_boolean(a as bool) bool do
+    return a
+end

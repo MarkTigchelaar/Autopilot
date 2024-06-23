@@ -1,0 +1,5 @@
+module main
+
+fun main() do
+    let b = { 1: 5.1 , 2.5 :3 }
+end

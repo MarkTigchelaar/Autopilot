@@ -71,6 +71,8 @@ def is_valid_expression_token(token, include_prefixes = True):
         return True
     elif token.type_symbol == symbols.LEFT_BRACE:
         return True
+    elif token.type_symbol == symbols.LEFT_BRACKET:
+        return True
     elif token.type_symbol == symbols.IDENTIFIER:
         return True
     elif token.type_symbol == symbols.TRUE:

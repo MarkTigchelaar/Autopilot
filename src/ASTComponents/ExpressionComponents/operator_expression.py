@@ -26,3 +26,9 @@ class OperatorExpression:
 
     def accept(self, expression_analyzer):
         expression_analyzer.visit_binary_operator_expression(self)
+
+    def has_left_expression(self):
+        return self.left_expression is not None
+
+    def has_right_expression(self): 
+        return self.right_expression is not None

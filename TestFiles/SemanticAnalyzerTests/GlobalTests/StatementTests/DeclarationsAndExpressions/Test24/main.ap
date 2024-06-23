@@ -1,0 +1,19 @@
+module main
+
+import also_return_nothing from module other_functions
+
+
+pub fun main() do
+    let a as bool = return_nothing()
+    let b as bool = also_return_nothing()
+
+end
+
+
+fun return_nothing() do
+    let a = 0
+end
+
+fun return_nothing() do
+    let a = 0
+end

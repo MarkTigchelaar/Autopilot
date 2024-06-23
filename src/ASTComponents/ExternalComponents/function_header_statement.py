@@ -23,6 +23,9 @@ class FunctionHeaderStatement:
     
     def add_return_type(self, return_type_token):
         self.return_type_token = return_type_token
+
+    def get_return_type(self):
+        return self.return_type_token
     
     def add_acyclic_field(self, acyclic_token):
         self.acyclic_token = acyclic_token
@@ -59,3 +62,6 @@ class FunctionArgument:
     
     def add_default_value(self, default_value_token):
         self.default_value_token = default_value_token
+
+    def get_default_value(self):
+        return self.default_value_token

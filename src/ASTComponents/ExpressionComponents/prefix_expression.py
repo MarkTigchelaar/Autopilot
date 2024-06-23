@@ -20,3 +20,9 @@ class PrefixExpression:
 
     def accept(self, expression_analyzer):
         expression_analyzer.visit_prefix_expression(self)
+
+    def has_left_expression(self):
+        return False
+    
+    def has_right_expression(self):
+        return self.rhs_exp is not None

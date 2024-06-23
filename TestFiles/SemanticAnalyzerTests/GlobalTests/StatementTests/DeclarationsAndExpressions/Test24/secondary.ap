@@ -1,0 +1,6 @@
+module other_functions
+
+
+pub fun also_return_nothing() do
+    let a = 0
+end

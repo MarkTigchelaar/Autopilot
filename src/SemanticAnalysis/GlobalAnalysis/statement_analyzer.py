@@ -63,6 +63,7 @@ class VariableTypeData:
 
         self.is_hashable = False
         self.is_comparable = False
+        self.default_value = None
         
 
 class Loop_label:
@@ -129,7 +130,16 @@ class StatementAnalyzer:
         for arg in args:
             arg_data = FunctionArgsData()
             arg_data.name_token = arg.get_name()
-            arg_data.variable_type_data = self.find_variable_type(arg.get_type_name())
+            if is_primitive_type(arg.get_type()) or is_boolean_literal(arg.get_type()):
+                arg_data.variable_type_data = VariableTypeData()
+                arg_data.variable_type_data.type_name_token = arg.get_type()
+                arg_data.variable_type_data.is_comparable = True
+                arg_data.variable_type_data.is_hashable = True
+                arg_data.variable_type_data.is_primitive = True
+                arg_data.variable_type_data.is_mutable = True
+                arg_data.variable_type_data.default_value = arg.get_default_value()
+            else:
+                arg_data.variable_type_data = self.find_variable_type(arg.get_type())
             self.args.append(arg_data)
         self.function_name_token = function_object.get_name_token()
         self.analyze_statements()

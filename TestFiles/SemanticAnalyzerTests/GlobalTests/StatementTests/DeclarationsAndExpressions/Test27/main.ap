@@ -1,0 +1,11 @@
+module main
+
+pub fun main() do
+    let a as int = return_boolean(true, 10, "hi")
+    let b = return_boolean(true, 10, "hi")
+    let c as bool = return_boolean(true, 10, "hi")
+end
+
+fun return_boolean(a as bool, b as int, c as string) bool do
+    return a
+end

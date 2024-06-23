@@ -13,3 +13,9 @@ class FunctionCallExpression:
 
     def accept(self, expression_analyzer):
         expression_analyzer.visit_function_call_expression(self)
+
+    def has_left_expression(self):
+        return False
+    
+    def has_right_expression(self): 
+        return False

@@ -12,3 +12,9 @@ class NameExpression:
 
     def accept(self, expression_analyzer):
         expression_analyzer.visit_name_expression(self)
+
+    def has_left_expression(self):
+        return False
+    
+    def has_right_expression(self): 
+        return False

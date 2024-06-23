@@ -13,3 +13,9 @@ class MethodCallOrFieldExpression:
 
     def accept(self, expression_analyzer):
         expression_analyzer.visit_method_call_or_field_expression(self)
+
+    def has_left_expression(self):
+        return True
+    
+    def has_right_expression(self): 
+        return False

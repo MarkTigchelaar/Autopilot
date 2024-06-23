@@ -27,10 +27,10 @@ def test_control_function(tracker, test_json, current_dir, phase_name):
 def run_tests(component_tests, current_dir, tracker):
     for test_case in component_tests:
         skip = False
-        for test in test_case["files"]:
-            if "Test23" not in test:
-                skip = True
-                break
+        # for test in test_case["files"]:
+        #     if "Test32" not in test:
+        #         skip = True
+        #         break
         if not skip:
             print(f"Running test: {test_case['files'][0]}")
             semantic_test(test_case, current_dir, tracker)

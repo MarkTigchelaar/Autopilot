@@ -289,3 +289,26 @@ INCOMPATIBLE_EXPRESSION_TYPES = "incompatible expression types"
 FUNCTION_NOT_DEFINED = "function is not defined"
 
 REFERENCED_ITEM_IS_NOT_A_FUNCTION = "referenced item is not a function or initializer"
+
+FUNCTION_CALLED_HAS_NO_RETURN_TYPE = "function being called has no return type"
+
+FUNCTION_CALL_ARG_NUMBER_MISMATCH = "function being called has different number of arguments"
+
+FUNCTION_CALL_ARG_TYPE_MISMATCH = "function being called has different argument types"
+
+
+MULTIPLE_MAP_DELIMITERS_FOUND = "multiple map delimiters found for map key value pair"
+
+MISSING_MAP_DELIMITER = "missing map delimiter for map key value pair"
+
+INCONSISTANT_MAP_KEY_TYPES = "inconsistant map key types"
+
+INCONSISTANT_MAP_VALUE_TYPES = "inconsistant map value types"
+
+INCONSISTANT_HASH_ELEMENT_TYPES = "inconsistant set element types"
+
+UNHASHABLE_HASH_ELEMENT_TYPES = "unhashable set element types"
+
+UNHASHABLE_MAP_KEY_TYPES = "unhashable map key types"
+
+INCONSISTANT_LIST_ELEMENT_TYPES = "inconsistant list element types"
