@@ -1,0 +1,551 @@
+[
+    {
+        "file": 
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test0/main.ap"
+    ,
+        "errors": null,
+        "analyzer_test_config_names": [],
+        "comment": ""
+    },
+    {
+        "file": 
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test1/main.ap"
+    ,
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test1/main.ap",
+                "token_literal": "a",
+                "line_number": "4",
+                "column": "21",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": ""
+    },
+    {
+        "file": 
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test2/main.ap"
+    ,
+        "errors": null,
+        "analyzer_test_config_names": [],
+        "comment": ""
+    },
+    {
+        "file": 
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test3/main.ap"
+    ,
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test3/main.ap",
+                "token_literal": "aa",
+                "line_number": "6",
+                "column": "12",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test3/main.ap",
+                "token_literal": "b",
+                "line_number": "9",
+                "column": "14",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": ""
+    },
+    {
+        "file": 
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap"
+    ,
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "a",
+                "line_number": "5",
+                "column": "5",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "something",
+                "line_number": "6",
+                "column": "11",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "aa",
+                "line_number": "7",
+                "column": "12",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "b",
+                "line_number": "9",
+                "column": "13",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "b",
+                "line_number": "10",
+                "column": "14",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "c",
+                "line_number": "11",
+                "column": "13",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "d",
+                "line_number": "13",
+                "column": "13",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "zz",
+                "line_number": "15",
+                "column": "11",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "bb",
+                "line_number": "15",
+                "column": "16",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "e",
+                "line_number": "16",
+                "column": "9",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "x",
+                "line_number": "16",
+                "column": "13",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "k",
+                "line_number": "19",
+                "column": "9",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "f",
+                "line_number": "21",
+                "column": "8",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "g",
+                "line_number": "21",
+                "column": "12",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "h",
+                "line_number": "21",
+                "column": "17",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "l",
+                "line_number": "22",
+                "column": "9",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "m",
+                "line_number": "22",
+                "column": "13",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "n",
+                "line_number": "23",
+                "column": "10",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "o",
+                "line_number": "23",
+                "column": "14",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "q",
+                "line_number": "24",
+                "column": "24",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "r",
+                "line_number": "26",
+                "column": "9",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "p",
+                "line_number": "26",
+                "column": "13",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "t",
+                "line_number": "28",
+                "column": "12",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "u",
+                "line_number": "28",
+                "column": "14",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "a",
+                "line_number": "29",
+                "column": "5",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "b",
+                "line_number": "29",
+                "column": "9",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "y",
+                "line_number": "29",
+                "column": "19",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "z",
+                "line_number": "29",
+                "column": "21",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "z",
+                "line_number": "30",
+                "column": "12",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "a",
+                "line_number": "31",
+                "column": "9",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "bb",
+                "line_number": "31",
+                "column": "13",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "g",
+                "line_number": "33",
+                "column": "14",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "t",
+                "line_number": "33",
+                "column": "19",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "u",
+                "line_number": "33",
+                "column": "22",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "a",
+                "line_number": "34",
+                "column": "9",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "f",
+                "line_number": "36",
+                "column": "12",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "d",
+                "line_number": "41",
+                "column": "21",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "b",
+                "line_number": "46",
+                "column": "30",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "non_existant_optional_collection",
+                "line_number": "47",
+                "column": "19",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "non_existant_collection",
+                "line_number": "50",
+                "column": "14",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "something",
+                "line_number": "53",
+                "column": "16",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "some_other_thing",
+                "line_number": "55",
+                "column": "18",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/VariableDefinitions/Test4/main.ap",
+                "token_literal": "aa",
+                "line_number": "58",
+                "column": "5",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": ""
+    }
+]

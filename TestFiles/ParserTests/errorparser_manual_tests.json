@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test2.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test3.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test4.txt",
-                "tokenLiteral" : "10",
-                "lineNumber" : "1",
+                "token_literal" : "10",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -58,8 +58,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test5.txt",
-                "tokenLiteral" : "\"name\"",
-                "lineNumber" : "1",
+                "token_literal" : "\"name\"",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -71,8 +71,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test6.txt",
-                "tokenLiteral" : "'a'",
-                "lineNumber" : "1",
+                "token_literal" : "'a'",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -84,8 +84,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test7.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -97,8 +97,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test8.txt",
-                "tokenLiteral" : "10",
-                "lineNumber" : "1",
+                "token_literal" : "10",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -110,8 +110,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test9.txt",
-                "tokenLiteral" : "\"name\"",
-                "lineNumber" : "1",
+                "token_literal" : "\"name\"",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -123,8 +123,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test10.txt",
-                "tokenLiteral" : "'a'",
-                "lineNumber" : "1",
+                "token_literal" : "'a'",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -136,8 +136,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test11.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -149,8 +149,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test12.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "2",
+                "token_literal" : "int",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -162,8 +162,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test13.txt",
-                "tokenLiteral" : "10",
-                "lineNumber" : "2",
+                "token_literal" : "10",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -175,8 +175,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test14.txt",
-                "tokenLiteral" : "\"name\"",
-                "lineNumber" : "2",
+                "token_literal" : "\"name\"",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -188,8 +188,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test15.txt",
-                "tokenLiteral" : "'a'",
-                "lineNumber" : "2",
+                "token_literal" : "'a'",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -201,8 +201,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test16.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "2",
+                "token_literal" : "",
+                "line_number" : "2",
                 "message" : "end of file reached"
             }
         ]
@@ -214,8 +214,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test17.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "2",
+                "token_literal" : "int",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -227,8 +227,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test18.txt",
-                "tokenLiteral" : "10",
-                "lineNumber" : "2",
+                "token_literal" : "10",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -240,8 +240,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test19.txt",
-                "tokenLiteral" : "\"name\"",
-                "lineNumber" : "2",
+                "token_literal" : "\"name\"",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -253,8 +253,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test20.txt",
-                "tokenLiteral" : "'a'",
-                "lineNumber" : "2",
+                "token_literal" : "'a'",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -272,8 +272,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test22.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "3",
+                "token_literal" : "int",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -285,8 +285,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test23.txt",
-                "tokenLiteral" : "10",
-                "lineNumber" : "3",
+                "token_literal" : "10",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -298,8 +298,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test24.txt",
-                "tokenLiteral" : "\"name\"",
-                "lineNumber" : "3",
+                "token_literal" : "\"name\"",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -311,8 +311,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test25.txt",
-                "tokenLiteral" : "'a'",
-                "lineNumber" : "3",
+                "token_literal" : "'a'",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -325,8 +325,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test26.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "2",
+                "token_literal" : "",
+                "line_number" : "2",
                 "message" : "end of file reached"
             }
         ]
@@ -338,8 +338,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test27.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "3",
+                "token_literal" : "int",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -351,8 +351,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test28.txt",
-                "tokenLiteral" : "10",
-                "lineNumber" : "3",
+                "token_literal" : "10",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -364,8 +364,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test29.txt",
-                "tokenLiteral" : "\"name\"",
-                "lineNumber" : "3",
+                "token_literal" : "\"name\"",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -377,8 +377,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ErrorTests/test30.txt",
-                "tokenLiteral" : "'a'",
-                "lineNumber" : "3",
+                "token_literal" : "'a'",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]

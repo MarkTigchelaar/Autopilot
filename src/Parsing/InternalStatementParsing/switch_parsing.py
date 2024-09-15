@@ -59,6 +59,14 @@ def case_value_step(driver, switch_stmt, case_stmt):
     value_token = driver.next_token()
     case_stmt.add_value(value_token)
     peek_token = driver.peek_token()
+    if peek_token.type_symbol == symbols.DOT:
+        driver.discard_token()
+        peek_token = driver.peek_token()
+        if peek_token.type_symbol == symbols.IDENTIFIER:
+            enum_field_token = driver.next_token()
+            case_stmt.add_enum_reference(value_token, enum_field_token)
+            peek_token = driver.peek_token() # TODO: What if it's not a ID after the dot?
+
     if is_eof_type(peek_token):
         driver.add_error(peek_token, EOF_REACHED)
         return None

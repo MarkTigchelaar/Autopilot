@@ -8,23 +8,25 @@ pub fun function() int do
       else
         let a2 as int = 10
       end
-      return 0
     end
-  else
+    return 0
+  elif true do
     if true do
       while true do
         let a3 as int = 10
       end
+      return 0
     elif true do
       while true do
         let a4 as int = 10
       end
+      return 0
     else
       while true do
         let a5 as int = 10
       end
+      return 0
     end
-    return 0
   end
   return 0
 end

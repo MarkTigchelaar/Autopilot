@@ -10,6 +10,9 @@ class Token:
     def get_type(self) -> str:
         return self.type_symbol
     
+    def get_name(self):
+        return self.literal
+    
     def set_type(self, type_symbol: str) -> None:
         self.type_symbol = type_symbol
 

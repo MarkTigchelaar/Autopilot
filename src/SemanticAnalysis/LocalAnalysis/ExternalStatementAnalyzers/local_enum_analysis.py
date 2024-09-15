@@ -16,6 +16,24 @@ def analyze_enum(analyzer, enum_ast_node):
         check_field_if_type_matches_enum(analyzer, fields[i], enum_ast_node)
         check_field_if_name_matches_enum(analyzer, fields[i], enum_ast_node)
         check_if_field_is_allowed_enum_type(analyzer, fields[i])
+    
+    check_if_bool_enum_has_more_than_two_fields(analyzer, enum_ast_node)
+    check_if_char_enum_has_more_than_256_fields(analyzer, enum_ast_node)
+    
+def check_if_bool_enum_has_more_than_two_fields(analyzer, enum_ast_node):
+    if enum_ast_node.general_type is None:
+        return
+    if enum_ast_node.general_type.type_symbol == symbols.BOOL:
+        if len(enum_ast_node.item_list) > 2:
+            analyzer.add_error(enum_ast_node.item_list[2].item_name_token, BOOL_ENUM_TOO_MANY_FIELDS)
+
+
+def check_if_char_enum_has_more_than_256_fields(analyzer, enum_ast_node):
+    if enum_ast_node.general_type is None:
+        return
+    if enum_ast_node.general_type.type_symbol == symbols.CHAR:
+        if len(enum_ast_node.item_list) > 256:
+            analyzer.add_error(enum_ast_node.item_list[255].item_name_token, CHAR_ENUM_TOO_MANY_FIELDS)
 
 
 def check_if_enum_is_allowed_enum_type(analyzer, enum_ast_node):
@@ -23,6 +41,7 @@ def check_if_enum_is_allowed_enum_type(analyzer, enum_ast_node):
         return
     if not is_primitive_type(enum_ast_node.general_type):
         analyzer.add_error(enum_ast_node.general_type, ENUM_HAS_UDT)
+    
 
 
 def check_fields_for_duplicate_names(analyzer, field_one, field_two):

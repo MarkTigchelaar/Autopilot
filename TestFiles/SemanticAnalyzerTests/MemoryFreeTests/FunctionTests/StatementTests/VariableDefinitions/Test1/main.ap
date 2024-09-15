@@ -1,0 +1,5 @@
+module main
+
+pub fun main() do
+    let b = 1 + 2 + a
+end

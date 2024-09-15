@@ -18,8 +18,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ModuleParsingTests/test3.txt",
-                "tokenLiteral" : "9",
-                "lineNumber" : "1",
+                "token_literal" : "9",
+                "line_number" : "1",
                 "message" : "module names cannot start with numbers, or have non alphanumeric characters"
             }
         ]

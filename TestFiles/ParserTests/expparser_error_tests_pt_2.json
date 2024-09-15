@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 1
             }
@@ -20,8 +20,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test2.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 1
             }
@@ -34,8 +34,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test3.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 1
             }
@@ -48,8 +48,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test4.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 1
             }
@@ -62,8 +62,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test5.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "invalid constant or variable",
                 "column_number" : 1
             }
@@ -82,8 +82,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test7.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "1",
+                "token_literal" : "struct",
+                "line_number" : "1",
                 "message" : "unexpected token",
                 "column_number" : 3
             }
@@ -96,8 +96,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test8.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 5
             }
@@ -110,8 +110,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test9.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 3
             }
@@ -124,8 +124,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test10.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "empty expression",
                 "column_number" : 10
             }
@@ -138,8 +138,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test11.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 3
             }
@@ -152,8 +152,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test12.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "unexpected token",
                 "column_number" : 4
             }
@@ -166,8 +166,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test13.txt",
-                "tokenLiteral" : "enum",
-                "lineNumber" : "1",
+                "token_literal" : "enum",
+                "line_number" : "1",
                 "message" : "invalid constant or variable",
                 "column_number" : 1
             }
@@ -180,8 +180,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test14.txt",
-                "tokenLiteral" : "in",
-                "lineNumber" : "1",
+                "token_literal" : "in",
+                "line_number" : "1",
                 "message" : "invalid constant or variable",
                 "column_number" : 9
             }
@@ -194,8 +194,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test15.txt",
-                "tokenLiteral" : "+",
-                "lineNumber" : "1",
+                "token_literal" : "+",
+                "line_number" : "1",
                 "message" : "invalid constant or variable",
                 "column_number" : 13
             }
@@ -208,8 +208,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test16.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "1",
+                "token_literal" : "end",
+                "line_number" : "1",
                 "message" : "invalid constant or variable",
                 "column_number" : 1
             }
@@ -222,8 +222,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test17.txt",
-                "tokenLiteral" : "if",
-                "lineNumber" : "1",
+                "token_literal" : "if",
+                "line_number" : "1",
                 "message" : "invalid constant or variable",
                 "column_number" : 1
             }
@@ -236,8 +236,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test18.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "empty expression",
                 "column_number" : 2
             }
@@ -250,8 +250,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test19.txt",
-                "tokenLiteral" : "}",
-                "lineNumber" : "1",
+                "token_literal" : "}",
+                "line_number" : "1",
                 "message" : "empty expression",
                 "column_number" : 2
             }
@@ -264,8 +264,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test20.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 3
             }
@@ -278,8 +278,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test21.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 4
             }
@@ -292,8 +292,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test22.txt",
-                "tokenLiteral" : "}",
-                "lineNumber" : "1",
+                "token_literal" : "}",
+                "line_number" : "1",
                 "message" : "unexpected token",
                 "column_number" : 4
             }
@@ -306,8 +306,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test23.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "unexpected token",
                 "column_number" : 5
             }
@@ -320,8 +320,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test24.txt",
-                "tokenLiteral" : "}",
-                "lineNumber" : "1",
+                "token_literal" : "}",
+                "line_number" : "1",
                 "message" : "unexpected token",
                 "column_number" : 2
             }
@@ -334,8 +334,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test25.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "unexpected token",
                 "column_number" : 2
             }
@@ -348,8 +348,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test26.txt",
-                "tokenLiteral" : ",",
-                "lineNumber" : "1",
+                "token_literal" : ",",
+                "line_number" : "1",
                 "message" : "unexpected token",
                 "column_number" : 12
             }
@@ -368,8 +368,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test28.txt",
-                "tokenLiteral" : "}",
-                "lineNumber" : "1",
+                "token_literal" : "}",
+                "line_number" : "1",
                 "message" : "invalid constant or variable",
                 "column_number" : 7
             }
@@ -382,8 +382,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test29.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 12
             }
@@ -396,8 +396,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test30.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 15
             }
@@ -410,8 +410,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test31.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "invalid constant or variable",
                 "column_number" : 24
             }
@@ -424,8 +424,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test32.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "4",
+                "token_literal" : "struct",
+                "line_number" : "4",
                 "message" : "invalid constant or variable",
                 "column_number" : 26
             }
@@ -438,8 +438,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test33.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "4",
+                "token_literal" : "struct",
+                "line_number" : "4",
                 "message" : "invalid constant or variable",
                 "column_number" : 28
             }
@@ -452,8 +452,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test34.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached",
                 "column_number" : 9
             }
@@ -472,8 +472,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test36.txt",
-                "tokenLiteral" : "}",
-                "lineNumber" : "1",
+                "token_literal" : "}",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -485,8 +485,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test37.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -498,8 +498,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test38.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -511,8 +511,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test39.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "function call is missing expression"
             }
         ]
@@ -524,8 +524,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test40.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -537,8 +537,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test41.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "function call is missing expression"
             }
         ]
@@ -550,8 +550,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test42.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -563,8 +563,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test43.txt",
-                "tokenLiteral" : "}",
-                "lineNumber" : "1",
+                "token_literal" : "}",
+                "line_number" : "1",
                 "message" : "collection is missing expression"
             }
         ]
@@ -576,8 +576,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test44.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -601,8 +601,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test47.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "function call is missing expression"
             }
         ]
@@ -620,8 +620,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionErrorTestsPt2/test49.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "7",
+                "token_literal" : "]",
+                "line_number" : "7",
                 "message" : "unexpected token"
             }
         ]

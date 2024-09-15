@@ -1,39 +1,39 @@
-pub fun function() int do
+fun function() int do
   unless true do
-    if true do
+    unless true do
       if true do
         if true do
-          for i in 1 .. 10 do
-            let a0 as int = 10
-          end
-          return 0
-        elif true do
-          for i in 1 .. 10 do
-            let a1 as int = 10
-          end
-          return 0
-        end
-      end
-      return 0
-    else
-      if true do
-        for i in 1 .. 10 do
           if true do
-            let a2 as int = 10
+            for i0 in 1 .. 10 do
+              let a1 as int = 10
+            end
+            return 0
           end
-          return 0
         end
         return 0
       elif true do
         if true do
-          for i in 1 .. 10 do
-            let a3 as int = 10
+          for i2 in 1 .. 10 do
+            if true do
+              let a3 as int = 10
+            end
+            return 0
+          end
+          return 0
+        end
+      else
+        for i4 in 1 .. 10 do
+          if true do
+            if true do
+              let a5 as int = 10
+            end
           end
           return 0
         end
         return 0
       end
+      return 0
     end
+    return 0
   end
-  return 0
 end

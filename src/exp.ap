@@ -1,0 +1,58 @@
+module not_main2
+import input, write from library io.console
+
+
+define Dictionary(string: int) as StringMap
+define Vector(int) as IntList
+
+pub fun main() do
+    let a as int = 2
+    let b as int = 3
+    var c as int = a ^ b
+    let some_input as string = input("What is your input?")
+    if (a < b and b > c) or c > 1 do
+        var d as int = do_a_thing(c - 1, a + b, 2 ^ b)
+        write(d, some_input)
+    else
+        let d as int = c + 1
+        write(d)
+    end
+
+    let my_collection as StringMap = {
+        "a" : 5,
+        "b" : 10
+    }
+    write(my_collection)
+
+    for k in my_collection do
+        //v = my_collection[k]
+        write(k)
+    end
+    let mylist as IntList = [1,2,3]
+    for item in mylist do
+        write(item)
+    end
+
+    for i in 1 .. 10 do
+        write(i)
+    end
+
+end
+
+
+fun do_a_thing(a_number as int, another_number as int, b_number as int) int do
+    while a_number < 10000 do
+        a_number += (2 * a_number) + b_number * another_number
+    end
+    let result as int = do_some_recursion(b_number, 10)
+    write("Here is the result: ", result)
+    return a_number + result
+end
+
+fun do_some_recursion(number_to_be_modified as int, counter as int) int do
+    if counter == 0 do
+        return number_to_be_modified
+    else
+        return 10 + do_some_recursion(number_to_be_modified, counter - 1)
+    end
+end

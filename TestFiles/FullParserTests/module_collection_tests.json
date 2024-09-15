@@ -1,0 +1,156 @@
+[
+    {
+        "entry_dir": "../TestFiles/FullParserTests/ModuleCollectionTests/Test1/",
+        "module_data": [
+            {
+                "name": "main",
+                "id": 0,
+                "included_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test1/main.ap",
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test1/first.ap",
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test1/second.ap"
+                ],
+                "excluded_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test1/third.ap"
+                ],
+                "imported_modules": [
+                    
+                ]
+            }
+        ],
+        "errors" : []
+    },
+    {
+        "entry_dir": "../TestFiles/FullParserTests/ModuleCollectionTests/Test2/",
+        "module_data": [
+            {
+                "name": "main",
+                "id": 0,
+                "included_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test2/main.ap"
+                ],
+                "excluded_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test2/second_file.ap"
+                ],
+                "imported_modules": [
+                    "secondary"
+                ]
+            },
+            {
+                "name": "secondary",
+                "id": 1,
+                "included_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test2/second_file.ap"
+                ],
+                "excluded_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test2/main.ap"
+                ],
+                "imported_modules": [
+                    
+                ]
+            }
+        ],
+        "errors" : []
+    },
+    {
+        "entry_dir": "../TestFiles/FullParserTests/ModuleCollectionTests/Test3/",
+        "module_data": [
+            {
+                "name": "main",
+                "id": 0,
+                "included_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test3/main.ap"
+                ],
+                "excluded_files": [
+                ],
+                "imported_modules": [
+                    "does_not_exist"
+                ]
+            }
+        ],
+        "errors" : [
+            {
+                "file": "../TestFiles/FullParserTests/ModuleCollectionTests/Test3/main.ap",
+                "token_literal": "does_not_exist",
+                "line_number": 3,
+                "column": 26,
+                "message": "module not found",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            },
+            {
+                "file": "../TestFiles/FullParserTests/ModuleCollectionTests/Test3/main.ap",
+                "token_literal": "i",
+                "line_number": 6,
+                "column": 5,
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ]
+    },
+    {
+        "entry_dir": "../TestFiles/FullParserTests/ModuleCollectionTests/Test4/",
+        "module_data": [
+            {
+                "name": "main",
+                "id": 0,
+                "included_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test4/main.ap"
+                ],
+                "excluded_files": [
+                ],
+                "imported_modules": [
+                    "does_not_exist"
+                ]
+            }
+        ],
+        "errors" : [
+            {
+                "file": "../TestFiles/FullParserTests/ModuleCollectionTests/Test4/main.ap",
+                "token_literal": "does_not_exist",
+                "line_number": 3,
+                "column": 43,
+                "message": "import path not found",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ]
+    },
+    {
+        "entry_dir": "../TestFiles/FullParserTests/ModuleCollectionTests/Test5/",
+        "module_data": [
+            {
+                "name": "main",
+                "id": 0,
+                "included_files": [
+                    "../TestFiles/FullParserTests/ModuleCollectionTests/Test5/main.ap"
+                ],
+                "excluded_files": [
+                ],
+                "imported_modules": [
+                    "does_exist"
+                ]
+            }
+        ],
+        "errors" : [
+            {
+                "file": "../TestFiles/FullParserTests/ModuleCollectionTests/Test5/main.ap",
+                "token_literal": "does_exist",
+                "line_number": 3,
+                "column": 43,
+                "message": "import path is ambiguous, multiple paths found",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ]
+    }
+]

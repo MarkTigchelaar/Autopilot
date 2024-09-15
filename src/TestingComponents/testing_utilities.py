@@ -1,4 +1,5 @@
 import json
+import os
 from typing import List
 
 from Tokenization.tokenizer import Tokenizer
@@ -32,8 +33,9 @@ def make_analyzer(err_manager: ErrorManager, test) -> SemanticAnalyzer:
     return analyzer
 
 
-def get_json_from_file(manifest: str):
-    jsonfile = open(manifest, "r")
+def get_json_from_file(json_filename: str):
+    abs_path = json_filename#os.path.normpath(json_filename)
+    jsonfile = open(abs_path, "r")
     tests = json.load(jsonfile)
     jsonfile.close()
     # for test in tests:
@@ -56,8 +58,8 @@ def get_msg(expect: str, actual: str) -> str:
 def printErrors(reportedErrors: dict) -> None:
     for err in reportedErrors:
         print("file name: " + err["file"])
-        print("token literal: " + err["tokenLiteral"])
-        print("line number: " + err["lineNumber"])
+        print("token literal: " + err["token_literal"])
+        print("line number: " + err["line_number"])
         print("message: " + err["message"])
 
 
@@ -94,6 +96,7 @@ def call_parsing_tests(
     component_tests, tracker, current_dir, parse_test_fn, component_name
 ):
     print("Testing " + component_name + " parsing...")
+
     for test in component_tests:
         err_manager = ErrorManager()
         tok = Tokenizer(err_manager)
@@ -131,10 +134,10 @@ def call_parsing_tests(
                     test, tracker, err["file"], parse_err.token.file_name
                 )
                 record_component_test(
-                    test, tracker, err["tokenLiteral"], parse_err.token.literal
+                    test, tracker, err["token_literal"], parse_err.token.literal
                 )
                 record_component_test(
-                    test, tracker, err["lineNumber"], parse_err.token.line_number
+                    test, tracker, err["line_number"], parse_err.token.line_number
                 )
                 record_component_test(test, tracker, err["message"], parse_err.message)
 
@@ -308,17 +311,19 @@ def parser_happy_path_tests(test_list, tracker, parse_test_fn, current_dir):
 
 
 def call_local_semantic_tests(
-    component_tests, tracker, current_dir, test_fn, component_name
+    component_tests, tracker, test_fn, component_name
 ):
     print("Testing local semantic analysis for " + component_name + "...")
+    #for test_case in [component_tests[-1]]:
     for test_case in component_tests:
+        if "file" not in test_case:
+            test_case["file"] = test_case["files"][0]
+        
+
         err_manager = ErrorManager()
         tok = Tokenizer(err_manager)
+        tok.load_src(test_case["file"])
 
-        try:
-            tok.load_src(test_case["file"])
-        except:
-            tok.load_src(current_dir + "/" + test_case["file"])
         try:
             test_fn(tok, err_manager)
         except Exception as e:
@@ -334,34 +339,51 @@ def call_local_semantic_tests(
                 "ERROR: tests expected no errors, but analysis generated errors! See error file."
             )
             while err_manager.has_errors(True):
-                err = err_manager.next_error()
+                actual_error = err_manager.next_error()
+                    
+                print(actual_error.token.file_name)
+                print(actual_error.token.literal)
+                print(actual_error.token.line_number)
+                print(actual_error.token.column_number)
+                print(actual_error.message)
                 record_component_test(
-                    test_case, tracker, "ok", err.message + ": " + err.token.to_string()
+                    test_case, tracker, "ok", actual_error.message + ": " + actual_error.token.to_string()
                 )
 
-        elif not err_manager.has_errors(True) and test_case["errors"] is not None:
+        elif not err_manager.has_errors(True) and test_case["errors"] is not None and len(test_case["errors"]) > 0: 
             print(
-                "ERROR: tests expected errors, but analysis generated no errors! See error file."
+                "ERROR: test expected errors, but analysis generated no errors! See error file."
             )
+            for error in test_case["errors"]:
+                print(error)
+
             record_component_test(test_case, tracker, "error", "ok")
 
-        elif err_manager.has_errors(True) and test_case["errors"] is not None:
+        elif err_manager.has_errors(True) and test_case["errors"] is not None and len(test_case["errors"]) > 0:
             for err in test_case["errors"]:
+                if not err_manager.has_errors(True):
+                    raise Exception(f"Error Manager has no more errors, but test has more errors! {err}")
                 try:
                     error = err_manager.next_semantic_error()
                 except:
                     error = err_manager.next_parser_error()
+                #print(f"Error token: {error.token.to_string()}")
                 record_component_test_str(
                     test_case, tracker, err["file"], error.token.file_name
                 )
                 record_component_test(
-                    test_case, tracker, err["tokenLiteral"], error.token.literal
+                    test_case, tracker, err["token_literal"], error.token.literal
                 )
                 record_component_test(
-                    test_case, tracker, err["lineNumber"], error.token.line_number
+                    test_case, tracker, err["line_number"], error.token.line_number
                 )
+                
                 record_component_test(test_case, tracker, err["message"], error.message)
 
+                
+
+                if "column_number" not in err and "column" in err:
+                    err["column_number"] = err["column"]
                 # column number added to parsing later,
                 # previous tests don't have that data
                 if "column_number" in err and err["column_number"]:
@@ -371,6 +393,16 @@ def call_local_semantic_tests(
                         err["column_number"],
                         error.token.column_number,
                     )
+                if "shadowed_file" in err and err["shadowed_file"] is not None:
+                    # If one's in there, they are all in there
+                    record_component_test(test_case, tracker, err["shadowed_file"], error.shadowed_token.file_name)
+                    record_component_test(test_case, tracker, err["shadowed_token_literal"], error.shadowed_token.literal)
+                    record_component_test(test_case, tracker, err["shadowed_line_number"], error.shadowed_token.line_number)
+                    record_component_test(test_case, tracker, err["shadowed_column"], error.shadowed_token.column_number)
+
             while err_manager.has_errors(True):
                 err = err_manager.next_error()
-                record_component_test(test_case, tracker, "BLANK", err.message)
+                #record_component_test(test_case, tracker, "BLANK", err.message)
+                record_component_test(test_case, tracker, "BLANK", err.token.to_string())
+        elif not err_manager.has_errors(True) and test_case["errors"] is not None and len(test_case["errors"]) == 0:
+            tracker.inc_success()

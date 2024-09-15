@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test2.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test3.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test4.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -58,8 +58,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test5.txt",
-                "tokenLiteral" : "elif",
-                "lineNumber" : "1",
+                "token_literal" : "elif",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -71,8 +71,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test6.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -84,8 +84,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test7.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "3",
+                "token_literal" : "",
+                "line_number" : "3",
                 "message" : "end of file reached"
             }
         ]
@@ -97,8 +97,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test8.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "3",
+                "token_literal" : "struct",
+                "line_number" : "3",
                 "message" : "invalid constant or variable"
             }
         ]
@@ -122,8 +122,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test11.txt",
-                "tokenLiteral" : "if",
-                "lineNumber" : "1",
+                "token_literal" : "if",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -135,8 +135,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test12.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -148,8 +148,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test13.txt",
-                "tokenLiteral" : "if",
-                "lineNumber" : "1",
+                "token_literal" : "if",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -161,8 +161,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test14.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -174,8 +174,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test15.txt",
-                "tokenLiteral" : "if",
-                "lineNumber" : "1",
+                "token_literal" : "if",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -187,8 +187,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test16.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -200,8 +200,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test17.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "1",
+                "token_literal" : "struct",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -213,8 +213,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElifTests/test18.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]

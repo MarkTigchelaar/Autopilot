@@ -8,8 +8,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnTypeTests/test2.ap",
-                "tokenLiteral" : "10.7",
-                "lineNumber" : "2",
+                "token_literal" : "10.7",
+                "line_number" : "2",
                 "message" : "Type error: function expected to return int, but return type found to be float"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnTypeTests/test3.ap",
-                "tokenLiteral" : "10.7",
-                "lineNumber" : "2",
+                "token_literal" : "10.7",
+                "line_number" : "2",
                 "message" : "Type error: function expected to return nothing, but return value found to be of type float"
             }
         ]
@@ -30,8 +30,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnTypeTests/test4.ap",
-                "tokenLiteral" : "return",
-                "lineNumber" : "2",
+                "token_literal" : "return",
+                "line_number" : "2",
                 "message" : "Type error: function expected to return float, but return type found to be empty"
             }
         ]

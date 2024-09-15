@@ -21,7 +21,7 @@ class TestingMethodCallOrFieldExpression:
             # or a method (identifier with more args)
             arg.print_literal(repr_list)
             if i < l - 1:
-                repr_list.append(",")
+                repr_list.append(".")
             i += 1
 
     def print_token_types(self, type_list: list) -> None:
@@ -32,7 +32,7 @@ class TestingMethodCallOrFieldExpression:
         for arg in self.exp.argument_list:
             arg.print_token_types(type_list)
             if i < l - 1:
-                type_list.append(",")
+                type_list.append(" DOT ")
             i += 1
 
     def to_json(self) -> dict:

@@ -10,6 +10,9 @@ class DeferStatement:
 
     def add_descriptor_token(self, token):
         self.descriptor_token = token
+    
+    def get_method_or_reassignment(self):
+        return self.method_call
 
     def get_descriptor_token(self):
         return self.descriptor_token

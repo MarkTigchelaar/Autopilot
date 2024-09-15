@@ -10,12 +10,12 @@ from TestingComponents.testing_utilities import (
 )
 
 
-def phase_four_tests(tracker, test_json, current_dir):
-    test_control_function(tracker, test_json, current_dir, "Phase 4 tests")
+def global_semantic_analysis_checks(tracker,  current_dir):
+    test_control_function(tracker,  current_dir)
 
-def test_control_function(tracker, test_json, current_dir, phase_name):
-    print(phase_name)
-    for test in test_json:
+def test_control_function(tracker,  current_dir):
+    print("Global semantic checks, pt1")
+    for test in TEST_JSON:
         component_tests = get_json_from_file(
             current_dir + "/" + test["test_manifest_file"]
         )
@@ -178,3 +178,40 @@ def check_for_token_and_parser_errors(err_manager, test_case, tracker):
             print(actual_error.message)
             test_case["file"] = test_case["files"][0]
             record_component_test(test_case, tracker, "no error", "error")
+
+
+
+TEST_JSON= [
+    {
+        "general_component": "module uniqueness checks",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/module_uniqueness_tests.json"
+    },
+    {
+        "general_component": "import checks",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/import_checks.json"
+    },
+    {
+        "general_component": "define checks",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/define_checks.json"
+    },
+    {
+        "general_component": "nested define checks",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/nested_define_checks.json"
+    },
+    {
+        "general_component": "enum checks",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/enum_checks.json"
+    },
+    {
+        "general_component": "interface checks",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/interface_checks.json"
+    },
+    {
+        "general_component": "structs without methods checks",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/struct_no_method_checks.json"
+    },
+    {
+        "general_component": "function header checks",
+        "test_manifest_file": "../TestFiles/SemanticAnalyzerTests/GlobalTests/function_header_checks.json"
+    }
+]

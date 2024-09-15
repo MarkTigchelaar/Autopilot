@@ -1,6 +1,6 @@
 fun function() int do
   while true do
-    if true do
+    unless true do
       let a0 as int = 10
     end
     return 0

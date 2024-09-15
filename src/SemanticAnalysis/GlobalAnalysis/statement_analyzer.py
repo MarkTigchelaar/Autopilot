@@ -170,19 +170,19 @@ class StatementAnalyzer:
         variable_data.scope_depth = scope_depth
         variable_data.statement = statement
         
-
-        for var in self.declared_variables:
-            if var.name_token.literal == variable_data.name_token.literal:
-                # print("HERE!")
-                # print(var.scope_depth, variable_data.scope_depth)
-                # print(var.sequence_number, variable_data.sequence_number)
-                # print(var.name_token.literal, variable_data.name_token.literal)
-                if self.folowing_declaration_in_previous_scope(var, variable_data):
-                    self.add_error(
-                        variable_data.name_token,
-                        ErrMsgs.DUPLICATE_DECLARATION,
-                        var.name_token,
-                    )
+        # This is done locally now
+        # for var in self.declared_variables:
+        #     if var.name_token.literal == variable_data.name_token.literal:
+        #         # print("HERE!")
+        #         # print(var.scope_depth, variable_data.scope_depth)
+        #         # print(var.sequence_number, variable_data.sequence_number)
+        #         # print(var.name_token.literal, variable_data.name_token.literal)
+        #         if self.folowing_declaration_in_previous_scope(var, variable_data):
+        #             self.add_error(
+        #                 variable_data.name_token,
+        #                 ErrMsgs.DUPLICATE_DECLARATION,
+        #                 var.name_token,
+        #             )
 
         
         

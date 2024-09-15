@@ -1,20 +1,21 @@
 import os
 import time
 
-from TestingComponents.testing_utilities import get_json_from_file
+
 from TestingComponents.progress_tracker import ProgressTracker
 
-from TestingComponents.phase_one_tests import phase_one_tests
-from TestingComponents.phase_two_tests import phase_two_tests
-from TestingComponents.phase_three_tests import phase_three_tests
-from TestingComponents.phase_four_tests import phase_four_tests
-from TestingComponents.phase_five_tests import phase_five_tests
+from TestingComponents.tokenizer_parser_tests import tokenizer_parser_tests
+from TestingComponents.local_semantic_analysis_checks import local_semantic_analysis_checks
+# from TestingComponents.phase_three_tests import phase_three_tests
+from TestingComponents.global_semantic_analysis_checks import global_semantic_analysis_checks
+# from TestingComponents.phase_five_tests import phase_five_tests
+from TestingComponents.test_full_parser import test_full_parser
 
-TEST_MANIFEST_ONE = "../TestFiles/tokenizer_parser_test_manifest.json"
-TEST_MANIFEST_TWO = "../TestFiles/local_semantic_analysis_test_manifest.json"
-TEST_MANIFEST_THREE = "../TestFiles/analysis_table_test_manifest.json"
-TEST_MANIFEST_FOUR = "../TestFiles/global_semantic_analysis_manifest.json"
-TEST_MANIFEST_FIVE = "../TestFiles/global_statement_analysis_manifest.json"
+
+# TEST_MANIFEST_THREE = "../TestFiles/analysis_table_test_manifest.json"
+# TEST_MANIFEST_FOUR = "../TestFiles/global_semantic_analysis_manifest.json"
+# TEST_MANIFEST_FIVE = "../TestFiles/global_statement_analysis_manifest.json"
+
 
 def main():
     current_dir = os.path.dirname(__file__)
@@ -22,25 +23,14 @@ def main():
 
     print("Begin tests!")
     start_time = time.time()
-    abs_file_path = current_dir + '/' + TEST_MANIFEST_ONE
-    test_json = get_json_from_file(abs_file_path)
-    phase_one_tests(tracker, test_json, current_dir)
 
-    abs_file_path = current_dir + '/' + TEST_MANIFEST_TWO
-    test_json = get_json_from_file(abs_file_path)
-    phase_two_tests(tracker, test_json, current_dir)
+    tokenizer_parser_tests(tracker, current_dir)
+    local_semantic_analysis_checks(tracker, current_dir)
+    global_semantic_analysis_checks(tracker, current_dir)
 
-    abs_file_path = current_dir + '/' + TEST_MANIFEST_THREE
-    test_json = get_json_from_file(abs_file_path)
-    phase_three_tests(tracker, test_json, current_dir)
 
-    abs_file_path = current_dir + '/' + TEST_MANIFEST_FOUR
-    test_json = get_json_from_file(abs_file_path)
-    phase_four_tests(tracker, test_json, current_dir)
 
-    abs_file_path = current_dir + '/' + TEST_MANIFEST_FIVE
-    test_json = get_json_from_file(abs_file_path)
-    phase_five_tests(tracker, test_json, current_dir)
+    test_full_parser(tracker, current_dir)
 
     
     print("End result: " + tracker.get_results())
@@ -58,7 +48,7 @@ def main():
         print("Errors printed out to " + err_file)
     
     elapsed_time = time.time() - start_time
-    print(f"Tests took {elapsed_time / 60.0} minutes")
+    print(f"Tests took {int(elapsed_time / 60)} minutes, {int(elapsed_time) % 60} seconds")
 
 
 if __name__ == '__main__':

@@ -1,59 +1,56 @@
 fun function() int do
-  if true do
-    while true do
-      if true do
-        if true do
+  while true do
+    let aa0 as char = 'a'
+    switch aa0
+    case 'a' do
+      unless true do
+        loop
           if true do
-            let a0 as int = 10
-          elif true do
-            let a1 as int = 10
-          end
-          return 0
-        else
-          if true do
-            let a2 as int = 10
-          elif true do
-            let a3 as int = 10
-          end
-          return 0
-        end
-        return 0
-      elif true do
-        if true do
-          if true do
-            let a4 as int = 10
+            for i1 in 1 .. 10 do
+              let a2 as int = 10
+            end
           else
-            let a5 as int = 10
+            for i3 in 1 .. 10 do
+              let a4 as int = 10
+            end
           end
-          return 0
-        elif true do
-          if true do
-            let a6 as int = 10
-          else
-            let a7 as int = 10
-          end
-          return 0
         end
-        return 0
-      else
-        if true do
-          if true do
-            let a8 as int = 10
-          elif true do
-            let a9 as int = 10
-          end
-          return 0
-        else
-          if true do
-            let a10 as int = 10
-          elif true do
-            let a11 as int = 10
-          end
-          return 0
-        end
-        return 0
       end
-      return 0
+    case 'b' do
+      loop
+        if true do
+          for i5 in 1 .. 10 do
+            unless true do
+              let a6 as int = 10
+            end
+          end
+        else
+          unless true do
+            for i7 in 1 .. 10 do
+              let a8 as int = 10
+            end
+          end
+        end
+      end
+    default
+      if true do
+        for i9 in 1 .. 10 do
+          unless true do
+            loop
+              let a10 as int = 10
+            end
+          end
+        end
+      else
+        unless true do
+          loop
+            for i11 in 1 .. 10 do
+              let a12 as int = 10
+            end
+          end
+        end
+      end
     end
+    return 0
   end
 end

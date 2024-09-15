@@ -228,8 +228,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionTests/test38.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "empty expression"
             }
         ]
@@ -241,8 +241,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionTests/test39.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "empty expression"
             }
         ]
@@ -254,8 +254,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionTests/test40.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "empty expression"
             }
         ]
@@ -273,8 +273,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionTests/test42.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "empty expression"
             }
         ]
@@ -286,8 +286,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionTests/test43.txt",
-                "tokenLiteral" : "]",
-                "lineNumber" : "1",
+                "token_literal" : "]",
+                "line_number" : "1",
                 "message" : "empty expression"
             }
         ]
@@ -311,8 +311,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/ExpressionTests/test46.txt",
-                "tokenLiteral" : "}",
-                "lineNumber" : "1",
+                "token_literal" : "}",
+                "line_number" : "1",
                 "message" : "empty expression"
             }
         ]
@@ -438,8 +438,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/BooleanOperatorTests/test12.txt",
-                "tokenLiteral" : "not",
-                "lineNumber" : "1",
+                "token_literal" : "not",
+                "line_number" : "1",
                 "message" : "invalid prefix operator usage"
             }
         ]

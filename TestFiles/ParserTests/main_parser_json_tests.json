@@ -223,8 +223,8 @@
         "errors" : [
           {
             "file" : "../Testfiles/ParserTests/toJSONTests/test7.ap",
-            "tokenLiteral" : "old",
-            "lineNumber" : "1",
+            "token_literal" : "old",
+            "line_number" : "1",
             "message" : "cannot rename items using define statement"
           }
         ]

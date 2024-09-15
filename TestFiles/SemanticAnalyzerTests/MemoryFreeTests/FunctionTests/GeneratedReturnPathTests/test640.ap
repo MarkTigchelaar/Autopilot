@@ -1,47 +1,47 @@
-fun function() int do
-  while true do
+pub fun function() int do
+  if true do
     if true do
-      loop
-        if true do
-          if true do
-            let a0 as int = 10
-          end
-        elif true do
-          if true do
-            let a1 as int = 10
-          end
-        end
-        return 0
+      if true do
+        let a0 as int = 10
+      else
+        let a1 as int = 10
       end
-      return 0
     elif true do
       if true do
-        if true do
-          loop
-            let a2 as int = 10
-          end
-          return 0
-        end
+        let a2 as int = 10
+      else
+        let a3 as int = 10
+      end
+    end
+    return 0
+  elif true do
+    if true do
+      if true do
+        let a4 as int = 10
       elif true do
-        loop
-          if true do
-            let a3 as int = 10
-          end
-        end
-        return 0
+        let a5 as int = 10
       end
       return 0
     else
       if true do
-        loop
-          if true do
-            let a4 as int = 10
-          elif true do
-            let a5 as int = 10
-          end
-          return 0
-        end
-        return 0
+        let a6 as int = 10
+      elif true do
+        let a7 as int = 10
+      end
+      return 0
+    end
+  else
+    if true do
+      if true do
+        let a8 as int = 10
+      else
+        let a9 as int = 10
+      end
+    elif true do
+      if true do
+        let a10 as int = 10
+      else
+        let a11 as int = 10
       end
     end
     return 0

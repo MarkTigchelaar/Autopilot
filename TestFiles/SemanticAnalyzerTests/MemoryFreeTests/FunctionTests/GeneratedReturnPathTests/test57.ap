@@ -1,5 +1,5 @@
 pub fun function() int do
-  if true do
+  while true do
     if true do
       let a0 as int = 10
     else

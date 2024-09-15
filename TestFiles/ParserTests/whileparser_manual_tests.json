@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test2.txt",
-                "tokenLiteral" : "do",
-                "lineNumber" : "1",
+                "token_literal" : "do",
+                "line_number" : "1",
                 "message" : "invalid constant or variable"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test3.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test4.txt",
-                "tokenLiteral" : "eh",
-                "lineNumber" : "1",
+                "token_literal" : "eh",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -58,8 +58,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test5.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -71,8 +71,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test6.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "2",
+                "token_literal" : "",
+                "line_number" : "2",
                 "message" : "end of file reached"
             }
         ]
@@ -84,8 +84,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test7.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "3",
+                "token_literal" : "struct",
+                "line_number" : "3",
                 "message" : "invalid constant or variable"
             }
         ]
@@ -103,8 +103,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test9.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -116,8 +116,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test10.txt",
-                "tokenLiteral" : "9",
-                "lineNumber" : "1",
+                "token_literal" : "9",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -129,8 +129,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/WhileTests/test11.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]

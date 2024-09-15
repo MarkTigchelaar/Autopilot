@@ -1,15 +1,14 @@
-pub fun function() int do
-  loop
-    if true do
-      if true do
-        let a0 as int = 10
-      end
-    elif true do
-      if true do
-        let a1 as int = 10
-      end
+fun function() int do
+  while true do
+    let aa0 as char = 'a'
+    switch aa0
+    case 'a' do
+      let a1 as int = 10
+    case 'b' do
+      let a2 as int = 10
+    default
+      let a3 as int = 10
     end
     return 0
   end
-  return 0
 end

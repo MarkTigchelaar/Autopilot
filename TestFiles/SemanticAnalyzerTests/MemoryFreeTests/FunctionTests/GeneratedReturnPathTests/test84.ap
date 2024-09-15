@@ -1,12 +1,11 @@
 fun function() int do
-  loop
-    unless true do
-      if true do
-        if true do
-          let a0 as int = 10
-        end
-      end
-      return 0
+  if true do
+    for i0 in 1 .. 10 do
+      let a1 as int = 10
+    end
+  else
+    for i2 in 1 .. 10 do
+      let a3 as int = 10
     end
   end
 end

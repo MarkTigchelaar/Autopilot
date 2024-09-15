@@ -1,0 +1,181 @@
+[
+    {
+        "file": 
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test0/main.ap"
+    ,
+        "errors": null,
+        "analyzer_test_config_names": [],
+        "comment": ""
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test1/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test1/main.ap",
+                "token_literal": "this",
+                "line_number": "6",
+                "column": "9",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test1/main.ap",
+                "shadowed_token_literal": "this",
+                "shadowed_line_number": "5",
+                "shadowed_column": "9"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "same scope level, higher sequence number, shadowing variable identified"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test2/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test2/main.ap",
+                "token_literal": "a",
+                "line_number": "6",
+                "column": "13",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test2/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "4",
+                "shadowed_column": "9"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "shadowing variable is in a sub statement, shadowing variable identified"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test3/main.ap"
+        ],
+        "errors": [],
+        "analyzer_test_config_names": [],
+        "comment": "two variables are in seperate sub statements and do not shadow each other"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test4/main.ap"
+        ],
+        "errors": [],
+        "analyzer_test_config_names": [],
+        "comment": "If first declared variable is in a deeper scope, the second declaration is not shadowing the first"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test5/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test5/main.ap",
+                "token_literal": "a",
+                "line_number": "7",
+                "column": "17",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test5/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "5",
+                "shadowed_column": "13"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test5/main.ap",
+                "token_literal": "a",
+                "line_number": "9",
+                "column": "21",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test5/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "5",
+                "shadowed_column": "13"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test5/main.ap",
+                "token_literal": "a",
+                "line_number": "9",
+                "column": "21",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test5/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "7",
+                "shadowed_column": "17"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "if multiple shadowing variables are in sub statements, shadowing variables shadow the first variable, but also the second third etc."
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test6/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test6/main.ap",
+                "token_literal": "a",
+                "line_number": "16",
+                "column": "29",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test6/main.ap",
+                "shadowed_token_literal": "a",
+                "shadowed_line_number": "5",
+                "shadowed_column": "13"
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "shadowing variable is in a sub statement, shadowing variable identified, despite how far away"
+    },
+    {
+        "files": [
+            "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test7/main.ap"
+        ],
+        "errors": [
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test7/main.ap",
+                "token_literal": "b",
+                "line_number": "11",
+                "column": "13",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test7/main.ap",
+                "shadowed_token_literal": "b",
+                "shadowed_line_number": "9",
+                "shadowed_column": "12"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test7/main.ap",
+                "token_literal": "d",
+                "line_number": "14",
+                "column": "12",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test7/main.ap",
+                "shadowed_token_literal": "d",
+                "shadowed_line_number": "13",
+                "shadowed_column": "9"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test7/main.ap",
+                "token_literal": "y",
+                "line_number": "20",
+                "column": "17",
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test7/main.ap",
+                "shadowed_token_literal": "y",
+                "shadowed_line_number": "17",
+                "shadowed_column": "13"
+            },
+            {
+                "file": "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/DeclarationsAndVariables/Test7/main.ap",
+                "token_literal": "b",
+                "line_number": "13",
+                "column": "20",
+                "message": "undefined variable",
+                "shadowed_file": null,
+                "shadowed_token_literal": null,
+                "shadowed_line_number": null,
+                "shadowed_column": null
+            }
+        ],
+        "analyzer_test_config_names": [],
+        "comment": "shadowing variable is in a sub statement, shadowing variable identified, despite how far away"
+    }
+]

@@ -14,6 +14,9 @@ class ModulePathMatcher:
     def collect_valid_paths(self):
         self._collect_valid_paths_helper(self.starting_directory, 0)
 
+    def get_matching_directories(self):
+        return self.matching_directories
+
     def collect_matching_module_ids(self, module_list):
         matching_modules = [
             module.module_id
@@ -100,7 +103,8 @@ class ModulePathMatcher:
 
             i += 1
         directory = self.reformat_path_list(directory)
-        self.matching_directories.add(directory)
+        if os.path.exists(directory):
+            self.matching_directories.add(directory)
 
     def _check_subfolders(self, directory, target_folder = ""):
         matching_subdirectories = []

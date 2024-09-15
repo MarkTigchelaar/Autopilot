@@ -13,6 +13,9 @@ class ReassignmentOrMethodCall:
 
     def add_assignment_token(self, assignment_token):
         self.assignment_token = assignment_token
+    
+    def get_assignment_token(self):
+        return self.assignment_token
 
     def add_r_value(self, r_value_exp):
         self.r_value_exp = r_value_exp

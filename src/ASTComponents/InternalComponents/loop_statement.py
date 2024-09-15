@@ -9,6 +9,9 @@ class LoopStatement:
     def add_loop_name(self, loop_name):
         self.loop_name = loop_name
 
+    def get_loop_name(self):
+        return self.loop_name
+
     def add_statements(self, statements):
         self.statements = statements
 

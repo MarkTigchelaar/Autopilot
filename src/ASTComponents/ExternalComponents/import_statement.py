@@ -16,6 +16,9 @@ class ImportStatement:
         path_node = PathItem(path_node_token, direction_token)
         self.path_list.append(path_node)
 
+    def get_path_list(self):
+        return self.path_list
+
     def new_import_item(self, name_token, new_name_token):
         self.import_list.append(ImportItem(name_token, new_name_token))
 

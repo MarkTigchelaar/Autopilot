@@ -10,8 +10,17 @@ class WhileStatement:
     def add_expression(self, exp_ast):
         self.test_expression = exp_ast
 
+    def has_expression_ast(self):
+        return self.test_expression is not None
+
+    def get_expression_ast(self):
+        return self.test_expression
+
     def add_loop_name(self, loop_name):
         self.loop_name = loop_name
+
+    def get_loop_name(self):
+        return self.loop_name
 
     def add_statements(self, statements):
         self.statements = statements

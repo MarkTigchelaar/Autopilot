@@ -1,16 +1,16 @@
 pub fun function() int do
-  if true do
-    for i in 1 .. 10 do
-      unless true do
-        if true do
-          let a0 as int = 10
-        else
-          let a1 as int = 10
-        end
+  loop
+    while true do
+      let aa0 as char = 'a'
+      switch aa0
+      case 'a' do
+        let a1 as int = 10
+      case 'b' do
+        let a2 as int = 10
+      default
+        let a3 as int = 10
       end
-      return 0
     end
-    return 0
   end
   return 0
 end

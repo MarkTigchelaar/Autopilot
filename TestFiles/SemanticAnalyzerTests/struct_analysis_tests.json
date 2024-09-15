@@ -4,20 +4,20 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/StructTests/test1.ap",
-                "tokenLiteral" : "variable",
-                "lineNumber" : "3",
+                "token_literal" : "variable",
+                "line_number" : "3",
                 "message" : "duplicate struct field name"
             },
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/StructTests/test1.ap",
-                "tokenLiteral" : "my_function",
-                "lineNumber" : "14",
+                "token_literal" : "my_function",
+                "line_number" : "14",
                 "message" : "duplicate method name"
             },
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/StructTests/test1.ap",
-                "tokenLiteral" : "a",
-                "lineNumber" : "1",
+                "token_literal" : "a",
+                "line_number" : "1",
                 "message" : "duplicate interface name in struct"
             }
         ]

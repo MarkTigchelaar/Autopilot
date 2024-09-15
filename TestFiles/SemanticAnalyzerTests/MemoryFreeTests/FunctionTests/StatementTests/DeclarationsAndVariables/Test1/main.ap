@@ -1,0 +1,7 @@
+module main
+
+
+pub fun main() do
+    let this as int = 1
+    let this as int = 12
+end

@@ -59,6 +59,9 @@ def do_step(driver, loop_statement):
 
 
 def statements_step(driver, loop_statement):
+    peek_token = driver.peek_token()
+    if peek_token.get_type() == symbols.DO:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
     stmts = parse_statements(driver)
     if driver.has_errors():
         return None

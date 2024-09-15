@@ -6,6 +6,7 @@ from routes import parse_enum, parse_union, parse_error, parse_import, parse_mod
 
 
 # Entry point for parsing Autopilot source code
+# Parser is manager class for parsing source code
 def parse_src(driver):
     restrictor = StatementRestrictionTracker()
     ast = list()

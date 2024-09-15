@@ -12,8 +12,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ImportTests/test3.ap",
-                "tokenLiteral" : "a",
-                "lineNumber" : "1",
+                "token_literal" : "a",
+                "line_number" : "1",
                 "message" : "duplicate import item name"
             }
         ]
@@ -23,8 +23,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ImportTests/test4.ap",
-                "tokenLiteral" : "a",
-                "lineNumber" : "1",
+                "token_literal" : "a",
+                "line_number" : "1",
                 "message" : "import item alias matches import item name"
             }
         ]
@@ -34,8 +34,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ImportTests/test5.ap",
-                "tokenLiteral" : "d",
-                "lineNumber" : "1",
+                "token_literal" : "d",
+                "line_number" : "1",
                 "message" : "import item alias matches previous import item alias"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ImportTests/test6.ap",
-                "tokenLiteral" : "c",
-                "lineNumber" : "1",
+                "token_literal" : "c",
+                "line_number" : "1",
                 "message" : "import item alias matches import item name"
             }
         ]
@@ -60,8 +60,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ImportTests/test8.ap",
-                "tokenLiteral" : "..",
-                "lineNumber" : "1",
+                "token_literal" : "..",
+                "line_number" : "1",
                 "message" : "import path cannot backtrack up directory paths"
             }
         ]
@@ -75,8 +75,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ImportTests/test10.ap",
-                "tokenLiteral" : "..",
-                "lineNumber" : "1",
+                "token_literal" : "..",
+                "line_number" : "1",
                 "message" : "import path cannot backtrack up directory paths"
             }
         ]

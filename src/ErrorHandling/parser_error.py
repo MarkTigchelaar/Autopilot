@@ -11,3 +11,6 @@ class ParserError:
             tok_string += "possible expected types:\n"
             tok_string += str(self.expected_types)
         return tok_string
+    
+    def __repr__(self) -> str:
+        return self.to_string()

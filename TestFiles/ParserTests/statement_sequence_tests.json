@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test1.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "1",
+                "token_literal" : "struct",
+                "line_number" : "1",
                 "message" : "invalid constant or variable"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test2.txt",
-                "tokenLiteral" : "dee",
-                "lineNumber" : "2",
+                "token_literal" : "dee",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test3.txt",
-                "tokenLiteral" : "equal",
-                "lineNumber" : "3",
+                "token_literal" : "equal",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test4.txt",
-                "tokenLiteral" : "equal",
-                "lineNumber" : "3",
+                "token_literal" : "equal",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]
@@ -58,8 +58,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test5.txt",
-                "tokenLiteral" : "done",
-                "lineNumber" : "9",
+                "token_literal" : "done",
+                "line_number" : "9",
                 "message" : "unexpected token"
             }
         ]
@@ -71,8 +71,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/StatementSequences/test6.txt",
-                "tokenLiteral" : "==",
-                "lineNumber" : "5",
+                "token_literal" : "==",
+                "line_number" : "5",
                 "message" : "unexpected token"
             }
         ]

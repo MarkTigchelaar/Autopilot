@@ -9,6 +9,12 @@ class ReturnStatement:
     def add_expression(self, exp_ast):
         self.expression = exp_ast
 
+    def has_expression_ast(self):
+        return self.expression is not None
+
+    def get_expression_ast(self):
+        return self.expression
+
     def add_descriptor_token(self, token):
         self.descriptor_token = token
 

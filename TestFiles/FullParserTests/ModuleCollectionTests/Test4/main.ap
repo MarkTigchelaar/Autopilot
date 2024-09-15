@@ -1,0 +1,8 @@
+module main
+
+import thing from module folder.subfolder.does_not_exist
+
+
+pub fun main() do
+    let i = 0
+end

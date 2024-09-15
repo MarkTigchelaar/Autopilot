@@ -1,6 +1,6 @@
-fun function() int do
-  for i in 1 .. 10 do
-    unless true do
+pub fun function() int do
+  if true do
+    if true do
       if true do
         let a0 as int = 10
       elif true do
@@ -8,7 +8,8 @@ fun function() int do
       else
         let a2 as int = 10
       end
+      return 0
     end
-    return 0
   end
+  return 0
 end

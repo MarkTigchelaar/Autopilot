@@ -18,3 +18,7 @@ class SemanticError:
         if self.rhs_type_token:
             tok_string += self.rhs_type_token.to_string()
         return tok_string
+    
+
+    def __repr__(self) -> str:
+        return self.to_string()

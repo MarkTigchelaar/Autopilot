@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test2.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test3.txt",
-                "tokenLiteral" : "5",
-                "lineNumber" : "1",
+                "token_literal" : "5",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/BreakTests/test4.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]

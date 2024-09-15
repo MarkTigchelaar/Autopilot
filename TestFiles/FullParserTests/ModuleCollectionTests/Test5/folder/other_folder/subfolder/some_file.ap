@@ -1,0 +1,6 @@
+module does_exist
+
+
+pub fun thing() do
+    let i = 0
+end

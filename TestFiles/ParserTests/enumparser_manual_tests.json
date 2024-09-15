@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test2.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test3.txt",
-                "tokenLiteral" : "enum",
-                "lineNumber" : "1",
+                "token_literal" : "enum",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test4.txt",
-                "tokenLiteral" : "test",
-                "lineNumber" : "1",
+                "token_literal" : "test",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -58,8 +58,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test5.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -71,8 +71,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test6.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -84,8 +84,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test7.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -97,8 +97,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test8.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -110,8 +110,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test9.txt",
-                "tokenLiteral" : "(",
-                "lineNumber" : "1",
+                "token_literal" : "(",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -123,8 +123,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test10.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -136,8 +136,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test11.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -149,8 +149,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test12.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -162,8 +162,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test13.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "invalid name for enum item"
             }
         ]
@@ -175,8 +175,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test14.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -206,8 +206,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test18.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "7",
+                "token_literal" : "",
+                "line_number" : "7",
                 "message" : "end of file reached"
             }
         ]
@@ -219,8 +219,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test19.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "11",
+                "token_literal" : "end",
+                "line_number" : "11",
                 "message" : "unexpected token"
             }
         ]
@@ -232,8 +232,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test20.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "15",
+                "token_literal" : "",
+                "line_number" : "15",
                 "message" : "end of file reached"
             }
         ]
@@ -245,8 +245,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test21.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "15",
+                "token_literal" : "",
+                "line_number" : "15",
                 "message" : "end of file reached"
             }
         ]
@@ -258,8 +258,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test22.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "15",
+                "token_literal" : "end",
+                "line_number" : "15",
                 "message" : "unexpected token"
             }
         ]
@@ -271,8 +271,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/EnumTests/test23.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "15",
+                "token_literal" : "end",
+                "line_number" : "15",
                 "message" : "unexpected token"
             }
         ]

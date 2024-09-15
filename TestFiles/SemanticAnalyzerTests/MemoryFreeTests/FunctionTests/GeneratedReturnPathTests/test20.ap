@@ -1,5 +1,5 @@
 fun function() int do
-  loop
+  if true do
     if true do
       let a0 as int = 10
     end

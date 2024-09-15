@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test2.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "1",
+                "token_literal" : "end",
+                "line_number" : "1",
                 "message" : "empty statement"
             }
         ]
@@ -38,8 +38,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test4.txt",
-                "tokenLiteral" : "else",
-                "lineNumber" : "1",
+                "token_literal" : "else",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -51,8 +51,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test5.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -64,8 +64,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test6.txt",
-                "tokenLiteral" : "9",
-                "lineNumber" : "1",
+                "token_literal" : "9",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -77,8 +77,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test7.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -90,8 +90,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/LoopTests/test8.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "2",
+                "token_literal" : "end",
+                "line_number" : "2",
                 "message" : "empty statement"
             }
         ]

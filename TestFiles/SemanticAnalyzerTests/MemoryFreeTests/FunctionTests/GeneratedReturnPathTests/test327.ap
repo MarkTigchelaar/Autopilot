@@ -1,23 +1,26 @@
-pub fun function() int do
-  while true do
+fun function() int do
+  loop
     if true do
       if true do
         let a0 as int = 10
       elif true do
         let a1 as int = 10
-      else
-        let a2 as int = 10
       end
+      return 0
+    elif true do
+      if true do
+        let a2 as int = 10
+      elif true do
+        let a3 as int = 10
+      end
+      return 0
     else
       if true do
-        let a3 as int = 10
-      elif true do
         let a4 as int = 10
-      else
+      elif true do
         let a5 as int = 10
       end
+      return 0
     end
-    return 0
   end
-  return 0
 end

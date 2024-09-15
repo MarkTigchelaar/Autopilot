@@ -1,8 +1,8 @@
-pub fun function() int do
-  loop
+fun function() int do
+  while true do
     loop
       let a0 as int = 10
     end
+    return 0
   end
-  return 0
 end

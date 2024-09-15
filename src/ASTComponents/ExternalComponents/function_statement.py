@@ -11,6 +11,9 @@ class FunctionStatement:
 
     def add_header(self, header):
         self.header = header
+
+    def get_header(self):
+        return self.header
     
     def get_name_token(self):
         return self.header.get_name()
@@ -29,6 +32,9 @@ class FunctionStatement:
 
     def add_inline_token(self, inline_token):
         self.inline_token = inline_token
+
+    def get_inline_token(self):
+        return self.inline_token
     
     def add_public_token(self, pub_token):
         self.pub_token = pub_token

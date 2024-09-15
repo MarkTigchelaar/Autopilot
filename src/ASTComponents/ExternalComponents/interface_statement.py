@@ -8,6 +8,9 @@ class InterfaceStatement:
     def add_name(self, name_token):
         self.name_token = name_token
 
+    def get_name(self):
+        return self.name_token
+
     def add_function_headers(self, fn_headers):
         self.fn_headers = fn_headers
 

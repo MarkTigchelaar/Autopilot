@@ -1,0 +1,5 @@
+module two
+
+pub fun other_func() do
+    let i as int = 0 + (2 * 4 - 1)
+end

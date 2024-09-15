@@ -8,8 +8,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test2.ap",
-                "tokenLiteral" : "field1",
-                "lineNumber" : "2",
+                "token_literal" : "field1",
+                "line_number" : "2",
                 "message" : "duplicate error field name"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/ErrorTests/test3.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "4",
+                "token_literal" : "test",
+                "line_number" : "4",
                 "message" : "error field matches error name"
             }
         ]

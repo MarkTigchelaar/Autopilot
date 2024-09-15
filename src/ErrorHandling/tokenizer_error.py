@@ -7,3 +7,6 @@ class TokenizerError:
         err = self.message + "\n"
         err += self.token.to_string()
         return err
+    
+    def __repr__(self):
+        return self.to_string()

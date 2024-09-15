@@ -11,6 +11,9 @@ class DefineStatement:
     def add_definition(self, definition_token):
         self.new_type_name_token = definition_token
 
+    def get_definition(self):
+        return self.new_type_name_token
+
     def get_key_token(self):
         return self.sub_type.get_key_token()
     
@@ -40,6 +43,9 @@ class KeyValueType:
 
     def add_type_token(self, type_token):
         self.type_token = type_token
+
+    def get_type(self):
+        return self.type_token
 
     def add_key_token(self, key_token):
         self.key_token = key_token
@@ -76,6 +82,9 @@ class LinearType:
     def add_type_token(self, type_token):
         self.type_token = type_token
 
+    def get_type(self):
+        return self.type_token
+
     def add_value_token(self, value_token):
         self.value_token = value_token
 
@@ -108,6 +117,9 @@ class FailableType:
 
     def add_type_token(self, type_token):
         self.type_token = type_token
+
+    def get_type(self):
+        return self.type_token
 
     def add_value_token(self, value_token):
         self.value_token = value_token

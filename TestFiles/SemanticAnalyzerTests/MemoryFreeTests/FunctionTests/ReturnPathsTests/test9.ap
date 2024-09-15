@@ -1,6 +1,7 @@
 fun function() int do
+    let a as int = 4
     switch a
-        case b do
+        case 0 do
            return 1
     end
 end

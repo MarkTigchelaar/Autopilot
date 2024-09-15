@@ -13,6 +13,9 @@ class StructStatement:
     def add_name(self, name_token):
         self.name_token = name_token
 
+    def get_name(self):
+        return self.name_token
+
     def add_acyclic_token(self, acyclic_token):
         self.acyclic_token = acyclic_token
 
@@ -21,6 +24,9 @@ class StructStatement:
 
     def add_inline_token(self, inline_token):
         self.inline_token = inline_token
+
+    def get_inline_token(self):
+        return self.inline_token
     
     def add_field(self, field):
         self.fields.append(field)
@@ -30,9 +36,15 @@ class StructStatement:
 
     def add_function(self, function):
         self.functions.append(function)
+
+    def get_functions(self):
+        return self.functions
     
     def add_interface(self, interface_token):
         self.interfaces.append(interface_token)
+
+    def get_interfaces(self):
+        return self.interfaces
 
 
 class StructField:

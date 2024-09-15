@@ -9,6 +9,9 @@ class BreakStatement:
     def add_label_name(self, label_name):
         self.label_name_token = label_name
 
+    def get_label_name(self):
+        return self.label_name_token
+
     def add_descriptor_token(self, token):
         self.descriptor_token = token
 

@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -25,8 +25,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test3.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -44,8 +44,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test5.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "3",
+                "token_literal" : "",
+                "line_number" : "3",
                 "message" : "end of file reached"
             }
         ]
@@ -57,8 +57,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test6.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "2",
+                "token_literal" : "",
+                "line_number" : "2",
                 "message" : "end of file reached"
             }
         ]
@@ -70,8 +70,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test7.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "5",
+                "token_literal" : "",
+                "line_number" : "5",
                 "message" : "end of file reached"
             }
         ]
@@ -83,8 +83,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test8.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "7",
+                "token_literal" : "",
+                "line_number" : "7",
                 "message" : "end of file reached"
             }
         ]
@@ -96,8 +96,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test9.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "8",
+                "token_literal" : "",
+                "line_number" : "8",
                 "message" : "end of file reached"
             }
         ]
@@ -109,8 +109,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test10.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -122,8 +122,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test11.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "9",
+                "token_literal" : "",
+                "line_number" : "9",
                 "message" : "end of file reached"
             }
         ]
@@ -135,8 +135,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test12.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -148,8 +148,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test13.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "invalid constant or variable"
             }
         ]
@@ -161,8 +161,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test14.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -174,8 +174,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test15.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -187,8 +187,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test16.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -200,8 +200,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test17.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "invalid constant or variable"
             }
         ]
@@ -213,8 +213,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test18.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -226,8 +226,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test19.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -239,8 +239,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test20.txt",
-                "tokenLiteral" : "c",
-                "lineNumber" : "6",
+                "token_literal" : "c",
+                "line_number" : "6",
                 "message" : "unexpected token"
             }
         ]
@@ -252,8 +252,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test21.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -265,8 +265,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test22.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -278,8 +278,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test23.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -291,8 +291,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test24.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -304,8 +304,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test25.txt",
-                "tokenLiteral" : "}",
-                "lineNumber" : "1",
+                "token_literal" : "}",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -317,8 +317,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test26.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -330,8 +330,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test27.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -349,8 +349,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ReassignOrCallTests/test29.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]

@@ -1,4 +1,4 @@
-from TestingComponents.phase_four_tests import test_control_function
+from TestingComponents.global_semantic_analysis_checks import test_control_function
 
 
 def phase_five_tests(tracker, test_json, current_dir):

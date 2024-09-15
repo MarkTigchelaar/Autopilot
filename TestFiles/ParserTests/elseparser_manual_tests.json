@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test2.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "1",
+                "token_literal" : "end",
+                "line_number" : "1",
                 "message" : "empty statement"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test3.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/StatementTypeTests/ElseTests/test4.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "1",
+                "token_literal" : "end",
+                "line_number" : "1",
                 "message" : "empty statement"
             }
         ]

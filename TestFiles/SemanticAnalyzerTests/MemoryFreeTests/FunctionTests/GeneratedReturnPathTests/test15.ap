@@ -1,8 +1,8 @@
-fun function() int do
+pub fun function() int do
   loop
-    loop
+    if true do
       let a0 as int = 10
     end
-    return 0
   end
+  return 0
 end

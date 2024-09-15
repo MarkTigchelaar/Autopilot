@@ -32,9 +32,15 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test8.ap",
-                "tokenLiteral" : "bambam",
-                "lineNumber" : "4",
+                "token_literal" : "bambam",
+                "line_number" : "4",
                 "message" : "duplicate enum value"
+            },
+            {
+                "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test8.ap",
+                "token_literal" : "bambam",
+                "line_number" : "4",
+                "message" : "bool enum has too many fields, max 2 fields allowed"
             }
         ]
     },
@@ -43,8 +49,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test9.ap",
-                "tokenLiteral" : "fred",
-                "lineNumber" : "4",
+                "token_literal" : "fred",
+                "line_number" : "4",
                 "message" : "duplicate enum field name"
             }
         ]
@@ -54,8 +60,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test10.ap",
-                "tokenLiteral" : "\"hello\"",
-                "lineNumber" : "2",
+                "token_literal" : "\"hello\"",
+                "line_number" : "2",
                 "message" : "enum field type does not match enum type"
             }
         ]
@@ -65,8 +71,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test11.ap",
-                "tokenLiteral" : "test1",
-                "lineNumber" : "3",
+                "token_literal" : "test1",
+                "line_number" : "3",
                 "message" : "enum field name matches enum name"
             }
         ]
@@ -76,8 +82,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test12.ap",
-                "tokenLiteral" : "wilma",
-                "lineNumber" : "3",
+                "token_literal" : "wilma",
+                "line_number" : "3",
                 "message" : "enum field has mismatched type"
             }
         ]
@@ -87,8 +93,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test14.ap",
-                "tokenLiteral" : "wilma",
-                "lineNumber" : "3",
+                "token_literal" : "wilma",
+                "line_number" : "3",
                 "message" : "enum field type cannot be a user defined type"
             }
         ]
@@ -98,14 +104,14 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test15.ap",
-                "tokenLiteral" : "thingy",
-                "lineNumber" : "1",
+                "token_literal" : "thingy",
+                "line_number" : "1",
                 "message" : "enum type cannot be a user defined type"
             },
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/EnumTests/test15.ap",
-                "tokenLiteral" : "wilma",
-                "lineNumber" : "3",
+                "token_literal" : "wilma",
+                "line_number" : "3",
                 "message" : "enum field type cannot be a user defined type"
             }
         ]

@@ -1,26 +1,34 @@
-fun function() int do
-  unless true do
-    loop
-      if true do
-        switch 'c'
-        case 'a' do
-          let a0 as int = 10
-        case 'b' do
-          let a1 as int = 10
-        default
-          let a2 as int = 10
-        end
-      elif true do
-        switch 'c'
-        case 'a' do
-          let a3 as int = 10
-        case 'b' do
-          let a4 as int = 10
-        default
-          let a5 as int = 10
-        end
+pub fun function() int do
+  let aa0 as char = 'a'
+  switch aa0
+  case 'a' do
+    if true do
+      loop
+        let a1 as int = 10
+      end
+    elif true do
+      loop
+        let a2 as int = 10
       end
     end
-    return 0
+  case 'b' do
+    loop
+      if true do
+        let a3 as int = 10
+      elif true do
+        let a4 as int = 10
+      end
+    end
+  default
+    if true do
+      loop
+        let a5 as int = 10
+      end
+    elif true do
+      loop
+        let a6 as int = 10
+      end
+    end
   end
+  return 0
 end

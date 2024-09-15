@@ -6,3 +6,6 @@ class ModuleStatement:
 
     def add_name(self, name_token):
         self.name = name_token
+
+    def get_name(self):
+        return self.name

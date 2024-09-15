@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test2.txt",
-                "tokenLiteral" : "module",
-                "lineNumber" : "1",
+                "token_literal" : "module",
+                "line_number" : "1",
                 "message" : "invalid name for defined item"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test3.txt",
-                "tokenLiteral" : ",",
-                "lineNumber" : "1",
+                "token_literal" : ",",
+                "line_number" : "1",
                 "message" : "invalid name for defined item"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test4.txt",
-                "tokenLiteral" : "aname",
-                "lineNumber" : "1",
+                "token_literal" : "aname",
+                "line_number" : "1",
                 "message" : "cannot rename items using define statement"
             }
         ]
@@ -58,8 +58,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test5.txt",
-                "tokenLiteral" : "a",
-                "lineNumber" : "1",
+                "token_literal" : "a",
+                "line_number" : "1",
                 "message" : "cannot rename items using define statement"
             }
         ]
@@ -71,8 +71,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test6.txt",
-                "tokenLiteral" : "6",
-                "lineNumber" : "1",
+                "token_literal" : "6",
+                "line_number" : "1",
                 "message" : "invalid name for defined item"
             }
         ]
@@ -84,8 +84,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test7.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "1",
+                "token_literal" : "struct",
+                "line_number" : "1",
                 "message" : "invalid name for defined item"
             }
         ]
@@ -97,8 +97,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test8.txt",
-                "tokenLiteral" : ",",
-                "lineNumber" : "1",
+                "token_literal" : ",",
+                "line_number" : "1",
                 "message" : "invalid name for defined item"
             }
         ]
@@ -110,8 +110,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test9.txt",
-                "tokenLiteral" : "do",
-                "lineNumber" : "1",
+                "token_literal" : "do",
+                "line_number" : "1",
                 "message" : "invalid name for defined item"
             }
         ]
@@ -129,8 +129,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test11.txt",
-                "tokenLiteral" : "3",
-                "lineNumber" : "1",
+                "token_literal" : "3",
+                "line_number" : "1",
                 "message" : "invalid name for defined item"
             }
         ]
@@ -142,8 +142,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test12.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -155,8 +155,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test13.txt",
-                "tokenLiteral" : "[",
-                "lineNumber" : "1",
+                "token_literal" : "[",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -168,8 +168,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test14.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -181,8 +181,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test15.txt",
-                "tokenLiteral" : "(",
-                "lineNumber" : "1",
+                "token_literal" : "(",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -194,8 +194,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test16.txt",
-                "tokenLiteral" : "do",
-                "lineNumber" : "1",
+                "token_literal" : "do",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -207,8 +207,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test17.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -220,8 +220,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test18.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -233,8 +233,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test19.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -246,8 +246,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test20.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -259,8 +259,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test21.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -272,8 +272,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test22.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "1",
+                "token_literal" : "struct",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -285,8 +285,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test23.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -298,8 +298,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test24.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "1",
+                "token_literal" : "struct",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -311,8 +311,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test25.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -324,8 +324,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test26.txt",
-                "tokenLiteral" : "int",
-                "lineNumber" : "1",
+                "token_literal" : "int",
+                "line_number" : "1",
                 "message" : "invalid name for defined item"
             }
         ]
@@ -355,8 +355,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test30.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -368,8 +368,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test31.txt",
-                "tokenLiteral" : "[",
-                "lineNumber" : "1",
+                "token_literal" : "[",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -381,8 +381,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test32.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -394,8 +394,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test33.txt",
-                "tokenLiteral" : ")",
-                "lineNumber" : "1",
+                "token_literal" : ")",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -407,8 +407,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test34.txt",
-                "tokenLiteral" : "enum",
-                "lineNumber" : "1",
+                "token_literal" : "enum",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -420,8 +420,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test35.txt",
-                "tokenLiteral" : "Vector",
-                "lineNumber" : "1",
+                "token_literal" : "Vector",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -433,8 +433,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test36.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -446,8 +446,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test37.txt",
-                "tokenLiteral" : "=",
-                "lineNumber" : "1",
+                "token_literal" : "=",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -459,8 +459,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test38.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -472,8 +472,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/DefineTests/test39.txt",
-                "tokenLiteral" : "assk",
-                "lineNumber" : "1",
+                "token_literal" : "assk",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]

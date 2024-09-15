@@ -1,30 +1,30 @@
-fun function() int do
-  loop
-    unless true do
-      switch 'c'
-      case 'a' do
+pub fun function() int do
+  for i0 in 1 .. 10 do
+    for i1 in 1 .. 10 do
+      if true do
         if true do
-          if true do
-            let a0 as int = 10
-          end
+          let a2 as int = 10
+        else
+          let a3 as int = 10
         end
         return 0
-      case 'b' do
+      elif true do
         if true do
-          if true do
-            let a1 as int = 10
-          end
-          return 0
+          let a4 as int = 10
+        else
+          let a5 as int = 10
         end
-      default
+        return 0
+      else
         if true do
-          if true do
-            let a2 as int = 10
-          end
+          let a6 as int = 10
+        else
+          let a7 as int = 10
         end
         return 0
       end
       return 0
     end
   end
+  return 0
 end

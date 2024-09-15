@@ -1,12 +1,12 @@
 fun function() int do
-  loop
-    loop
-      while true do
-        if true do
-          let a0 as int = 10
-        end
-        return 0
-      end
+  if true do
+    if true do
+      let a0 as int = 10
+    end
+    return 0
+  elif true do
+    if true do
+      let a1 as int = 10
     end
     return 0
   end

@@ -8,8 +8,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test2.ap",
-                "tokenLiteral" : "a",
-                "lineNumber" : "1",
+                "token_literal" : "a",
+                "line_number" : "1",
                 "message" : "name collision, arguments have same name"
             }
         ]
@@ -19,14 +19,14 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test3.ap",
-                "tokenLiteral" : "a",
-                "lineNumber" : "1",
+                "token_literal" : "a",
+                "line_number" : "1",
                 "message" : "name collision, arguments have same name"
             },
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ArgumentTypeTests/test3.ap",
-                "tokenLiteral" : "b",
-                "lineNumber" : "1",
+                "token_literal" : "b",
+                "line_number" : "1",
                 "message" : "name collision, arguments have same name"
             }
         ]

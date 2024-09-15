@@ -1,0 +1,34 @@
+module main
+
+// Quick happy path check
+// Next test is the not happy path
+pub fun main() do
+    let b = 1 + 2 + a(2)
+    var c = [ 1, b, b, 2]
+    let d = { 1 : b, 15, b}
+    let e = { 1, b}
+    while 1 + b < 10 do
+        loop 
+            let h = 0 + b
+        end
+    end
+    let start = 0
+    let end_number = 10
+    let step = 5
+    for i in start .. end_number, step do
+        let o = 1 + i
+    end
+    if b + c >= 0 do
+        let z = 0
+    end
+    if let q = c do
+        let z = q
+    end
+
+    
+
+end
+
+fun a(a_var as int) do
+    return a_var
+end

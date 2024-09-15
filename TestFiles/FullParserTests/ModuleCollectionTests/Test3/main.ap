@@ -1,0 +1,7 @@
+module main
+
+import thing from module does_not_exist
+
+fun main() do
+    i = 0
+end

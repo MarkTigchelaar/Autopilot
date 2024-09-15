@@ -221,8 +221,7 @@
                                                                 },
                                                                 "methods": [
                                                                     {
-                                                                        "type": "method_call",
-                                                                        "struct": {
+                                                                        
                                                                             "type": "collection_access",
                                                                             "collection_name": {
                                                                                 "type": "identifier_or_literal",
@@ -244,66 +243,60 @@
                                                                                     }
                                                                                 }
                                                                             ]
+                                                                        
+                                                                    }
+
+                                                                    ,{
+                                                                        "type": "function_call",
+                                                                        "fn_name": {
+                                                                            "type": "identifier_or_literal",
+                                                                            "token": {
+                                                                                "literal": "method",
+                                                                                "type": "IDENTIFIER",
+                                                                                "line_number": 17,
+                                                                                "column_number": 42
+                                                                            }
                                                                         },
-                                                                        "methods": [
+                                                                        "arguments": []
+                                                                    }
+                                                                    ,{
+                                                                        "type": "function_call",
+                                                                        "fn_name": {
+                                                                            "type": "identifier_or_literal",
+                                                                            "token": {
+                                                                                "literal": "method",
+                                                                                "type": "IDENTIFIER",
+                                                                                "line_number": 17,
+                                                                                "column_number": 51
+                                                                            }
+                                                                        },
+                                                                        "arguments": [
                                                                             {
-                                                                                "type": "method_call",
-                                                                                "struct": {
-                                                                                    "type": "function_call",
-                                                                                    "fn_name": {
-                                                                                        "type": "identifier_or_literal",
-                                                                                        "token": {
-                                                                                            "literal": "method",
-                                                                                            "type": "IDENTIFIER",
-                                                                                            "line_number": 17,
-                                                                                            "column_number": 42
-                                                                                        }
-                                                                                    },
-                                                                                    "arguments": []
-                                                                                },
-                                                                                "methods": [
-                                                                                    {
-                                                                                        "type": "function_call",
-                                                                                        "fn_name": {
-                                                                                            "type": "identifier_or_literal",
-                                                                                            "token": {
-                                                                                                "literal": "method",
-                                                                                                "type": "IDENTIFIER",
-                                                                                                "line_number": 17,
-                                                                                                "column_number": 51
-                                                                                            }
-                                                                                        },
-                                                                                        "arguments": [
-                                                                                            {
-                                                                                                "type": "identifier_or_literal",
-                                                                                                "token": {
-                                                                                                    "literal": "1",
-                                                                                                    "type": "INT",
-                                                                                                    "line_number": 17,
-                                                                                                    "column_number": 58
-                                                                                                }
-                                                                                            },
-                                                                                            {
-                                                                                                "type": "identifier_or_literal",
-                                                                                                "token": {
-                                                                                                    "literal": "2",
-                                                                                                    "type": "INT",
-                                                                                                    "line_number": 17,
-                                                                                                    "column_number": 60
-                                                                                                }
-                                                                                            },
-                                                                                            {
-                                                                                                "type": "identifier_or_literal",
-                                                                                                "token": {
-                                                                                                    "literal": "3",
-                                                                                                    "type": "INT",
-                                                                                                    "line_number": 17,
-                                                                                                    "column_number": 62
-                                                                                                }
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                ]
+                                                                                "type": "identifier_or_literal",
+                                                                                "token": {
+                                                                                    "literal": "1",
+                                                                                    "type": "INT",
+                                                                                    "line_number": 17,
+                                                                                    "column_number": 58
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "identifier_or_literal",
+                                                                                "token": {
+                                                                                    "literal": "2",
+                                                                                    "type": "INT",
+                                                                                    "line_number": 17,
+                                                                                    "column_number": 60
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "identifier_or_literal",
+                                                                                "token": {
+                                                                                    "literal": "3",
+                                                                                    "type": "INT",
+                                                                                    "line_number": 17,
+                                                                                    "column_number": 62
+                                                                                }
                                                                             }
                                                                         ]
                                                                     }

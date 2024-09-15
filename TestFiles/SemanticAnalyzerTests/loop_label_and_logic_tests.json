@@ -4,8 +4,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test1.ap",
-                "tokenLiteral" : "loop_one",
-                "lineNumber" : "3",
+                "token_literal" : "loop_one",
+                "line_number" : "3",
                 "columnNumber" : "17",
                 "message" : "duplicate loop name"
             }
@@ -16,8 +16,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test2.ap",
-                "tokenLiteral" : "break",
-                "lineNumber" : "8",
+                "token_literal" : "break",
+                "line_number" : "8",
                 "columnNumber" : "5",
                 "message" : "break statement only valid inside loops"
             }
@@ -28,8 +28,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test3.ap",
-                "tokenLiteral" : "continue",
-                "lineNumber" : "8",
+                "token_literal" : "continue",
+                "line_number" : "8",
                 "columnNumber" : "5",
                 "message" : "continue statement only valid inside loops"
             }
@@ -40,8 +40,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test4.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "6",
+                "token_literal" : "test",
+                "line_number" : "6",
                 "columnNumber" : "15",
                 "message" : "loop label not defined"
             }
@@ -52,15 +52,15 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test5.ap",
-                "tokenLiteral" : "break",
-                "lineNumber" : "6",
+                "token_literal" : "break",
+                "line_number" : "6",
                 "columnNumber" : "9",
                 "message" : "break statement only valid inside loops"
             },
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test5.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "6",
+                "token_literal" : "test",
+                "line_number" : "6",
                 "columnNumber" : "15",
                 "message" : "loop label not defined"
             }
@@ -71,15 +71,15 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test6.ap",
-                "tokenLiteral" : "break",
-                "lineNumber" : "8",
+                "token_literal" : "break",
+                "line_number" : "8",
                 "columnNumber" : "9",
                 "message" : "break statement only valid inside loops"
             },
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/StatementTests/BreakAndContinueTests/test6.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "8",
+                "token_literal" : "test",
+                "line_number" : "8",
                 "columnNumber" : "15",
                 "message" : "loop label not defined"
             }

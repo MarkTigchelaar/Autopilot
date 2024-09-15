@@ -1,0 +1,5 @@
+module second
+
+pub fun my_function() do
+    let y = 0
+end

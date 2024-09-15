@@ -8,6 +8,12 @@ class UnlessStatement:
     def add_expression(self, exp_ast):
         self.test_expression = exp_ast
 
+    def has_expression_ast(self):
+        return self.test_expression is not None
+
+    def get_expression_ast(self):
+        return self.test_expression
+
     def add_statements(self, statements):
         self.statements = statements
 

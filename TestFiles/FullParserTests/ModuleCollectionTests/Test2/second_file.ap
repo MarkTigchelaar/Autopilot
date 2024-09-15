@@ -1,0 +1,5 @@
+module secondary
+
+pub fun other_function() do
+    let i = 0
+end

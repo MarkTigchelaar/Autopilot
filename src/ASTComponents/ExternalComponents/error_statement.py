@@ -8,6 +8,9 @@ class ErrorStatement:
     def add_name(self, name_token):
         self.name_token = name_token
 
+    def get_name(self):
+        return self.name_token
+
     def add_public_token(self, public_token):
         self.public_token = public_token
 

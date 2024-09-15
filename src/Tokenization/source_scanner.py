@@ -1,5 +1,5 @@
 from typing import Union
-
+import os
 
 # Designed to be used for 1 source only
 class SourceScanner:
@@ -107,7 +107,12 @@ class StringReader:
 
 class FileReader:
     def __init__(self, file_name: str):
-        self.src_file = open(file_name, "r")
+        working_directory = os.getcwd()
+        if working_directory.endswith("AutoPilot"): # Running debugger
+            working_directory += "/src"
+            self.src_file = open(working_directory + '/' + file_name, "r")
+        else:
+            self.src_file = open(file_name, "r")
         self.is_open = True
 
     def read(self) -> str:

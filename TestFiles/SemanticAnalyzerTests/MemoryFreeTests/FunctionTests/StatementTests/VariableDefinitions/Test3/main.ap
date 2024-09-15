@@ -1,0 +1,14 @@
+module main
+
+
+pub fun main() do
+    let a as int = 0
+    switch aa
+        case 5 do
+            let y as int = 0
+        case b do
+            let y as int = 0
+        default
+            let z as int = 0
+        end
+end

@@ -1,0 +1,60 @@
+module main
+
+
+pub fun main() do
+    a += 3
+    defer something.method()
+    switch aa
+        case 5 do
+            b += 11
+        case b do
+            c = 0
+        default
+            d = 4
+    end
+    while zz < bb do
+        e = x
+    end
+    loop
+        k = 0
+    end
+    if f + g == h do
+        l = m
+    elif n < o do
+        let p as int = q
+    else
+        r = p // should compain about p
+    end
+    second(t,u)
+    a = b + other(y,z)
+    unless z do
+        a = bb
+    end
+    for k in g .. t, u do
+        a += 1
+    end
+    return f
+end
+
+
+fun second(a as int, b as int) do
+    let c = a + b + d
+end
+
+
+fun other(y as int, z as int) int do
+    let aaa as int = y + z + b
+    for let eh in non_existant_optional_collection do
+        let b as int = 0
+    end
+    for e in non_existant_collection do
+        let b as int = 0
+    end
+    if let a = something do
+        let aa as int = 0
+    elif let b = some_other_thing do
+        let bb as int = 0
+    end
+    aa += 0
+    return 0
+end

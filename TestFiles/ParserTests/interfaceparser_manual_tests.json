@@ -6,8 +6,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test1.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test2.txt",
-                "tokenLiteral" : "2",
-                "lineNumber" : "1",
+                "token_literal" : "2",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -32,8 +32,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test3.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -45,8 +45,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test4.txt",
-                "tokenLiteral" : "fun",
-                "lineNumber" : "1",
+                "token_literal" : "fun",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -58,8 +58,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test5.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "1",
+                "token_literal" : "",
+                "line_number" : "1",
                 "message" : "end of file reached"
             }
         ]
@@ -71,8 +71,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test6.txt",
-                "tokenLiteral" : "struct",
-                "lineNumber" : "1",
+                "token_literal" : "struct",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -84,8 +84,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test7.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "2",
+                "token_literal" : "",
+                "line_number" : "2",
                 "message" : "end of file reached"
             }
         ]
@@ -97,8 +97,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test8.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "2",
+                "token_literal" : "",
+                "line_number" : "2",
                 "message" : "end of file reached"
             }
         ]
@@ -110,8 +110,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test9.txt",
-                "tokenLiteral" : "inline",
-                "lineNumber" : "2",
+                "token_literal" : "inline",
+                "line_number" : "2",
                 "message" : "unexpected token"
             }
         ]
@@ -123,8 +123,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test10.txt",
-                "tokenLiteral" : "end",
-                "lineNumber" : "1",
+                "token_literal" : "end",
+                "line_number" : "1",
                 "message" : "unexpected token"
             }
         ]
@@ -136,8 +136,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test11.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "2",
+                "token_literal" : "",
+                "line_number" : "2",
                 "message" : "end of file reached"
             }
         ]
@@ -149,8 +149,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test12.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "3",
+                "token_literal" : "",
+                "line_number" : "3",
                 "message" : "end of file reached"
             }
         ]
@@ -162,8 +162,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test13.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "4",
+                "token_literal" : "",
+                "line_number" : "4",
                 "message" : "end of file reached"
             }
         ]
@@ -175,8 +175,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test14.txt",
-                "tokenLiteral" : "",
-                "lineNumber" : "5",
+                "token_literal" : "",
+                "line_number" : "5",
                 "message" : "end of file reached"
             }
         ]
@@ -188,8 +188,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test15.txt",
-                "tokenLiteral" : "bend",
-                "lineNumber" : "6",
+                "token_literal" : "bend",
+                "line_number" : "6",
                 "message" : "unexpected token"
             }
         ]
@@ -213,8 +213,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/ParserTests/InterfaceTests/test18.txt",
-                "tokenLiteral" : "=",
-                "lineNumber" : "3",
+                "token_literal" : "=",
+                "line_number" : "3",
                 "message" : "unexpected token"
             }
         ]

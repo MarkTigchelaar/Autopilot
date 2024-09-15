@@ -8,15 +8,15 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/DefineTests/test2.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "1",
+                "token_literal" : "test",
+                "line_number" : "1",
                 "columnNumber" : "16",
                 "message" : "defined types cannot have the name of any of their components"
             },
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/DefineTests/test2.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "1",
+                "token_literal" : "test",
+                "line_number" : "1",
                 "columnNumber" : "23",
                 "message" : "defined types cannot have the name of any of their components"
             }

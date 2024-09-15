@@ -62,6 +62,10 @@ class ErrorManager:
         if len(self.semantic_errors) > 0:
             return self.semantic_errors.pop()
         return None
+    
+    def get_errors(self):
+        self.organize()
+        return self.tokenizer_errors + self.parser_errors + self.semantic_errors
 
     def organize(self) -> None:
         # to pop errors from the back, not front
@@ -69,3 +73,13 @@ class ErrorManager:
         self.parser_errors.reverse()
         self.semantic_errors.reverse()
         self.organized = True
+
+
+    def report_errors(self):
+        self.organize()
+        for error in self.tokenizer_errors:
+            print(error)
+        for error in self.parser_errors:
+            print(error)
+        for error in self.semantic_errors:
+            print(error)

@@ -1,0 +1,259 @@
+module not_main
+/*
+import other_func from module two
+
+define Map(int: int) as IntMap
+
+define HashMap(int: int) as IntHashMap
+define Dictionary(int: Thing) as IntDict
+define Option(int) as IntOption
+define Result(int, Whoops) as IntResult
+
+define LinkedList(int) as IntLinkedList
+define List(int) as IntList
+define Vector(int) as IntVector
+
+define Stack(string) as StringStack
+
+define Queue(string) as Sentence
+define FifoQueue(string) as DrunkSentence
+define PriorityQueue(string) as SelfImportantSentence
+
+define Deque(string) as Conversation
+
+define fun(int, int) int as IntFunction
+
+pub fun main() do
+    let i as int = 0
+    some_function()
+end
+
+union Betsy is
+    a as int,
+    b as float
+end
+
+
+
+enum Thing(int) is
+    a = 50,
+    b,
+    c = 1,
+    d = 4,
+    e = 0,
+    f
+end
+
+enum Booly is
+    f_one = true,
+    f_two
+end
+
+enum Floaty is
+    a,
+    b = 1.6,
+    c, d = 0.1,
+    e
+end
+
+enum Chary is
+    a,
+    b = 'a',
+    c = 'f',
+    d,
+    e = '1'
+end
+
+enum Wordy is
+    word_one = "a string",
+    duex = "some_String",
+    three,
+    four,
+    five = "five",
+    six = "default0"
+end
+
+error Whoops is
+    tom,
+    dick,
+    jerry
+end
+
+interface MyInterface is
+    fun function(a as int, b as SomeType) int end
+    fun function2(c as char, d as string) end
+end
+
+fun two(a as int, b as Wordy, c as Booly) int do
+    return 5
+end
+
+unittest thingy do
+    let i as int = 0
+end
+
+
+
+
+
+/*
+
+
+
+inline struct MyStruct
+        uses some_interface,test 
+    is
+      pub nameOne as int,
+      nameTwo as FunTimes
+
+    acyclic pub fun test_function(thing as Thingy, fn as IntFunction) int do
+    
+        let a as float = 0.0
+        if a == 0.0 do
+            let b as int = 0 + (1 * 2) * (-(1 + 2 + fn(1 + 4, 4 + 5)))
+        end
+        let b as long = 1
+        let c as int = fn(1+3, 7 - 5)
+        let d as IntVector = [1+2,2+3,3+4,4+5]
+        let e as IntSet = { 1, 2, 3+4, 35 ^ 6}
+        let f as IntDict = { 1: "af", 3: "str"}
+        let g as int = d[0 + 1]
+    
+        let h as int = thing.method()
+        let i as int = thing.field
+        
+        let j as int = thing.field.method()
+        return 0
+    end
+end
+
+
+fun test_function(thing as Thingy, someCollection as OptionalCollection, someOtherCollection as OptionalCollection, other as OtherList, some_dict as OtherDict) int do
+
+    let zzz_aaa_eh as SomeType = SomeType()
+    let ii as int = thing.field
+
+    let k as int = thing.field2.field1.field3.field4
+
+
+    let h as int = thing.method()
+    
+    let j as int = thing.field.method()
+    let a as int = thing.field3.field4.method(1 + 2, 2, 3 + 4)
+    
+    let b as int = thing.field5.method().item.item.meth(1, 2+3, thing.field5.method2(5+6))
+
+    if 1 + 1 <= 2 do
+        let i as int = 0
+    elif 2 + 2 < 10 do
+        let o as float = 0.0
+    elif true do
+        let k as long = 0
+    else
+        let k as long = 10
+    end
+
+    unless true do
+        let aaaa as string = "hi"
+    end
+
+    while 1 + 2 * 2 ^ 10 < 10 as while_loop_label do
+        break
+        continue
+    end
+
+    if true do
+        if true do
+            let i as int = 0
+        elif true do
+            let k as int = 0
+            loop
+                let z as int = 0
+            end
+        end
+    end
+
+    let jj as int = 0
+    switch j
+        case 0,1,2 do
+            let o as int = 0
+        case 3,4,5 do
+            let o as int = 0
+        default
+            let o as int = 0
+    end
+
+    if let myVar = someCollection do
+        let oo_aa as int = 0
+    elif let myOtherVar = someOtherCollection do
+        let oo_ee as int = 5
+    end
+
+
+    for let item in someCollection do
+        let aaa as int = 0
+    end
+
+    for i in 1 ..10, 2 do // bug, 1.. gets treated by tokenizer as a float!
+        var bb as int = 0
+    end
+
+
+
+    for item in other do
+        let w as float = 0.0
+    end
+    
+
+    for k, v in some_dict do // need to add loop variables to declare statements at top of functions
+        let hhh as string = "sting, or string"
+    end
+    
+    let a_V2 as int = 0
+    a_V2 += 1
+
+    defer a_V2 = thing.some_field.some_other_other_method()
+    defer some_function()
+    thing.some_method()
+
+    return 1 + 1
+end
+*/
+
+enum SomeEnum is
+    field1 = 1,
+    field2 = 2
+end
+
+pub fun switch_statement_test(SomeEnum as int) do
+    let a as SomeEnum = SomeEnum.field1
+
+    switch a
+        case SomeEnum.field1 do
+            return
+        case SomeEnum.field2 do
+            return
+        default
+            return
+    end
+end
+
+/*
+    loop - done
+    return - done
+    re assign / (method / function with no return) - done
+    defer - done
+    for - done
+    switch - done
+    loop variables
+    identifiers and their types
+*/
+*/
+// Move local analysis to after parsing is done, as a step before global analysis.
+// This is to enable the use of enum / error declarations in functions, otherwise
+// the analyzer will be stuck trying to see it as a undeclared variable (send in enum / error names, and match on that.)
+
+
+
+
+

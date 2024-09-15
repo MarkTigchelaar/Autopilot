@@ -1,16 +1,17 @@
 pub fun function() int do
   if true do
-    loop
-      loop
-        if true do
-          while true do
-            let a0 as int = 10
-          end
-        elif true do
-          while true do
-            let a1 as int = 10
-          end
-        end
+    if true do
+      if true do
+        let a0 as int = 10
+      elif true do
+        let a1 as int = 10
+      end
+      return 0
+    elif true do
+      if true do
+        let a2 as int = 10
+      elif true do
+        let a3 as int = 10
       end
       return 0
     end

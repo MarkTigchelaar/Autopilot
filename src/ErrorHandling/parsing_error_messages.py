@@ -43,3 +43,5 @@ DEFINE_NOT_ALLOWED = "define cannot be declared after struct, function, interfac
 IMPORT_NOT_ALLOWED = "import cannot be declared after struct, function, interface, enum, union, error, or unittest statement types"
 
 UNKNOWN_ERROR = "unkown error"
+
+MODULE_EXPECTED = "module declaration expected as first statement in file"

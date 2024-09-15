@@ -1,14 +1,13 @@
 pub fun function() int do
-  for i in 1 .. 10 do
-    if true do
-      loop
+  unless true do
+    while true do
+      for i0 in 1 .. 10 do
         loop
-          let a0 as int = 10
+          let a1 as int = 10
         end
         return 0
       end
     end
-    return 0
   end
   return 0
 end

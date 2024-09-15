@@ -4,8 +4,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test1.ap",
-                "tokenLiteral" : "functionA",
-                "lineNumber" : "4",
+                "token_literal" : "functionA",
+                "line_number" : "4",
                 "message" : "function name matches previous function name"
             }
         ]
@@ -15,8 +15,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test2.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "4",
+                "token_literal" : "test",
+                "line_number" : "4",
                 "message" : "function name matches interface name"
             }
         ]
@@ -26,8 +26,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test3.ap",
-                "tokenLiteral" : "second",
-                "lineNumber" : "4",
+                "token_literal" : "second",
+                "line_number" : "4",
                 "message" : "function argument name matches function name"
             }
         ]
@@ -37,8 +37,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test4.ap",
-                "tokenLiteral" : "c",
-                "lineNumber" : "3",
+                "token_literal" : "c",
+                "line_number" : "3",
                 "message" : "function argument name matches previous function argument name"
             }
         ]
@@ -48,8 +48,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test5.ap",
-                "tokenLiteral" : "test",
-                "lineNumber" : "3",
+                "token_literal" : "test",
+                "line_number" : "3",
                 "message" : "function argument name matches interface name"
             }
         ]
@@ -59,8 +59,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/InterfaceTests/test6.ap",
-                "tokenLiteral" : "functionA",
-                "lineNumber" : "3",
+                "token_literal" : "functionA",
+                "line_number" : "3",
                 "message" : "function argument name matches previous function name"
             }
         ]

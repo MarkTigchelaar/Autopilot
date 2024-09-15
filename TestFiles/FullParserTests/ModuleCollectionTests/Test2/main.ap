@@ -1,0 +1,7 @@
+module main
+
+import other_function from module secondary
+
+fun main() do
+    let i = 0
+end

@@ -271,7 +271,7 @@ def parse_method_call_or_field_access(driver, token, left_exp):
         if is_eof_type(driver.peek_token()):
             driver.add_error(driver.peek_token(), EOF_REACHED)
             return None
-        field_or_method = _parse(driver, 0)
+        field_or_method = parse_name_or_method(driver)#_parse(driver, 0)
         field_or_method_list.append(field_or_method)
         token = driver.peek_token()
     if driver.has_errors():
@@ -280,3 +280,22 @@ def parse_method_call_or_field_access(driver, token, left_exp):
     method_or_field.add_lhs_exp(left_exp)
     method_or_field.add_field_or_methods(field_or_method_list)
     return method_or_field
+
+
+def parse_name_or_method(driver):
+    #_ = driver.next_token()
+    token = driver.next_token()
+    if is_field_accessor_operator(token):
+        token = driver.next_token()
+    name_token = parse_name(token, driver)
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        return name_token
+    elif peek_token.type_symbol == symbols.LEFT_PAREN:
+        _ = driver.next_token()
+        return parse_function_call(driver, name_token)
+    elif peek_token.type_symbol == symbols.LEFT_BRACKET:
+        _ = driver.next_token()
+        return parse_collection_access(driver, name_token)
+    else:
+        return name_token

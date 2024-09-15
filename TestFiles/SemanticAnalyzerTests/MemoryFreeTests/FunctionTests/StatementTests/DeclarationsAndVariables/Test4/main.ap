@@ -1,0 +1,8 @@
+module main
+
+pub fun main() do
+    if true do
+        let a = 0
+    end
+    let a = 0
+end

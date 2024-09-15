@@ -8,8 +8,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test2.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
@@ -19,8 +19,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test3.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
@@ -30,8 +30,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test4.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
@@ -41,8 +41,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test5.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
@@ -52,8 +52,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test6.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
@@ -67,8 +67,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test8.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
@@ -78,8 +78,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test9.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
@@ -93,8 +93,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test11.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
@@ -104,8 +104,8 @@
         "errors" : [
             {
                 "file" : "../Testfiles/SemanticAnalyzerTests/MemoryFreeTests/FunctionTests/ReturnPathsTests/test12.ap",
-                "tokenLiteral" : "function",
-                "lineNumber" : "1",
+                "token_literal" : "function",
+                "line_number" : "1",
                 "message" : "function not valid, function returns a value, but not all code paths return a value"
             }
         ]
