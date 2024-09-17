@@ -65,7 +65,7 @@ def printErrors(reportedErrors: dict) -> None:
 
 def record_component_test(test_case: dict, tracker, expected: str, result: str) -> None:
     if str(result) != str(expected):
-        msg = FAILURE + "In " + test_case["file"] + ":\n" + get_msg(expected, result)
+        msg = FAILURE + "In " + str(test_case["file"]) + ":\n" + get_msg(expected, result)
         tracker.add_error_message(msg + "\n\n")
     else:
         tracker.inc_success()
