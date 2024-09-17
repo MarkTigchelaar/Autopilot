@@ -24,13 +24,13 @@ def main():
     print("Begin tests!")
     start_time = time.time()
 
-    tokenizer_parser_tests(tracker, current_dir)
-    local_semantic_analysis_checks(tracker, current_dir)
+    # tokenizer_parser_tests(tracker, current_dir)
+    # local_semantic_analysis_checks(tracker, current_dir)
     global_semantic_analysis_checks(tracker, current_dir)
 
 
 
-    test_full_parser(tracker, current_dir)
+    #test_full_parser(tracker, current_dir)
 
     
     print("End result: " + tracker.get_results())

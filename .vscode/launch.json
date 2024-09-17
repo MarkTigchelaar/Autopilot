@@ -15,6 +15,18 @@
             "type": "python",
             "request": "launch",
             "program": "D:/Projects/Ruby-Projects/AutoPilotProject/Autopilot/src/autopilotc.py"
+        },
+        {
+            "name": "Debug Autopilot Tests location 2",
+            "type": "python",
+            "request": "launch",
+            "program": "C:/Users/John/Documents/Marks Project/Autopilot/src/test_main.py"
+        },
+        {
+            "name": "Debug Autopilot Compiler location 2",
+            "type": "python",
+            "request": "launch",
+            "program": "C:/Users/John/Documents/Marks Project/Autopilot/src/autopilotc.py"
         }
     ]
 }

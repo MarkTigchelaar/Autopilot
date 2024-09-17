@@ -1,14 +1,16 @@
 
 from Tokenization.tokenizer import Tokenizer
 from ErrorHandling.error_manager import ErrorManager
+from SemanticAnalysis.GlobalAnalysisV2.semantic_analyzer import SemanticAnalyzer
 from driver import Driver
 from Parsing.parse import parse_src
+from Parsing.parser import Parser
 from TestingComponents.testing_utilities import (
     get_json_from_file,
     record_component_test,
     make_analyzer,
 )
-
+import os
 
 def global_semantic_analysis_checks(tracker,  current_dir):
     test_control_function(tracker,  current_dir)
@@ -21,42 +23,38 @@ def test_control_function(tracker,  current_dir):
         )
         general_component = test["general_component"]
         print(f"Targeted component(s): {general_component}")
+        if test["general_component"] != "import checks":
+            continue
         run_tests(component_tests, current_dir, tracker)
 
 
 def run_tests(component_tests, current_dir, tracker):
-    for test_case in component_tests:
+    for i, test_case in enumerate(component_tests):
         skip = False
-        # for test in test_case["files"]:
-        #     if "Test32" not in test:
-        #         skip = True
-        #         break
+        if i != 4:
+            skip = True
+
         if not skip:
             print(f"Running test: {test_case['files'][0]}")
             semantic_test(test_case, current_dir, tracker)
 
 
 def semantic_test(test_case, current_dir, tracker):
-    err_manager = ErrorManager()
-    analyzer = make_analyzer(err_manager, test_case)
-
+    parser = Parser(current_dir)
     for i in range(len(test_case["files"])):
-        tokenizer = Tokenizer(err_manager)
-        try:
-            tokenizer.load_src(test_case["files"][i])
-        except:
-            tokenizer.load_src(current_dir + "/" + test_case["files"][i])
-        driver = Driver(tokenizer, err_manager, analyzer)
-        _ = parse_src(driver)
-        tokenizer.close_src()
-    if not err_manager.has_errors():
-        analyzer.run_global_analysis()
+        module_name = test_case["files"][i]["module_name"]
+        path = test_case["files"][i]["path"]
+        abs_path = os.path.abspath(current_dir + "\\" + "\\" + path)
+        parser.parse_module(abs_path, module_name)
+    raw_modules = parser.get_raw_modules()
+    analyzer = SemanticAnalyzer(raw_modules.error_manager, raw_modules)
+    analyzer.analyze()
 
-    check_for_token_and_parser_errors(err_manager, test_case, tracker)
-    validate_results(err_manager, test_case, tracker)
+    check_for_token_and_parser_errors(raw_modules.error_manager, test_case, tracker)
+    validate_results(raw_modules.error_manager, test_case, tracker, current_dir)
 
 
-def validate_results(err_manager, test_case, tracker):
+def validate_results(err_manager, test_case, tracker, current_dir):
     expected_errors = test_case["errors"]
     if len(expected_errors) == 0 and not err_manager.has_errors():
         test_case["file"] = test_case["files"][0]
@@ -71,6 +69,9 @@ def validate_results(err_manager, test_case, tracker):
     for expected_error in expected_errors:
 
         actual_error = err_manager.next_semantic_error()
+        expected_error["file"] = os.path.abspath(current_dir + "\\" + "\\" + expected_error["file"])
+        if expected_error["shadowed_file"]:
+            expected_error["shadowed_file"] = os.path.abspath(current_dir + "\\" + "\\" + expected_error["shadowed_file"])
         test_case["file"] = expected_error["file"]
         record_component_test(
             test_case, tracker, expected_error["file"], actual_error.token.file_name

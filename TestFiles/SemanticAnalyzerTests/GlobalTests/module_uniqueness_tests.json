@@ -1,8 +1,14 @@
 [
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test1.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestOne/test1other.ap"
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/"
+            },
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestOne/"
+            }
         ],
         "errors": [
             {
@@ -24,9 +30,18 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap"
+            {
+                "module_name": "some_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/"
+            },
+            {
+                "module_name": "some_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/"
+            },
+            {
+                "module_name": "some_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/"
+            }
         ],
         "errors": [
             {
@@ -70,9 +85,14 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test3.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/test3other.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/test3otherother.ap"
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/"
+            },
+            {
+                "module_name": "three",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/"
+            }
         ],
         "errors": [],
         "comment": "",
@@ -82,11 +102,22 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/test2.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/test3other.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/test3otherother.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/test2other.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/test2otherother.ap"
+            {
+                "module_name": "some_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/"
+            },
+            {
+                "module_name": "three",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestThree/"
+            },
+            {
+                "module_name": "some_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/"
+            },
+            {
+                "module_name": "some_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ModuleTests/ModuleFolderForTestTwo/SubModule/"
+            }
         ],
         "errors": [
             {

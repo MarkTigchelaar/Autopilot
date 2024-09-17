@@ -1,8 +1,14 @@
 [
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test1.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test/folder/module_folder/test1b.ap"
+            {
+                "module_name": "some_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/"
+            },
+            {
+                "module_name": "module_one_bee",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test/folder/module_folder/"
+            }
         ],
         "errors": [],
         "comment": "If import statement path leads to module of matching name, then good.",
@@ -12,8 +18,14 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test2.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test/folder/module_folder/test1b.ap"
+            {
+                "module_name": "some_module2",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/"
+            },
+            {
+                "module_name": "module_one_bee",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test/folder/module_folder/"
+            }
         ],
         "errors": [
             {
@@ -35,9 +47,18 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3/sandwiches/test3a.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3/sandwiches/module_folder/onedeeper/test3d.ap"
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/"
+            },
+            {
+                "module_name": "sandwiches",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3/sandwiches/"
+            },
+            {
+                "module_name": "module_two",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/test3/sandwiches/module_folder/onedeeper/"
+            }
         ],
         "errors": [
             {
@@ -59,11 +80,26 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/main.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/import_one.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/import_two.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/subfolder/import_three.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/subfolder/import_four.ap"
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/"
+            },
+            {
+                "module_name": "second_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/"
+            },
+            {
+                "module_name": "third_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/"
+            },
+            {
+                "module_name": "fourth_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/subfolder/"
+            },
+            {
+                "module_name": "fifth_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test4/subfolder/"
+            }
         ],
         "errors": [],
         "comment": "Imports of modules with imports should also work correctly.",
@@ -73,12 +109,30 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/main.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/second.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/secondaryish_file.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/secondary_mod_file.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/subfolder/some_file.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/subfolder/subsubfolder/the_module_below_the_other_one.ap"
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/"
+            },
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/"
+            },
+            {
+                "module_name": "secondary_ish_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/"
+            },
+            {
+                "module_name": "secondary_module",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/"
+            },
+            {
+                "module_name": "place",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/subfolder/"
+            },
+            {
+                "module_name": "another_one",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/ImportTests/Test5/subfolder/subsubfolder/"
+            }
         ],
         "errors": [],
         "comment": "Imports of modules with imports should also work correctly, slight variation.",

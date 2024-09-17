@@ -1,14 +1,10 @@
 from ASTComponents.make_ast_node_map import make_ast_map
 
-# Pushes the compilation process forward,
-# and provides general services for each stage.
 class Driver:
-    # analyzer collects data first pass, saves compiler from 2nd pass
-    def __init__(self, tokenizer, err_manager, analyzer):
+    def __init__(self, tokenizer, err_manager):
         self.err_manager = err_manager
         self.tokenizer = tokenizer
         self.node_func_map = make_ast_map()
-        self.analyzer = analyzer
         self.modifier_container = None
 
 
@@ -56,8 +52,17 @@ class Driver:
     def analyze_locally(self, analysis_fn, save_fn, root_node):
         if root_node is None:
             return
-        analysis_fn(self.analyzer, root_node)
-        save_fn(self.analyzer, root_node)
+        analysis_fn(AnalyzerShim(self.err_manager), root_node)
+        #save_fn(self.analyzer, root_node)
+
+# This is to patch over the semantic analyzer being tossed
+# into the local analysis functions. Is setting up for a refactor later
+class AnalyzerShim:
+    def __init__(self, error_manager):
+        self.error_manager = error_manager
+
+    def add_error(self, token, message, shadowed_token=None):
+        self.error_manager.add_semantic_error(token, message, shadowed_token)
 
 
 class ModifierContainer:

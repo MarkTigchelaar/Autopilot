@@ -25,6 +25,11 @@ class ModulePathMatcher:
             and module.module_id != self.current_module_id
         ]
         return matching_modules
+    
+    def collect_matching_modules(self, raw_modules):
+        return [
+            module for module in raw_modules if self.reformat_path_list(module.directory_path) in self.matching_directories
+        ]
 
     def reformat_path_list(self, path_string):
         norm_path = os.path.normpath(path_string)

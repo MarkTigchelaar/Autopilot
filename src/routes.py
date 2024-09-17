@@ -20,16 +20,21 @@ from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_unittest_an
 from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_function_analysis import analyze_function
 from SemanticAnalysis.LocalAnalysis.ExternalStatementAnalyzers.local_struct_analysis import analyze_struct
 
-from SemanticAnalysis.Database.SaveData.save_enum import save_enum
-from SemanticAnalysis.Database.SaveData.save_error import save_error
-from SemanticAnalysis.Database.SaveData.save_union import save_union
-from SemanticAnalysis.Database.SaveData.save_module import save_module
-from SemanticAnalysis.Database.SaveData.save_import import save_import
-from SemanticAnalysis.Database.SaveData.save_define import save_define
-from SemanticAnalysis.Database.SaveData.save_interface import save_interface 
-from SemanticAnalysis.Database.SaveData.save_unittest import save_unittest
-from SemanticAnalysis.Database.SaveData.save_function import save_function
-from SemanticAnalysis.Database.SaveData.save_struct import save_struct
+# from SemanticAnalysis.Database.SaveData.save_enum import save_enum
+# from SemanticAnalysis.Database.SaveData.save_error import save_error
+# from SemanticAnalysis.Database.SaveData.save_union import save_union
+# from SemanticAnalysis.Database.SaveData.save_module import save_module
+# from SemanticAnalysis.Database.SaveData.save_import import save_import
+# from SemanticAnalysis.Database.SaveData.save_define import save_define
+# from SemanticAnalysis.Database.SaveData.save_interface import save_interface 
+# from SemanticAnalysis.Database.SaveData.save_unittest import save_unittest
+# from SemanticAnalysis.Database.SaveData.save_function import save_function
+# from SemanticAnalysis.Database.SaveData.save_struct import save_struct
+
+
+
+def dont_save(analyzer, ast_node):
+    return
 
 # these functions should make the rows and columns
 # for what ever table(s) are needed for each type
@@ -37,52 +42,52 @@ from SemanticAnalysis.Database.SaveData.save_struct import save_struct
 # into the correct tables, and refer back to the ast as well.
 def parse_enum(driver):
     ast = p_enum(driver)
-    driver.analyze_locally(analyze_enum, save_enum, ast)
+    driver.analyze_locally(analyze_enum, dont_save, ast)
     return ast
 
 def parse_union(driver):
     ast = p_union(driver)
-    driver.analyze_locally(analyze_union, save_union, ast)
+    driver.analyze_locally(analyze_union, dont_save, ast)
     return ast
 
 def parse_error(driver):
     ast = p_error(driver)
-    driver.analyze_locally(analyze_error, save_error, ast)
+    driver.analyze_locally(analyze_error, dont_save, ast)
     return ast
 
 def parse_import(driver):
     ast = p_import(driver)
-    driver.analyze_locally(analyze_import, save_import, ast)
+    driver.analyze_locally(analyze_import, dont_save, ast)
     return ast
 
 def parse_module(driver):
     ast = p_module(driver)
-    driver.analyze_locally(analyze_module, save_module, ast)
+    driver.analyze_locally(analyze_module, dont_save, ast)
     return ast
 
 def parse_define(driver):
     ast = p_define(driver)
-    driver.analyze_locally(analyze_define, save_define, ast)
+    driver.analyze_locally(analyze_define, dont_save, ast)
     return ast
 
 def parse_interface(driver):
     ast = p_interface(driver)
-    driver.analyze_locally(analyze_interface, save_interface, ast)
+    driver.analyze_locally(analyze_interface, dont_save, ast)
     return ast
 
 def parse_unittest(driver):
     ast = p_unittest(driver)
-    driver.analyze_locally(analyze_unittest, save_unittest, ast)
+    driver.analyze_locally(analyze_unittest, dont_save, ast)
     return ast
 
 
 
 def parse_function(driver):
     ast = p_function(driver)
-    driver.analyze_locally(analyze_function, save_function, ast)
+    driver.analyze_locally(analyze_function, dont_save, ast)
     return ast
 
 def parse_struct(driver):
     ast = p_struct(driver)
-    driver.analyze_locally(analyze_struct, save_struct, ast)
+    driver.analyze_locally(analyze_struct, dont_save, ast)
     return ast
