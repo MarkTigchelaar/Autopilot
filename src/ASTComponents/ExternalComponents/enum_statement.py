@@ -30,6 +30,9 @@ class EnumStatement:
     def new_item(self, item_name_token, default_value_token):
         new_item = EnumListItem(item_name_token, default_value_token)
         self.item_list.append(new_item)
+    
+    def is_public(self):
+        return self.public_token is not None
 
 class EnumListItem:
     def __init__(self, item_name_token, default_value_token):

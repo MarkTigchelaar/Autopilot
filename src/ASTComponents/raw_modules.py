@@ -51,6 +51,26 @@ class RawModule:
         return count
     
 
+    def get_module_item_name_tokens(self):
+        items = self.get_all_non_import_items()
+        return [item.get_name() for item in items]
+
+
+
+    def get_all_non_import_items(self):
+        items = []
+        items.extend([item for item in self.key_value_defines])
+        items.extend([item for item in self.linear_type_defines])
+        items.extend([item for item in self.failable_type_defines])
+        items.extend([item for item in self.function_type_defines])
+        items.extend([item for item in self.enums])
+        items.extend([item for item in self.errors])
+        items.extend([item for item in self.unions])
+        items.extend([item for item in self.structs])
+        items.extend([item for item in self.functions])
+        items.extend([item for item in self.unit_tests])
+        return items
+
 
 
 

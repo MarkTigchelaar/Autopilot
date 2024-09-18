@@ -31,6 +31,9 @@ class DefineStatement:
 
     def get_descriptor_token(self):
         return self.descriptor_token
+    
+    def is_public(self):
+        return False
 
 
 # HashMaps, Dictionarys, Map interface

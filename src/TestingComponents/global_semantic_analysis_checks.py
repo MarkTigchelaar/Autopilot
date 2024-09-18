@@ -31,7 +31,7 @@ def test_control_function(tracker,  current_dir):
 def run_tests(component_tests, current_dir, tracker):
     for i, test_case in enumerate(component_tests):
         skip = False
-        if i > 4:
+        if i > 102:
             skip = True
 
         if not skip:

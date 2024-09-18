@@ -9,3 +9,6 @@ class ModuleStatement:
 
     def get_name(self):
         return self.name
+
+    def is_public(self):
+        return False

@@ -16,3 +16,6 @@ class ErrorStatement:
 
     def new_item(self, item_name_token):
         self.items.append(item_name_token)
+
+    def is_public(self):
+        return self.public_token is not None

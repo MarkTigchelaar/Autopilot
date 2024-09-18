@@ -18,6 +18,9 @@ class FunctionStatement:
     def get_name_token(self):
         return self.header.get_name()
     
+    def get_name(self):
+        return self.get_name_token()
+    
     def add_statements(self, statements):
         self.statements = statements
 
@@ -38,6 +41,9 @@ class FunctionStatement:
     
     def add_public_token(self, pub_token):
         self.pub_token = pub_token
+
+    def is_public(self):
+        return self.pub_token is not None
 
     def accept(self, visitor):
         visitor.analyze_function_statements(self)

@@ -19,3 +19,6 @@ class InterfaceStatement:
 
     def add_public_token(self, public_token):
         self.public_token = public_token
+
+    def is_public(self):
+        return self.public_token is not None

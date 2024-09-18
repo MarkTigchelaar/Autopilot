@@ -18,6 +18,9 @@ class UnionStatement:
         item = UnionListItem(item_name_token, type_token)
         self.items.append(item)
 
+    def is_public(self):
+        return self.public_token is not None
+
 
 class UnionListItem:
     def __init__(self, item_name_token, type_token):

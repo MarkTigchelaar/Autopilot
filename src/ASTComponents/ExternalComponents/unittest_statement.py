@@ -11,6 +11,9 @@ class UnittestStatement:
 
     def get_name_token(self):
         return self.name
+    
+    def get_name(self):
+        return self.name    
 
     def add_statements(self, statements):
         self.statements = statements
@@ -20,3 +23,6 @@ class UnittestStatement:
 
     def accept(self, visitor):
         visitor.analyze_unittest_statements(self)
+
+    def is_public(self):
+        return False

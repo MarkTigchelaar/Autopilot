@@ -45,6 +45,9 @@ class StructStatement:
 
     def get_interfaces(self):
         return self.interfaces
+    
+    def is_public(self):
+        return self.public_token is not None
 
 
 class StructField:

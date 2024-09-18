@@ -33,6 +33,16 @@ class ImportItem:
         self.name_token = name_token
         self.new_name_token = new_name_token
 
+    def get_visible_item_name(self):
+        if self.new_name_token is not None:
+            return self.new_name_token
+        return self.get_actual_item_name()
+    
+    def get_actual_item_name(self):
+        if not self.name_token:
+            raise Exception("INTERNAL ERROR: import item has no name")
+        return self.name_token
+
 
 class PathItem:
     def __init__(self, node_token, direction_token):
