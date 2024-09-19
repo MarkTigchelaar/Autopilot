@@ -70,6 +70,19 @@ class RawModule:
         items.extend([item for item in self.functions])
         items.extend([item for item in self.unit_tests])
         return items
+    
+
+    def get_all_imported_item_names(self):
+        imported_items = self.get_all_imported_items()
+        return [item.get_visible_item_name() for item in imported_items]
+
+    def get_all_imported_items(self):
+        import_items = []
+        for import_statement in self.imports:
+            for import_item in import_statement.get_import_list():
+                import_items.append(import_item)
+        return import_items
+
 
 
 

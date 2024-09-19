@@ -192,15 +192,17 @@ IMPORT_ITEM_NAME_COLLIDES_WITH_MODULE_ITEM = (
 
 IMPORT_ITEM_COLLIDES_WITH_MOD_NAME = "item in import matches name of current module"
 
+MODULE_ITEM_NAME_COLLISION = "item in module collides with another item in same module"
+
 IMPORTED_ITEM_NOT_FOUND = "item in import not defined in imported module"
 
 MULTIPLE_MODULES_FOUND_ON_PATH = "multiple modules found on import path"
 
 DEFINE_NEW_NAME_COLLISION = "define statement names new type the same as another type"
 
-DEFINE_NEW_NAME_COLLISION_W_IMPORT = (
-    "define statement names new type the same as an imported type"
-)
+# DEFINE_NEW_NAME_COLLISION_W_IMPORT = (
+#     "define statement names new type the same as an imported type"
+# )
 
 DEFINE_USES_SAME_COMPONENTS = (
     "define statement uses same exact types in definition as other define statement"

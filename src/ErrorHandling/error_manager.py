@@ -20,6 +20,9 @@ class ErrorManager:
         elif len(self.semantic_errors) > 0 and include_semantic_errors:
             return True
         return False
+    
+    def error_count(self) -> int:
+        return len(self.tokenizer_errors) + len(self.parser_errors) + len(self.semantic_errors)
 
     def add_tokenizer_error(self, token, message: str) -> None:
         tok_error = TokenizerError(token, message)

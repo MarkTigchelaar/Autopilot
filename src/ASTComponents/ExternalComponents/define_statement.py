@@ -10,6 +10,7 @@ class DefineStatement:
 
     def add_definition(self, definition_token):
         self.new_type_name_token = definition_token
+        self.sub_type.new_name_token = definition_token
 
     def get_definition(self):
         return self.new_type_name_token
@@ -35,6 +36,11 @@ class DefineStatement:
     def is_public(self):
         return False
 
+    def get_name(self):
+        return self.sub_type.get_name()
+
+    def get_type(self):
+        return self.sub_type.get_type()
 
 # HashMaps, Dictionarys, Map interface
 class KeyValueType:
@@ -43,6 +49,7 @@ class KeyValueType:
         self.key_token = None
         self.value_token = None
         self.descriptor_token = None
+        self.new_name_token = None
 
     def add_type_token(self, type_token):
         self.type_token = type_token
@@ -74,6 +81,12 @@ class KeyValueType:
     def get_descriptor_token(self):
         return self.descriptor_token
 
+    def is_public(self):
+        return False
+
+    def get_name(self):
+        return self.new_name_token
+
 # Lists, arrays, queues, and includes 
 # hashsets and treesets, and set interface
 class LinearType:
@@ -81,6 +94,7 @@ class LinearType:
         self.type_token = None
         self.value_token = None
         self.descriptor_token = None
+        self.new_name_token = None
 
     def add_type_token(self, type_token):
         self.type_token = type_token
@@ -108,6 +122,12 @@ class LinearType:
 
     def get_descriptor_token(self):
         return self.descriptor_token
+    
+    def is_public(self):
+        return False
+
+    def get_name(self):
+        return self.new_name_token
 
 # Option, or Result
 class FailableType:
@@ -116,6 +136,7 @@ class FailableType:
         self.value_token = None
         self.error_token = None
         self.descriptor_token = None
+        self.new_name_token = None
 
 
     def add_type_token(self, type_token):
@@ -148,6 +169,12 @@ class FailableType:
     def get_descriptor_token(self):
         return self.descriptor_token
 
+    def is_public(self):
+        return False
+
+    def get_name(self):
+        return self.new_name_token
+
 
 class FunctionType:
     def __init__(self):
@@ -155,6 +182,7 @@ class FunctionType:
         self.return_type_token = None
         self.descriptor_token = None
         self.type_token = None
+        self.new_name_token = None
 
     def add_argument(self, arg_token):
         self.arg_type_list.append(arg_token)
@@ -181,3 +209,11 @@ class FunctionType:
     def get_descriptor_token(self):
         return self.descriptor_token
 
+    def is_public(self):
+        return False
+
+    def get_name(self):
+        return self.new_name_token
+
+    def get_type(self):
+        return self.type_token

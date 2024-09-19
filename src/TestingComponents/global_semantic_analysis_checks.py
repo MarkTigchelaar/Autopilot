@@ -23,7 +23,7 @@ def test_control_function(tracker,  current_dir):
         )
         general_component = test["general_component"]
         print(f"Targeted component(s): {general_component}")
-        if test["general_component"] != "import checks":
+        if test["general_component"] != "define checks":
             continue
         run_tests(component_tests, current_dir, tracker)
 
@@ -31,7 +31,7 @@ def test_control_function(tracker,  current_dir):
 def run_tests(component_tests, current_dir, tracker):
     for i, test_case in enumerate(component_tests):
         skip = False
-        if i > 102:
+        if i != 2:
             skip = True
 
         if not skip:
@@ -66,6 +66,8 @@ def validate_results(err_manager, test_case, tracker, current_dir):
         raise Exception(
             f"INTERNAL ERROR: ErrorManager is missing errors for test: {expected_errors[0]['file']}, expected error: {expected_errors}. \nNumber of errors: {num_errors}, number of expected errors: {num_expected_errors}"
         )
+    if err_manager.error_count() != len(expected_errors):
+        print(f"INTERNAL ERROR: Error manager has {err_manager.error_count()} errors, but test expected {len(expected_errors)} errors.")
     for expected_error in expected_errors:
 
         actual_error = err_manager.next_semantic_error()

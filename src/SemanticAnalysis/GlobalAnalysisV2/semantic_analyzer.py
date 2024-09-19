@@ -25,6 +25,7 @@ class SemanticAnalyzer:
 
     def analyze(self):
         self.analyze_modules()
+        self.check_for_name_collisions_in_modules()
         self.import_analyzer.analyze()
         self.define_analyzer.analyze()
 
@@ -57,3 +58,15 @@ class SemanticAnalyzer:
                     ErrMsg.MODULE_NAME_AND_ITEM_COLLISION,
                     raw_module.get_module_name_token(),
                 )
+
+    def check_for_name_collisions_in_modules(self):
+        for raw_module in self.collected_modules.get_raw_modules():
+            item_name_tokens = raw_module.get_module_item_name_tokens()
+            for i in range(len(item_name_tokens)-1):
+                for j in range(i + 1, len(item_name_tokens)):
+                    if item_name_tokens[i].literal == item_name_tokens[j].literal:
+                        self.add_error(
+                            item_name_tokens[i],
+                            ErrMsg.MODULE_ITEM_NAME_COLLISION,
+                            item_name_tokens[j]
+                        )

@@ -1,7 +1,10 @@
 [
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test1/main.ap"
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test1/"
+            }
         ],
         "errors": [],
         "comment": "No defines using primitives should raise errors",
@@ -11,8 +14,10 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/main.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/file2.ap"
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/"
+            }
         ],
         "errors": [
             {
@@ -20,7 +25,7 @@
                 "token_literal": "IntVector",
                 "line_number": "3",
                 "column": "23",
-                "message": "define statement names new type the same as another type",
+                "message": "item in module collides with another item in same module",
                 "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test2/file2.ap",
                 "shadowed_token_literal": "IntVector",
                 "shadowed_line_number": "5",
@@ -34,8 +39,14 @@
     },
     {
         "files": [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/file2.ap"
+            {
+                "module_name": "main",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/"
+            },
+            {
+                "module_name": "secondary",
+                "path": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/"
+            }
         ],
         "errors": [
             {
@@ -59,28 +70,6 @@
                 "shadowed_token_literal": "NotIntVector",
                 "shadowed_line_number": "9",
                 "shadowed_column": "22"
-            },
-            {
-                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "token_literal": "IntVector",
-                "line_number": "5",
-                "column": "23",
-                "message": "define statement names new type the same as an imported type",
-                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "shadowed_token_literal": "IntVector",
-                "shadowed_line_number": "3",
-                "shadowed_column": "8"
-            },
-            {
-                "file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "token_literal": "NotIntVector",
-                "line_number": "9",
-                "column": "22",
-                "message": "define statement names new type the same as an imported type",
-                "shadowed_file": "../Testfiles/SemanticAnalyzerTests/GlobalTests/DefineTests/Test3/main.ap",
-                "shadowed_token_literal": "NotIntVector",
-                "shadowed_line_number": "3",
-                "shadowed_column": "34"
             }
         ],
         "comment": "This also includes import items",
