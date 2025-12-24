@@ -1,9 +1,0 @@
-module second_module
-
-pub enum thing is
-    i = 10
-end
-
-pub enum thing2 is
-    i = 10
-end

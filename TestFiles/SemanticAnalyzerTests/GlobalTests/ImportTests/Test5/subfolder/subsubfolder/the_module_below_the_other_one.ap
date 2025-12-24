@@ -1,5 +1,0 @@
-module another_one
-
-pub enum thing_from_above is 
-    a = 3
-end

@@ -1,4 +1,0 @@
-module main
-
-define LinkedList(int) as intlinkedlist
-define LinkedList(intlinkedlist) as compoundList

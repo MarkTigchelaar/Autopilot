@@ -1,4 +1,0 @@
-module main
-
-define HashSet(int) as inthashset
-define Deque(inthashset) as compoundList

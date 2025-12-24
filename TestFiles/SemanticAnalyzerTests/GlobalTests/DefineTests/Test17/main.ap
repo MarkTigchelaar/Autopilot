@@ -1,9 +1,0 @@
-module main
-
-
-define Vector(Thing) as ThingVector
-
-
-struct Thing is
-    a as ThingVector
-end

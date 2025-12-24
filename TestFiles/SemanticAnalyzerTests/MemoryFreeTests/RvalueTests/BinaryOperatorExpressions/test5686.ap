@@ -1,4 +1,0 @@
-fun function() do
-   let a as bool = 2147483648 * "str"
-end
-

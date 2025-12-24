@@ -1,8 +1,0 @@
-module main
-
-
-import Thingy from module second_module
-
-
-define LinkedList(Thingy) as ThingyList
-define HashMap(Thingy: int) as ThingyMap

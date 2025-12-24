@@ -1,3 +1,0 @@
-fun function() do
-    let a as int = (10 + 10) + (-(60 - 'b') + 10 * 34)
-end

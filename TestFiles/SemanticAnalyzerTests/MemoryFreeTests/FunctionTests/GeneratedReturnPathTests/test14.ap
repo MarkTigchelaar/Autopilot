@@ -1,6 +1,0 @@
-pub fun function() int do
-  for i in 1 .. 10 do
-    let a0 as int = 10
-  end
-  return 0
-end

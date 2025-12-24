@@ -1,7 +1,0 @@
-module second_module
-
-import third_thing from module third_module
-
-pub enum second_thing is 
-    a = 3
-end

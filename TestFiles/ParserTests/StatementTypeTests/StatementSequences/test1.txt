@@ -1,8 +1,0 @@
-if struct do
-  var c = 0
-end
-if a do
-  let b eh 0
-end
-// When the parser syncs, it tries to continue, but pops up a level of statements
-// This is why the "eh" is not seen, it's on the same level of statements as the "struct"

@@ -1,8 +1,0 @@
-fun function() int do
-    switch a
-        case b do
-           return 1
-        default
-          return 2
-    end
-end

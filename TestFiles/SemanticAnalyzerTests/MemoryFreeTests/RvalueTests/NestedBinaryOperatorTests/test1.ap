@@ -1,3 +1,0 @@
-fun function() do
-    let a as string =  ('a' + 'b') + ('c' + 9)
-end

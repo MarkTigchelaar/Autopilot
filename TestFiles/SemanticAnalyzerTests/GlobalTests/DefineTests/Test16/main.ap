@@ -1,6 +1,0 @@
-module main
-
-
-import OtherStuff from module second_module
-
-// can't import defines from other modules (might change in future)

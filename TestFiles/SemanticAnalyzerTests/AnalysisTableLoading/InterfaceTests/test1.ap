@@ -1,5 +1,0 @@
-module main
-
-acyclic pub interface my_interface is
-    acyclic fun functionA(a as int, b as float) bool end
-end

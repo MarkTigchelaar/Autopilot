@@ -1,4 +1,0 @@
-module main
-
-define Map(int : int) as intmap
-define FifoQueue(intmap) as compoundList

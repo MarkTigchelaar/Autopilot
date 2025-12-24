@@ -1,4 +1,0 @@
-module main
-
-define Queue(int) as intqueue
-define FifoQueue(intqueue) as compoundList

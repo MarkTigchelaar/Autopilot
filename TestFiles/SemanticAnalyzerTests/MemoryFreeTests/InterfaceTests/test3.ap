@@ -1,5 +1,0 @@
-
-interface test is
-    fun functionA(a as int, b as float) bool end
-    fun second(c as float, second as SomeType) bool end
-end

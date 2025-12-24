@@ -1,4 +1,0 @@
-module main
-
-define Set(int) as intset
-define Vector(intset) as compoundList

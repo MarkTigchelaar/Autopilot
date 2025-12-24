@@ -1,4 +1,0 @@
-module main
-
-define HashSet(int) as inthashset
-define Queue(inthashset) as compoundList

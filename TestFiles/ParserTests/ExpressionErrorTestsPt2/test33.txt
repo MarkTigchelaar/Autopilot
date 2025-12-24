@@ -1,6 +1,0 @@
-[
-    "astring" <= (a or b) + false,
-    "astring" == (a or b + false),
-    "astring" == (a or b + struct),
-    "astring" xor (a or b + false)
-]

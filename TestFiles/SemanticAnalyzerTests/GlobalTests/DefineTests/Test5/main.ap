@@ -1,5 +1,0 @@
-module main
-
-define HashMap(int: string) as StringDict
-
-define Dictionary(int: string) as OtherDict

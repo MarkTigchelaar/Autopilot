@@ -1,4 +1,0 @@
-module main
-
-define FifoQueue(int) as intfifoqueue
-define FifoQueue(intfifoqueue) as compoundList

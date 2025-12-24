@@ -1,4 +1,0 @@
-module main
-
-define Vector(int) as intvector
-define LinkedList(intvector) as compoundList

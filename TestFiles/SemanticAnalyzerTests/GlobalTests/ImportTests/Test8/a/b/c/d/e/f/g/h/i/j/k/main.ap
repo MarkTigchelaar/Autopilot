@@ -1,3 +1,0 @@
-module main
-
-import thing_being_looked_for from module ^Test8.second_module

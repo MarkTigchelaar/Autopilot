@@ -1,5 +1,0 @@
-module main
-
-import myUnion from module secondary
-
-define HashSet(myUnion) as myUnionSet

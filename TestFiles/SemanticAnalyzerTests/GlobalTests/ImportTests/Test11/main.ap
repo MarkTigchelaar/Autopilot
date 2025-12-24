@@ -1,5 +1,0 @@
-module main
-
-import thing from module second_module
-
-import other_thing as thing from module third_module

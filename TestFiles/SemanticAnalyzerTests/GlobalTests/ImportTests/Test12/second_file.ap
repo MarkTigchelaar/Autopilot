@@ -1,6 +1,0 @@
-module second_module
-
-
-pub enum second_module is 
-    i = 10
-end

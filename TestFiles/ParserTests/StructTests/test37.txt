@@ -1,7 +1,0 @@
-struct pumpkin is
-  pub variable as int
-
-  acyclic pub fun test() int do
-    let a as float = 0
-  end
-end

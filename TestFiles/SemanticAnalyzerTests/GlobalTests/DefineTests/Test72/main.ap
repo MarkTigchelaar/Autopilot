@@ -1,4 +1,0 @@
-module main
-
-define Set(int) as intset
-define Queue(intset) as compoundList

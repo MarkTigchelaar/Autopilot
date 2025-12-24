@@ -1,5 +1,0 @@
-module third_module
-
-pub enum other_thing is
-    i = 10
-end

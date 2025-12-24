@@ -1,4 +1,0 @@
-module main
-
-define HashMap(int : int) as inthashmap
-define FifoQueue(inthashmap) as compoundList

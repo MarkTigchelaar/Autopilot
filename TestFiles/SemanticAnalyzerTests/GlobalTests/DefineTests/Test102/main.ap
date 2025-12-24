@@ -1,4 +1,0 @@
-module main
-
-define TreeSet(int) as inttreeset
-define PriorityQueue(inttreeset) as compoundList

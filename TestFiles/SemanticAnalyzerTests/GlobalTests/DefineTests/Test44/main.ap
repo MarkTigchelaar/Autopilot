@@ -1,4 +1,0 @@
-module main
-
-define Set(int) as intset
-define LinkedList(intset) as compoundList

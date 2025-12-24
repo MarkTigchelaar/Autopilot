@@ -1,7 +1,0 @@
-module third_module
-
-import fourth_thing from module subfolder.fourth_module
-
-pub enum third_thing is 
-    a = 3
-end

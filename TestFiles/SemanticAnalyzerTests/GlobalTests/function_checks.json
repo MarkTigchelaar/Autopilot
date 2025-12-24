@@ -1,9 +1,0 @@
-[
-    {
-        "files" : [
-            "../Testfiles/SemanticAnalyzerTests/GlobalTests/FunctionTests/Test1/main.ap"
-        ],
-        "errors" : [],
-        "comment" : "Test1: Simple statement with one variable. Should pass."
-    }
-]

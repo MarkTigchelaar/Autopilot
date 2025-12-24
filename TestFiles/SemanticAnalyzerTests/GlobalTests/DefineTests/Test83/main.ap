@@ -1,4 +1,0 @@
-module main
-
-define PriorityQueue(int) as intpriorityqueue
-define FifoQueue(intpriorityqueue) as compoundList

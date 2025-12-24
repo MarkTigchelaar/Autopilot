@@ -1,5 +1,0 @@
-module module_one_bee
-
-pub enum item1 is
-    value_one = 0
-end

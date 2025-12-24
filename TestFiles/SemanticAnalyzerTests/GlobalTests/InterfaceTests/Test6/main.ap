@@ -1,8 +1,0 @@
-module main
-
-import myStruct, myUnion, myEnum, myOtherEnum from module others.second
-
-interface thing is
-    fun method1(a as int, b as myStruct) int end
-    fun method2(c as myEnum, d as myUnion, e as myOtherEnum) myOtherEnum end
-end

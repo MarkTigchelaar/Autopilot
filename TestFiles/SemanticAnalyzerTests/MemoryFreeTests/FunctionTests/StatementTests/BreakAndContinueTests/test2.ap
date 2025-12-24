@@ -1,9 +1,0 @@
-fun function() do
-    loop as loop_one do
-        while true or false as loop_two do
-            let stuff = 1
-        end
-        continue
-    end
-    break
-end

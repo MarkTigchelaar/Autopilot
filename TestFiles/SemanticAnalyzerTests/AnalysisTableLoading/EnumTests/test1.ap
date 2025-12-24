@@ -1,7 +1,0 @@
-module main
-
-pub enum some_enum(int) is
-    Martha,
-    Jane,
-    Cassandra
-end

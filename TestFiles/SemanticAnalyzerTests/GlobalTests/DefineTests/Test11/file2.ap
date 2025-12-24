@@ -1,5 +1,0 @@
-module main
-
-struct Thingy is
-    a as int
-end

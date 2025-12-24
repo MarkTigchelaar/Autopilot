@@ -1,3 +1,0 @@
-module main
-
-import private_thing1, non_existant_thing2 from module second_module

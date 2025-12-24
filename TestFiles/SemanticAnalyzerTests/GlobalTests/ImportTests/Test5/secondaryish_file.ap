@@ -1,6 +1,0 @@
-module secondary_ish_module
-
-
-pub enum other_thing is 
-    a = 3
-end

@@ -1,8 +1,0 @@
-acyclic pub struct hellYeah uses nitro, mullets, turburskies is
-
-  pub myInt as int
-
-  acyclic pub fun funcky(a as int) int do
-    return 2 * a
-  end
-end

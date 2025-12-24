@@ -1,6 +1,0 @@
-switch name
-  case 'b' do
-   var a = 6
-  default 
-    let a = 0
-end

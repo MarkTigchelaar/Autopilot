@@ -1,4 +1,0 @@
-module main
-
-define Map(int : int) as intmap
-define LinkedList(intmap) as compoundList

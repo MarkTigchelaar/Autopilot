@@ -1,4 +1,0 @@
-module main
-
-define Deque(int) as intdeque
-define Queue(intdeque) as compoundList

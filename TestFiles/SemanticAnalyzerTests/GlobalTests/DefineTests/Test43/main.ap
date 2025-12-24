@@ -1,4 +1,0 @@
-module main
-
-define Stack(int) as intstack
-define LinkedList(intstack) as compoundList

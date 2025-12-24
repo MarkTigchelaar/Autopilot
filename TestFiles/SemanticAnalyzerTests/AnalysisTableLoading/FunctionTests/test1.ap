@@ -1,5 +1,0 @@
-module main
-
-acyclic pub fun my_function(a as int, b as float) bool do
-    return
-end

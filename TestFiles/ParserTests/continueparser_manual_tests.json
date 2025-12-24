@@ -1,8 +1,0 @@
-[
-    {
-        "file" : "../Testfiles/ParserTests/StatementTypeTests/ContinueTests/test1.txt",
-        "astString" : "continue",
-        "tokenTypeString" : "CONTINUE",
-        "errors" : null
-    }
-]
