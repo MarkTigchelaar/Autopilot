@@ -1,0 +1,5 @@
+enum test1(string) is
+  fred = "a", 
+  wilma = "isn't",
+  fred = "b"
+end

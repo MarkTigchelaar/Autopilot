@@ -1,0 +1,7 @@
+module main
+
+import bstruct from module b
+
+pub struct cstruct is 
+    a as int
+end

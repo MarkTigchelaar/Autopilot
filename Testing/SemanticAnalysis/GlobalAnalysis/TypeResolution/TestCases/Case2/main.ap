@@ -1,0 +1,9 @@
+module main
+
+define HashMap(int : MyTpe) as IntMyType
+
+define Dictionary(Myte : int) as MyTypeInt
+
+struct MyType is
+    a as int
+end

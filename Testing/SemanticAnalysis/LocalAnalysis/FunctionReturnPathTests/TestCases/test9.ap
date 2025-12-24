@@ -1,0 +1,7 @@
+fun function() int do
+    let a as int = 4
+    switch a
+        case 0 do
+           return 1
+    end
+end

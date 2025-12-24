@@ -1,0 +1,289 @@
+[
+    {
+        "file_name": "test1.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test2.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 9
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 5
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test3.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test4.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test4.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 9
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test4.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 9
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test5.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test5.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 9
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test5.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 13
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test6.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test7.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test7.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 12
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test7.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 17
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test8.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 9,
+                    "column_number": 14
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 13,
+                    "column_number": 17
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 10,
+                    "column_number": 13
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 14,
+                    "column_number": 17
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test9.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test9.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 13
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test9.ap",
+                    "file_path": null,
+                    "line_number": 7,
+                    "column_number": 17
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test9.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 13
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test9.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 17
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test10.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test10.ap",
+                    "file_path": null,
+                    "line_number": 11,
+                    "column_number": 13
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test10.ap",
+                    "file_path": null,
+                    "line_number": 14,
+                    "column_number": 17
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test10.ap",
+                    "file_path": null,
+                    "line_number": 11,
+                    "column_number": 16
+                },
+                "message": "variables declared with let keyword are not re assignable",
+                "shadowed_token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test10.ap",
+                    "file_path": null,
+                    "line_number": 15,
+                    "column_number": 17
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

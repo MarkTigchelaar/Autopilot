@@ -1,0 +1,448 @@
+[
+    {
+        "header": {
+            "name_token": {
+                "literal": "main",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test30.ap",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 16,
+                "type_def": "Token"
+            },
+            "arguments": [],
+            "return_type_token": null,
+            "acyclic_token": null,
+            "is_public": false,
+            "inline_token": {
+                "literal": "inline",
+                "internal_type": "INLINE",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test30.ap",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 1,
+                "type_def": "Token"
+            },
+            "public_token": {
+                "literal": "pub",
+                "internal_type": "PUB",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test30.ap",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 8,
+                "type_def": "Token"
+            },
+            "type_def": "FunctionHeaderStatement"
+        },
+        "statements": [
+            {
+                "let_or_var_token": {
+                    "literal": "let",
+                    "internal_type": "LET",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test30.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "name_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test30.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "type_token": null,
+                "exp_ast": {
+                    "left_type": "LEFT_BRACE",
+                    "expression_array": [
+                        {
+                            "token": {
+                                "literal": ":",
+                                "internal_type": "COLON",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "file_name": "test30.ap",
+                                "file_path": null,
+                                "line_number": 5,
+                                "column_number": 13,
+                                "type_def": "Token"
+                            },
+                            "left_expression": {
+                                "token": {
+                                    "literal": "\"a\"",
+                                    "internal_type": "STRING",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test30.ap",
+                                    "file_path": null,
+                                    "line_number": 5,
+                                    "column_number": 9,
+                                    "type_def": "Token"
+                                },
+                                "type": null,
+                                "type_def": "NameExpression"
+                            },
+                            "right_expression": {
+                                "fn_name_exp": {
+                                    "token": {
+                                        "literal": "test",
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "file_name": "test30.ap",
+                                        "file_path": null,
+                                        "line_number": 5,
+                                        "column_number": 15,
+                                        "type_def": "Token"
+                                    },
+                                    "type": null,
+                                    "type_def": "NameExpression"
+                                },
+                                "argument_list": [],
+                                "type_def": "FunctionCallExpression"
+                            },
+                            "type": null,
+                            "type_def": "OperatorExpression"
+                        },
+                        {
+                            "token": {
+                                "literal": ":",
+                                "internal_type": "COLON",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "file_name": "test30.ap",
+                                "file_path": null,
+                                "line_number": 6,
+                                "column_number": 22,
+                                "type_def": "Token"
+                            },
+                            "left_expression": {
+                                "token": {
+                                    "literal": "\"basketball\"",
+                                    "internal_type": "STRING",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test30.ap",
+                                    "file_path": null,
+                                    "line_number": 6,
+                                    "column_number": 9,
+                                    "type_def": "Token"
+                                },
+                                "type": null,
+                                "type_def": "NameExpression"
+                            },
+                            "right_expression": {
+                                "token": {
+                                    "literal": "+",
+                                    "internal_type": "PLUS",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test30.ap",
+                                    "file_path": null,
+                                    "line_number": 6,
+                                    "column_number": 26,
+                                    "type_def": "Token"
+                                },
+                                "left_expression": {
+                                    "token": {
+                                        "literal": "1",
+                                        "internal_type": "INT",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "file_name": "test30.ap",
+                                        "file_path": null,
+                                        "line_number": 6,
+                                        "column_number": 24,
+                                        "type_def": "Token"
+                                    },
+                                    "type": null,
+                                    "type_def": "NameExpression"
+                                },
+                                "right_expression": {
+                                    "token": {
+                                        "literal": "*",
+                                        "internal_type": "STAR",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "file_name": "test30.ap",
+                                        "file_path": null,
+                                        "line_number": 6,
+                                        "column_number": 35,
+                                        "type_def": "Token"
+                                    },
+                                    "left_expression": {
+                                        "token": {
+                                            "literal": "/",
+                                            "internal_type": "SLASH",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "file_name": "test30.ap",
+                                            "file_path": null,
+                                            "line_number": 6,
+                                            "column_number": 30,
+                                            "type_def": "Token"
+                                        },
+                                        "left_expression": {
+                                            "token": {
+                                                "literal": "b",
+                                                "internal_type": "IDENTIFIER",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test30.ap",
+                                                "file_path": null,
+                                                "line_number": 6,
+                                                "column_number": 28,
+                                                "type_def": "Token"
+                                            },
+                                            "type": null,
+                                            "type_def": "NameExpression"
+                                        },
+                                        "right_expression": {
+                                            "token": {
+                                                "literal": "14",
+                                                "internal_type": "INT",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test30.ap",
+                                                "file_path": null,
+                                                "line_number": 6,
+                                                "column_number": 32,
+                                                "type_def": "Token"
+                                            },
+                                            "type": null,
+                                            "type_def": "NameExpression"
+                                        },
+                                        "type": null,
+                                        "type_def": "OperatorExpression"
+                                    },
+                                    "right_expression": {
+                                        "token": {
+                                            "literal": "-",
+                                            "internal_type": "MINUS",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "file_name": "test30.ap",
+                                            "file_path": null,
+                                            "line_number": 6,
+                                            "column_number": 42,
+                                            "type_def": "Token"
+                                        },
+                                        "left_expression": {
+                                            "token": {
+                                                "literal": "11",
+                                                "internal_type": "INT",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test30.ap",
+                                                "file_path": null,
+                                                "line_number": 6,
+                                                "column_number": 39,
+                                                "type_def": "Token"
+                                            },
+                                            "type": null,
+                                            "type_def": "NameExpression"
+                                        },
+                                        "right_expression": {
+                                            "token": {
+                                                "literal": "16",
+                                                "internal_type": "INT",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test30.ap",
+                                                "file_path": null,
+                                                "line_number": 6,
+                                                "column_number": 43,
+                                                "type_def": "Token"
+                                            },
+                                            "type": null,
+                                            "type_def": "NameExpression"
+                                        },
+                                        "type": null,
+                                        "type_def": "OperatorExpression"
+                                    },
+                                    "type": null,
+                                    "type_def": "OperatorExpression"
+                                },
+                                "type": null,
+                                "type_def": "OperatorExpression"
+                            },
+                            "type": null,
+                            "type_def": "OperatorExpression"
+                        },
+                        {
+                            "token": {
+                                "literal": ":",
+                                "internal_type": "COLON",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "file_name": "test30.ap",
+                                "file_path": null,
+                                "line_number": 7,
+                                "column_number": 16,
+                                "type_def": "Token"
+                            },
+                            "left_expression": {
+                                "token": {
+                                    "literal": "\"test\"",
+                                    "internal_type": "STRING",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test30.ap",
+                                    "file_path": null,
+                                    "line_number": 7,
+                                    "column_number": 9,
+                                    "type_def": "Token"
+                                },
+                                "type": null,
+                                "type_def": "NameExpression"
+                            },
+                            "right_expression": {
+                                "left_type": "LEFT_BRACE",
+                                "expression_array": [
+                                    {
+                                        "token": {
+                                            "literal": ":",
+                                            "internal_type": "COLON",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "file_name": "test30.ap",
+                                            "file_path": null,
+                                            "line_number": 8,
+                                            "column_number": 23,
+                                            "type_def": "Token"
+                                        },
+                                        "left_expression": {
+                                            "token": {
+                                                "literal": "\"subtest\"",
+                                                "internal_type": "STRING",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test30.ap",
+                                                "file_path": null,
+                                                "line_number": 8,
+                                                "column_number": 13,
+                                                "type_def": "Token"
+                                            },
+                                            "type": null,
+                                            "type_def": "NameExpression"
+                                        },
+                                        "right_expression": {
+                                            "left_type": "LEFT_BRACKET",
+                                            "expression_array": [
+                                                {
+                                                    "token": {
+                                                        "literal": "\"item1\"",
+                                                        "internal_type": "STRING",
+                                                        "instance_type": "UNKNOWN_TYPE",
+                                                        "file_name": "test30.ap",
+                                                        "file_path": null,
+                                                        "line_number": 9,
+                                                        "column_number": 17,
+                                                        "type_def": "Token"
+                                                    },
+                                                    "type": null,
+                                                    "type_def": "NameExpression"
+                                                },
+                                                {
+                                                    "left_type": "LEFT_BRACE",
+                                                    "expression_array": [
+                                                        {
+                                                            "token": {
+                                                                "literal": "\"stuff\"",
+                                                                "internal_type": "STRING",
+                                                                "instance_type": "UNKNOWN_TYPE",
+                                                                "file_name": "test30.ap",
+                                                                "file_path": null,
+                                                                "line_number": 11,
+                                                                "column_number": 21,
+                                                                "type_def": "Token"
+                                                            },
+                                                            "type": null,
+                                                            "type_def": "NameExpression"
+                                                        },
+                                                        {
+                                                            "token": {
+                                                                "literal": "\"inaset\"",
+                                                                "internal_type": "STRING",
+                                                                "instance_type": "UNKNOWN_TYPE",
+                                                                "file_name": "test30.ap",
+                                                                "file_path": null,
+                                                                "line_number": 11,
+                                                                "column_number": 30,
+                                                                "type_def": "Token"
+                                                            },
+                                                            "type": null,
+                                                            "type_def": "NameExpression"
+                                                        },
+                                                        {
+                                                            "token": {
+                                                                "literal": "\"in a set\"",
+                                                                "internal_type": "STRING",
+                                                                "instance_type": "UNKNOWN_TYPE",
+                                                                "file_name": "test30.ap",
+                                                                "file_path": null,
+                                                                "line_number": 11,
+                                                                "column_number": 40,
+                                                                "type_def": "Token"
+                                                            },
+                                                            "type": null,
+                                                            "type_def": "NameExpression"
+                                                        }
+                                                    ],
+                                                    "rhs_type": "RIGHT_BRACE",
+                                                    "key_type": null,
+                                                    "value_type": null,
+                                                    "type_def": "CollectionExpression"
+                                                }
+                                            ],
+                                            "rhs_type": "RIGHT_BRACKET",
+                                            "key_type": null,
+                                            "value_type": null,
+                                            "type_def": "CollectionExpression"
+                                        },
+                                        "type": null,
+                                        "type_def": "OperatorExpression"
+                                    }
+                                ],
+                                "rhs_type": "RIGHT_BRACE",
+                                "key_type": null,
+                                "value_type": null,
+                                "type_def": "CollectionExpression"
+                            },
+                            "type": null,
+                            "type_def": "OperatorExpression"
+                        }
+                    ],
+                    "rhs_type": "RIGHT_BRACE",
+                    "key_type": null,
+                    "value_type": null,
+                    "type_def": "CollectionExpression"
+                },
+                "descriptor_token": {
+                    "literal": "let",
+                    "internal_type": "LET",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test30.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "been_analyzed": false,
+                "type_def": "AssignmentStatement"
+            }
+        ],
+        "acyclic_token": null,
+        "inline_token": {
+            "literal": "inline",
+            "internal_type": "INLINE",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test30.ap",
+            "file_path": null,
+            "line_number": 3,
+            "column_number": 1,
+            "type_def": "Token"
+        },
+        "pub_token": {
+            "literal": "pub",
+            "internal_type": "PUB",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test30.ap",
+            "file_path": null,
+            "line_number": 3,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "type_def": "FunctionStatement"
+    }
+]

@@ -1,0 +1,20 @@
+{
+    "enums": [],
+    "unions": [],
+    "functions": [
+        {
+            "name" : "also_exists",
+            "inline": false,
+            "args": [
+                {
+                    "arg1": "int"
+                }
+            ],
+            "return_type": "int"
+        }
+    ],
+    "structs": [],
+    "interfaces": [],
+    "optionals": [],
+    "results": []
+}

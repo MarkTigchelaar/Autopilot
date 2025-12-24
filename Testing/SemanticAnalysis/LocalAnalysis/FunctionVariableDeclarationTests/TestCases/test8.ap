@@ -1,0 +1,18 @@
+fun main() do
+    let a as IntOptional = 0
+    var opt_collection as IntOptCollection = IntOptCollection()
+    if let b = a do
+        let c as int = b
+        let b as int = 0
+    end
+    let d as int = b
+    if let d = a do
+        var ee as int = 0
+    end
+    for var y in opt_collection do
+        var xyz as float = 0.0
+        if true do
+            let y as int = 0
+        end
+    end
+end

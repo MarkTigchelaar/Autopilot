@@ -1,0 +1,12 @@
+
+fun function() do
+    for let a in collection do
+        let b = 6
+        loop
+            if 1 < 2 do
+                a = 10
+                b = 6
+            end
+        end
+    end
+end

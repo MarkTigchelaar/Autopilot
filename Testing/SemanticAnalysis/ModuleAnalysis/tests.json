@@ -1,0 +1,296 @@
+[
+    {
+        "main_module_path": "Case1",
+        "errors" : []
+    },
+    {
+        "main_module_path": "Case2",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "second",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second_file.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 41,
+                    "type_def": "Token"
+                },
+                "message": "import of module of same name detected, other modules are only allowed to be imported once in a module",
+                "shadowed_token": {
+                    "literal": "second",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 35,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case3",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "other_function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second_file.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 21,
+                    "type_def": "Token"
+                },
+                "message": "item in import matches name of other item also being imported",
+                "shadowed_token": {
+                    "literal": "other_function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case4",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "second",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second_file.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 6,
+                    "type_def": "Token"
+                },
+                "message": "item in module collides with another item in same module",
+                "shadowed_token": {
+                    "literal": "second",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case5",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "other_function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import matches name of another item in module",
+                "shadowed_token": {
+                    "literal": "other_function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 10,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case6",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "other_function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import matches name of another item in module",
+                "shadowed_token": {
+                    "literal": "other_function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 12,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "main",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 35,
+                    "type_def": "Token"
+                },
+                "message": "imported module name matches name of current module",
+                "shadowed_token": {
+                    "literal": "main",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case7",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "some_thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 18,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "method name collides with module item",
+                "shadowed_token": {
+                    "literal": "some_thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 6,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "other_thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 15,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "field name collides with module item",
+                "shadowed_token": {
+                    "literal": "other_thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 9,
+                    "column_number": 7,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "import_thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 16,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "field name collides with import item",
+                "shadowed_token": {
+                    "literal": "import_thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "other_import_thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 22,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "method name collides with import item",
+                "shadowed_token": {
+                    "literal": "other_import_thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 22,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

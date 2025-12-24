@@ -1,0 +1,109 @@
+fun function() int do
+  if true do
+    for i0 in 1 .. 10 do
+      unless true do
+        unless true do
+          if true do
+            let aa1 as char = 'a'
+            switch aa1
+            case 'a' do
+              let a2 as int = 10
+            case 'b' do
+              let a3 as int = 10
+            default
+              let a4 as int = 10
+            end
+            return 0
+          elif true do
+            let aa5 as char = 'a'
+            switch aa5
+            case 'a' do
+              let a6 as int = 10
+            case 'b' do
+              let a7 as int = 10
+            default
+              let a8 as int = 10
+            end
+            return 0
+          else
+            let aa9 as char = 'a'
+            switch aa9
+            case 'a' do
+              let a10 as int = 10
+            case 'b' do
+              let a11 as int = 10
+            default
+              let a12 as int = 10
+            end
+            return 0
+          end
+          return 0
+        end
+        return 0
+      end
+    end
+    return 0
+  elif true do
+    unless true do
+      unless true do
+        if true do
+          let aa13 as char = 'a'
+          switch aa13
+          case 'a' do
+            for i14 in 1 .. 10 do
+              let a15 as int = 10
+            end
+            return 0
+          case 'b' do
+            for i16 in 1 .. 10 do
+              let a17 as int = 10
+            end
+            return 0
+          default
+            for i18 in 1 .. 10 do
+              let a19 as int = 10
+            end
+            return 0
+          end
+          return 0
+        elif true do
+          for i20 in 1 .. 10 do
+            let aa21 as char = 'a'
+            switch aa21
+            case 'a' do
+              let a22 as int = 10
+            case 'b' do
+              let a23 as int = 10
+            default
+              let a24 as int = 10
+            end
+            return 0
+          end
+          return 0
+        else
+          let aa25 as char = 'a'
+          switch aa25
+          case 'a' do
+            for i26 in 1 .. 10 do
+              let a27 as int = 10
+            end
+            return 0
+          case 'b' do
+            for i28 in 1 .. 10 do
+              let a29 as int = 10
+            end
+            return 0
+          default
+            for i30 in 1 .. 10 do
+              let a31 as int = 10
+            end
+            return 0
+          end
+          return 0
+        end
+        return 0
+      end
+      return 0
+    end
+  end
+end

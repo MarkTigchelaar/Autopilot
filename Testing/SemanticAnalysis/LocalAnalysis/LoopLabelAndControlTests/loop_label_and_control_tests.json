@@ -1,0 +1,168 @@
+[
+    {
+        "file_name" : "test1.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "loop_one",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test1.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 32,
+                    "type_def": "Token"
+                },
+                "message": "duplicate loop name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name" : "test2.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "break",
+                    "internal_type": "BREAK",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "break statement only valid inside loops",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name" : "test3.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "continue",
+                    "internal_type": "CONTINUE",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test3.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "continue statement only valid inside loops",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name" : "test4.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "test",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test4.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 15,
+                    "type_def": "Token"
+                },
+                "message": "loop label not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name" : "test5.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "break",
+                    "internal_type": "BREAK",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test5.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "break statement only valid inside loops",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "test",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test5.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 15,
+                    "type_def": "Token"
+                },
+                "message": "loop label not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name" : "test6.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "break",
+                    "internal_type": "BREAK",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "break statement only valid inside loops",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "test",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 15,
+                    "type_def": "Token"
+                },
+                "message": "loop label not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

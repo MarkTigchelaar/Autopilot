@@ -1,0 +1,9 @@
+module second
+
+import this_doesnt_exist from library system
+
+import this_does_exist from library built_in
+
+pub struct exists is
+    field as int
+end

@@ -1,0 +1,1236 @@
+[
+    {
+        "file_name": "test1.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test1.txt",
+                    "line_number": 1,
+                    "column_number": 3
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test2.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test2.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test3.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test3.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test4.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test4.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test5.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test5.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test6.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test6.txt",
+                    "line_number": 1,
+                    "column_number": 8
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test7.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test7.txt",
+                    "line_number": 1,
+                    "column_number": 10
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test8.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test8.txt",
+                    "line_number": 1,
+                    "column_number": 10
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test9.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test9.txt",
+                    "line_number": 1,
+                    "column_number": 10
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test10.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test10.txt",
+                    "line_number": 1,
+                    "column_number": 10
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test11.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test11.txt",
+                    "line_number": 1,
+                    "column_number": 10
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test12.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test12.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test13.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test13.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test14.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test14.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test15.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test15.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test16.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test16.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test17.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test17.txt",
+                    "line_number": 1,
+                    "column_number": 14
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test18.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test18.txt",
+                    "line_number": 1,
+                    "column_number": 14
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test19.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test19.txt",
+                    "line_number": 1,
+                    "column_number": 14
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test20.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test20.txt",
+                    "line_number": 1,
+                    "column_number": 14
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test21.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test21.txt",
+                    "line_number": 1,
+                    "column_number": 15
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test22.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test22.txt",
+                    "line_number": 1,
+                    "column_number": 17
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test23.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test23.txt",
+                    "line_number": 1,
+                    "column_number": 17
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test24.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test24.txt",
+                    "line_number": 1,
+                    "column_number": 17
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test25.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test25.txt",
+                    "line_number": 1,
+                    "column_number": 17
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test26.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test26.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test27.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test27.txt",
+                    "line_number": 1,
+                    "column_number": 23
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test28.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test28.txt",
+                    "line_number": 1,
+                    "column_number": 23
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test29.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test29.txt",
+                    "line_number": 1,
+                    "column_number": 23
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test30.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test30.txt",
+                    "line_number": 1,
+                    "column_number": 23
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test31.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test31.txt",
+                    "line_number": 1,
+                    "column_number": 22
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test32.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test32.txt",
+                    "line_number": 1,
+                    "column_number": 24
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test33.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test33.txt",
+                    "line_number": 1,
+                    "column_number": 24
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test34.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test34.txt",
+                    "line_number": 1,
+                    "column_number": 24
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test35.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test35.txt",
+                    "line_number": 1,
+                    "column_number": 24
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test36.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test36.txt",
+                    "line_number": 1,
+                    "column_number": 23
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test37.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test37.txt",
+                    "line_number": 1,
+                    "column_number": 25
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test38.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test38.txt",
+                    "line_number": 1,
+                    "column_number": 28
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test39.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test39.txt",
+                    "line_number": 1,
+                    "column_number": 30
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test40.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test40.txt",
+                    "line_number": 1,
+                    "column_number": 27
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test41.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test41.txt",
+                    "line_number": 1,
+                    "column_number": 28
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test42.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test42.txt",
+                    "line_number": 1,
+                    "column_number": 29
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test43.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test43.txt",
+                    "line_number": 1,
+                    "column_number": 29
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test44.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test44.txt",
+                    "line_number": 1,
+                    "column_number": 29
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test45.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test45.txt",
+                    "line_number": 1,
+                    "column_number": 29
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test46.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test46.txt",
+                    "line_number": 1,
+                    "column_number": 29
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test47.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test47.txt",
+                    "line_number": 1,
+                    "column_number": 22
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test48.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test48.txt",
+                    "line_number": 1,
+                    "column_number": 11
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test49.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test49.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test50.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test50.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test51.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test51.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test52.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test52.txt",
+                    "line_number": 1,
+                    "column_number": 12
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test53.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test53.txt",
+                    "line_number": 1,
+                    "column_number": 16
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test54.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test54.txt",
+                    "line_number": 1,
+                    "column_number": 18
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test55.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test55.txt",
+                    "line_number": 1,
+                    "column_number": 18
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test56.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test56.txt",
+                    "line_number": 1,
+                    "column_number": 18
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test57.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test57.txt",
+                    "line_number": 1,
+                    "column_number": 18
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test58.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test58.txt",
+                    "line_number": 1,
+                    "column_number": 13
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test59.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test59.txt",
+                    "line_number": 1,
+                    "column_number": 19
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test60.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test60.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test61.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test61.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test62.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test62.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test63.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test63.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test64.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "EOF",
+                    "literal": "",
+                    "file_name": "test64.txt",
+                    "line_number": 1,
+                    "column_number": 20
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test65.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FUN",
+                    "literal": "fun",
+                    "file_name": "test65.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test66.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "FLOAT",
+                    "literal": "3.14",
+                    "file_name": "test66.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test67.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "STRING",
+                    "literal": "\"test\"",
+                    "file_name": "test67.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test68.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "CHAR",
+                    "literal": "'t'",
+                    "file_name": "test68.txt",
+                    "line_number": 1,
+                    "column_number": 21
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test69.txt",
+        "errors": null,
+        "ast_file": "test69.json"
+    },
+    {
+        "file_name": "test70.txt",
+        "errors": null,
+        "ast_file": "test70.json"
+    }
+]

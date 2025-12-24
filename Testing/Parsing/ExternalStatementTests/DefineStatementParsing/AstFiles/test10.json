@@ -1,0 +1,33 @@
+{
+    "type_variant_token": {
+        "literal": "List",
+        "file_name": "test10.txt",
+        "line_number": 1,
+        "column_number": 8,
+        "internal_type": "LIST",
+        "instance_type": "UNKNOWN_TYPE",
+        "type_def": "Token",
+        "file_path": null
+    },
+    "value_token": {
+        "literal": "float",
+        "file_name": "test10.txt",
+        "line_number": 1,
+        "column_number": 13,
+        "internal_type": "FLOAT",
+        "instance_type": "UNKNOWN_TYPE",
+        "type_def": "Token",
+        "file_path": null
+    },
+    "new_name_token": {
+        "literal": "new",
+        "file_name": "test10.txt",
+        "line_number": 1,
+        "column_number": 23,
+        "internal_type": "IDENTIFIER",
+        "instance_type": "UNKNOWN_TYPE",
+        "type_def": "Token",
+        "file_path": null
+    },
+    "type_def": "ListType"
+}

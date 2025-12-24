@@ -1,0 +1,14 @@
+inline fun test() long do
+    loop as myLoop do
+        var i as thingy = 10
+    end
+    loop
+        let b = 0
+    end
+    while true as myLoop2  do
+        let b = 0
+    end
+    while a < b do
+        let b = 0
+    end
+end

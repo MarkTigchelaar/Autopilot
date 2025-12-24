@@ -1,0 +1,583 @@
+[
+    {
+        "file_name": "test1.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test1.txt",
+                    "line_number": 1,
+                    "column_number": 7,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test2.txt",
+        "errors": null,
+        "ast_file": "test2.json"
+    },
+    {
+        "file_name": "test3.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test3.txt",
+                    "line_number": 1,
+                    "column_number": 10,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test4.txt",
+        "errors": null,
+        "ast_file": "test4.json"
+    },
+    {
+        "file_name": "test5.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test5.txt",
+                    "line_number": 3,
+                    "column_number": 1,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test6.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test6.txt",
+                    "line_number": 2,
+                    "column_number": 0,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test7.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test7.txt",
+                    "line_number": 5,
+                    "column_number": 0,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test8.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test8.txt",
+                    "line_number": 7,
+                    "column_number": 1,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test9.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test9.txt",
+                    "line_number": 8,
+                    "column_number": 0,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test10.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test10.txt",
+                    "line_number": 1,
+                    "column_number": 6,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test11.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test11.txt",
+                    "line_number": 9,
+                    "column_number": 20,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test12.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test12.txt",
+                    "line_number": 1,
+                    "column_number": 5,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test13.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "int",
+                    "file_name": "test13.txt",
+                    "line_number": 1,
+                    "column_number": 6,
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "invalid constant or variable",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test14.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test14.txt",
+                    "line_number": 1,
+                    "column_number": 17,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test15.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test15.txt",
+                    "line_number": 1,
+                    "column_number": 3,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test16.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test16.txt",
+                    "line_number": 1,
+                    "column_number": 8,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test17.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "int",
+                    "file_name": "test17.txt",
+                    "line_number": 1,
+                    "column_number": 15,
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "invalid constant or variable",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test18.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test18.txt",
+                    "line_number": 1,
+                    "column_number": 14,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test19.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test19.txt",
+                    "line_number": 1,
+                    "column_number": 19,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test20.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "c",
+                    "file_name": "test20.txt",
+                    "line_number": 6,
+                    "column_number": 1,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test21.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test21.txt",
+                    "line_number": 1,
+                    "column_number": 2,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test22.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test22.txt",
+                    "line_number": 1,
+                    "column_number": 3,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test23.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test23.txt",
+                    "line_number": 1,
+                    "column_number": 3,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test24.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test24.txt",
+                    "line_number": 1,
+                    "column_number": 7,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test25.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "}",
+                    "file_name": "test25.txt",
+                    "line_number": 1,
+                    "column_number": 8,
+                    "internal_type": "RIGHT_BRACE",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test26.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": ")",
+                    "file_name": "test26.txt",
+                    "line_number": 1,
+                    "column_number": 4,
+                    "internal_type": "RIGHT_PAREN",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "unexpected token",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test27.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test27.txt",
+                    "line_number": 1,
+                    "column_number": 5,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test28.txt",
+        "errors": null,
+        "ast_file": "test28.json"
+    },
+    {
+        "file_name": "test29.txt",
+        "errors": [
+            {
+                "token": {
+                    "literal": "",
+                    "file_name": "test29.txt",
+                    "line_number": 1,
+                    "column_number": 8,
+                    "internal_type": "EOF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "message": "end of file reached",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test30.txt",
+        "errors": null,
+        "ast_file": "test30.json"
+    },
+    {
+        "file_name": "test31.txt",
+        "errors": null,
+        "ast_file": "test31.json"
+    },
+    {
+        "file_name": "test32.txt",
+        "errors": null,
+        "ast_file": "test32.json"
+    },
+    {
+        "file_name": "test33.txt",
+        "errors": null,
+        "ast_file": "test33.json"
+    }
+]

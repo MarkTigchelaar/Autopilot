@@ -1,0 +1,9 @@
+module module_two
+
+import a from module main
+
+/*
+struct thing_a as
+    b as int
+end
+*/

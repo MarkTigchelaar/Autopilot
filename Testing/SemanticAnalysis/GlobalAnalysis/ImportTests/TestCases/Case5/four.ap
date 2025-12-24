@@ -1,0 +1,5 @@
+module four
+
+pub fun function() int do
+    return 1
+end

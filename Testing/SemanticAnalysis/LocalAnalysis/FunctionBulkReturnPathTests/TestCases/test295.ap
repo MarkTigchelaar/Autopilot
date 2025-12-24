@@ -1,0 +1,24 @@
+pub fun function() int do
+  loop
+    unless true do
+      let aa0 as char = 'a'
+      switch aa0
+      case 'a' do
+        if true do
+          let a1 as int = 10
+        end
+      case 'b' do
+        if true do
+          let a2 as int = 10
+        end
+      default
+        if true do
+          let a3 as int = 10
+        end
+      end
+      return 0
+    end
+    return 0
+  end
+  return 0
+end

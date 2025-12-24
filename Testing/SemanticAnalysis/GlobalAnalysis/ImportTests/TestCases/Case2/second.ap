@@ -1,0 +1,10 @@
+module second
+
+
+pub enum duplicates_exist is
+    a = 1
+end
+
+pub enum duplicates_exist is
+    a = 1
+end

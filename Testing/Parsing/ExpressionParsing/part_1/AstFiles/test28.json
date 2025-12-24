@@ -1,0 +1,80 @@
+{
+    "struct_name_exp": {
+        "token": {
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "literal": "aStruct",
+            "file_name": "test28.txt",
+            "file_path": null,
+            "line_number": 1,
+            "column_number": 1,
+            "type_def": "Token"
+        },
+        "type_def": "NameExpression"
+    },
+    "argument_list": [
+        {
+            "fn_name_exp": {
+                "token": {
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "method",
+                    "file_name": "test28.txt",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "type_def": "NameExpression"
+            },
+            "argument_list": [
+                {
+                    "token": {
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "a",
+                        "file_name": "test28.txt",
+                        "file_path": null,
+                        "line_number": 1,
+                        "column_number": 16,
+                        "type_def": "Token"
+                    },
+                    "type_def": "NameExpression"
+                }
+            ],
+            "type_def": "FunctionCallExpression"
+        },
+        {
+            "fn_name_exp": {
+                "token": {
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "methodb",
+                    "file_name": "test28.txt",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 19,
+                    "type_def": "Token"
+                },
+                "type_def": "NameExpression"
+            },
+            "argument_list": [
+                {
+                    "token": {
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "b",
+                        "file_name": "test28.txt",
+                        "file_path": null,
+                        "line_number": 1,
+                        "column_number": 27,
+                        "type_def": "Token"
+                    },
+                    "type_def": "NameExpression"
+                }
+            ],
+            "type_def": "FunctionCallExpression"
+        }
+    ],
+    "type_def": "MethodCallOrFieldExpression"
+}

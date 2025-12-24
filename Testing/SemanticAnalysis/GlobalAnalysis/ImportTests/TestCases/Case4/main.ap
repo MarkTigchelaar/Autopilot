@@ -1,0 +1,7 @@
+module main
+
+import does_exist from module second
+
+fun main() do
+    let i as string = "hello"
+end

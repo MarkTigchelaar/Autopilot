@@ -1,0 +1,134 @@
+[
+    {
+        "file_name": "test1.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "functionA",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test1.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "function name matches previous function name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test2.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "test",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "function name matches interface name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test3.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "second",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test3.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                "message": "function argument name matches function name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test4.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "c",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test4.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                "message": "function argument name matches previous function argument name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test5.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "test",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test5.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                "message": "function argument name matches interface name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test6.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "functionA",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                "message": "function argument name matches previous function name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

@@ -1,0 +1,9 @@
+module second
+
+pub error import_thing is
+    one, two
+end
+
+pub error other_import_thing is
+    three, four
+end

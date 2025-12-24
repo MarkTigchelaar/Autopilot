@@ -1,0 +1,9 @@
+fun function() int do
+    let a as int = 4
+    switch a
+        case 9 do
+           return 1
+        default
+          var c as int = 4
+    end
+end

@@ -1,0 +1,7 @@
+module main
+
+import does_not_exist from module tea
+
+fun main() do
+    let i as string = "hello"
+end

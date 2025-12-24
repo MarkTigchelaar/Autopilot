@@ -1,0 +1,673 @@
+[
+    {
+        "statements": [
+            {
+                "test_expression": {
+                    "token": {
+                        "literal": "true",
+                        "internal_type": "TRUE",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "test29.ap",
+                        "file_path": null,
+                        "line_number": 2,
+                        "column_number": 11,
+                        "type_def": "Token"
+                    },
+                    "type": null,
+                    "type_def": "NameExpression"
+                },
+                "loop_name": {
+                    "literal": "thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test29.ap",
+                    "file_path": null,
+                    "line_number": 2,
+                    "column_number": 19,
+                    "type_def": "Token"
+                },
+                "statements": [
+                    {
+                        "method_call": {
+                            "l_value_exp": {
+                                "fn_name_exp": {
+                                    "token": {
+                                        "literal": "athing",
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "file_name": "test29.ap",
+                                        "file_path": null,
+                                        "line_number": 3,
+                                        "column_number": 15,
+                                        "type_def": "Token"
+                                    },
+                                    "type": null,
+                                    "type_def": "NameExpression"
+                                },
+                                "argument_list": [],
+                                "type_def": "FunctionCallExpression"
+                            },
+                            "assignment_token": null,
+                            "r_value_exp": null,
+                            "descriptor_token": {
+                                "literal": "athing",
+                                "internal_type": "IDENTIFIER",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "file_name": "test29.ap",
+                                "file_path": null,
+                                "line_number": 3,
+                                "column_number": 15,
+                                "type_def": "Token"
+                            },
+                            "type_def": "ReassignmentOrMethodCall"
+                        },
+                        "descriptor_token": {
+                            "literal": "defer",
+                            "internal_type": "DEFER",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test29.ap",
+                            "file_path": null,
+                            "line_number": 3,
+                            "column_number": 9,
+                            "type_def": "Token"
+                        },
+                        "type_def": "DeferStatement"
+                    },
+                    {
+                        "test_expression": {
+                            "token": {
+                                "literal": "true",
+                                "internal_type": "TRUE",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "file_name": "test29.ap",
+                                "file_path": null,
+                                "line_number": 4,
+                                "column_number": 12,
+                                "type_def": "Token"
+                            },
+                            "type": null,
+                            "type_def": "NameExpression"
+                        },
+                        "optional_assignment_type": null,
+                        "unwrapped_optional_variable_name": null,
+                        "optional_variable_name": null,
+                        "statements": [
+                            {
+                                "descriptor_token": {
+                                    "literal": "continue",
+                                    "internal_type": "CONTINUE",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test29.ap",
+                                    "file_path": null,
+                                    "line_number": 5,
+                                    "column_number": 13,
+                                    "type_def": "Token"
+                                },
+                                "type_def": "ContinueStatement"
+                            }
+                        ],
+                        "next_statement_in_block": {
+                            "test_expression": {
+                                "token": {
+                                    "literal": "true",
+                                    "internal_type": "TRUE",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test29.ap",
+                                    "file_path": null,
+                                    "line_number": 6,
+                                    "column_number": 14,
+                                    "type_def": "Token"
+                                },
+                                "type": null,
+                                "type_def": "NameExpression"
+                            },
+                            "optional_assignment_type": null,
+                            "unwrapped_optional_variable_name": null,
+                            "optional_variable_name": null,
+                            "statements": [
+                                {
+                                    "expression": null,
+                                    "descriptor_token": {
+                                        "literal": "return",
+                                        "internal_type": "RETURN",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "file_name": "test29.ap",
+                                        "file_path": null,
+                                        "line_number": 7,
+                                        "column_number": 13,
+                                        "type_def": "Token"
+                                    },
+                                    "type_def": "ReturnStatement"
+                                }
+                            ],
+                            "next_statement_in_block": {
+                                "statements": [
+                                    {
+                                        "label_name_token": null,
+                                        "descriptor_token": {
+                                            "literal": "break",
+                                            "internal_type": "BREAK",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "file_name": "test29.ap",
+                                            "file_path": null,
+                                            "line_number": 9,
+                                            "column_number": 13,
+                                            "type_def": "Token"
+                                        },
+                                        "type_def": "BreakStatement"
+                                    }
+                                ],
+                                "descriptor_token": {
+                                    "literal": "else",
+                                    "internal_type": "ELSE",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test29.ap",
+                                    "file_path": null,
+                                    "line_number": 8,
+                                    "column_number": 9,
+                                    "type_def": "Token"
+                                },
+                                "next_statement_in_block": null,
+                                "type_def": "ElseStatement"
+                            },
+                            "descriptor_token": {
+                                "literal": "elif",
+                                "internal_type": "ELIF",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "file_name": "test29.ap",
+                                "file_path": null,
+                                "line_number": 6,
+                                "column_number": 9,
+                                "type_def": "Token"
+                            },
+                            "type_def": "ElifStatement"
+                        },
+                        "descriptor_token": {
+                            "literal": "if",
+                            "internal_type": "IF",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test29.ap",
+                            "file_path": null,
+                            "line_number": 4,
+                            "column_number": 9,
+                            "type_def": "Token"
+                        },
+                        "type_def": "IfStatement"
+                    },
+                    {
+                        "optional_assignment_type": null,
+                        "unwrapped_optional_variable_name": null,
+                        "second_unwrapped_optional_variable_name": null,
+                        "optional_collection_name": null,
+                        "collection_name": null,
+                        "index_or_key_name_token": {
+                            "literal": "i",
+                            "internal_type": "IDENTIFIER",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test29.ap",
+                            "file_path": null,
+                            "line_number": 11,
+                            "column_number": 13,
+                            "type_def": "Token"
+                        },
+                        "map_value_name_token": null,
+                        "index_start_name": {
+                            "literal": "1",
+                            "internal_type": "INT",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test29.ap",
+                            "file_path": null,
+                            "line_number": 11,
+                            "column_number": 18,
+                            "type_def": "Token"
+                        },
+                        "index_stop_name": {
+                            "literal": "10",
+                            "internal_type": "INT",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test29.ap",
+                            "file_path": null,
+                            "line_number": 11,
+                            "column_number": 23,
+                            "type_def": "Token"
+                        },
+                        "iter_size": {
+                            "literal": "5",
+                            "internal_type": "INT",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test29.ap",
+                            "file_path": null,
+                            "line_number": 11,
+                            "column_number": 27,
+                            "type_def": "Token"
+                        },
+                        "loop_name": {
+                            "literal": "loopy_loop",
+                            "internal_type": "IDENTIFIER",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test29.ap",
+                            "file_path": null,
+                            "line_number": 11,
+                            "column_number": 32,
+                            "type_def": "Token"
+                        },
+                        "statements": [
+                            {
+                                "test_expression": {
+                                    "token": {
+                                        "literal": "some_var",
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "file_name": "test29.ap",
+                                        "file_path": null,
+                                        "line_number": 12,
+                                        "column_number": 20,
+                                        "type_def": "Token"
+                                    },
+                                    "type": null,
+                                    "type_def": "NameExpression"
+                                },
+                                "case_statements": [
+                                    {
+                                        "values": [
+                                            {
+                                                "value": {
+                                                    "literal": "1",
+                                                    "internal_type": "INT",
+                                                    "instance_type": "UNKNOWN_TYPE",
+                                                    "file_name": "test29.ap",
+                                                    "file_path": null,
+                                                    "line_number": 13,
+                                                    "column_number": 18,
+                                                    "type_def": "Token"
+                                                },
+                                                "minus_sign": null,
+                                                "type_def": "CaseValue"
+                                            }
+                                        ],
+                                        "typed_values": [],
+                                        "enum_references": [],
+                                        "statements": [
+                                            {
+                                                "let_or_var_token": {
+                                                    "literal": "let",
+                                                    "internal_type": "LET",
+                                                    "instance_type": "UNKNOWN_TYPE",
+                                                    "file_name": "test29.ap",
+                                                    "file_path": null,
+                                                    "line_number": 14,
+                                                    "column_number": 17,
+                                                    "type_def": "Token"
+                                                },
+                                                "name_token": {
+                                                    "literal": "a",
+                                                    "internal_type": "IDENTIFIER",
+                                                    "instance_type": "UNKNOWN_TYPE",
+                                                    "file_name": "test29.ap",
+                                                    "file_path": null,
+                                                    "line_number": 14,
+                                                    "column_number": 21,
+                                                    "type_def": "Token"
+                                                },
+                                                "type_token": {
+                                                    "literal": "int",
+                                                    "internal_type": "INT",
+                                                    "instance_type": "UNKNOWN_TYPE",
+                                                    "file_name": "test29.ap",
+                                                    "file_path": null,
+                                                    "line_number": 14,
+                                                    "column_number": 26,
+                                                    "type_def": "Token"
+                                                },
+                                                "exp_ast": {
+                                                    "token": {
+                                                        "literal": "0",
+                                                        "internal_type": "INT",
+                                                        "instance_type": "UNKNOWN_TYPE",
+                                                        "file_name": "test29.ap",
+                                                        "file_path": null,
+                                                        "line_number": 14,
+                                                        "column_number": 32,
+                                                        "type_def": "Token"
+                                                    },
+                                                    "type": null,
+                                                    "type_def": "NameExpression"
+                                                },
+                                                "descriptor_token": {
+                                                    "literal": "let",
+                                                    "internal_type": "LET",
+                                                    "instance_type": "UNKNOWN_TYPE",
+                                                    "file_name": "test29.ap",
+                                                    "file_path": null,
+                                                    "line_number": 14,
+                                                    "column_number": 17,
+                                                    "type_def": "Token"
+                                                },
+                                                "been_analyzed": false,
+                                                "type_def": "AssignmentStatement"
+                                            }
+                                        ],
+                                        "descriptor_token": {
+                                            "literal": "case",
+                                            "internal_type": "CASE",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "file_name": "test29.ap",
+                                            "file_path": null,
+                                            "line_number": 13,
+                                            "column_number": 13,
+                                            "type_def": "Token"
+                                        },
+                                        "type_def": "CaseStatement"
+                                    }
+                                ],
+                                "default_case": {
+                                    "values": [],
+                                    "typed_values": [],
+                                    "enum_references": [],
+                                    "statements": [
+                                        {
+                                            "loop_name": {
+                                                "literal": "named_loop",
+                                                "internal_type": "IDENTIFIER",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test29.ap",
+                                                "file_path": null,
+                                                "line_number": 16,
+                                                "column_number": 25,
+                                                "type_def": "Token"
+                                            },
+                                            "statements": [
+                                                {
+                                                    "l_value_exp": {
+                                                        "struct_name_exp": {
+                                                            "token": {
+                                                                "literal": "some_struct",
+                                                                "internal_type": "IDENTIFIER",
+                                                                "instance_type": "UNKNOWN_TYPE",
+                                                                "file_name": "test29.ap",
+                                                                "file_path": null,
+                                                                "line_number": 17,
+                                                                "column_number": 21,
+                                                                "type_def": "Token"
+                                                            },
+                                                            "type": null,
+                                                            "type_def": "NameExpression"
+                                                        },
+                                                        "argument_list": [
+                                                            {
+                                                                "collection_name_exp": {
+                                                                    "token": {
+                                                                        "literal": "field",
+                                                                        "internal_type": "IDENTIFIER",
+                                                                        "instance_type": "UNKNOWN_TYPE",
+                                                                        "file_name": "test29.ap",
+                                                                        "file_path": null,
+                                                                        "line_number": 17,
+                                                                        "column_number": 33,
+                                                                        "type_def": "Token"
+                                                                    },
+                                                                    "type": null,
+                                                                    "type_def": "NameExpression"
+                                                                },
+                                                                "argument_list": [
+                                                                    {
+                                                                        "token": {
+                                                                            "literal": "i",
+                                                                            "internal_type": "IDENTIFIER",
+                                                                            "instance_type": "UNKNOWN_TYPE",
+                                                                            "file_name": "test29.ap",
+                                                                            "file_path": null,
+                                                                            "line_number": 17,
+                                                                            "column_number": 39,
+                                                                            "type_def": "Token"
+                                                                        },
+                                                                        "type": null,
+                                                                        "type_def": "NameExpression"
+                                                                    }
+                                                                ],
+                                                                "type_def": "CollectionAccessExpression"
+                                                            },
+                                                            {
+                                                                "fn_name_exp": {
+                                                                    "token": {
+                                                                        "literal": "method",
+                                                                        "internal_type": "IDENTIFIER",
+                                                                        "instance_type": "UNKNOWN_TYPE",
+                                                                        "file_name": "test29.ap",
+                                                                        "file_path": null,
+                                                                        "line_number": 17,
+                                                                        "column_number": 42,
+                                                                        "type_def": "Token"
+                                                                    },
+                                                                    "type": null,
+                                                                    "type_def": "NameExpression"
+                                                                },
+                                                                "argument_list": [],
+                                                                "type_def": "FunctionCallExpression"
+                                                            },
+                                                            {
+                                                                "fn_name_exp": {
+                                                                    "token": {
+                                                                        "literal": "method",
+                                                                        "internal_type": "IDENTIFIER",
+                                                                        "instance_type": "UNKNOWN_TYPE",
+                                                                        "file_name": "test29.ap",
+                                                                        "file_path": null,
+                                                                        "line_number": 17,
+                                                                        "column_number": 51,
+                                                                        "type_def": "Token"
+                                                                    },
+                                                                    "type": null,
+                                                                    "type_def": "NameExpression"
+                                                                },
+                                                                "argument_list": [
+                                                                    {
+                                                                        "token": {
+                                                                            "literal": "1",
+                                                                            "internal_type": "INT",
+                                                                            "instance_type": "UNKNOWN_TYPE",
+                                                                            "file_name": "test29.ap",
+                                                                            "file_path": null,
+                                                                            "line_number": 17,
+                                                                            "column_number": 58,
+                                                                            "type_def": "Token"
+                                                                        },
+                                                                        "type": null,
+                                                                        "type_def": "NameExpression"
+                                                                    },
+                                                                    {
+                                                                        "token": {
+                                                                            "literal": "2",
+                                                                            "internal_type": "INT",
+                                                                            "instance_type": "UNKNOWN_TYPE",
+                                                                            "file_name": "test29.ap",
+                                                                            "file_path": null,
+                                                                            "line_number": 17,
+                                                                            "column_number": 60,
+                                                                            "type_def": "Token"
+                                                                        },
+                                                                        "type": null,
+                                                                        "type_def": "NameExpression"
+                                                                    },
+                                                                    {
+                                                                        "token": {
+                                                                            "literal": "3",
+                                                                            "internal_type": "INT",
+                                                                            "instance_type": "UNKNOWN_TYPE",
+                                                                            "file_name": "test29.ap",
+                                                                            "file_path": null,
+                                                                            "line_number": 17,
+                                                                            "column_number": 62,
+                                                                            "type_def": "Token"
+                                                                        },
+                                                                        "type": null,
+                                                                        "type_def": "NameExpression"
+                                                                    }
+                                                                ],
+                                                                "type_def": "FunctionCallExpression"
+                                                            }
+                                                        ],
+                                                        "type_def": "MethodCallOrFieldExpression"
+                                                    },
+                                                    "assignment_token": null,
+                                                    "r_value_exp": null,
+                                                    "descriptor_token": {
+                                                        "literal": "some_struct",
+                                                        "internal_type": "IDENTIFIER",
+                                                        "instance_type": "UNKNOWN_TYPE",
+                                                        "file_name": "test29.ap",
+                                                        "file_path": null,
+                                                        "line_number": 17,
+                                                        "column_number": 21,
+                                                        "type_def": "Token"
+                                                    },
+                                                    "type_def": "ReassignmentOrMethodCall"
+                                                },
+                                                {
+                                                    "test_expression": {
+                                                        "token": {
+                                                            "literal": "true",
+                                                            "internal_type": "TRUE",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test29.ap",
+                                                            "file_path": null,
+                                                            "line_number": 18,
+                                                            "column_number": 24,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "type": null,
+                                                        "type_def": "NameExpression"
+                                                    },
+                                                    "optional_assignment_type": null,
+                                                    "unwrapped_optional_variable_name": null,
+                                                    "optional_variable_name": null,
+                                                    "statements": [
+                                                        {
+                                                            "label_name_token": {
+                                                                "literal": "loopy_loop",
+                                                                "internal_type": "IDENTIFIER",
+                                                                "instance_type": "UNKNOWN_TYPE",
+                                                                "file_name": "test29.ap",
+                                                                "file_path": null,
+                                                                "line_number": 19,
+                                                                "column_number": 31,
+                                                                "type_def": "Token"
+                                                            },
+                                                            "descriptor_token": {
+                                                                "literal": "break",
+                                                                "internal_type": "BREAK",
+                                                                "instance_type": "UNKNOWN_TYPE",
+                                                                "file_name": "test29.ap",
+                                                                "file_path": null,
+                                                                "line_number": 19,
+                                                                "column_number": 25,
+                                                                "type_def": "Token"
+                                                            },
+                                                            "type_def": "BreakStatement"
+                                                        }
+                                                    ],
+                                                    "next_statement_in_block": null,
+                                                    "descriptor_token": {
+                                                        "literal": "if",
+                                                        "internal_type": "IF",
+                                                        "instance_type": "UNKNOWN_TYPE",
+                                                        "file_name": "test29.ap",
+                                                        "file_path": null,
+                                                        "line_number": 18,
+                                                        "column_number": 21,
+                                                        "type_def": "Token"
+                                                    },
+                                                    "type_def": "IfStatement"
+                                                }
+                                            ],
+                                            "descriptor_token": {
+                                                "literal": "loop",
+                                                "internal_type": "LOOP",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test29.ap",
+                                                "file_path": null,
+                                                "line_number": 16,
+                                                "column_number": 17,
+                                                "type_def": "Token"
+                                            },
+                                            "type_def": "LoopStatement"
+                                        },
+                                        {
+                                            "label_name_token": null,
+                                            "descriptor_token": {
+                                                "literal": "break",
+                                                "internal_type": "BREAK",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test29.ap",
+                                                "file_path": null,
+                                                "line_number": 22,
+                                                "column_number": 17,
+                                                "type_def": "Token"
+                                            },
+                                            "type_def": "BreakStatement"
+                                        }
+                                    ],
+                                    "descriptor_token": {
+                                        "literal": "default",
+                                        "internal_type": "DEFAULT",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "file_name": "test29.ap",
+                                        "file_path": null,
+                                        "line_number": 15,
+                                        "column_number": 13,
+                                        "type_def": "Token"
+                                    },
+                                    "type_def": "CaseStatement"
+                                },
+                                "descriptor_token": {
+                                    "literal": "switch",
+                                    "internal_type": "SWITCH",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test29.ap",
+                                    "file_path": null,
+                                    "line_number": 12,
+                                    "column_number": 13,
+                                    "type_def": "Token"
+                                },
+                                "type_def": "SwitchStatement"
+                            }
+                        ],
+                        "descriptor_token": {
+                            "literal": "for",
+                            "internal_type": "FOR",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test29.ap",
+                            "file_path": null,
+                            "line_number": 11,
+                            "column_number": 9,
+                            "type_def": "Token"
+                        },
+                        "type_def": "ForStatement"
+                    }
+                ],
+                "descriptor_token": {
+                    "literal": "while",
+                    "internal_type": "WHILE",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test29.ap",
+                    "file_path": null,
+                    "line_number": 2,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "type_def": "WhileStatement"
+            }
+        ],
+        "name": {
+            "literal": "my_unittest",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test29.ap",
+            "file_path": null,
+            "line_number": 1,
+            "column_number": 10,
+            "type_def": "Token"
+        },
+        "type_def": "UnittestStatement"
+    }
+]

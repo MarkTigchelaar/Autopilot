@@ -1,0 +1,5 @@
+module main
+
+import bstruct from module b
+
+import cstruct from module c

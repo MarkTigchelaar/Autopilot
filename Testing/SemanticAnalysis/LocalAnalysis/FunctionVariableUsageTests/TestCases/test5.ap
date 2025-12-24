@@ -1,0 +1,34 @@
+fun main() do
+    a += 3
+    defer something.method()
+    switch aa
+        case 5 do
+            b += 11
+        case b do
+            c = 0
+        default
+            d = 4
+    end
+    while zz < bb do
+        e = x
+    end
+    loop
+        k = 0
+    end
+    if f + g == h do
+        l = m
+    elif n < o do
+        let p as int = q
+    else
+        r = p // should compain about p
+    end
+    second(t,u)
+    a = b + other(y,z)
+    unless z do
+        a = bb
+    end
+    for k in g .. t, u do
+        a += 1
+    end
+    return f
+end

@@ -1,0 +1,273 @@
+[
+    {
+        "file_name": "test1.ap",
+        "errors": null
+    },
+    {
+        "file_name": "test2.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "this",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "this",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test3.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test3.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test3.ap",
+                    "file_path": null,
+                    "line_number": 2,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test4.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test5.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test6.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 17,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 7,
+                    "column_number": 21,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 7,
+                    "column_number": 21,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 17,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test7.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test7.ap",
+                    "file_path": null,
+                    "line_number": 14,
+                    "column_number": 29,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test7.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test8.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 12,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "d",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 9,
+                    "column_number": 12,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "d",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "y",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 15,
+                    "column_number": 17,
+                    "type_def": "Token"
+                },
+                "message": "variable declaration shadows previous declaration",
+                "shadowed_token": {
+                    "literal": "y",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 12,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

@@ -1,0 +1,7 @@
+module main
+
+import something as other_function from module third
+
+fun second() int do
+    return 5
+end

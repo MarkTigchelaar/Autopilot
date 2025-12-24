@@ -1,0 +1,24 @@
+{
+    "token": {
+        "internal_type": "MINUS",
+        "instance_type": "UNKNOWN_TYPE",
+        "literal": "-",
+        "file_name": "test6.txt",
+        "line_number": 1,
+        "column_number": 1,
+        "type_def": "Token"
+    },
+    "rhs_exp": {
+        "token": {
+            "internal_type": "CHAR",
+            "instance_type": "UNKNOWN_TYPE",
+            "literal": "'a'",
+            "file_name": "test6.txt",
+            "line_number": 1,
+            "column_number": 3,
+            "type_def": "Token"
+        },
+        "type_def": "NameExpression"
+    },
+    "type_def": "PrefixExpression"
+}

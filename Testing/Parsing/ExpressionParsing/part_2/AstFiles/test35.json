@@ -1,0 +1,16 @@
+{
+    "fn_name_exp": {
+        "token": {
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "literal": "function",
+            "file_name": "test35.txt",
+            "line_number": 1,
+            "column_number": 1,
+            "type_def": "Token"
+        },
+        "type_def": "NameExpression"
+    },
+    "argument_list": [],
+    "type_def": "FunctionCallExpression"
+}

@@ -1,0 +1,88 @@
+{
+    "left_type": "LEFT_BRACE",
+    "expression_array": [
+        {
+            "token": {
+                "internal_type": "COLON",
+                "instance_type": "UNKNOWN_TYPE",
+                "literal": ":",
+                "file_name": "test27.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 3,
+                "type_def": "Token"
+            },
+            "left_expression": {
+                "token": {
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "a",
+                    "file_name": "test27.txt",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 2,
+                    "type_def": "Token"
+                },
+                "type_def": "NameExpression"
+            },
+            "right_expression": {
+                "token": {
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "b",
+                    "file_name": "test27.txt",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 4,
+                    "type_def": "Token"
+                },
+                "type_def": "NameExpression"
+            },
+            "type_def": "OperatorExpression"
+        },
+        {
+            "token": {
+                "internal_type": "COLON",
+                "instance_type": "UNKNOWN_TYPE",
+                "literal": ":",
+                "file_name": "test27.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 8,
+                    "type_def": "Token"
+            },
+            "left_expression": {
+                "token": {
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "c",
+                    "file_name": "test27.txt",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 7,
+                    "type_def": "Token"
+                    
+                },
+                "type_def": "NameExpression"
+            },
+            "right_expression": {
+                "token": {
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "d",
+                    "file_name": "test27.txt",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "type_def": "NameExpression"
+            },
+            "type_def": "OperatorExpression"
+        }
+    ],
+    "rhs_type": "RIGHT_BRACE",
+    "key_type": null,
+    "value_type": null,
+    "type_def": "CollectionExpression"
+}

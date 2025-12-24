@@ -1,0 +1,183 @@
+pub fun function() int do
+  if true do
+    if true do
+      let aa0 as char = 'a'
+      switch aa0
+      case 'a' do
+        if true do
+          loop
+            unless true do
+              while true do
+                for i1 in 1 .. 10 do
+                  let a2 as int = 10
+                end
+              end
+            end
+            return 0
+          end
+          return 0
+        end
+      case 'b' do
+        loop
+          unless true do
+            while true do
+              for i3 in 1 .. 10 do
+                if true do
+                  let a4 as int = 10
+                end
+              end
+            end
+          end
+          return 0
+        end
+        return 0
+      default
+        unless true do
+          while true do
+            for i5 in 1 .. 10 do
+              if true do
+                loop
+                  let a6 as int = 10
+                end
+                return 0
+              end
+            end
+          end
+        end
+        return 0
+      end
+      return 0
+    else
+      if true do
+        loop
+          unless true do
+            while true do
+              for i7 in 1 .. 10 do
+                let aa8 as char = 'a'
+                switch aa8
+                case 'a' do
+                  let a9 as int = 10
+                case 'b' do
+                  let a10 as int = 10
+                default
+                  let a11 as int = 10
+                end
+                return 0
+              end
+            end
+          end
+          return 0
+        end
+        return 0
+      end
+    end
+    return 0
+  elif true do
+    let aa12 as char = 'a'
+    switch aa12
+    case 'a' do
+      if true do
+        loop
+          unless true do
+            while true do
+              for i13 in 1 .. 10 do
+                if true do
+                  let a14 as int = 10
+                else
+                  let a15 as int = 10
+                end
+                return 0
+              end
+            end
+          end
+          return 0
+        end
+        return 0
+      end
+    case 'b' do
+      loop
+        unless true do
+          while true do
+            for i16 in 1 .. 10 do
+              if true do
+                if true do
+                  let a17 as int = 10
+                end
+              else
+                if true do
+                  let a18 as int = 10
+                end
+              end
+              return 0
+            end
+          end
+        end
+        return 0
+      end
+      return 0
+    default
+      unless true do
+        while true do
+          for i19 in 1 .. 10 do
+            if true do
+              if true do
+                loop
+                  let a20 as int = 10
+                end
+                return 0
+              end
+            else
+              loop
+                if true do
+                  let a21 as int = 10
+                end
+              end
+              return 0
+            end
+            return 0
+          end
+        end
+      end
+      return 0
+    end
+    return 0
+  else
+    if true do
+      loop
+        unless true do
+          while true do
+            for i22 in 1 .. 10 do
+              if true do
+                let aa23 as char = 'a'
+                switch aa23
+                case 'a' do
+                  let a24 as int = 10
+                case 'b' do
+                  let a25 as int = 10
+                default
+                  let a26 as int = 10
+                end
+                return 0
+              else
+                let aa27 as char = 'a'
+                switch aa27
+                case 'a' do
+                  let a28 as int = 10
+                case 'b' do
+                  let a29 as int = 10
+                default
+                  let a30 as int = 10
+                end
+                return 0
+              end
+              return 0
+            end
+          end
+        end
+        return 0
+      end
+      return 0
+    end
+  end
+  return 0
+end

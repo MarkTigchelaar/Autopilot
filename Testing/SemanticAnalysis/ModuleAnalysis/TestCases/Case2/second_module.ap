@@ -1,0 +1,9 @@
+module second
+
+pub fun other_function() int do
+    return 4
+end
+
+pub fun other_other_function() int do
+    return 4
+end

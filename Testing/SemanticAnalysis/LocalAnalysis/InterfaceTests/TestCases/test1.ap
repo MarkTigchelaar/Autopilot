@@ -1,0 +1,5 @@
+
+interface test is
+    fun functionA(a as int, b as float) bool end
+    fun functionA(c as float, d as SomeType) bool end
+end

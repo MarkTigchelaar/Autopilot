@@ -1,0 +1,294 @@
+[
+    {
+        "files": [
+            {
+                "module_name": "some_module",
+                "path": ""
+            },
+            {
+                "module_name": "module_one_bee",
+                "path": "test/folder/module_folder/"
+            }
+        ],
+        "errors": []
+    },
+    {
+        "files": [
+            {
+                "module_name": "some_module2",
+                "path": ""
+            },
+            {
+                "module_name": "module_one_bee",
+                "path": "test/folder/module_folder/"
+            }
+        ],
+        "errors": [
+            {
+            "token": {
+                "literal": "module_one_bee",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test2.ap",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 26,
+                "type_def": "Token"
+            },
+            "message": "imported module not found in included path",
+            "shadowed_token": null,
+            "lhs_type_token": null,
+            "rhs_type_token": null,
+            "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "files": [
+            {
+                "module_name": "main",
+                "path": ""
+            },
+            {
+                "module_name": "sandwiches",
+                "path": "test3/sandwiches/"
+            },
+            {
+                "module_name": "module_two",
+                "path": "test3/sandwiches/module_folder/onedeeper/"
+            }
+        ],
+        "errors": [
+            {
+            "token": {
+                "literal": "module_name",       
+                "internal_type": "IDENTIFIER",  
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test3.ap",        
+                "file_path": null,
+                "line_number": 4,
+                "column_number": 22,
+                "type_def": "Token"
+            },
+            "message": "imported module is not defined",
+            "shadowed_token": null,
+            "lhs_type_token": null,
+            "rhs_type_token": null,
+            "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "files": [
+            {
+                "module_name": "main",
+                "path": "Test4/"
+            },
+            {
+                "module_name": "second_module",
+                "path": "Test4/"
+            },
+            {
+                "module_name": "third_module",
+                "path": "Test4/"
+            },
+            {
+                "module_name": "fourth_module",
+                "path": "Test4/subfolder/"
+            },
+            {
+                "module_name": "fifth_module",
+                "path": "Test4/subfolder/"
+            }
+        ],
+        "errors": []
+    },
+    {
+        "files": [
+            {
+                "module_name": "main",
+                "path": "Test5/"
+            },
+            {
+                "module_name": "secondary_ish_module",
+                "path": "Test5/"
+            },
+            {
+                "module_name": "secondary_module",
+                "path": "Test5/"
+            },
+            {
+                "module_name": "place",
+                "path": "Test5/subfolder/"
+            },
+            {
+                "module_name": "another_one",
+                "path": "Test5/subfolder/subsubfolder/"
+            }
+        ],
+        "errors": []
+    },
+    {
+        "files": [
+            {
+                "module_name": "main",
+                "path": "Test6/main/"
+            },
+            {
+                "module_name": "module_two",
+                "path": "Test6/test/folder/module_folder/"
+            },
+            {
+                "module_name": "module_three",
+                "path": "Test6/main/other/"
+            }
+        ],
+        "errors": []
+    },
+    {
+        "files": [
+            {
+                "module_name": "main",
+                "path": "Test8/a/b/c/d/e/f/g/h/i/j/k/"
+            },
+            {
+                "module_name": "second_module",
+                "path": "Test8/"
+            }
+        ],
+        "errors": [
+
+            {
+            "token": {
+                "literal": "Test8",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "main.ap",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 67,
+                "type_def": "Token"
+            },
+            "message": "import path must contain parent folder name in directory within 10 levels",
+            "shadowed_token": null,
+            "lhs_type_token": null,
+            "rhs_type_token": null,
+            "type_def": "SemanticError"
+            },
+            {
+            "token": {
+                "literal": "second_module",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "main.ap",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 43,
+                "type_def": "Token"
+            },
+            "message": "imported module not found in included path",
+            "shadowed_token": null,
+            "lhs_type_token": null,
+            "rhs_type_token": null,
+            "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "files": [
+            {
+                "module_name": "main",
+                "path": "Test9/"
+            },
+            {
+                "module_name": "second_module",
+                "path": "Test9/test/pathA/some_folder/folder/subfolder/"
+            },
+            {
+                "module_name": "second_module",
+                "path": "Test9/test/pathB/folder/subfolder/"
+            }
+        ],
+        "errors": [
+            {
+                "token": {
+                    "literal": "second_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second_file.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "module is not uniquely named",
+                "shadowed_token": {
+                    "literal": "second_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second_file.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "second_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 26,
+                    "type_def": "Token"
+                },
+                "message": "multiple modules found on import path",
+                "shadowed_token": {
+                    "literal": "second_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second_file.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "second_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 26,
+                    "type_def": "Token"
+                },
+                "message": "multiple modules found on import path",
+                "shadowed_token": {
+                    "literal": "second_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second_file.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+            
+        ]
+    }
+]

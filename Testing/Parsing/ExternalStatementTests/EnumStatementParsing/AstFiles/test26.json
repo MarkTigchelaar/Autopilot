@@ -1,0 +1,92 @@
+{
+        "name_token": {
+            "literal": "tester",
+            "file_name": "test26.txt",
+            "line_number": 3,
+            "column_number": 1,
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "type_def": "Token",
+            "file_path": null
+        },
+        "public_token": null,
+        "item_list": [
+            {
+                "item_name_token": {
+                    "literal": "fred",
+                    "file_name": "test26.txt",
+                    "line_number": 13,
+                    "column_number": 1,
+                    "type_def": "Token",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_path": null
+                },
+                "default_value_token": {
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "5",
+                    "file_name": "test26.txt",
+                    "line_number": 15,
+                    "column_number": 1,
+                    "type_def": "Token"
+                },
+                "type_def": "EnumListItem"
+            },
+            {
+                "item_name_token": {
+                    "literal": "wilma",
+                    "file_name": "test26.txt",
+                    "line_number": 19,
+                    "column_number": 1,
+                    "type_def": "Token",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_path": null
+                },
+                "default_value_token": {
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "4",
+                    "file_name": "test26.txt",
+                    "line_number": 19,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "type_def": "EnumListItem"
+            },
+            {
+                "item_name_token": {
+                    "literal": "stuff",
+                    "file_name": "test26.txt",
+                    "line_number": 20,
+                    "column_number": 1,
+                    "type_def": "Token",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_path": null
+                },
+                "default_value_token": {
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "1",
+                    "file_name": "test26.txt",
+                    "line_number": 20,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "type_def": "EnumListItem"
+            }
+        ],
+        "general_type": {
+            "literal": "int",
+            "file_name": "test26.txt",
+            "line_number": 7,
+            "column_number": 5,
+            "internal_type": "INT",
+            "instance_type": "UNKNOWN_TYPE",
+            "type_def": "Token",
+            "file_path": null
+        },
+        "type_def": "EnumStatement"
+    }

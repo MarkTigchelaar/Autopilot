@@ -1,0 +1,599 @@
+[
+    {
+        "header": {
+            "name_token": {
+                "literal": "function",
+                "file_name": "test24.ap",
+                "line_number": 1,
+                "column_number": 5,
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "type_def": "Token",
+                "file_path": null
+            },
+            "arguments": [],
+            "return_type_token": {
+                "literal": "int",
+                "file_name": "test24.ap",
+                "line_number": 1,
+                "column_number": 16,
+                "internal_type": "INT",
+                "instance_type": "UNKNOWN_TYPE",
+                "type_def": "Token",
+                "file_path": null
+            },
+            "acyclic_token": null,
+            "is_public": false,
+            "inline_token": null,
+            "public_token": null,
+            "type_def": "FunctionHeaderStatement"
+        },
+        "statements": [
+            {
+                "test_expression": {
+                    "token": {
+                        "literal": "true",
+                        "file_name": "test24.ap",
+                        "line_number": 2,
+                        "column_number": 6,
+                        "internal_type": "TRUE",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "optional_assignment_type": null,
+                "unwrapped_optional_variable_name": null,
+                "optional_variable_name": null,
+                "statements": [
+                    {
+                        "test_expression": {
+                            "token": {
+                                "literal": "true",
+                                "file_name": "test24.ap",
+                                "line_number": 3,
+                                "column_number": 8,
+                                "internal_type": "TRUE",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "type_def": "Token",
+                                "file_path": null
+                            },
+                            "type_def": "NameExpression"
+                        },
+                        "optional_assignment_type": null,
+                        "unwrapped_optional_variable_name": null,
+                        "optional_variable_name": null,
+                        "statements": [
+                            {
+                                "let_or_var_token": {
+                                    "literal": "let",
+                                    "file_name": "test24.ap",
+                                    "line_number": 4,
+                                    "column_number": 7,
+                                    "internal_type": "LET",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "name_token": {
+                                    "literal": "a0",
+                                    "file_name": "test24.ap",
+                                    "line_number": 4,
+                                    "column_number": 11,
+                                    "internal_type": "IDENTIFIER",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "type_token": {
+                                    "literal": "int",
+                                    "file_name": "test24.ap",
+                                    "line_number": 4,
+                                    "column_number": 17,
+                                    "internal_type": "INT",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "exp_ast": {
+                                    "token": {
+                                        "literal": "10",
+                                        "file_name": "test24.ap",
+                                        "line_number": 4,
+                                        "column_number": 23,
+                                        "internal_type": "INT",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                },
+                                "descriptor_token": {
+                                    "literal": "let",
+                                    "file_name": "test24.ap",
+                                    "line_number": 4,
+                                    "column_number": 7,
+                                    "internal_type": "LET",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "been_analyzed": false,
+                                "type_def": "AssignmentStatement"
+                            }
+                        ],
+                        "next_statement_in_block": {
+                            "statements": [
+                                {
+                                    "let_or_var_token": {
+                                        "literal": "let",
+                                        "file_name": "test24.ap",
+                                        "line_number": 6,
+                                        "column_number": 7,
+                                        "internal_type": "LET",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "name_token": {
+                                        "literal": "a1",
+                                        "file_name": "test24.ap",
+                                        "line_number": 6,
+                                        "column_number": 11,
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_token": {
+                                        "literal": "int",
+                                        "file_name": "test24.ap",
+                                        "line_number": 6,
+                                        "column_number": 17,
+                                        "internal_type": "INT",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "exp_ast": {
+                                        "token": {
+                                            "literal": "10",
+                                            "file_name": "test24.ap",
+                                            "line_number": 6,
+                                            "column_number": 23,
+                                            "internal_type": "INT",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "type_def": "NameExpression"
+                                    },
+                                    "descriptor_token": {
+                                        "literal": "let",
+                                        "file_name": "test24.ap",
+                                        "line_number": 6,
+                                        "column_number": 7,
+                                        "internal_type": "LET",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "been_analyzed": false,
+                                    "type_def": "AssignmentStatement"
+                                }
+                            ],
+                            "descriptor_token": {
+                                "literal": "else",
+                                "file_name": "test24.ap",
+                                "line_number": 5,
+                                "column_number": 5,
+                                "internal_type": "ELSE",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "type_def": "Token",
+                                "file_path": null
+                            },
+                            "next_statement_in_block": null,
+                            "type_def": "ElseStatement"
+                        },
+                        "descriptor_token": {
+                            "literal": "if",
+                            "file_name": "test24.ap",
+                            "line_number": 3,
+                            "column_number": 5,
+                            "internal_type": "IF",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "type_def": "IfStatement"
+                    }
+                ],
+                "next_statement_in_block": {
+                    "test_expression": {
+                        "token": {
+                            "literal": "true",
+                            "file_name": "test24.ap",
+                            "line_number": 8,
+                            "column_number": 8,
+                            "internal_type": "TRUE",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "type_def": "NameExpression"
+                    },
+                    "optional_assignment_type": null,
+                    "unwrapped_optional_variable_name": null,
+                    "optional_variable_name": null,
+                    "statements": [
+                        {
+                            "test_expression": {
+                                "token": {
+                                    "literal": "true",
+                                    "file_name": "test24.ap",
+                                    "line_number": 9,
+                                    "column_number": 8,
+                                    "internal_type": "TRUE",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "type_def": "NameExpression"
+                            },
+                            "optional_assignment_type": null,
+                            "unwrapped_optional_variable_name": null,
+                            "optional_variable_name": null,
+                            "statements": [
+                                {
+                                    "let_or_var_token": {
+                                        "literal": "let",
+                                        "file_name": "test24.ap",
+                                        "line_number": 10,
+                                        "column_number": 7,
+                                        "internal_type": "LET",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "name_token": {
+                                        "literal": "a2",
+                                        "file_name": "test24.ap",
+                                        "line_number": 10,
+                                        "column_number": 11,
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_token": {
+                                        "literal": "int",
+                                        "file_name": "test24.ap",
+                                        "line_number": 10,
+                                        "column_number": 17,
+                                        "internal_type": "INT",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "exp_ast": {
+                                        "token": {
+                                            "literal": "10",
+                                            "file_name": "test24.ap",
+                                            "line_number": 10,
+                                            "column_number": 23,
+                                            "internal_type": "INT",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "type_def": "NameExpression"
+                                    },
+                                    "descriptor_token": {
+                                        "literal": "let",
+                                        "file_name": "test24.ap",
+                                        "line_number": 10,
+                                        "column_number": 7,
+                                        "internal_type": "LET",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "been_analyzed": false,
+                                    "type_def": "AssignmentStatement"
+                                }
+                            ],
+                            "next_statement_in_block": {
+                                "statements": [
+                                    {
+                                        "let_or_var_token": {
+                                            "literal": "let",
+                                            "file_name": "test24.ap",
+                                            "line_number": 12,
+                                            "column_number": 7,
+                                            "internal_type": "LET",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "name_token": {
+                                            "literal": "a3",
+                                            "file_name": "test24.ap",
+                                            "line_number": 12,
+                                            "column_number": 11,
+                                            "internal_type": "IDENTIFIER",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "type_token": {
+                                            "literal": "int",
+                                            "file_name": "test24.ap",
+                                            "line_number": 12,
+                                            "column_number": 17,
+                                            "internal_type": "INT",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "exp_ast": {
+                                            "token": {
+                                                "literal": "10",
+                                                "file_name": "test24.ap",
+                                                "line_number": 12,
+                                                "column_number": 23,
+                                                "internal_type": "INT",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "type_def": "Token",
+                                                "file_path": null
+                                            },
+                                            "type_def": "NameExpression"
+                                        },
+                                        "descriptor_token": {
+                                            "literal": "let",
+                                            "file_name": "test24.ap",
+                                            "line_number": 12,
+                                            "column_number": 7,
+                                            "internal_type": "LET",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "been_analyzed": false,
+                                        "type_def": "AssignmentStatement"
+                                    }
+                                ],
+                                "descriptor_token": {
+                                    "literal": "else",
+                                    "file_name": "test24.ap",
+                                    "line_number": 11,
+                                    "column_number": 5,
+                                    "internal_type": "ELSE",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "next_statement_in_block": null,
+                                "type_def": "ElseStatement"
+                            },
+                            "descriptor_token": {
+                                "literal": "if",
+                                "file_name": "test24.ap",
+                                "line_number": 9,
+                                "column_number": 5,
+                                "internal_type": "IF",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "type_def": "Token",
+                                "file_path": null
+                            },
+                            "type_def": "IfStatement"
+                        }
+                    ],
+                    "next_statement_in_block": {
+                        "statements": [
+                            {
+                                "test_expression": {
+                                    "token": {
+                                        "literal": "true",
+                                        "file_name": "test24.ap",
+                                        "line_number": 15,
+                                        "column_number": 8,
+                                        "internal_type": "TRUE",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                },
+                                "optional_assignment_type": null,
+                                "unwrapped_optional_variable_name": null,
+                                "optional_variable_name": null,
+                                "statements": [
+                                    {
+                                        "let_or_var_token": {
+                                            "literal": "let",
+                                            "file_name": "test24.ap",
+                                            "line_number": 16,
+                                            "column_number": 7,
+                                            "internal_type": "LET",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "name_token": {
+                                            "literal": "a4",
+                                            "file_name": "test24.ap",
+                                            "line_number": 16,
+                                            "column_number": 11,
+                                            "internal_type": "IDENTIFIER",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "type_token": {
+                                            "literal": "int",
+                                            "file_name": "test24.ap",
+                                            "line_number": 16,
+                                            "column_number": 17,
+                                            "internal_type": "INT",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "exp_ast": {
+                                            "token": {
+                                                "literal": "10",
+                                                "file_name": "test24.ap",
+                                                "line_number": 16,
+                                                "column_number": 23,
+                                                "internal_type": "INT",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "type_def": "Token",
+                                                "file_path": null
+                                            },
+                                            "type_def": "NameExpression"
+                                        },
+                                        "descriptor_token": {
+                                            "literal": "let",
+                                            "file_name": "test24.ap",
+                                            "line_number": 16,
+                                            "column_number": 7,
+                                            "internal_type": "LET",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "been_analyzed": false,
+                                        "type_def": "AssignmentStatement"
+                                    }
+                                ],
+                                "next_statement_in_block": {
+                                    "statements": [
+                                        {
+                                            "let_or_var_token": {
+                                                "literal": "let",
+                                                "file_name": "test24.ap",
+                                                "line_number": 18,
+                                                "column_number": 7,
+                                                "internal_type": "LET",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "type_def": "Token",
+                                                "file_path": null
+                                            },
+                                            "name_token": {
+                                                "literal": "a5",
+                                                "file_name": "test24.ap",
+                                                "line_number": 18,
+                                                "column_number": 11,
+                                                "internal_type": "IDENTIFIER",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "type_def": "Token",
+                                                "file_path": null
+                                            },
+                                            "type_token": {
+                                                "literal": "int",
+                                                "file_name": "test24.ap",
+                                                "line_number": 18,
+                                                "column_number": 17,
+                                                "internal_type": "INT",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "type_def": "Token",
+                                                "file_path": null
+                                            },
+                                            "exp_ast": {
+                                                "token": {
+                                                    "literal": "10",
+                                                    "file_name": "test24.ap",
+                                                    "line_number": 18,
+                                                    "column_number": 23,
+                                                    "internal_type": "INT",
+                                                    "instance_type": "UNKNOWN_TYPE",
+                                                    "type_def": "Token",
+                                                    "file_path": null
+                                                },
+                                                "type_def": "NameExpression"
+                                            },
+                                            "descriptor_token": {
+                                                "literal": "let",
+                                                "file_name": "test24.ap",
+                                                "line_number": 18,
+                                                "column_number": 7,
+                                                "internal_type": "LET",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "type_def": "Token",
+                                                "file_path": null
+                                            },
+                                            "been_analyzed": false,
+                                            "type_def": "AssignmentStatement"
+                                        }
+                                    ],
+                                    "descriptor_token": {
+                                        "literal": "else",
+                                        "file_name": "test24.ap",
+                                        "line_number": 17,
+                                        "column_number": 5,
+                                        "internal_type": "ELSE",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "next_statement_in_block": null,
+                                    "type_def": "ElseStatement"
+                                },
+                                "descriptor_token": {
+                                    "literal": "if",
+                                    "file_name": "test24.ap",
+                                    "line_number": 15,
+                                    "column_number": 5,
+                                    "internal_type": "IF",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "type_def": "IfStatement"
+                            }
+                        ],
+                        "descriptor_token": {
+                            "literal": "else",
+                            "file_name": "test24.ap",
+                            "line_number": 14,
+                            "column_number": 3,
+                            "internal_type": "ELSE",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "next_statement_in_block": null,
+                        "type_def": "ElseStatement"
+                    },
+                    "descriptor_token": {
+                        "literal": "elif",
+                        "file_name": "test24.ap",
+                        "line_number": 8,
+                        "column_number": 3,
+                        "internal_type": "ELIF",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "ElifStatement"
+                },
+                "descriptor_token": {
+                    "literal": "if",
+                    "file_name": "test24.ap",
+                    "line_number": 2,
+                    "column_number": 3,
+                    "internal_type": "IF",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "IfStatement"
+            }
+        ],
+        "acyclic_token": null,
+        "inline_token": null,
+        "pub_token": null,
+        "type_def": "FunctionStatement"
+    }
+]

@@ -1,0 +1,26 @@
+module main
+
+import import_thing, other_import_thing from module second
+
+enum some_thing is
+    a = 0
+end
+
+error other_thing is
+    one,
+    two
+end
+
+struct thingy is
+    other_thing as int,
+    import_thing as int
+
+    fun some_thing() int do
+        return 5
+    end
+
+    fun other_import_thing() int do
+        return 6
+    end
+end
+

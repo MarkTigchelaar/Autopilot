@@ -1,0 +1,13 @@
+pub fun function() int do
+  unless true do
+    while true do
+      for i0 in 1 .. 10 do
+        loop
+          let a1 as int = 10
+        end
+        return 0
+      end
+    end
+  end
+  return 0
+end

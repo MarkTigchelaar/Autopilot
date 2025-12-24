@@ -1,0 +1,25 @@
+fun function() int do
+  if true do
+    loop
+      unless true do
+        while true do
+          while true do
+            let aa0 as char = 'a'
+            switch aa0
+            case 'a' do
+              let a1 as int = 10
+            case 'b' do
+              let a2 as int = 10
+            default
+              let a3 as int = 10
+            end
+            return 0
+          end
+          return 0
+        end
+      end
+      return 0
+    end
+    return 0
+  end
+end

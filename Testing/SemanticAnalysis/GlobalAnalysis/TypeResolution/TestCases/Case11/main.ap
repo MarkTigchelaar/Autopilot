@@ -1,0 +1,22 @@
+module main
+
+
+import this_does_exist from library built_in
+
+import example from module pub_enum location ^ TestCases
+
+union bunch_o_stuff is 
+    a as int,
+    b as string
+end
+
+
+enum does_exist(int) is
+    inert
+end
+
+
+interface what_dis is
+    fun one(a as int, b as does_exist, c as does_not_exist, d as this_does_exist) int end
+    fun two(a as int, b as otherthing) end
+end

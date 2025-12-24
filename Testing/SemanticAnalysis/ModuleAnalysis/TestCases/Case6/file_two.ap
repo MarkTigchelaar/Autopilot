@@ -1,0 +1,6 @@
+module two
+
+
+enum thingy(string) is
+    a = "string"
+end

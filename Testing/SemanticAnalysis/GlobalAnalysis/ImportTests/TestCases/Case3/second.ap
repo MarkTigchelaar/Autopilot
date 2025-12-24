@@ -1,0 +1,7 @@
+module second
+
+
+enum does_not_exist_in_public is
+    a = 1
+end
+

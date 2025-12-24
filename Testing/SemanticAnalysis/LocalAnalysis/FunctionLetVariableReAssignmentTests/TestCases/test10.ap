@@ -1,0 +1,19 @@
+
+fun function() do
+    for var a, b in collection do
+        loop
+            if 1 < 2 do
+                a = 10
+                b = 6
+            end
+        end
+    end
+    for let a, b in collection do
+        loop
+            if 1 < 2 do
+                a = 10
+                b = 6
+            end
+        end
+    end
+end

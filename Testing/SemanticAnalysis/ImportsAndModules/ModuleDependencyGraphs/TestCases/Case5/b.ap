@@ -1,0 +1,7 @@
+module b
+
+import cstruct from module c
+
+pub struct bstruct is 
+   a as string
+end

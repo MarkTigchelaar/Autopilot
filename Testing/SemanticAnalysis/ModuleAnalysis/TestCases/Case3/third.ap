@@ -1,0 +1,5 @@
+module third
+
+pub fun something() int do
+    return 4
+end

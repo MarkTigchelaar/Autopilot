@@ -1,0 +1,9 @@
+module main
+
+import this_does_exist from library built_in
+
+define Dictionary(int : int) as IntMap
+
+define HashMap(int : this_does_exist) as IntExists
+
+define Map(int : float) as IntFloatMap

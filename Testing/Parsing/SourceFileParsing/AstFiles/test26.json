@@ -1,0 +1,526 @@
+[
+    {
+        "header": {
+            "name_token": {
+                "literal": "function",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test26.ap",
+                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                "line_number": 1,
+                "column_number": 9,
+                "type_def": "Token"
+            },
+            "arguments": [],
+            "return_type_token": {
+                "literal": "int",
+                "internal_type": "INT",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test26.ap",
+                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                "line_number": 1,
+                "column_number": 20,
+                "type_def": "Token"
+            },
+            "acyclic_token": null,
+            "is_public": false,
+            "inline_token": null,
+            "public_token": {
+                "literal": "pub",
+                "internal_type": "PUB",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test26.ap",
+                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                "line_number": 1,
+                "column_number": 1,
+                "type_def": "Token"
+            },
+            "type_def": "FunctionHeaderStatement"
+        },
+        "statements": [
+            {
+                "optional_assignment_type": null,
+                "unwrapped_optional_variable_name": null,
+                "second_unwrapped_optional_variable_name": null,
+                "optional_collection_name": null,
+                "collection_name": null,
+                "index_or_key_name_token": {
+                    "literal": "i",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test26.ap",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                    "line_number": 2,
+                    "column_number": 7,
+                    "type_def": "Token"
+                },
+                "map_value_name_token": null,
+                "index_start_name": {
+                    "literal": "1",
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test26.ap",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                    "line_number": 2,
+                    "column_number": 12,
+                    "type_def": "Token"
+                },
+                "index_stop_name": {
+                    "literal": "10",
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test26.ap",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                    "line_number": 2,
+                    "column_number": 17,
+                    "type_def": "Token"
+                },
+                "iter_size": null,
+                "loop_name": null,
+                "statements": [
+                    {
+                        "test_expression": {
+                            "token": {
+                                "literal": "true",
+                                "internal_type": "TRUE",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "file_name": "test26.ap",
+                                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                "line_number": 3,
+                                "column_number": 8,
+                                "type_def": "Token"
+                            },
+                            "type": null,
+                            "type_def": "NameExpression"
+                        },
+                        "optional_assignment_type": null,
+                        "unwrapped_optional_variable_name": null,
+                        "optional_variable_name": null,
+                        "statements": [
+                            {
+                                "loop_name": null,
+                                "statements": [
+                                    {
+                                        "test_expression": {
+                                            "token": {
+                                                "literal": "'c'",
+                                                "internal_type": "CHAR",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test26.ap",
+                                                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                "line_number": 5,
+                                                "column_number": 16,
+                                                "type_def": "Token"
+                                            },
+                                            "type": null,
+                                            "type_def": "NameExpression"
+                                        },
+                                        "case_statements": [
+                                            {
+                                                "values": [
+                                                    {
+                                                        "value": {
+                                                            "literal": "'a'",
+                                                            "internal_type": "CHAR",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 6,
+                                                            "column_number": 14,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "minus_sign": null,
+                                                        "type_def": "CaseValue"
+                                                    }
+                                                ],
+                                                "typed_values": [],
+                                                "enum_references": [],
+                                                "statements": [
+                                                    {
+                                                        "let_or_var_token": {
+                                                            "literal": "let",
+                                                            "internal_type": "LET",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 7,
+                                                            "column_number": 11,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "name_token": {
+                                                            "literal": "a0",
+                                                            "internal_type": "IDENTIFIER",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 7,
+                                                            "column_number": 15,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "type_token": {
+                                                            "literal": "int",
+                                                            "internal_type": "INT",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 7,
+                                                            "column_number": 21,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "exp_ast": {
+                                                            "token": {
+                                                                "literal": "10",
+                                                                "internal_type": "INT",
+                                                                "instance_type": "UNKNOWN_TYPE",
+                                                                "file_name": "test26.ap",
+                                                                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                                "line_number": 7,
+                                                                "column_number": 27,
+                                                                "type_def": "Token"
+                                                            },
+                                                            "type": null,
+                                                            "type_def": "NameExpression"
+                                                        },
+                                                        "descriptor_token": {
+                                                            "literal": "let",
+                                                            "internal_type": "LET",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 7,
+                                                            "column_number": 11,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "been_analyzed": false,
+                                                        "type_def": "AssignmentStatement"
+                                                    }
+                                                ],
+                                                "descriptor_token": {
+                                                    "literal": "case",
+                                                    "internal_type": "CASE",
+                                                    "instance_type": "UNKNOWN_TYPE",
+                                                    "file_name": "test26.ap",
+                                                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                    "line_number": 6,
+                                                    "column_number": 9,
+                                                    "type_def": "Token"
+                                                },
+                                                "type_def": "CaseStatement"
+                                            },
+                                            {
+                                                "values": [
+                                                    {
+                                                        "value": {
+                                                            "literal": "'b'",
+                                                            "internal_type": "CHAR",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 8,
+                                                            "column_number": 14,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "minus_sign": null,
+                                                        "type_def": "CaseValue"
+                                                    }
+                                                ],
+                                                "typed_values": [],
+                                                "enum_references": [],
+                                                "statements": [
+                                                    {
+                                                        "let_or_var_token": {
+                                                            "literal": "let",
+                                                            "internal_type": "LET",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 9,
+                                                            "column_number": 11,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "name_token": {
+                                                            "literal": "a1",
+                                                            "internal_type": "IDENTIFIER",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 9,
+                                                            "column_number": 15,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "type_token": {
+                                                            "literal": "int",
+                                                            "internal_type": "INT",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 9,
+                                                            "column_number": 21,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "exp_ast": {
+                                                            "token": {
+                                                                "literal": "10",
+                                                                "internal_type": "INT",
+                                                                "instance_type": "UNKNOWN_TYPE",
+                                                                "file_name": "test26.ap",
+                                                                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                                "line_number": 9,
+                                                                "column_number": 27,
+                                                                "type_def": "Token"
+                                                            },
+                                                            "type": null,
+                                                            "type_def": "NameExpression"
+                                                        },
+                                                        "descriptor_token": {
+                                                            "literal": "let",
+                                                            "internal_type": "LET",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 9,
+                                                            "column_number": 11,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "been_analyzed": false,
+                                                        "type_def": "AssignmentStatement"
+                                                    }
+                                                ],
+                                                "descriptor_token": {
+                                                    "literal": "case",
+                                                    "internal_type": "CASE",
+                                                    "instance_type": "UNKNOWN_TYPE",
+                                                    "file_name": "test26.ap",
+                                                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                    "line_number": 8,
+                                                    "column_number": 9,
+                                                    "type_def": "Token"
+                                                },
+                                                "type_def": "CaseStatement"
+                                            }
+                                        ],
+                                        "default_case": {
+                                            "values": [],
+                                            "typed_values": [],
+                                            "enum_references": [],
+                                            "statements": [
+                                                {
+                                                    "let_or_var_token": {
+                                                        "literal": "let",
+                                                        "internal_type": "LET",
+                                                        "instance_type": "UNKNOWN_TYPE",
+                                                        "file_name": "test26.ap",
+                                                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                        "line_number": 11,
+                                                        "column_number": 11,
+                                                        "type_def": "Token"
+                                                    },
+                                                    "name_token": {
+                                                        "literal": "a2",
+                                                        "internal_type": "IDENTIFIER",
+                                                        "instance_type": "UNKNOWN_TYPE",
+                                                        "file_name": "test26.ap",
+                                                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                        "line_number": 11,
+                                                        "column_number": 15,
+                                                        "type_def": "Token"
+                                                    },
+                                                    "type_token": {
+                                                        "literal": "int",
+                                                        "internal_type": "INT",
+                                                        "instance_type": "UNKNOWN_TYPE",
+                                                        "file_name": "test26.ap",
+                                                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                        "line_number": 11,
+                                                        "column_number": 21,
+                                                        "type_def": "Token"
+                                                    },
+                                                    "exp_ast": {
+                                                        "token": {
+                                                            "literal": "10",
+                                                            "internal_type": "INT",
+                                                            "instance_type": "UNKNOWN_TYPE",
+                                                            "file_name": "test26.ap",
+                                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                            "line_number": 11,
+                                                            "column_number": 27,
+                                                            "type_def": "Token"
+                                                        },
+                                                        "type": null,
+                                                        "type_def": "NameExpression"
+                                                    },
+                                                    "descriptor_token": {
+                                                        "literal": "let",
+                                                        "internal_type": "LET",
+                                                        "instance_type": "UNKNOWN_TYPE",
+                                                        "file_name": "test26.ap",
+                                                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                        "line_number": 11,
+                                                        "column_number": 11,
+                                                        "type_def": "Token"
+                                                    },
+                                                    "been_analyzed": false,
+                                                    "type_def": "AssignmentStatement"
+                                                }
+                                            ],
+                                            "descriptor_token": {
+                                                "literal": "default",
+                                                "internal_type": "DEFAULT",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test26.ap",
+                                                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                "line_number": 10,
+                                                "column_number": 9,
+                                                "type_def": "Token"
+                                            },
+                                            "type_def": "CaseStatement"
+                                        },
+                                        "descriptor_token": {
+                                            "literal": "switch",
+                                            "internal_type": "SWITCH",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "file_name": "test26.ap",
+                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                            "line_number": 5,
+                                            "column_number": 9,
+                                            "type_def": "Token"
+                                        },
+                                        "type_def": "SwitchStatement"
+                                    },
+                                    {
+                                        "expression": {
+                                            "token": {
+                                                "literal": "0",
+                                                "internal_type": "INT",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "file_name": "test26.ap",
+                                                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                                "line_number": 13,
+                                                "column_number": 16,
+                                                "type_def": "Token"
+                                            },
+                                            "type": null,
+                                            "type_def": "NameExpression"
+                                        },
+                                        "descriptor_token": {
+                                            "literal": "return",
+                                            "internal_type": "RETURN",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "file_name": "test26.ap",
+                                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                            "line_number": 13,
+                                            "column_number": 9,
+                                            "type_def": "Token"
+                                        },
+                                        "type_def": "ReturnStatement"
+                                    }
+                                ],
+                                "descriptor_token": {
+                                    "literal": "loop",
+                                    "internal_type": "LOOP",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "file_name": "test26.ap",
+                                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                    "line_number": 4,
+                                    "column_number": 7,
+                                    "type_def": "Token"
+                                },
+                                "type_def": "LoopStatement"
+                            }
+                        ],
+                        "next_statement_in_block": null,
+                        "descriptor_token": {
+                            "literal": "if",
+                            "internal_type": "IF",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test26.ap",
+                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                            "line_number": 3,
+                            "column_number": 5,
+                            "type_def": "Token"
+                        },
+                        "type_def": "IfStatement"
+                    },
+                    {
+                        "expression": {
+                            "token": {
+                                "literal": "0",
+                                "internal_type": "INT",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "file_name": "test26.ap",
+                                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                                "line_number": 16,
+                                "column_number": 12,
+                                "type_def": "Token"
+                            },
+                            "type": null,
+                            "type_def": "NameExpression"
+                        },
+                        "descriptor_token": {
+                            "literal": "return",
+                            "internal_type": "RETURN",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test26.ap",
+                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                            "line_number": 16,
+                            "column_number": 5,
+                            "type_def": "Token"
+                        },
+                        "type_def": "ReturnStatement"
+                    }
+                ],
+                "descriptor_token": {
+                    "literal": "for",
+                    "internal_type": "FOR",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test26.ap",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                    "line_number": 2,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "type_def": "ForStatement"
+            },
+            {
+                "expression": {
+                    "token": {
+                        "literal": "0",
+                        "internal_type": "INT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "test26.ap",
+                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                        "line_number": 18,
+                        "column_number": 10,
+                        "type_def": "Token"
+                    },
+                    "type": null,
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "return",
+                    "internal_type": "RETURN",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test26.ap",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+                    "line_number": 18,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "type_def": "ReturnStatement"
+            }
+        ],
+        "acyclic_token": null,
+        "inline_token": null,
+        "pub_token": {
+            "literal": "pub",
+            "internal_type": "PUB",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test26.ap",
+            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/SourceFileParsing/TestCases/",
+            "line_number": 1,
+            "column_number": 1,
+            "type_def": "Token"
+        },
+        "type_def": "FunctionStatement"
+    }
+]

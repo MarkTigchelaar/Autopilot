@@ -1,0 +1,5 @@
+module second_module
+
+pub enum thing is
+    i = 10
+end

@@ -1,0 +1,13 @@
+module main
+
+
+import exists from module second
+
+import also_exists from library system
+
+import doesnt_exist from library built_in
+
+
+fun main() do
+    let i as char = 'i'
+end

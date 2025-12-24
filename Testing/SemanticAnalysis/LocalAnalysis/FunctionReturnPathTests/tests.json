@@ -1,0 +1,216 @@
+[
+    {
+        "file_name": "test1.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test2.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test3.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test3.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test4.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test4.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test5.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test5.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test6.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test6.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test7.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test8.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test8.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test9.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test9.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test10.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test11.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test11.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test12.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test12.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function not valid, function returns a value, but not all code paths return a value",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test13.ap",
+        "errors": []
+    }
+]

@@ -1,0 +1,95 @@
+fun function() int do
+  if true do
+    if true do
+      if true do
+        loop
+          if true do
+            for i0 in 1 .. 10 do
+              for i1 in 1 .. 10 do
+                let a2 as int = 10
+              end
+              return 0
+            end
+          else
+            for i3 in 1 .. 10 do
+              for i4 in 1 .. 10 do
+                let a5 as int = 10
+              end
+            end
+            return 0
+          end
+        end
+      elif true do
+        if true do
+          for i6 in 1 .. 10 do
+            for i7 in 1 .. 10 do
+              loop
+                let a8 as int = 10
+              end
+            end
+            return 0
+          end
+        else
+          for i9 in 1 .. 10 do
+            loop
+              for i10 in 1 .. 10 do
+                let a11 as int = 10
+              end
+            end
+          end
+          return 0
+        end
+      end
+      return 0
+    end
+  elif true do
+    if true do
+      loop
+        if true do
+          for i12 in 1 .. 10 do
+            for i13 in 1 .. 10 do
+              if true do
+                let a14 as int = 10
+              end
+            end
+            return 0
+          end
+        else
+          for i15 in 1 .. 10 do
+            if true do
+              for i16 in 1 .. 10 do
+                let a17 as int = 10
+              end
+            end
+          end
+          return 0
+        end
+      end
+    elif true do
+      if true do
+        for i18 in 1 .. 10 do
+          for i19 in 1 .. 10 do
+            if true do
+              loop
+                let a20 as int = 10
+              end
+            end
+          end
+          return 0
+        end
+      else
+        for i21 in 1 .. 10 do
+          if true do
+            loop
+              for i22 in 1 .. 10 do
+                let a23 as int = 10
+              end
+            end
+          end
+        end
+        return 0
+      end
+    end
+    return 0
+  end
+end

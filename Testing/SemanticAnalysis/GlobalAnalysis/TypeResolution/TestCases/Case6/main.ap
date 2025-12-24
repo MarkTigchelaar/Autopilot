@@ -1,0 +1,13 @@
+module main
+
+import this_does_exist from library built_in
+
+import example from module pub_enum location ^ TestCases
+
+define Stack(int) as IntSet
+
+define Stack(thingy) as ThingySet
+
+define Stack(this_does_exist) as ExistTree
+
+define Stack(example) as ExampleSet

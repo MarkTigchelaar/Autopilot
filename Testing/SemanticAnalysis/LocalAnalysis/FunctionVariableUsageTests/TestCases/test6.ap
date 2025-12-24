@@ -1,0 +1,3 @@
+fun second(a as int, b as int) do
+    let c = a + b + d
+end

@@ -1,0 +1,13 @@
+module main
+
+import this_does_exist from library built_in
+
+import example from module pub_enum location ^ TestCases
+
+define Option(int) as IntSet
+
+define Option(thingy) as ThingySet
+
+define Option(this_does_exist) as ExistTree
+
+define Option(example) as ExampleSet

@@ -1,0 +1,11 @@
+inline fun function_with_switch_statement() long do
+    let a = 0
+    switch variable
+        case 'a', 'c' do
+            var b = 0
+        case 'b' do
+            let f = "test"
+        default
+            b = 0
+    end
+end

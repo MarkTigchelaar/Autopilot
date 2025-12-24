@@ -1,0 +1,18 @@
+
+fun function() do
+    if var a = option_thing do
+        loop
+            if 1 < 2 do
+                a = 10
+            end
+        end
+    elif let a = option_thing do
+        let b = 6
+        loop
+            if 1 < 2 do
+                a = 10
+                b = 6
+            end
+        end
+    end
+end

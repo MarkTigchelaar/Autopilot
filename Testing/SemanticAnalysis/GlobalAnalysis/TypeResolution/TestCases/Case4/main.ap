@@ -1,0 +1,13 @@
+module main
+
+import this_does_exist from library built_in
+
+import example from module pub_enum location ^ TestCases
+
+define List(int) as IntSet
+
+define List(thingy) as ThingySet
+
+define Vector(this_does_exist) as ExistTree
+
+define LinkedList(example) as ExampleSet

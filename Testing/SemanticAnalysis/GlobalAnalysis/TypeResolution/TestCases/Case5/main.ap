@@ -1,0 +1,13 @@
+module main
+
+import this_does_exist from library built_in
+
+import example from module pub_enum location ^ TestCases
+
+define Queue(int) as IntSet
+
+define FifoQueue(thingy) as ThingySet
+
+define PriorityQueue(this_does_exist) as ExistTree
+
+define Deque(example) as ExampleSet

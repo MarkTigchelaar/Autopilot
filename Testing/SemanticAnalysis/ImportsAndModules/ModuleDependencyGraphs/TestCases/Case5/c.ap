@@ -1,0 +1,7 @@
+module c
+
+import astruct from module main
+
+pub struct cstruct is 
+   eh as int
+end

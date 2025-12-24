@@ -1,0 +1,5 @@
+'a' do
+// no errors since 'a' is valid, and infix parsing will treat
+// "do" as not being a part of the expression.
+// next parser would catch it, and if some other type, 
+// like "struct" would error there instead.

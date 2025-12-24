@@ -1,0 +1,29 @@
+{
+    "struct_name_exp": {
+        "token": {
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "literal": "astruct",
+            "file_name": "test45.txt",
+            "line_number": 1,
+            "column_number": 1,
+            "type_def": "Token"
+        },
+        "type_def": "NameExpression"
+    },
+    "argument_list": [
+        {
+            "token": {
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "literal": "field",
+                "file_name": "test45.txt",
+                "line_number": 1,
+                "column_number": 9,
+                "type_def": "Token"
+            },
+            "type_def": "NameExpression"
+        }
+    ],
+    "type_def": "MethodCallOrFieldExpression"
+}

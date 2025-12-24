@@ -1,0 +1,8 @@
+module main
+
+import exists from module two
+import also_exists from module three
+
+fun main() do
+    let i as string = "hello"
+end

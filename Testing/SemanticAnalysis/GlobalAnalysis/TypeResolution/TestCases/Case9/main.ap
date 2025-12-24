@@ -1,0 +1,12 @@
+module main
+
+import this_does_exist from library built_in
+
+import example from module pub_enum location ^ TestCases
+
+define fun(int, string, does_not_exist, does_exist, this_does_exist) example as omni_func
+
+
+enum does_exist(int) is
+    inert
+end

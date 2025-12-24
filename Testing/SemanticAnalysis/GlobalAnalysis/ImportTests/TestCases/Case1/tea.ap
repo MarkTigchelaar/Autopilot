@@ -1,0 +1,6 @@
+module tea
+
+
+pub enum thing is
+    a = 1
+end

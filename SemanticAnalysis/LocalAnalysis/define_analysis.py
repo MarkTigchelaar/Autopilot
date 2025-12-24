@@ -1,0 +1,64 @@
+import Tokenization.symbols as symbols
+from ErrorHandling.semantic_error_messages import (
+    DEFINED_NAME_COLLISION_WITH_COMPONENT
+)
+from Parsing.utils import is_key_value_collection_type, is_list_collection_type
+
+# Existance of types, and if valid types are being used
+# for hashes (not enums, unions, functions and errors)
+# are checked in global analysis
+# Also checked are errors on both sides of results as well as other things
+def analyze_define(analyzer, ast_node):
+    # figure out code paths by using each types type_token
+    type_token = get_type_token(ast_node)
+    if is_key_value_collection_type(type_token):
+        analyze_kv_type(analyzer, ast_node)
+    elif is_list_collection_type(type_token):
+        analyze_linear_collection(analyzer, ast_node)
+    elif type_token.type_symbol == symbols.OPTION:
+        analyze_linear_collection(analyzer, ast_node)
+    elif type_token.type_symbol == symbols.RESULT:
+        analyze_result(analyzer, ast_node)
+    elif type_token.type_symbol == symbols.FUN:
+        analyze_function(analyzer, ast_node)
+    else:
+        raise Exception("INTERNAL ERROR: unknown type definition")
+
+
+def get_type_token(ast_node):
+    return ast_node.get_type_variant_token()
+
+
+def analyze_kv_type(analyzer, ast_node):
+    
+    name = ast_node.get_new_name_token().literal
+    if name == ast_node.key_token.literal:
+        analyzer.add_error(ast_node.key_token, DEFINED_NAME_COLLISION_WITH_COMPONENT)
+    if name == ast_node.value_token.literal:
+        analyzer.add_error(ast_node.value_token, DEFINED_NAME_COLLISION_WITH_COMPONENT)
+
+
+def analyze_linear_collection(analyzer, ast_node):
+    ast_node = ast_node
+    name = ast_node.get_new_name_token().literal
+    if name == ast_node.value_token.literal:
+        analyzer.add_error(ast_node.value_token, DEFINED_NAME_COLLISION_WITH_COMPONENT)
+
+
+def analyze_result(analyzer, ast_node):
+    
+    name = ast_node.get_new_name_token().literal
+    if name == ast_node.value_token.literal:
+        analyzer.add_error(ast_node.value_token, DEFINED_NAME_COLLISION_WITH_COMPONENT)
+    if name == ast_node.error_token.literal:
+        analyzer.add_error(ast_node.error_token, DEFINED_NAME_COLLISION_WITH_COMPONENT)
+
+
+def analyze_function(analyzer, ast_node):
+    
+    name = ast_node.get_new_name_token().literal
+    if ast_node.return_type_token and name == ast_node.return_type_token.literal:
+        analyzer.add_error(ast_node.return_type_token, DEFINED_NAME_COLLISION_WITH_COMPONENT)
+    for arg_type in ast_node.arg_type_list:
+        if name == arg_type.literal:
+            analyzer.add_error(arg_type, DEFINED_NAME_COLLISION_WITH_COMPONENT)

@@ -1,0 +1,11 @@
+fun main() do
+    if true do
+        let a = 0
+        if true do
+            let a = 0
+            if true do 
+                let a = 0
+            end
+        end
+    end
+end

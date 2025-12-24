@@ -1,0 +1,15 @@
+fun function() int do
+  if true do
+    for i0 in 1 .. 10 do
+      loop
+        while true do
+          if true do
+            let a1 as int = 10
+          end
+          return 0
+        end
+      end
+      return 0
+    end
+  end
+end

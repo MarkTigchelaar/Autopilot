@@ -1,0 +1,9 @@
+module main
+
+fun second() int do
+    return 5
+end
+
+fun main() do
+    let a as int = second()
+end

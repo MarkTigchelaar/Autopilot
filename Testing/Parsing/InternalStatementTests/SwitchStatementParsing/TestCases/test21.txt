@@ -1,0 +1,5 @@
+switch name
+  case 'a' do
+    let a = 0
+  default
+end

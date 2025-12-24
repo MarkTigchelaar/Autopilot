@@ -1,0 +1,12 @@
+module main
+
+import other_function from module second
+
+fun main() do
+    let a as int = second()
+end
+
+
+fun other_function() int do
+    return 5
+end

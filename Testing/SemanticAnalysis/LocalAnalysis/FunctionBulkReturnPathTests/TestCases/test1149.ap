@@ -1,0 +1,95 @@
+pub fun function() int do
+  for i0 in 1 .. 10 do
+    if true do
+      for i1 in 1 .. 10 do
+        if true do
+          if true do
+            let a2 as int = 10
+          else
+            let a3 as int = 10
+          end
+          return 0
+        elif true do
+          if true do
+            let a4 as int = 10
+          else
+            let a5 as int = 10
+          end
+          return 0
+        else
+          if true do
+            let a6 as int = 10
+          else
+            let a7 as int = 10
+          end
+          return 0
+        end
+        return 0
+      end
+    elif true do
+      if true do
+        if true do
+          for i8 in 1 .. 10 do
+            let a9 as int = 10
+          end
+        else
+          for i10 in 1 .. 10 do
+            let a11 as int = 10
+          end
+        end
+        return 0
+      elif true do
+        for i12 in 1 .. 10 do
+          if true do
+            let a13 as int = 10
+          else
+            let a14 as int = 10
+          end
+          return 0
+        end
+      else
+        if true do
+          for i15 in 1 .. 10 do
+            let a16 as int = 10
+          end
+        else
+          for i17 in 1 .. 10 do
+            let a18 as int = 10
+          end
+        end
+        return 0
+      end
+      return 0
+    else
+      if true do
+        for i19 in 1 .. 10 do
+          if true do
+            let a20 as int = 10
+          elif true do
+            let a21 as int = 10
+          else
+            let a22 as int = 10
+          end
+          return 0
+        end
+      else
+        if true do
+          for i23 in 1 .. 10 do
+            let a24 as int = 10
+          end
+        elif true do
+          for i25 in 1 .. 10 do
+            let a26 as int = 10
+          end
+        else
+          for i27 in 1 .. 10 do
+            let a28 as int = 10
+          end
+        end
+        return 0
+      end
+      return 0
+    end
+  end
+  return 0
+end

@@ -1,0 +1,965 @@
+[
+    {
+        "file_name": "test1.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "a",
+                "file_name": "test1.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "b",
+                "file_name": "test1.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 3
+            },
+            {
+                "literal": "c",
+                "file_name": "test1.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 5
+            }
+        ]
+    },
+    {
+        "file_name": "test1a.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "a",
+                "file_name": "test1a.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "b",
+                "file_name": "test1a.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 3
+            },
+            {
+                "literal": "c",
+                "file_name": "test1a.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 5
+            }
+        ]
+    },
+    {
+        "file_name": "test1b.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "1",
+                "file_name": "test1b.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test2.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": ">=",
+                "file_name": "test2.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "2",
+                "file_name": "test2.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 4
+            }
+        ]
+    },
+    {
+        "file_name": "test2a.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": ">=",
+                "file_name": "test2a.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "2",
+                "file_name": "test2a.txt",
+                "file_path": null,
+                "line_number": 2,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test3.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "1",
+                "file_name": "test3.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": ">=",
+                "file_name": "test3.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 3
+            },
+            {
+                "literal": "2",
+                "file_name": "test3.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 6
+            },
+            {
+                "literal": ">",
+                "file_name": "test3.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 8
+            },
+            {
+                "literal": "3",
+                "file_name": "test3.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 10
+            },
+            {
+                "literal": ">",
+                "file_name": "test3.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 12
+            },
+            {
+                "literal": "4",
+                "file_name": "test3.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 14
+            }
+        ]
+    },
+    {
+        "file_name": "test3a.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "1",
+                "file_name": "test3a.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": ">=",
+                "file_name": "test3a.txt",
+                "file_path": null,
+                "line_number": 2,
+                "column_number": 1
+            },
+            {
+                "literal": "2",
+                "file_name": "test3a.txt",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 1
+            },
+            {
+                "literal": ">",
+                "file_name": "test3a.txt",
+                "file_path": null,
+                "line_number": 4,
+                "column_number": 1
+            },
+            {
+                "literal": "3",
+                "file_name": "test3a.txt",
+                "file_path": null,
+                "line_number": 5,
+                "column_number": 1
+            },
+            {
+                "literal": ">",
+                "file_name": "test3a.txt",
+                "file_path": null,
+                "line_number": 6,
+                "column_number": 1
+            },
+            {
+                "literal": "4",
+                "file_name": "test3a.txt",
+                "file_path": null,
+                "line_number": 7,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test4.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "a",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": ">=",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 2
+            },
+            {
+                "literal": "3",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 4
+            },
+            {
+                "literal": "<",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 5
+            },
+            {
+                "literal": "4",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 6
+            },
+            {
+                "literal": "==",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 7
+            },
+            {
+                "literal": "5",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 9
+            },
+            {
+                "literal": ">",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 10
+            },
+            {
+                "literal": "fg12",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 11
+            },
+            {
+                "literal": "+",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 15
+            },
+            {
+                "literal": "e",
+                "file_name": "test4.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 16
+            }
+        ]
+    },
+    {
+        "file_name": "test5.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "thisfunis",
+                "file_name": "test5.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "not",
+                "file_name": "test5.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 11
+            },
+            {
+                "literal": "a",
+                "file_name": "test5.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 15
+            },
+            {
+                "literal": "function",
+                "file_name": "test5.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 17
+            }
+        ]
+    },
+    {
+        "file_name": "test6.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "this",
+                "file_name": "test6.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": ".",
+                "file_name": "test6.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 5
+            },
+            {
+                "literal": "method",
+                "file_name": "test6.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 6
+            },
+            {
+                "literal": "(",
+                "file_name": "test6.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 12
+            },
+            {
+                "literal": ")",
+                "file_name": "test6.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 13
+            },
+            {
+                "literal": "..",
+                "file_name": "test6.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 15
+            },
+            {
+                "literal": "somenum",
+                "file_name": "test6.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 18
+            }
+        ]
+    },
+    {
+        "file_name": "test7.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "=",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": ">=",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 2
+            },
+            {
+                "literal": "<=",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 4
+            },
+            {
+                "literal": "*=",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 6
+            },
+            {
+                "literal": "*",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 8
+            },
+            {
+                "literal": "+",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 9
+            },
+            {
+                "literal": "[",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 10
+            },
+            {
+                "literal": "]",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 11
+            },
+            {
+                "literal": "[",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 12
+            },
+            {
+                "literal": "]",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 13
+            },
+            {
+                "literal": "?!",
+                "file_name": "test7.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 14
+            }
+        ]
+    },
+    {
+        "file_name": "test8.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "123.3456",
+                "file_name": "test8.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": ".",
+                "file_name": "test8.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 9
+            },
+            {
+                "literal": "78",
+                "file_name": "test8.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 10
+            }
+        ]
+    },
+    {
+        "file_name": "test9.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test9.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "def",
+                "file_name": "test9.txt",
+                "file_path": null,
+                "line_number": 2,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test10.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test10.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "def",
+                "file_name": "test10.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 15
+            }
+        ]
+    },
+    {
+        "file_name": "test10a.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test10a.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "def",
+                "file_name": "test10a.txt",
+                "file_path": null,
+                "line_number": 2,
+                "column_number": 8
+            }
+        ]
+    },
+    {
+        "file_name": "test10b.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test10b.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "def",
+                "file_name": "test10b.txt",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 4
+            }
+        ]
+    },
+    {
+        "file_name": "test10c.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test10c.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "def",
+                "file_name": "test10c.txt",
+                "file_path": null,
+                "line_number": 3,
+                "column_number": 3
+            }
+        ]
+    },
+    {
+        "file_name": "test10d.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test10d.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "def",
+                "file_name": "test10d.txt",
+                "file_path": null,
+                "line_number": 4,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test10e.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test10e.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "def",
+                "file_name": "test10e.txt",
+                "file_path": null,
+                "line_number": 4,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test10f.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test10f.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "def",
+                "file_name": "test10f.txt",
+                "file_path": null,
+                "line_number": 4,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test11.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "abc",
+                "file_name": "test11.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "\"astring\"",
+                "file_name": "test11.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 5
+            },
+            {
+                "literal": "def",
+                "file_name": "test11.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 15
+            }
+        ]
+    },
+    {
+        "file_name": "test12.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "a",
+                "file_name": "test12.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "\"string with \\n newline\"",
+                "file_name": "test12.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 3
+            },
+            {
+                "literal": "b",
+                "file_name": "test12.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 28
+            }
+        ]
+    },
+    {
+        "file_name": "test13.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "a",
+                "file_name": "test13.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "\"this is a \\\"string\\\"\"",
+                "file_name": "test13.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 3
+            },
+            {
+                "literal": "b",
+                "file_name": "test13.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 26
+            }
+        ]
+    },
+    {
+        "file_name": "test14.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "a",
+                "file_name": "test14.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "\"this string can't be broken\"",
+                "file_name": "test14.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 3
+            },
+            {
+                "literal": "b",
+                "file_name": "test14.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 33
+            }
+        ]
+    },
+    {
+        "file_name": "test15.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "a",
+                "file_name": "test15.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "b",
+                "file_name": "test15.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 49
+            }
+        ]
+    },
+    {
+        "file_name": "test16.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "'a'",
+                "file_name": "test16.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test17.txt",
+        "error": {
+            "token": {
+                "literal": "ERROR",
+                "internal_type": "ERROR",
+                "instance_type": "INKNOWN_TYPE",
+                "file_name": "test17.txt",
+                "line_number": 2,
+                "column_number": 3
+            },
+            "type_def": "TokenizerError",
+            "message": "unterminated string"
+        },
+        "tokens": []
+    },
+    {
+        "file_name": "test18.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "-",
+                "file_name": "test18.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            },
+            {
+                "literal": "1",
+                "file_name": "test18.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 2
+            }
+        ]
+    },
+    {
+        "file_name": "test20.txt",
+        "error": {
+            "token": {
+                "literal": "ERROR",
+                "internal_type": "ERROR",
+                "instance_type": "INKNOWN_TYPE",
+                "file_name": "test20.txt",
+                "line_number": 1,
+                "column_number": 5
+            },
+            "type_def": "TokenizerError",
+            "message": "invalid floating point number"
+        },
+        "tokens": []
+    },
+    {
+        "file_name": "test21.txt",
+        "error": {
+            "token":{
+            "literal": "ERROR",
+            "internal_type": "ERROR",
+            "instance_type": "INKNOWN_TYPE",
+            "file_name": "test21.txt",
+            "line_number": 1,
+            "column_number": 4
+        },
+            "type_def": "TokenizerError",
+            "message": "empty character"
+        },
+        "tokens": []
+    },
+    {
+        "file_name": "test22.txt",
+        "error": {
+            "token": {
+                "literal": "ERROR",
+                "internal_type": "ERROR",
+                "instance_type": "INKNOWN_TYPE",
+                "file_name": "test22.txt",
+                "line_number": 1,
+                "column_number": 1
+            },
+            "type_def": "TokenizerError",
+            "message": "invalid escape character"
+        },
+        "tokens": []
+    },
+    {
+        "file_name": "test23.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "'\\n'",
+                "file_name": "test23.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test24.txt",
+        "error": {
+            "token":{
+                "literal": "ERROR",
+                "internal_type": "ERROR",
+                "instance_type": "INKNOWN_TYPE",
+                "file_name": "test24.txt",
+                "line_number": 1,
+                "column_number": 1
+            },
+            "type_def": "TokenizerError",
+            "message": "unterminated character"
+        },
+        "tokens": []
+    },
+    {
+        "file_name": "test25.txt",
+        "error": null,
+        "tokens": [
+            {
+                "literal": "\"\"",
+                "file_name": "test25.txt",
+                "file_path": null,
+                "line_number": 1,
+                "column_number": 1
+            }
+        ]
+    },
+    {
+        "file_name": "test26.txt",
+        "error": {
+            "token": {
+                "literal": "ERROR",
+                "internal_type": "ERROR",
+                "instance_type": "INKNOWN_TYPE",
+                "file_name": "test26.txt",
+                "line_number": 1,
+                "column_number": 1
+            },
+            "type_def": "TokenizerError",
+            "message": "unterminated string"
+        },
+        "tokens": []
+    },
+    {
+        "file_name": "test27.txt",
+        "error": null,
+        "tokens": []
+    },
+    {
+        "file_name": "test28.txt",
+        "error": {
+            "token": {
+                "literal": "ERROR",
+                "internal_type": "ERROR",
+                "instance_type": "INKNOWN_TYPE",
+                "file_name": "test28.txt",
+                "line_number": 1,
+                "column_number": 1
+            },
+            "type_def": "TokenizerError",
+            "message": "unterminated block comment"
+        },
+        "tokens": []
+    }
+]

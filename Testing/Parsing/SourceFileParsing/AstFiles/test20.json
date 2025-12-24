@@ -1,0 +1,1682 @@
+[
+    {
+        "name": {
+            "literal": "parsing_testing",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 1,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "type_def": "ModuleStatement"
+    },
+    {
+        "import_type": "module",
+        "source_name": {
+            "literal": "amodule",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 3,
+            "column_number": 43,
+            "type_def": "Token"
+        },
+        "path_list": [
+            {
+                "node_token": {
+                    "literal": "folder",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 61,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": ".",
+                    "internal_type": "DOT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 60,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            },
+            {
+                "node_token": {
+                    "literal": "subfolder",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 68,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": ".",
+                    "internal_type": "DOT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 67,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            }
+        ],
+        "import_list": [
+            {
+                "name_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "new_name_token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "type_def": "ImportItem"
+            },
+            {
+                "name_token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 16,
+                    "type_def": "Token"
+                },
+                "new_name_token": {
+                    "literal": "c",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 21,
+                    "type_def": "Token"
+                },
+                "type_def": "ImportItem"
+            },
+            {
+                "name_token": {
+                    "literal": "d",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 24,
+                    "type_def": "Token"
+                },
+                "new_name_token": {
+                    "literal": "e",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 29,
+                    "type_def": "Token"
+                },
+                "type_def": "ImportItem"
+            }
+        ],
+        "type_def": "ImportStatement"
+    },
+    {
+        "import_type": "library",
+        "source_name": {
+            "literal": "space",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 4,
+            "column_number": 27,
+            "type_def": "Token"
+        },
+        "path_list": [],
+        "import_list": [
+            {
+                "name_token": {
+                    "literal": "thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "new_name_token": null,
+                "type_def": "ImportItem"
+            }
+        ],
+        "type_def": "ImportStatement"
+    },
+    {
+        "import_type": "library",
+        "source_name": {
+            "literal": "station",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 5,
+            "column_number": 24,
+            "type_def": "Token"
+        },
+        "path_list": [],
+        "import_list": [
+            {
+                "name_token": {
+                    "literal": "ee",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "new_name_token": null,
+                "type_def": "ImportItem"
+            }
+        ],
+        "type_def": "ImportStatement"
+    },
+    {
+        "import_type": "module",
+        "source_name": {
+            "literal": "current",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 6,
+            "column_number": 27,
+            "type_def": "Token"
+        },
+        "path_list": [
+            {
+                "node_token": {
+                    "literal": "up",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 46,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": "..",
+                    "internal_type": "RANGE",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 44,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            },
+            {
+                "node_token": {
+                    "literal": "upsome_more",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 50,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": "..",
+                    "internal_type": "RANGE",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 48,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            },
+            {
+                "node_token": {
+                    "literal": "keep_going",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 63,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": "..",
+                    "internal_type": "RANGE",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 61,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            },
+            {
+                "node_token": {
+                    "literal": "kinda",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 75,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": "..",
+                    "internal_type": "RANGE",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 73,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            },
+            {
+                "node_token": {
+                    "literal": "other_sub_folder",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 81,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": ".",
+                    "internal_type": "DOT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 80,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            },
+            {
+                "node_token": {
+                    "literal": "one_folder_among_many",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 98,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": ":",
+                    "internal_type": "COLON",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 97,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            },
+            {
+                "node_token": {
+                    "literal": "haystack",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 120,
+                    "type_def": "Token"
+                },
+                "direction_token": {
+                    "literal": ".",
+                    "internal_type": "DOT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 119,
+                    "type_def": "Token"
+                },
+                "type_def": "PathItem"
+            }
+        ],
+        "import_list": [
+            {
+                "name_token": {
+                    "literal": "Needle",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 6,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "new_name_token": null,
+                "type_def": "ImportItem"
+            }
+        ],
+        "type_def": "ImportStatement"
+    },
+    {
+        "type_variant_token": {
+            "literal": "HashMap",
+            "internal_type": "HASHMAP",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 9,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "key_token": {
+            "literal": "int",
+            "internal_type": "INT",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 9,
+            "column_number": 16,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "string",
+            "internal_type": "STRING",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 9,
+            "column_number": 21,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "IntStringHashMap",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 9,
+            "column_number": 32,
+            "type_def": "Token"
+        },
+        "type_def": "KeyValueType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Map",
+            "internal_type": "MAP",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 10,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "key_token": {
+            "literal": "int",
+            "internal_type": "INT",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 10,
+            "column_number": 12,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "string",
+            "internal_type": "STRING",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 10,
+            "column_number": 18,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "IntStringMap",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 10,
+            "column_number": 29,
+            "type_def": "Token"
+        },
+        "type_def": "KeyValueType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Dictionary",
+            "internal_type": "DICTIONARY",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 11,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "key_token": {
+            "literal": "int",
+            "internal_type": "INT",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 11,
+            "column_number": 19,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "string",
+            "internal_type": "STRING",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 11,
+            "column_number": 25,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "IntStringDict",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 11,
+            "column_number": 36,
+            "type_def": "Token"
+        },
+        "type_def": "KeyValueType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Vector",
+            "internal_type": "VECTOR",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 13,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "int",
+            "internal_type": "INT",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 13,
+            "column_number": 15,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "IntVector",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 13,
+            "column_number": 23,
+            "type_def": "Token"
+        },
+        "type_def": "ListType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "LinkedList",
+            "internal_type": "LINKEDLIST",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 14,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "long",
+            "internal_type": "LONG",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 14,
+            "column_number": 19,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "LongLinkedList",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 14,
+            "column_number": 28,
+            "type_def": "Token"
+        },
+        "type_def": "ListType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "List",
+            "internal_type": "LIST",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 15,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "SomeUserDefinedType",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 15,
+            "column_number": 13,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "ListOfSomeType",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 15,
+            "column_number": 37,
+            "type_def": "Token"
+        },
+        "type_def": "ListType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Stack",
+            "internal_type": "STACK",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 17,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "SomeUserDefinedType",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 17,
+            "column_number": 14,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "StackOfSomeType",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 17,
+            "column_number": 38,
+            "type_def": "Token"
+        },
+        "type_def": "StackType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "HashSet",
+            "internal_type": "HASHSET",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 19,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "Thing",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 19,
+            "column_number": 16,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "ThingHash",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 19,
+            "column_number": 26,
+            "type_def": "Token"
+        },
+        "type_def": "HashType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "TreeSet",
+            "internal_type": "TREESET",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 20,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "Amajig",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 20,
+            "column_number": 16,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "TreeAmajig",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 20,
+            "column_number": 27,
+            "type_def": "Token"
+        },
+        "type_def": "HashType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Set",
+            "internal_type": "SET",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 21,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "All",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 21,
+            "column_number": 12,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "AllSet",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 21,
+            "column_number": 20,
+            "type_def": "Token"
+        },
+        "type_def": "HashType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "FifoQueue",
+            "internal_type": "FIFOQUEUE",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 23,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "Line",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 23,
+            "column_number": 18,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "ImHereFirst",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 23,
+            "column_number": 27,
+            "type_def": "Token"
+        },
+        "type_def": "QueueType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "PriorityQueue",
+            "internal_type": "PRIORITYQUEUE",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 24,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "MeMeMe",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 24,
+            "column_number": 22,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "SnobQueue",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 24,
+            "column_number": 33,
+            "type_def": "Token"
+        },
+        "type_def": "QueueType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Deque",
+            "internal_type": "DEQUE",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 25,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "Thing",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 25,
+            "column_number": 14,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "ThingDeque",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 25,
+            "column_number": 24,
+            "type_def": "Token"
+        },
+        "type_def": "QueueType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Queue",
+            "internal_type": "QUEUE",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 26,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "People",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 26,
+            "column_number": 14,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "Lineup",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 26,
+            "column_number": 25,
+            "type_def": "Token"
+        },
+        "type_def": "QueueType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Option",
+            "internal_type": "OPTION",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 28,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "maybe",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 28,
+            "column_number": 15,
+            "type_def": "Token"
+        },
+        "error_token": null,
+        "new_name_token": {
+            "literal": "CouldBe",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 28,
+            "column_number": 25,
+            "type_def": "Token"
+        },
+        "type_def": "OptionType"
+    },
+    {
+        "type_variant_token": {
+            "literal": "Result",
+            "internal_type": "RESULT",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 29,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "value_token": {
+            "literal": "ThingIWant",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 29,
+            "column_number": 15,
+            "type_def": "Token"
+        },
+        "error_token": {
+            "literal": "Whoops",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 29,
+            "column_number": 27,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "StuffIWant",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 29,
+            "column_number": 38,
+            "type_def": "Token"
+        },
+        "type_def": "ResultType"
+    },
+    {
+        "arg_type_list": [],
+        "return_type_token": null,
+        "new_name_token": {
+            "literal": "DoNothingFn",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 30,
+            "column_number": 17,
+            "type_def": "Token"
+        },
+        "type_variant_token": {
+            "literal": "fun",
+            "internal_type": "FUN",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 30,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "type_def": "FunctionType"
+    },
+    {
+        "arg_type_list": [
+            {
+                "literal": "int",
+                "internal_type": "INT",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 31,
+                "column_number": 12,
+                "type_def": "Token"
+            }
+        ],
+        "return_type_token": null,
+        "new_name_token": {
+            "literal": "TakeAthingFn",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 31,
+            "column_number": 20,
+            "type_def": "Token"
+        },
+        "type_variant_token": {
+            "literal": "fun",
+            "internal_type": "FUN",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 31,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "type_def": "FunctionType"
+    },
+    {
+        "arg_type_list": [
+            {
+                "literal": "int",
+                "internal_type": "INT",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 32,
+                "column_number": 12,
+                "type_def": "Token"
+            },
+            {
+                "literal": "Thing",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 32,
+                "column_number": 17,
+                "type_def": "Token"
+            },
+            {
+                "literal": "MyStruct",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 32,
+                "column_number": 24,
+                "type_def": "Token"
+            },
+            {
+                "literal": "float",
+                "internal_type": "FLOAT",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 32,
+                "column_number": 34,
+                "type_def": "Token"
+            },
+            {
+                "literal": "long",
+                "internal_type": "LONG",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 32,
+                "column_number": 41,
+                "type_def": "Token"
+            },
+            {
+                "literal": "double",
+                "internal_type": "DOUBLE",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 32,
+                "column_number": 47,
+                "type_def": "Token"
+            },
+            {
+                "literal": "char",
+                "internal_type": "CHAR",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 32,
+                "column_number": 55,
+                "type_def": "Token"
+            },
+            {
+                "literal": "string",
+                "internal_type": "STRING",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 32,
+                "column_number": 61,
+                "type_def": "Token"
+            }
+        ],
+        "return_type_token": {
+            "literal": "Needle",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 32,
+            "column_number": 69,
+            "type_def": "Token"
+        },
+        "new_name_token": {
+            "literal": "FunctionType",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 32,
+            "column_number": 79,
+            "type_def": "Token"
+        },
+        "type_variant_token": {
+            "literal": "fun",
+            "internal_type": "FUN",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 32,
+            "column_number": 8,
+            "type_def": "Token"
+        },
+        "type_def": "FunctionType"
+    },
+    {
+        "name_token": {
+            "literal": "Thing",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 35,
+            "column_number": 6,
+            "type_def": "Token"
+        },
+        "public_token": null,
+        "item_list": [
+            {
+                "item_name_token": {
+                    "literal": "i",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 36,
+                    "column_number": 2,
+                    "type_def": "Token"
+                },
+                "default_value_token": {
+                    "literal": "0",
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 36,
+                    "column_number": 6,
+                    "type_def": "Token"
+                },
+                "type_def": "EnumListItem"
+            },
+            {
+                "item_name_token": {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 37,
+                    "column_number": 2,
+                    "type_def": "Token"
+                },
+                "default_value_token": {
+                    "literal": "2",
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 37,
+                    "column_number": 6,
+                    "type_def": "Token"
+                },
+                "type_def": "EnumListItem"
+            }
+        ],
+        "general_type": {
+            "literal": "long",
+            "internal_type": "LONG",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 35,
+            "column_number": 12,
+            "type_def": "Token"
+        },
+        "type_def": "EnumStatement"
+    },
+    {
+        "acyclic_token": {
+            "literal": "acyclic",
+            "internal_type": "ACYCLIC",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 40,
+            "column_number": 1,
+            "type_def": "Token"
+        },
+        "inline_token": null,
+        "public_token": null,
+        "name_token": {
+            "literal": "MyStruct",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 40,
+            "column_number": 16,
+            "type_def": "Token"
+        },
+        "fields": [
+            {
+                "public_token": {
+                    "literal": "pub",
+                    "internal_type": "PUB",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 42,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "field_name_token": {
+                    "literal": "count",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 42,
+                    "column_number": 7,
+                    "type_def": "Token"
+                },
+                "type_token": {
+                    "literal": "int",
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 42,
+                    "column_number": 16,
+                    "type_def": "Token"
+                },
+                "type_def": "StructField"
+            },
+            {
+                "public_token": {
+                    "literal": "pub",
+                    "internal_type": "PUB",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 43,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "field_name_token": {
+                    "literal": "i",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 43,
+                    "column_number": 7,
+                    "type_def": "Token"
+                },
+                "type_token": {
+                    "literal": "\"string\"",
+                    "internal_type": "STRING",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 43,
+                    "column_number": 12,
+                    "type_def": "Token"
+                },
+                "type_def": "StructField"
+            }
+        ],
+        "functions": [],
+        "interfaces": [
+            {
+                "literal": "MuhFace",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 41,
+                "column_number": 8,
+                "type_def": "Token"
+            },
+            {
+                "literal": "MuhHands",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 41,
+                "column_number": 17,
+                "type_def": "Token"
+            }
+        ],
+        "type_def": "StructStatement"
+    },
+    {
+        "name_token": {
+            "literal": "Whoops",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 46,
+            "column_number": 7,
+            "type_def": "Token"
+        },
+        "public_token": null,
+        "items": [
+            {
+                "literal": "badidea",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 47,
+                "column_number": 3,
+                "type_def": "Token"
+            },
+            {
+                "literal": "badluck",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 48,
+                "column_number": 3,
+                "type_def": "Token"
+            }
+        ],
+        "type_def": "ErrorStatement"
+    },
+    {
+        "name_token": {
+            "literal": "EverythingBagel",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 55,
+            "column_number": 7,
+            "type_def": "Token"
+        },
+        "public_token": null,
+        "items": [
+            {
+                "item_name_token": {
+                    "literal": "field1",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 56,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "type_token": {
+                    "literal": "Thing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 56,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "type_def": "UnionListItem"
+            },
+            {
+                "item_name_token": {
+                    "literal": "field2",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 57,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "type_token": {
+                    "literal": "MyStruct",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 57,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "type_def": "UnionListItem"
+            },
+            {
+                "item_name_token": {
+                    "literal": "fields3",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 58,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "type_token": {
+                    "literal": "Whoops",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 58,
+                    "column_number": 14,
+                    "type_def": "Token"
+                },
+                "type_def": "UnionListItem"
+            },
+            {
+                "item_name_token": {
+                    "literal": "field4",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 59,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "type_token": {
+                    "literal": "Needle",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 59,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "type_def": "UnionListItem"
+            }
+        ],
+        "type_def": "UnionStatement"
+    },
+    {
+        "name_token": {
+            "literal": "MuhFace",
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 62,
+            "column_number": 23,
+            "type_def": "Token"
+        },
+        "fn_headers": [
+            {
+                "name_token": {
+                    "literal": "fun_one",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 63,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "arguments": [],
+                "return_type_token": {
+                    "literal": "int",
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 63,
+                    "column_number": 19,
+                    "type_def": "Token"
+                },
+                "acyclic_token": null,
+                "is_public": true,
+                "inline_token": null,
+                "public_token": null,
+                "type_def": "FunctionHeaderStatement"
+            }
+        ],
+        "acyclic_token": {
+            "literal": "acyclic",
+            "internal_type": "ACYCLIC",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 62,
+            "column_number": 1,
+            "type_def": "Token"
+        },
+        "public_token": {
+            "literal": "pub",
+            "internal_type": "PUB",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 62,
+            "column_number": 9,
+            "type_def": "Token"
+        },
+        "type_def": "InterfaceStatement"
+    },
+    {
+        "header": {
+            "name_token": {
+                "literal": "afunction",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 66,
+                "column_number": 12,
+                "type_def": "Token"
+            },
+            "arguments": [],
+            "return_type_token": {
+                "literal": "int",
+                "internal_type": "INT",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 66,
+                "column_number": 24,
+                "type_def": "Token"
+            },
+            "acyclic_token": null,
+            "is_public": false,
+            "inline_token": {
+                "literal": "inline",
+                "internal_type": "INLINE",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test20.ap",
+                "file_path": null,
+                "line_number": 66,
+                "column_number": 1,
+                "type_def": "Token"
+            },
+            "public_token": null,
+            "type_def": "FunctionHeaderStatement"
+        },
+        "statements": [
+            {
+                "let_or_var_token": {
+                    "literal": "let",
+                    "internal_type": "LET",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 67,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "name_token": {
+                    "literal": "i",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 67,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "type_token": {
+                    "literal": "float",
+                    "internal_type": "FLOAT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 67,
+                    "column_number": 14,
+                    "type_def": "Token"
+                },
+                "exp_ast": {
+                    "token": {
+                        "literal": "0.1",
+                        "internal_type": "FLOAT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "test20.ap",
+                        "file_path": null,
+                        "line_number": 67,
+                        "column_number": 22,
+                        "type_def": "Token"
+                    },
+                    "type": null,
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "let",
+                    "internal_type": "LET",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 67,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "been_analyzed": false,
+                "type_def": "AssignmentStatement"
+            },
+            {
+                "expression": {
+                    "token": {
+                        "literal": "0",
+                        "internal_type": "INT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "test20.ap",
+                        "file_path": null,
+                        "line_number": 68,
+                        "column_number": 12,
+                        "type_def": "Token"
+                    },
+                    "type": null,
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "return",
+                    "internal_type": "RETURN",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test20.ap",
+                    "file_path": null,
+                    "line_number": 68,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "type_def": "ReturnStatement"
+            }
+        ],
+        "acyclic_token": null,
+        "inline_token": {
+            "literal": "inline",
+            "internal_type": "INLINE",
+            "instance_type": "UNKNOWN_TYPE",
+            "file_name": "test20.ap",
+            "file_path": null,
+            "line_number": 66,
+            "column_number": 1,
+            "type_def": "Token"
+        },
+        "pub_token": null,
+        "type_def": "FunctionStatement"
+    }
+]

@@ -1,0 +1,37 @@
+fun function() int do
+  loop
+    if true do
+      for i0 in 1 .. 10 do
+        for i1 in 1 .. 10 do
+          if true do
+            if true do
+              let a2 as int = 10
+            end
+          elif true do
+            if true do
+              let a3 as int = 10
+            end
+          end
+        end
+        return 0
+      end
+    else
+      for i4 in 1 .. 10 do
+        if true do
+          if true do
+            for i5 in 1 .. 10 do
+              let a6 as int = 10
+            end
+          end
+        elif true do
+          for i7 in 1 .. 10 do
+            if true do
+              let a8 as int = 10
+            end
+          end
+        end
+      end
+      return 0
+    end
+  end
+end

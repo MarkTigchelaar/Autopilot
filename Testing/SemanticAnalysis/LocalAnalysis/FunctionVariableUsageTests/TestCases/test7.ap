@@ -1,0 +1,16 @@
+fun other(y as int, z as int) int do
+    let aaa as int = y + z + b
+    for let eh in non_existant_optional_collection do
+        let b as int = 0
+    end
+    for e in non_existant_collection do
+        let b as int = 0
+    end
+    if let a = something do
+        let aa as int = 0
+    elif let b = some_other_thing do
+        let bb as int = 0
+    end
+    aa += 0
+    return 0
+end

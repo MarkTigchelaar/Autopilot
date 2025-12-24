@@ -1,0 +1,219 @@
+fun function() int do
+  if true do
+    for i0 in 1 .. 10 do
+      unless true do
+        unless true do
+          if true do
+            if true do
+              if true do
+                for i1 in 1 .. 10 do
+                  loop
+                    while true do
+                      let aa2 as char = 'a'
+                      switch aa2
+                      case 'a' do
+                        let a3 as int = 10
+                      case 'b' do
+                        let a4 as int = 10
+                      default
+                        let a5 as int = 10
+                      end
+                      return 0
+                    end
+                  end
+                  return 0
+                end
+              end
+            end
+            return 0
+          elif true do
+            if true do
+              for i6 in 1 .. 10 do
+                loop
+                  while true do
+                    let aa7 as char = 'a'
+                    switch aa7
+                    case 'a' do
+                      if true do
+                        let a8 as int = 10
+                      end
+                      return 0
+                    case 'b' do
+                      if true do
+                        let a9 as int = 10
+                      end
+                      return 0
+                    default
+                      if true do
+                        let a10 as int = 10
+                      end
+                      return 0
+                    end
+                    return 0
+                  end
+                end
+                return 0
+              end
+            end
+          else
+            for i11 in 1 .. 10 do
+              loop
+                while true do
+                  let aa12 as char = 'a'
+                  switch aa12
+                  case 'a' do
+                    if true do
+                      if true do
+                        let a13 as int = 10
+                      end
+                    end
+                    return 0
+                  case 'b' do
+                    if true do
+                      if true do
+                        let a14 as int = 10
+                      end
+                      return 0
+                    end
+                  default
+                    if true do
+                      if true do
+                        let a15 as int = 10
+                      end
+                    end
+                    return 0
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          end
+          return 0
+        end
+        return 0
+      end
+    end
+    return 0
+  elif true do
+    unless true do
+      unless true do
+        if true do
+          if true do
+            if true do
+              for i16 in 1 .. 10 do
+                loop
+                  while true do
+                    let aa17 as char = 'a'
+                    switch aa17
+                    case 'a' do
+                      for i18 in 1 .. 10 do
+                        let a19 as int = 10
+                      end
+                      return 0
+                    case 'b' do
+                      for i20 in 1 .. 10 do
+                        let a21 as int = 10
+                      end
+                      return 0
+                    default
+                      for i22 in 1 .. 10 do
+                        let a23 as int = 10
+                      end
+                      return 0
+                    end
+                    return 0
+                  end
+                end
+                return 0
+              end
+            end
+          end
+          return 0
+        elif true do
+          if true do
+            for i24 in 1 .. 10 do
+              loop
+                while true do
+                  let aa25 as char = 'a'
+                  switch aa25
+                  case 'a' do
+                    for i26 in 1 .. 10 do
+                      if true do
+                        let a27 as int = 10
+                      end
+                      return 0
+                    end
+                    return 0
+                  case 'b' do
+                    if true do
+                      for i28 in 1 .. 10 do
+                        let a29 as int = 10
+                      end
+                      return 0
+                    end
+                    return 0
+                  default
+                    for i30 in 1 .. 10 do
+                      if true do
+                        let a31 as int = 10
+                      end
+                      return 0
+                    end
+                    return 0
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          end
+        else
+          for i32 in 1 .. 10 do
+            loop
+              while true do
+                let aa33 as char = 'a'
+                switch aa33
+                case 'a' do
+                  for i34 in 1 .. 10 do
+                    if true do
+                      if true do
+                        let a35 as int = 10
+                      end
+                    end
+                    return 0
+                  end
+                  return 0
+                case 'b' do
+                  if true do
+                    if true do
+                      for i36 in 1 .. 10 do
+                        let a37 as int = 10
+                      end
+                      return 0
+                    end
+                  end
+                  return 0
+                default
+                  if true do
+                    for i38 in 1 .. 10 do
+                      if true do
+                        let a39 as int = 10
+                      end
+                      return 0
+                    end
+                    return 0
+                  end
+                end
+                return 0
+              end
+            end
+            return 0
+          end
+        end
+        return 0
+      end
+      return 0
+    end
+  end
+end

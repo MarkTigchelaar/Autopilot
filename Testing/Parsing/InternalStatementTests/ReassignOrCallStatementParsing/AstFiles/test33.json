@@ -1,0 +1,114 @@
+{
+
+        "l_value_exp": {
+            "struct_name_exp": {
+                "collection_name_exp": {
+                    "struct_name_exp": {
+                        "token": {
+                            "literal": "a",
+                            "file_name": "test33.txt",
+                            "line_number": 1,
+                            "column_number": 1,
+                            "internal_type": "IDENTIFIER",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "type_def": "NameExpression"
+                    },
+                    "argument_list": [
+                        {
+                            "token": {
+                                "literal": "b",
+                                "file_name": "test33.txt",
+                                "line_number": 1,
+                                "column_number": 3,
+                                "internal_type": "IDENTIFIER",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "type_def": "Token",
+                                "file_path": null
+                            },
+                            "type_def": "NameExpression"
+                        },
+                        {
+                            "collection_name_exp": {
+                                "token": {
+                                    "literal": "f",
+                                    "file_name": "test33.txt",
+                                    "line_number": 1,
+                                    "column_number": 5,
+                                    "internal_type": "IDENTIFIER",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "type_def": "NameExpression"
+                            },
+                            "argument_list": [
+                                {
+                                    "token": {
+                                        "literal": "0",
+                                        "file_name": "test33.txt",
+                                        "line_number": 1,
+                                        "column_number": 7,
+                                        "internal_type": "INT",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                }
+                            ],
+                            "type_def": "CollectionAccessExpression"
+                        }
+                    ],
+                    "type_def": "MethodCallOrFieldExpression"
+                },
+                "argument_list": [
+                    {
+                        "token": {
+                            "literal": "0",
+                            "file_name": "test33.txt",
+                            "line_number": 1,
+                            "column_number": 10,
+                            "internal_type": "INT",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "type_def": "NameExpression"
+                    }
+                ],
+                "type_def": "CollectionAccessExpression"
+            },
+            "argument_list": [
+                {
+                    "token": {
+                        "literal": "thing",
+                        "file_name": "test33.txt",
+                        "line_number": 1,
+                        "column_number": 13,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                }
+            ],
+            "type_def": "MethodCallOrFieldExpression"
+        },
+        "assignment_token": null,
+        "r_value_exp": null,
+        "descriptor_token": {
+            "literal": "a",
+            "file_name": "test33.txt",
+            "line_number": 1,
+            "column_number": 1,
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "type_def": "Token",
+            "file_path": null
+        },
+        "type_def": "ReassignmentOrMethodCall"
+}

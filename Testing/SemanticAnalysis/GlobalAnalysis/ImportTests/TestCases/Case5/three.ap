@@ -1,0 +1,7 @@
+module three
+
+import doesnt_exist from module four
+
+pub enum also_exists is
+    a = 0
+end

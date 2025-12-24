@@ -1,0 +1,176 @@
+[
+    {
+        "main_module_path": "Case1",
+        "library_names":[],
+        "errors": [
+            {
+                "token": {
+                    "literal": "does_not_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import not defined in imported module",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case2",
+        "library_names":[],
+        "errors": [
+            {
+                "token": {
+                    "literal": "duplicates_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import has duplicate definition in imported module",
+                "shadowed_token": {
+                    "literal": "duplicates_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 10,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "duplicates_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import has duplicate definition in imported module",
+                "shadowed_token": {
+                    "literal": "duplicates_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 10,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case3",
+        "library_names":[],
+        "errors": [
+            {
+                "token": {
+                    "literal": "does_not_exist_in_public",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import not defined in imported module",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case4",
+        "library_names":[],
+        "errors": []
+    },
+    {
+        "main_module_path": "Case5",
+        "library_names":[],
+        "errors": [
+            {
+                "token": {
+                    "literal": "doesnt_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "three.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import not defined in imported module",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case6",
+        "library_names":[
+            "system", "built_in"
+        ],
+        "errors": [
+            {
+                "token": {
+                    "literal": "doesnt_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import not defined in imported module",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "this_doesnt_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "second.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "item in import not defined in imported module",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

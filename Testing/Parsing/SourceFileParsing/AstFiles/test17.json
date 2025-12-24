@@ -1,0 +1,495 @@
+[
+    {
+        "header": {
+            "name_token": {
+                "literal": "test",
+                "file_name": "test17.ap",
+                "line_number": 1,
+                "column_number": 5,
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "type_def": "Token",
+                "file_path": null
+            },
+            "arguments": [],
+            "return_type_token": null,
+            "acyclic_token": null,
+            "is_public": false,
+            "inline_token": null,
+            "public_token": null,
+            "type_def": "FunctionHeaderStatement"
+        },
+        "statements": [
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "a",
+                        "file_name": "test17.ap",
+                        "line_number": 2,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "EQUAL",
+                    "literal": "=",
+                    "file_name": "test17.ap",
+                    "line_number": 2,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "token": {
+                        "literal": "0",
+                        "file_name": "test17.ap",
+                        "line_number": 2,
+                        "column_number": 9,
+                        "internal_type": "INT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "a",
+                    "file_name": "test17.ap",
+                    "line_number": 2,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            },
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "b",
+                        "file_name": "test17.ap",
+                        "line_number": 3,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "EQUAL",
+                    "literal": "=",
+                    "file_name": "test17.ap",
+                    "line_number": 3,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "left_expression": {
+                        "token": {
+                            "literal": "'a'",
+                            "file_name": "test17.ap",
+                            "line_number": 3,
+                            "column_number": 9,
+                            "internal_type": "CHAR",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "type_def": "NameExpression"
+                    },
+                    "right_expression": {
+                        "token": {
+                            "literal": "'f'",
+                            "file_name": "test17.ap",
+                            "line_number": 3,
+                            "column_number": 15,
+                            "internal_type": "CHAR",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "type_def": "NameExpression"
+                    },
+                    "type_def": "OperatorExpression",
+                    "token": {
+                        "literal": "+",
+                        "file_name": "test17.ap",
+                        "line_number": 3,
+                        "column_number": 13,
+                        "internal_type": "PLUS",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    }
+                },
+                "descriptor_token": {
+                    "literal": "b",
+                    "file_name": "test17.ap",
+                    "line_number": 3,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            },
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "c",
+                        "file_name": "test17.ap",
+                        "line_number": 4,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "EQUAL",
+                    "literal": "=",
+                    "file_name": "test17.ap",
+                    "line_number": 4,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "left_expression": {
+                        "token": {
+                            "literal": "\"string\"",
+                            "file_name": "test17.ap",
+                            "line_number": 4,
+                            "column_number": 9,
+                            "internal_type": "STRING",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "type_def": "NameExpression"
+                    },
+                    "right_expression": {
+                        "token": {
+                            "literal": "\"string\"",
+                            "file_name": "test17.ap",
+                            "line_number": 4,
+                            "column_number": 21,
+                            "internal_type": "STRING",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        },
+                        "type_def": "NameExpression"
+                    },
+                    "type_def": "OperatorExpression",
+                    "token": {
+                        "literal": "+",
+                        "file_name": "test17.ap",
+                        "line_number": 4,
+                        "column_number": 19,
+                        "internal_type": "PLUS",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    }
+                },
+                "descriptor_token": {
+                    "literal": "c",
+                    "file_name": "test17.ap",
+                    "line_number": 4,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            },
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "d",
+                        "file_name": "test17.ap",
+                        "line_number": 6,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "PLUS_EQUAL",
+                    "literal": "+=",
+                    "file_name": "test17.ap",
+                    "line_number": 6,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "token": {
+                        "literal": "4",
+                        "file_name": "test17.ap",
+                        "line_number": 6,
+                        "column_number": 10,
+                        "internal_type": "INT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "d",
+                    "file_name": "test17.ap",
+                    "line_number": 6,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            },
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "a",
+                        "file_name": "test17.ap",
+                        "line_number": 7,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "MINUS_EQUAL",
+                    "literal": "-=",
+                    "file_name": "test17.ap",
+                    "line_number": 7,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "token": {
+                        "literal": "4",
+                        "file_name": "test17.ap",
+                        "line_number": 7,
+                        "column_number": 10,
+                        "internal_type": "INT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "a",
+                    "file_name": "test17.ap",
+                    "line_number": 7,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            },
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "a",
+                        "file_name": "test17.ap",
+                        "line_number": 8,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "STAR_EQUAL",
+                    "literal": "*=",
+                    "file_name": "test17.ap",
+                    "line_number": 8,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "token": {
+                        "literal": "4",
+                        "file_name": "test17.ap",
+                        "line_number": 8,
+                        "column_number": 10,
+                        "internal_type": "INT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "a",
+                    "file_name": "test17.ap",
+                    "line_number": 8,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            },
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "a",
+                        "file_name": "test17.ap",
+                        "line_number": 9,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "MOD_EQUAL",
+                    "literal": "%=",
+                    "file_name": "test17.ap",
+                    "line_number": 9,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "token": {
+                        "literal": "4",
+                        "file_name": "test17.ap",
+                        "line_number": 9,
+                        "column_number": 10,
+                        "internal_type": "INT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "a",
+                    "file_name": "test17.ap",
+                    "line_number": 9,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            },
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "a",
+                        "file_name": "test17.ap",
+                        "line_number": 10,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "CARROT_EQUAL",
+                    "literal": "^=",
+                    "file_name": "test17.ap",
+                    "line_number": 10,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "token": {
+                        "literal": "4.863",
+                        "file_name": "test17.ap",
+                        "line_number": 10,
+                        "column_number": 10,
+                        "internal_type": "FLOAT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "a",
+                    "file_name": "test17.ap",
+                    "line_number": 10,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            },
+            {
+                "l_value_exp": {
+                    "token": {
+                        "literal": "a",
+                        "file_name": "test17.ap",
+                        "line_number": 11,
+                        "column_number": 5,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "assignment_token": {
+                    "internal_type": "SLASH_EQUAL",
+                    "literal": "/=",
+                    "file_name": "test17.ap",
+                    "line_number": 11,
+                    "column_number": 7
+                },
+                "r_value_exp": {
+                    "token": {
+                        "literal": "5.86",
+                        "file_name": "test17.ap",
+                        "line_number": 11,
+                        "column_number": 10,
+                        "internal_type": "FLOAT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                "descriptor_token": {
+                    "literal": "a",
+                    "file_name": "test17.ap",
+                    "line_number": 11,
+                    "column_number": 5,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "ReassignmentOrMethodCall"
+            }
+        ],
+        "acyclic_token": null,
+        "inline_token": null,
+        "pub_token": null,
+        "type_def": "FunctionStatement"
+    }
+]

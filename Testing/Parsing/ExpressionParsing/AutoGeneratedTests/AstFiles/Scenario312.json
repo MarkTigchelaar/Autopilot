@@ -1,0 +1,504 @@
+{
+    "left_expression": {
+        "left_expression": {
+            "left_expression": {
+                "token": {
+                    "literal": "a",
+                    "file_name": "Scenario312.txt",
+                    "line_number": 1,
+                    "column_number": 1,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "NameExpression"
+            },
+            "right_expression": {
+                "token": {
+                    "literal": "a",
+                    "file_name": "Scenario312.txt",
+                    "line_number": 1,
+                    "column_number": 3,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "NameExpression"
+            },
+            "type_def": "OperatorExpression",
+            "token": {
+                "literal": "/",
+                "file_name": "Scenario312.txt",
+                "line_number": 1,
+                "column_number": 2,
+                "internal_type": "SLASH",
+                "instance_type": "UNKNOWN_TYPE",
+                "type_def": "Token",
+                "file_path": null
+            }
+        },
+        "right_expression": {
+            "token": {
+                "literal": "a",
+                "file_name": "Scenario312.txt",
+                "line_number": 1,
+                "column_number": 5,
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "type_def": "Token",
+                "file_path": null
+            },
+            "type_def": "NameExpression"
+        },
+        "type_def": "OperatorExpression",
+        "token": {
+            "literal": "/",
+            "file_name": "Scenario312.txt",
+            "line_number": 1,
+            "column_number": 4,
+            "internal_type": "SLASH",
+            "instance_type": "UNKNOWN_TYPE",
+            "type_def": "Token",
+            "file_path": null
+        }
+    },
+    "right_expression": {
+        "left_expression": {
+            "token": {
+                "literal": "a",
+                "file_name": "Scenario312.txt",
+                "line_number": 1,
+                "column_number": 8,
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "type_def": "Token",
+                "file_path": null
+            },
+            "type_def": "NameExpression"
+        },
+        "right_expression": {
+            "fn_name_exp": {
+                "token": {
+                    "literal": "func",
+                    "file_name": "Scenario312.txt",
+                    "line_number": 1,
+                    "column_number": 11,
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "type_def": "Token",
+                    "file_path": null
+                },
+                "type_def": "NameExpression"
+            },
+            "argument_list": [
+                {
+                    "left_expression": {
+                        "left_expression": {
+                            "left_expression": {
+                                "token": {
+                                    "literal": "a",
+                                    "file_name": "Scenario312.txt",
+                                    "line_number": 1,
+                                    "column_number": 16,
+                                    "internal_type": "IDENTIFIER",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "type_def": "NameExpression"
+                            },
+                            "right_expression": {
+                                "token": {
+                                    "literal": "a",
+                                    "file_name": "Scenario312.txt",
+                                    "line_number": 1,
+                                    "column_number": 18,
+                                    "internal_type": "IDENTIFIER",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "type_def": "NameExpression"
+                            },
+                            "type_def": "OperatorExpression",
+                            "token": {
+                                "literal": "/",
+                                "file_name": "Scenario312.txt",
+                                "line_number": 1,
+                                "column_number": 17,
+                                "internal_type": "SLASH",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "type_def": "Token",
+                                "file_path": null
+                            }
+                        },
+                        "right_expression": {
+                            "token": {
+                                "literal": "a",
+                                "file_name": "Scenario312.txt",
+                                "line_number": 1,
+                                "column_number": 20,
+                                "internal_type": "IDENTIFIER",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "type_def": "Token",
+                                "file_path": null
+                            },
+                            "type_def": "NameExpression"
+                        },
+                        "type_def": "OperatorExpression",
+                        "token": {
+                            "literal": "*",
+                            "file_name": "Scenario312.txt",
+                            "line_number": 1,
+                            "column_number": 19,
+                            "internal_type": "STAR",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "type_def": "Token",
+                            "file_path": null
+                        }
+                    },
+                    "right_expression": {
+                        "fn_name_exp": {
+                            "token": {
+                                "literal": "func",
+                                "file_name": "Scenario312.txt",
+                                "line_number": 1,
+                                "column_number": 22,
+                                "internal_type": "IDENTIFIER",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "type_def": "Token",
+                                "file_path": null
+                            },
+                            "type_def": "NameExpression"
+                        },
+                        "argument_list": [
+                            {
+                                "left_expression": {
+                                    "token": {
+                                        "literal": "a",
+                                        "file_name": "Scenario312.txt",
+                                        "line_number": 1,
+                                        "column_number": 28,
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                },
+                                "right_expression": {
+                                    "token": {
+                                        "literal": "a",
+                                        "file_name": "Scenario312.txt",
+                                        "line_number": 1,
+                                        "column_number": 32,
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                },
+                                "type_def": "OperatorExpression",
+                                "token": {
+                                    "literal": "%",
+                                    "file_name": "Scenario312.txt",
+                                    "line_number": 1,
+                                    "column_number": 30,
+                                    "internal_type": "MOD",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                }
+                            },
+                            {
+                                "token": {
+                                    "literal": "a",
+                                    "file_name": "Scenario312.txt",
+                                    "line_number": 1,
+                                    "column_number": 35,
+                                    "internal_type": "IDENTIFIER",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "type_def": "NameExpression"
+                            },
+                            {
+                                "token": {
+                                    "literal": "a",
+                                    "file_name": "Scenario312.txt",
+                                    "line_number": 1,
+                                    "column_number": 37,
+                                    "internal_type": "IDENTIFIER",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                },
+                                "type_def": "NameExpression"
+                            },
+                            {
+                                "left_expression": {
+                                    "token": {
+                                        "literal": "a",
+                                        "file_name": "Scenario312.txt",
+                                        "line_number": 1,
+                                        "column_number": 39,
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                },
+                                "right_expression": {
+                                    "token": {
+                                        "literal": "a",
+                                        "file_name": "Scenario312.txt",
+                                        "line_number": 1,
+                                        "column_number": 42,
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                },
+                                "type_def": "OperatorExpression",
+                                "token": {
+                                    "literal": "+",
+                                    "file_name": "Scenario312.txt",
+                                    "line_number": 1,
+                                    "column_number": 40,
+                                    "internal_type": "PLUS",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                }
+                            },
+                            {
+                                "left_expression": {
+                                    "token": {
+                                        "literal": "a",
+                                        "file_name": "Scenario312.txt",
+                                        "line_number": 1,
+                                        "column_number": 46,
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                },
+                                "right_expression": {
+                                    "left_expression": {
+                                        "token": {
+                                            "literal": "a",
+                                            "file_name": "Scenario312.txt",
+                                            "line_number": 1,
+                                            "column_number": 49,
+                                            "internal_type": "IDENTIFIER",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "type_def": "NameExpression"
+                                    },
+                                    "right_expression": {
+                                        "token": {
+                                            "literal": "a",
+                                            "file_name": "Scenario312.txt",
+                                            "line_number": 1,
+                                            "column_number": 51,
+                                            "internal_type": "IDENTIFIER",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "type_def": "NameExpression"
+                                    },
+                                    "type_def": "OperatorExpression",
+                                    "token": {
+                                        "literal": "/",
+                                        "file_name": "Scenario312.txt",
+                                        "line_number": 1,
+                                        "column_number": 50,
+                                        "internal_type": "SLASH",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    }
+                                },
+                                "type_def": "OperatorExpression",
+                                "token": {
+                                    "literal": "-",
+                                    "file_name": "Scenario312.txt",
+                                    "line_number": 1,
+                                    "column_number": 48,
+                                    "internal_type": "MINUS",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                }
+                            },
+                            {
+                                "left_expression": {
+                                    "left_expression": {
+                                        "token": {
+                                            "literal": "a",
+                                            "file_name": "Scenario312.txt",
+                                            "line_number": 1,
+                                            "column_number": 54,
+                                            "internal_type": "IDENTIFIER",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        },
+                                        "type_def": "NameExpression"
+                                    },
+                                    "right_expression": {
+                                        "left_expression": {
+                                            "token": {
+                                                "literal": "a",
+                                                "file_name": "Scenario312.txt",
+                                                "line_number": 1,
+                                                "column_number": 57,
+                                                "internal_type": "IDENTIFIER",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "type_def": "Token",
+                                                "file_path": null
+                                            },
+                                            "type_def": "NameExpression"
+                                        },
+                                        "right_expression": {
+                                            "token": {
+                                                "literal": "a",
+                                                "file_name": "Scenario312.txt",
+                                                "line_number": 1,
+                                                "column_number": 59,
+                                                "internal_type": "IDENTIFIER",
+                                                "instance_type": "UNKNOWN_TYPE",
+                                                "type_def": "Token",
+                                                "file_path": null
+                                            },
+                                            "type_def": "NameExpression"
+                                        },
+                                        "type_def": "OperatorExpression",
+                                        "token": {
+                                            "literal": "^",
+                                            "file_name": "Scenario312.txt",
+                                            "line_number": 1,
+                                            "column_number": 58,
+                                            "internal_type": "CARROT",
+                                            "instance_type": "UNKNOWN_TYPE",
+                                            "type_def": "Token",
+                                            "file_path": null
+                                        }
+                                    },
+                                    "type_def": "OperatorExpression",
+                                    "token": {
+                                        "literal": "/",
+                                        "file_name": "Scenario312.txt",
+                                        "line_number": 1,
+                                        "column_number": 56,
+                                        "internal_type": "SLASH",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    }
+                                },
+                                "right_expression": {
+                                    "token": {
+                                        "literal": "a",
+                                        "file_name": "Scenario312.txt",
+                                        "line_number": 1,
+                                        "column_number": 62,
+                                        "internal_type": "IDENTIFIER",
+                                        "instance_type": "UNKNOWN_TYPE",
+                                        "type_def": "Token",
+                                        "file_path": null
+                                    },
+                                    "type_def": "NameExpression"
+                                },
+                                "type_def": "OperatorExpression",
+                                "token": {
+                                    "literal": "+",
+                                    "file_name": "Scenario312.txt",
+                                    "line_number": 1,
+                                    "column_number": 60,
+                                    "internal_type": "PLUS",
+                                    "instance_type": "UNKNOWN_TYPE",
+                                    "type_def": "Token",
+                                    "file_path": null
+                                }
+                            }
+                        ],
+                        "type_def": "FunctionCallExpression"
+                    },
+                    "type_def": "OperatorExpression",
+                    "token": {
+                        "literal": "*",
+                        "file_name": "Scenario312.txt",
+                        "line_number": 1,
+                        "column_number": 21,
+                        "internal_type": "STAR",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    }
+                },
+                {
+                    "token": {
+                        "literal": "a",
+                        "file_name": "Scenario312.txt",
+                        "line_number": 1,
+                        "column_number": 66,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                },
+                {
+                    "token": {
+                        "literal": "a",
+                        "file_name": "Scenario312.txt",
+                        "line_number": 1,
+                        "column_number": 68,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "NameExpression"
+                }
+            ],
+            "type_def": "FunctionCallExpression"
+        },
+        "type_def": "OperatorExpression",
+        "token": {
+            "literal": "^",
+            "file_name": "Scenario312.txt",
+            "line_number": 1,
+            "column_number": 10,
+            "internal_type": "CARROT",
+            "instance_type": "UNKNOWN_TYPE",
+            "type_def": "Token",
+            "file_path": null
+        }
+    },
+    "type_def": "OperatorExpression",
+    "token": {
+        "literal": "*",
+        "file_name": "Scenario312.txt",
+        "line_number": 1,
+        "column_number": 6,
+        "internal_type": "STAR",
+        "instance_type": "UNKNOWN_TYPE",
+        "type_def": "Token",
+        "file_path": null
+    }
+}

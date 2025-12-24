@@ -1,0 +1,10 @@
+
+fun function() do
+    if let a = option_thing do
+        loop
+            if 1 < 2 do
+                a = 10
+            end
+        end
+    end
+end

@@ -1,0 +1,72 @@
+{
+        "header": {
+                "name_token": {
+                    "internal_type": "IDENTIFIER",
+                                "instance_type": "UNKNOWN_TYPE",
+                    "literal": "test",
+                    "file_name": "test69.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "arguments": [
+                    {
+                            "arg_name_token": {
+                                "internal_type": "IDENTIFIER",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "literal": "a",
+                                "file_name": "test69.txt",
+                                "line_number": 1,
+                                "column_number": 10
+                            },
+                            "arg_type_token": {
+                                "internal_type": "INT",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "literal": "int",
+                                "file_name": "test69.txt",
+                                "line_number": 1,
+                                "column_number": 15
+                            },
+                            "default_value_token": null,
+                            "type_def": "FunctionArgument"
+                    },
+                    {
+                            "arg_name_token": {
+                                "internal_type": "IDENTIFIER",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "literal": "b",
+                                "file_name": "test69.txt",
+                                "line_number": 1,
+                                "column_number": 20
+                            },
+                            "arg_type_token": {
+                                "internal_type": "FLOAT",
+                                "instance_type": "UNKNOWN_TYPE",
+                                "literal": "float",
+                                "file_name": "test69.txt",
+                                "line_number": 1,
+                                "column_number": 25
+                            },
+                            "default_value_token": null,
+                            "type_def": "FunctionArgument"
+                    }
+                ],
+                "return_type_token": {
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "literal": "thing",
+                    "file_name": "test69.txt",
+                    "line_number": 1,
+                    "column_number": 32
+                },
+                "acyclic_token": null,
+                "is_public": false,
+                "inline_token": null,
+                "public_token": null,
+                "type_def": "FunctionHeaderStatement"
+        },
+        "statements": [],
+        "acyclic_token": null,
+        "inline_token": null,
+        "pub_token": null,
+        "type_def": "FunctionStatement"
+}

@@ -1,0 +1,251 @@
+[
+    {
+        "files": [
+            {
+                "module_name": "main",
+                "path": "TestCase1"
+            },
+            {
+                "module_name": "main",
+                "path": "TestCase1/ModuleFolderForTestOne"
+            }
+        ],
+        "errors": [
+            {
+                "token": {
+                    "literal": "main",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test1other.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "module is not uniquely named",
+                "shadowed_token": {
+                    "literal": "main",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test1.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "files": [
+            {
+                "module_name": "some_module",
+                "path": "TestCase2"
+            },
+            {
+                "module_name": "some_module",
+                "path": "TestCase2/ModuleFolderForTestTwo/"
+            },
+            {
+                "module_name": "some_module",
+                "path": "TestCase2/ModuleFolderForTestTwo/SubModule/"
+            }
+        ],
+        "errors": [
+            {
+                "token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2other.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "module is not uniquely named",
+                "shadowed_token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2otherother.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "module is not uniquely named",
+                "shadowed_token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2otherother.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "module is not uniquely named",
+                "shadowed_token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2other.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "files": [
+            {
+                "module_name": "main",
+                "path": "TestCase3"
+            },
+            {
+                "module_name": "three",
+                "path": "TestCase3/ModuleFolderForTestThree/"
+            }
+        ],
+        "errors": []
+    },
+    {
+        "files": [
+            {
+                "module_name": "some_module",
+                "path": "TestCase2"
+            },
+            {
+                "module_name": "three",
+                "path": "TestCase3/ModuleFolderForTestThree/"
+            },
+            {
+                "module_name": "some_module",
+                "path": "TestCase2/ModuleFolderForTestTwo/"
+            },
+            {
+                "module_name": "some_module",
+                "path": "TestCase2/ModuleFolderForTestTwo/SubModule/"
+            }
+        ],
+        "errors": [
+            {
+                "token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2other.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "module is not uniquely named",
+                "shadowed_token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2otherother.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "module is not uniquely named",
+                "shadowed_token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2otherother.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "message": "module is not uniquely named",
+                "shadowed_token": {
+                    "literal": "some_module",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2other.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

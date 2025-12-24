@@ -1,0 +1,54 @@
+module main
+
+import another_function from module secondary
+
+pub fun main() do
+    let a as int = other_func(1, 2)
+    defer call_me()
+    if a > 2 do
+        let x as int = 0
+    elif a == 2 do
+        let z as int = 4
+    else
+        let y as int = 0
+    end
+    switch a
+        case 1,2,3 do
+            let kk = 0
+        default
+            let zz = 0
+    end
+    loop
+        let at as float = 0.1
+        break
+        loop
+            let at as float = 0.1
+            continue
+        end
+    end
+    unless true do
+        let b as int = 10
+    end
+    while true do
+        doesnt_exist.method(a, b + c, 10)
+    end
+    for k, v in some_Collection do
+        let r = k
+    end
+    for value in normal_collection do
+        var t as int = value
+    end
+    for may_var in 1 .. 10, 4 do
+        let k = may_var / 2
+    end
+end
+
+
+fun other_func(a as int, b as int) int do
+    let c as int = another_function()
+    return a + (b - c)
+end
+
+fun call_me() do
+    let a as int = 0
+end

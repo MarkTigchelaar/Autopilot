@@ -1,0 +1,5 @@
+module second_module
+
+pub enum thing_being_looked_for is
+    i = 10
+end

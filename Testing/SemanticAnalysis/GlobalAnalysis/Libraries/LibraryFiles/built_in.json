@@ -1,0 +1,20 @@
+{
+    "enums": [
+        {
+            "name": "this_does_exist",
+            "type": "char",
+            "items": [
+                {
+                    "name": "a",
+                    "value": "'a'"
+                }
+            ]
+        }
+    ],
+    "unions": [],
+    "functions": [],
+    "structs": [],
+    "interfaces": [],
+    "optionals": [],
+    "results": []
+}

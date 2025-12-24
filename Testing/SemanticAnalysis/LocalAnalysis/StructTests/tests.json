@@ -1,0 +1,140 @@
+[
+    {
+        "file_name" : "test1.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "variable",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test1.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "duplicate struct field name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "my_function",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test1.ap",
+                    "file_path": null,
+                    "line_number": 14,
+                    "column_number": 21,
+                    "type_def": "Token"
+                },
+                "message": "duplicate method name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test1.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 22,
+                    "type_def": "Token"
+                },
+                "message": "duplicate interface name in struct",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },{
+        "file_name" : "test2.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 2,
+                    "column_number": 9,
+                    "type_def": "Token"
+                },
+                "message": "field name is the same as struct type name",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "message": "method name is the same as struct type name",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 15,
+                    "type_def": "Token"
+                },
+                "message": "interface name is the same as struct type name",
+                "shadowed_token": {
+                    "literal": "a",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 1,
+                    "column_number": 8,
+                    "type_def": "Token"
+                },
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

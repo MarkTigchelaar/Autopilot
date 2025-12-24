@@ -1,0 +1,7 @@
+module b
+
+import dstruct from module d
+
+pub struct bstruct is
+    eh as double
+end

@@ -1,0 +1,7 @@
+module c
+
+import dstruct from module d
+
+pub struct cstruct is
+    variable as float
+end

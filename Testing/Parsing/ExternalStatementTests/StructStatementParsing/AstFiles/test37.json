@@ -1,0 +1,184 @@
+{
+    "acyclic_token": null,
+    "inline_token": null,
+    "public_token": null,
+    "name_token": {
+        "literal": "pumpkin",
+        "internal_type": "IDENTIFIER",
+        "instance_type": "UNKNOWN_TYPE",
+        "file_name": "test37.txt",
+        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+        "line_number": 1,
+        "column_number": 8,
+        "type_def": "Token"
+    },
+    "fields": [
+        {
+            "public_token": {
+                "literal": "pub",
+                "internal_type": "PUB",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test37.txt",
+                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                "line_number": 2,
+                "column_number": 3,
+                "type_def": "Token"
+            },
+            "field_name_token": {
+                "literal": "variable",
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test37.txt",
+                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                "line_number": 2,
+                "column_number": 7,
+                "type_def": "Token"
+            },
+            "type_token": {
+                "literal": "int",
+                "internal_type": "INT",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test37.txt",
+                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                "line_number": 2,
+                "column_number": 19,
+                "type_def": "Token"
+            },
+            "type_def": "StructField"
+        }
+    ],
+    "functions": [
+        {
+            "header": {
+                "name_token": {
+                    "literal": "test",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test37.txt",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                    "line_number": 4,
+                    "column_number": 19,
+                    "type_def": "Token"
+                },
+                "arguments": [],
+                "return_type_token": {
+                    "literal": "int",
+                    "internal_type": "INT",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test37.txt",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                    "line_number": 4,
+                    "column_number": 26,
+                    "type_def": "Token"
+                },
+                "acyclic_token": {
+                    "literal": "acyclic",
+                    "internal_type": "ACYCLIC",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test37.txt",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                    "line_number": 4,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "is_public": false,
+                "inline_token": null,
+                "public_token": {
+                    "literal": "pub",
+                    "internal_type": "PUB",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test37.txt",
+                    "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                    "line_number": 4,
+                    "column_number": 11,
+                    "type_def": "Token"
+                },
+                "type_def": "FunctionHeaderStatement"
+            },
+            "statements": [
+                {
+                    "let_or_var_token": {
+                        "literal": "let",
+                        "internal_type": "LET",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "test37.txt",
+                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                        "line_number": 5,
+                        "column_number": 5,
+                        "type_def": "Token"
+                    },
+                    "name_token": {
+                        "literal": "i",
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "test37.txt",
+                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                        "line_number": 5,
+                        "column_number": 9,
+                        "type_def": "Token"
+                    },
+                    "type_token": {
+                        "literal": "string",
+                        "internal_type": "STRING",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "test37.txt",
+                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                        "line_number": 5,
+                        "column_number": 14,
+                        "type_def": "Token"
+                    },
+                    "exp_ast": {
+                        "token": {
+                            "literal": "0",
+                            "internal_type": "INT",
+                            "instance_type": "UNKNOWN_TYPE",
+                            "file_name": "test37.txt",
+                            "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                            "line_number": 5,
+                            "column_number": 23,
+                            "type_def": "Token"
+                        },
+                        "type": null,
+                        "type_def": "NameExpression"
+                    },
+                    "descriptor_token": {
+                        "literal": "let",
+                        "internal_type": "LET",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "test37.txt",
+                        "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                        "line_number": 5,
+                        "column_number": 5,
+                        "type_def": "Token"
+                    },
+                    "been_analyzed": false,
+                    "type_def": "AssignmentStatement"
+                }
+            ],
+            "acyclic_token": {
+                "literal": "acyclic",
+                "internal_type": "ACYCLIC",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test37.txt",
+                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                "line_number": 4,
+                "column_number": 3,
+                "type_def": "Token"
+            },
+            "inline_token": null,
+            "pub_token": {
+                "literal": "pub",
+                "internal_type": "PUB",
+                "instance_type": "UNKNOWN_TYPE",
+                "file_name": "test37.txt",
+                "file_path": "D:/Projects/Python-Projects/Autopilot/Testing/Parsing/ExternalStatementTests/StructStatementParsing/TestCases/",
+                "line_number": 4,
+                "column_number": 11,
+                "type_def": "Token"
+            },
+            "type_def": "FunctionStatement"
+        }
+    ],
+    "interfaces": [],
+    "type_def": "StructStatement"
+}

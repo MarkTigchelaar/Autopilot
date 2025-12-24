@@ -1,0 +1,8 @@
+loop as a_loop do
+    switch a
+        case 1,12,-15 do
+
+        default
+            var a = 1
+    end
+end

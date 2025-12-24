@@ -1,0 +1,7 @@
+
+fun function() do
+    let a = 10
+    if 1 < 2 do
+        a = 10
+    end
+end

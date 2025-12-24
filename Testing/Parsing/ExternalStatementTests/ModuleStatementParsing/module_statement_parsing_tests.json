@@ -1,0 +1,40 @@
+[
+    {
+        "file_name": "test1.txt",
+        "errors": null,
+        "ast_file": "test1.json"
+    },
+    {
+        "file_name": "test2.txt",
+        "errors": null,
+        "ast_file": "test2.json"
+    },
+    {
+        "file_name": "test3.txt",
+        "errors": [
+            {
+                "token": {
+                    "type_symbol": "INT",
+                    "literal": "9",
+                    "file_name": "test3.txt",
+                    "line_number": 1,
+                    "column_number": 8
+                },
+                "message": "module names cannot start with numbers, or have non alphanumeric characters",
+                "expected_types": null,
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test4.txt",
+        "errors": null,
+        "ast_file": "test4.json"
+    },
+    {
+        "file_name": "test5.txt",
+        "errors": null,
+        "ast_file": "test5.json"
+    }
+]

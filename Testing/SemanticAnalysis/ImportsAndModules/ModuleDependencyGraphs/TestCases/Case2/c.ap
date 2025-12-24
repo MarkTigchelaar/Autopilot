@@ -1,0 +1,5 @@
+module c
+
+pub struct cstruct is
+    eh as int
+end

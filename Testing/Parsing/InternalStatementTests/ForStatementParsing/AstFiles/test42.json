@@ -1,0 +1,48 @@
+{
+        "optional_assignment_type": null,
+        "unwrapped_optional_variable_name": null,
+        "second_unwrapped_optional_variable_name": null,
+        "optional_collection_name": null,
+        "collection_name": null,
+        "index_or_key_name_token": {
+            "literal": "a",
+            "file_name": "test42.txt",
+            "line_number": 1,
+            "column_number": 5,
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "type_def": "Token",
+            "file_path": null
+        },
+        "map_value_name_token": null,
+        "index_start_name": {
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "literal": "b",
+            "file_name": "test42.txt",
+            "line_number": 1,
+            "column_number": 10
+        },
+        "index_stop_name": {
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "literal": "c",
+            "file_name": "test42.txt",
+            "line_number": 1,
+            "column_number": 15
+        },
+        "iter_size": null,
+        "loop_name": null,
+        "statements": [],
+        "descriptor_token": {
+            "literal": "for",
+            "file_name": "test42.txt",
+            "line_number": 1,
+            "column_number": 1,
+            "internal_type": "FOR",
+            "instance_type": "UNKNOWN_TYPE",
+            "type_def": "Token",
+            "file_path": null
+        },
+        "type_def": "ForStatement"
+}

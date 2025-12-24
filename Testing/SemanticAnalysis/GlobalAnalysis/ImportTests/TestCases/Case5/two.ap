@@ -1,0 +1,7 @@
+module two
+
+import also_exists from module three
+
+pub enum exists is
+    a = 0
+end

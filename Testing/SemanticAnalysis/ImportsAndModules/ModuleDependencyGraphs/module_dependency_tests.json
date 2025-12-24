@@ -1,0 +1,143 @@
+[
+    {
+        "main_module_path": "Case1",
+        "errors" : []
+    },
+    {
+        "main_module_path": "Case2",
+        "errors" : []
+    },
+    {
+        "main_module_path": "Case3",
+        "errors" : []
+    },
+    {
+        "main_module_path": "Case4",
+        "errors" : [
+            {
+                "message": "cyclical dependencies in modules are not allowed",
+                "import_statement_token_dependency_chain" : [
+                    {
+                        "literal": "module_two",
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "main.ap",
+                        "file_path": null,
+                        "line_number": 3,
+                        "column_number": 28,
+                        "type_def": "Token"
+                    },
+                    {
+                        "literal": "main",
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "file_name": "module_two.ap",
+                        "file_path": null,
+                        "line_number": 3,
+                        "column_number": 22,
+                        "type_def": "Token"
+                    }
+                ],
+                "type_def": "ModuleDependencyError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case5",
+        "errors" : [
+            {
+                "message": "cyclical dependencies in modules are not allowed",
+                "import_statement_token_dependency_chain" : [
+                {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "a.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                {
+                    "literal": "c",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "b.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                {
+                    "literal": "main",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "c.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 28,
+                    "type_def": "Token"
+                }
+                ],
+                "type_def": "ModuleDependencyError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case6",
+        "errors" : [
+            {
+                "message": "cyclical dependencies in modules are not allowed",
+                "import_statement_token_dependency_chain" : [
+                {
+                    "literal": "b",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "a.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                {
+                    "literal": "main",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "b.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 28,
+                    "type_def": "Token"
+                }
+                ],
+                "type_def": "ModuleDependencyError"
+            },
+            {
+                "message": "cyclical dependencies in modules are not allowed",
+                "import_statement_token_dependency_chain" : [
+                {
+                    "literal": "c",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "a.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                {
+                    "literal": "main",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "c.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 28,
+                    "type_def": "Token"
+                }
+                ],
+                "type_def": "ModuleDependencyError"
+            }
+        ]
+    }
+]

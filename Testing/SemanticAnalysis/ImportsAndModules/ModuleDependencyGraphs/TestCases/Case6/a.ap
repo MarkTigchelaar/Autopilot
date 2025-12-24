@@ -1,0 +1,9 @@
+module main
+
+
+import bstruct from module b
+import cstruct from module c
+
+pub struct astrut is
+    a as int
+end

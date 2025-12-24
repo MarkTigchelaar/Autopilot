@@ -1,0 +1,1544 @@
+pub fun function() int do
+  while true do
+    if true do
+      let aa0 as char = 'a'
+      switch aa0
+      case 'a' do
+        let aa1 as char = 'a'
+        switch aa1
+        case 'a' do
+          unless true do
+            loop
+              if true do
+                for i2 in 1 .. 10 do
+                  for i3 in 1 .. 10 do
+                    if true do
+                      if true do
+                        if true do
+                          let a4 as int = 10
+                        elif true do
+                          let a5 as int = 10
+                        end
+                        return 0
+                      end
+                    elif true do
+                      if true do
+                        if true do
+                          let a6 as int = 10
+                        end
+                      elif true do
+                        if true do
+                          let a7 as int = 10
+                        end
+                      end
+                      return 0
+                    end
+                  end
+                  return 0
+                end
+              else
+                for i8 in 1 .. 10 do
+                  if true do
+                    if true do
+                      if true do
+                        for i9 in 1 .. 10 do
+                          let a10 as int = 10
+                        end
+                      elif true do
+                        for i11 in 1 .. 10 do
+                          let a12 as int = 10
+                        end
+                      end
+                      return 0
+                    end
+                  elif true do
+                    if true do
+                      for i13 in 1 .. 10 do
+                        if true do
+                          let a14 as int = 10
+                        end
+                      end
+                    elif true do
+                      if true do
+                        for i15 in 1 .. 10 do
+                          let a16 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                end
+                return 0
+              end
+            end
+          end
+        case 'b' do
+          loop
+            if true do
+              for i17 in 1 .. 10 do
+                for i18 in 1 .. 10 do
+                  if true do
+                    if true do
+                      if true do
+                        unless true do
+                          let a19 as int = 10
+                        end
+                      elif true do
+                        unless true do
+                          let a20 as int = 10
+                        end
+                      end
+                      return 0
+                    end
+                  elif true do
+                    if true do
+                      unless true do
+                        if true do
+                          let a21 as int = 10
+                        end
+                      end
+                    elif true do
+                      if true do
+                        unless true do
+                          let a22 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                end
+                return 0
+              end
+            else
+              for i23 in 1 .. 10 do
+                if true do
+                  if true do
+                    if true do
+                      unless true do
+                        for i24 in 1 .. 10 do
+                          let a25 as int = 10
+                        end
+                      end
+                    elif true do
+                      for i26 in 1 .. 10 do
+                        unless true do
+                          let a27 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                elif true do
+                  if true do
+                    unless true do
+                      for i28 in 1 .. 10 do
+                        if true do
+                          let a29 as int = 10
+                        end
+                      end
+                    end
+                  elif true do
+                    for i30 in 1 .. 10 do
+                      if true do
+                        unless true do
+                          let a31 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          end
+        default
+          if true do
+            for i32 in 1 .. 10 do
+              for i33 in 1 .. 10 do
+                if true do
+                  if true do
+                    if true do
+                      unless true do
+                        loop
+                          let a34 as int = 10
+                        end
+                      end
+                    elif true do
+                      loop
+                        unless true do
+                          let a35 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                elif true do
+                  if true do
+                    unless true do
+                      loop
+                        if true do
+                          let a36 as int = 10
+                        end
+                      end
+                    end
+                  elif true do
+                    loop
+                      if true do
+                        unless true do
+                          let a37 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          else
+            for i38 in 1 .. 10 do
+              if true do
+                if true do
+                  if true do
+                    unless true do
+                      loop
+                        for i39 in 1 .. 10 do
+                          let a40 as int = 10
+                        end
+                      end
+                    end
+                  elif true do
+                    loop
+                      for i41 in 1 .. 10 do
+                        unless true do
+                          let a42 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                end
+              elif true do
+                if true do
+                  unless true do
+                    loop
+                      for i43 in 1 .. 10 do
+                        if true do
+                          let a44 as int = 10
+                        end
+                      end
+                    end
+                  end
+                elif true do
+                  loop
+                    for i45 in 1 .. 10 do
+                      if true do
+                        unless true do
+                          let a46 as int = 10
+                        end
+                      end
+                    end
+                  end
+                end
+                return 0
+              end
+            end
+            return 0
+          end
+        end
+        return 0
+      case 'b' do
+        unless true do
+          loop
+            if true do
+              for i47 in 1 .. 10 do
+                for i48 in 1 .. 10 do
+                  if true do
+                    if true do
+                      if true do
+                        let aa49 as char = 'a'
+                        switch aa49
+                        case 'a' do
+                          let a50 as int = 10
+                        case 'b' do
+                          let a51 as int = 10
+                        default
+                          let a52 as int = 10
+                        end
+                        return 0
+                      elif true do
+                        let aa53 as char = 'a'
+                        switch aa53
+                        case 'a' do
+                          let a54 as int = 10
+                        case 'b' do
+                          let a55 as int = 10
+                        default
+                          let a56 as int = 10
+                        end
+                        return 0
+                      end
+                      return 0
+                    end
+                  elif true do
+                    if true do
+                      let aa57 as char = 'a'
+                      switch aa57
+                      case 'a' do
+                        if true do
+                          let a58 as int = 10
+                        end
+                      case 'b' do
+                        if true do
+                          let a59 as int = 10
+                        end
+                      default
+                        if true do
+                          let a60 as int = 10
+                        end
+                      end
+                      return 0
+                    elif true do
+                      if true do
+                        let aa61 as char = 'a'
+                        switch aa61
+                        case 'a' do
+                          let a62 as int = 10
+                        case 'b' do
+                          let a63 as int = 10
+                        default
+                          let a64 as int = 10
+                        end
+                        return 0
+                      end
+                    end
+                    return 0
+                  end
+                end
+                return 0
+              end
+            else
+              for i65 in 1 .. 10 do
+                if true do
+                  if true do
+                    if true do
+                      let aa66 as char = 'a'
+                      switch aa66
+                      case 'a' do
+                        for i67 in 1 .. 10 do
+                          let a68 as int = 10
+                        end
+                      case 'b' do
+                        for i69 in 1 .. 10 do
+                          let a70 as int = 10
+                        end
+                      default
+                        for i71 in 1 .. 10 do
+                          let a72 as int = 10
+                        end
+                      end
+                      return 0
+                    elif true do
+                      for i73 in 1 .. 10 do
+                        let aa74 as char = 'a'
+                        switch aa74
+                        case 'a' do
+                          let a75 as int = 10
+                        case 'b' do
+                          let a76 as int = 10
+                        default
+                          let a77 as int = 10
+                        end
+                        return 0
+                      end
+                    end
+                    return 0
+                  end
+                elif true do
+                  if true do
+                    let aa78 as char = 'a'
+                    switch aa78
+                    case 'a' do
+                      for i79 in 1 .. 10 do
+                        if true do
+                          let a80 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      if true do
+                        for i81 in 1 .. 10 do
+                          let a82 as int = 10
+                        end
+                      end
+                    default
+                      for i83 in 1 .. 10 do
+                        if true do
+                          let a84 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  elif true do
+                    for i85 in 1 .. 10 do
+                      if true do
+                        let aa86 as char = 'a'
+                        switch aa86
+                        case 'a' do
+                          let a87 as int = 10
+                        case 'b' do
+                          let a88 as int = 10
+                        default
+                          let a89 as int = 10
+                        end
+                        return 0
+                      end
+                    end
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          end
+        end
+      default
+        loop
+          if true do
+            for i90 in 1 .. 10 do
+              for i91 in 1 .. 10 do
+                if true do
+                  if true do
+                    if true do
+                      let aa92 as char = 'a'
+                      switch aa92
+                      case 'a' do
+                        unless true do
+                          let a93 as int = 10
+                        end
+                      case 'b' do
+                        unless true do
+                          let a94 as int = 10
+                        end
+                      default
+                        unless true do
+                          let a95 as int = 10
+                        end
+                      end
+                      return 0
+                    elif true do
+                      unless true do
+                        let aa96 as char = 'a'
+                        switch aa96
+                        case 'a' do
+                          let a97 as int = 10
+                        case 'b' do
+                          let a98 as int = 10
+                        default
+                          let a99 as int = 10
+                        end
+                        return 0
+                      end
+                    end
+                    return 0
+                  end
+                elif true do
+                  if true do
+                    let aa100 as char = 'a'
+                    switch aa100
+                    case 'a' do
+                      unless true do
+                        if true do
+                          let a101 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      if true do
+                        unless true do
+                          let a102 as int = 10
+                        end
+                      end
+                    default
+                      unless true do
+                        if true do
+                          let a103 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  elif true do
+                    unless true do
+                      if true do
+                        let aa104 as char = 'a'
+                        switch aa104
+                        case 'a' do
+                          let a105 as int = 10
+                        case 'b' do
+                          let a106 as int = 10
+                        default
+                          let a107 as int = 10
+                        end
+                        return 0
+                      end
+                    end
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          else
+            for i108 in 1 .. 10 do
+              if true do
+                if true do
+                  if true do
+                    let aa109 as char = 'a'
+                    switch aa109
+                    case 'a' do
+                      unless true do
+                        for i110 in 1 .. 10 do
+                          let a111 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      for i112 in 1 .. 10 do
+                        unless true do
+                          let a113 as int = 10
+                        end
+                      end
+                    default
+                      unless true do
+                        for i114 in 1 .. 10 do
+                          let a115 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  elif true do
+                    unless true do
+                      for i116 in 1 .. 10 do
+                        let aa117 as char = 'a'
+                        switch aa117
+                        case 'a' do
+                          let a118 as int = 10
+                        case 'b' do
+                          let a119 as int = 10
+                        default
+                          let a120 as int = 10
+                        end
+                        return 0
+                      end
+                    end
+                  end
+                  return 0
+                end
+              elif true do
+                if true do
+                  let aa121 as char = 'a'
+                  switch aa121
+                  case 'a' do
+                    unless true do
+                      for i122 in 1 .. 10 do
+                        if true do
+                          let a123 as int = 10
+                        end
+                      end
+                    end
+                  case 'b' do
+                    for i124 in 1 .. 10 do
+                      if true do
+                        unless true do
+                          let a125 as int = 10
+                        end
+                      end
+                    end
+                  default
+                    if true do
+                      unless true do
+                        for i126 in 1 .. 10 do
+                          let a127 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                elif true do
+                  unless true do
+                    for i128 in 1 .. 10 do
+                      if true do
+                        let aa129 as char = 'a'
+                        switch aa129
+                        case 'a' do
+                          let a130 as int = 10
+                        case 'b' do
+                          let a131 as int = 10
+                        default
+                          let a132 as int = 10
+                        end
+                        return 0
+                      end
+                    end
+                  end
+                end
+                return 0
+              end
+            end
+            return 0
+          end
+        end
+      end
+    elif true do
+      let aa133 as char = 'a'
+      switch aa133
+      case 'a' do
+        unless true do
+          loop
+            if true do
+              for i134 in 1 .. 10 do
+                for i135 in 1 .. 10 do
+                  if true do
+                    if true do
+                      if true do
+                        let aa136 as char = 'a'
+                        switch aa136
+                        case 'a' do
+                          let a137 as int = 10
+                        case 'b' do
+                          let a138 as int = 10
+                        default
+                          let a139 as int = 10
+                        end
+                      elif true do
+                        let aa140 as char = 'a'
+                        switch aa140
+                        case 'a' do
+                          let a141 as int = 10
+                        case 'b' do
+                          let a142 as int = 10
+                        default
+                          let a143 as int = 10
+                        end
+                      end
+                      return 0
+                    end
+                  elif true do
+                    if true do
+                      let aa144 as char = 'a'
+                      switch aa144
+                      case 'a' do
+                        if true do
+                          let a145 as int = 10
+                        end
+                      case 'b' do
+                        if true do
+                          let a146 as int = 10
+                        end
+                      default
+                        if true do
+                          let a147 as int = 10
+                        end
+                      end
+                    elif true do
+                      if true do
+                        let aa148 as char = 'a'
+                        switch aa148
+                        case 'a' do
+                          let a149 as int = 10
+                        case 'b' do
+                          let a150 as int = 10
+                        default
+                          let a151 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                end
+                return 0
+              end
+            else
+              for i152 in 1 .. 10 do
+                if true do
+                  if true do
+                    if true do
+                      let aa153 as char = 'a'
+                      switch aa153
+                      case 'a' do
+                        for i154 in 1 .. 10 do
+                          let a155 as int = 10
+                        end
+                      case 'b' do
+                        for i156 in 1 .. 10 do
+                          let a157 as int = 10
+                        end
+                      default
+                        for i158 in 1 .. 10 do
+                          let a159 as int = 10
+                        end
+                      end
+                    elif true do
+                      for i160 in 1 .. 10 do
+                        let aa161 as char = 'a'
+                        switch aa161
+                        case 'a' do
+                          let a162 as int = 10
+                        case 'b' do
+                          let a163 as int = 10
+                        default
+                          let a164 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                elif true do
+                  if true do
+                    let aa165 as char = 'a'
+                    switch aa165
+                    case 'a' do
+                      for i166 in 1 .. 10 do
+                        if true do
+                          let a167 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      if true do
+                        for i168 in 1 .. 10 do
+                          let a169 as int = 10
+                        end
+                      end
+                    default
+                      for i170 in 1 .. 10 do
+                        if true do
+                          let a171 as int = 10
+                        end
+                      end
+                    end
+                  elif true do
+                    for i172 in 1 .. 10 do
+                      if true do
+                        let aa173 as char = 'a'
+                        switch aa173
+                        case 'a' do
+                          let a174 as int = 10
+                        case 'b' do
+                          let a175 as int = 10
+                        default
+                          let a176 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          end
+        end
+      case 'b' do
+        loop
+          if true do
+            for i177 in 1 .. 10 do
+              for i178 in 1 .. 10 do
+                if true do
+                  if true do
+                    if true do
+                      let aa179 as char = 'a'
+                      switch aa179
+                      case 'a' do
+                        unless true do
+                          let a180 as int = 10
+                        end
+                      case 'b' do
+                        unless true do
+                          let a181 as int = 10
+                        end
+                      default
+                        unless true do
+                          let a182 as int = 10
+                        end
+                      end
+                    elif true do
+                      unless true do
+                        let aa183 as char = 'a'
+                        switch aa183
+                        case 'a' do
+                          let a184 as int = 10
+                        case 'b' do
+                          let a185 as int = 10
+                        default
+                          let a186 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                elif true do
+                  if true do
+                    let aa187 as char = 'a'
+                    switch aa187
+                    case 'a' do
+                      unless true do
+                        if true do
+                          let a188 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      if true do
+                        unless true do
+                          let a189 as int = 10
+                        end
+                      end
+                    default
+                      unless true do
+                        if true do
+                          let a190 as int = 10
+                        end
+                      end
+                    end
+                  elif true do
+                    unless true do
+                      if true do
+                        let aa191 as char = 'a'
+                        switch aa191
+                        case 'a' do
+                          let a192 as int = 10
+                        case 'b' do
+                          let a193 as int = 10
+                        default
+                          let a194 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          else
+            for i195 in 1 .. 10 do
+              if true do
+                if true do
+                  if true do
+                    let aa196 as char = 'a'
+                    switch aa196
+                    case 'a' do
+                      unless true do
+                        for i197 in 1 .. 10 do
+                          let a198 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      for i199 in 1 .. 10 do
+                        unless true do
+                          let a200 as int = 10
+                        end
+                      end
+                    default
+                      unless true do
+                        for i201 in 1 .. 10 do
+                          let a202 as int = 10
+                        end
+                      end
+                    end
+                  elif true do
+                    unless true do
+                      for i203 in 1 .. 10 do
+                        let aa204 as char = 'a'
+                        switch aa204
+                        case 'a' do
+                          let a205 as int = 10
+                        case 'b' do
+                          let a206 as int = 10
+                        default
+                          let a207 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                end
+              elif true do
+                if true do
+                  let aa208 as char = 'a'
+                  switch aa208
+                  case 'a' do
+                    unless true do
+                      for i209 in 1 .. 10 do
+                        if true do
+                          let a210 as int = 10
+                        end
+                      end
+                    end
+                  case 'b' do
+                    for i211 in 1 .. 10 do
+                      if true do
+                        unless true do
+                          let a212 as int = 10
+                        end
+                      end
+                    end
+                  default
+                    if true do
+                      unless true do
+                        for i213 in 1 .. 10 do
+                          let a214 as int = 10
+                        end
+                      end
+                    end
+                  end
+                elif true do
+                  unless true do
+                    for i215 in 1 .. 10 do
+                      if true do
+                        let aa216 as char = 'a'
+                        switch aa216
+                        case 'a' do
+                          let a217 as int = 10
+                        case 'b' do
+                          let a218 as int = 10
+                        default
+                          let a219 as int = 10
+                        end
+                      end
+                    end
+                  end
+                end
+                return 0
+              end
+            end
+            return 0
+          end
+        end
+      default
+        if true do
+          for i220 in 1 .. 10 do
+            for i221 in 1 .. 10 do
+              if true do
+                if true do
+                  if true do
+                    let aa222 as char = 'a'
+                    switch aa222
+                    case 'a' do
+                      unless true do
+                        loop
+                          let a223 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      loop
+                        unless true do
+                          let a224 as int = 10
+                        end
+                      end
+                    default
+                      unless true do
+                        loop
+                          let a225 as int = 10
+                        end
+                      end
+                    end
+                  elif true do
+                    unless true do
+                      loop
+                        let aa226 as char = 'a'
+                        switch aa226
+                        case 'a' do
+                          let a227 as int = 10
+                        case 'b' do
+                          let a228 as int = 10
+                        default
+                          let a229 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                end
+              elif true do
+                if true do
+                  let aa230 as char = 'a'
+                  switch aa230
+                  case 'a' do
+                    unless true do
+                      loop
+                        if true do
+                          let a231 as int = 10
+                        end
+                      end
+                    end
+                  case 'b' do
+                    loop
+                      if true do
+                        unless true do
+                          let a232 as int = 10
+                        end
+                      end
+                    end
+                  default
+                    if true do
+                      unless true do
+                        loop
+                          let a233 as int = 10
+                        end
+                      end
+                    end
+                  end
+                elif true do
+                  unless true do
+                    loop
+                      if true do
+                        let aa234 as char = 'a'
+                        switch aa234
+                        case 'a' do
+                          let a235 as int = 10
+                        case 'b' do
+                          let a236 as int = 10
+                        default
+                          let a237 as int = 10
+                        end
+                      end
+                    end
+                  end
+                end
+                return 0
+              end
+            end
+            return 0
+          end
+        else
+          for i238 in 1 .. 10 do
+            if true do
+              if true do
+                if true do
+                  let aa239 as char = 'a'
+                  switch aa239
+                  case 'a' do
+                    unless true do
+                      loop
+                        for i240 in 1 .. 10 do
+                          let a241 as int = 10
+                        end
+                      end
+                    end
+                  case 'b' do
+                    loop
+                      for i242 in 1 .. 10 do
+                        unless true do
+                          let a243 as int = 10
+                        end
+                      end
+                    end
+                  default
+                    for i244 in 1 .. 10 do
+                      unless true do
+                        loop
+                          let a245 as int = 10
+                        end
+                      end
+                    end
+                  end
+                elif true do
+                  unless true do
+                    loop
+                      for i246 in 1 .. 10 do
+                        let aa247 as char = 'a'
+                        switch aa247
+                        case 'a' do
+                          let a248 as int = 10
+                        case 'b' do
+                          let a249 as int = 10
+                        default
+                          let a250 as int = 10
+                        end
+                      end
+                    end
+                  end
+                end
+                return 0
+              end
+            elif true do
+              if true do
+                let aa251 as char = 'a'
+                switch aa251
+                case 'a' do
+                  unless true do
+                    loop
+                      for i252 in 1 .. 10 do
+                        if true do
+                          let a253 as int = 10
+                        end
+                      end
+                    end
+                  end
+                case 'b' do
+                  loop
+                    for i254 in 1 .. 10 do
+                      if true do
+                        unless true do
+                          let a255 as int = 10
+                        end
+                      end
+                    end
+                  end
+                default
+                  for i256 in 1 .. 10 do
+                    if true do
+                      unless true do
+                        loop
+                          let a257 as int = 10
+                        end
+                      end
+                    end
+                  end
+                end
+              elif true do
+                unless true do
+                  loop
+                    for i258 in 1 .. 10 do
+                      if true do
+                        let aa259 as char = 'a'
+                        switch aa259
+                        case 'a' do
+                          let a260 as int = 10
+                        case 'b' do
+                          let a261 as int = 10
+                        default
+                          let a262 as int = 10
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+              return 0
+            end
+          end
+          return 0
+        end
+      end
+      return 0
+    else
+      unless true do
+        loop
+          if true do
+            for i263 in 1 .. 10 do
+              for i264 in 1 .. 10 do
+                if true do
+                  if true do
+                    if true do
+                      let aa265 as char = 'a'
+                      switch aa265
+                      case 'a' do
+                        let aa266 as char = 'a'
+                        switch aa266
+                        case 'a' do
+                          let a267 as int = 10
+                        case 'b' do
+                          let a268 as int = 10
+                        default
+                          let a269 as int = 10
+                        end
+                        return 0
+                      case 'b' do
+                        let aa270 as char = 'a'
+                        switch aa270
+                        case 'a' do
+                          let a271 as int = 10
+                        case 'b' do
+                          let a272 as int = 10
+                        default
+                          let a273 as int = 10
+                        end
+                        return 0
+                      default
+                        let aa274 as char = 'a'
+                        switch aa274
+                        case 'a' do
+                          let a275 as int = 10
+                        case 'b' do
+                          let a276 as int = 10
+                        default
+                          let a277 as int = 10
+                        end
+                        return 0
+                      end
+                    elif true do
+                      let aa278 as char = 'a'
+                      switch aa278
+                      case 'a' do
+                        let aa279 as char = 'a'
+                        switch aa279
+                        case 'a' do
+                          let a280 as int = 10
+                        case 'b' do
+                          let a281 as int = 10
+                        default
+                          let a282 as int = 10
+                        end
+                      case 'b' do
+                        let aa283 as char = 'a'
+                        switch aa283
+                        case 'a' do
+                          let a284 as int = 10
+                        case 'b' do
+                          let a285 as int = 10
+                        default
+                          let a286 as int = 10
+                        end
+                      default
+                        let aa287 as char = 'a'
+                        switch aa287
+                        case 'a' do
+                          let a288 as int = 10
+                        case 'b' do
+                          let a289 as int = 10
+                        default
+                          let a290 as int = 10
+                        end
+                      end
+                      return 0
+                    end
+                    return 0
+                  end
+                elif true do
+                  if true do
+                    let aa291 as char = 'a'
+                    switch aa291
+                    case 'a' do
+                      let aa292 as char = 'a'
+                      switch aa292
+                      case 'a' do
+                        if true do
+                          let a293 as int = 10
+                        end
+                      case 'b' do
+                        if true do
+                          let a294 as int = 10
+                        end
+                      default
+                        if true do
+                          let a295 as int = 10
+                        end
+                      end
+                      return 0
+                    case 'b' do
+                      if true do
+                        let aa296 as char = 'a'
+                        switch aa296
+                        case 'a' do
+                          let a297 as int = 10
+                        case 'b' do
+                          let a298 as int = 10
+                        default
+                          let a299 as int = 10
+                        end
+                        return 0
+                      end
+                    default
+                      let aa300 as char = 'a'
+                      switch aa300
+                      case 'a' do
+                        if true do
+                          let a301 as int = 10
+                        end
+                      case 'b' do
+                        if true do
+                          let a302 as int = 10
+                        end
+                      default
+                        if true do
+                          let a303 as int = 10
+                        end
+                      end
+                      return 0
+                    end
+                  elif true do
+                    let aa304 as char = 'a'
+                    switch aa304
+                    case 'a' do
+                      if true do
+                        let aa305 as char = 'a'
+                        switch aa305
+                        case 'a' do
+                          let a306 as int = 10
+                        case 'b' do
+                          let a307 as int = 10
+                        default
+                          let a308 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      let aa309 as char = 'a'
+                      switch aa309
+                      case 'a' do
+                        if true do
+                          let a310 as int = 10
+                        end
+                      case 'b' do
+                        if true do
+                          let a311 as int = 10
+                        end
+                      default
+                        if true do
+                          let a312 as int = 10
+                        end
+                      end
+                    default
+                      if true do
+                        let aa313 as char = 'a'
+                        switch aa313
+                        case 'a' do
+                          let a314 as int = 10
+                        case 'b' do
+                          let a315 as int = 10
+                        default
+                          let a316 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                  return 0
+                end
+              end
+              return 0
+            end
+          else
+            for i317 in 1 .. 10 do
+              if true do
+                if true do
+                  if true do
+                    let aa318 as char = 'a'
+                    switch aa318
+                    case 'a' do
+                      let aa319 as char = 'a'
+                      switch aa319
+                      case 'a' do
+                        for i320 in 1 .. 10 do
+                          let a321 as int = 10
+                        end
+                      case 'b' do
+                        for i322 in 1 .. 10 do
+                          let a323 as int = 10
+                        end
+                      default
+                        for i324 in 1 .. 10 do
+                          let a325 as int = 10
+                        end
+                      end
+                      return 0
+                    case 'b' do
+                      for i326 in 1 .. 10 do
+                        let aa327 as char = 'a'
+                        switch aa327
+                        case 'a' do
+                          let a328 as int = 10
+                        case 'b' do
+                          let a329 as int = 10
+                        default
+                          let a330 as int = 10
+                        end
+                        return 0
+                      end
+                    default
+                      let aa331 as char = 'a'
+                      switch aa331
+                      case 'a' do
+                        for i332 in 1 .. 10 do
+                          let a333 as int = 10
+                        end
+                      case 'b' do
+                        for i334 in 1 .. 10 do
+                          let a335 as int = 10
+                        end
+                      default
+                        for i336 in 1 .. 10 do
+                          let a337 as int = 10
+                        end
+                      end
+                      return 0
+                    end
+                  elif true do
+                    let aa338 as char = 'a'
+                    switch aa338
+                    case 'a' do
+                      for i339 in 1 .. 10 do
+                        let aa340 as char = 'a'
+                        switch aa340
+                        case 'a' do
+                          let a341 as int = 10
+                        case 'b' do
+                          let a342 as int = 10
+                        default
+                          let a343 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      let aa344 as char = 'a'
+                      switch aa344
+                      case 'a' do
+                        for i345 in 1 .. 10 do
+                          let a346 as int = 10
+                        end
+                      case 'b' do
+                        for i347 in 1 .. 10 do
+                          let a348 as int = 10
+                        end
+                      default
+                        for i349 in 1 .. 10 do
+                          let a350 as int = 10
+                        end
+                      end
+                    default
+                      for i351 in 1 .. 10 do
+                        let aa352 as char = 'a'
+                        switch aa352
+                        case 'a' do
+                          let a353 as int = 10
+                        case 'b' do
+                          let a354 as int = 10
+                        default
+                          let a355 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  end
+                  return 0
+                end
+              elif true do
+                if true do
+                  let aa356 as char = 'a'
+                  switch aa356
+                  case 'a' do
+                    let aa357 as char = 'a'
+                    switch aa357
+                    case 'a' do
+                      for i358 in 1 .. 10 do
+                        if true do
+                          let a359 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      if true do
+                        for i360 in 1 .. 10 do
+                          let a361 as int = 10
+                        end
+                      end
+                    default
+                      for i362 in 1 .. 10 do
+                        if true do
+                          let a363 as int = 10
+                        end
+                      end
+                    end
+                    return 0
+                  case 'b' do
+                    for i364 in 1 .. 10 do
+                      if true do
+                        let aa365 as char = 'a'
+                        switch aa365
+                        case 'a' do
+                          let a366 as int = 10
+                        case 'b' do
+                          let a367 as int = 10
+                        default
+                          let a368 as int = 10
+                        end
+                        return 0
+                      end
+                    end
+                  default
+                    if true do
+                      let aa369 as char = 'a'
+                      switch aa369
+                      case 'a' do
+                        for i370 in 1 .. 10 do
+                          let a371 as int = 10
+                        end
+                      case 'b' do
+                        for i372 in 1 .. 10 do
+                          let a373 as int = 10
+                        end
+                      default
+                        for i374 in 1 .. 10 do
+                          let a375 as int = 10
+                        end
+                      end
+                      return 0
+                    end
+                  end
+                elif true do
+                  let aa376 as char = 'a'
+                  switch aa376
+                  case 'a' do
+                    for i377 in 1 .. 10 do
+                      if true do
+                        let aa378 as char = 'a'
+                        switch aa378
+                        case 'a' do
+                          let a379 as int = 10
+                        case 'b' do
+                          let a380 as int = 10
+                        default
+                          let a381 as int = 10
+                        end
+                      end
+                    end
+                  case 'b' do
+                    if true do
+                      let aa382 as char = 'a'
+                      switch aa382
+                      case 'a' do
+                        for i383 in 1 .. 10 do
+                          let a384 as int = 10
+                        end
+                      case 'b' do
+                        for i385 in 1 .. 10 do
+                          let a386 as int = 10
+                        end
+                      default
+                        for i387 in 1 .. 10 do
+                          let a388 as int = 10
+                        end
+                      end
+                    end
+                  default
+                    let aa389 as char = 'a'
+                    switch aa389
+                    case 'a' do
+                      for i390 in 1 .. 10 do
+                        if true do
+                          let a391 as int = 10
+                        end
+                      end
+                    case 'b' do
+                      if true do
+                        for i392 in 1 .. 10 do
+                          let a393 as int = 10
+                        end
+                      end
+                    default
+                      for i394 in 1 .. 10 do
+                        if true do
+                          let a395 as int = 10
+                        end
+                      end
+                    end
+                  end
+                  return 0
+                end
+                return 0
+              end
+            end
+            return 0
+          end
+        end
+      end
+    end
+  end
+  return 0
+end

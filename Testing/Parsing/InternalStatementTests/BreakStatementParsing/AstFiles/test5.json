@@ -1,0 +1,23 @@
+{
+    "label_name_token": {
+        "literal": "test",
+        "file_name": "test5.txt",
+        "line_number": 1,
+        "column_number": 7,
+        "internal_type": "IDENTIFIER",
+        "instance_type": "UNKNOWN_TYPE",
+        "type_def": "Token",
+        "file_path": null
+    },
+    "descriptor_token": {
+        "literal": "break",
+        "file_name": "test5.txt",
+        "line_number": 1,
+        "column_number": 1,
+        "internal_type": "BREAK",
+        "instance_type": "UNKNOWN_TYPE",
+        "type_def": "Token",
+        "file_path": null
+    },
+    "type_def": "BreakStatement"
+}

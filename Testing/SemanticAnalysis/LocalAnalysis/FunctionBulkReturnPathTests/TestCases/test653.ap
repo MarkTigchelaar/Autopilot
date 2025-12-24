@@ -1,0 +1,49 @@
+fun function() int do
+  if true do
+    for i0 in 1 .. 10 do
+      if true do
+        if true do
+          let a1 as int = 10
+        end
+        return 0
+      elif true do
+        if true do
+          let a2 as int = 10
+        end
+        return 0
+      else
+        if true do
+          let a3 as int = 10
+        end
+        return 0
+      end
+    end
+    return 0
+  elif true do
+    if true do
+      if true do
+        for i4 in 1 .. 10 do
+          let a5 as int = 10
+        end
+        return 0
+      end
+      return 0
+    elif true do
+      for i6 in 1 .. 10 do
+        if true do
+          let a7 as int = 10
+        end
+        return 0
+      end
+      return 0
+    else
+      if true do
+        for i8 in 1 .. 10 do
+          let a9 as int = 10
+        end
+        return 0
+      end
+      return 0
+    end
+  end
+end

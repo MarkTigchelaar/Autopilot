@@ -1,0 +1,146 @@
+{
+        "acyclic_token": null,
+        "inline_token": null,
+        "public_token": null,
+        "name_token": {
+            "literal": "name",
+            "file_name": "test24.txt",
+            "line_number": 1,
+            "column_number": 8,
+            "internal_type": "IDENTIFIER",
+            "instance_type": "UNKNOWN_TYPE",
+            "type_def": "Token",
+            "file_path": null
+        },
+        "fields": [
+            {
+                    "public_token": {
+                        "internal_type": "PUB",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "pub",
+                        "file_name": "test24.txt",
+                        "line_number": 2,
+                        "column_number": 3
+                    },
+                    "field_name_token": {
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "nameOne",
+                        "file_name": "test24.txt",
+                        "line_number": 2,
+                        "column_number": 7
+                    },
+                    "type_token": {
+                        "literal": "int",
+                        "file_name": "test24.txt",
+                        "line_number": 2,
+                        "column_number": 18,
+                        "internal_type": "INT",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "StructField"
+            },
+            {
+                    "public_token": null,
+                    "field_name_token": {
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "nameTwo",
+                        "file_name": "test24.txt",
+                        "line_number": 3,
+                        "column_number": 3
+                    },
+                    "type_token": {
+                        "literal": "double",
+                        "file_name": "test24.txt",
+                        "line_number": 3,
+                        "column_number": 14,
+                        "internal_type": "DOUBLE",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "StructField"
+            },
+            {
+                    "public_token": {
+                        "internal_type": "PUB",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "pub",
+                        "file_name": "test24.txt",
+                        "line_number": 4,
+                        "column_number": 3
+                    },
+                    "field_name_token": {
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "thingy",
+                        "file_name": "test24.txt",
+                        "line_number": 4,
+                        "column_number": 7
+                    },
+                    "type_token": {
+                        "literal": "thing",
+                        "file_name": "test24.txt",
+                        "line_number": 4,
+                        "column_number": 17,
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "StructField"
+            },
+            {
+                    "public_token": {
+                        "internal_type": "PUB",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "pub",
+                        "file_name": "test24.txt",
+                        "line_number": 5,
+                        "column_number": 3
+                    },
+                    "field_name_token": {
+                        "internal_type": "IDENTIFIER",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "literal": "avariable",
+                        "file_name": "test24.txt",
+                        "line_number": 5,
+                        "column_number": 7
+                    },
+                    "type_token": {
+                        "literal": "string",
+                        "file_name": "test24.txt",
+                        "line_number": 5,
+                        "column_number": 20,
+                        "internal_type": "STRING",
+                        "instance_type": "UNKNOWN_TYPE",
+                        "type_def": "Token",
+                        "file_path": null
+                    },
+                    "type_def": "StructField"
+            }
+        ],
+        "functions": [],
+        "interfaces": [
+            {
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "literal": "some_interface",
+                "file_name": "test24.txt",
+                "line_number": 1,
+                "column_number": 18
+            },
+            {
+                "internal_type": "IDENTIFIER",
+                "instance_type": "UNKNOWN_TYPE",
+                "literal": "test",
+                "file_name": "test24.txt",
+                "line_number": 1,
+                "column_number": 33
+            }
+        ],
+        "type_def": "StructStatement"
+}

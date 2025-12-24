@@ -1,0 +1,6 @@
+module pub_enum
+
+
+pub enum example(long) is
+    a = 2
+end

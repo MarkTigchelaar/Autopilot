@@ -1,0 +1,37 @@
+pub fun function() int do
+  unless true do
+    while true do
+      for i0 in 1 .. 10 do
+        while true do
+          let aa1 as char = 'a'
+          switch aa1
+          case 'a' do
+            if true do
+              loop
+                let a2 as int = 10
+              end
+              return 0
+            end
+          case 'b' do
+            loop
+              if true do
+                let a3 as int = 10
+              end
+            end
+            return 0
+          default
+            if true do
+              loop
+                let a4 as int = 10
+              end
+              return 0
+            end
+          end
+          return 0
+        end
+        return 0
+      end
+    end
+  end
+  return 0
+end

@@ -1,0 +1,11 @@
+module secondary
+
+
+pub fun another_function() int do
+
+    let collection = {
+        "a" : "b",
+        "b" : "c"
+    }
+    return 0
+end

@@ -1,0 +1,454 @@
+[
+    {
+        "file_name": "test1.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "PLUS",
+                    "literal": "+",
+                    "file_name": "test1.txt",
+                    "line_number": 1,
+                    "column_number": 1
+                },
+                "message": "invalid constant or variable",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test2.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test2.txt",
+                    "line_number": 1,
+                    "column_number": 1
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test3.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "MINUS",
+                    "literal": "-",
+                    "file_name": "test3.txt",
+                    "line_number": 1,
+                    "column_number": 2
+                },
+                "message": "unexpected token",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test4.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test4.txt",
+                    "line_number": 1,
+                    "column_number": 3
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test5.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "PLUS",
+                    "literal": "+",
+                    "file_name": "test5.txt",
+                    "line_number": 1,
+                    "column_number": 3
+                },
+                "message": "invalid constant or variable",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test6.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "DO",
+                    "literal": "do",
+                    "file_name": "test6.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "invalid constant or variable",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test7.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "FUN",
+                    "literal": "fun",
+                    "file_name": "test7.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "invalid constant or variable",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test8.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "LET",
+                    "literal": "let",
+                    "file_name": "test8.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "invalid constant or variable",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test9.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "INT",
+                    "literal": "int",
+                    "file_name": "test9.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "invalid constant or variable",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test10.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test10.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test11.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "PLUS",
+                    "literal": "+",
+                    "file_name": "test11.txt",
+                    "line_number": 1,
+                    "column_number": 6
+                },
+                "message": "invalid constant or variable",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test12.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test12.txt",
+                    "line_number": 1,
+                    "column_number": 6
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test13.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test13.txt",
+                    "line_number": 1,
+                    "column_number": 8
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test14.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "CARROT",
+                    "literal": "^",
+                    "file_name": "test14.txt",
+                    "line_number": 1,
+                    "column_number": 10
+                },
+                "message": "invalid constant or variable",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test15.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test15.txt",
+                    "line_number": 1,
+                    "column_number": 9
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test16.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "RIGHT_PAREN",
+                    "literal": ")",
+                    "file_name": "test16.txt",
+                    "line_number": 1,
+                    "column_number": 2
+                },
+                "message": "empty expression",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test17.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test17.txt",
+                    "line_number": 1,
+                    "column_number": 1
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test18.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "COMMA",
+                    "literal": ",",
+                    "file_name": "test18.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "unexpected token",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test19.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test19.txt",
+                    "line_number": 1,
+                    "column_number": 4
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test20.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "COMMA",
+                    "literal": ",",
+                    "file_name": "test20.txt",
+                    "line_number": 1,
+                    "column_number": 5
+                },
+                "message": "unexpected token",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test21.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test21.txt",
+                    "line_number": 1,
+                    "column_number": 1
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test22.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "RIGHT_BRACKET",
+                    "literal": "]",
+                    "file_name": "test22.txt",
+                    "line_number": 1,
+                    "column_number": 2
+                },
+                "message": "empty expression",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test23.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "COMMA",
+                    "literal": ",",
+                    "file_name": "test23.txt",
+                    "line_number": 1,
+                    "column_number": 2
+                },
+                "message": "unexpected token",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test24.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "EOF",
+                    "literal": "",
+                    "file_name": "test24.txt",
+                    "line_number": 1,
+                    "column_number": 2
+                },
+                "message": "end of file reached",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test25.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "RIGHT_BRACE",
+                    "literal": "}",
+                    "file_name": "test25.txt",
+                    "line_number": 1,
+                    "column_number": 3
+                },
+                "message": "unexpected token",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test26.txt",
+        "errors": [
+            {
+                "token": {
+                    "internal_type": "RIGHT_BRACE",
+                    "literal": "}",
+                    "file_name": "test26.txt",
+                    "line_number": 1,
+                    "column_number": 6
+                },
+                "message": "collection is missing expression",
+                "type_def": "ParserError"
+            }
+        ],
+        "ast_file": null
+    },
+    {
+        "file_name": "test27.txt",
+        "errors": null,
+        "ast_file": "test27.json"
+    },
+    {
+        "file_name": "test28.txt",
+        "errors": null,
+        "ast_file": "test28.json"
+    }
+]

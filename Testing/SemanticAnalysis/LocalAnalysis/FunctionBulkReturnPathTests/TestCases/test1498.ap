@@ -1,0 +1,162 @@
+pub fun function() int do
+  if true do
+    if true do
+      for i0 in 1 .. 10 do
+        if true do
+          while true do
+            for i1 in 1 .. 10 do
+              let a2 as int = 10
+            end
+          end
+        elif true do
+          for i3 in 1 .. 10 do
+            while true do
+              let a4 as int = 10
+            end
+          end
+        else
+          while true do
+            for i5 in 1 .. 10 do
+              let a6 as int = 10
+            end
+          end
+        end
+      end
+      return 0
+    else
+      if true do
+        while true do
+          for i7 in 1 .. 10 do
+            for i8 in 1 .. 10 do
+              let a9 as int = 10
+            end
+            return 0
+          end
+        end
+      elif true do
+        for i10 in 1 .. 10 do
+          for i11 in 1 .. 10 do
+            while true do
+              let a12 as int = 10
+            end
+          end
+          return 0
+        end
+      else
+        for i13 in 1 .. 10 do
+          while true do
+            for i14 in 1 .. 10 do
+              let a15 as int = 10
+            end
+          end
+        end
+        return 0
+      end
+    end
+    return 0
+  elif true do
+    for i16 in 1 .. 10 do
+      if true do
+        while true do
+          for i17 in 1 .. 10 do
+            if true do
+              let a18 as int = 10
+            else
+              let a19 as int = 10
+            end
+            return 0
+          end
+        end
+      elif true do
+        for i20 in 1 .. 10 do
+          if true do
+            while true do
+              let a21 as int = 10
+            end
+          else
+            while true do
+              let a22 as int = 10
+            end
+          end
+          return 0
+        end
+      else
+        if true do
+          while true do
+            for i23 in 1 .. 10 do
+              let a24 as int = 10
+            end
+          end
+        else
+          for i25 in 1 .. 10 do
+            while true do
+              let a26 as int = 10
+            end
+          end
+        end
+        return 0
+      end
+    end
+    return 0
+  else
+    if true do
+      while true do
+        for i27 in 1 .. 10 do
+          if true do
+            for i28 in 1 .. 10 do
+              let a29 as int = 10
+            end
+            return 0
+          else
+            for i30 in 1 .. 10 do
+              let a31 as int = 10
+            end
+            return 0
+          end
+          return 0
+        end
+      end
+    elif true do
+      for i32 in 1 .. 10 do
+        if true do
+          for i33 in 1 .. 10 do
+            while true do
+              let a34 as int = 10
+            end
+          end
+          return 0
+        else
+          while true do
+            for i35 in 1 .. 10 do
+              let a36 as int = 10
+            end
+            return 0
+          end
+        end
+        return 0
+      end
+    else
+      if true do
+        for i37 in 1 .. 10 do
+          while true do
+            for i38 in 1 .. 10 do
+              let a39 as int = 10
+            end
+          end
+        end
+        return 0
+      else
+        while true do
+          for i40 in 1 .. 10 do
+            for i41 in 1 .. 10 do
+              let a42 as int = 10
+            end
+            return 0
+          end
+        end
+      end
+      return 0
+    end
+  end
+  return 0
+end

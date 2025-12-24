@@ -1,0 +1,7 @@
+module second
+
+
+pub enum does_exist is
+    a = 1
+end
+

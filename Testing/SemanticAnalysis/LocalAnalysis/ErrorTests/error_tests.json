@@ -1,0 +1,50 @@
+[
+    {
+        "file_name": "test1.ap",
+        "errors": []
+    },
+    {
+        "file_name": "test2.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "field1",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test2.ap",
+                    "file_path": null,
+                    "line_number": 2,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "message": "duplicate error field name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name": "test3.ap",
+        "errors": [
+            {
+                "token": {
+                    "literal": "test",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test3.ap",
+                    "file_path": null,
+                    "line_number": 4,
+                    "column_number": 3,
+                    "type_def": "Token"
+                },
+                "message": "error field matches error name",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

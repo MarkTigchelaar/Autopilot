@@ -1,0 +1,192 @@
+import Tokenization.symbols as symbols
+from Parsing.utils import is_eof_type, is_primitive_type, is_boolean_literal
+from ErrorHandling.parsing_error_messages import *
+from ASTComponents.ExternalComponents.enum_statement import EnumStatement
+
+def parse_enum(driver):
+    token = driver.next_token()
+    enforce_enum(token)
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif driver.has_errors():
+        return None
+    elif peek_token.internal_type == symbols.IDENTIFIER:
+        return enum_name_step(driver)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+
+
+def enum_name_step(driver):
+    name_token = driver.next_token()
+    enum_stmt = EnumStatement()
+    modifier_container = driver.get_modifier_container()
+    enum_stmt.add_public_token(modifier_container.get_public_token())
+    enum_stmt.add_name(name_token)
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif peek_token.internal_type == symbols.IS:
+        return is_step(driver, enum_stmt)
+    elif peek_token.internal_type == symbols.LEFT_PAREN:
+        return open_paren_step(driver, enum_stmt)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+
+
+def is_step(driver, enum_stmt):
+    driver.discard_token()
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    # This is an error, but it's a semantic error, not a parser error.
+    elif peek_token.internal_type == symbols.IDENTIFIER:
+        return item_list_step(driver, enum_stmt)
+    else:
+        driver.add_error(peek_token, INVALID_ENUM_ITEM)
+        return None
+
+
+def open_paren_step(driver, enum_stmt):
+    driver.discard_token()
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif peek_token.internal_type == symbols.IDENTIFIER:
+        return enum_type_step(driver, enum_stmt)
+    elif is_primitive_type(peek_token):
+        return enum_type_step(driver, enum_stmt)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None    
+    
+
+def enum_type_step(driver, enum_stmt):
+    token = driver.next_token()
+    enum_stmt.add_general_type(token)
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif peek_token.internal_type == symbols.RIGHT_PAREN:
+        return close_paren_step(driver, enum_stmt)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+
+
+def close_paren_step(driver, enum_stmt):
+    driver.discard_token()
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif peek_token.internal_type == symbols.IS:
+        return is_step(driver, enum_stmt)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+
+
+def item_list_step(driver, enum_stmt):
+    item_name_token = driver.next_token()
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif peek_token.internal_type == symbols.COMMA:
+        enum_stmt.new_item(item_name_token, None)
+        return comma_step(driver, enum_stmt)
+    elif peek_token.internal_type == symbols.EQUAL:
+        return equal_step(driver, enum_stmt, item_name_token)
+    elif peek_token.internal_type == symbols.ENDSCOPE:
+        enum_stmt.new_item(item_name_token, None)
+        return end_step(driver, enum_stmt)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+
+
+def comma_step(driver, enum_stmt):
+    driver.discard_token()
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif peek_token.internal_type == symbols.IDENTIFIER:
+        return item_list_step(driver, enum_stmt)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+
+
+def equal_step(driver, enum_stmt, item_name_token):
+    driver.discard_token()
+    peek_token = driver.peek_token()
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif peek_token.internal_type == symbols.IDENTIFIER:
+        return item_list_literal_step(driver, enum_stmt, item_name_token)
+    elif is_primitive_type(peek_token):
+        return item_list_literal_step(driver, enum_stmt, item_name_token)
+    elif is_boolean_literal(peek_token):
+        return item_list_literal_step(driver, enum_stmt, item_name_token)
+    elif peek_token.internal_type == symbols.MINUS:
+        return item_list_literal_step(driver, enum_stmt, item_name_token)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+
+
+def item_list_literal_step(driver, enum_stmt, item_name_token):
+    token = driver.next_token()
+    peek_token = driver.peek_token()
+    if token.internal_type == symbols.MINUS:
+        # enum values can be - numbers, identifiers are a semantic error.
+        if peek_token.internal_type == symbols.IDENTIFIER:
+            token.literal += peek_token.literal
+            enum_stmt.new_item(item_name_token, token)
+        elif is_primitive_type(peek_token):
+            token.literal += peek_token.literal
+            enum_stmt.new_item(item_name_token, token)
+        elif is_eof_type(peek_token):
+            driver.add_error(peek_token, EOF_REACHED)
+            return None
+        else:
+            driver.add_error(peek_token, UNEXPECTED_TOKEN)
+            return None
+    elif token.internal_type == symbols.IDENTIFIER:
+        enum_stmt.new_item(item_name_token, token)
+    elif is_primitive_type(token):
+        enum_stmt.new_item(item_name_token, token)
+    elif is_boolean_literal(token):
+        enum_stmt.new_item(item_name_token, token)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+    
+    if is_eof_type(peek_token):
+        driver.add_error(peek_token, EOF_REACHED)
+        return None
+    elif peek_token.internal_type == symbols.COMMA:
+        return comma_step(driver, enum_stmt)
+    elif peek_token.internal_type == symbols.ENDSCOPE:
+        return end_step(driver, enum_stmt)
+    else:
+        driver.add_error(peek_token, UNEXPECTED_TOKEN)
+        return None
+
+def end_step(driver, enum_stmt):
+    driver.discard_token()
+    return enum_stmt
+
+def enforce_enum(token):
+    if token.internal_type != symbols.ENUM:
+        raise Exception("INTERNAL ERROR: expected enum got " + token.literal)

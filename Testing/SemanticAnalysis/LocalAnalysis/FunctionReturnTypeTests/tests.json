@@ -1,0 +1,54 @@
+[
+    {
+        "file_name" : "test1.ap",
+        "errors" : null
+    },
+    {
+        "file_name" : "test2.ap",
+        "errors" : []
+    },
+    {
+        "file_name" : "test3.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "return",
+                    "internal_type": "RETURN",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test3.ap",
+                    "file_path": null,
+                    "line_number": 2,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function expected to return nothing, but return value found",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "file_name" : "test4.ap",
+        "errors" : [
+            {
+                "token": {
+                    "literal": "return",
+                    "internal_type": "RETURN",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "test4.ap",
+                    "file_path": null,
+                    "line_number": 2,
+                    "column_number": 5,
+                    "type_def": "Token"
+                },
+                "message": "function expected to return value, but no return value found",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

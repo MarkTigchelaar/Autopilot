@@ -1,0 +1,7 @@
+module main
+
+
+enum second(int) is
+    a = 0,
+    b
+end

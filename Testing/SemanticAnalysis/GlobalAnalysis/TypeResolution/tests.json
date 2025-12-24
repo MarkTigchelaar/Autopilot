@@ -1,0 +1,271 @@
+[
+    {
+        "main_module_path": "Case1",
+        "library_names":["built_in"],
+        "errors": []
+    },
+    {
+        "main_module_path": "Case2",
+        "library_names":[],
+        "errors": [
+            {
+                "token": {
+                    "literal": "MyTpe",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 3,
+                    "column_number": 22,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "Myte",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 5,
+                    "column_number": 19,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case3",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "thingy",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 9,
+                    "column_number": 12,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case4",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "thingy",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 9,
+                    "column_number": 13,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case5",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "thingy",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 9,
+                    "column_number": 18,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case6",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "thingy",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 9,
+                    "column_number": 14,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case7",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "thingy",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 9,
+                    "column_number": 15,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case8",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "thingy",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 14,
+                    "column_number": 22,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case9",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "does_not_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 7,
+                    "column_number": 25,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case10",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "does_not_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 11,
+                    "column_number": 10,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case11",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "does_not_exist",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 20,
+                    "column_number": 45,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            },
+            {
+                "token": {
+                    "literal": "otherthing",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 21,
+                    "column_number": 28,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    }
+]

@@ -1,0 +1,18 @@
+module main
+
+import this_does_exist from library built_in
+
+import example from module pub_enum location ^ TestCases
+
+/*
+Error Types here are invalid, but this step only finds
+(or attempts to find) types, and assigns them to 
+references to those types.
+*/
+define Result(int, example) as IntSet
+
+define Result(float, thingy) as ThingySet
+
+define Result(this_does_exist, string) as ExistTree
+
+define Result(example, example) as ExampleSet
