@@ -1,0 +1,13 @@
+module main
+
+define Vector(int) as IntVector
+
+fun checkit() do
+    func2(4)
+    let myVars as IntVector = [1, 2]
+    let myVars2 as IntVectors = [1, 2]
+end
+
+fun func2(b as int) do
+    let a = 1 + b
+end

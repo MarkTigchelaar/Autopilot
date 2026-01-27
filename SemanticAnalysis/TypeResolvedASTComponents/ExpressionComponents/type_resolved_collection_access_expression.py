@@ -11,5 +11,11 @@ class TypeResolvedCollectionAccessExpression(TypeResolvedASTNode):
             self.access_arguments.append(arg.accept_resolved_statement(parent))
 
     def resolve_types(self):
-        # e.g., list[0]
-        pass
+        self.collection_name.resolve_types()
+        for arg in self.access_arguments:
+            arg.resolve_types()
+
+    def resolve_types_in_expressions(self):
+        self.collection_name.resolve_types()
+        for arg in self.access_arguments:
+            arg.resolve_types_in_expressions()

@@ -18,5 +18,5 @@ end
 
 interface what_dis is
     fun one(a as int, b as does_exist, c as does_not_exist, d as this_does_exist) int end
-    fun two(a as int, b as otherthing) end
+    fun two(a as example, b as otherthing) end
 end

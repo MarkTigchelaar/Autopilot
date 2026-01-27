@@ -1,4 +1,4 @@
-
+from Tokenization.token import Token
 
 """
 relies on library config, currently json files
@@ -8,9 +8,15 @@ including items of a different library
 """
 class LibraryItem:
     def __init__(self, item_name):
-        self.item_name = item_name
+        self.item_name = Token()
+        self.item_name.literal = item_name
+        self.item_name.internal_type = "PRIMITIVE"
+        self.item_name.file_name = "LIBRARY"
+        self.item_name.file_path = "SYSTEM"
+        self.item_name.line_number = -1
+        self.item_name.column_number = -1
 
-    def get_name(self) -> str:
+    def get_name(self) -> Token:
         return self.item_name
 
 
@@ -19,7 +25,7 @@ class LibraryItem:
 class LibraryEnum(LibraryItem):
     def __init__(self, config):
         super().__init__(config["name"])
-        pass
+
 
 # class LibraryError(LibraryItem):
 #     def __init__(self, config):
@@ -71,43 +77,43 @@ class Library:
 
         for config in json_config["enums"]:
             library_type_def = LibraryEnum(config)
-            self.enum_defs[library_type_def.get_name()] = library_type_def
-            self.item_names[library_type_def.get_name()] = "enums"
+            self.enum_defs[library_type_def.get_name().literal] = library_type_def
+            self.item_names[library_type_def.get_name().literal] = "enums"
         
         # for config in json_config["errors"]:
         #     library_type_def = LibraryError(config)
-        #     self.error_defs[library_type_def.get_name()] = library_type_def
-        #     self.item_names[library_type_def.get_name()] = "errors"
+        #     self.error_defs[library_type_def.get_name().literal] = library_type_def
+        #     self.item_names[library_type_def.get_name().literal] = "errors"
 
         for config in json_config["unions"]:
             library_type_def = LibraryUnion(config)
-            self.union_defs[library_type_def.get_name()] = library_type_def
-            self.item_names[library_type_def.get_name()] = "unions"
+            self.union_defs[library_type_def.get_name().literal] = library_type_def
+            self.item_names[library_type_def.get_name().literal] = "unions"
 
         for config in json_config["functions"]:
             library_type_def = LibraryFunction(config)
-            self.function_defs[library_type_def.get_name()] = library_type_def
-            self.item_names[library_type_def.get_name()] = "functions"
+            self.function_defs[library_type_def.get_name().literal] = library_type_def
+            self.item_names[library_type_def.get_name().literal] = "functions"
         
         for config in json_config["structs"]:
             library_type_def = LibraryStruct(config)
-            self.struct_defs[library_type_def.get_name()] = library_type_def
-            self.item_names[library_type_def.get_name()] = "structs"
+            self.struct_defs[library_type_def.get_name().literal] = library_type_def
+            self.item_names[library_type_def.get_name().literal] = "structs"
 
         for config in json_config["interfaces"]:
             library_type_def = LibraryInterface(config)
-            self.interface_defs[library_type_def.get_name()] = library_type_def
-            self.item_names[library_type_def.get_name()] = "interfaces"
+            self.interface_defs[library_type_def.get_name().literal] = library_type_def
+            self.item_names[library_type_def.get_name().literal] = "interfaces"
 
         for config in json_config["optionals"]:
             library_type_def = LibraryOptional(config)
-            self.optional_defs[library_type_def.get_name()] = library_type_def
-            self.item_names[library_type_def.get_name()] = "optionals"
+            self.optional_defs[library_type_def.get_name().literal] = library_type_def
+            self.item_names[library_type_def.get_name().literal] = "optionals"
 
         for config in json_config["results"]:
             library_type_def = LibraryResult(config)
-            self.result_defs[library_type_def.get_name()] = library_type_def
-            self.item_names[library_type_def.get_name()] = "results"
+            self.result_defs[library_type_def.get_name().literal] = library_type_def
+            self.item_names[library_type_def.get_name().literal] = "results"
 
 
     def has_item(self, item_name: str) -> bool:

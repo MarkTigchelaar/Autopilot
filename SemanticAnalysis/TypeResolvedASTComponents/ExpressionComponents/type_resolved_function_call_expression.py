@@ -12,4 +12,15 @@ class TypeResolvedFunctionCallExpression(TypeResolvedASTNode):
 
     def resolve_types(self):
         # Check argument types against function signature
-        pass
+        function_name_token = self.function_name.get_name()
+        resolved_type = self._attempt_type_instance_aqqusition(function_name_token)
+        if resolved_type:
+            self._set_verified_raw_type_reference(resolved_type)
+        else:
+            self._add_type_error(function_name_token)
+        for arg in self.arguments:
+            arg.resolve_types()
+
+    def resolve_types_in_expressions(self):
+        for arg in self.arguments:
+            arg.resolve_types()

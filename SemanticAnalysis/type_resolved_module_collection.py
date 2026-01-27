@@ -79,16 +79,29 @@ class TypeResolvedModuleCollection:
         self.string_ref = String()
         self.bool_ref = Bool()
         self.null_ref = Null()
+        self.type_map = dict()
+
+    def register_raw_type_to_resolved_type(self, raw_node, type_resolved_node):
+        if raw_node in self.type_map:
+            raise Exception("raw node is already present in type map")
+        self.type_map[raw_node] = type_resolved_node
+
+    def lookup_resolved_type(self, raw_node):
+        return self.type_map[raw_node]
 
     def build_resolved_ast(self) -> None:
         for raw_module in self.raw_module_collection.get_raw_modules():
-            self.resolved_modules.append(self._annotate_module(raw_module))
+            self.resolved_modules.append(self._resolve_module(raw_module))
+    
+    def check_type_usage(self) -> None:
+        for module in self.resolved_modules:
+            module.check_type_usage()
 
-    def _annotate_module(self, raw_module: RawModule):
+    def _resolve_module(self, raw_module: RawModule):
         resolved_module = TypeResolvedModule(
             raw_module, self.error_manager, self.raw_module_collection, self
         )
-        resolved_module.annotate_module_items()
+        resolved_module.resolve_module_items()
         return resolved_module
 
     def get_primitive_by_item_type_name(self, name_token):
@@ -144,28 +157,38 @@ class TypeResolvedModule:
         self.unions = []
         self.structs = []
         self.functions = []
-        #self.imports = []
         self.unit_tests = []
 
+    def check_type_usage(self):
+        for function in self.functions:
+            function.check_type_usage()
+        for struct in self.structs:
+            struct.check_type_usage()
 
-    def annotate_module_items(self):
-        self.annotate_key_value_defines()
-        self.annotate_hash_defines()
-        self.annotate_list_defines()
-        self.annotate_queue_defines()
-        self.annotate_stack_defines()
-        self.annotate_option_defines()
-        self.annotate_result_defines()
-        self.annotate_function_type_defines()
-        self.annotate_enums()
-        self.annotate_errors()
-        self.annotate_interfaces()
-        self.annotate_unions()
-        self.annotate_structs()
-        self.annotate_functions()
-        self.annotate_unit_tests()
+    def register_raw_type_to_resolved_type(self, raw_node, type_resolved_node):
+        self.parent_module_collection.register_raw_type_to_resolved_type(raw_node, type_resolved_node)
 
-    def annotate_key_value_defines(self):
+    def lookup_resolved_type(self, raw_node):
+        return self.parent_module_collection.lookup_resolved_type(raw_node)
+
+    def resolve_module_items(self):
+        self._resolve_key_value_defines()
+        self._resolve_hash_defines()
+        self._resolve_list_defines()
+        self._resolve_queue_defines()
+        self._resolve_stack_defines()
+        self._resolve_option_defines()
+        self._resolve_result_defines()
+        self._resolve_function_type_defines()
+        self._resolve_enums()
+        self._resolve_errors()
+        self._resolve_interfaces()
+        self._resolve_unions()
+        self._resolve_structs()
+        self._resolve_functions()
+        self._resolve_unit_tests()
+
+    def _resolve_key_value_defines(self):
         for kv_pair in self.raw_module.key_value_defines:
             typed_kv_pair = TypeResolvedKVDefine(
                 kv_pair,
@@ -176,7 +199,7 @@ class TypeResolvedModule:
             typed_kv_pair.resolve_types()
             self.key_value_defines.append(typed_kv_pair)
 
-    def annotate_hash_defines(self):
+    def _resolve_hash_defines(self):
         for hash in self.raw_module.hash_defines:
             typed_hash = TypeResolvedHashDefine(
                 hash,
@@ -187,7 +210,7 @@ class TypeResolvedModule:
             typed_hash.resolve_types()
             self.hash_defines.append(typed_hash)
 
-    def annotate_list_defines(self):
+    def _resolve_list_defines(self):
         for list_define in self.raw_module.list_defines:
             typed_list = TypeResolvedListDefine(
                 list_define,
@@ -198,7 +221,7 @@ class TypeResolvedModule:
             typed_list.resolve_types()
             self.list_defines.append(typed_list)
 
-    def annotate_queue_defines(self):
+    def _resolve_queue_defines(self):
         for queue_define in self.raw_module.queue_defines:
             typed_queue = TypeResolvedQueueDefine(
                 queue_define,
@@ -209,7 +232,7 @@ class TypeResolvedModule:
             typed_queue.resolve_types()
             self.queue_defines.append(typed_queue)
 
-    def annotate_stack_defines(self):
+    def _resolve_stack_defines(self):
         for stack_define in self.raw_module.stack_defines:
             typed_stack = TypeResolvedStackDefine(
                 stack_define,
@@ -220,7 +243,7 @@ class TypeResolvedModule:
             typed_stack.resolve_types()
             self.stack_defines.append(typed_stack)
 
-    def annotate_option_defines(self):
+    def _resolve_option_defines(self):
         for option_define in self.raw_module.option_defines:
             typed_option = TypeResolvedOptionDefine(
                 option_define,
@@ -231,7 +254,7 @@ class TypeResolvedModule:
             typed_option.resolve_types()
             self.option_defines.append(typed_option)
 
-    def annotate_result_defines(self):
+    def _resolve_result_defines(self):
         for result_define in self.raw_module.result_defines:
             typed_result = TypeResolvedResultDefine(
                 result_define,
@@ -242,7 +265,7 @@ class TypeResolvedModule:
             typed_result.resolve_types()
             self.result_defines.append(typed_result)
 
-    def annotate_function_type_defines(self):
+    def _resolve_function_type_defines(self):
         for func_type in self.raw_module.function_type_defines:
             typed_func_type = TypeResolvedFunctionTypeDefine(
                 func_type,
@@ -253,7 +276,7 @@ class TypeResolvedModule:
             typed_func_type.resolve_types()
             self.function_type_defines.append(typed_func_type)
 
-    def annotate_enums(self):
+    def _resolve_enums(self):
         for enum in self.raw_module.enums:
             typed_enum = TypeResolvedEnum(
                 enum,
@@ -264,7 +287,7 @@ class TypeResolvedModule:
             typed_enum.resolve_types()
             self.enums.append(typed_enum)
 
-    def annotate_errors(self):
+    def _resolve_errors(self):
         for error in self.raw_module.errors:
             typed_error = TypeResolvedError(
                 error,
@@ -275,7 +298,7 @@ class TypeResolvedModule:
             typed_error.resolve_types()
             self.errors.append(typed_error)
 
-    def annotate_interfaces(self):
+    def _resolve_interfaces(self):
         for interface in self.raw_module.interfaces:
             typed_interface = TypeResolvedInterface(
                 interface,
@@ -286,7 +309,7 @@ class TypeResolvedModule:
             typed_interface.resolve_types()
             self.interfaces.append(typed_interface)
 
-    def annotate_unions(self):
+    def _resolve_unions(self):
         for union in self.raw_module.unions:
             typed_union = TypeResolvedUnion(
                 union,
@@ -297,7 +320,7 @@ class TypeResolvedModule:
             typed_union.resolve_types()
             self.unions.append(typed_union)
 
-    def annotate_structs(self):
+    def _resolve_structs(self):
         for struct in self.raw_module.structs:
             typed_struct = TypeResolvedStruct(
                 struct,
@@ -308,7 +331,7 @@ class TypeResolvedModule:
             typed_struct.resolve_types()
             self.structs.append(typed_struct)
 
-    def annotate_functions(self):
+    def _resolve_functions(self):
         for function in self.raw_module.functions:
             typed_function = TypeResolvedFunction(
                 function,
@@ -319,7 +342,7 @@ class TypeResolvedModule:
             typed_function.resolve_types()
             self.functions.append(typed_function)
 
-    def annotate_unit_tests(self):
+    def _resolve_unit_tests(self):
         for unit_test in self.raw_module.unit_tests:
             typed_unit_test = TypeResolvedUnitTest(
                 unit_test,

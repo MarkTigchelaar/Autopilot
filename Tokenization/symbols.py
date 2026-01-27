@@ -164,3 +164,4 @@ DOT = "DOT" # .
 
 EOF = "EOF"
 #ERROR = "ERROR"
+UNDERSCORE = "_"

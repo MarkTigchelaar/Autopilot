@@ -18,6 +18,8 @@ def run_import_item_existence_tests(progress_tracker: ProgressTracker) -> None:
     )
 
     for test in module_dependency_tests:
+        # if test["main_module_path"] != "Case6":
+        #     continue
         run_test(test, path_to_test_cases, progress_tracker)
 
 

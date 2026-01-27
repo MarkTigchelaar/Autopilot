@@ -1,0 +1,11 @@
+module main
+
+
+fun checkit() do
+    let myVar as int = function_two(1)
+end
+
+
+fun function_two(b as int) int do
+    return b * 2 + c
+end

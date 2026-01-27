@@ -27,60 +27,71 @@ from SemanticAnalysis.TypeResolvedASTComponents.ExpressionComponents.type_resolv
 
 
 class TypeResolvedStatementWithExpression(TypeResolvedASTNode):
-    def __init__(self, raw_node, error_manager, type_annontated_module, parent):
-        super().__init__(raw_node, error_manager, type_annontated_module, parent)
-        self.expression = self.raw_node.get_expression_ast().accept_resolved_statement(self)
+    def __init__(self, raw_node, error_manager, type_resolved_module, parent):
+        super().__init__(raw_node, error_manager, type_resolved_module, parent)
+        expression_ast = self.raw_node.get_expression_ast()
+        self.type_resolved_expression = None
+        if expression_ast:
+            self.type_resolved_expression = expression_ast.accept_resolved_statement(self)
 
     def resolve_types(self):
-        self.expression.resolve_types()
+        if self.type_resolved_expression:
+            self.type_resolved_expression.resolve_types()
+
+    def resolve_types_in_expressions(self):
+        self.resolve_types()
+
+    def check_type_usage_in_expression(self):
+        self.type_resolved_expression.check_type_usage()
+
 
     # --- Factory Methods for Expressions ---
 
     def make_name_expression(self, raw_node) -> TypeResolvedNameExpression:
         return TypeResolvedNameExpression(
-            raw_node, self.error_manager, self.type_annontated_module, self
+            raw_node, self.error_manager, self.type_resolved_module, self
         )
 
     def make_prefix_expression(self, raw_node) -> TypeResolvedPrefixExpression:
         return TypeResolvedPrefixExpression(
-            raw_node, self.error_manager, self.type_annontated_module, self
+            raw_node, self.error_manager, self.type_resolved_module, self
         )
 
     def make_operator_expression(self, raw_node) -> TypeResolvedOperatorExpression:
         return TypeResolvedOperatorExpression(
-            raw_node, self.error_manager, self.type_annontated_module, self
+            raw_node, self.error_manager, self.type_resolved_module, self
         )
 
     def make_function_call_expression(
         self, raw_node
     ) -> TypeResolvedFunctionCallExpression:
         return TypeResolvedFunctionCallExpression(
-            raw_node, self.error_manager, self.type_annontated_module, self
+            raw_node, self.error_manager, self.type_resolved_module, self
         )
 
     def make_collection_expression(self, raw_node) -> TypeResolvedCollectionExpression:
         return TypeResolvedCollectionExpression(
-            raw_node, self.error_manager, self.type_annontated_module, self
+            raw_node, self.error_manager, self.type_resolved_module, self
         )
 
     def make_collection_access_expression(
         self, raw_node
     ) -> TypeResolvedCollectionAccessExpression:
         return TypeResolvedCollectionAccessExpression(
-            raw_node, self.error_manager, self.type_annontated_module, self
+            raw_node, self.error_manager, self.type_resolved_module, self
         )
 
     def make_method_call_or_field_expression(
         self, raw_node
     ) -> TypeResolvedMethodCallOrFieldExpression:
         return TypeResolvedMethodCallOrFieldExpression(
-            raw_node, self.error_manager, self.type_annontated_module, self
+            raw_node, self.error_manager, self.type_resolved_module, self
         )
 
 
 class TypeResolvedBranchingLogicWithExpressions(TypeResolvedStatementWithExpression):
-    def __init__(self, raw_node, error_manager, type_annontated_module, parent):
-        super().__init__(raw_node, error_manager, type_annontated_module, parent)
+    def __init__(self, raw_node, error_manager, type_resolved_module, parent):
+        super().__init__(raw_node, error_manager, type_resolved_module, parent)
         self.resolved_statements = []
         self.resolved_next_statement_in_block = None
         for statement in raw_node.get_statements():
@@ -101,8 +112,8 @@ class TypeResolvedBranchingLogicWithExpressions(TypeResolvedStatementWithExpress
 
 
 class TypeResolvedBranchingLogic(TypeResolvedASTNode):
-    def __init__(self, raw_node, error_manager, type_annontated_module, parent):
-        super().__init__(self, raw_node, error_manager, type_annontated_module, parent)
+    def __init__(self, raw_node, error_manager, type_resolved_module, parent):
+        super().__init__(self, raw_node, error_manager, type_resolved_module, parent)
         self.resolved_statements = []
         self.resolved_next_statement_in_block = None
         for statement in raw_node.get_statements():
@@ -119,3 +130,11 @@ class TypeResolvedBranchingLogic(TypeResolvedASTNode):
             resolved_statement.resolve_types()
         if self.resolved_next_statement_in_block:
             self.resolved_next_statement_in_block.resolve_types()
+
+class TypeResolvedBranchingDeclaration:
+    def __init__(self, variable_name, option_or_collection_variable):
+        self.variable_name = variable_name
+        self.option_or_collection_variable = option_or_collection_variable
+
+    def get_name(self):
+        return self.variable_name

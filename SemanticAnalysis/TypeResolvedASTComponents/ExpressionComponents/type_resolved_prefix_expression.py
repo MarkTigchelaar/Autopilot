@@ -10,4 +10,7 @@ class TypeResolvedPrefixExpression(TypeResolvedASTNode):
 
     def resolve_types(self):
         # Example: !bool or -int
-        pass
+        self.rhs_exp.resolve_types()
+
+    def resolve_types_in_expressions(self):
+        self.rhs_exp.resolve_types_in_expressions()

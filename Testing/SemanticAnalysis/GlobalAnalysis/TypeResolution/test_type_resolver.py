@@ -20,9 +20,6 @@ def run_type_setting_tests(progress_tracker: ProgressTracker) -> None:
     )
 
     for test in module_dependency_tests:
-        # if test["main_module_path"] != "Case11":
-        #     continue
-        print(test["main_module_path"])
         run_test(test, path_to_test_cases, progress_tracker)
 
 

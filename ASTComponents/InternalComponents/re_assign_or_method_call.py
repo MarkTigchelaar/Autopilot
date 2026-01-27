@@ -16,9 +16,15 @@ class ReassignmentOrMethodCall:
     
     def get_assignment_token(self):
         return self.assignment_token
+    
+    def get_expression_ast(self):
+        return self.l_value_exp
 
     def add_r_value(self, r_value_exp):
         self.r_value_exp = r_value_exp
+    
+    def get_r_value(self):
+        return self.r_value_exp
 
     
     def get_l_value(self):

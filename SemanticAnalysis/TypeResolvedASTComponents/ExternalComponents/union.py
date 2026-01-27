@@ -3,8 +3,8 @@ from SemanticAnalysis.TypeResolvedASTComponents.type_resolved_ast_node import Ty
 
 class TypeResolvedUnion(TypeResolvedASTNode):
 
-    def __init__(self, raw_node, error_manager, type_annontated_module, parent):
-        super().__init__(raw_node, error_manager, type_annontated_module, parent)
+    def __init__(self, raw_node, error_manager, type_resolved_module, parent):
+        super().__init__(raw_node, error_manager, type_resolved_module, parent)
         self.member_types = []
 
     def resolve_types(self):

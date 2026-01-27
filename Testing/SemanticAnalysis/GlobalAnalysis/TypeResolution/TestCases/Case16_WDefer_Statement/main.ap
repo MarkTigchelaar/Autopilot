@@ -1,0 +1,10 @@
+module main
+
+define Vector(int) as IntVector
+
+fun checkit() do
+    let myVars as IntVector = [1, 2]
+    defer myVars.sort()
+    let a = 0
+end
+

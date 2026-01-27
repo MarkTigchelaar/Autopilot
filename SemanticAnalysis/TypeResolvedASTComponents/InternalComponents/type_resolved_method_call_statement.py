@@ -1,12 +1,13 @@
-
-
-
-class TypeResolvedMethodCallStatement:
+from SemanticAnalysis.TypeResolvedASTComponents.InternalComponents.base_types import (
+    TypeResolvedStatementWithExpression,
+)
+class TypeResolvedMethodCallStatement(TypeResolvedStatementWithExpression):
     def __init__(self, raw_node, error_manager, module_collection, parent):
-        self.raw_node = raw_node
-        self.error_manager = error_manager
-        self.module_collection = module_collection
-        self.parent = parent
+        super().__init__(raw_node, error_manager, module_collection, parent)
+        #self.function_call_or_method_chain = raw_node.get_l_value().accept_resolved_statement(parent)
+
+
     
     def resolve_types(self):
-        pass
+        super().resolve_types()
+        #self.function_call_or_method_chain.resolve_types()

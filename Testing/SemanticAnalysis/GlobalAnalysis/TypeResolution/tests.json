@@ -257,7 +257,7 @@
                     "file_name": "main.ap",
                     "file_path": null,
                     "line_number": 21,
-                    "column_number": 28,
+                    "column_number": 32,
                     "type_def": "Token"
                 },
                 "message": "type is not defined",
@@ -267,5 +267,48 @@
                 "type_def": "SemanticError"
             }
         ]
+    },
+    {
+        "main_module_path": "Case12_FunctionTwoDeclarations",
+        "library_names":["built_in"],
+        "errors": []
+    },
+    {
+        "main_module_path": "Case13_FunctionTwoDeclarationsWithOperatorExpression",
+        "library_names":["built_in"],
+        "errors": []
+    },
+    {
+        "main_module_path": "Case14_DeclarationWFunctionCall",
+        "library_names":["built_in"],
+        "errors": []
+    },
+    {
+        "main_module_path": "Case15_DeclarationWCollection",
+        "library_names":["built_in"],
+        "errors": [
+            {
+                "token": {
+                    "literal": "IntVectors",
+                    "internal_type": "IDENTIFIER",
+                    "instance_type": "UNKNOWN_TYPE",
+                    "file_name": "main.ap",
+                    "file_path": null,
+                    "line_number": 8,
+                    "column_number": 20,
+                    "type_def": "Token"
+                },
+                "message": "type is not defined",
+                "shadowed_token": null,
+                "lhs_type_token": null,
+                "rhs_type_token": null,
+                "type_def": "SemanticError"
+            }
+        ]
+    },
+    {
+        "main_module_path": "Case16_WDefer_Statement",
+        "library_names":["built_in"],
+        "errors": []
     }
 ]

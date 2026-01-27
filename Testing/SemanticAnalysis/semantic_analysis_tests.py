@@ -7,7 +7,7 @@ from Testing.SemanticAnalysis.LocalAnalysis.test_local_analysis import run_local
 from Testing.SemanticAnalysis.ModuleAnalysis.test_module_analysis import run_module_analysis_tests
 from Testing.SemanticAnalysis.GlobalAnalysis.ImportTests.import_item_existence import run_import_item_existence_tests
 from Testing.SemanticAnalysis.GlobalAnalysis.TypeResolution.test_type_resolver import run_type_setting_tests
-
+from Testing.SemanticAnalysis.GlobalAnalysis.TypeUsage.test_type_usage import run_type_usage_tests
 
 def run_semantic_analysis_tests(progress_tracker: ProgressTracker) -> None:
     # run_module_uniqueness_tests(progress_tracker)
@@ -16,4 +16,5 @@ def run_semantic_analysis_tests(progress_tracker: ProgressTracker) -> None:
     # run_local_analysis_tests(progress_tracker)
     # run_module_analysis_tests(progress_tracker)
     # run_import_item_existence_tests(progress_tracker)
-    run_type_setting_tests(progress_tracker)
+    # run_type_setting_tests(progress_tracker)
+    run_type_usage_tests(progress_tracker)

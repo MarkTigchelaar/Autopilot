@@ -7,9 +7,12 @@ class TypeResolvedStructField(TypeResolvedASTNode):
         type_token = self.raw_node.get_type()
         actual_type = self._attempt_type_instance_aqqusition(type_token)
         if actual_type:
-            self._set_verified_type_reference(actual_type)
+            self._set_verified_raw_type_reference(actual_type)
         else:
             self._add_type_error(type_token)
+
+    def get_name(self):
+        return self.raw_node.get_name()
 
 
 class TypeResolvedInterfaceReference(TypeResolvedASTNode):
@@ -17,7 +20,7 @@ class TypeResolvedInterfaceReference(TypeResolvedASTNode):
         interface_token = self.raw_node
         actual_type = self._attempt_type_instance_aqqusition(interface_token)
         if actual_type:
-            self._set_verified_type_reference(actual_type)
+            self._set_verified_raw_type_reference(actual_type)
         else:
             self._add_type_error(interface_token)
 
@@ -45,13 +48,14 @@ class TypeResolvedStruct(TypeResolvedASTNode):
             self.resolved_fields.append(resolved_field)
         self.resolved_functions = []
         for function in raw_node.get_functions():
-            resolved_field = TypeResolvedFunction(
+            resolved_function = TypeResolvedFunction(
                 function,
                 error_manager,
                 type_resolved_module, 
                 self
             )
-            self.resolved_fields.append(resolved_field)
+            resolved_function.add_struct_fields(self.resolved_fields)
+            self.resolved_functions.append(resolved_function)
 
 
     def resolve_types(self):

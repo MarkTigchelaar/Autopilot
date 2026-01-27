@@ -548,3 +548,5 @@ SET_FIELD_TYPE_UNDEFINED = "set field type is not defined"
 UNDEFINED_SET_METHOD = "set method is not defined"
 
 FAILABLE_TYPE_HAS_NO_FIELDS_OR_METHODS = "Options and Results do not have methods or fields"
+
+TYPES_INCOMPATABLE_WITH_EACT_OTHER_IN_BIN_OP = "one or both operand types are not compatable with binary operation"

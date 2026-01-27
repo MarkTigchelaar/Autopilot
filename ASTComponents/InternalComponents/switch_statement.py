@@ -14,6 +14,9 @@ class SwitchStatement:
     def get_test_expression(self):
         return self.test_expression
     
+    def get_expression_ast(self):
+        return self.test_expression
+    
     def add_case(self, case):
         self.case_statements.append(case)
 
@@ -79,6 +82,9 @@ class CaseValue:
         self.minus_sign = minus_sign
         self.variable_declaration = None
         self.actual_type_instance = None
+
+    def get_value(self):
+        return self.value
     
     def add_ref_to_declaration(self, declaration):
         self.variable_declaration = declaration
@@ -111,6 +117,9 @@ class CaseStatement:
 
     def get_enum_references(self):
         return self.enum_references
+
+    def has_values(self):
+        return len(self.values) > 0
 
     def get_values(self):
         return self.values

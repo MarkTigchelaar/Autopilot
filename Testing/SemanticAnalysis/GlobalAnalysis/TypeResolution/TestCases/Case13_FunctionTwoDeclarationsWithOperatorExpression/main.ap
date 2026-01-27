@@ -1,0 +1,12 @@
+module main
+
+
+import this_does_exist from library built_in
+
+import example from module pub_enum location ^ TestCases
+
+
+fun checkit(a as this_does_exist) do
+    let myVar as this_does_exist = a - 1
+    var myVar2 = 10 ^ 10
+end

@@ -7,12 +7,12 @@ from SemanticAnalysis.TypeResolvedASTComponents.ExternalComponents.function_head
 
 
 class TypeResolvedInterface(TypeResolvedASTNode):
-    def __init__(self, raw_node, error_manager, type_annontated_module, parent):
-        super().__init__(raw_node, error_manager, type_annontated_module, parent)
+    def __init__(self, raw_node, error_manager, type_resolved_module, parent):
+        super().__init__(raw_node, error_manager, type_resolved_module, parent)
         self.resolved_headers = []
         for header in self.raw_node.get_function_headers():
             resolved_header = TypeResolvedHeader(
-                header, self.error_manager, self.type_annontated_module, self
+                header, self.error_manager, self.type_resolved_module, self
             )
             self.resolved_headers.append(resolved_header)
         
