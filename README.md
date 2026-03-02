@@ -1,10 +1,7 @@
-Here is the updated **Autopilot README** with the comment syntax and DAG dependency rule added.
-
----
 
 # Autopilot
 
-> **A Ruby-inspired, statically typed scripting language.**
+> **A statically-typed, compiled scripting language with  Ruby-inspired syntax.**
 
 Autopilot combines the developer joy and readable syntax of Ruby with the performance and safety of a statically typed, compiled system. It is designed for deterministic memory management without the overhead of a global garbage collector.
 
@@ -30,10 +27,10 @@ A **Module** is the fundamental unit of organization.
 * **DAG Rule:** Module dependencies must form a **Directed Acyclic Graph**. Circular imports (two modules importing each other) are forbidden.
 
 ```c
-// src/main.ap
 module main
 
-/* Multi-line comments use C-style syntax.
+/* 
+  Multi-line comments use C-style syntax.
   Imports and Defines go below.
 */
 
@@ -50,15 +47,15 @@ Autopilot uses a robust import system designed to withstand refactoring. It supp
 
 **Syntax:**
 
-```ruby
+```c
 import <Item> as <Alias> from module <Name> location <Path>
 
 ```
 
 **Examples:**
 
-```ruby
-// 1. Standard relative path (Longer path example)
+```c
+/* 1. Standard relative path (Longer path example) */
 import User as AuthUser from module auth location .models.users
 
 // 2. Renaming an item on import
@@ -92,14 +89,19 @@ By default, all Structs and Functions in Autopilot are **acyclic**.
 
 If you need recursion or self-referential data (like a Graph), you must explicitly mark the type as `cyclic`.
 
-* **Behavior:** The compiler analyzes `cyclic` types for potential retain cycles. If a potential cycle is detected, the runtime "Cycle Detector" is triggered for that specific object graph. It traces the local heap to mark and sweep self-referencing objects.
-* **Cost:** You only pay the performance cost if the cycle condition actually arises.
+* **Behavior:** The compiler analyzes `cyclic` types for potential retain cycles. If a potential cycle is detected, the runtime "Cycle Detector" is triggered for that specific object graph. 
 
-```ruby
+- It traces the local heap and clears self-referencing objects at teh end of their lifetimes.
+
+- This amounts to a simple localized mark and sweep garbage collector
+
+
+```c
 // Fast, simple RC (Default)
 pub struct User is ... end
 
-// Managed by Cycle Detector
+// Managed by Cycle Detector if compiler detects
+// potential retain cycles
 pub cyclic struct Node is ... end
 
 ```
@@ -125,7 +127,7 @@ Autopilot is statically typed. All types must be defined.
 
 Autopilot does not use inline generics (e.g., `Vector<int>`). You must define a specialized type alias at the top of your file.
 
-```ruby
+```c
 // Create a specialized Vector for integers
 define Vector(int) as IntVec
 
@@ -138,7 +140,7 @@ define Optional(string) as StringOpt
 
 Structs are the primary complex data type. They define fields and methods.
 
-```ruby
+```c
 pub struct Player is
   pub name as string,
   score as int,
@@ -156,7 +158,7 @@ end
 * **Enums:** Strictly for primitives (scalars).
 * **Unions:** Tagged unions (Sum types) for holding one of several complex types.
 
-```ruby
+```c
 // Enum (Primitive values)
 pub enum HttpStatus(int) is
   OK = 200,
@@ -258,9 +260,9 @@ end
 
 ### No Nulls (Optionals)
 
-Autopilot has no `null`. Missing values are handled via `Optional(T)`. Unwrapping is handled safely in control structures.
+Autopilot has no `null`. Missing values are handled via Optional tyeps as mentioned above. Unwrapping is handled safely in control structures.
 
-```ruby
+```c
 // Unwraps 'maybe_user' if it exists; otherwise skips the block
 if let u = maybe_user do
   print(u.name)
@@ -274,7 +276,7 @@ end
 
 * **Order:** **FIFO** (First-In, First-Out).
 
-```ruby
+```c
 fun operation() do
   defer log("Start")
   defer log("End")
@@ -287,7 +289,7 @@ end
 
 Method chaining (dot-syntax) is permitted but **cannot** infer types across module boundaries. Chains must be broken into explicit assignments if they return external types.
 
-```ruby
+```c
 import Order from module store location .sales
 
 // ILLEGAL: Implicitly depends on types deep inside another module
@@ -298,3 +300,12 @@ let order as Order = user.get_order()
 let item = order.get_item()
 
 ```
+
+### Development Roadmap
+#### Autopilot is currently in active development, transitioning from the semantic analysis phase to backend code generation.
+
+Phase 1 (In Progress): Lowering the validated AST into an Intermediate Representation (IR).
+
+Phase 2: Assembly translation and bytecode compilation.
+
+Phase 3: A bespoke stack-based Virtual Machine (VM) to execute the bytecode, featuring the hybrid Cycle-Detecting Reference Counting memory model.
